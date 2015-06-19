@@ -158,6 +158,8 @@
 
 \maketitle
 
+\tableofcontents
+
 \section{Introduction}
 This is our project.
 Example, stuff from Voight and Zureick-Brown \cite{vzb:stacky}
@@ -175,6 +177,7 @@ relations in degree at most $2e$, so long as $\sigma$ does not lie
 in a finite list of exceptions. \todo{Rewrite this to be more
 precise}
 \end{thm}
+
 \begin{proof}
 
 \end{proof}
@@ -184,13 +187,14 @@ precise}
 Here are some definitions.
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
 
+
 \section{Effective Genus Zero Spin Divisors}
 \label{sec:g_0_effective}
-Let us consider $\delta \geq 2$.
+Let us consider $\delta \geq 2$. 
+
 
 \section{Non-effective Genus Zero Spin Divisors}
 \label{sec:g_0_non_effective}
-
 
 In this section, we will prove that if $(\sx,\halfcan)$ is a spin
 curve, so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r;0)
@@ -204,8 +208,35 @@ Subsection ~\ref{ssec:g_0_base} we check the base cases of the
 induction. Finally, in Subsection ~\ref{ssec:g_0_exceptional} we
 list out the exceptional cases.
 
+
 \ssec{Saturation}
 \label{ssec:g_0_saturation}
+
+Here we compute saturation numbers. That is, given a list of
+ramification orders, with $g = 0,\delta = 0$ understood, we have
+the following saturations of the canonical divisor, as defined in
+7.2 of Voight and Zureick-Brown \cite{vzb:stacky}
+\begin{enumerate}
+	\item $(3,3,3)$ exceptional, we know it it is $k[x]$ in degree 3.
+	\item $(3,3,5) \mapsto 18.$ (gen in 3, 10, 15; min relations in 30)
+	\item $(3,3,7) \mapsto 12.$ (gen in 3, 7, 12; min relation in 24) 
+	\item $(3,3,9) \mapsto 12.$ (gen in 3, 7, 9; min relation in 21)
+	\item $(3,3,k) \mapsto 9$ for $k > 9$. (gen in 3, 7, ..., $k$; 
+min relation in 14 up to $2(k-1)$)
+	\item $(3,5,5) \mapsto 8.$ (gen in degree 3, 5, 10; min relation 
+in 20)
+	\item $(5,5,5)\mapsto 8$ (gen in degree 3, 5, 5; min relation in 
+15)
+	\item $(a,b,c)\mapsto 5$ if $a,b,c$ is not listed above. (
+generation in 3,5,7.) ($(a,b,c) = (3,5,7)$ generated in degree 3,5,7
+, some relation in degree 30, might be more).
+	\item $(3,3,3,3) \mapsto 6$ (monoid generation in degree 3,4) (
+the actual ring is also generated in degree 4 with 1 relation in 
+degree 12).
+	\item If $(e_1,\ldots, e_r)$ is not listed above it has 
+saturation $3$. (generation in 3,4,5.)
+\end{enumerate}
+\todo{make table and put proof}
 
 \ssec{Inductive Theorem: Increasing the Number of Ramified Points}
 \label{ssec:g_0_ram_pts}
