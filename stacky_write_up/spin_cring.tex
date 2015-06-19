@@ -122,6 +122,7 @@
 \newcommand \di{\text{div }}
 \newcommand \depth{\text{depth }}
 \DeclareMathOperator{\ord}{ord}
+\newcommand \halfcan{L}
 
 \newcommand \subhalf[1]{\frac{e_{#1} - 1}{2e_{#1}}}
 \newcommand{\se}[1]{\section*{Problem #1}}
@@ -164,7 +165,7 @@ We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{i}$.
 These are our results.
 \begin{thm}
 \label{thm:g_0_generators_relations}
-Let $(\sx,L)$ is a spin curve, so that $\sx$ has signature $\sigma = (0;e_1,\ldots, e_r;0)$, then $R(\sx,L)$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$, so long as $\sigma$ does not lie in a finite list of exceptions. \todo{Rewrite this to be more precise}
+Let $(\sx,\halfcan)$ is a spin curve, so that $\sx$ has signature $\sigma = (0;e_1,\ldots, e_r;0)$, then $R(\sx,\halfcan)$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$, so long as $\sigma$ does not lie in a finite list of exceptions. \todo{Rewrite this to be more precise}
 \end{thm}
 \begin{proof}
 
@@ -182,7 +183,7 @@ Let us consider $\delta \geq 2$.
 \section{Non-effective Genus Zero Spin Divisors}
 \label{sec:g_0_non_effective}
 
-In this section, we will prove that if $(\sx,L)$ is a spin curve, so that $\sx$ has signature $\sigma = (0;e_1,\ldots, e_r;0)$, then $R(\sx,L)$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$, so long as $\sigma$ does not lie in a finite list of exceptions. This is proven in Subsection ~\ref{ssec:g_0_conclusion}. The proof is a rather involved induction. In Subsections ~\ref{ssec:g_0_ram_pts}, ~\ref{ssec:g_0_ram_orders} we prove inductive theorems, and in Subsection ~\ref{ssec:g_0_base} we check the base cases of the induction. Finally, in Subsection ~\ref{ssec:g_0_exceptional} we list out the exceptional cases.
+In this section, we will prove that if $(\sx,\halfcan)$ is a spin curve, so that $\sx$ has signature $\sigma = (0;e_1,\ldots, e_r;0)$, then $R(\sx,\halfcan)$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$, so long as $\sigma$ does not lie in a finite list of exceptions. This is proven in Subsection ~\ref{ssec:g_0_conclusion}. The proof is a rather involved induction. In Subsections ~\ref{ssec:g_0_ram_pts}, ~\ref{ssec:g_0_ram_orders} we prove inductive theorems, and in Subsection ~\ref{ssec:g_0_base} we check the base cases of the induction. Finally, in Subsection ~\ref{ssec:g_0_exceptional} we list out the exceptional cases.
 
 \ssec{Saturation}
 \label{ssec:g_0_saturation}
@@ -193,7 +194,7 @@ In this section, we will prove that if $(\sx,L)$ is a spin curve, so that $\sx$ 
 
 \begin{lem}
 \label{sat_three_induction}
-Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted  and let $R_{D'} = R' = k[x]/I'$ satisfy $sat(Eff(D')) = 3.$ Let $D = \subhalf i$. There are generators $y_3,y_4,y_5$ of $R_{D+D'}= R$ over $R'$ so that $y_i$ lies in degree $i$ and has a pole of order $1$. \todo{Include the order} 
+Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted  and let $R_{\halfcan'} = R' = k[x]/I'$ satisfy $sat(Eff(\halfcan')) = 3.$ Let $\halfcan = \subhalf i$. There are generators $y_3,y_4,y_5$ of $R_{\halfcan+\halfcan'}= R$ over $R'$ so that $y_i$ lies in degree $i$ and has a pole of order $1$. \todo{Include the order} 
 Let $x_3,x_4,x_5$ be generators of $k[x]$ lying in degrees 3,4,5 respectively. \todo{Make sure to state some requirement on the ordering of the $x_i$, analogously to 8.4.1, but I don't see why this is important.} Then, letting $x_j$ range over all $x$ variables
 \begin{align*}
 	in_\prec(I) = in_\prec(I')k[x,y_3,\ldots, y_e,z_4,z_5] + \\
