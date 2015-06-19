@@ -96,7 +96,7 @@
 \newcommand\fm{{\mathfrak m}}
 \newcommand\so{{\mathscr O}}
 \newcommand\sg{{\mathscr G}}
-
+\newcommand \sx{\mathscr X}
 
 \newcommand\scm{{\mathscr M}}
 \newcommand\scn{{\mathscr N}}
@@ -121,9 +121,9 @@
 \newcommand \rk{\text{rk }}
 \newcommand \di{\text{div }}
 \newcommand \depth{\text{depth }}
+\DeclareMathOperator{\ord}{ord}
 
 \newcommand \subhalf[1]{\frac{e_{#1} - 1}{2e_{#1}}}
-\newcommand \sx{\mathscr X}
 \newcommand{\se}[1]{\section*{Problem #1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -162,27 +162,140 @@ We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{i}$.
 
 \subsection{Main Results}
 These are our results.
+\begin{thm}
+\label{thm:g_0_generators_relations}
+Let $(\sx,L)$ is a spin curve, so that $\sx$ has signature $\sigma = (0;e_1,\ldots, e_r;0)$, then $R(\sx,L)$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$, so long as $\sigma$ does not lie in a finite list of exceptions. \todo{Rewrite this to be more precise}
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
 
 \section{Background}
 Here are some definitions.
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
 
-\section{Genus zero}
-
-\subsection{Effective}
+\section{Effective Genus Zero Spin Divisors}
+\label{sec:g_0_effective}
 Let us consider $\delta \geq 2$.
 
-\subsection{Noneffective}
-Now let us consider $\delta = 0$.
-Overview, we do this, this, then this.
+\section{Non-effective Genus Zero Spin Divisors}
+\label{sec:g_0_non_effective}
 
-Here we do induction on adding points.
+In this section, we will prove that if $(\sx,L)$ is a spin curve, so that $\sx$ has signature $\sigma = (0;e_1,\ldots, e_r;0)$, then $R(\sx,L)$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$, so long as $\sigma$ does not lie in a finite list of exceptions. This is proven in Subsection ~\ref{ssec:g_0_conclusion}. The proof is a rather involved induction. In Subsections ~\ref{ssec:ram_pts}, ~\ref{ssec:ram_orders} we prove inductive theorems, and in Subsection ~\ref{ssec:g_0_base} we check the base cases of the induction. Finally, in Subsection ~\ref{ssec:g_0_exceptional} we list out the exceptional cases.
 
-Then we raise coefficients.
+\ssec{Saturation}
+\label{ssec:g_0_saturation}
 
+\ssec{Inductive Theorem: Increasing the Number of Ramified Points}
+\label{ssec:g_0_ram_pts}
+
+
+\begin{lem}
+\label{sat_three_induction}
+Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted  and let $R_{D'} = R' = k[x]/I'$ satisfy $sat(Eff(D')) = 3.$ Let $D = \subhalf i$. There are generators $y_3,y_4,y_5$ of $R_{D+D'}= R$ over $R'$ so that $y_i$ lies in degree $i$ and has a pole of order $1$. \todo{Include the order} 
+Let $x_3,x_4,x_5$ be generators of $k[x]$ lying in degrees 3,4,5 respectively. \todo{Make sure to state some requirement on the ordering of the $x_i$, analogously to 8.4.1, but I don't see why this is important.} Then, letting $x_j$ range over all $x$ variables
+\begin{align*}
+	in_\prec(I) = in_\prec(I')k[x,y_3,\ldots, y_e,z_4,z_5] + \\
+	\langle y_i y_j \mid 1 \leq i < j-3 \leq e \rangle +\\
+	\langle y_i x_j \mid i > 3 \rangle +\\
+	\langle z_i y_j \mid j > 3 \rangle  +\\
+	\langle z_i x_j \mid 4 \leq i \leq 5\rangle + \\
+	\langle z_iz_k \mid 4 \leq i \leq j \leq 5 \rangle 
+\end{align*}
+
+\end{lem}
+\begin{proof}
+We can see the following is a $k$ basis for $R$ over $R'$:
+\begin{align*}
+	\langle y_i^ay_{i+2}^b \mid a \geq 0,b\geq 0, 3 \leq i \leq e-2\rangle +\\
+	\langle y_3^ax_3^b x_4^\epsilon x_5^{\epsilon'} \mid a \geq 0, b \geq 0(\epsilon,\epsilon') \in \{(0,0),(0,1),(1,0)\} \rangle +\\
+	\langle y_3^az_4,y_3^bz_5 \mid a \geq 0, b \geq 0 \rangle\\
+\end{align*}
+Note that this is precisely the monomials which are not divisible by those in the claimed initial ideal. By the trick of projecting to the pole order by degree 2-dim lattice, we see this is a $k$ basis. We also see that $z_i,y_j$ are generators. \todo{Note that $z_5$ is chosen specially, and is not generic}
+
+It only remains to show the initial ideal is as claimed. Note that once we show this, we will automatically obtain minimality, using the regrading to degree 1 trick.
+
+To show this is the initial ideal, it suffices to exhibit such relations with the claimed leading terms in the initial ideal. Indeed, we will now give only leading order terms. We have relations starting with
+\begin{align*}
+	y_iy_j - y_{i-1}y_{j+1} + \cdots &\mid i < j-1 \\
+	y_ix_4 - y_{i-2}y_3x_3 + \cdots & \mid i > 3\\
+	y_ix_5 - y_{i-2}y_3x_4 + \cdots & \mid i > 3\\
+	y_ix_3-y_3^3y_{i-6} + \cdots &\mid i > 7\\
+	y_7x_3-y_3^2 z_4 + \cdots \\
+	y_5x_3 - y_3z_5 + \cdots \\
+	z_4^2 - y_3 z_5 + \cdots \\
+	z_4z_5 - y_3^2x_3 + \cdots \\
+ 	z_5^2 - y_3^2 x_4 + \cdots \\
+ 	z_4 y_i - y_3^2 y_{i-2} + \cdots &\mid i > 3 \\
+ 	z_5 y_i - y_3y_{i-2}z_4 + \cdots &\mid i > 3 \\
+ 	z_i x_j - y_3 z_{i+j-3} + \cdots &\mid i+j \leq 8 \\
+ 	z_i x_j - y_3x_3x_{i+j-6} + \cdots &\mid i+j > 8
+\end{align*}
+\end{proof}
+\todo{Something is a little fishy with this order, it seems something like: first grade by degree, then try to decrease the highest y, if you cant, try to decrease the highest z, possibly replace $z_5$ by $z_5+Cy_5$ to generic element?}
+
+
+\ssec{Inductive theorem: Increasing the Ramification Orders}
+\label{ssec:g_0_ram_orders}
+In this section, we aim to prove the inductive theorem, Theorem ~\ref{thm:ramification_order_induction}. Under fairly general conditions, this theorem will show that if 
+
+\begin{defn}
+\label{defn:admissible}
+A pair $(\sx',e_i')$, with point $P$ corresponding to $e-2$ is admissible if
+\begin{enumerate}
+	\item There is an element $y_{e-2} \in R'$ so that $R'$ admits a presentation $(k[x] \otimes k[y_{e-2}])/I'$ with $\deg y_{e-2} = e-2$ and $-ord_P(y_{e-2}) = \frac{e-3}{2}$.
+\item For all $z \neq y_{e-2}$ generators of $R'$ we have
+\begin{align*}
+	\frac{- ord_P(z)}{\deg z} < \frac{e-3}{2(e-2)}
+\end{align*}
+\item We have
+\begin{align*}
+	\deg \lfloor e K_{\sx'} \rfloor \geq 0
+\end{align*}
+\end{enumerate}
+\end{defn}
+
+\begin{lem}
+\label{lem:admissible_inequality}
+Condition 2 of Definition ~\ref{defn:admissible} implies the stronger condition that
+\begin{align*}
+	-ord(z) \leq \deg(z) \frac{e-3}{2(e-2)}-\frac{1}{e-2}
+\end{align*}
+\end{lem}
+
+\begin{thm}
+\label{thm:ramification_order_induction}
+Suppose $(\sx',J)$ is admissible with a generator $y_{e-2} \in R'$ as in condition 1 of Definition ~\ref{defn:admissible}. Then the following are true:
+\begin{enumerate}
+	\item There exists $y_e \in H^0(\sx, e(K_\sx))$ so that 
+	\begin{align*}
+	-ord_P(y_e) = \frac{e-1}{2}
+\end{align*}
+\item The elements $y_{e-2}^ay_e^b,$ with $a \geq 0, b > 0$ span $R$ over $R'$ and the element $y_e$ minimally generates $R$ over $R'$.
+\item Equip $k[y]$ and $k[x]$ with any graded monomial order and $k[y,x] = k[y] \otimes k[x]$ with block order. Let $R = k[y,x]/I.$ Then,
+\begin{align*}
+	in_\prec(I) = in_\prec(I')k[x,y] + \langle y_ez \mid z \neq y_e,y_{e-2} \rangle 
+\end{align*}
+	as $z$ ranges over generators of $R$.
+	\item Suppose $in_\prec(I')$ is minimally generated by quadratics and that $e > \deg z$ for any generator $z$ of $R'.$ Then any set of minimal generators for $I'$ together with any set of relations as in the previous part \todo{reference previous part as part c} minimally generate $I$. \todo{prove this still}
+	\item $(\sx,e)$ is admissible.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
+\ssec{Base Cases}
+\label{ssec:g_0_base}
 Cases to induct on are here.
 
+\ssec{Exceptional Cases}
+\label{ssec:g_0_exceptional}
 These are exceptional cases.
+
+\ssec{Conclusion}
+\label{ssec:g_0_conclusion}
 
 \section{Genus positive}
 We haven't done this.
