@@ -1,0 +1,197 @@
+%%%%%%%%%%%%%%%%%%%%%
+%   AMS packages    %
+%%%%%%%%%%%%%%%%%%%%%
+\documentclass{amsart}
+
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage{subfiles}
+\usepackage{mathpazo}
+\usepackage{euler}
+\usepackage{hyperref}
+\usepackage{color}
+
+\usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
+\def\listtodoname{List of Todos}
+\def\listoftodos{\@starttoc{tdo}\listtodoname}
+
+%\addtolength{\oddsidemargin}{-.5 in}
+	%\addtolength{\evensidemargin}{-.4 in}
+	%\addtolength{\textwidth}{1 in}
+%
+	%\addtolength{\topmargin}{0 in}
+	%\addtolength{\textheight}{0 in}
+
+\RequirePackage{color}
+\definecolor{myred}{rgb}{0.75,0,0}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{myblue}{rgb}{0,0,0.65}
+
+\usepackage{hyperref}
+  \hypersetup{colorlinks=true,citecolor=blue}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+%%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{plain}
+  \newtheorem{thm}{Theorem}[section]
+  \newtheorem{prop}[thm]{Proposition}
+  \newtheorem{lem}[thm]{Lemma}
+  \newtheorem{cor}[thm]{Corollary}
+	\newtheorem{claim}[thm]{Claim}
+	\newtheorem{question}[thm]{Question}
+	
+\theoremstyle{definition}
+  \newtheorem{defn}[thm]{Definition}
+  \newtheorem{example}[thm]{Example}
+  \newtheorem{exer}[thm]{Exercise}
+  \newtheorem{ctexample}[thm]{Counterexample}
+  \newtheorem{convention}[thm]{Convention}
+	\newtheorem{conjecture}[thm]{Conjecture}
+	
+\theoremstyle{remark}
+	\newtheorem{rem}[thm]{Remark}
+  \newtheorem{note}[thm]{Notation}
+  \newtheorem*{note*}{Notation}
+  \newtheorem{case}{Case}
+	
+\numberwithin{equation}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\nc{\newcommand}
+\nc\on{\operatorname}
+\nc\renc{\renewcommand}
+\newcommand\ssec{\subsection*}
+\newcommand\sssec{\subsubsection*}
+\newcommand\bO{{\mathbf O}}
+\newcommand\CC{{\mathcal C}}
+\newcommand\BN{{\mathbb N}}
+\newcommand\BC{{\mathbb C}}
+\newcommand\BF{{\mathbb F}}
+\newcommand\BR{{\mathbb R}}
+\newcommand\BQ{{\mathbb Q}}
+\newcommand\BP{{\mathbb P}}
+\newcommand\BBZ{{\mathbb Z}}
+\newcommand\uR{\underline{R}}
+\newcommand\uZ{\underline{\BBZ}}
+\newcommand\CF{{\mathcal F}}
+\newcommand\uCF{\underline{{\mathcal F}}}
+\newcommand\BZ{{\mathbb Z}}
+\newcommand\BA{{\mathbb A}}
+\newcommand\fa{{\mathfrak a}}
+\newcommand\fp{{\mathfrak p}}
+\newcommand\fq{{\mathfrak q}}
+\newcommand\fm{{\mathfrak m}}
+\newcommand\so{{\mathscr O}}
+\newcommand\sg{{\mathscr G}}
+
+
+\newcommand\scm{{\mathscr M}}
+\newcommand\scn{{\mathscr N}}
+\newcommand\scf{{\mathscr F}}
+\newcommand\scg{{\mathscr G}}
+\newcommand\sco{{\mathscr O}}
+\newcommand\sch{{\mathscr H}}
+\newcommand\scl{{\mathscr L}}
+\newcommand\sci{{\mathscr I}}
+
+\newcommand{\id}{\mathrm{id}}
+\newcommand\im{\text{im }}
+\newcommand\coker{\text{coker}}
+\newcommand \spec{\text{Spec }}
+\newcommand \proj{\text{Proj }}
+\newcommand \rspec{\textit{Spec }}
+\newcommand \rproj{\textit{Proj }}
+\newcommand{\gal}{\mathrm{Gal}}
+
+\newcommand \trdeg{\text{tr. deg }}
+\newcommand \codim{\text{codim}}
+\newcommand \rk{\text{rk }}
+\newcommand \di{\text{div }}
+\newcommand \depth{\text{depth }}
+
+\newcommand \subhalf[1]{\frac{e_{#1} - 1}{2e_{#1}}}
+\newcommand \sx{\mathscr X}
+\newcommand{\se}[1]{\section*{Problem #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Spin canonical divisors of log stacky curves}
+
+\author{Aaron Landesman}
+\address[Aaron Landesman]{Department of Mathematics, Harvard University}
+\email{aaronlandesman@college.harvard.edu}
+
+\author{Peter Ruhm}
+\address[Peter Ruhm]{Department of Mathematics, Stanford University}
+\email{pruhm@stanford.edu}
+
+\author{Robin Zhang}
+\address[Robin Zhang]{Department of Mathematics, Stanford University}
+\email{robinz16@stanford.edu}
+
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{abstract}
+  Arithmetic geometry group at the Emory University Number Theory
+	REU.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+This is our project.
+Example, O'Dorney's paper \cite{dorney:canonical}.
+We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{i}$.
+
+\subsection{Main Results}
+These are our results.
+
+\section{Background}
+Here are some definitions.
+Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
+
+\section{Genus zero}
+
+\subsection{Effective}
+Let us consider $\delta \geq 2$.
+
+\subsection{Noneffective}
+Now let us consider $\delta = 0$.
+Overview, we do this, this, then this.
+
+Here we do induction on adding points.
+
+Then we raise coefficients.
+
+Cases to induct on are here.
+
+These are exceptional cases.
+
+\section{Genus positive}
+We haven't done this.
+
+\section{Acknowledgements}
+We are grateful to VZB.
+
+\nocite{*}
+\bibliography{bibliography}{}
+\bibliographystyle{plain}
+
+\end{document}
