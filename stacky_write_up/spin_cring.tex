@@ -43,8 +43,7 @@
 \usetikzlibrary{matrix,arrows,decorations.pathmorphing}
 
 %%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%
-%%
-%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
 
 \theoremstyle{plain}
   \newtheorem{thm}{Theorem}[section]
@@ -70,9 +69,7 @@
 	
 \numberwithin{equation}{section}
 
-%%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%
-%%
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\nc{\newcommand}
 \nc\on{\operatorname}
@@ -127,17 +124,13 @@
 \newcommand \depth{\text{depth }}
 \DeclareMathOperator{\ord}{ord}
 
-%%%%%%%%%%%%%%%%%%%%% cring custom commands %%%%%%%%%
-%%
-%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% cring custom commands %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand \subhalf[1]{\frac{{#1} - 1}{2{#1}}}
 \newcommand{\se}[1]{\section*{Problem #1}}
 \newcommand \halfcan{L}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%
-%%
-%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Spin canonical divisors of log stacky curves}
 
@@ -155,9 +148,7 @@
 
 \date{\today}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% document %%%%%%%%
-%%
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -166,9 +157,9 @@
 	REU.
 \end{abstract}
 
-\tableofcontents
-
 \maketitle
+
+\tableofcontents
 
 \section{Introduction}
 \todo{Edit this stuff}
@@ -207,37 +198,36 @@ Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
 
 \section{Effective Genus Zero Spin Divisors}
 \label{sec:g_0_effective}
-In this section, we examine the case $2\halfcan\sim K_\sx+\Delta$ when $\Delta$ is a 
-non-
-zero effective divisor.  Using this, we can reduce to looking at effective stacky divisors.  
-Then, applying a result for general effective $\mathbf{Q}$ divisors, we deduce that 
-$R_{\halfcan}$ is generated in degrees up to $e=\max{e_i}$ with relations generated up 
-to 
-degree $2e$ with initial terms quadratic in the generators.  We also demonstrate that 
-these 
-bounds are tight up to \todo{insert how tight they are}.
+In this section, we examine the case $2\halfcan\sim K_\sx+\Delta$ 
+when $\Delta$ is a non- zero effective divisor.  Using this, we can 
+reduce to looking at effective stacky divisors.  Then, applying a 
+result for general effective $\mathbf{Q}$ divisors, we deduce that $
+R_{\halfcan}$ is generated in degrees up to $e=\max{e_i}$ with 
+relations generated up to degree $2e$ with initial terms quadratic 
+in the generators.  We also demonstrate that these bounds are tight 
+up to \todo{insert how tight they are}.
 
-Then we find $2\halfcan=D+\sum \subhalf{i}P_i$ where $D\sim K_X+\Delta\sim -2\infty+
-\Delta$ is a divisor of $X$ (i.e. with possibly negative integer coefficients). 
- Since $\Delta$ is non-zero effective, $\deg(D)\ge -1$.  
- Noting that the coefficient of any point $P$ occurring in a stacky divisor of $\sx$ must 
-have 
-coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$s appearing in the 
-characteristic of $(\sx,\Delta)$).  
-Since all $e_i$s are odd, $2$ cannot appear in a denominator of the coefficient of a 
-point 
-$P$ in $\halfcan$, meaning that $\frac{D}{2}$ must be a $X$-divisor.  
-Since $\deg(\frac{D}{2})=\frac{1}{2}\deg(D)\ge -\frac{1}{2}$, we in fact have $\deg(D)\ge 
-0$.  
-Thus $\halfcan$ is linearly equivalent to an effective $X$ divisor plus $\sum \subhalf{i}
-P_i$.  
-We have now reduced to the case of $\halfcan$ linearly equivalent to an effective 
-divisor.  
-The result in this specific case in fact generalizes to any $\mathbf{Q}$-divisor: $\sum 
+Then we find $2\halfcan=D+\sum \subhalf{i}P_i$ where $D\sim K_X+
+\Delta\sim -2\infty+ \Delta$ is a divisor of $X$ (i.e. with 
+possibly negative integer coefficients).  Since $\Delta$ is non-
+zero effective, $\deg(D)\ge -1$.   Noting that the coefficient of 
+any point $P$ occurring in a stacky divisor of $\sx$ must have 
+coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
+s appearing in the characteristic of $(\sx,\Delta)$).
+ 
+Since all $e_i$s are odd, $2$ cannot appear in a denominator of the 
+coefficient of a point $P$ in $\halfcan$, meaning that $\frac{D}{2}$
+ must be a $X$-divisor.  Since $\deg(\frac{D}{2})=\frac{1}{2}\deg(D)
+\ge -\frac{1}{2}$, we in fact have $\deg(D)\ge 0$.  Thus $\halfcan$ 
+is linearly equivalent to an effective $X$ divisor plus $\sum 
+\subhalf{i}P_i$.  We have now reduced to the case of $\halfcan$ 
+linearly equivalent to an effective divisor.  The result in this 
+specific case in fact generalizes to any $\mathbf{Q}$-divisor: $\sum
 \frac{\alpha_i}{\beta_i} P_i$ for $\alpha_i,\beta_i\in \mathbf{N}$.  
 
-To prove thisUsing induction, we can prove prove that $\halfcan$ is generated up to 
-degrees $e$ with relations up to degree $2e$.  O'Dorney \todo{Insert reference} proves 
+To prove thisUsing induction, we can prove prove that $\halfcan$ is 
+generated up to degrees $e$ with relations up to degree $2e$.  
+O'Dorney \todo{Insert reference} proves 
 
 \section{Non-effective Genus Zero Spin Divisors}
 \label{sec:g_0_non_effective}
