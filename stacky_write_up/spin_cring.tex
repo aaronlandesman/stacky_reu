@@ -123,7 +123,7 @@
 \newcommand \depth{\text{depth }}
 \DeclareMathOperator{\ord}{ord}
 
-\newcommand \subhalf[1]{\frac{e_{#1} - 1}{2e_{#1}}}
+\newcommand \subhalf[1]{\frac{{#1} - 1}{2{#1}}}
 \newcommand{\se}[1]{\section*{Problem #1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,7 +158,7 @@
 \section{Introduction}
 This is our project.
 Example, O'Dorney's paper \cite{dorney:canonical}.
-We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{i}$.
+We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{e_i}$.
 
 \subsection{Main Results}
 These are our results.
@@ -193,7 +193,7 @@ In this section, we will prove that if $(\sx,L)$ is a spin curve, so that $\sx$ 
 
 \begin{lem}
 \label{sat_three_induction}
-Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted  log stacky curves $R \subset R'$ be the corresponding inclusion of canonical rings. Let $R_{D'} = R' = k[x]/I'$ satisfy $sat(Eff(D')) = 3.$ Let $D = \subhalf i$. There are generators $y_3,y_4,y_5$ of $R_{D+D'}= R$ over $R'$ so that $y_i$ lies in degree $i$ and has a pole of order $1$. \todo{Include the order}
+Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted  log stacky curves $R \subset R'$ be the corresponding inclusion of canonical rings. Let $R_{D'} = R' = k[x]/I'$ satisfy $sat(Eff(D')) = 3.$ Let $D = \subhalf {e_i}$. There are generators $y_3,y_4,y_5$ of $R_{D+D'}= R$ over $R'$ so that $y_i$ lies in degree $i$ and has a pole of order $1$. \todo{Include the order}
 Let $x_3,x_4,x_5$ be generators of $k[x]$ lying in degrees 3,4,5 respectively. \todo{Make sure to state some requirement on the ordering of the $x_i$, analogously to 8.4.1, but I don't see why this is important.} Then, letting $x_j$ range over all $x$ variables
 \begin{align*}
 	in_\prec(I) = in_\prec(I')k[x,y_3,\ldots, y_e,z_4,z_5] + \\
@@ -258,7 +258,7 @@ Let $R'$ be the canonical ring associated to $\sx'$. Say $(\sx',J)$, {\bf admiss
 so that for all $i \in J$ we have $\deg y_{e_i'} = e_i'$ and $-ord_{Q_i}(y_{i,e_i'}) = \frac{e_i'-1}{2}$.
 \item[(Ad-ii)] For all $i \in J$ and $z \neq y_{i,e_i'}$ a generator of $R'$ we have
 \begin{align*}
-	\frac{- ord_{Q_i}(z)}{\deg z} < \frac{e_i'-1}{2(e_i')}.
+	\frac{- ord_{Q_i}(z)}{\deg z} < \subhalf {e_i'}.
 \end{align*}
 \item[(Ad-iii)] For all $i \in J$ we have
 \begin{align*}
@@ -275,17 +275,17 @@ where
 \label{lem:admissible_inequality}
 Condition (Ad-ii) of Definition ~\ref{defn:admissible} implies the stronger condition that
 \begin{align*}
-	-\ord_{Q_i}(z) \leq \deg(z) \frac{e_i'-1}{2e_i'}-\frac{1}{e_i'}
+	-\ord_{Q_i}(z) \leq \deg(z) \subhalf{e_i'}-\frac{1}{e_i'}
 \end{align*}
 \end{lem}
 \begin{proof}
 We know by (Ad-ii) that
 \begin{align*}
-	-\ord_{Q_i}(z) < \deg(z) \frac{e_i'-1}{2e_i'}
+	-\ord_{Q_i}(z) < \deg(z) \subhalf{e_i'}
 \end{align*}
 If we write $\frac{\alpha}{\beta} = \deg(z) \frac{e_i'-1}{2e_i'}$ as a fraction in lowest terms, then we see $\beta \mid e_i'$ since $e_i'-1$ is even. Therefore, since $-\ord_{Q_i}(z)$ is an integer, we must have
 \begin{align*}
-	-\ord_{Q_i}(z) \leq \deg(z) \frac{e_i'-1}{2e_i'} - \frac{1}{\beta} \leq \deg(z) \frac{e_i'-1}{2e_i'} - \frac{1}{e_i'}.
+	-\ord_{Q_i}(z) \leq \deg(z) \subhalf{e_i'}- \frac{1}{\beta} \leq \deg(z) \subhalf{e_i'}- \frac{1}{e_i'}.
 \end{align*}
 \end{proof}
 
@@ -299,7 +299,7 @@ Suppose $(\sx',L')$ is a tame separably rooted log stacky spin curve is admissib
 \end{align*}
 and
 \begin{align*}
-	\frac{-\ord_{Q_j}(y_{i,e_i'})}{y_{i,e_i}} \leq \frac{e_j'-1}{2e_j'}-\frac{1}{\deg(y_{i,e_i'})e_j'}
+	\frac{-\ord_{Q_j}(y_{i,e_i'})}{y_{i,e_i}} \leq \subhalf{e_j'}-\frac{1}{\deg(y_{i,e_i'})e_j'}
 \end{align*}
 for all $j \in J$ with $j \neq i$.
 \item[(b)] The elements $y_{i,e_i'}^ay_{i,e_i}^b,$ with $a \geq 0, b > 0$ span $R$ over $R'$ and the elements $y_{i,e_i}$ minimally generate $R$ over $R'$.
@@ -313,10 +313,63 @@ for all $j \in J$ with $j \neq i$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
-Let $(\sx,L)$ and $(\sx',L')$ be the two log stacky spin curves in question. Define
+Let $(\sx,L)$ and $(\sx',L')$ be the two log stacky spin curves in question, with coarse spaces $X = X'$. Define
 \begin{align*}
 	S(i) = \{j \in J : j \neq i \text{ and }e_j' \mid e_i\}
 \end{align*}
+Define
+\begin{align*}
+	E_i = \sum_{j \in S(i)}^{}Q_j
+\end{align*}
+Note that
+\begin{align*}
+	\lfloor e_i L' \rfloor + Q_i \leq \lfloor e_i L \rfloor 
+\end{align*}
+and so we obtain an inclusion
+\begin{align*}
+	H^0(\sx',e_iL'-E_i + Q_j) \rightarrow H^0(\sx,e_iL - E_i) \subset H^0(\sx,e_iL).
+\end{align*}
+The assumption (Ad-iii) implies
+\begin{align*}
+	\deg \left( e_i L' - E_i \right) \geq 0
+\end{align*}
+implying that $H^0(\sx',e_iL'-E_i + Q_i)$ is base point free by Riemann Roch, and so a general element
+\begin{align*}
+	y_{i,e_i} \in H^0(\sx',e_iL'-E_i + Q_i)
+\end{align*}
+satisfies
+\begin{align*}
+	-\ord_{Q_i}(y_{i,e_i}) = \lfloor e_i \subhalf {e_i'} \rfloor +1 = \frac{e_i - 1}{2}
+\end{align*}
+Therefore, $y_{i,e_i}$ satisfies the first part of the claim of $(a)$.
+
+We next show $y_{i,e_i}$ also satisfies the second part of the claim of $(a),$ by considering seperately the cases of whether $j \in S(i),$ and $j \notin S(i)$.
+
+If $j \in S(i)$ then, since $E_i \geq Q_j$, and $y_{i,e_i} \in H^0(\sx',e_iL'-E_i + Q_i)$,
+\begin{align*}
+	-\ord_{Q_j}(y_{i,e_i}) \leq e_i\subhalf {e_j'} - 1 \leq e_i \subhalf{e_j'} - \frac{1}{e_j'}.
+\end{align*}
+
+If instead $j \notin S(i)$, then since $e_j' \nmid e_i$, we know $e_i\subhalf{e_j'} \notin \BZ$, so
+\begin{align*}
+	-\ord_{Q_j}(y_{i,e_i}) \leq \lfloor  e_i\subhalf{e_j'} \rfloor \leq e_i\subhalf{e_j'} - \frac{1}{e_j'},
+\end{align*}
+completing the proof of (a).
+
+Next, define $R_0 = R'$ and inductively define 
+$$
+R_i = \begin{cases}
+	R_{i-1} &\text{ if }i \notin J\\
+	R_{i-1}[y_{i,e_i}] &\text{ otherwise.} 
+\end{cases}$$
+To prove (b), it suffices to show that elements of the form $y_{i,e_i'}^ay_{i,e_i}^b$ with $a \geq 0, b > 0$ are linearly indpendent, and that these elements together with $R_{i-1}$ span $R_i$ as a $k$-vector space. These elements do not lie in $R_{i-1}$ because their order of pole at $Q_i$ is bigger than the order of any element in $R_{i-1}$, and are linearly independent amongst themselves because of injectivity of the linear map
+\begin{align*}
+	(a,b) \mapsto \left( \deg\left(y_{i,e_i'}^ay_{i,e_i}^b\right),-\ord_{Q_i}\left( y_{i,e_i'}^ay_{i,e_i}^b \right)  \right) = (a,b) \begin{pmatrix}
+	e_i' & \subhalf{e_i'} \\
+	e_i	 & \subhalf{e_i}
+\end{pmatrix} 
+\end{align*}
+
 
 \end{proof}
 
