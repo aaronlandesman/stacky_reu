@@ -431,6 +431,7 @@ and generic cases follow.
 	$(0; 3, 3, 3, 3; 0)$ & $6$ \\	\hline
 	
 	\hline
+	\hline
 	
 	$(0; 3, 3, k; 0)$ & $9$ \\	\hline
 	
@@ -615,7 +616,7 @@ Let $R'$ be the canonical ring associated to $\sx'$. Say $(\sx',J)$,
 		where
 		\begin{align*}
 			S_{\sigma, J}(i, d) := \{j \in J : j \neq i \text{ and } e_j'+2d
-			\mid e_i + 2d\}
+			\mid e_i - e_j'\}
 		\end{align*}
 \end{enumerate}
 \end{defn}
@@ -900,11 +901,11 @@ degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at
 most $2e$ and $(\sx', J)$ is admissible for the following cases:
 
 \begin{enumerate}
-	\item[(a)] $\sigma = (0; 3, 3, 11; 0), J = \{3\}$
-	\item[(b)] $\sigma = (0; 3, 5, 9; 0), J = \{2, 3\}$
-	\item[(c)] $\sigma = (0; 5, 5, 7; 0), J = \{1, 2, 3\}$
-	\item[(d)] $\sigma = (0; 3, 3, 3, 5; 0), J = \{1, 2, 3, 4\}$
-	\item[(e)] $\sigma = (0; 3, 3, 3, 3, 3; 0), J = \{1, 2, 3, 4, 5\}$
+	\item[(a)] $\sigma_1 = (0; 3, 3, 11; 0), J_1 = \{3\}$
+	\item[(b)] $\sigma_2 = (0; 3, 5, 9; 0), J_2 = \{2, 3\}$
+	\item[(c)] $\sigma_3 = (0; 5, 5, 7; 0), J_3 = \{1, 2, 3\}$
+	\item[(d)] $\sigma_4 = (0; 3, 3, 3, 5; 0), J_4 = \{1, 2, 3, 4\}$
+	\item[(e)] $\sigma_5 = (0; 3, 3, 3, 3, 3; 0), J_5 = \{1, 2, 3, 4, 5\}$
 \end{enumerate}
 \end{lem}
 
@@ -944,21 +945,28 @@ with relations in degree at most $2e$ for each case.
 Furthermore, each case satisfies (Ad-iii) as demonstrated below.
 
 \begin{enumerate}
-	\item[(a)] $(\deg \lfloor e_3 \rfloor, \# S_{(\sigma, J)}(3)) = (1, 0)$
+	\item[(a)] $(\deg \lfloor e_3 \rfloor, \max_{d \geq 0} \# S_{(
+		\sigma_1, J_1)}(3)) = (1, 0)$
 
-	\item[(b)] $(\deg \lfloor e_2 \rfloor, \#S_{(\sigma, J)}(2)) = (1, 0)$ \\
-		$(\deg \lfloor e_3 \rfloor, \#S_{(\sigma, J)}(3)) = (1, 0)$
+	\item[(b)] $(\deg \lfloor e_2 \rfloor, \max_{d \geq 0} \#S_{(
+		\sigma_2, J_2)}(2)) = (1, 0)$ \\
+		$(\deg \lfloor e_3 \rfloor, \max_{d \geq 0} \#S_{(\sigma_2, J_2)}(3))
+		= (1, 0)$
 
-	\item[(c)] $(\deg \lfloor e_1 \rfloor, \#S_{(\sigma, J)}(1)) = (2, 1)$ \\
-		$(\deg \lfloor e_2 \rfloor, \#S_{(\sigma, J)}(2)) = (2, 1)$ \\
-		$(\deg \lfloor e_3 \rfloor, \#S_{(\sigma, J)}(3)) = (1, 0)$
+	\item[(c)] $(\deg \lfloor e_1 \rfloor, \max_{d \geq 0}
+		\#S_{(\sigma_3, J_3)}(1)) = (2, 1)$ \\
+		$(\deg \lfloor e_2 \rfloor, \max_{d \geq 0}
+		\#S_{(\sigma_3, J_3)}(2)) = (2, 1)$ \\
+		$(\deg \lfloor e_3 \rfloor, \max_{d \geq 0}
+		\#S_{(\sigma_3, J_3)}(3)) = (1, 0)$
 
-	\item[(d)] $(\deg \lfloor e_i \rfloor, \#S_{(\sigma, J)}(i)) = (3, 1)$
-		for $i \neq 4$ \\
-		$(\deg \lfloor e_4 \rfloor, \#S_{(\sigma, J)}(4))	= (2, 0)$.
+	\item[(d)] $(\deg \lfloor e_i \rfloor, \max_{d \geq 0}
+		\#S_{(\sigma_4, J_4)}(i)) = (3, 1)$	for $i \neq 4$ \\
+		$(\deg \lfloor e_4 \rfloor, \max_{d \geq 0} \#S_{(\sigma_4, J_4)}(4))
+		= (2, 0)$.
 
-	\item[(e)] $(\deg \lfloor e_i \rfloor, \#S_{(\sigma, J)}(1)) = (5, 0)$
-		for all $i \in J$.
+	\item[(e)] $(\deg \lfloor e_i \rfloor, \max_{d \geq 0}
+		\#S_{(\sigma_5, J_5)}(1)) = (5, 0)$	for all $i \in J$.
 \end{enumerate}
 
 Finally, each case also satisfies the property that $in_\prec(I')$ is
@@ -1059,6 +1067,7 @@ in the genus 0 case.
 	
 	$(0; 3, 3, 3, 3; 0)$ & $\{3, 3, 4\}$ & $\{12\}$ & $3$ \\	\hline
 
+	\hline
 	\hline
 	
 	$(0; 3, 7, 7; 0)$ & $\{3, 5, 7, 7\}$ & $\{10, 14\}$ & $7$ \\	\hline
