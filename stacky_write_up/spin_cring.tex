@@ -330,29 +330,52 @@ D'})_{d_i}$ to have maximal pole order (note that if $d_i=1$ then $-
 \ord_P(y_i)= \max(c_j:d_j=1)$ and if more than one $d_i$ is 1, we
 must also choose them generically so they generate $(R_{D'})_1$).
 
-Suppose $d\le \beta$ and $\frac{\bar{c}}{\bar{d}}\le \frac{\alpha}{
+Suppose $d\le \beta$ and $\frac{\bar{c}}{\bar{d}} \le \frac{\alpha}{
 \beta}$ with $c>0$ is not a best lower approximation.  Then choose
 best lower approximation $\frac{c_i}{d_i}$ such that $c_i\le c$ is
 maximal; since $c<c_{i+1}$, $\frac{c_i}{d_i}\ge \frac{c}{d}$.  From
 this we can deduce that $c_i+(d-d_i)\lfloor \frac{\alpha}{\beta}
 \rfloor\ge c$.  Therefore, we can produce an element in $(R_{D'})_d$
- with pole degree $c$ at $P$ by either $y_i u^b$ or $y_j y_i u^b$
-where $d_j=1$ and if $d_i=1$ as well then $c_i=1$. Thus, for a
+ with pole degree $c$ at $P$ by either $y_i u^b$ or $z y_i u^b$ with $i>\lfloor \frac{\alpha}{\beta} \rfloor$, or $zu^b$
+for some $z=y_j (y_{\lfloor \frac{\alpha}{\beta} \rfloor})^b$ where $d_j=1$ ($=d_{{\lfloor \frac{a}{b} \rfloor}}$) and $b<d_{\lfloor \frac{\alpha}{\beta} \rfloor + 1}$.  Thus, for a
 general $d$ (not necessarily less than $\beta$), if $\frac{c}{d} \le
 \frac{\alpha}{\beta}$ is not a best lower approximation than we can
 construct an element in degree $d$ with pole degree $c$ by either $y
-_n^a y_i u^b$ or $y_n^a y_j y_iu^b$ with the latter satisfying the
+_n^a y_i u^b$, $y_n^a zy_iu^b$ or $y_n^a z u^b$ satisfying the
 same conditions.  We notice that elements of this form are all
 linearly independent in $R_{D'}$.  Thus, they form a $k$-basis for
-$R_{D'}$ over $R_D$.  Thus $u,x_1,...,x_m,y_1,...,y_n$ generate
+$R_{D'}$ over $R_D$.  Thus $u, x_1, ..., x_m, y_1, ..., y_n$ generate
 $R_{D'}$.
 
-\todo{finish proof of relations, which follows easily using VZB's
-method; peter will do this tomorrow (sunday)}
+Choose $x_i\in \{x_1, \ldots, x_m\}$ and $y_j\in \{y_1, \ldots, y_n\}$, where $y_j$ corresponds to the best lower approximation $\frac{c_j}{d_j}$.  Recall from the previous paragraph that we can uniquely construct an element in degree $d$ with pole order $c$ at $P$ by elements of the $y_n^a y_l u^b$ and $y_n^a y_l y_{l'} u^b$ with $d_l=1$ and if $d_{l'}=1$ then $c_{l'} = \lfloor \frac{\alpha}{\beta} \rfloor$.  Specifically, we can successively subtract some $\gamma_l y_l u^{b_l}$, $\gamma_l y_l z_l u^{b_l}$, or $\gamma_l z_l$ with $y_l, z_l, b_l$ satisfying the same conditions as above and $\gamma_l\in k$ the element ensuring that the difference decreases in pole degree at $P$ by 1.  For convenience, we can combine these into the case $\gamma_l (y_l)^{s_l}(z_l)^{a_l}u^{b_l}$ with $(s_l,a_l)\in \{(1,0),(1,1),(0,1)\}$.  In the cases when $\frac{\alpha}{\beta}<1$ so $z_l$ is not well-defined, just pick an arbitrary element of $R_D$ for $z_l$ ensuring that the expression still makes sense; in such cases we will always choose $a_l=0$ so this choice is irrelevant, and only makes writing out cases more convenient.  Therefore, we can write
+\[
+	x_i y_j - \sum_{l} (y_l)^{s_l} (z_l)^{a_l} u^{b_l}\in R_D
+\]
+giving us a non-trivial relation with leading term $x_iy_j$. \todo{Explicitly state ordering at the beginning}
+
+Similarly, suppose $y_i,y_j\in \{y_1, \ldots ,y_{n-1}\}$ with $1<d_i$ and $j\ge i$ (that is, so $y_iy_j$ does not appear as a basis element of the form described above: $y_n^0 y_jy_i u^0$).  Choose the maximal $l$ such that $c_h\le c_i+c_j$; since $1<d_i\le d_j$, $(c_i+c_j)-c_j>\lfloor \frac{\alpha}{\beta}\rfloor$ so $c_{j+1} < c_i + c_j$ meaning $c_h \ge c_{j+1} > c_j$.  Furthermore, $c_i + c_j - c_h<\lfloor \frac{\alpha}{\beta} \rfloor$ so either $c_h=c_i+c_j$ or there is some $h'$ such that $c_{h'}=c_i+c_j-c_l$ and $d_{h'}=1$.  Since $\frac{c_h}{d_h}$ is a best lower approximation of $\frac{\alpha}{\beta}$ with denominator larger than those of $\frac{c_i}{d_i}$ and $\frac{c_j}{d_j}$, we know that since $c_h\le c_i+c_j$ we must have $d_h<d_i+d_j$.  Thus in the case with a $y_{l'}$ term we have $d_h + d_{h'} = d_h + 1 \le d_i + d_j$.  That is to say, by choosing $b-d_i+d_j-ad_h-1$ we find (where $a\in\{0,1\}$ corresponding to if a $y_{h'}$ appears) that $y_h(y_h')^au^b$ and $y_iy_j$ both lie in degree $d_i+d_j$ with pole order $c_i+c_j$ at $P$.  From here we can follow a similar technique as in the previous paragraph to cancel out poles of $y_iy_j$ at $P$ to find
+\[
+	y_iy_j-\gamma_h (y_h)^{s_h}(z_{h})^{a_h}u^{b_h}-\sum_l (y_l)^{s_l} (z_{l})^{a_l}u^{b_l}\in R_D
+\]
+implying a relation with initial term $y_i y_j$.  
+
+Finally, suppose $y_i, y_j\in \{y_1, \ldots ,y_{n-1}\}$ such that $i\le j$, $d_j=d_i=1$, and $d_{j+1}=1$ (i.e. $c_i, c_j \le \lfloor \frac{\alpha}{\beta} - 1 \rfloor$).  If $i>1$ and then $y_{j+1}y_{i-1}$ lies in the same degree as $y_iy_j$ (degree 2) with the same pole order; following the same method as the previous two paragraphs we find
+\[
+	y_i y_j - \gamma y_{i-1} y_{j+1} - \sum_{l} (y_l)^{s_l} (z_l)^{a_l}u^{b_l}\in R_D.
+\]
+Similarly if $i=1$, then we get the same result using
+\[
+	y_i y_j - \gamma u y_{j+1} - \sum_l y_l u^{b_l} \in R_D.
+\]
+In both cases we deduce that $y_iy_j$ is an initial term of some relation.
+
+Finally, we examine the case (for $\alpha \ge \beta$) of $(y_i)^{i + 1}$ when $i=\lfloor \frac{\alpha}{\beta}\rfloor$.  If $\beta=1$, then there are no relations with initial term a power of $y_i$ and we are immediately done.  Otherwise, assuming $\beta\ne 1$, we note that $c_id_{i+1}=c_{i+1}d_i+1=c_{i+1}+1$. \todo{reference to Evan's paper where he proves this}  Therefore, if $i>1$ then $c_i^{d_{i+1}+1}$ and $c_{i-1} c_{i+1}$ both lie in the $d_{i+1}+1$ degree with pole order $c_{i+1}+1$.  Following a similar technique to the previous paragraphs we find
+\[
+	(y_{i})^{c+1} - y_{i+1} y_{i-1} - \sum_l (y_l)^{s_l}(z_l)^{a_l} u^{b_l}
+\]
 
 
-
-
+Let $J$ be the ideal of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ generated by the initial terms described in the previous paragraphs.  We show that $J$ is in fact all of the initial ideal.  Suppose $f$ is a non-constant monomial that does not lie within $J$.  Further suppose $f$ does not lie in $k[u, x_1, \ldots, x_m]$.  Then there is some $y_i|f$.  Since $f\not\in j$, we cannot have some $x_j|f$ or else we would have $y_ix_j|f$ contradicting $f\not\in J$.  Furthermore, if $y_l|f$ for $l<i$, then we must have $d_l=1$.  If $d_i=1$ as well, then we must have $c_i=\lfloor \frac{\alpha}{\beta}\rfloor$, or else.  We observe, that such elements are precisely 
 
 \end{proof}
 
