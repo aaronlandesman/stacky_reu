@@ -19,6 +19,7 @@
 \usepackage{euler}
 \usepackage{hyperref}
 \usepackage{color}
+\usepackage{longtable} 
 
 \usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
 \def\listtodoname{List of Todos}
@@ -36,8 +37,8 @@
 \definecolor{mygreen}{rgb}{0,0.5,0}
 \definecolor{myblue}{rgb}{0,0,0.65}
 
-\usepackage{hyperref}
-  \hypersetup{colorlinks=true,citecolor=blue}
+%\usepackage{hyperref}
+  %\hypersetup{colorlinks=true,citecolor=blue}
 
 \usepackage{tikz}
 \usetikzlibrary{matrix,arrows,decorations.pathmorphing}
@@ -174,12 +175,12 @@ We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{e_i}$.
 These are our results.
 \begin{thm}
 \label{thm:g_0_generators_relations}
-Let $(\sx,\Delta, L)$ be a tame log spin curve over a perfect field $k$, so
-that $\sx$ has signature $\sigma = (0;e_1,\ldots, e_r;\delta)$. Then the
+Let $(\sx, \Delta, L)$ be a tame log spin curve over a perfect field $k$, so
+that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, L) = \bigoplus_{d=0}^\infty H^0(\sx,\sco(L)^{\otimes d})
+	R(\sx, \Delta, L) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
 \end{align*}
 
 \noindent
@@ -188,9 +189,6 @@ is generated as a $k$-algebra by elements of degree at most $e =
 long as $\sigma$ does not lie in a finite list of exceptions. \todo{
 Include reference to the table with this list of exceptions.}
 \end{thm}
-\begin{proof}
-
-\end{proof}
 
 
 \section{Background}
@@ -367,8 +365,8 @@ method; peter will do this tomorrow (sunday)}
 In this section, we will prove that if $(\sx , 0, L)$ is a spin curve,
 so that $\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; 0)$, then
 $R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1, \ldots,
-e_r)$ with relations in degree at most $2e$, so long as $\sigma$ does
-not lie in a finite list of exceptions. This is proven in
+e_r)$ with relations generated in degree at most $2e$, so long as $\sigma$
+does not lie in a finite list of exceptions. This is proven in
 Subsection ~\ref{ssec:g_0_conclusion}. The proof is a rather
 involved induction. In Subsections ~\ref{ssec:g_0_ram_pts},
 ~\ref{ssec:g_0_ram_orders} we prove inductive theorems, and in
@@ -378,6 +376,47 @@ list out the exceptional cases.
 
 \ssec{Saturation}
 \label{ssec:g_0_saturation}
+Here we compute saturation numbers. That is, given a list of
+ramification orders, with $g = 0,\delta = 0$ understood, we have
+the following saturations of the canonical divisor, as defined in 7.
+2 of VZB \cite{vzb:stacky}. Exceptional cases are listed first
+and generic cases follow.
+
+\todo{prove}
+
+\begin{longtable}
+	{| c | c |}
+	\hline
+	Signature & Saturation \\
+	\hline
+	\hline
+
+	$(0; 3, 3, 3; 0)$ & $\infty$ \\	\hline
+
+	$(0; 3, 3, 5; 0)$ & $18$ \\	\hline
+	
+	$(0; 3, 3, 7; 0)$ & $12$ \\	\hline
+	
+	$(0; 3, 3, 9; 0)$ & $12$ \\	\hline
+	
+	$(0; 3, 5, 5; 0)$ & $8$ \\	\hline
+	
+	$(0; 5, 5, 5; 0)$ & $8$ \\	\hline
+	
+	$(0; 3, 3, 3, 3; 0)$ & $6$ \\	\hline
+	
+	\hline
+	
+	$(0; 3, 3, k; 0)$ & $9$ \\	\hline
+	
+	$(0; a, b, c; 0)$ & $5$ \\	\hline
+	
+	$(0; e_1, \ldots, e_r; 0)$ & $3$ \\	\hline
+\end{longtable}
+
+\begin{center}
+\textbf{Table (I)}: Genus 0 saturation
+\end{center}
 
 \ssec{Inductive Theorem: Increasing the Number of Ramified Points}
 \label{ssec:g_0_ram_pts}
@@ -506,12 +545,12 @@ highest y, if you cant, try to decrease the highest z, possibly
 replace $z_5$ by $z_5+Cy_5$ to generic element?}
 
 
-\ssec{Inductive theorem: Increasing the Ramification Orders}
+\ssec{Inductive Theorem: Increasing the Ramification Orders}
 \label{ssec:g_0_ram_orders}
 In this section, we aim to prove the inductive theorem, Theorem
-~\ref{thm:ramification_order_induction}. Under fairly general
+~\ref{thm:ram_order_ind}. Under fairly general
 conditions, this theorem will allow us to show that if Theorem ~\ref
-{thm:ramification_order_induction} holds for a curve with signature
+{thm:ram_order_ind} holds for a curve with signature
 $(0;e_1',\ldots, e_r';0)$ then it also holds for a curve with
 signature $(0;e_1,\ldots, e_r;0)$ with $e_i' - e_i \in \{0,2\}$.
 
@@ -546,12 +585,12 @@ Let $R'$ be the canonical ring associated to $\sx'$. Say $(\sx',J)$,
 		\end{align*}
 	\item[(Ad-iii)] For all $i \in J$ we have
 		\begin{align*}
-			\deg \lfloor e_i L \rfloor \geq \# S(i)
+			\deg \lfloor e_i L \rfloor \geq \# S_{\sigma, J}(i)
 		\end{align*}
 		where
 		\begin{align*}
-			S(i) := \{j \in J : j \neq i \text{ and } e_j'+2d \mid e_i -
-			e_j' \text{ for some } d \geq 0\}
+			S_{\sigma, J}(i) := \{j \in J : j \neq i \text{ and } e_j'+2d
+			\mid e_i - e_j' \text{ for some } d \geq 0\}
 		\end{align*}
 \end{enumerate}
 \end{defn}
@@ -597,7 +636,7 @@ if they hold for $J$.
 \end{proof}
 
 \begin{thm}
-\label{thm:ramification_order_induction}
+\label{thm:ram_order_ind}
 Suppose $(\sx', 0, L')$ is a tame separably rooted log stacky spin
 curve and $(\sx', J)$ is admissible with generators $y_{i,e_i'} \in
 R' = R_{L'}$ as in (Ad-i) of Definition ~\ref{defn:admissible}.
@@ -806,14 +845,226 @@ $W \subset J$ by Lemma ~\ref{lem:admissible_subset}.
 
 \ssec{Base Cases}
 \label{ssec:g_0_base}
-Cases to induct on are here.
+Now we have an inductive statement on the number of ramified
+points in Proposition ~\ref{prop:sat_three_induction} and
+an inductive statement on ramification orders in Theorem
+~\ref{thm:ram_order_ind}. After verifying that explicit pairs
+$(\sx, J)$ of stacky curves $\sx$ with particular signatures and
+particular choices of $J$ are admissible, the application of the
+two inductive statements demonstrate that the spin canonical ring
+$R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1,
+\ldots, e_r)$ with relations generated in degree at most $2e$ for
+$\sx$ with any signature $\sigma = (0; e_1, \ldots , e_r; 0)$ outside
+of a finite set of exceptional cases.
+
+\begin{lem}
+\label{lem:g_0_admissible_cases}
+Let $(\sx', \Delta, L')$ be a tame log spin curve over a perfect field $k$,
+so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; 0)$.
+Then $R(\sx', \Delta, L')$ is generated as a $k$-algebra by elements of
+degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at
+most $2e$ and $(\sx', J)$ is admissible for the following cases:
+
+\begin{enumerate}
+	\item[(a)] $\sigma = (0; 3, 3, 11; 0), J = \{3\}$
+	\item[(b)] $\sigma = (0; 3, 5, 9; 0), J = \{2, 3\}$
+	\item[(c)] $\sigma = (0; 5, 5, 7; 0), J = \{1, 2, 3\}$
+	\item[(d)] $\sigma = (0; 3, 3, 3, 5; 0), J = \{1, 2, 3, 4\}$
+	\item[(e)] $\sigma = (0; 3, 3, 3, 3, 3; 0), J = \{1, 2, 3, 4, 5\}$
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+For each case, computations using a combination of Riemann-Roch and
+comparing pole orders at each ramification point $P_i$ gives the
+generator and relation degrees. Note that (Ad-i) always holds.
+In each case we can also pick a set of generators such that
+(Ad-ii) holds. \todo{justification for these}
+
+The following table demonstrates that $R(\sx', \Delta, L')$ is
+generated as a $k$-algebra by elements of degree at most $e$
+with relations in degree at most $2e$ for each case.
+
+\begin{longtable}
+	{| c || c | c | c |}
+	\hline
+	Case & Generator Degrees & Minimal Relation Degrees & $e$\\
+	\hline
+	\hline
+
+	(a) & \{3, 7, 9, 11\} & \{14, 18\} & 11\\	\hline
+
+	(b) & \{3, 5, 7, 9\} & \{12, 14\}	& 9\\ \hline
+
+	(c) & \{3, 5, 5, 7\} & \{10, 12\}	& 7\\ \hline
+
+	(d) & \{3, 3, 4, 5\} & \{8,	9\} & 5\\ \hline
+
+	(e) & \{3, 3, 3, 4,	4, 5\} & \{6, 7, 7, 8, 8, 8, 9, 9, 10\} & 5\\ \hline
+\end{longtable}
+
+\begin{center}
+\textbf{Table (II)}: Genus 0 noneffective base cases
+\end{center}
+
+Furthermore, each case satisfies (Ad-iii) as demonstrated below.
+
+\begin{enumerate}
+	\item[(a)] $(\deg \lfloor e_3 \rfloor, \# S_{(\sigma, J)}(3)) = (1, 0)$
+
+	\item[(b)] $(\deg \lfloor e_2 \rfloor, \#S_{(\sigma, J)}(2)) = (1, 0)$ \\
+		$(\deg \lfloor e_3 \rfloor, \#S_{(\sigma, J)}(3)) = (1, 0)$
+
+	\item[(c)] $(\deg \lfloor e_1 \rfloor, \#S_{(\sigma, J)}(1)) = (2, 1)$ \\
+		$(\deg \lfloor e_2 \rfloor, \#S_{(\sigma, J)}(2)) = (2, 1)$ \\
+		$(\deg \lfloor e_3 \rfloor, \#S_{(\sigma, J)}(3)) = (1, 0)$
+
+	\item[(d)] $(\deg \lfloor e_i \rfloor, \#S_{(\sigma, J)}(i)) = (3, 1)$
+		for $i \neq 4$ \\
+		$(\deg \lfloor e_4 \rfloor, \#S_{(\sigma, J)}(4))	= (2, 0)$.
+
+	\item[(e)] $(\deg \lfloor e_i \rfloor, \#S_{(\sigma, J)}(1)) = (5, 0)$
+		for all $i \in J$.
+\end{enumerate}
+
+Finally, each case also satisfies the property that $in_\prec(I')$ is
+minimally generated by products of two monomials and that for all
+$i \in J$, we have $e_i > \deg z$ for any generator $z$ of $R'.$
+\todo{prove}
+\end{proof}
+
+Now we can induct on cases (a)-(e) of \ref{lem:g_0_admissible_cases}
+to obtain bounds on the minimal generator and relation degrees for
+canonical rings of curves in the genus 0 case.
+
+Using the results of Proposition ~\ref{prop:sat_three_induction}
+and Theorem ~\ref{thm:ram_order_ind}, we can inductively raise
+the ramification orders and number of ramified points in all of the
+cases in Lemma ~\ref{lem:g_0_admissible_cases} to obtain the following
+result.
+
+\begin{cor}
+\label{cor:g_0_gen_rel_base_cases}
+Let $(\sx, \Delta, L)$ be a tame log spin curve over a perfect field $k$, so
+that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; 0)$. Then the
+canonical ring
+
+\[
+	R(\sx, 0, L) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
+\]
+
+\noindent
+is generated as a $k$-algebra by elements of degree at most $e := 
+\max(5, e_1, \ldots, e_r)$ with relations in degree at most $2e$, so 
+long as $\sigma \notin S$ where
+
+\begin{align*}
+	S &:= \{(0; 3, 3, k; 0) : 3 \leq k \leq 9 \text{ odd}\} \\
+		&\cup \{(0; 3, b, c; 0) : 5 \leq b \leq c \leq 7\} \\
+		&\cup \{(0; 5, 5, 5; 0), (0; 3, 3, 3, 3; 0)\}
+\end{align*}
+
+\noindent
+is a finite set.
+\end{cor}
+
+\begin{proof}
+A process of induction raising the ramification orders of
+the ramified points of the spin curves corresponding to Lemma
+~\ref{lem:g_0_admissible_cases} cases (a)-(c) via Theorem
+~\ref{thm:ram_order_ind} will demonstrate the desired generator and
+relation degree results for curves with three ramified points.
+Similarly, this induction process on Lemma
+~\ref{lem:g_0_admissible_cases} case (d) will give the desired
+result for curves with four ramified points excluding signature
+$(0; 3, 3, 3, 3; 0)$. A process of induction increasing the
+number of ramified points via Proposition
+~\ref{prop:sat_three_induction} on Lemma ~\ref{lem:g_0_admissible_cases}
+case (e) combined with the induction process on ramification orders
+will yield the result for curves with at least five ramified points.
+\todo{Detailed description of how the inductive lemmata yield e and 2e}
+\end{proof}
 
 \ssec{Exceptional Cases}
 \label{ssec:g_0_exceptional}
-These are exceptional cases.
+Here we present the explicit generators and relations of the remaining
+cases given by signatures in the finite set
+
+\begin{align*}
+	S &:= \{(0; 3, 3, k; 0) : 3 \leq k \leq 9 \text{ odd}\} \\
+		&\cup \{(0; 3, b, c; 0) : 5 \leq b \leq c \leq 7\} \\
+		&\cup \{(0; 5, 5, 5; 0), (0; 3, 3, 3, 3; 0)\}
+\end{align*}
+
+\noindent
+and in particular describe the only exceptions to the $e$ and $2e$
+bounds on the generator degree and relation degree, respectively,
+in the genus 0 case.
+
+
+\begin{longtable}
+	{| c || c | c | c |}
+	\hline
+	Signature & Generator Degrees & Minimal Relation Degrees & $e$ \\
+	\hline
+	\hline
+
+	$(0; 3, 3, 3; 0)$ & $\{3\}$ & $\emptyset$ & $3$ \\	\hline
+
+	$(0; 3, 3, 5; 0)$ & $\{3, 10, 15\}$ & $\{30\}$ & $5$ \\	\hline
+	
+	$(0; 3, 3, 7; 0)$ & $\{3, 7, 12\}$ & $\{24\}$ & $7$ \\	\hline
+	
+	$(0; 3, 3, 9; 0)$ & $\{3, 7, 9\}$ & $\{21\}$ & $9$ \\	\hline
+	
+	$(0; 3, 5, 5; 0)$ & $\{3, 5, 10\}$ & $\{20\}$ & $5$ \\	\hline
+	
+	$(0; 3, 5, 7; 0)$ & $\{3, 5, 7\}$ & $\{17\}$ & $7$ \\	\hline
+	
+	$(0; 5, 5, 5; 0)$ & $\{3, 5, 5\}$ & $\{15\}$ & $5$ \\	\hline
+	
+	$(0; 3, 3, 3, 3; 0)$ & $\{3, 3, 4\}$ & $\{12\}$ & $3$ \\	\hline
+
+	\hline
+	
+	$(0; 3, 7, 7; 0)$ & $\{3, 5, 7, 7\}$ & $\{10, 14\}$ & $7$ \\	\hline
+\end{longtable}
+
+\begin{center}
+\textbf{Table (III)}: Genus 0 exceptional cases
+\end{center}
+
+\begin{rem}
+These cases, apart from $(0; 3, 7, 7; 0)$, give all of the
+exceptions to the $e$ and $2e$ bounds on the generator and relation
+degree. Notice that each of these exceptional cases, apart from
+$(0; 3, 5, 7; 0)$, corresponds to a signature with non-generic
+saturation (i.e. saturation not equal to 3, 5, or 9 as seen
+in the table in Subsection ~\ref{ssec:g_0_saturation}). Exceptional
+saturation can be viewed as ``forcing'' generators (and thus
+relations) in higher degrees than in the generic case.
+\end{rem}
+
 
 \ssec{Conclusion}
 \label{ssec:g_0_conclusion}
+
+\begin{thm}
+\label{thm:g_0_generators_relations_rep}
+Let $(\sx, \Delta, L)$ be a tame log spin curve over a perfect field $k$, so
+that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
+canonical ring
+
+\begin{align*}
+	R(\sx, \Delta, L) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
+\end{align*}
+
+\noindent
+is generated as a $k$-algebra by elements of degree at most $e = 
+\max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$, so 
+long as $\sigma$ does not lie in a finite list of exceptions. \todo{
+Include reference to the table with this list of exceptions.}
+\end{thm}
 
 \section{Genus positive}
 We haven't done this.
