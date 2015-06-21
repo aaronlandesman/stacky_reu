@@ -270,7 +270,7 @@ Begin by focusing on the $d^{th}$ component of $R_{D'}$: $(R_{D'})_d=H^0(X,\lflo
 \]
 so in $H^0(X,\lfloor dD'\rfloor)$ we can find elements with pole order $i$ at $P$ for any $i\in 0,...,\lfloor d\frac{\alpha}{\beta}\rfloor$.  We can use a method similar to O'Dorney to construct the $y_i$s as desired:
 
-Let $0<\frac{c_1}{d_1}<...<\frac{c_n}{d_n}=\frac{\alpha}{\beta}$ be the nonnegative best lower approximation of $\frac{\alpha}{\beta}$.  Note that elements of $H^0(X,dD')$ have pole of orders ranging from 0 to $\lfloor d_i\frac{\alpha}{\beta}\rfloor=c_i$ at $P$.  For any $j<i$, $\frac{c_i}{d_i}>\frac{c_j}{d_j}$ by construction, so any product of $\prod z_i$ of elements of degrees less than $d_i$ must have $\frac{-\ord(z_i)}{\deg(z_i)}<\frac{c_i}{d_i}$, so we have the pole order of this product is $\sum -\ord(z_i)=d_i(\frac{\sum -\ord( z_i)}{\sum \deg( z_i)})<d_i\frac{c_i}{d_i}=c_i$.  Thus, the elements of $R_{d_i}
+Let $0<\frac{c_1}{d_1}<...<\frac{c_n}{d_n}=\frac{\alpha}{\beta}$ be the nonnegative best lower approximation of $\frac{\alpha}{\beta}$.  Note that elements of $H^0(X,dD')$ have pole of orders ranging from 0 to $\lfloor d_i\frac{\alpha}{\beta}\rfloor=c_i$ at $P$.  For any $j<i$, $\frac{c_i}{d_i}>\frac{c_j}{d_j}$ by construction, so any product of $\prod z_i$ of elements of degrees less than $d_i$ must have $\frac{-\ord(z_i)}{\deg(z_i)}<\frac{c_i}{d_i}$, so we have the pole order of this product is $\sum -\ord(z_i)=d_i(\frac{\sum -\ord( z_i)}{\sum \deg( z_i)})<d_i\frac{c_i}{d_i}=c_i$.  Thus, the elements of $R_{d_i}$
 
  in fact a generic element in the respective degree will suffice.\todo{add proof of this; is the generic statement correct?}  Following O'Dorney's argument correctly gives that these along with $u$ (in degree 1 with 0 pole at $P$) generate a $\lfloor d\frac{\alpha}{\beta}\rfloor+1$ dimension $k$-vector space inside of $(R_{D'})_d$ with a $\lfloor d\frac{\alpha}{\beta}\rfloor$ dimensional subspace consisting of elements only with nonzero pole at $P$.  Therefore, by pole considerations $y_1,...,y_n$ generate $(R_{D'})_d$ over $(R_{D})_d$, \todo{the word generate here is a little imprecise} so $u,x_1,...,x_m,y_1,...,y_n$ generate $R_{D'}$.
 
@@ -462,8 +462,8 @@ Let $R'$ be the canonical ring associated to $\sx'$. Say $(\sx',J)$,
 		\end{align*}
 		so that for all $i \in J$ we have $\deg y_{e_i'} = e_i'$ and $-ord_{
 		Q_i}(y_{i,e_i'}) = \frac{e_i'-1}{2}$.
-	\item[(Ad-ii)] For all $i \in J$ and $z \neq y_{i,e_i'}$ a 
-		generator of $R'$ we have
+	\item[(Ad-ii)] For all $i \in J$, any generator $z \neq y_{i,e_i'}$
+		of $R'$ satisfies
 		\begin{align*}
 			\frac{- ord_{Q_i}(z)}{\deg z} < \subhalf {e_i'}.
 		\end{align*}
