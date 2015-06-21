@@ -362,6 +362,8 @@ method; peter will do this tomorrow (sunday)}
 \section{Non-effective Genus Zero Spin Divisors}
 \label{sec:g_0_non_effective}
 
+\todo{Peter: throughout this section I will provide a few notes of how we can generalize this to arbitrary genus with the appropriate conditions}
+
 In this section, we will prove that if $(\sx , 0, L)$ is a spin curve,
 so that $\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; 0)$, then
 $R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1, \ldots,
@@ -455,10 +457,13 @@ generators for $I$ must have at least $j$ elements. Since $f_1,
 \begin{prop}
 \label{prop:sat_three_induction}
 Let $\sx \rightarrow \sx'$ be a birational map of tame, separably
-rooted  log stacky curves $R \subset R'$ be the corresponding
+rooted log stacky curves $R \subset R'$
+\todo{Should switch either $R$ and $R'$ or $\sx$ and $\sx'$ to make prime notation consistent (note that inclusion is reversed since this map adds a stacky point to $\sx$; note that we should also say that this map is only ramified at $P$)} 
+be the corresponding
 inclusion of canonical rings. Let $R_{D'} = R' = k[x]/I'= k[x_3, x_4
 , x_5,\ldots, x_m]/I'$ satisfy $sat(Eff(D')) = 3.$ Let $D = \frac{1}{
-3}P$.
+3}P$\todo{Peter: Do you mean to have $D=\frac{1}{3}P+D'$ or is it correct as written?}.
+\todo{Peter: We can generalize to arbitrary genus with the condition $\deg(D)>2g-2$ meaning $h^0(X,K-D)=0$ so Riemann-Roch gives us everything we wanted from $\mathbb{P}^1$.}
 
 \begin{enumerate}
 	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3,
@@ -496,6 +501,7 @@ the following is a $k$ basis for $R$ over $R'$:
 		&+\langle y_3^ay_4,y_3^by_5 \mid a \geq 0, b \geq 0 \rangle
 	\end{split}
 \end{align}
+\todo{You need to say explicitly somewhere that $x_i$ lies in degree $i$; also for the higher genus case, we should replace $x_3, x_4, x_5$ with $x_2, x_3$ and everything should work the same.}
 
 \noindent
 To see these generate $R'$ over $R$, note that $\dim R'_d - \dim_k R
@@ -562,7 +568,7 @@ $$\chi_J(i) = \begin{cases}
 \end{cases}$$
 
 Let $R'$ be the canonical ring associated to $\sx'$. Say $(\sx',J)$,
-{\bf admissible} if the following three conditions hold.
+{\bf admissible} if the following three conditions hold.  \todo{Peter: We should make the definition of admissibility be a condition for the triple: $(\sx',\sx,J)$.}
 
 \begin{enumerate}
 	\item[(Ad-i)] Suppose for all $i \in J$, there exists $y_{i,e_i'} 
@@ -631,8 +637,9 @@ if they hold for $J$.
 \end{proof}
 
 \begin{thm}
+
 \label{thm:ram_order_ind}
-Suppose $(\sx', 0, L')$ is a tame separably rooted log stacky spin
+Suppose $(\sx', 0, L')$ \todo{Peter: You should also instantiate $(\sx,0,L)$ as well} is a tame separably rooted log stacky spin
 curve and $(\sx', J)$ is admissible with generators $y_{i,e_i'} \in
 R' = R_{L'}$ as in (Ad-i) of Definition ~\ref{defn:admissible}.
 Then the following are true:
@@ -695,7 +702,7 @@ and so we obtain an inclusion
 \begin{align*}
 	H^0(\sx',e_iL'-E_i + Q_j) \rightarrow H^0(\sx,e_iL - E_i) \subset 
 H^0(\sx,e_iL).
-\end{align*}
+\end{align*}\todo{Peter: should be $Q_i$?}
 
 \noindent
 The assumption (Ad-iii) implies
@@ -705,7 +712,7 @@ The assumption (Ad-iii) implies
 
 \noindent
 implying that $H^0(\sx',e_iL'-E_i + Q_i)$ is base point free by 
-Riemann Roch, and so a general element
+Riemann Roch \todo{Peter: Or more for higher genus, by our hypothesis}, and so a general element
 \begin{align*}
 	y_{i,e_i} \in H^0(\sx',e_iL'-E_i + Q_i)
 \end{align*}
