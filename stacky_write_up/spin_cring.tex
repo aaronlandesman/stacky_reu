@@ -1000,29 +1000,34 @@ of a finite set of exceptional cases.
 \label{lem:g_0_admissible_cases}
 Let $(\sx', \Delta, L')$ be a tame log spin curve over a perfect field $k$,
 so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; 0)$.
-Then $R(\sx', \Delta, L')$ is generated as a $k$-algebra by elements of
-degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at
-most $2e$ and $(\sx', J)$ is admissible for the following cases:
+Then $R' := R(\sx', \Delta, L')$ is generated as a $k$-algebra by elements
+of degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree
+at most $2e$ and $(\sx', J)$ is admissible for the following cases:
 
 \begin{enumerate}
 	\item[(a)] $\sigma_1 = (0; 3, 3, 11; 0), J_1 = \{3\}$
-	\item[(b)] $\sigma_2 = (0; 3, 5, 9; 0), J_2 = \{2, 3\}$
-	\item[(c)] $\sigma_3 = (0; 5, 5, 7; 0), J_3 = \{1, 2, 3\}$
-	\item[(d)] $\sigma_4 = (0; 3, 3, 3, 5; 0), J_4 = \{1, 2, 3, 4\}$
-	\item[(e)] $\sigma_5 = (0; 3, 3, 3, 3, 3; 0), J_5 = \{1, 2, 3, 4, 5\}$
+	\item[(b)] $\sigma_2 = (0; 3, 5, 9; 0), J_2 = \{3\}$
+	\item[(c)] $\sigma_3 = (0; 3, 7, 7; 0), J_3 = \{2, 3\}$
+	\item[(d)] $\sigma_4 = (0; 5, 7, 7; 0), J_4 = \{2, 3\}$
+	\item[(e)] $\sigma_5 = (0; 7, 7, 7; 0), J_5 = \{1, 2, 3\}$
+	\item[(f)] $\sigma_6 = (0; 3, 3, 3, 5; 0), J_6 = \{4\}$
+	\item[(g)] $\sigma_7 = (0; 3, 3, 5, 5; 0), J_7 = \{3, 4\}$
+	\item[(h)] $\sigma_8 = (0; 3, 5, 5, 5; 0), J_8 = \{2, 3, 4\}$
+	\item[(i)] $\sigma_9 = (0; 5, 5, 5, 5; 0), J_9 = \{1, 2, 3, 4\}$
+	\item[(j)] $\sigma_{10} = (0; 3, 3, 3, 3, 3; 0), J_{10} = \{1, 2, 3, 4, 5\}$
 \end{enumerate}
 \end{lem}
 
 \begin{proof}
 For each case, computations using a combination of Riemann-Roch and
 comparing pole orders at each ramification point $P_i$ gives the
-generator and relation degrees. Note that (Ad-i) always holds.
-In each case we can also pick a set of generators such that
-(Ad-ii) holds. \todo{justification for these}
+generator and relation degrees.
 
 The following table demonstrates that $R(\sx', \Delta, L')$ is
 generated as a $k$-algebra by elements of degree at most $e$
-with relations in degree at most $2e$ for each case.
+with relations in degree at most $2e$ for each case. Also note
+that in these cases, $e_i = e + 2 > \deg z$ for all $i \in J$
+and any generator $z$ of $R'$.
 
 \begin{longtable}
 	{| c || c | c | c |}
@@ -1035,47 +1040,73 @@ with relations in degree at most $2e$ for each case.
 
 	(b) & \{3, 5, 7, 9\} & \{12, 14\}	& 9\\ \hline
 
-	(c) & \{3, 5, 5, 7\} & \{10, 12\}	& 7\\ \hline
+	(c) & \{3, 5, 7, 7\} & \{10, 14\}	& 7\\ \hline
+	
+	(d) & \{3, 5, 5, 7, 7\} & \{10, 10, 12, 12, 14\}	& 7\\ \hline
+	
+	(e) & \{3, 5, 5, 7, 7, 7\} & \{10, 10, 10, 12, 12, 12, 14, 14, 14\}	& 7\\ \hline
 
-	(d) & \{3, 3, 4, 5\} & \{8,	9\} & 5\\ \hline
+	(f) & \{3, 3, 4, 5\} & \{8, 9\} & 5\\ \hline
+	
+	(g) & \{3, 3, 4, 5, 5\} & \{8, 8, 9, 9, 10\} & 5\\ \hline
+	
+	(h) & \{3, 3, 4, 5, 5, 5\} &
+	\{8, 8, 8, 9, 9, 9, 10, 10, 10\} & 5\\ \hline
+	
+	(i) & \{3, 3, 4, 5, 5, 5, 5\} &
+	\{8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10\} & 5\\ \hline
 
-	(e) & \{3, 3, 3, 4,	4, 5\} & \{6, 7, 7, 8, 8, 8, 9, 9, 10\} & 5\\ \hline
+	(j) &	\{3, 3, 3, 4,	4, 5\} & \{6, 7, 7, 8, 8, 8, 9, 9, 10\} & 5\\ \hline
 \end{longtable}
 
 \begin{center}
-\textbf{Table (II)}: Genus 0 noneffective base cases
+\textbf{Table (II)}: Genus 0 noneffective base cases generator/relations
 \end{center}
 
+Note that (Ad-i) always holds.
+In each case we can also pick a set of generators such that
+(Ad-ii) holds. \todo{justification for these}
+
 Furthermore, each case satisfies (Ad-iii) as demonstrated below.
+Notice that the $e_i$ and $\{e_j' : j \neq i\}$ are equivalent
+for any choice of $i \in J$ for these cases, so $\deg \lfloor e_i L
+\rfloor$ and $\max_{d \geq 0} \#S_{(\sigma, J)}(i))$ are
+independent of the choice of $i$.
 
-\begin{enumerate}
-	\item[(a)] $(\deg \lfloor e_3 L \rfloor, \max_{d \geq 0} \# S_{(
-		\sigma_1, J_1)}(3)) = (1, 0)$
+\begin{longtable}
+	{| c | c || c | c | c |}
+	\hline
+	$\sigma$ & $J$ &  $i$ & $\deg \lfloor e_i L \rfloor$ & $\max_{d \geq 0} \#S_{(\sigma, J)}(i))$\\
+	\hline
+	\hline
 
-	\item[(b)] $(\deg \lfloor e_2 L \rfloor, \max_{d \geq 0} \#S_{(
-		\sigma_2, J_2)}(2)) = (1, 0)$ \\
-		$(\deg \lfloor e_3 L \rfloor, \max_{d \geq 0} \#S_{(\sigma_2, J_2)}(3))
-		= (1, 0)$
+	$(0; 3, 3, 11; 0)$ & $\{3\}$ & $\forall i \in J$ & 1 & 0\\	\hline
+	
+	$(0; 3, 7, 7; 0)$ & $\{3\}$ & $\forall i \in J$ & 2 & 0\\ \hline
+	
+	$(0; 5, 7, 7; 0)$ & $\{2, 3\}$ & $\forall i \in J$ & 2 & 0\\ \hline
 
-	\item[(c)] $(\deg \lfloor e_1 L \rfloor, \max_{d \geq 0}
-		\#S_{(\sigma_3, J_3)}(1)) = (2, 1)$ \\
-		$(\deg \lfloor e_2 L \rfloor, \max_{d \geq 0}
-		\#S_{(\sigma_3, J_3)}(2)) = (2, 1)$ \\
-		$(\deg \lfloor e_3 L \rfloor, \max_{d \geq 0}
-		\#S_{(\sigma_3, J_3)}(3)) = (1, 0)$
+	$(0; 7, 7, 7; 0)$ & $\{1, 2, 3\}$ & $\forall i \in J$ & 3 & 0\\ \hline
 
-	\item[(d)] $(\deg \lfloor e_i  L \rfloor, \max_{d \geq 0}
-		\#S_{(\sigma_4, J_4)}(i)) = (3, 1)$	for $i \neq 4$ \\
-		$(\deg \lfloor e_4 L \rfloor, \max_{d \geq 0} \#S_{(\sigma_4, J_4)}(4))
-		= (2, 0)$.
+	$(0; 3, 3, 3, 5; 0)$ & $\{4\}$ & $\forall i \in J$ & 2 & 0\\ \hline
+	
+	$(0; 3, 3, 5, 5; 0)$ & $\{3, 4\}$ & $\forall i \in J$ & 3 & 0\\ \hline
+	
+	$(0; 3, 5, 5, 5; 0)$ & $\{2, 3, 4\}$ & $\forall i \in J$ & 4 & 0\\ \hline
+	
+	$(0; 5, 5, 5, 5; 0)$ & $\{1, 2, 3, 4\}$ & $\forall i \in J$ & 5 & 0\\ \hline
 
-	\item[(e)] $(\deg \lfloor e_i L \rfloor, \max_{d \geq 0}
-		\#S_{(\sigma_5, J_5)}(1)) = (5, 0)$	for all $i \in J$.
-\end{enumerate}
+	$(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & $\forall i \in J$ & 5 & 0\\ \hline
+\end{longtable}
+
+\begin{center}
+\textbf{Table (III)}: Genus 0 noneffective base cases (Ad-iii)
+\end{center}
+
+Thus, we have admissibility of $(\sx', J)$ in each of these cases.
 
 Finally, each case also satisfies the property that $in_\prec(I')$ is
-minimally generated by products of two monomials and that for all
-$i \in J$, we have $e_i > \deg z$ for any generator $z$ of $R'.$
+minimally generated by products of two monomials.
 \todo{prove}
 \end{proof}
 
@@ -1178,7 +1209,7 @@ in the genus 0 case.
 \end{longtable}
 
 \begin{center}
-\textbf{Table (III)}: Genus 0 exceptional cases
+\textbf{Table (IV)}: Genus 0 exceptional cases
 \end{center}
 
 \begin{rem}
