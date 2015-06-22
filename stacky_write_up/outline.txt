@@ -18,7 +18,6 @@ General Lemmata
 (Save compicated genus zero case for last)
 Genus positive
 	Genus 1
-		Demonstration of saturation
 		Inductive: adding 2-sat pts
 		Base cases
 		Application of induction

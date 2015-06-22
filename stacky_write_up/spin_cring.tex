@@ -125,6 +125,7 @@
 \newcommand \di{\text{div }}
 \newcommand \depth{\text{depth }}
 \DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\sym}{Sym}
 
 %%%%%%%%%%%%%%%%%%%%% cring custom commands %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -801,6 +802,120 @@ generator in degree 3 rather than degree 2.
 
 \ssec{Bounds on Generators and Relations in high genus}
 
+
+\begin{lem}
+\label{lem:semicanonical_generation}\todo{include that this was as shown in Neves, with degree 6 omitted}
+Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K$. Then, for $n \geq 5$, the map
+\begin{align*}
+	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
+\end{align*}
+is surjective.
+In particular, $R_L$ is generated in degree at most $6$.
+\end{lem}
+\begin{proof}
+Therefore, to show there are no new generators in degree at least $7$, it suffices to show that for $n \geq 5$, the map
+\begin{align*}
+	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
+\end{align*}
+is surjective. Indeed, let $s_1,s_2 \in H^0(2L) \cong H^0(K)$ be two independent sections. 
+Since $K$ is basepoint free, so is the vector subspace $V = ks_1 \oplus k s_2 \subset H^0(K)$. 
+Then, by the basepoint free pencil trick, we obtain an exact sequence
+$$\begin{tikzcd}
+0 \ar r & H^0((n-2)L) \ar r & V \otimes H^0(nL) \ar{r}{f} & H^0((n+2)L)
+\end{tikzcd}$$
+We wish to show $f$ is surjective.
+Note that $\dim \ker f = \dim H^0((n-2)L) = (n-3)(g-1)$ using Riemann--Roch and the assumption that $n \geq 5$.
+Additionally, $\dim V \otimes H^0(nL) = 2 \cdot (n-1)(g-1)$, again using Riemann--Roch.
+Therefore, $$\dim \im f = 2 \cdot (n-1)(g-1) -(n-3)(g-1) = (n+1)(g-1) = \dim H^0((n+2)L),$$
+again using Riemann-Roch, implying $f$ is surjective.
+\end{proof}
+
+\begin{prop}
+\label{prop:genus_2_generation_5}
+Let $X$ be a smooth genus 2 curve with canonical divisor $K$ and let $L \in \di X$ be so that $2L \sim K$. 
+Then, $R_L$ is generated in degree at most $5$.
+\end{prop}
+\begin{proof}
+By Lemma ~\ref{lem:semicanonical_generation} it suffices to show there are no new generators in degree 6.
+Let $P_1,\ldots, P_6$ be the six hyperelliptic fixed points of $X$. 
+Recall that all spin divisors on $X$ can be written as 
+$$L = P_1 + \sum_{i=2}^{6} \epsilon_i (P_1 - P_i),$$ 
+with $\epsilon_i \in \{0,1\},$ and some $i \in \{2, 3, 4, 5, 6\}$ for which $\epsilon_i = 0$. \todo{cite this somewhere, maybe ask david for a place to cite?}
+Note that $H^0(X,K)$ is spanned by rational functions $u,x$ with $\di u|_{2L} = 2L, \di x|_{2L} = 2L - 2P_1.$ Therefore, the image of the multiplication map 
+\begin{align*}
+	Sym^3 H^0(X,2L) \rightarrow H^0(X,6L)
+\end{align*}
+is 4 dimensional by Riemann--Roch, with image spanned by $u^3,u^2x,ux^2,x^3$, 
+which have $\di u^3|_{2L} = 2L, \di u^2x|_{2L} = 2L - 2P_1,\di ux^2|_{2L} = 2L-4P_1, \di x^3|_{2L} = 2L - 6P_1.$ 
+Since $H^0(X,6L)$ is 5 dimensional by Riemann--Roch,
+it suffices to produce one more independent function in the image of the multiplication map.
+There are now two cases, depending on whether $H^0(X,L) = 0$.
+First, suppose $H^0(X,L) = 0$.
+Note that because $\deg 3L = 3$, we have by Riemann--Roch that $H^0(X,3L) = 2$. 
+Note additionally that $3L \sim K + L \sim 2P_1 + L$. Since $3L$ is base point free, by Riemann--Roch
+we have that there exists a rational function $f$ with $\div f|_{2P_1 + L} = 2P_1 + L.$ Additionally, there are no functions $g \in H^0(X,L + 2P_1)$ 
+with $\di g|_{2P_1 + L} = L,$ since $H^0(X,L) = 0.$ Therefore, there must 
+exist a function $h \in H^0(X,L+2P_1)$ so that $\di h|_{L + 2P_1} = L + P_1$.
+Then, $h \cdot f \in H^0(X,2L + 4P_1) \cong H^0(X,6L)$ has a pole of odd 
+order at $P_1$, and is therefore independent from the image of $\sym^3 H^0(X,3L)$.
+Second, we deal with the case that $H^0(X,L) \neq 0$. 
+Then, since $X \not \cong \BP^1,$ and $\deg L = 1$, we must have $H^0(X,L) = 1$. 
+In this case, $L$ is linearly equivalent to an effective divisor, so we may assume $L = P_1$. 
+Then, taking the function $y \in H^0(X,5P_1),$ to be that with $\di_\infty y = 5P_1,$ 
+corresponding to the hyperelliptic involution, and $u \in H^0(X,P_1)$ 
+corresponding to the rational function 1, we see that $y \cdot v \in H^0
+(X,6P_1)$ determines an element with a pole of odd order at $P_1$, which is 
+therefore independent from the image of $\sym^3 H^0(X,K)$. Hence, we again 
+obtain there are no new generators in degree 6.
+\end{proof}
+
+\begin{lem}
+\label{lem:generation_5}
+Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K$. Then, $R_L$ is generated in degree at most $5$.
+\end{lem}
+\begin{proof}
+If $g = 2$ then the claim follows from 
+Proposition ~\ref{prop:genus_2_generation_5}. However, if $g > 2$, then by \cite{vzb:stacky}[Theorem 3.2.1], we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective, so again there are no new generators in degree 6.
+\end{proof}
+
+\todo{This should be $k[x_1,\ldots, x_n]$ instead of $\sym H^0$.}
+\begin{lem}
+\label{lem:reducing_degree}
+Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K$. Choose generators $x_1,\ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1,\ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L,d}$ be the $d$th graded piece of $I_L$ and $J_{L,d} = \sum_{j = 1}^{d-1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j}.$ Let for any $f \in k[x_1, \ldots, x_n]$ with $\deg f \geq 12,$ there exist $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ and $g,h \in k[x_1, \ldots, x_n]_{d-2}$ so that $s_1g + s_2h = f \bmod J_{L,d}.$
+\end{lem}
+\begin{proof}
+Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1),\phi(s_2) \in H^0(2L)$ are independent elements.
+By Lemma ~\ref{lem:generation_5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Then, we may write $f = \sum_{i=1}^{n}a_ix_i$ with $a_i \in k[x_1,\ldots, x_n]_{d-\deg x_i}$.
+We will next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in k[x_1, \ldots, x_n]_{d - \deg x_i- 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{L,\deg a_i}.$ 
+Let $V \subset H^0(K)$ be the vector subspace generated by $\phi(s_1)$ and $\phi(s_2)$. By Lemma ~\ref{lem:semicanonical_generation},
+\begin{align*}
+	V \otimes H^0((\deg f-\deg x_i-2)L) \rightarrow H^0((\deg f-\deg x_i)L)
+\end{align*}
+is surjective, since $\deg f - \deg a_i - 2 \geq 12 - 5 - 2 = 5$. In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Chosing $g_i,h_i$ so that $\phi(g_i) = \alpha,\phi(h_i) = \beta$, we have $a_i = s_1 g_i + s_2 h_i \bmod I_{L,\deg a_i}$, as claimed.
+
+Finally, we may then take $g = \sum_{i}^{}g_ix_i,h = \sum_{i}^{}h_ix_i,$ so that 
+\begin{align*}
+	f \equiv \sum_{i}^{}a_i x_i \equiv \sum_{i}^{}(s_1g_i + s_2h_i)x_i \equiv s_1 \left( \sum_{i}^{}g_i x_i \right) + s_2 \left( \sum_{i}^{}h_i x_i \right) \equiv s_1 g + s_2 h \bmod J_{L,d}.
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\label{}
+Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K$. Then $I_L$ is generated in degree at most $11$.
+\end{thm}
+\begin{proof}
+Suppose $f \in I_L$ with $\deg f \geq 12$. To complete the proof, it suffices to show $f \in I_{L,d}'$. By Lemma ~\ref{lem:reducing degree}, it suffices to show $s_1g+s_2h \in I_{L,d}'$. 
+Let $V \subset H^0(K)$ be the vector subspace generated by $\phi(s_1)$ and $\phi(s_2)$, and consider the map
+$$\begin{tikzcd}
+V \otimes H^0((\deg f - 2)L) \ar {r}{f} & H^0((\deg f)L),
+\end{tikzcd}$$
+we know that $\phi(s_1)\phi(g) + \phi(s_2) \phi(h) \mapsto 0.$
+So, using the refined version of the basepoint free pencil trick, as shown in the proof of \cite{saint-donat:proj}[Lemma 2.6], if $\phi(s_1) g + \phi(s_2)h \mapsto 0,$ there exists some $\rho \in k[x_1, \ldots, x_n]$ so that $\phi(\rho) \in H^0((\deg f - 4)L)$ satisfies $\phi(g) = \phi(s_2)\phi(\rho)$ and $\phi(h) = -\phi(s_1)\phi(\rho).$ Therefore, $g \equiv s_2 \rho \bmod I_{k,d-2}$ and $h \equiv -s_1 \rho \bmod I_{k,d-2}$. Therefore,
+\begin{align*}
+	s_1g + s_2h \equiv s_1s_2\rho + s_2(-s_1 \rho) \equiv 0 \bmod J_{L,d}.
+\end{align*}
+\end{proof}
+
 \ssec{Main theorem for high genus}
 
 \section{Genus Zero Effective}
@@ -1102,7 +1217,7 @@ list out the exceptional cases.
 Here we compute saturation numbers. That is, given a list of
 ramification orders, with $g = 0,\delta = 0$ understood, we have
 the following saturations of the canonical divisor, as defined in 7.
-2 of VZB \cite{vzb:stacky}. Exceptional cases are listed first
+2 of Voight and Zureick-Brown \cite{vzb:stacky}. Exceptional cases are listed first
 and generic cases follow.
 
 \todo{prove}
@@ -1163,8 +1278,8 @@ Then, the following statements hold.
 	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3,
 		4,5\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
 		_3,y_4,$ and$ y_5$ minimally generate $R$ over $R'$.
-	\item[(b)] Equip $k[y_3, y_4, y_5]$ with $grlex$ so that $y_3 \prec 
-		y_4 \prec y_5$
+	\item[(b)] Equip $k[y_3, y_4, y_5]$ with $grlex$ so that $y_5 \prec 
+		y_4 \prec y_3$
 		and equip the ring $k[y_3, y_4, y_5, x]$ with the block 
 		order so that $R = k[y_3, y_4, y_5, x]/I$. Let,
 		\begin{align*}
@@ -1286,7 +1401,44 @@ $in_\prec(I')$ is minimally generated by products of two monomials.
 
 \begin{example}
 Here we demonstrate, in detail, that case (b) ($\sigma_2 =
-(0; 3, 5, 9; 0), J_2 = \{3\}$) satisfies the conditions.
+(0; 3, 7, 7; 0), J_2 = \{3, 4\}$) satisfies the conditions.
+We have that $K_{\sx'} \sim -(\infty) + \frac{1}{3} P_1 + \frac{3}{7}
+P_2 + \frac{3}{7} P_3$ for some points $P_i \neq \infty$.
+We exhibit a (minimal) presentation for $R'$.
+
+Notice that $\deg \lfloor d K_{\sx'} = -d + \lfloor \frac{d}{3}
+\rfloor + 2 \lfloor \frac{3d}{7} \rfloor$.
+
+By Max Noether's theorem over $\BP^1$ (see Lemma 3.1.1 of Voight
+and Zureick-Brown \cite{vzb:stacky}),
+
+\[
+	H^0 (\sx', \lfloor 21 K_{\sx'} \rfloor) \otimes H^0 (\sx', \lfloor
+	(d - 21) K_{\sx'} \rfloor) \twoheadrightarrow = H^0 (\sx', \lfloor
+	d K_{\sx'} \rfloor)
+\]
+
+\noindent
+is surjective whenever $\deg (\lfloor (d - 21) K_{\sx'} \rfloor)
+\geq 0$. Also, $\sigma_2$ has saturation $s = 5$ as noted in
+Subsection ~\ref{ssec:g_0_saturation}. Thus, $R'$ is generated up to
+degree $21 + (s - 1) = 24$.
+
+For $d = 0, 1, 2, \ldots$ we have
+
+\[
+	dim H^0 (\sx', d K_{\sx'}) = 1, 0, 0, 1, 0, 1, 1, 2, 1, 1, 2, 1, 3, 2, 3, \ldots
+\]
+
+\noindent
+so $R'$ must have some generators $x_{1, 3}, x_{1, 5}, x_{1, 7},
+x_{1, 7}$. Let $(-ord_{P_1}(x_j), -ord_{P_2}(x_j), -ord_{P_3}(x_j))$
+represent the pole orders of $x_i$ at each point. Then these generators
+must have pole orders $(1, 1, 1), (1, 2, 2), (2, 3, 2), (2, 2, 3)$
+respectively.
+
+
+
 \end{example}
 
 \begin{proof}
@@ -1311,10 +1463,10 @@ and any generator $z$ of $R'$.
 	(a) & \{3, 7, 9, 11\} & \{14, 18\} & 11\\	\hline
 
 	(b) & \{3, 5, 7, 9\} & \{12, 14\}	& 9\\ \hline
-	
-	(c) & \{3, 5, 5, 7\} & \{10, 12\}	& 7\\ \hline
 
-	(d) & \{3, 5, 7, 7\} & \{10, 14\}	& 7\\ \hline
+	(c) & \{3, 5, 7, 7\} & \{10, 14\}	& 7\\ \hline
+	
+	(d) & \{3, 5, 5, 7\} & \{10, 12\}	& 7\\ \hline
 	
 	(e) & \{3, 5, 5, 7, 7\} & \{10, 10, 12, 12, 14\}	& 7\\ \hline
 	
