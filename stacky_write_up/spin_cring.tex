@@ -169,8 +169,12 @@
 \section{Introduction}
 \todo{Edit this stuff}
 This is our project.
+Modular Forms.
+
+
 Example, stuff from Voight and Zureick-Brown \cite{vzb:stacky}
 and O'Dorney's paper \cite{dorney:canonical}.
+
 We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{e_i}$.
 
 \subsection{Main Results}
@@ -194,21 +198,23 @@ Include reference to the table with this list of exceptions.}
 
 
 \section{Background}
-\todo{edit this}
-Here are some definitions.
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
+\todo{edit this}
 
-\section{Effective Genus Zero Spin Divisors}
-\label{sec:g_0_effective}
-In this section, we examine the case $2\halfcan\sim K_\sx+\Delta$ 
-when $\Delta$ is a non- zero effective divisor.  Using this, we can 
-reduce to looking at effective stacky divisors.  Then, applying a 
-result for general effective $\mathbf{Q}$ divisors, we deduce that $
-R_{\halfcan}$ is generated in degrees up to $e=\max{e_i}$ with 
-relations generated up to degree $2e$ with initial terms quadratic 
-in the generators.  We also demonstrate that these bounds are tight 
-up to \todo{insert how tight they are}.
+\subsection{Definitions}
+Here are some definitions.
 
+\begin{defn}
+\textbf{Saturations} of the canonical divisor, as defined in 7.
+2 of VZB \cite{vzb:stacky}.
+\end{defn}
+
+\section{General Lemmata}
+First we present the general inductive lemmata that will be applied
+for all genera.
+
+
+\ssec{General: quadratic initial ideal minimal relations}
 First we prove a nice result about minimal generation of ideals of relations:
 
 \todo{Include one of the following, if the first one, include a remark for quotient}
@@ -241,471 +247,61 @@ generators for $I$ must have at least $j$ elements. Since $f_1,
 \ldots, f_j$ is such a set, it is minimal.
 \end{proof}
 
-\iffalse
-\begin{lem}
-\label{lem:minimal_quadratic_2}
-Suppose $k[x_1, \ldots, x_n]\hookrightarrow k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ be graded ring, not necessarily
-generated in degree 1 that are equipped with monomial ordering $\prec$.
- Let $\phi: k[x_1, \ldots, x_n] \twoheadrightarrow B, \phi':k[x_1, \ldots, x_n, y_1, \ldots, y_m]\twoheadrightarrow B'$ be maps of graded
-rings with kernels $I \hookrightarrow I'$ such that the following diagram commutes:
-\[
-	\begin{tikzcd}
-	I\ar[hookrightarrow]{r}\ar[hookrightarrow]{d} & k[x_1, \ldots, x_n]\ar[twoheadrightarrow]{r} \ar[hookrightarrow]{d} & B \ar[hookrightarrow]{d}\\
-	I' \ar[hookrightarrow]{r} & k[x_1, \ldots, x_n, y_1, \ldots, y_m] \ar[twoheadrightarrow]{r}& B'
-	\end{tikzcd}
-\]
-Further suppose that $I'$ is generated over $I$ by elements $f_1,
-\ldots, f_j$ as a $k$-vector space, where $in_\prec(f_i) \in \{y_ix_j, y_iy_j\}$ and no monomial of $f_i$
-is of the form $y_i$.  Then, the elements $f_i$ determine minimal
-generators for $I'$ over $I$.
-\end{lem}
-
-\begin{proof}
-Regrade the rings $k[x_1, \ldots, x_n], k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ so that all $x_i$ and $y_j$ lie in
-degree 1. Then,
-\[
-	\phi : k[x_1, \ldots, x_n] \twoheadrightarrow B 
-\]
-\[
-	\phi': k[x_1, \ldots, x_n, y_1, \ldots, y_m] \twoheadrightarrow B'
-\]
-
-
-\noindent
-determines map of rings, no longer necessarily graded. 
-By assumption, $I'$ is generated over $I$ as a $k$-vector space by elements $f_1, \ldots, f_n$ whose initial terms have degree 2 and are linearly independent.  By the theory of Grobner basis,
-\[
-	\dim_k(B'/B)_2=\dim_k(k[x_1, \ldots, x_n, y_1, \ldots, y_m]/k[x_1, \ldots, x_n])_2 - j
-\]
-so
-\[
-	\dim_k (I'/I)_2=j.
-\]
-This implies any set of
-generators for $I$ must have at least $j$ elements. Since $f_1,
-\ldots, f_j$ is such a set, it is minimal.
-\end{proof}
-\fi
+%
+%\begin{lem}
+%\label{lem:minimal_quadratic_2}
+%Suppose $k[x_1, \ldots, x_n]\hookrightarrow k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ be graded ring, not necessarily
+%generated in degree 1 that are equipped with monomial ordering $\prec$.
+ %Let $\phi: k[x_1, \ldots, x_n] \twoheadrightarrow B, \phi':k[x_1, \ldots, x_n, y_1, \ldots, y_m]\twoheadrightarrow B'$ be maps of graded
+%rings with kernels $I \hookrightarrow I'$ such that the following diagram commutes:
+%\[
+	%\begin{tikzcd}
+	%I\ar[hookrightarrow]{r}\ar[hookrightarrow]{d} & k[x_1, \ldots, x_n]\ar[twoheadrightarrow]{r} \ar[hookrightarrow]{d} & B \ar[hookrightarrow]{d}\\
+	%I' \ar[hookrightarrow]{r} & k[x_1, \ldots, x_n, y_1, \ldots, y_m] \ar[twoheadrightarrow]{r}& B'
+	%\end{tikzcd}
+%\]
+%Further suppose that $I'$ is generated over $I$ by elements $f_1,
+%\ldots, f_j$ as a $k$-vector space, where $in_\prec(f_i) \in \{y_ix_j, y_iy_j\}$ and no monomial of $f_i$
+%is of the form $y_i$.  Then, the elements $f_i$ determine minimal
+%generators for $I'$ over $I$.
+%\end{lem}
+%
+%\begin{proof}
+%Regrade the rings $k[x_1, \ldots, x_n], k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ so that all $x_i$ and $y_j$ lie in
+%degree 1. Then,
+%\[
+	%\phi : k[x_1, \ldots, x_n] \twoheadrightarrow B 
+%\]
+%\[
+	%\phi': k[x_1, \ldots, x_n, y_1, \ldots, y_m] \twoheadrightarrow B'
+%\]
+%
+%
+%\noindent
+%determines map of rings, no longer necessarily graded. 
+%By assumption, $I'$ is generated over $I$ as a $k$-vector space by elements $f_1, \ldots, f_n$ whose initial terms have degree 2 and are linearly independent.  By the theory of Grobner basis,
+%\[
+	%\dim_k(B'/B)_2=\dim_k(k[x_1, \ldots, x_n, y_1, \ldots, y_m]/k[x_1, \ldots, x_n])_2 - j
+%\]
+%so
+%\[
+	%\dim_k (I'/I)_2=j.
+%\]
+%This implies any set of
+%generators for $I$ must have at least $j$ elements. Since $f_1,
+%\ldots, f_j$ is such a set, it is minimal.
+%\end{proof}
+%
 
 \begin{rem}\label{rem:minimal_quadratic_trivial_case}
-It will be useful to use lemma \ref{lem:minimal_quadratic} in the case $m=0$, in which case we find explicitly that $f_1, \ldots, f_r$ are $k$-minimal generators for $I'$ (over the trivial base vector space).  
+It will be useful to use lemma \ref{lem:minimal_quadratic} in the
+case $m=0$, in which case we find explicitly that $f_1, \ldots, f_r$
+are $k$-minimal generators for $I'$ (over the trivial base vector
+space).  
 \end{rem}
 
-We will now prove a lemma that will be used to inductively deal with divisors that are sufficiently saturated, by combining and extending methods of VZB \todo{add 
-reference} and O'Dorney\todo{reference}.
-
-\begin{lem}
-\label{lem:deg1_sat_ind}
-Let $X$ be a genus $g$ curve with a $\mathbf{Q}$-divisor $D$ (as
-defined by O'Dorney \todo{reference this-Section 1 of Evan's paper, or preferably define it in the background section})
-satisfying $\deg(\lfloor{D}\rfloor)\ge 0$, so $R_D$ has a
-generator $u$ in degree 1; let $u$ \todo{Was there supposed to be something else in this sentence?}.  Suppose $D$ is generated by $
-u, x_1, \ldots, x_m$ in degree at most $\delta$ with relations generated 
-in degree at most $\tau $.  Suppose $D' = D + \frac{\alpha}{\beta} P$
-for some $P \not \in \Supp(D), \alpha,\beta \in \mathbf{N}$ such
-that
-
-\begin{equation}
-\label{eqn:deg1_sat_ind_dim}
-	h^0(X, \lfloor{dD + d\frac{\alpha}{\beta} P \rfloor}) = h^0(X,\lfloor dD
-	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \forall d \in \mathbf{
-	N} : d \ge \frac{\beta}{\alpha}.
-\end{equation}
-Let 
-\[
-	0<\frac{c_1}{d_1}<...<\frac{c_n}{d_n}=\frac{\alpha}{\beta}
-\]
-be the non-negative best lower approximation.
-Then 
-\begin{itemize}
-\item $R_{D'}$ is generated over $R_D$ by elements $y_1,...,y_n$ such that $y_i$ lies in  
-degree $d_i$ and has a pole at $P$ of degree $c_i$
-
-\item If $I$ and $I'$ are the ideal of relations of $R_D$ and $R_{D'}$ respectively, then 
-
-\begin{align*}
-	\initial_\prec(I') &= \initial_\prec(I) k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
-										 &+ \langle y_i x_j: 1 \le i \le n, 1 \le j \le m \rangle \\
-										 &+ \langle y_i y_j: \lfloor \frac{\alpha}{\beta} \rfloor \rangle \le i \le j \le n-1 \\
-										 &+ \langle y_i y_j: 1\le i\le j\lfloor \frac{\alpha}{\beta} \rfloor\\
-										 &+ \langle (y_i)^{\deg(y_{i+1}+1)}: 1\le i=\lfloor \frac{\alpha}{\beta} \rfloor
-\end{align*}
-In particular, if $\frac{\alpha}{\beta}\le 1$, then $I$ is minimally generated by elements with leading terms of the form $y_ix_j$ and $y_iy_j$.
-\item If $\gin_\prec(I)=\initial_\prec(I)$ then $\gin_\prec(I')=\initial_\prec(I')$.
-\item A Grobner basis with the initial terms $y_i x_j$, $y_iy_j$, and possibly $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor \frac{\alpha}{\beta} \rfloor}+1}$ as shown above minimally generates $I'$.
-\end{itemize}
-\end{lem}
-
-\begin{proof}
-Observe that $u_D,x_1,...,x_m$ each of which has no pole at $P$.
-These can be chosen generically to not have a zero at $P$ \todo{
-check that we can actually do this, or eliminate if it turns out to
-be unnecessary}.
-
-Begin by focusing on the $d^{\text{th}}$ component of $R_{D'}$: $(R_
-{D'})_d = H^0(X, \lfloor D + \frac{\alpha}{\beta} P \rfloor)$. By
-our hypothesis (Equation ~\ref{eqn:deg1_sat_ind_dim}), for any $d
-\in \mathbf{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
-
-\[
-	h^0 (X, d(D+\frac{\alpha}{\beta})) = h^0(X, dD) + \deg(d\frac{\alpha}{\beta})
-\]
-
-\noindent
-so in $H^0 (X, \lfloor dD' \rfloor)$ we can find elements with pole
-order $i$ at $P$ for any $i \in \{0, \ldots, \lfloor d \frac{\alpha}{
-\beta} \rfloor \}$. We can use a method similar to O'Dorney to
-construct the $y_i$'s as desired: \todo{cite where}
-
-Let 
-\[
-	0 < \frac{c_1}{d_1} < \ldots < \frac{c_n}{d_n} = \frac{\alpha}{
-\beta}
-\] 
-be the non-negative best lower approximation of $\frac{
-\alpha}{\beta}$.  Note that elements of $H^0(X,dD')$ have pole of
-orders ranging from 0 to $\lfloor d_i \frac{\alpha}{\beta}\rfloor =
-c_i $ at $P$.  A set of these one for each pole degree 1 to $\lfloor
-d_i \frac{\alpha}{\beta} \rfloor$ are linearly independent from
-each other and $(R_D)_d$, so by degree considerations, they span
-$(R_{D'})_d$ over $(R_D)_d$ as $k$-vector spaces. 
-
-For any $j < i$, $\frac{c_i}{d_i} > \frac{c_j}{d_j}$
-by construction, so any product of $\prod z_i$ of elements of
-degrees less than $d_i$ must have 
-\[
-	\frac{-\ord(z_i)}{\deg(z_i)} < \frac{c_i}{d _i},
-\]
-so we have the pole order of $\prod z_i$ is 
-\[
-	\sum -\ord(z_i) = d_i(\frac{\sum -\ord( z_i)}{\sum \deg( z_i)}) < d_i\frac{c_i}{d_i} = c_i .
-\] 
-Thus, the elements of $(R_{D'})_{d_i}$ with pole order $c_i$ at $P$ are not generated by 
-lower degrees.  
-Generically choose some $y_i \in(R_{
-D'})_{d_i}$ to have maximal pole order at $P$ (note that if $d_i=1$ then 
-\[
-	-\ord_P(y_i)= \max(c_j:d_j=1)
-\]
-and if more than one $d_i$ is 1, we
-must also choose them generically so they generate $(R_{D'})_1$).
-
-Suppose $d\le \beta$ and positive $\frac{c}{d} \le \frac{\alpha}{
-\beta}$ not a best lower approximation.  Then choose
-best lower approximation $\frac{c_i}{d_i}$ such that $c_i\le c$ is
-maximal; since $c<c_{i+1}$, $\frac{c_i}{d_i}\ge \frac{c}{d}$.  From
-this we can deduce that 
-\[
-	c_i+(d-d_i) \lfloor \frac{\alpha}{\beta} \rfloor \ge c.
-\]  
-Therefore, we can generate an element of $(R_{D'})_d$ as a product of lower degrees that 
-has pole degree $c$ at $P$ by either $y_i u^b$ or $y_i z u^b$, or $zu^b$ satisfying $i>
-\lfloor \frac{\alpha}{\beta} \rfloor$ and $z=y_j (y_{\lfloor \frac{\alpha}{\beta} \rfloor})^b$ 
-where $d_j=1$ ($=d_{{\lfloor \frac{a}{b} \rfloor}}$) and $b<d_{\lfloor \frac{\alpha}{\beta} 
-\rfloor + 1}$.  
-Thus, for a general $d$ (not necessarily less than $\beta$), if $\frac{c}{d} \le
-\frac{\alpha}{\beta}$ is not a best lower approximation than we can
-construct an element in degree $d$ with pole degree $c$ by either $y
-_n^a y_i u^b$, $y_n^a zy_iu^b$ or $y_n^a z u^b$ satisfying the
-same conditions.  We notice that elements of this form are all
-linearly independent in $R_{D'}$.  Thus, they form a $k$-basis for
-$R_{D'}$ over $R_D$.  Thus $u, x_1, ..., x_m, y_1, ..., y_n$ generate
-$R_{D'}$.
-
-Choose $x_i\in \{x_1, \ldots, x_m\}$ and $y_j\in \{y_1, \ldots, y_n\}$, where $y_j$ 
-corresponds to the best lower approximation $\frac{c_j}{d_j}$.  Recall from the previous 
-paragraph that we can uniquely construct an element in degree $d$ with pole order $c$ at 
-$P$ by elements of the $y_n^a y_l u^b$ and $y_n^a y_l y_{l'} u^b$ with $d_l=1$ and if 
-$d_{l'}=1$ then $c_{l'} = \lfloor \frac{\alpha}{\beta} \rfloor$.  Specifically, we can 
-successively subtract some $\gamma_l y_l u^{b_l}$, $\gamma_l y_l z_l u^{b_l}$, or $
-\gamma_l z_l$ with $y_l, z_l, b_l$ satisfying the same conditions as above and $\gamma_l
-\in k$ the element ensuring that the difference decreases in pole degree at $P$ by 1.  For 
-convenience, we can combine these into the case $\gamma_l (y_l)^{s_l}(z_l)^{a_l}u^{b_l}$ 
-with $(s_l,a_l)\in \{(1,0),(1,1),(0,1)\}$.  In the cases when $\frac{\alpha}{\beta}<1$ so $z_l$ 
-is not well-defined, just pick an arbitrary element of $R_D$ for $z_l$ ensuring that the 
-expression still makes sense; in such cases we will always choose $a_l=0$ so this choice 
-is irrelevant, and only makes writing out cases more convenient.  Therefore, we can write
-\[
-	x_i y_j - \sum_{l} (y_l)^{s_l} (z_l)^{a_l} u^{b_l}\in R_D
-\]
-giving us a non-trivial relation with leading term $x_iy_j$. \todo{Explicitly state ordering at 
-the beginning}
-
-Similarly, suppose $y_i,y_j\in \{y_1, \ldots ,y_{n-1}\}$ with $1<d_i$ and $j\ge i$ (that is, so 
-$y_iy_j$ does not appear as a basis element of the form described above: $y_n^0 y_jy_i 
-u^0$).  Choose the maximal $l$ such that $c_h\le c_i+c_j$; since $1<d_i\le d_j$, $(c_i
-+c_j)-c_j>\lfloor \frac{\alpha}{\beta}\rfloor$ so $c_{j+1} < c_i + c_j$ meaning $c_h \ge c_{j
-+1} > c_j$.  Furthermore, $c_i + c_j - c_h<\lfloor \frac{\alpha}{\beta} \rfloor$ so either 
-$c_h=c_i+c_j$ or there is some $h'$ such that $c_{h'}=c_i+c_j-c_l$ and $d_{h'}=1$.  Since 
-$\frac{c_h}{d_h}$ is a best lower approximation of $\frac{\alpha}{\beta}$ with denominator 
-larger than those of $\frac{c_i}{d_i}$ and $\frac{c_j}{d_j}$, we know that since $c_h\le c_i
-+c_j$ we must have $d_h<d_i+d_j$.  Thus in the case with a $y_{l'}$ term we have $d_h + 
-d_{h'} = d_h + 1 \le d_i + d_j$.  That is to say, by choosing $b-d_i+d_j-ad_h-1$ we find 
-(where $a\in\{0,1\}$ corresponding to if a $y_{h'}$ appears) that $y_h(y_h')^au^b$ and 
-$y_iy_j$ both lie in degree $d_i+d_j$ with pole order $c_i+c_j$ at $P$.  From here we can 
-follow a similar technique as in the previous paragraph to cancel out poles of $y_iy_j$ at $P
-$ to find
-\[
-	y_iy_j-\gamma_h (y_h)^{s_h}(z_{h})^{a_h}u^{b_h}-\sum_l (y_l)^{s_l} (z_{l})^{a_l}
-u^{b_l}\in R_D
-\]
-implying a relation with initial term $y_i y_j$.  
-
-Next, suppose $y_i, y_j\in \{y_1, \ldots ,y_{n-1}\}$ such that $i\le j$, $d_j=d_i=1$, and $d_{j
-+1}=1$ (i.e. $c_i, c_j \le \lfloor \frac{\alpha}{\beta} - 1 \rfloor$).  If $i>1$ and then $y_{j+1}
-y_{i-1}$ lies in the same degree as $y_iy_j$ (degree 2) with the same pole order; following 
-the same method as the previous two paragraphs we find
-\[
-	y_i y_j - \gamma y_{i-1} y_{j+1} - \sum_{l} (y_l)^{s_l} (z_l)^{a_l}u^{b_l}\in R_D.
-\]
-Similarly if $i=1$, then we get the same result using
-\[
-	y_i y_j - \gamma u y_{j+1} - \sum_l y_l u^{b_l} \in R_D.
-\]
-In both cases we deduce that $y_iy_j$ is an initial term of some relation.
-
-Finally, we examine the case (for $\alpha \ge \beta$) of $(y_i)^{i + 1}$ when $i=\lfloor 
-\frac{\alpha}{\beta}\rfloor$.  If $\beta=1$, then there are no relations with initial term a 
-power of $y_i$ and we are immediately done.  Otherwise, assuming $\beta\ne 1$, we note 
-that $c_id_{i+1}=c_{i+1}d_i+1=c_{i+1}+1$. \todo{reference to Evan's paper where he 
-proves this}  Therefore, if $i>1$ then $c_i^{d_{i+1}+1}$ and $c_{i-1} c_{i+1}$ both lie in the 
-$d_{i+1}+1$ degree with pole order $c_{i+1}+1$.  Following a similar technique to the 
-previous paragraphs we find
-\[
-	(y_i)^{c_{i+1}+1} - y_{i+1} y_{i-1} - \sum_l (y_l)^{s_l}(z_l)^{a_l} u^{b_l}.
-\]
-Similarly if $i=1$ then
-\[
-	(y_i)^{c_{i+1}+1}-y_{i+1}u-\sum_l (z_l)^{a_l} u^{b_l}.
-\]
-In each case we demonstrate $(y_i)^{c_{i+1}+1}$ as the initial term of a relation.  
-
-Let $J'$ be the ideal of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ generated by the initial 
-terms described in the previous paragraphs together with $\gin_\prec(I)k[u, x_1, \ldots, 
-x_m, y_1, \ldots, y_n]$.  We show that $J$ is in fact all of the initial ideal.  Suppose $f$ is a 
-non-constant monomial that does not lie within $J$.  Further suppose $f$ does not lie in 
-$k[u, x_1, \ldots, x_m]$.  Then there is some $y_i|f$.  Since $f\not\in j$, we cannot have 
-some $x_j|f$ or else we would have $y_ix_j|f$ contradicting $f\not\in J$.  Furthermore, if 
-$y_l|f$ for $l<i$, then we must have $d_l=1$ or else $y_ly_i$ is an initial element of a 
-relation and divides $f$.  If $d_i=1$ as well, then we must have $c_i=\lfloor \frac{\alpha}
-{\beta}\rfloor$, or else $y_iy_l\in I$; finally we can not have $(y_{\lfloor \frac{\alpha}{\beta}
-\rfloor})^{d_{\lfloor \frac{\alpha}{\beta} \rfloor+1}+1}|f$.  We observe that the remaining 
-elements are precisely those of the form $y_n^a y_i u^b$, $y_n^a zy_iu^b$, and $y_n^a z 
-u^b$ which are the elements of our chosen $k$-basis for $k[u, x_1, \ldots, x_m, y_1, \ldots, 
-y_n]/I'$ over $k[u, x_1, \ldots, x_m]/I$.  Therefore, by dimension counting (in each degree), 
-we see that $J'$ is the initial ideal of $I'$.  Furthermore, since our choice of $y_i$s was 
-generic, this is in fact the generic initial ideal.
-
-In the case when all $\frac{\alpha}{\beta}\le 1$, lemma \ref{lem:minimal_quadratic} immediately tells us that the Grobner basis defined above is minimal.
-\todo{What about $\frac{\alpha}{beta}>1$?}
-\end{proof}
-
-\begin{rem}\label{rem:deg1_sat_ind_gen_rel_degrees}
-Notice that in lemma \ref{lem:deg1_sat_ind}, $D'$ is generated in degree at most $\max(\delta,\beta)$ with relations generated in degree at most $\max(\tau,\delta+\beta,2\beta)$
-\end{rem}
-
-This yields some immediate corollaries:
-
-\begin{cor}\label{cor:effective_Q_divisor_can_ring}
-If the genus of $X$ is 0 and $D\sim\sum \frac{\alpha_i}{\beta_i} P_i$ is linearly equivalent to an effective $\mathbf{Q}$ divisor of $X$, then $R_D$ is generated in degree at most $\max(\beta_i,1)$ with relations generated in degree at most $2\max(\beta_i,1)$.
-\end{cor}
-
-\begin{proof}
-We can prove this by induction.  As a base case, let $D\sim 0$.  Then $R_D\cong k[x]$ which is generated in degree 1 with no relations, satisfying the inductive hypothesis.
-Now, suppose the result is proven for all effective $D$ with support at most $r$ points; then if $D'\sim \sum_{i=1}^{r+1} \frac{\alpha_i}{\beta_i}$, we set $D=\sum_i^{r} \frac{\alpha_i}{\beta_i}$.  By hypothesis, $R_D$ is generated in degree at most $\max_{1\le i\le r}(\beta_i)$ with relations generated in degree at most 2$\max_{1\le i\le r}(\beta_i)$.  Since $D$ is effective, the condition of equation \ref{eqn:deg1_sat_ind_dim} is met, so by remark \ref{rem:deg1_sat_ind_gen_rel_degrees} of lemma \ref{lem:deg1_sat_ind}, $R_{D'}$ is generated in degree at most $\max(\beta_i)$ with relations generated in degree at most $2\max(\beta_i)$.
-\end{proof}
-
-\begin{cor}\label{cor:genus_0_posiive_delta}
-Let $\halfcan$ be a stacky log spin canonical divisor of signature $(0,e_1,...,e_n,\delta)$ with $\delta>0$.  Then 
-\end{cor}
-\begin{proof}
-Since $\halfcan$ is a half canonical divisor, 
-\[
-	2\halfcan=D+\sum \subhalf{i}P_i
-\] 
-where 
-\[
-	D\sim K_X+\Delta\sim -2\infty+ \Delta
-\] is a divisor of $X$ (i.e. with 
-possibly negative integer coefficients).  Since $\Delta$ is non-
-zero effective, $\deg(D)\ge -1$.   Noting that the coefficient of 
-any point $P$ occurring in a stacky divisor of $\sx$ must have 
-coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
-s appearing in the characteristic of $(\sx,\Delta)$).
- 
-Since all $e_i$s are odd, $2$ cannot appear in a denominator of the 
-coefficient of a point $P$ in $\halfcan$, meaning that $\frac{D}{2}$
- must be a $X$-divisor.  Since $\deg(\frac{D}{2})=\frac{1}{2}\deg(D)
-\ge -\frac{1}{2}$, we in fact have $\deg(D)\ge 0$.  Thus $\halfcan$ 
-is linearly equivalent to an effective $X$ divisor plus $\sum 
-\subhalf{i}P_i$.  We have thus shown $\halfcan$ is linearly equivalent to an effective divisor.  Thus, by \ref{cor:effective_Q_divisor_can_ring} the desired result follows.
-\end{proof}
-
-\begin{cor}
-Let $D$ be a fractional $\frac{a}{b}$-canonical divisor of a genus 0 stacky curve with denominator $b > 2$ when $\frac{a}{b}$ is written in reduced form.
-\end{cor}
-\begin{proof}
-For a similar reason as in corollary \ref{cor:genus_0_posiive_delta}, $D$ must be equivalent to an effective divisor (in this case even when $\delta=0$), so by corollary \ref{cor:effective_Q_divisor_can_ring} we get the desired result.
-\end{proof}
-
-\todo{Add higher genus corollaries once we figure out what we want to say there}
-
-\section{Non-effective Genus Zero Spin Divisors}
-\label{sec:g_0_non_effective}
-
-\todo{Peter: throughout this section I will provide a few notes of how we can generalize this to arbitrary genus with the appropriate conditions}
-
-In this section, we will prove that if $(\sx , 0, L)$ is a spin curve,
-so that $\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; 0)$, then
-$R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1, \ldots,
-e_r)$ with relations generated in degree at most $2e$, so long as $\sigma$
-does not lie in a finite list of exceptions. This is proven in
-Subsection ~\ref{ssec:g_0_conclusion}. The proof is a rather
-involved induction. In Subsections ~\ref{ssec:g_0_ram_pts},
-~\ref{ssec:g_0_ram_orders} we prove inductive theorems, and in
-Subsection ~\ref{ssec:g_0_base} we check the base cases of the
-induction. Finally, in Subsection ~\ref{ssec:g_0_exceptional} we
-list out the exceptional cases.
-
-\ssec{Saturation}
-\label{ssec:g_0_saturation} \todo{Define saturation}
-Here we compute saturation numbers. That is, given a list of
-ramification orders, with $g = 0,\delta = 0$ understood, we have
-the following saturations of the canonical divisor, as defined in 7.
-2 of VZB \cite{vzb:stacky}. Exceptional cases are listed first
-and generic cases follow.
-
-\todo{prove}
-
-\begin{longtable}
-	{| c | c |}
-	\hline
-	Signature & Saturation \\
-	\hline
-	\hline
-
-	$(0; 3, 3, 3; 0)$ & $\infty$ \\	\hline
-
-	$(0; 3, 3, 5; 0)$ & $18$ \\	\hline
-	
-	$(0; 3, 3, 7; 0)$ & $12$ \\	\hline
-	
-	$(0; 3, 3, 9; 0)$ & $12$ \\	\hline
-	
-	$(0; 3, 5, 5; 0)$ & $8$ \\	\hline
-	
-	$(0; 5, 5, 5; 0)$ & $8$ \\	\hline
-	
-	$(0; 3, 3, 3, 3; 0)$ & $6$ \\	\hline
-	
-	\hline
-	\hline
-	
-	$(0; 3, 3, k; 0)$ & $9$ \\	\hline
-	
-	$(0; a, b, c; 0)$ & $5$ \\	\hline
-	
-	$(0; e_1, \ldots, e_r; 0)$ & $3$ \\	\hline
-\end{longtable}
-
-\begin{center}
-\textbf{Table (I)}: Genus 0 saturation
-\end{center}
-
-\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 3-saturated divisor}
-\label{ssec:g_0_ram_pts}
-
-\begin{prop}
-\label{prop:sat_three_induction}
-\todo{Make explicit assumptions on genus.}
-\todo{Should switch either $R$ and $R'$ or $\sx$ and $\sx'$ to make prime notation consistent (note that inclusion is reversed since this map adds a stacky point to $\sx$; note that we should also say that this map is only ramified at $P$), Aaron: you're right, I wrote the inclusion on rings in the wrong direction. Actually, the map isn't ramified at $P$, it's just defined away from $P$. I decided to remove this from the proposition though.} Let $R_{L'} = R' = k[x]/I'= k[x_3, x_4
-, x_5,\ldots, x_m]/I'$ satisfy $sat(Eff(D')) = 3.$ Let $L = L' + \frac{1}{
-3}P$, and let $R = R_L$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that the ordering on $k[x]$ satisfies
-\begin{align*}
-	\ord_{x_3}(f) < \ord_{x_3}(h) \implies f \prec h.
-\end{align*}
-Then, the following statements hold.
-
-\todo{Peter: Do you mean to have $D=\frac{1}{3}P+D'$ or is it correct as written?}.
-\todo{Peter: We can generalize to arbitrary genus with the condition $\deg(D)>2g-2$ meaning $h^0(X,K-D)=0$ so Riemann-Roch gives us everything we wanted from $\mathbb{P}^1$.}
-
-\begin{enumerate}
-	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3,
-		4,5\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
-		_3,y_4,$ and$ y_5$ minimally generate $R$ over $R'$.
-	\item[(b)] Equip $k[y_3, y_4, y_5]$ with $grlex$ so that $y_3 \prec 
-		y_4 \prec y_5$
-		and equip the ring $k[y_3, y_4, y_5, x]$ with the block 
-		order so that $R = k[y_3, y_4, y_5, x]/I$. Let,
-		\begin{align*}
-			J &= gin_\prec(I')k[x,y_3,y_4,y_5] \\
-			&+\langle y_i x_j \mid 4 \leq i \leq 5, 3 \leq j \leq m\rangle \\
-			&+\langle y_iy_k \mid 4 \leq i \leq j \leq 5.\rangle 
-		\end{align*}
-			Then, $gin_\prec(I) = J$.
-	\item[(c)] Any set of minimal generators for $I'$ together with 
-		any set of relations with leading terms as in (b) minimally 
-		generate $I$.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-First, the elements $y_3,y_4,$ and $y_5$ are general and have $-\ord
-_P(y_i) = 1$ by Riemann Roch. \todo{Understand why/whether we need 
-to cite lemma 5.4.7.} To complete the proof of (a) we only need 
-show these elements generate $R$ over $R'$. We can first see that 
-the following is a $k$ basis for $R$ over $R'$:
-
-\begin{align}
-\label{eqn:add_one_generator}
-	\begin{split}
-		&\langle y_3^ax_3^b x_4^\epsilon x_5^{\epsilon'} \mid a \geq 0, b 
-		\geq 0,(\epsilon,\epsilon') \in \{(0,0),(0,1),(1,0)\} \rangle \\
-		&+\langle y_3^ay_4,y_3^by_5 \mid a \geq 0, b \geq 0 \rangle
-	\end{split}
-\end{align}
-
-\noindent
-To see these generate $R'$ over $R$, note that $\dim R'_d - \dim_k R
-_d = \lfloor \frac{d}{3} \rfloor,$ by Riemann--Roch. So, it
-suffices to show that we have precisely $\lfloor \frac{d}{3} \rfloor
-,$ elements of degree $d$ in the claimed basis of
-~\ref{eqn:add_one_generator}. Indeed, letting $a = \lfloor \frac{d}{3}
-\rfloor $ and $b = d \bmod 3$, we have that the elements
-
-\begin{align*}
-	x_3^{a-1}x_{3+b},y_3x_3^{a-2}x_{3+b},\ldots, y_3^ax_{3+b},y_3^ay_{
-3+b}
-\end{align*}
-
-\noindent
-are precisely $a$ elements, which are all independent as they have
-distinct pole orders at $P$. This completes part (a).
-
-To show part (b), note that the generators in
-~\ref{eqn:add_one_generator} are precisely a set of monomials which
-generate $k[x,y]/J$ over $k$. So, to show $J = in_\prec(I)$, it
-suffices to show that all generators of $J$ lie in $in_\prec(I)$.
-
-This follows, since there exist constants $A_{i,j} \in k$ for $4
-\leq i \leq 5,3 \leq j \leq m,$ elements $B_1,B_2,B_3 \in k$ and
-elements $w_{i,j} \in R'$ so that the following linear combinations
-of elements lie in $R'$.
-
-\begin{align*}
-	y_ix_j &- A_{i,j} y_{i-1}w_j & \text{ so that } 4 \leq i \leq 5,3
-	\leq j \leq m \text{ and } \deg w_j = \deg x_j + 1\\
-	y_4^2 &+ B_1 y_3 y_5 \\
-	y_4y_5 &+ B_2 y_3^2 x_3 \\
-	y_5^2 &+ B_3 y_3^2 x_4
-\end{align*}
-
-\noindent
-Of course, the initial terms of these elements are precisely the
-generators of $J$, completing (b).
-
-Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
-\end{proof}
+TRANSITION
+\todo{transition!}
 
 \ssec{Inductive Theorem: Increasing the Ramification Orders}
 \label{ssec:g_0_ram_orders}
@@ -1014,6 +610,536 @@ Finally, if $(\sx, J)$ is admissible then so is $(\sx,W)$ for any
 $W \subset J$ by Lemma ~\ref{lem:admissible_subset}.
 \end{proof}
 
+
+
+
+\section{Genus one}
+We now consider the case when the genus is positive. The genus zero
+case is the most complicated and reserve that for Section ~\ref{sec:g_0_effective}
+and Section ~\ref{sec:g_0_non_effective}. We begin with the genus one case.
+
+
+\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 2-Saturated Divisor}
+We prove an inductive theorem on adding 2-sat here.
+\todo{description}
+
+\begin{prop}
+\label{prop:sat_two_induction}
+Let $(\sx, \Delta, L)$ and $(\sx', \Delta, L')$ be log stacky spin curves. 
+Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted log stacky curves so that $\sx$ has signature 
+$\sigma = (g;e_1,\ldots, e_r;\delta)$ with $g > 0,$ and, if $g = 1$ then $\deg 3L \geq 2$.
+Let $R_{L'} = R' = k[x]/I'= k[x_2, x_3
+, x_5,\ldots, x_m]/I'$ and let $L = L' + \frac{1}{
+3}P.$ Suppose $L$ and $L'$ satisfy $sat(Eff(L')) = sat(Eff(L)) = 2.$
+Suppose $\deg x_i = i$ for $i \in \{2, 3\}$ and that the ordering on $k[x]$ satisfies
+\begin{align*}
+	\ord_{x_2}(f) < \ord_{x_2}(g) \implies f \prec g.
+\end{align*}
+Then, the following statements hold.
+\begin{enumerate}
+	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3, 4\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
+		_3,y_4,$ minimally generate $R$ over $R'$.
+	\item[(b)] Equip $k[y_3, y_4]$ with $grlex$ so that $y_3 \prec 
+		y_4$
+		and equip the ring $k[y_3, y_4, x]$ with the block 
+		order so that $R = k[y_3, y_4, x]/I$. Let,
+		\begin{align*}
+			J &= gin_\prec(I')k[x, y_3, y_4] \\
+			&+\langle y_4 x_j \mid 3 \leq j \leq m \rangle \\
+			&+\langle y_4^2.\rangle
+		\end{align*}
+			Then, $gin_\prec(I) = J$.
+	\item[(c)] Any set of minimal generators for $I'$ together with 
+		any set of relations with leading terms as in (b) minimally 
+		generate $I$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+The assumptions on $g,\sigma$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base point free: If $g \geq 2$ then $\deg 3L > 2g-1$ and $\deg 4L > 2g-1$, so $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. If $g = 1$, we assume $\deg 3L \geq 2 > 2g-1$, so we also have $\deg 4L \geq 2 > 2g -1,$ so again $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord
+_P(y_i) = 1$ by Riemann Roch, and the assumptions on $\sigma$. \todo{Understand why/whether we need 
+to cite lemma 5.4.7.} 
+
+In a fashion analogous to the proof of Proposition 
+~\ref{prop:sat_three_induction}, we see 
+the following is a $k$ basis for $R$ over $R'$:
+
+\begin{align}
+\label{eqn:sat_two_add_generator}
+	\begin{split}
+		&\langle y_3^ax_3^b x_4^\epsilon \mid a \geq 0, b 
+		\geq 0, \epsilon \in \{0, 1\}\rangle \\
+		&+\langle y_3^ay_4 \mid a \geq 0 \rangle,
+	\end{split}
+\end{align}
+
+\noindent completing part (a).
+
+To show part (b), note that the generators in
+~\ref{eqn:sat_two_add_generator} are precisely a set of monomials which
+generate $k[x,y]/J$ over $k$. So, to show $J = in_\prec(I)$, it
+suffices to show that all generators of $J$ lie in $in_\prec(I)$.
+
+This follows, since there exist constants $A_j \in k$ for $3 \leq j \leq m,$ and a constnant $B \in k$ and
+elements $w_{i,j} \in R'$ so that the following linear combinations
+of elements lie in $R'$.
+
+\begin{align*}
+	y_4x_j &- A_j y_3 w_j & \text{ so that } 3 \leq j \leq m \text{ and } \deg w_j = \deg x_j + 1\\
+	y_4^2 &+ B y_3^2 x_2 \\
+\end{align*}
+
+\noindent
+Of course, the initial terms of these elements are precisely the
+generators of $J$, completing (b).
+
+Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
+\end{proof}
+
+
+\section{High genus}
+Aaron will write amazing things here.
+
+
+
+
+\section{Genus Zero Effective}
+\label{sec:g_0_effective}
+Now we consider the genus zero case.
+\todo{write intro}
+
+In this section, we examine the case $2\halfcan\sim K_\sx+\Delta$ 
+when $\Delta$ is a non- zero effective divisor.  Using this, we can 
+reduce to looking at effective stacky divisors.  Then, applying a 
+result for general effective $\mathbf{Q}$ divisors, we deduce that $
+R_{\halfcan}$ is generated in degrees up to $e=\max{e_i}$ with 
+relations generated up to degree $2e$ with initial terms quadratic 
+in the generators.  We also demonstrate that these bounds are tight 
+up to \todo{insert how tight they are}.
+
+We have Lemma ~\ref{lem:minimal_quadratic}.
+\todo{fill in hole here}
+
+We will now prove a lemma that will be used to inductively deal with divisors that are sufficiently saturated, by combining and extending methods of VZB \todo{add 
+reference} and O'Dorney\todo{reference}.
+
+\begin{lem}
+\label{lem:deg1_sat_ind}
+Let $X$ be a genus $g$ curve with a $\mathbf{Q}$-divisor $D$ (as
+defined by O'Dorney \todo{reference this-Section 1 of Evan's paper, or preferably define it in the background section})
+satisfying $\deg(\lfloor{D}\rfloor)\ge 0$, so $R_D$ has a
+generator $u$ in degree 1; let $u$ \todo{Was there supposed to be something else in this sentence?}.  Suppose $D$ is generated by $
+u, x_1, \ldots, x_m$ in degree at most $\delta$ with relations generated 
+in degree at most $\tau $.  Suppose $D' = D + \frac{\alpha}{\beta} P$
+for some $P \not \in \Supp(D), \alpha,\beta \in \mathbf{N}$ such
+that
+
+\begin{equation}
+\label{eqn:deg1_sat_ind_dim}
+	h^0(X, \lfloor{dD + d\frac{\alpha}{\beta} P \rfloor}) = h^0(X,\lfloor dD
+	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \forall d \in \mathbf{
+	N} : d \ge \frac{\beta}{\alpha}.
+\end{equation}
+Let 
+\[
+	0<\frac{c_1}{d_1}<...<\frac{c_n}{d_n}=\frac{\alpha}{\beta}
+\]
+be the non-negative best lower approximation.
+Then 
+\begin{itemize}
+\item $R_{D'}$ is generated over $R_D$ by elements $y_1,...,y_n$ such that $y_i$ lies in  
+degree $d_i$ and has a pole at $P$ of degree $c_i$
+
+\item If $I$ and $I'$ are the ideal of relations of $R_D$ and $R_{D'}$ respectively, then 
+
+\begin{align*}
+	\initial_\prec(I') &= \initial_\prec(I) k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
+										 &+ \langle y_i x_j: 1 \le i \le n, 1 \le j \le m \rangle \\
+										 &+ \langle y_i y_j: \lfloor \frac{\alpha}{\beta} \rfloor \rangle \le i \le j \le n-1 \\
+										 &+ \langle y_i y_j: 1\le i\le j\lfloor \frac{\alpha}{\beta} \rfloor\\
+										 &+ \langle (y_i)^{\deg(y_{i+1}+1)}: 1\le i=\lfloor \frac{\alpha}{\beta} \rfloor
+\end{align*}
+In particular, if $\frac{\alpha}{\beta}\le 1$, then $I$ is minimally generated by elements with leading terms of the form $y_ix_j$ and $y_iy_j$.
+\item If $\gin_\prec(I)=\initial_\prec(I)$ then $\gin_\prec(I')=\initial_\prec(I')$.
+\item A Grobner basis with the initial terms $y_i x_j$, $y_iy_j$, and possibly $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor \frac{\alpha}{\beta} \rfloor}+1}$ as shown above minimally generates $I'$.
+\end{itemize}
+\end{lem}
+
+\begin{proof}
+Observe that $u_D,x_1,...,x_m$ each of which has no pole at $P$.
+These can be chosen generically to not have a zero at $P$ \todo{
+check that we can actually do this, or eliminate if it turns out to
+be unnecessary}.
+
+Begin by focusing on the $d^{\text{th}}$ component of $R_{D'}$: $(R_
+{D'})_d = H^0(X, \lfloor D + \frac{\alpha}{\beta} P \rfloor)$. By
+our hypothesis (Equation ~\ref{eqn:deg1_sat_ind_dim}), for any $d
+\in \mathbf{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
+
+\[
+	h^0 (X, d(D+\frac{\alpha}{\beta})) = h^0(X, dD) + \deg(d\frac{\alpha}{\beta})
+\]
+
+\noindent
+so in $H^0 (X, \lfloor dD' \rfloor)$ we can find elements with pole
+order $i$ at $P$ for any $i \in \{0, \ldots, \lfloor d \frac{\alpha}{
+\beta} \rfloor \}$. We can use a method similar to O'Dorney to
+construct the $y_i$'s as desired: \todo{cite where}
+
+Let 
+\[
+	0 < \frac{c_1}{d_1} < \ldots < \frac{c_n}{d_n} = \frac{\alpha}{
+\beta}
+\] 
+be the non-negative best lower approximation of $\frac{
+\alpha}{\beta}$.  Note that elements of $H^0(X,dD')$ have pole of
+orders ranging from 0 to $\lfloor d_i \frac{\alpha}{\beta}\rfloor =
+c_i $ at $P$.  A set of these one for each pole degree 1 to $\lfloor
+d_i \frac{\alpha}{\beta} \rfloor$ are linearly independent from
+each other and $(R_D)_d$, so by degree considerations, they span
+$(R_{D'})_d$ over $(R_D)_d$ as $k$-vector spaces. 
+
+For any $j < i$, $\frac{c_i}{d_i} > \frac{c_j}{d_j}$
+by construction, so any product of $\prod z_i$ of elements of
+degrees less than $d_i$ must have 
+\[
+	\frac{-\ord(z_i)}{\deg(z_i)} < \frac{c_i}{d _i},
+\]
+so we have the pole order of $\prod z_i$ is 
+\[
+	\sum -\ord(z_i) = d_i(\frac{\sum -\ord( z_i)}{\sum \deg( z_i)}) < d_i\frac{c_i}{d_i} = c_i .
+\] 
+Thus, the elements of $(R_{D'})_{d_i}$ with pole order $c_i$ at $P$ are not generated by 
+lower degrees.  
+Generically choose some $y_i \in(R_{
+D'})_{d_i}$ to have maximal pole order at $P$ (note that if $d_i=1$ then 
+\[
+	-\ord_P(y_i)= \max(c_j:d_j=1)
+\]
+and if more than one $d_i$ is 1, we
+must also choose them generically so they generate $(R_{D'})_1$).
+
+Suppose $d\le \beta$ and positive $\frac{c}{d} \le \frac{\alpha}{
+\beta}$ not a best lower approximation.  Then choose
+best lower approximation $\frac{c_i}{d_i}$ such that $c_i\le c$ is
+maximal; since $c<c_{i+1}$, $\frac{c_i}{d_i}\ge \frac{c}{d}$.  From
+this we can deduce that 
+\[
+	c_i+(d-d_i) \lfloor \frac{\alpha}{\beta} \rfloor \ge c.
+\]  
+Therefore, we can generate an element of $(R_{D'})_d$ as a product of lower degrees that 
+has pole degree $c$ at $P$ by either $y_i u^b$ or $y_i z u^b$, or $zu^b$ satisfying $i>
+\lfloor \frac{\alpha}{\beta} \rfloor$ and $z=y_j (y_{\lfloor \frac{\alpha}{\beta} \rfloor})^b$ 
+where $d_j=1$ ($=d_{{\lfloor \frac{a}{b} \rfloor}}$) and $b<d_{\lfloor \frac{\alpha}{\beta} 
+\rfloor + 1}$.  
+Thus, for a general $d$ (not necessarily less than $\beta$), if $\frac{c}{d} \le
+\frac{\alpha}{\beta}$ is not a best lower approximation than we can
+construct an element in degree $d$ with pole degree $c$ by either $y
+_n^a y_i u^b$, $y_n^a zy_iu^b$ or $y_n^a z u^b$ satisfying the
+same conditions.  We notice that elements of this form are all
+linearly independent in $R_{D'}$.  Thus, they form a $k$-basis for
+$R_{D'}$ over $R_D$.  Thus $u, x_1, ..., x_m, y_1, ..., y_n$ generate
+$R_{D'}$.
+
+Choose $x_i\in \{x_1, \ldots, x_m\}$ and $y_j\in \{y_1, \ldots, y_n\}$, where $y_j$ 
+corresponds to the best lower approximation $\frac{c_j}{d_j}$.  Recall from the previous 
+paragraph that we can uniquely construct an element in degree $d$ with pole order $c$ at 
+$P$ by elements of the $y_n^a y_l u^b$ and $y_n^a y_l y_{l'} u^b$ with $d_l=1$ and if 
+$d_{l'}=1$ then $c_{l'} = \lfloor \frac{\alpha}{\beta} \rfloor$.  Specifically, we can 
+successively subtract some $\gamma_l y_l u^{b_l}$, $\gamma_l y_l z_l u^{b_l}$, or $
+\gamma_l z_l$ with $y_l, z_l, b_l$ satisfying the same conditions as above and $\gamma_l
+\in k$ the element ensuring that the difference decreases in pole degree at $P$ by 1.  For 
+convenience, we can combine these into the case $\gamma_l (y_l)^{s_l}(z_l)^{a_l}u^{b_l}$ 
+with $(s_l,a_l)\in \{(1,0),(1,1),(0,1)\}$.  In the cases when $\frac{\alpha}{\beta}<1$ so $z_l$ 
+is not well-defined, just pick an arbitrary element of $R_D$ for $z_l$ ensuring that the 
+expression still makes sense; in such cases we will always choose $a_l=0$ so this choice 
+is irrelevant, and only makes writing out cases more convenient.  Therefore, we can write
+\[
+	x_i y_j - \sum_{l} (y_l)^{s_l} (z_l)^{a_l} u^{b_l}\in R_D
+\]
+giving us a non-trivial relation with leading term $x_iy_j$. \todo{Explicitly state ordering at 
+the beginning}
+
+Similarly, suppose $y_i,y_j\in \{y_1, \ldots ,y_{n-1}\}$ with $1<d_i$ and $j\ge i$ (that is, so 
+$y_iy_j$ does not appear as a basis element of the form described above: $y_n^0 y_jy_i 
+u^0$).  Choose the maximal $l$ such that $c_h\le c_i+c_j$; since $1<d_i\le d_j$, $(c_i
++c_j)-c_j>\lfloor \frac{\alpha}{\beta}\rfloor$ so $c_{j+1} < c_i + c_j$ meaning $c_h \ge c_{j
++1} > c_j$.  Furthermore, $c_i + c_j - c_h<\lfloor \frac{\alpha}{\beta} \rfloor$ so either 
+$c_h=c_i+c_j$ or there is some $h'$ such that $c_{h'}=c_i+c_j-c_l$ and $d_{h'}=1$.  Since 
+$\frac{c_h}{d_h}$ is a best lower approximation of $\frac{\alpha}{\beta}$ with denominator 
+larger than those of $\frac{c_i}{d_i}$ and $\frac{c_j}{d_j}$, we know that since $c_h\le c_i
++c_j$ we must have $d_h<d_i+d_j$.  Thus in the case with a $y_{l'}$ term we have $d_h + 
+d_{h'} = d_h + 1 \le d_i + d_j$.  That is to say, by choosing $b-d_i+d_j-ad_h-1$ we find 
+(where $a\in\{0,1\}$ corresponding to if a $y_{h'}$ appears) that $y_h(y_h')^au^b$ and 
+$y_iy_j$ both lie in degree $d_i+d_j$ with pole order $c_i+c_j$ at $P$.  From here we can 
+follow a similar technique as in the previous paragraph to cancel out poles of $y_iy_j$ at $P
+$ to find
+\[
+	y_iy_j-\gamma_h (y_h)^{s_h}(z_{h})^{a_h}u^{b_h}-\sum_l (y_l)^{s_l} (z_{l})^{a_l}
+u^{b_l}\in R_D
+\]
+implying a relation with initial term $y_i y_j$.  
+
+Next, suppose $y_i, y_j\in \{y_1, \ldots ,y_{n-1}\}$ such that $i\le j$, $d_j=d_i=1$, and $d_{j
++1}=1$ (i.e. $c_i, c_j \le \lfloor \frac{\alpha}{\beta} - 1 \rfloor$).  If $i>1$ and then $y_{j+1}
+y_{i-1}$ lies in the same degree as $y_iy_j$ (degree 2) with the same pole order; following 
+the same method as the previous two paragraphs we find
+\[
+	y_i y_j - \gamma y_{i-1} y_{j+1} - \sum_{l} (y_l)^{s_l} (z_l)^{a_l}u^{b_l}\in R_D.
+\]
+Similarly if $i=1$, then we get the same result using
+\[
+	y_i y_j - \gamma u y_{j+1} - \sum_l y_l u^{b_l} \in R_D.
+\]
+In both cases we deduce that $y_iy_j$ is an initial term of some relation.
+
+Finally, we examine the case (for $\alpha \ge \beta$) of $(y_i)^{i + 1}$ when $i=\lfloor 
+\frac{\alpha}{\beta}\rfloor$.  If $\beta=1$, then there are no relations with initial term a 
+power of $y_i$ and we are immediately done.  Otherwise, assuming $\beta\ne 1$, we note 
+that $c_id_{i+1}=c_{i+1}d_i+1=c_{i+1}+1$. \todo{reference to Evan's paper where he 
+proves this}  Therefore, if $i>1$ then $c_i^{d_{i+1}+1}$ and $c_{i-1} c_{i+1}$ both lie in the 
+$d_{i+1}+1$ degree with pole order $c_{i+1}+1$.  Following a similar technique to the 
+previous paragraphs we find
+\[
+	(y_i)^{c_{i+1}+1} - y_{i+1} y_{i-1} - \sum_l (y_l)^{s_l}(z_l)^{a_l} u^{b_l}.
+\]
+Similarly if $i=1$ then
+\[
+	(y_i)^{c_{i+1}+1}-y_{i+1}u-\sum_l (z_l)^{a_l} u^{b_l}.
+\]
+In each case we demonstrate $(y_i)^{c_{i+1}+1}$ as the initial term of a relation.  
+
+Let $J'$ be the ideal of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ generated by the initial 
+terms described in the previous paragraphs together with $\gin_\prec(I)k[u, x_1, \ldots, 
+x_m, y_1, \ldots, y_n]$.  We show that $J$ is in fact all of the initial ideal.  Suppose $f$ is a 
+non-constant monomial that does not lie within $J$.  Further suppose $f$ does not lie in 
+$k[u, x_1, \ldots, x_m]$.  Then there is some $y_i|f$.  Since $f\not\in j$, we cannot have 
+some $x_j|f$ or else we would have $y_ix_j|f$ contradicting $f\not\in J$.  Furthermore, if 
+$y_l|f$ for $l<i$, then we must have $d_l=1$ or else $y_ly_i$ is an initial element of a 
+relation and divides $f$.  If $d_i=1$ as well, then we must have $c_i=\lfloor \frac{\alpha}
+{\beta}\rfloor$, or else $y_iy_l\in I$; finally we can not have $(y_{\lfloor \frac{\alpha}{\beta}
+\rfloor})^{d_{\lfloor \frac{\alpha}{\beta} \rfloor+1}+1}|f$.  We observe that the remaining 
+elements are precisely those of the form $y_n^a y_i u^b$, $y_n^a zy_iu^b$, and $y_n^a z 
+u^b$ which are the elements of our chosen $k$-basis for $k[u, x_1, \ldots, x_m, y_1, \ldots, 
+y_n]/I'$ over $k[u, x_1, \ldots, x_m]/I$.  Therefore, by dimension counting (in each degree), 
+we see that $J'$ is the initial ideal of $I'$.  Furthermore, since our choice of $y_i$s was 
+generic, this is in fact the generic initial ideal.
+
+In the case when all $\frac{\alpha}{\beta}\le 1$, lemma \ref{lem:minimal_quadratic} immediately tells us that the Grobner basis defined above is minimal.
+\todo{What about $\frac{\alpha}{beta}>1$?}
+\end{proof}
+
+\begin{rem}\label{rem:deg1_sat_ind_gen_rel_degrees}
+Notice that in lemma \ref{lem:deg1_sat_ind}, $D'$ is generated in degree at most $\max(\delta,\beta)$ with relations generated in degree at most $\max(\tau,\delta+\beta,2\beta)$
+\end{rem}
+
+This yields some immediate corollaries:
+
+\begin{cor}\label{cor:effective_Q_divisor_can_ring}
+If the genus of $X$ is 0 and $D\sim\sum \frac{\alpha_i}{\beta_i} P_i$ is linearly equivalent to an effective $\mathbf{Q}$ divisor of $X$, then $R_D$ is generated in degree at most $\max(\beta_i,1)$ with relations generated in degree at most $2\max(\beta_i,1)$.
+\end{cor}
+
+\begin{proof}
+We can prove this by induction.  As a base case, let $D\sim 0$.  Then $R_D\cong k[x]$ which is generated in degree 1 with no relations, satisfying the inductive hypothesis.
+Now, suppose the result is proven for all effective $D$ with support at most $r$ points; then if $D'\sim \sum_{i=1}^{r+1} \frac{\alpha_i}{\beta_i}$, we set $D=\sum_i^{r} \frac{\alpha_i}{\beta_i}$.  By hypothesis, $R_D$ is generated in degree at most $\max_{1\le i\le r}(\beta_i)$ with relations generated in degree at most 2$\max_{1\le i\le r}(\beta_i)$.  Since $D$ is effective, the condition of equation \ref{eqn:deg1_sat_ind_dim} is met, so by remark \ref{rem:deg1_sat_ind_gen_rel_degrees} of lemma \ref{lem:deg1_sat_ind}, $R_{D'}$ is generated in degree at most $\max(\beta_i)$ with relations generated in degree at most $2\max(\beta_i)$.
+\end{proof}
+
+\begin{cor}\label{cor:genus_0_posiive_delta}
+Let $\halfcan$ be a stacky log spin canonical divisor of signature $(0,e_1,...,e_n,\delta)$ with $\delta>0$.  Then 
+\end{cor}
+\begin{proof}
+Since $\halfcan$ is a half canonical divisor, 
+\[
+	2\halfcan=D+\sum \subhalf{i}P_i
+\] 
+where 
+\[
+	D\sim K_X+\Delta\sim -2\infty+ \Delta
+\] is a divisor of $X$ (i.e. with 
+possibly negative integer coefficients).  Since $\Delta$ is non-
+zero effective, $\deg(D)\ge -1$.   Noting that the coefficient of 
+any point $P$ occurring in a stacky divisor of $\sx$ must have 
+coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
+s appearing in the characteristic of $(\sx,\Delta)$).
+ 
+Since all $e_i$s are odd, $2$ cannot appear in a denominator of the 
+coefficient of a point $P$ in $\halfcan$, meaning that $\frac{D}{2}$
+ must be a $X$-divisor.  Since $\deg(\frac{D}{2})=\frac{1}{2}\deg(D)
+\ge -\frac{1}{2}$, we in fact have $\deg(D)\ge 0$.  Thus $\halfcan$ 
+is linearly equivalent to an effective $X$ divisor plus $\sum 
+\subhalf{i}P_i$.  We have thus shown $\halfcan$ is linearly equivalent to an effective divisor.  Thus, by \ref{cor:effective_Q_divisor_can_ring} the desired result follows.
+\end{proof}
+
+\begin{cor}
+Let $D$ be a fractional $\frac{a}{b}$-canonical divisor of a genus 0 stacky curve with denominator $b > 2$ when $\frac{a}{b}$ is written in reduced form.
+\end{cor}
+\begin{proof}
+For a similar reason as in corollary \ref{cor:genus_0_posiive_delta}, $D$ must be equivalent to an effective divisor (in this case even when $\delta=0$), so by corollary \ref{cor:effective_Q_divisor_can_ring} we get the desired result.
+\end{proof}
+
+\todo{Add higher genus corollaries once we figure out what we want to say there}
+
+
+\section{Genus Zero Non-effective}
+\label{sec:g_0_non_effective}
+
+\todo{Peter: throughout this section I will provide a few notes of how we can generalize this to arbitrary genus with the appropriate conditions}
+
+In this section, we will prove that if $(\sx , 0, L)$ is a spin curve,
+so that $\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; 0)$, then
+$R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1, \ldots,
+e_r)$ with relations generated in degree at most $2e$, so long as $\sigma$
+does not lie in a finite list of exceptions. This is proven in
+Subsection ~\ref{ssec:g_0_noneff_induction}. The proof is a rather
+involved induction. In Subsections ~\ref{ssec:g_0_ram_pts},
+~\ref{ssec:g_0_ram_orders} we prove inductive theorems, and in
+Subsection ~\ref{ssec:g_0_base} we check the base cases of the
+induction. Finally, in Subsection ~\ref{ssec:g_0_exceptional} we
+list out the exceptional cases.
+
+\ssec{Saturation}
+\label{ssec:g_0_saturation} \todo{Define saturation}
+Here we compute saturation numbers. That is, given a list of
+ramification orders, with $g = 0,\delta = 0$ understood, we have
+the following saturations of the canonical divisor, as defined in 7.
+2 of VZB \cite{vzb:stacky}. Exceptional cases are listed first
+and generic cases follow.
+
+\todo{prove}
+
+\begin{longtable}
+	{| c | c |}
+	\hline
+	Signature & Saturation \\
+	\hline
+	\hline
+
+	$(0; 3, 3, 3; 0)$ & $\infty$ \\	\hline
+
+	$(0; 3, 3, 5; 0)$ & $18$ \\	\hline
+	
+	$(0; 3, 3, 7; 0)$ & $12$ \\	\hline
+	
+	$(0; 3, 3, 9; 0)$ & $12$ \\	\hline
+	
+	$(0; 3, 5, 5; 0)$ & $8$ \\	\hline
+	
+	$(0; 5, 5, 5; 0)$ & $8$ \\	\hline
+	
+	$(0; 3, 3, 3, 3; 0)$ & $6$ \\	\hline
+	
+	\hline
+	\hline
+	
+	$(0; 3, 3, k; 0)$ & $9$ \\	\hline
+	
+	$(0; a, b, c; 0)$ & $5$ \\	\hline
+	
+	$(0; e_1, \ldots, e_r; 0)$ & $3$ \\	\hline
+\end{longtable}
+
+\begin{center}
+\textbf{Table (I)}: Genus 0 saturation
+\end{center}
+
+\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 3-saturated divisor}
+\label{ssec:g_0_ram_pts}
+
+\begin{prop}
+\label{prop:sat_three_induction}
+\todo{Make explicit assumptions on genus.}
+\todo{Should switch either $R$ and $R'$ or $\sx$ and $\sx'$ to make prime notation consistent (note that inclusion is reversed since this map adds a stacky point to $\sx$; note that we should also say that this map is only ramified at $P$), Aaron: you're right, I wrote the inclusion on rings in the wrong direction. Actually, the map isn't ramified at $P$, it's just defined away from $P$. I decided to remove this from the proposition though.} Let $R_{L'} = R' = k[x]/I'= k[x_3, x_4
+, x_5,\ldots, x_m]/I'$ satisfy $sat(Eff(D')) = 3.$ Let $L = L' + \frac{1}{
+3}P$, and let $R = R_L$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that the ordering on $k[x]$ satisfies
+\begin{align*}
+	\ord_{x_3}(f) < \ord_{x_3}(h) \implies f \prec h.
+\end{align*}
+Then, the following statements hold.
+
+\todo{Peter: Do you mean to have $D=\frac{1}{3}P+D'$ or is it correct as written?}.
+\todo{Peter: We can generalize to arbitrary genus with the condition $\deg(D)>2g-2$ meaning $h^0(X,K-D)=0$ so Riemann-Roch gives us everything we wanted from $\mathbb{P}^1$.}
+
+\begin{enumerate}
+	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3,
+		4,5\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
+		_3,y_4,$ and$ y_5$ minimally generate $R$ over $R'$.
+	\item[(b)] Equip $k[y_3, y_4, y_5]$ with $grlex$ so that $y_3 \prec 
+		y_4 \prec y_5$
+		and equip the ring $k[y_3, y_4, y_5, x]$ with the block 
+		order so that $R = k[y_3, y_4, y_5, x]/I$. Let,
+		\begin{align*}
+			J &= gin_\prec(I')k[x,y_3,y_4,y_5] \\
+			&+\langle y_i x_j \mid 4 \leq i \leq 5, 3 \leq j \leq m\rangle \\
+			&+\langle y_iy_k \mid 4 \leq i \leq j \leq 5.\rangle 
+		\end{align*}
+			Then, $gin_\prec(I) = J$.
+	\item[(c)] Any set of minimal generators for $I'$ together with 
+		any set of relations with leading terms as in (b) minimally 
+		generate $I$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+First, the elements $y_3,y_4,$ and $y_5$ are general and have $-\ord
+_P(y_i) = 1$ by Riemann Roch. \todo{Understand why/whether we need 
+to cite lemma 5.4.7.} To complete the proof of (a) we only need 
+show these elements generate $R$ over $R'$. We can first see that 
+the following is a $k$ basis for $R$ over $R'$:
+
+\begin{align}
+\label{eqn:add_one_generator}
+	\begin{split}
+		&\langle y_3^ax_3^b x_4^\epsilon x_5^{\epsilon'} \mid a \geq 0, b 
+		\geq 0,(\epsilon,\epsilon') \in \{(0,0),(0,1),(1,0)\} \rangle \\
+		&+\langle y_3^ay_4,y_3^by_5 \mid a \geq 0, b \geq 0 \rangle
+	\end{split}
+\end{align}
+
+\noindent
+To see these generate $R'$ over $R$, note that $\dim R'_d - \dim_k R
+_d = \lfloor \frac{d}{3} \rfloor,$ by Riemann--Roch. So, it
+suffices to show that we have precisely $\lfloor \frac{d}{3} \rfloor
+,$ elements of degree $d$ in the claimed basis of
+~\ref{eqn:add_one_generator}. Indeed, letting $a = \lfloor \frac{d}{3}
+\rfloor $ and $b = d \bmod 3$, we have that the elements
+
+\begin{align*}
+	x_3^{a-1}x_{3+b},y_3x_3^{a-2}x_{3+b},\ldots, y_3^ax_{3+b},y_3^ay_{
+3+b}
+\end{align*}
+
+\noindent
+are precisely $a$ elements, which are all independent as they have
+distinct pole orders at $P$. This completes part (a).
+
+To show part (b), note that the generators in
+~\ref{eqn:add_one_generator} are precisely a set of monomials which
+generate $k[x,y]/J$ over $k$. So, to show $J = in_\prec(I)$, it
+suffices to show that all generators of $J$ lie in $in_\prec(I)$.
+
+This follows, since there exist constants $A_{i,j} \in k$ for $4
+\leq i \leq 5,3 \leq j \leq m,$ elements $B_1,B_2,B_3 \in k$ and
+elements $w_{i,j} \in R'$ so that the following linear combinations
+of elements lie in $R'$.
+
+\begin{align*}
+	y_ix_j &- A_{i,j} y_{i-1}w_j & \text{ so that } 4 \leq i \leq 5,3
+	\leq j \leq m \text{ and } \deg w_j = \deg x_j + 1\\
+	y_4^2 &+ B_1 y_3 y_5 \\
+	y_4y_5 &+ B_2 y_3^2 x_3 \\
+	y_5^2 &+ B_3 y_3^2 x_4
+\end{align*}
+
+\noindent
+Of course, the initial terms of these elements are precisely the
+generators of $J$, completing (b).
+
+Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
+\end{proof}
+
+Here we describe induction of raising degrees from Theorem ~\ref{thm:ram_order_ind}
+\todo{fill out}
+
 \ssec{Base Cases}
 \label{ssec:g_0_base}
 Now we have an inductive statement on the number of ramified
@@ -1270,8 +1396,9 @@ relations) in higher degrees than in the generic case.
 \end{rem}
 
 
-\ssec{Conclusion}
-\label{ssec:g_0_conclusion}
+\ssec{Application of induction}
+\label{ssec:g_0_noneff_induction}
+Now we can combine this.
 
 \begin{thm}
 \label{thm:g_0_generators_relations_rep}
@@ -1290,90 +1417,16 @@ long as $\sigma$ does not lie in a finite list of exceptions. \todo{
 Include reference to the table with this list of exceptions.}
 \end{thm}
 
-\section{Genus one}
-
-\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 2-Saturated Divisor}
-
-\begin{prop}
-\label{prop:sat_two_induction}
-Let $(\sx, \Delta, L)$ and $(\sx', \Delta, L')$ be log stacky spin curves. 
-Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted log stacky curves so that $\sx$ has signature 
-$\sigma = (g;e_1,\ldots, e_r;\delta)$ with $g > 0,$ and, if $g = 1$ then $\deg 3L \geq 2$.
-Let $R_{L'} = R' = k[x]/I'= k[x_2, x_3
-, x_5,\ldots, x_m]/I'$ and let $L = L' + \frac{1}{
-3}P.$ Suppose $L$ and $L'$ satisfy $sat(Eff(L')) = sat(Eff(L)) = 2.$
-Suppose $\deg x_i = i$ for $i \in \{2, 3\}$ and that the ordering on $k[x]$ satisfies
-\begin{align*}
-	\ord_{x_2}(f) < \ord_{x_2}(g) \implies f \prec g.
-\end{align*}
-Then, the following statements hold.
-\begin{enumerate}
-	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3, 4\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
-		_3,y_4,$ minimally generate $R$ over $R'$.
-	\item[(b)] Equip $k[y_3, y_4]$ with $grlex$ so that $y_3 \prec 
-		y_4$
-		and equip the ring $k[y_3, y_4, x]$ with the block 
-		order so that $R = k[y_3, y_4, x]/I$. Let,
-		\begin{align*}
-			J &= gin_\prec(I')k[x, y_3, y_4] \\
-			&+\langle y_4 x_j \mid 3 \leq j \leq m \rangle \\
-			&+\langle y_4^2.\rangle
-		\end{align*}
-			Then, $gin_\prec(I) = J$.
-	\item[(c)] Any set of minimal generators for $I'$ together with 
-		any set of relations with leading terms as in (b) minimally 
-		generate $I$.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-The assumptions on $g,\sigma$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base point free: If $g \geq 2$ then $\deg 3L > 2g-1$ and $\deg 4L > 2g-1$, so $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. If $g = 1$, we assume $\deg 3L \geq 2 > 2g-1$, so we also have $\deg 4L \geq 2 > 2g -1,$ so again $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord
-_P(y_i) = 1$ by Riemann Roch, and the assumptions on $\sigma$. \todo{Understand why/whether we need 
-to cite lemma 5.4.7.} 
-
-In a fashion analogous to the proof of Proposition 
-~\ref{prop:sat_three_induction}, we see 
-the following is a $k$ basis for $R$ over $R'$:
-
-\begin{align}
-\label{eqn:sat_two_add_generator}
-	\begin{split}
-		&\langle y_3^ax_3^b x_4^\epsilon \mid a \geq 0, b 
-		\geq 0, \epsilon \in \{0, 1\}\rangle \\
-		&+\langle y_3^ay_4 \mid a \geq 0 \rangle,
-	\end{split}
-\end{align}
-
-\noindent completing part (a).
-
-To show part (b), note that the generators in
-~\ref{eqn:sat_two_add_generator} are precisely a set of monomials which
-generate $k[x,y]/J$ over $k$. So, to show $J = in_\prec(I)$, it
-suffices to show that all generators of $J$ lie in $in_\prec(I)$.
-
-This follows, since there exist constants $A_j \in k$ for $3 \leq j \leq m,$ and a constnant $B \in k$ and
-elements $w_{i,j} \in R'$ so that the following linear combinations
-of elements lie in $R'$.
-
-\begin{align*}
-	y_4x_j &- A_j y_3 w_j & \text{ so that } 3 \leq j \leq m \text{ and } \deg w_j = \deg x_j + 1\\
-	y_4^2 &+ B y_3^2 x_2 \\
-\end{align*}
-
-\noindent
-Of course, the initial terms of these elements are precisely the
-generators of $J$, completing (b).
-
-Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
-\end{proof}
-
-
-\section{High genus}
-Aaron will write amazing things here.
-
 
 \section{Acknowledgements}
-We are grateful to Ono-DZB.
+We are grateful to David Zureick-Brown for introducing us to this
+field of study, providing incredibly helpful guidance, and being an
+excellent project mentor. We also thank Ken Ono and the Emory University
+Number Theory REU for arranging our project and providing a great
+environment for mathematical learning and collaboration. Finally, we
+gratefully acknowledge that our research was financially supported by
+NSF Grant \_\_\_\_\_ via the Emory University Number Theory REU. We deeply
+appreciate all of the support that has made our work possible.
 
 \nocite{*}
 \bibliography{bibliography}{}

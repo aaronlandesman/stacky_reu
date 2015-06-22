@@ -1,0 +1,45 @@
+Title
+Abstract
+
+Introduction
+	Modular Forms Connection
+	Main Results
+
+Background
+	Definitions
+		Saturation
+
+General Lemmata
+	General: Graded ring initial ideal quadratic minimal
+	Definition: Admissible
+	Inductive: Raising degree
+
+(Save compicated genus zero case for last)
+Genus positive
+	Genus 1
+		Demonstration of saturation
+		Inductive: adding 2-sat pts
+		Base cases
+		Application of induction
+
+	Genus >1
+		Demonstration of saturation
+		Half-canonical sheaf generators and relations
+		Application of induction
+
+Genus zero
+	Effective
+		Demonstration of saturation
+		Inductive: adding 1-sat pts
+		Application of induction
+
+	Ineffective
+		Demonstration of saturation
+		Inductive: adding 3-sat pts
+		Base cases
+		Exceptional cases
+		Application of induction
+
+Acknowledgements
+
+References
