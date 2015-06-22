@@ -1040,13 +1040,14 @@ at most $2e$ and $(\sx', J)$ is admissible for the following cases:
 	\item[(a)] $\sigma_1 = (0; 3, 3, 11; 0), J_1 = \{3\}$
 	\item[(b)] $\sigma_2 = (0; 3, 5, 9; 0), J_2 = \{3\}$
 	\item[(c)] $\sigma_3 = (0; 3, 7, 7; 0), J_3 = \{2, 3\}$
-	\item[(d)] $\sigma_4 = (0; 5, 7, 7; 0), J_4 = \{2, 3\}$
-	\item[(e)] $\sigma_5 = (0; 7, 7, 7; 0), J_5 = \{1, 2, 3\}$
-	\item[(f)] $\sigma_6 = (0; 3, 3, 3, 5; 0), J_6 = \{4\}$
-	\item[(g)] $\sigma_7 = (0; 3, 3, 5, 5; 0), J_7 = \{3, 4\}$
-	\item[(h)] $\sigma_8 = (0; 3, 5, 5, 5; 0), J_8 = \{2, 3, 4\}$
-	\item[(i)] $\sigma_9 = (0; 5, 5, 5, 5; 0), J_9 = \{1, 2, 3, 4\}$
-	\item[(j)] $\sigma_{10} = (0; 3, 3, 3, 3, 3; 0), J_{10} = \{1, 2, 3, 4, 5\}$
+	\item[(d)] $\sigma_4 = (0; 5, 5, 7; 0), J_4 = \{3\}$
+	\item[(e)] $\sigma_5 = (0; 5, 7, 7; 0), J_5 = \{2, 3\}$
+	\item[(f)] $\sigma_6 = (0; 7, 7, 7; 0), J_6 = \{1, 2, 3\}$
+	\item[(g)] $\sigma_7 = (0; 3, 3, 3, 5; 0), J_7 = \{4\}$
+	\item[(h)] $\sigma_8 = (0; 3, 3, 5, 5; 0), J_8 = \{3, 4\}$
+	\item[(i)] $\sigma_9 = (0; 3, 5, 5, 5; 0), J_9 = \{2, 3, 4\}$
+	\item[(j)] $\sigma_{10} = (0; 5, 5, 5, 5; 0), J_{10} = \{1, 2, 3, 4\}$
+	\item[(k)] $\sigma_{11} = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$
 \end{enumerate}
 
 \noindent
@@ -1078,24 +1079,26 @@ and any generator $z$ of $R'$.
 	(a) & \{3, 7, 9, 11\} & \{14, 18\} & 11\\	\hline
 
 	(b) & \{3, 5, 7, 9\} & \{12, 14\}	& 9\\ \hline
+	
+	(c) & \{3, 5, 5, 7\} & \{10, 12\}	& 7\\ \hline
 
-	(c) & \{3, 5, 7, 7\} & \{10, 14\}	& 7\\ \hline
+	(d) & \{3, 5, 7, 7\} & \{10, 14\}	& 7\\ \hline
 	
-	(d) & \{3, 5, 5, 7, 7\} & \{10, 10, 12, 12, 14\}	& 7\\ \hline
+	(e) & \{3, 5, 5, 7, 7\} & \{10, 10, 12, 12, 14\}	& 7\\ \hline
 	
-	(e) & \{3, 5, 5, 7, 7, 7\} & \{10, 10, 10, 12, 12, 12, 14, 14, 14\}	& 7\\ \hline
+	(f) & \{3, 5, 5, 7, 7, 7\} & \{10, 10, 10, 12, 12, 12, 14, 14, 14\}	& 7\\ \hline
 
-	(f) & \{3, 3, 4, 5\} & \{8, 9\} & 5\\ \hline
+	(g) & \{3, 3, 4, 5\} & \{8, 9\} & 5\\ \hline
 	
-	(g) & \{3, 3, 4, 5, 5\} & \{8, 8, 9, 9, 10\} & 5\\ \hline
+	(h) & \{3, 3, 4, 5, 5\} & \{8, 8, 9, 9, 10\} & 5\\ \hline
 	
-	(h) & \{3, 3, 4, 5, 5, 5\} &
+	(i) & \{3, 3, 4, 5, 5, 5\} &
 	\{8, 8, 8, 9, 9, 9, 10, 10, 10\} & 5\\ \hline
 	
-	(i) & \{3, 3, 4, 5, 5, 5, 5\} &
+	(j) & \{3, 3, 4, 5, 5, 5, 5\} &
 	\{8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10\} & 5\\ \hline
 
-	(j) &	\{3, 3, 3, 4,	4, 5\} & \{6, 7, 7, 8, 8, 8, 9, 9, 10\} & 5\\ \hline
+	(k) &	\{3, 3, 3, 4,	4, 5\} & \{6, 7, 7, 8, 8, 8, 9, 9, 10\} & 5\\ \hline
 \end{longtable}
 
 \begin{center}
@@ -1113,29 +1116,33 @@ for any choice of $i \in J$ for these cases, so $\deg \lfloor e_i L
 independent of the choice of $i$.
 
 \begin{longtable}
-	{| c | c || c | c | c |}
+	{| c | c | c || c | c |}
 	\hline
-	$\sigma$ & $J$ &  $i$ & $\deg \lfloor e_i L \rfloor$ & $\max_{d \geq 0} \#S_{(\sigma, J)}(i))$\\
+	Case & $\sigma$ & $J$ & $\deg \lfloor e_i L \rfloor$ & $\max_{d \geq 0} \#S_{(\sigma, J)}(i))$\\
 	\hline
 	\hline
 
-	$(0; 3, 3, 11; 0)$ & $\{3\}$ & $\forall i \in J$ & 1 & 0\\	\hline
+	(a) & $(0; 3, 3, 11; 0)$ & $\{3\}$ & 1 & 0\\	\hline
 	
-	$(0; 3, 7, 7; 0)$ & $\{3\}$ & $\forall i \in J$ & 2 & 0\\ \hline
+	(b) & $(0; 3, 5, 9; 0)$ & $\{3\}$ & 1 & 0\\ \hline
 	
-	$(0; 5, 7, 7; 0)$ & $\{2, 3\}$ & $\forall i \in J$ & 2 & 0\\ \hline
+	(c) & $(0; 3, 7, 7; 0)$ & $\{3\}$ & 2 & 0\\ \hline
+	
+	(d) & $(0; 5, 5, 7; 0)$ & $\{3\}$ & 1 & 0\\ \hline
+	
+	(e) & $(0; 5, 7, 7; 0)$ & $\{2, 3\}$ & 2 & 0\\ \hline
 
-	$(0; 7, 7, 7; 0)$ & $\{1, 2, 3\}$ & $\forall i \in J$ & 3 & 0\\ \hline
+	(f) & $(0; 7, 7, 7; 0)$ & $\{1, 2, 3\}$ & 3 & 0\\ \hline
 
-	$(0; 3, 3, 3, 5; 0)$ & $\{4\}$ & $\forall i \in J$ & 2 & 0\\ \hline
+	(g) & $(0; 3, 3, 3, 5; 0)$ & $\{4\}$ & 2 & 0\\ \hline
 	
-	$(0; 3, 3, 5, 5; 0)$ & $\{3, 4\}$ & $\forall i \in J$ & 3 & 0\\ \hline
+	(h) & $(0; 3, 3, 5, 5; 0)$ & $\{3, 4\}$ & 3 & 0\\ \hline
 	
-	$(0; 3, 5, 5, 5; 0)$ & $\{2, 3, 4\}$ & $\forall i \in J$ & 4 & 0\\ \hline
+	(i) & $(0; 3, 5, 5, 5; 0)$ & $\{2, 3, 4\}$ & 4 & 0\\ \hline
 	
-	$(0; 5, 5, 5, 5; 0)$ & $\{1, 2, 3, 4\}$ & $\forall i \in J$ & 5 & 0\\ \hline
+	(j) & $(0; 5, 5, 5, 5; 0)$ & $\{1, 2, 3, 4\}$ & 5 & 0\\ \hline
 
-	$(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & $\forall i \in J$ & 5 & 0\\ \hline
+	(k) & $(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & 5 & 0\\ \hline
 \end{longtable}
 
 \begin{center}
@@ -1283,7 +1290,7 @@ long as $\sigma$ does not lie in a finite list of exceptions. \todo{
 Include reference to the table with this list of exceptions.}
 \end{thm}
 
-\section{Genus positive}
+\section{Genus one}
 
 \ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 2-Saturated Divisor}
 
@@ -1361,8 +1368,12 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \end{proof}
 
 
+\section{High genus}
+Aaron will write amazing things here.
+
+
 \section{Acknowledgements}
-We are grateful to VZB.
+We are grateful to Ono-DZB.
 
 \nocite{*}
 \bibliography{bibliography}{}
