@@ -631,7 +631,7 @@ We prove an inductive theorem on adding 2-sat here.
 
 \begin{prop}
 \label{prop:sat_two_induction}
-Let $(\sx, \Delta, L)$ and $(\sx', \Delta, L')$ be log stacky spin curves. 
+Let $(\sx, \Delta, L)$ and $(\sx', \Delta, L')$ be tame separably rooted log stacky spin curves. 
 Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted log stacky curves so that $\sx$ has signature 
 $\sigma = (g;e_1,\ldots, e_r;\delta)$ with $g > 0,$ and, if $g = 1$ then $\deg 3L \geq 2$.
 Let $R_{L'} = R' = k[x]/I'= k[x_2, x_3
@@ -645,13 +645,13 @@ Then, the following statements hold.
 \begin{enumerate}
 	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3, 4\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
 		_3,y_4,$ minimally generate $R$ over $R'$.
-	\item[(b)] Equip $k[y_3, y_4]$ with $grlex$ so that $y_3 \prec 
-		y_4$
+	\item[(b)] Equip $k[y_3, y_4]$ with $grlex$ so that $y_4 \prec 
+		y_3$
 		and equip the ring $k[y_3, y_4, x]$ with the block 
 		order so that $R = k[y_3, y_4, x]/I$. Let,
 		\begin{align*}
 			J &= gin_\prec(I')k[x, y_3, y_4] \\
-			&+\langle y_4 x_j \mid 3 \leq j \leq m \rangle \\
+			&+\langle y_4 x_j \mid 2 \leq j \leq m \rangle \\
 			&+\langle y_4^2.\rangle
 		\end{align*}
 			Then, $gin_\prec(I) = J$.
@@ -673,9 +673,9 @@ the following is a $k$ basis for $R$ over $R'$:
 \begin{align}
 \label{eqn:sat_two_add_generator}
 	\begin{split}
-		&\langle y_3^ax_3^b x_4^\epsilon \mid a \geq 0, b 
-		\geq 0, \epsilon \in \{0, 1\}\rangle \\
-		&+\langle y_3^ay_4 \mid a \geq 0 \rangle,
+		&\{ y_3^ax_2^b x_3^\epsilon \mid a \geq 0, b 
+		\geq 0, \epsilon \in \{0, 1\}\} \\
+		&\cup \{ y_3^ay_4 \mid a \geq 0 \},
 	\end{split}
 \end{align}
 
@@ -691,7 +691,7 @@ elements $w_{i,j} \in R'$ so that the following linear combinations
 of elements lie in $R'$.
 
 \begin{align*}
-	y_4x_j &- A_j y_3 w_j & \text{ so that } 3 \leq j \leq m \text{ and } \deg w_j = \deg x_j + 1\\
+	y_4x_j &- A_j y_3 w_j & \text{ so that } 2 \leq j \leq m \text{ and } \deg w_j = \deg x_j + 1\\
 	y_4^2 &+ B y_3^2 x_2 \\
 \end{align*}
 
@@ -710,6 +710,94 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \section{High genus}
 
 \ssec{Inductive Theorem: Adding points for high genus}
+
+\begin{lem}\label{lem:adding_points_saturation_2_to_1_with_log}
+Let $(\sx, \Delta, \halfcan)$ and $(\sx, \Delta', L')$ be tame separably rooted log stacky spin 
+curves with $0\ne \Delta=\Delta'+2P$ for some non-stacky point $P$ not in the support of $
+\halfcan'$, meaning that $L=L'+P$.  Let $(g; e_1, \ldots, e_\tau; \delta+2)$ and $(g; e_1, 
+\ldots, e_\tau, \delta)$ with $g\ge 2$ be their respective signatures.  Suppose 
+$sat(Eff(\halfcan))=1$ and $sat(Eff(\halfcan'))=2$.  Further suppose $R_{\halfcan'} = k[x_2, 
+x_3, \ldots, x_m]/I'$ with $\deg(x_2) = 2$ and $\deg(x_3) = 3$.  Then
+\begin{enumerate}
+\item[(a)] Then generic elements $y_1$ and $y_2$ in $(R_{\halfcan})_1$ and $
+(R_{\halfcan})_2$ respectively, such that $-\ord_P(y_2)>0$ and $\{y_1^2, y_2\}$ is linearly 
+independent, generate $R_\halfcan$ over $R_{\halfcan'}$.
+\item[(b)] Equip $k[y_1,y_2]$ with $grlex$ so that $y_2 \prec y_1$ and equip $k[y_1, y_2, 
+x_2, \ldots, x_m]$ with the block order so that $R_\halfcan=k[y_1, y_2, x_2, \ldots, x_m]/I$.  
+Then
+\begin{align*}
+			in_\prec(I) &= in_\prec(I')k[x_2, \ldots, x_m, y_1, y_2] \\
+			&+\langle y_2 x_j \mid 2 \leq j \leq m \rangle \\
+			&+\langle y_2^2\rangle.
+		\end{align*}
+\item[(c)] Any set of minimal generators for $I'$ together with any set of relations with 
+leading terms as above minimally generate $I$.
+\end{enumerate}
+
+\end{lem}
+\begin{proof}
+Since adding $P$ to $L'$, reduces saturation from 2 to 1, $h^0(X, \lfloor L \rfloor)=1$.  
+Choose any $y_1\in H^0(X,\lfloor L\rfloor)$; we know by saturation arguments that $-
+\ord_P(y_1)=1$.  Furthermore, since $\delta>0$, we use Riemann-Roch to deduce that for 
+all $d>1$ $h^0(X,\lfloor dL\rfloor)=h^0(dL')+d$, so $(R_\halfcan)_d$ is a $d$ dimension $k
+$-vector space over $(R_{\halfcan'})_d$.  In particular, this means we can generically 
+choose an element $y_2\in H^0(X,\lfloor 2L\rfloor)$ linearly independent from $y_1^2$.  By 
+dimension counting, we see that 
+\[
+	\langle y_1^a x_2^b x_3^c: a\ge 0, b\ge 0, c\in \{0,1\}\rangle
+\]
+\[
+	\langle y_1^a y_2: a\ge 0\rangle
+\]
+form a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$.  This completes part (a).
+
+To show part (b), we note that the monomials in the basis above generate $k[x,y]/\initial_
+\prec(I)$.  Thus, it is sufficient to show that $J\subseteq \initial_\prec(I)$.  For $j\ge 2$, we 
+can choose $w_j$ in degree $\deg(x_j)+1$ and $A_j\in k$ such that
+\[
+	y_2x_j-A_jy_3w_j
+\]
+has no pole at $P$ at thus lies in $R_{\halfcan'}$.  Similarly, we can choose $B$ and $C$ 
+such that
+\[y^2_4+By_1^2x_2+Cy_1x_3\]
+has no pole at $P$, so it lies in $R_{\halfcan'}$.  These give us relations with initial terms 
+as desired, concluding part (b).
+
+Finally, (c) follows immediately from Lemma \ref{lem:minimal_quadratic}.
+
+\end{proof}
+
+\begin{lem}\label{lem:adding_points_saturation_2_to_1_no_log}
+Let $(\sx, 2P, \halfcan)$ and $(\sx, 0, L')$ be tame separably rooted log stacky spin curves 
+with $P$ not in the support of $\halfcan'$, meaning that $L=L'+P$.  Let $(g; e_1, \ldots, e_
+\tau; 2)$ and $(g; e_1, \ldots, e_\tau, 0)$ with $g\ge 2$ be their respective signatures.  
+Suppose $sat(Eff(\halfcan))=1$ and $sat(Eff(\halfcan'))=2$.  Further suppose 
+$R_{\halfcan'} = k[x_2, x_3, \ldots, x_m]/I'$ with $\deg(x_2) = 2$ and $\deg(x_3) = 3$.  
+Then
+\begin{enumerate}
+\item[(a)] Then generic elements $y_1$ and $y_3$ in $(R_{\halfcan})_1$ and $
+(R_{\halfcan})_3$ respectively, such that $-\ord_P(y_3)>1$ and $\{y_1^3, y_2\}$ is linearly 
+independent, generate $R_\halfcan$ over $R_{\halfcan'}$.
+\item[(b)] Equip $k[y_1,y_3]$ with $grlex$ so that $y_3 \prec y_1$ and equip $k[y_1, y_3, 
+x_2, \ldots, x_m]$ with the block order so that $R_\halfcan=k[y_1, y_3, x_2, \ldots, x_m]/I$.  
+Then
+\begin{align*}
+			in_\prec(I) &= in_\prec(I')k[x_2, \ldots, x_m, y_1, y_2] \\
+			&+\langle y_3 x_j \mid 2 \leq j \leq m \rangle \\
+			&+\langle y_3^2
+		\end{align*}
+\item[(c)] Any set of minimal generators for $I'$ together with any set of relations with 
+leading terms as above minimally generate $I$.
+\end{enumerate}
+\end{lem}
+\begin{proof}
+The proof follows similarly to that of lemma 
+\ref{lem:adding_points_saturation_2_to_1_with_log}, with the change that $(R_
+\halfcan)_2$ is only a degree 1 $k$-vector space over $(R_{\halfcan'})_2$ forcing a 
+generator in degree 3 rather than degree 2.  
+\end{proof}
+
+
 
 \ssec{Bounds on Generators and Relations in high genus}
 
@@ -1258,7 +1346,7 @@ independent of the choice of $i$.
 \begin{longtable}
 	{| c | c | c || c | c |}
 	\hline
-	Case & $\sigma$ & $J$ & $\deg \lfloor e_i L \rfloor$ & $\max_{d \geq 0} \#S_{(\sigma, J)}(i))$\\
+	Case & $\sigma$ & $J$ & $\deg \lfloor e_i L \rfloor$ & $\max_{d \geq 0} \#S_{(\sigma, J)}(i)$\\
 	\hline
 	\hline
 
@@ -1431,6 +1519,12 @@ is generated as a $k$-algebra by elements of degree at most $e =
 long as $\sigma$ does not lie in a finite list of exceptions. \todo{
 Include reference to the table with this list of exceptions.}
 \end{thm}
+
+\section{Further Research}
+\begin{itemize}
+\item More on fractional modular forms
+\item Make explicit generators and relations for base case of non-stacky higher genus half-canonical divisors
+\end{itemize}
 
 
 \section{Acknowledgments}
