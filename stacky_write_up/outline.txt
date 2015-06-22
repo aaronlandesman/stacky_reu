@@ -11,6 +11,7 @@ Background
 
 General Lemmata
 	General: Graded ring initial ideal quadratic minimal
+	Inductive: adding 1-sat pts
 	Definition: Admissible
 	Inductive: Raising degree
 
@@ -30,8 +31,7 @@ Genus positive
 Genus zero
 	Effective
 		Demonstration of saturation
-		Inductive: adding 1-sat pts
-		Application of induction
+		Application of induction (1-sat)
 
 	Ineffective
 		Demonstration of saturation
