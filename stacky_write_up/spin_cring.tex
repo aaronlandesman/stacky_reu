@@ -168,7 +168,20 @@
 
 \tableofcontents
 
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
 
 \section{Introduction}
 \todo{Edit this stuff}
@@ -200,7 +213,30 @@ long as $\sigma$ does not lie in a finite list of exceptions. \todo{
 Include reference to the table with this list of exceptions.}
 \end{thm}
 
+
+
+
+
+
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Background}
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
@@ -215,16 +251,34 @@ Here are some definitions.
 2 of VZB \cite{vzb:stacky}.
 \end{defn}
 
+
+
+
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive Lemmata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Inductive Lemmata}
 First we present the general inductive lemmata that will be applied
-for all genera.
-\todo{intro}
+for all genera.  We offer various inductive lemmata that will allow us to add fractional point $\frac{\alpha}{\beta}P$ to a $\mathbf{Q}$ divisor $D$ of $X$ and describe the new generators and relations of $R_{D+p}$ not in $R_D$.  Next, we provide a method specific to the case of stacky canonical divisors with no log component, which under certain conditions allows us to transfer information about the generators and relations of the half canonical ring of a stacky curve $\sx$' with signature $(g; e_1', \ldots, e_\tau'; 0)$ to a stacky curve $\sx$ with signature $(g; e_1', \ldots, e_\tau'; 0)$ where each $e_i\in \{e_i', e_i'+2\}$.    
 
-\ssec{General: quadratic initial ideal minimal relations}
-First we prove a nice result about minimal generation of ideals of relations:
-
+However, before we can answer these general lemmata, it is useful to prove a nice result about minimal generation of ideals of relations:
 \todo{Include one of the following, if the first one, include a remark for quotient}
 \begin{lem}
 \label{lem:minimal_quadratic}
@@ -314,15 +368,12 @@ Fact about quotient.
 %space).  
 %\end{rem}
 
-Transition words.
-\todo{transition!}
+With this result, we will be able to show that the sets of generators of the ideal of relations in many of the following inductive arguments are minimal.
 
 \ssec{Inductive Lemmata: Adding Points}
 \label{ssec:add_pts}
-In this section, we prove various inductive statements about
-generators and relations with respect to adding points.
-
-\ssec{Inductive Theorem: Adding points for high genus}
+In this section, we prove various inductive statements under the following setup:
+Let $\halfcan'$ be $\mathbf{Q}$-divisor of $X$ (and often a log half canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbf{N}$ and certain saturation conditions.  Let $\halfcan=\halfcan'+P$ for some $P$ not in the support of $\halfcan$.\todo{do we always assume this?}  Then we will explicitly describe elements that minimally generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that minimally generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Grobner Basis).   The proofs of these lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
 
 \begin{lem}
 \label{lem:deg1_sat_ind}
@@ -707,15 +758,8 @@ generators of $J$, completing (b).
 Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \end{proof}
 
-Transition to genus one.
-\todo{transition!}
-
-\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 2-Saturated Divisor}
-We prove an inductive theorem on adding 2-sat here.
-\todo{description}
-
-\begin{prop}
-\label{prop:sat_two_induction}
+\begin{lem}
+\label{lem:sat_two_induction}
 Let $(\sx, \Delta, L)$ and $(\sx', \Delta, L')$ be tame separably rooted log stacky spin curves. 
 Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted log stacky curves so that $\sx$ has signature 
 $\sigma = (g;e_1,\ldots, e_r;\delta)$ with $g > 0,$ and, if $g = 1$ then $\deg 3L \geq 2$.
@@ -744,7 +788,7 @@ Then, the following statements hold.
 		any set of relations with leading terms as in (b) minimally 
 		generate $I$.
 \end{enumerate}
-\end{prop}
+\end{lem}
 
 \begin{proof}
 The assumptions on $g,\sigma$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base point free: If $g \geq 2$ then $\deg 3L > 2g-1$ and $\deg 4L > 2g-1$, so $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. If $g = 1$, we assume $\deg 3L \geq 2 > 2g-1$, so we also have $\deg 4L \geq 2 > 2g -1,$ so again $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord
@@ -865,12 +909,6 @@ Let $D$ be a fractional $\frac{a}{b}$-canonical divisor of a genus 0 stacky curv
 \begin{proof}
 For a similar reason as in corollary \ref{cor:genus_0_posiive_delta}, $D$ must be equivalent to an effective divisor (in this case even when $\delta=0$), so by corollary \ref{cor:effective_Q_divisor_can_ring} we get the desired result.
 \end{proof}
-
-Transition words.
-\todo{transition!}
-
-\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 3-saturated divisor}
-\label{ssec:g_0_ram_pts}
 
 Transition words.
 \todo{transition!}
