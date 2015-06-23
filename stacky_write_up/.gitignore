@@ -1,6 +1,5 @@
 # binaries
 *.dvi
-*.pdf
 
 # TeX junk
 *.log
