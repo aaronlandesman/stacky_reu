@@ -9,35 +9,25 @@ Background
 	Definitions
 		Saturation
 
-General Lemmata
-	General: Graded ring initial ideal quadratic minimal
-	Inductive: adding 1-sat pts
-	Definition: Admissible
-	Inductive: Raising degree
+Inductive Theorems
+	General (not a subsection): Graded ring initial ideal quadratic minimal
+	Inductive: adding pts (with all the inductive theorems)
+	Inductive: Raising degree and admissibility
 
-(Save compicated genus zero case for last)
-Genus positive  —-Check admissibility under adding at a point (of 3 to all 3s)
-	Genus 1
-		Inductive: adding 2-sat pts
-		Base cases —— —- (base case with 1 stacky point and no log points) & 1 log point and 0 canonical divisor
-		Application of induction
+Genus >1
+	Demonstration of saturation
+	Half-canonical sheaf generators and relations
+	Application of induction
 
-	Genus >1
-		Demonstration of saturation
-		Half-canonical sheaf generators and relations
-		Application of induction
+Genus 1
+	Base cases (base case with 1 stacky point and no log points) & 1 log point and 0 canonical divisor
+	Application of induction
 
 Genus zero
-	Effective
-		Demonstration of saturation
-		Application of induction (1-sat)
-
-	Ineffective
-		Demonstration of saturation
-		Inductive: adding 3-sat pts
-		Base cases
-		Exceptional cases
-		Application of induction
+	Demonstration of saturation
+	Base cases
+	Exceptional cases
+	Application of induction
 
 Acknowledgements
 
