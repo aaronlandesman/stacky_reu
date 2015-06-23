@@ -16,10 +16,10 @@ General Lemmata
 	Inductive: Raising degree
 
 (Save compicated genus zero case for last)
-Genus positive
+Genus positive  —-Check admissibility under adding at a point (of 3 to all 3s)
 	Genus 1
 		Inductive: adding 2-sat pts
-		Base cases
+		Base cases —— —- (base case with 1 stacky point and no log points) & 1 log point and 0 canonical divisor
 		Application of induction
 
 	Genus >1
