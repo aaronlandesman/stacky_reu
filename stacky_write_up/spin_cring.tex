@@ -705,6 +705,42 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 
 \ssec{Genus 1 base cases}
 
+Let $\sx$ be a tame, seperably rooted stacky curve of genus 1. Let $P,Q$ are distinct hyperelliptic fixed points, and $R_1,\ldots, R_n$ be points on $\sx$. In this section, will compute the canonical ring $R_L$ in the cases that
+\begin{enumerate}
+	\item $L = 0$
+	\item $L = P-Q$
+	\item $L = P - Q + \frac{1}{3}R$
+	\item $L = P - Q + \sum_{i=1}^{n}\frac{1}{3}R_i$
+\end{enumerate}
+In addition to being illustrative examples, these will serve as the base cases of induction, in order to compute generators and relations for an arbitrary genus 1, stacky log half canonical divisor. In each of the following examples, we will give explicit generators and relations, and in case $(3)$ and $(4)$ we check the corresponding signature is admissible.
+
+\begin{example}
+\label{eg:g_1_triv}
+In the case $L = 0,$ we see immediately that $R_L \cong k[x]$ with $x$ a generator in degree 1.
+\end{example}
+
+\begin{example}
+\label{eg:g_1_half_can}
+In the case $L=P - Q.$ Then, we have $R_{(2k+1)L} \cong 0$ while $R_{2kL} \cong k$, with a single generator in degree 2. Therefore, $R_L \cong k[y]$, where $y$ is a generator in degree 2. 
+\end{example}
+
+\begin{example}
+\label{eg:g_1_deg_third}
+Let $L = P - Q + \frac{1}{3}R$. Since $P \neq Q$, we see $h^0(L) = 0,$ and we know $h^0(2L) = h^0(K) = 1$. For $n > 2$, we have $\deg nL > 0$ and so by Riemann--Roch, we have $h^0(nL) = \deg \lfloor nL/3 \rfloor.$ Next, 
+We find that $R_L \cong k[u,x,z]/(z^2 - ux^4),$ where $\deg u = 2, \deg x = 3, \deg z = 7$ so that $\di u|_L = -2P + 2Q, \di x|_L = -3P + 3Q - R, \di z|_L = -7P + 7Q + 2R.$
+\end{example}
+
+\begin{example}
+Let $L = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_2$. Here, we claim $R_L \cong k[u,x,y_3,y_4]/(xy_3- \alpha uy_4,y_4^2 - \beta x^2 u - \gamma y^2u)$ where $\alpha,\beta,\gamma \in k$, and $\deg u = 2, \deg x = \deg y_3 = 3, \deg y_4 = 4,$ where $u,x$ are as in Example ~\ref{eg:g_1_deg_third} and $y_3, y_4$ are as in Proposition ~\ref{prop:sat_two_induction}. \todo{Explain why this forms a system of generators and relations, and also state more clearly what $y_i$ are.}
+\end{example}
+
+\begin{example}
+\label{}
+Let $L = P - Q + \frac{e-1}{2e}R_1.$ Here, we claim $R_L \cong k[u,y_3, y_5, \ldots, y_e]/I_e,$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Theorem ~\ref{thm:ram_order_ind} so that $in(I_e) = in(I_{e-2})k[u, y_3,\ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$ 
+Furthermore, $\deg u = 2, \deg y_i = i$.
+\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
+\end{example}
+
 \ssec{Main Theorem for Genus 1}
 
 
@@ -714,7 +750,7 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 
 \ssec{Bounds on Generators and Relations in high genus}
 
-
+\todo{make sure to switch poles and zeros where appropriate}
 \begin{lem}
 \label{lem:semicanonical_generation}\todo{include that this was as shown in Neves, with degree 6 omitted}
 Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K$. Then, for $n \geq 5$, the map
