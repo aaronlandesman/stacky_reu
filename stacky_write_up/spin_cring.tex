@@ -710,7 +710,8 @@ Let $\sx$ be a tame, seperably rooted stacky curve of genus 1. Let $P,Q$ are dis
 	\item $L = 0$
 	\item $L = P-Q$
 	\item $L = P - Q + \frac{1}{3}R$
-	\item $L = P - Q + \sum_{i=1}^{n}\frac{1}{3}R_i$
+	\item $L = P - Q + \frac{e-1}{2e}R, e > 3, e \equiv 1 \bmod 2$ 
+	\item $L = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_3$
 \end{enumerate}
 In addition to being illustrative examples, these will serve as the base cases of induction, in order to compute generators and relations for an arbitrary genus 1, stacky log half canonical divisor. In each of the following examples, we will give explicit generators and relations, and in case $(3)$ and $(4)$ we check the corresponding signature is admissible.
 
@@ -731,15 +732,16 @@ We find that $R_L \cong k[u,x,z]/(z^2 - ux^4),$ where $\deg u = 2, \deg x = 3, \
 \end{example}
 
 \begin{example}
-Let $L = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_2$. Here, we claim $R_L \cong k[u,x,y_3,y_4]/(xy_3- \alpha uy_4,y_4^2 - \beta x^2 u - \gamma y^2u)$ where $\alpha,\beta,\gamma \in k$, and $\deg u = 2, \deg x = \deg y_3 = 3, \deg y_4 = 4,$ where $u,x$ are as in Example ~\ref{eg:g_1_deg_third} and $y_3, y_4$ are as in Proposition ~\ref{prop:sat_two_induction}. \todo{Explain why this forms a system of generators and relations, and also state more clearly what $y_i$ are.}
-\end{example}
-
-\begin{example}
 \label{}
 Let $L = P - Q + \frac{e-1}{2e}R_1.$ Here, we claim $R_L \cong k[u,y_3, y_5, \ldots, y_e]/I_e,$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Theorem ~\ref{thm:ram_order_ind} so that $in(I_e) = in(I_{e-2})k[u, y_3,\ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$ 
 Furthermore, $\deg u = 2, \deg y_i = i$.
-\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
+\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.} \todo{Check admissibility}
 \end{example}
+
+\begin{example}
+Let $L = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_2$. Here, we claim $R_L \cong k[u,x,y_3,y_4]/(xy_3- \alpha uy_4,y_4^2 - \beta x^2 u - \gamma y^2u)$ where $\alpha,\beta,\gamma \in k$, and $\deg u = 2, \deg x = \deg y_3 = 3, \deg y_4 = 4,$ where $u,x$ are as in Example ~\ref{eg:g_1_deg_third} and $y_3, y_4$ are as in Proposition ~\ref{prop:sat_two_induction}. \todo{Explain why this forms a system of generators and relations, and also state more clearly what $y_i$ are.} \todo{check admissibility}
+\end{example}
+
 
 \ssec{Main Theorem for Genus 1}
 
@@ -838,9 +840,8 @@ generator in degree 3 rather than degree 2.
 
 \ssec{Bounds on Generators and Relations in high genus}
 
-\todo{make sure to switch poles and zeros where appropriate}
 \begin{lem}
-\label{lem:semicanonical_generation}\todo{include that this was as shown in Neves, with degree 6 omitted}
+\label{lem:semicanonical_generation} \cite{neves:halfcan}[Proposition III.4]
 Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K$. Then, for $n \geq 5$, the map
 \begin{align*}
 	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
@@ -848,6 +849,7 @@ Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K
 is surjective.
 In particular, $R_L$ is generated in degree at most $6$.
 \end{lem}
+\iffalse
 \begin{proof}
 Therefore, to show there are no new generators in degree at least $7$, it suffices to show that for $n \geq 5$, the map
 \begin{align*}
@@ -865,6 +867,13 @@ Additionally, $\dim V \otimes H^0(nL) = 2 \cdot (n-1)(g-1)$, again using Riemann
 Therefore, $$\dim \im f = 2 \cdot (n-1)(g-1) -(n-3)(g-1) = (n+1)(g-1) = \dim H^0((n+2)L),$$
 again using Riemann-Roch, implying $f$ is surjective.
 \end{proof}
+\fi
+
+\begin{rem}
+In \cite{neves:halfcan}[Proposition III.4], Neves claims to prove that $R_L$ is generated in degree at most 5. However, when the proof is carefully examined, it only shows generation in degree at most 6. For this reason, we only state Lemma ~\ref{lem:semicanonical_generation} as generation in degree at most 6. We next proceed to show this can be reduced to generation in degree 5. The trickiest case is genus 2, which we address next.
+\end{rem}
+
+
 
 \begin{prop}
 \label{prop:genus_2_generation_5}
@@ -877,32 +886,27 @@ Let $P_1,\ldots, P_6$ be the six hyperelliptic fixed points of $X$.
 Recall that all spin divisors on $X$ can be written as 
 $$L = P_1 + \sum_{i=2}^{6} \epsilon_i (P_1 - P_i),$$ 
 with $\epsilon_i \in \{0,1\},$ and some $i \in \{2, 3, 4, 5, 6\}$ for which $\epsilon_i = 0$. \todo{cite this somewhere, maybe ask david for a place to cite?}
-Note that $H^0(X,K)$ is spanned by rational functions $u,x$ with $\di u|_{2L} = 2L, \di x|_{2L} = 2L - 2P_1.$ Therefore, the image of the multiplication map 
+Note that $H^0(X,K)$ is spanned by rational functions $u,x$ with $\di u|_{2L} = -2L, \di x|_{2L} = -2L + 2P_1.$ Therefore, the image of the multiplication map 
 \begin{align*}
 	Sym^3 H^0(X,2L) \rightarrow H^0(X,6L)
 \end{align*}
 is 4 dimensional by Riemann--Roch, with image spanned by $u^3,u^2x,ux^2,x^3$, 
-which have $\di u^3|_{2L} = 2L, \di u^2x|_{2L} = 2L - 2P_1,\di ux^2|_{2L} = 2L-4P_1, \di x^3|_{2L} = 2L - 6P_1.$ 
+which have $\di u^3|_{2L} = -2L, \di u^2x|_{2L} = -2L + 2P_1,\di ux^2|_{2L} = -2L+4P_1, \di x^3|_{2L} = -2L + 6P_1.$ 
 Since $H^0(X,6L)$ is 5 dimensional by Riemann--Roch,
 it suffices to produce one more independent function in the image of the multiplication map.
 There are now two cases, depending on whether $H^0(X,L) = 0$.
-First, suppose $H^0(X,L) = 0$.
+
+First, we deal with the case that $H^0(X,L) \neq 0$. 
+Then, since $X \not \cong \BP^1,$ and $\deg L = 1$, we must have $H^0(X,L) = 1$. Hence, we know $L$ is effective, so we must have $L = P$ where $P$ is hyperelliptic fixed. In this case, it is shown in \cite{neves:halfcan}[Theorem III.19] that $R_L$ is generated in degree $\leq 3$.
+
+Second, suppose $H^0(X,L) = 0$.
 Note that because $\deg 3L = 3$, we have by Riemann--Roch that $H^0(X,3L) = 2$. 
 Note additionally that $3L \sim K + L \sim 2P_1 + L$. Since $3L$ is base point free, by Riemann--Roch
-we have that there exists a rational function $f$ with $\div f|_{2P_1 + L} = 2P_1 + L.$ Additionally, there are no functions $g \in H^0(X,L + 2P_1)$ 
-with $\di g|_{2P_1 + L} = L,$ since $H^0(X,L) = 0.$ Therefore, there must 
-exist a function $h \in H^0(X,L+2P_1)$ so that $\di h|_{L + 2P_1} = L + P_1$.
+we have that there exists a rational function $f$ with $\div f|_{2P_1 + L} = -2P_1 - L.$ Additionally, there are no functions $g \in H^0(X,L + 2P_1)$ 
+with $\di g|_{2P_1 + L} = -L,$ since $H^0(X,L) = 0.$ Therefore, there must 
+exist a function $h \in H^0(X,L+2P_1)$ so that $\di h|_{L + 2P_1} = -L - P_1$.
 Then, $h \cdot f \in H^0(X,2L + 4P_1) \cong H^0(X,6L)$ has a pole of odd 
 order at $P_1$, and is therefore independent from the image of $\sym^3 H^0(X,3L)$.
-Second, we deal with the case that $H^0(X,L) \neq 0$. 
-Then, since $X \not \cong \BP^1,$ and $\deg L = 1$, we must have $H^0(X,L) = 1$. 
-In this case, $L$ is linearly equivalent to an effective divisor, so we may assume $L = P_1$. 
-Then, taking the function $y \in H^0(X,5P_1),$ to be that with $\di_\infty y = 5P_1,$ 
-corresponding to the hyperelliptic involution, and $u \in H^0(X,P_1)$ 
-corresponding to the rational function 1, we see that $y \cdot v \in H^0
-(X,6P_1)$ determines an element with a pole of odd order at $P_1$, which is 
-therefore independent from the image of $\sym^3 H^0(X,K)$. Hence, we again 
-obtain there are no new generators in degree 6.
 \end{proof}
 
 \begin{lem}
@@ -931,14 +935,15 @@ is surjective, since $\deg f - \deg a_i - 2 \geq 12 - 5 - 2 = 5$. In particular,
 
 Finally, we may then take $g = \sum_{i}^{}g_ix_i,h = \sum_{i}^{}h_ix_i,$ so that 
 \begin{align*}
-	f \equiv \sum_{i}^{}a_i x_i \equiv \sum_{i}^{}(s_1g_i + s_2h_i)x_i \equiv s_1 \left( \sum_{i}^{}g_i x_i \right) + s_2 \left( \sum_{i}^{}h_i x_i \right) \equiv s_1 g + s_2 h \bmod J_{L,d}.
+	f &\equiv \sum_{i}^{}a_i x_i \equiv \sum_{i}^{}(s_1g_i + s_2h_i)x_i \equiv s_1 \left( \sum_{i}^{}g_i x_i \right) + s_2 \left( \sum_{i}^{}h_i x_i \right) \\
+	&\equiv s_1 g + s_2 h \bmod J_{L,d}.
 \end{align*}
 \end{proof}
 
-\begin{thm}
-\label{}
+\begin{prop}
+\label{prop:relations_generation}
 Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K$. Then $I_L$ is generated in degree at most $11$.
-\end{thm}
+\end{prop}
 \begin{proof}
 Suppose $f \in I_L$ with $\deg f \geq 12$. To complete the proof, it suffices to show $f \in I_{L,d}'$. By Lemma ~\ref{lem:reducing_degree}, it suffices to show $s_1g+s_2h \in I_{L,d}'$. 
 Let $V \subset H^0(K)$ be the vector subspace generated by $\phi(s_1)$ and $\phi(s_2)$, and consider the map
@@ -951,6 +956,13 @@ So, using the refined version of the basepoint free pencil trick, as shown in th
 	s_1g + s_2h \equiv s_1s_2\rho + s_2(-s_1 \rho) \equiv 0 \bmod J_{L,d}.
 \end{align*}
 \end{proof}
+
+\begin{rem}
+\label{rem:relations_generation_ten}
+In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half canonical divisor on a genus 2 curve, then $R_L$ has a relation in degree 10. Therefore, the bound from Proposition ~\ref{prop:relations_generation}, that $I_L$ is generated in degree at most 11 is close to sharp.
+\end{rem}
+
+
 
 \ssec{Main theorem for high genus}
 
@@ -1762,8 +1774,9 @@ Include reference to the table with this list of exceptions.}
 
 \section{Further Research}
 \begin{itemize}
-\item More on fractional modular forms
-\item Make explicit generators and relations for base case of non-stacky higher genus half-canonical divisors
+	\item More on fractional modular forms
+	\item Make explicit generators and relations for base case of non-stacky higher genus half-canonical divisors
+	\item In the case $g \geq 2$, can the bound from Proposition ~\ref{prop:relation_generation} be reduced from 11 to 10 (which would then be sharp by Remark ~\ref{rem:relations_generation_ten})? \todo{Possibly think more about this} 
 \end{itemize}
 
 
