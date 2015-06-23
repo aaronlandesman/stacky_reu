@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{pstricks}
+\usepackage{auto-pst-pdf}
+
+\begin{document}
+
+\psset{unit=0.3cm}
+\begin{pspicture}(-0.5,-0.5)(7.5,5)
+\psdots*[dotstyle=o,dotsize=3pt]( 0, 0 )
+\psdots*[dotstyle=o,dotsize=3pt]( 1, 0 )
+\psdots*[dotstyle=o,dotsize=3pt]( 2, 0 )
+\psdots*[dotstyle=o,dotsize=3pt]( 3, 0 )
+\psdots*[dotstyle=*,dotsize=3pt]( 3, 1 )
+\psdots*[dotstyle=o,dotsize=3pt]( 4, 0 )
+\psdots*[dotstyle=o,dotsize=3pt]( 4, 1 )
+\psdots*[dotstyle=o,dotsize=3pt]( 5, 0 )
+\psdots*[dotstyle=o,dotsize=3pt]( 5, 1 )
+\psdots*[dotstyle=*,dotsize=3pt]( 5, 2 )
+\psdots*[dotstyle=o,dotsize=3pt]( 6, 0 )
+\psdots*[dotstyle=o,dotsize=3pt]( 6, 1 )
+\psdots*[dotstyle=o,dotsize=3pt]( 6, 2 )
+\psdots*[dotstyle=o,dotsize=3pt]( 7, 0 )
+\psdots*[dotstyle=o,dotsize=3pt]( 7, 1 )
+\psdots*[dotstyle=*,dotsize=3pt]( 7, 2 )
+\psdots*[dotstyle=*,dotsize=3pt]( 7, 3 )
+\psline(0,0)(7,3)
+\end{pspicture}
+
+%-interaction=nonstopmode "%wm"
+%-interaction=nonstopmode -enable-write18 %tm
+
+\end{document}
