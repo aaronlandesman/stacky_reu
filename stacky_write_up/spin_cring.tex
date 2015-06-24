@@ -171,6 +171,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \section{Introduction}
 \todo{Edit this stuff}
 This is our project.
@@ -193,7 +194,7 @@ We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{e_i}$.
 
 These are our results.
 \begin{thm}
-\label{thm:g_0_generators_relations}
+\label{thm:general_generators_relations}
 Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$, so
 that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
@@ -203,35 +204,21 @@ canonical ring
 \end{align*}
 
 \noindent
-is generated as a $k$-algebra by elements of degree at most $e = 
-\max(5,e_1,\ldots, e_r).$ If the genus $g \geq 2,$ then $R(\sx, \Delta, \halfcan)$ has relations in degree at most $\max(11,e_1,\ldots, e_r).$ If the genus $g = 0$ or $g = 1,$ then $R(\sx, \Delta, \halfcan)$ has relations in degree at most $\max(10,e_1,\ldots, e_r),$ so
-long as $\sigma$ does not lie in a finite list of exceptional cases, as listed in Table ~\ref{table:g-1-exceptional} for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional} for signatures with $g = 0$.
+is generated as a $k$-algebra by elements of degree at most $e =
+\max(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ then $R(\sx,
+\Delta, \halfcan)$ has relations in degree at most $\max(11, e_1,
+\ldots, e_r).$ If the genus $g = 0$ or $g = 1,$ then $R(\sx, \Delta
+, \halfcan)$ has relations in degree at most $\max(10, e_1, \ldots,
+e_r),$ so long as $\sigma$ does not lie in a finite list of
+exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
+for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
+for signatures with $g = 0$.
 \end{thm}
 
 Note that in the course of the proof of Theorem ~\ref{thm:g_0_generators_relations} we will not merely obtain bounds on the degrees of the generators and relations. In fact, if the genus $g = 0$ or $g = 1$, the proof yields an explicit system of generators and the initial ideal of relations. While in the genus $g \geq 2$ case, the proof does not always yield an explicit system of generators and relations, if the halfcanonical divisor $\halfcan$ can be written as $\halfcan' + \Lambda$ with $(\halfcan',0,X)$ a log spin curve, and a system of generators and relations for $\halfcan'$ is known, then our proof provides an inductive procedure for determining the generators and initial ideal of relations for $\halfcan$. In fact, such a system of generators and relations are known for $\halfcan'$ in many cases, as detailed in Neves ~\cite{neves:halfcan}[Section III.4].
 
 
-
-
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-
-
-
 
 
 \section{Background}
@@ -248,26 +235,7 @@ Here are some definitions.
 \end{defn}
 
 
-
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive Lemmata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-
-
-
 
 
 \section{Inductive Lemmata}
@@ -1483,6 +1451,24 @@ The proof of this can be gotten by first using Riemann--Roch and counting the po
 \ssec{Main Theorem for Genus 1}
 \label{ssec:main_g_1}
 
+\begin{thm}
+\label{thm:g_1_generators_relations}
+Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$,
+so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
+If $g = 1$, then the canonical ring
+
+\begin{align*}
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
+\end{align*}
+
+\noindent
+is generated as a $k$-algebra by elements of degree at most $e =
+\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $\max
+(10, e_1, \ldots, e_r),$ so long as $\sigma$ does not lie in a
+finite list of exceptional cases, as listed in Table
+~\ref{table:g-1-exceptional}.
+\end{thm}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus zero %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1974,22 +1960,22 @@ in the generic case.
 Now we can combine this.
 \todo{write this section}
 
-\todo{Aaron: Use thmrestate instead of rewriting the Theorem}
 \begin{thm}
-\label{thm:g_0_generators_relations_rep}
-Let $(\sx, \Delta, L)$ be a tame log spin curve over a perfect field $k$, so
-that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
-canonical ring
+\label{thm:g_0_generators_relations}
+Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$,
+so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
+If $g = 0$, then the canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, L) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
 \end{align*}
 
 \noindent
-is generated as a $k$-algebra by elements of degree at most $e = 
-\max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$, so 
-long as $\sigma$ does not lie in a finite list of exceptions. \todo{
-Include reference to the table with this list of exceptions.}
+is generated as a $k$-algebra by elements of degree at most $e =
+\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $\max
+(10, e_1, \ldots, e_r),$ so long as $\sigma$ does not lie in a
+finite list of exceptional cases, as listed in Table
+~\ref{table:g-0-exceptional}.
 \end{thm}
 
 \section{Further Research}
