@@ -848,7 +848,7 @@ is linearly equivalent to an effective $X$ divisor plus $\sum
 Let $D$ be a fractional $\frac{a}{b}$-canonical divisor of a genus 0 stacky curve with denominator $b > 2$ when $\frac{a}{b}$ is written in reduced form.
 \end{cor}
 \begin{proof}
-For a similar reason as in corollary \ref{cor:genus_0_posiive_delta}, $D$ must be equivalent to an effective divisor (in this case even when $\delta=0$), so by corollary \ref{cor:effective_Q_divisor_can_ring} we get the desired result.
+For a similar reason as in corollary \ref{cor:genus_0_positive_delta}, $D$ must be equivalent to an effective divisor (in this case even when $\delta=0$), so by corollary \ref{cor:effective_Q_divisor_can_ring} we get the desired result.
 \end{proof}
 
 \todo{Move this lemma:}
@@ -1864,7 +1864,7 @@ Thus, all of the cases are admissible and satisfy the additional
 desired conditions.
 \end{proof}
 
-Now we can induct on cases (a)-(e) of \ref{lem:g_0_admissible_cases}
+Now we can induct on cases (a)-(k) of \ref{lem:g_0_admissible_cases}
 to obtain bounds on the minimal generator and relation degrees for
 canonical rings of curves in the genus 0 case.
 
@@ -1968,37 +1968,40 @@ Now let us consider the case when $\delta \geq 2$. In this case,
 $\halfcan$ is an effective divisor. \todo{need to do this case}
 
 Now suppose $\delta = 0$, so $\halfcan$ is not necessarily effective.
-If $\sigma = (0; e_1, \ldots, e_r; 0)$ is not one of the
-exceptional cases in Table ~\ref{table:g_0_exceptional} and $r \leq
-5$, then $\sigma$ ``lies above'' one of the base cases of Lemma
-~\ref{lem:g_0_admissible_cases}. In other words, one of the base
-cases $(\sigma', J)$ with $\sigma' = (0; e_1', \ldots, e_r'; 0)$
-satisfies the property that for all $i \in J$, $e_i \geq e_i'$ and
-$e_i = e_i'$ otherwise. If $r > 5$, then we can use Lemma
+Let $\sigma = (0; e_1, \ldots, e_r; 0)$ be a signature with $r > 0$
+and not one of the exceptional cases in Table
+~\ref{table:g_0_exceptional}.
+
+If $r > 5$, then we can use Lemma
 ~\ref{lem:sat_three_induction} to add ramified points with
 ramification order $3$ to case (k) of Lemma
 ~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
-= (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. Since
-this case satisfies all of the conditions by Lemma \todo{need this case
-to satisfy conditions for adding points}, the
-immediate consequence of parts (a) and (c) of Proposition
-~\ref{prop:sat_three_induction} is that any $R(\sx', \Delta,
+= (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
+clearly satisfies the conditions of Lemma
+~\ref{lem:sat_three_induction} (recall from Subsection ~\ref
+{ssec:g_0_saturation} that saturation is 3 here), and the
+immediate consequence of parts (a) and (c) of Lemma
+~\ref{lem:sat_three_induction} is that any $R(\sx', \Delta,
 \halfcan')$ corresponding to signatures $\sigma'$ with ramification
-orders all equal to $3$ is generated up to degree $e := \max(5, e_1',
-\ldots, e_r')$ with relations generated up to degree $2e$.
-Furthermore, Proposition ~\ref{prop:sat_three_induction}(d)
-implies that these cases satisfy all of the hypotheses of Theorem
+orders all equal to $3$ for any $r > 5$ is generated up to
+degree $e := \max(5, e_1', \ldots, e_r')$ with relations generated
+up to degree $2e$. Furthermore, Lemma ~\ref{lem:n-3s-admissible}
+implies that these cases satisfy all of the conditions of Theorem
 ~\ref{thm:ram_order_ind}.
 
-So if $r > 5$, then $\sigma$ ``lies above'' the case $\sigma', J$
+So if $r > 5$, then $\sigma$ ``lies above'' the case $(\sigma', J)$
 where $\sigma'$ has $r$ many ramification points all of order $3$
-and $J = \{1, \ldots, r\}$. If $r \leq 5$, then $\sigma$ ``lies
-above'' one of the base cases of Lemma ~\ref{lem:g_0_admissible_cases}.
-In either case, there is a $(\sigma', J)$ with $\sigma' = (0; e_1',
-\ldots, e_r'; 0)$ satisfying the property that for all $i \in J$,
-$e_i \geq e_i'$ and $e_i = e_i'$ otherwise where $(\sigma', J)$
-is either a base case from Lemma ~\ref{lem:g_0_admissible_cases}
-or the case from $r > 5$.
+and $J = \{1, \ldots, r\}$ and these underlying cases satisfy
+all of the hypotheses of Theorem ~\ref{thm:ram_order_ind}.
+If $r \leq 5$, then $\sigma$ ``lies above'' one of the base cases
+of Lemma ~\ref{lem:g_0_admissible_cases}, all of which satisfy
+the hypotheses of Theorem ~\ref{thm:ram_order_ind} as well.
+
+So for any $r > 0$, there is a $(\sigma', J)$, either from
+Lemma ~\ref{lem:g_0_admissible_cases} or corresponding to
+the $r > 5$ case with ramification orders all $3$, with $\sigma' =
+(0; e_1', \ldots, e_r'; 0)$ satisfying the property that for all $i
+\in J$, $e_i \geq e_i'$ and $e_i = e_i'$ otherwise.
 
 All such base cases satisfy all of the hypotheses of
 Theorem ~\ref{thm:ram_order_ind} and their corresponding $R' :=
