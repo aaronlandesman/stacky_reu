@@ -1490,48 +1490,25 @@ finite list of exceptional cases, as listed in Table
 
 \section{Genus Zero}
 \label{sec:g_0}
-Now we consider the genus zero case.
-\todo{write intro}
+We will prove that if $(\sx , 0, \halfcan)$ is a spin curve, so
+that $\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; \delta)$,
+then $R(\sx , \Delta, L)$ is generated in degree at most $e := \max(
+5, e_1, \ldots, e_r)$ with relations generated in degree at most $2e
+$, so long as $\sigma$ does not lie in a finite list of exceptions.
 
-\ssec{Genus Zero Effective}
-\label{ssec:g_0_effective}
-
-In this section, we examine the case $2\halfcan\sim K_\sx+\Delta$ 
-when $\Delta$ is a non- zero effective divisor.  Using this, we can 
-reduce to looking at effective stacky divisors.  Then, applying a 
-result for general effective $\mathbf{Q}$ divisors, we deduce that $
-R_{\halfcan}$ is generated in degrees up to $e=\max{e_i}$ with 
-relations generated up to degree $2e$ with initial terms quadratic 
-in the generators.  We also demonstrate that these bounds are tight 
-up to \todo{insert how tight they are}.
-
-We have Lemma ~\ref{lem:minimal_quadratic}.
-\todo{fill in hole here, with adding points too}
-
-
-\begin{lem}\label{lem:add_point_effective_divisor_deg_1_but_not_deg_2_generators}
-Let $2\halfcan=K_X$ of a non-stacky curve $X$ such that $h^0(X, \halfcan) > 0$.  Then for any point $P$, 
-\[
-	H^0(X, \halfcan+P)=H^0(X,\halfcan).
-\]
-\end{lem}
-\begin{proof}
-\todo{add proof}
-\end{proof}
-
-\ssec{Genus Zero Non-effective}
-\label{ssec:g_0_non_effective}
-In this section, we will prove that if $(\sx , 0, L)$ is a spin curve,
-so that $\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; 0)$, then
-$R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1, \ldots,
-e_r)$ with relations generated in degree at most $2e$, so long as $\sigma$
-does not lie in a finite list of exceptions. This is proven in
-Subsection ~\ref{ssec:g_0_main}. The proof is a rather
-involved induction. In Subsections ~\ref{ssec:g_0_ram_pts},
-~\ref{ssec:g_0_ram_orders} \todo{fix} we prove inductive theorems, and in
-Subsection ~\ref{ssec:g_0_base} we check the base cases of the
-induction. Finally, in Subsection ~\ref{ssec:g_0_exceptional} we
-list out the exceptional cases.
+There are two main cases: when $\delta \geq 2$ and when $\delta = 0$
+ (note that $\delta$ must be odd or zero because $\halfcan \in \text
+{ Div } \sx$). In the first case, $\deg \lfloor \halfcan \rfloor
+\geq 0$ so the result directly follows from Lemma
+~\ref{rem:deg1_sat_ind}. When $\delta = 0$, this is not necessarily
+true so the proof is a rather involved induction using Lemma
+~\ref{lem:sat_three_ induction} and Theorem ~\ref{thm:ram_order_ind}.
+The remainder of this section is dedicated to characterizing the
+saturations ( Subsection ~\ref{ssec:g_0_saturation}), inductive
+base cases ( Subsection ~\ref{ssec:g_0_base}), and exceptional
+cases (Subsection ~\ref{ssec:g_0_exceptional}) when $\delta = 0$
+before proving the main theorem in full for all $\delta$ in
+Subsection ~\ref{ssec:g_0_ main}.
 
 \ssec{Saturation}
 \label{ssec:g_0_saturation}
@@ -1963,11 +1940,15 @@ cases, as listed in Table ~\ref{table:g_0_exceptional}.
 
 \begin{proof}
 If $\sx$ has no stacky points, then we have the classical
-case which is done in Chapter 4 of Voight and Zureick-Brown
-\cite{vzb:stacky}.
+case which is done in Voight and Zureick-Brown ~\cite[Section 4.2]
+{vzb:stacky}.
 
-Now let us consider the case when $\delta \geq 2$. In this case,
-$\halfcan$ is an effective divisor. \todo{need to do this case}
+Now let us consider the case when $\delta \geq 2$. In any such case,
+$\lfloor \halfcan \rfloor$ is an effective divisor and the conditions
+of Lemma ~\ref{rem:deg1_sat_ind} are satisfied. Thus, we can apply
+the lemma inductively on the classical case with no stacky points
+to get that $R(\sx, \Delta, \halfcan)$ is generated up to degree $e$
+with relations generated up to degree $2e$.
 
 Now suppose $\delta = 0$, so $\halfcan$ is not necessarily effective.
 Let $\sigma = (0; e_1, \ldots, e_r; 0)$ be a signature with $r > 0$
