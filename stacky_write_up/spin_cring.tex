@@ -194,7 +194,7 @@ Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is well known that
 with multiplication structure corresponding to tensor product of sections. Since $\Omega_X$ is ample, $X \cong \proj R$. Petri's theorem gives generators and relations for $R(X,K_X),$ see for example, \cite{saint-donat:proj}[Theorem, p. 157], showing that in most cases $R(X,K_X)$ is generated in degree 1 with relations in degree 2. This has the pleasant geometric consequence that all such canonically embedded curves are scheme theoretically cut out by quadratic equations.
 
 In Voight and Zureick-Brown, \cite{vzb:stacky} examine a much more general setting, generalizing Petri's theorem in many directions.
-A divisor $\Delta \in \d X$ is a {\bf log divisor} if $\Delta = \sum_{i}^{}P_i \in \di X,$ with all $P_i$ distinct. Let $(\sx,\Delta)$ denote a tame seperably rooted stacky curve over a field $k$ so that $X$ is the coarse space of $\sx$, as defined in \cite{vzb:stacky}[Section 5.2] so that $\di \sx = \div X \bigoplus_{i=1}^r \langle \frac{1}{e_i}P_i \rangle,$ with $e_i \in \BZ$. Let $K_\sx = K_X + \sum_{i=1}^{r}\frac{e_i-1}{e_i}P_i.$ In this case, we say $\sx$ has {\bf ramification order} $e_i$ at $P_i$. Call $\halfcan \in \di \sx$ a {\bf log half-canonical divisor} on $(\sx,\Delta)$, be a divisor $\halfcan \in \di \sx$ so that $2\halfcan \sim K_\sx + \Delta.$ If $X$ has genus $g$ and $\delta = \deg \Delta,$ then we say $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$. A {\bf log spin curve} is a triple $(X,\Delta,\halfcan)$ where $(X,\Delta)$ and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$. The central object of study in this paper is the {\bf log spin canonical ring} of $(X,\Delta,L)$ is
+A divisor $\Delta \in \d X$ is a {\bf log divisor} if $\Delta = \sum_{i}^{}P_i \in \di X,$ with all $P_i$ distinct. Let $(\sx,\Delta)$ denote a tame seperably rooted stacky curve over a field $k$ so that $X$ is the coarse space of $\sx$, as defined in \cite{vzb:stacky}[Section 5.2] so that $\di \sx = \div X \bigoplus_{i=1}^r \langle \frac{1}{e_i}P_i \rangle,$ with $e_i \in \BZ$. Let $K_\sx = K_X + \sum_{i=1}^{r}\frac{e_i-1}{e_i}P_i.$ In this case, we say $\sx$ has {\bf stabilizer order} $e_i$ at $P_i$. Call $\halfcan \in \di \sx$ a {\bf log half-canonical divisor} on $(\sx,\Delta)$, be a divisor $\halfcan \in \di \sx$ so that $2\halfcan \sim K_\sx + \Delta.$ If $X$ has genus $g$ and $\delta = \deg \Delta,$ then we say $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$. A {\bf log spin curve} is a triple $(X,\Delta,\halfcan)$ where $(X,\Delta)$ and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$. The central object of study in this paper is the {\bf log spin canonical ring} of $(X,\Delta,L)$ is
 \begin{align*}
 	R(X,\Delta,L) = \oplus_{n=0}^\infty H^0(X,nL)
 \end{align*}
@@ -891,7 +891,7 @@ Similar to all the other lemmas\todo{combine sections?}
 Transition words.
 \todo{transition!}
 
-\ssec{Inductive Lemma: Raising Ramification Orders}
+\ssec{Inductive Lemma: Raising stabilizer orders}
 \label{ssec:ram_orders}
 In this section, we aim to prove the inductive theorem, Theorem
 ~\ref{thm:ram_order_ind}. Under fairly general
@@ -1591,7 +1591,7 @@ Here we describe induction of raising degrees from Theorem ~\ref{thm:ram_order_i
 \label{ssec:g_0_base}
 Now we have an inductive statement on the number of ramified
 points in Lemma ~\ref{lem:sat_three_induction} and
-an inductive statement on ramification orders in Theorem
+an inductive statement on stabilizer orders in Theorem
 ~\ref{thm:ram_order_ind}. After verifying that explicit pairs
 $(\sx, J)$ of stacky curves $\sx$ with particular signatures and
 particular choices of $J$ are admissible, the application of the
@@ -1879,7 +1879,7 @@ canonical rings of curves in the genus 0 case.
 
 Through the application of two processes of induction, by adding 
 points via Lemma ~\ref{lem:sat_three_induction} and by raising
-ramification orders via Theorem ~\ref{thm:ram_order_ind},
+stabilizer orders via Theorem ~\ref{thm:ram_order_ind},
 we obtain Theorem ~\ref{thm:g_0_generators_relations} for any tame
 log spin curve $(\sx, \Delta, L)$ over a perfect field $k$ with
 signature $\sigma$ covered by this induction process.
@@ -1969,7 +1969,7 @@ cases, as listed in Table ~\ref{table:g_0_exceptional}.
 \end{thm}
 
 \begin{proof}
-If $\sx$ has no ramification points, then we have the classical
+If $\sx$ has no stacky points, then we have the classical
 case which is done in Chapter 4 of Voight and Zureick-Brown
 \cite{vzb:stacky}.
 
@@ -1983,7 +1983,7 @@ and not one of the exceptional cases in Table
 
 If $r > 5$, then we can use Lemma
 ~\ref{lem:sat_three_induction} to add ramified points with
-ramification order $3$ to case (k) of Lemma
+stabilizer order $3$ to case (k) of Lemma
 ~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
 = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
 clearly satisfies the conditions of Lemma
@@ -1999,7 +1999,7 @@ implies that these cases satisfy all of the conditions of Theorem
 ~\ref{thm:ram_order_ind}.
 
 So if $r > 5$, then $\sigma$ ``lies above'' the case $(\sigma', J)$
-where $\sigma'$ has $r$ many ramification points all of order $3$
+where $\sigma'$ has $r$ many stacky points all of order $3$
 and $J = \{1, \ldots, r\}$ and these underlying cases satisfy
 all of the hypotheses of Theorem ~\ref{thm:ram_order_ind}.
 If $r \leq 5$, then $\sigma$ ``lies above'' one of the base cases
@@ -2008,7 +2008,7 @@ the hypotheses of Theorem ~\ref{thm:ram_order_ind} as well.
 
 So for any $r > 0$, there is a $(\sigma', J)$, either from
 Lemma ~\ref{lem:g_0_admissible_cases} or corresponding to
-the $r > 5$ case with ramification orders all $3$, with $\sigma' =
+the $r > 5$ case with stabilizer orders all $3$, with $\sigma' =
 (0; e_1', \ldots, e_r'; 0)$ satisfying the property that for all $i
 \in J$, $e_i \geq e_i'$ and $e_i = e_i'$ otherwise.
 
@@ -2044,14 +2044,14 @@ e_1, \ldots, e_r)$. It follows from Theorem ~\ref{thm:ram_order_ind}
 %
 %Then we can apply two processes of induction, by adding points via
 %Lemma ~\ref{lem:sat_two_induction} and by raising
-%ramification orders via Theorem ~\ref{thm:ram_order_ind},
+%stabilizer orders via Theorem ~\ref{thm:ram_order_ind},
 %to obtain the desired result for any tame log spin curve $(\sx,
 %\Delta, L)$ over a perfect field $k$ with signature $\sigma$
 %covered by this induction process.
 %
 %
 %
-%A process of induction raising the ramification orders of
+%A process of induction raising the stabilizer orders of
 %the ramified points of the spin curves corresponding to Lemma
 %~\ref{lem:g_0_admissible_cases} cases (a)-(c) via Theorem
 %~\ref{thm:ram_order_ind} will demonstrate the desired generator and
@@ -2062,7 +2062,7 @@ e_1, \ldots, e_r)$. It follows from Theorem ~\ref{thm:ram_order_ind}
 %$(0; 3, 3, 3, 3; 0)$. A process of induction increasing the
 %number of ramified points via Lemma
 %~\ref{lem:sat_three_induction} on Lemma ~\ref{lem:g_0_admissible_cases}
-%case (e) combined with the induction process on ramification orders
+%case (e) combined with the induction process on stabilizer orders
 %will yield the result for curves with at least five ramified points.
 \end{proof}
 
