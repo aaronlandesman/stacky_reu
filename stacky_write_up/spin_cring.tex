@@ -1214,17 +1214,16 @@ We now consider the case when the genus is at least 2. In this case, we are able
 \ssec{Bounds on Generators and Relations in high genus}
 
 \begin{lem}
-\label{lem:semicanonical_generation} \cite{neves:halfcan}[Proposition III.4]
-Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K$. Then, for $n \geq 5$, the map
+\label{lem:semicanonical_generation}
+Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K + \Delta$. Then, the map
 \begin{align*}
 	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
 \end{align*}
-is surjective.
-In particular, $R_L$ is generated in degree at most $6$.
+is surjective if $n \geq 5$ or if ($n = 5$ and $\Delta > 0$).
+In particular, $R_L$ is generated in degree at most $6$ if $\Delta = 0$ and in degree at most $5$ if $\Delta > 0$.
 \end{lem}
-\iffalse
 \begin{proof}
-Therefore, to show there are no new generators in degree at least $7$, it suffices to show that for $n \geq 5$, the map
+Therefore, to show there are no new generators in degree at least $7$, it suffices to show that if $n \geq 5$ or if ($n = 5$ and $\Delta > 0$), the map
 \begin{align*}
 	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
 \end{align*}
@@ -1235,14 +1234,15 @@ $$\begin{tikzcd}
 0 \ar r & H^0((n-2)L) \ar r & V \otimes H^0(nL) \ar{r}{f} & H^0((n+2)L)
 \end{tikzcd}$$
 We wish to show $f$ is surjective.
-Note that $\dim \ker f = \dim H^0((n-2)L) = (n-3)(g-1)$ using Riemann--Roch and the assumption that $n \geq 5$.
+Note that $\dim \ker f = \dim H^0((n-2)L) = (n-3)(g-1)$ using Riemann--Roch and the assumption if $n \geq 5$ or ($n = 5$ and $\Delta > 0$).
 Additionally, $\dim V \otimes H^0(nL) = 2 \cdot (n-1)(g-1)$, again using Riemann--Roch.
 Therefore, $$\dim \im f = 2 \cdot (n-1)(g-1) -(n-3)(g-1) = (n+1)(g-1) = \dim H^0((n+2)L),$$
 again using Riemann-Roch, implying $f$ is surjective.
 \end{proof}
-\fi
 
 \begin{rem}
+\todo{This remark isn't quite right, we're changing the proof}
+\cite{neves:halfcan}[Proposition III.4]
 In \cite{neves:halfcan}[Proposition III.4], Neves claims to prove that $R_L$ is generated in degree at most 5. However, when the proof is carefully examined, it only shows generation in degree at most 6. For this reason, we only state Lemma ~\ref{lem:semicanonical_generation} as generation in degree at most 6. We next proceed to show this can be reduced to generation in degree 5. The trickiest case is genus 2, which we address next.
 \end{rem}
 
