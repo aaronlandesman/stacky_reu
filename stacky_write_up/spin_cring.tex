@@ -217,7 +217,7 @@ $R(\sx,\Delta, \halfcan)$ has relations in degree at most $\max(11, e_1,
 \ldots, e_r).$ Otherwise, $R(\sx, \Delta, \halfcan)$ has relations in degree at most
 $\max(10, e_1, \ldots, e_r),$ so long as $\sigma$ does not lie in a finite list of
 exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
-for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
+for signatures with $g = 1$ and Table ~\ref{table:g_0_exceptional}
 for signatures with $g = 0$.
 \end{thm}
 \todo{Say that this follows immediately from the three theorems for the special cases.}
@@ -334,14 +334,14 @@ Fact about quotient.
 %\ldots, f_j$ is such a set, it is minimal.
 %\end{proof}
 %
-
-\begin{rem}
-\label{rem:minimal_quadratic_trivial_case}
-It will be useful to use lemma \ref{lem:minimal_quadratic} in the
-case $m=0$, in which case we find explicitly that $f_1, \ldots, f_r$
-are $k$-minimal generators for $I'$ (over the trivial base vector
-space).  
-\end{rem}
+%
+%\begin{rem}
+%\label{rem:minimal_quadratic_trivial_case}
+%It will be useful to use lemma \ref{lem:minimal_quadratic} in the
+%case $m=0$, in which case we find explicitly that $f_1, \ldots, f_r$
+%are $k$-minimal generators for $I'$ (over the trivial base vector
+%space).  
+%\end{rem}
 
 With this result, we will be able to show that the sets of generators of the ideal of relations in many of the following inductive arguments are minimal.
 
@@ -350,190 +350,15 @@ With this result, we will be able to show that the sets of generators of the ide
 In this section, we prove various inductive statements under the following setup:
 Let $\halfcan'$ be $\mathbf{Q}$-divisor of $X$ (and often a log half canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbf{N}$ and certain saturation conditions.  Let $\halfcan=\halfcan'+P$ for some $P$ not in the support of $\halfcan$.\todo{do we always assume this?}  Then we will explicitly describe elements that minimally generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that minimally generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Grobner Basis).   The proofs of these lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
 
-\begin{lem}\label{lem:adding_points_saturation_2_to_1_with_log}
-Let $(\sx, \Delta, \halfcan)$ and $(\sx, \Delta', L')$ be tame separably rooted log stacky spin 
-curves with $0\ne \Delta=\Delta'+2P$ for some non-stacky point $P$ not in the support of $
-\halfcan'$, meaning that $L=L'+P$.  Let $(g; e_1, \ldots, e_\tau; \delta+2)$ and $(g; e_1, 
-\ldots, e_\tau, \delta)$ with $g\ge 2$ be their respective signatures.  Suppose 
-$sat(Eff(\halfcan))=1$ and $sat(Eff(\halfcan'))=2$.  Further suppose $R_{\halfcan'} = k[x_2, 
-x_3, \ldots, x_m]/I'$ with $\deg(x_2) = 2$ and $\deg(x_3) = 3$.  Then
-\begin{enumerate}
-\item[(a)] Then generic elements $y_1$ and $y_2$ in $(R_{\halfcan})_1$ and $
-(R_{\halfcan})_2$ respectively, such that $-\ord_P(y_2)>0$ and $\{y_1^2, y_2\}$ is linearly 
-independent, generate $R_\halfcan$ over $R_{\halfcan'}$.
-\item[(b)] Equip $k[y_1,y_2]$ with $grlex$ so that $y_2 \prec y_1$ and equip $k[y_1, y_2, 
-x_2, \ldots, x_m]$ with the block order so that $R_\halfcan=k[y_1, y_2, x_2, \ldots, x_m]/I$.  
-Then
-\begin{align*}
-			in_\prec(I) &= in_\prec(I')k[x_2, \ldots, x_m, y_1, y_2] \\
-			&+\langle y_2 x_j \mid 2 \leq j \leq m \rangle \\
-			&+\langle y_2^2\rangle.
-		\end{align*}
-\item[(c)] Any set of minimal generators for $I'$ together with any set of relations with 
-leading terms as above minimally generate $I$.
-\end{enumerate}
-\end{lem}
-
-\begin{proof}
-Since adding $P$ to $L'$, reduces saturation from 2 to 1, $h^0(X, \lfloor L \rfloor)=1$.  
-Choose any $y_1\in H^0(X,\lfloor L\rfloor)$; we know by saturation arguments that $-
-\ord_P(y_1)=1$.  Furthermore, since $\delta>0$, we use Riemann-Roch to deduce that for 
-all $d>1$ $h^0(X,\lfloor dL\rfloor)=h^0(dL')+d$, so $(R_\halfcan)_d$ is a $d$ dimension $k
-$-vector space over $(R_{\halfcan'})_d$.  In particular, this means we can generically 
-choose an element $y_2\in H^0(X,\lfloor 2L\rfloor)$ linearly independent from $y_1^2$.  By 
-dimension counting, we see that 
-\[
-	\langle y_1^a x_2^b x_3^c: a\ge 0, b\ge 0, c\in \{0,1\}\rangle
-\]
-\[
-	\langle y_1^a y_2: a\ge 0\rangle
-\]
-form a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$.  This completes part (a).
-
-To show part (b), we note that the monomials in the basis above generate $k[x,y]/\initial_
-\prec(I)$.  Thus, it is sufficient to show that $J\subseteq \initial_\prec(I)$.  For $j\ge 2$, we 
-can choose $w_j$ in degree $\deg(x_j)+1$ and $A_j\in k$ such that
-\[
-	y_2x_j-A_jy_3w_j
-\]
-has no pole at $P$ at thus lies in $R_{\halfcan'}$.  Similarly, we can choose $B$ and $C$ 
-such that
-\[y^2_4+By_1^2x_2+Cy_1x_3\]
-has no pole at $P$, so it lies in $R_{\halfcan'}$.  These give us relations with initial terms 
-as desired, concluding part (b).
-
-Finally, (c) follows immediately from Lemma \ref{lem:minimal_quadratic}.
-
-\end{proof}
-
-\begin{lem}
-\label{lem:adding_points_saturation_2_to_1_no_log}
-Let $(\sx, 2P, \halfcan)$ and $(\sx, 0, L')$ be tame separably rooted log stacky spin curves 
-with $P$ not in the support of $\halfcan'$, meaning that $L=L'+P$.  Let $(g; e_1, \ldots, e_
-\tau; 2)$ and $(g; e_1, \ldots, e_\tau, 0)$ with $g\ge 2$ be their respective signatures.  
-Suppose $sat(Eff(\halfcan))=1$ and $sat(Eff(\halfcan'))=2$.  Further suppose 
-$R_{\halfcan'} = k[x_2, x_3, \ldots, x_m]/I'$ with $\deg(x_2) = 2$ and $\deg(x_3) = 3$.  
-Then
-\begin{enumerate}
-\item[(a)] Then generic elements $y_1$ and $y_3$ in $(R_{\halfcan})_1$ and $
-(R_{\halfcan})_3$ respectively, such that $-\ord_P(y_3)>1$ and $\{y_1^3, y_2\}$ is linearly 
-independent, generate $R_\halfcan$ over $R_{\halfcan'}$.
-\item[(b)] Equip $k[y_1,y_3]$ with $grlex$ so that $y_3 \prec y_1$ and equip $k[y_1, y_3, 
-x_2, \ldots, x_m]$ with the block order so that $R_\halfcan=k[y_1, y_3, x_2, \ldots, x_m]/I$.  
-Then
-\begin{align*}
-			in_\prec(I) &= in_\prec(I')k[x_2, \ldots, x_m, y_1, y_2] \\
-			&+\langle y_3 x_j \mid 2 \leq j \leq m \rangle \\
-			&+\langle y_3^2
-		\end{align*}
-\item[(c)] Any set of minimal generators for $I'$ together with any set of relations with 
-leading terms as above minimally generate $I$.
-\end{enumerate}
-\end{lem}
-\begin{proof}
-The proof follows similarly to that of lemma 
-\ref{lem:adding_points_saturation_2_to_1_with_log}, with the change that $(R_
-\halfcan)_2$ is only a degree 1 $k$-vector space over $(R_{\halfcan'})_2$ forcing a 
-generator in degree 3 rather than degree 2.  
-\end{proof}
-
-Transition to genus one.
-\todo{transition!}
-
-\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 2-Saturated Divisor}
-We prove an inductive theorem on adding 2-sat here.
-\todo{description}
-
-\begin{prop}
-\label{prop:sat_two_induction}
-Let $(\sx, \Delta, L)$ and $(\sx', \Delta, L')$ be tame separably rooted log stacky spin curves. 
-Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted log stacky curves so that $\sx$ has signature 
-$\sigma = (g;e_1,\ldots, e_r;\delta)$ with $g > 0,$ and, if $g = 1$ then $\deg 3L \geq 2$.
-Let $R_{L'} = R' = k[x]/I'= k[x_2, x_3
-, x_5,\ldots, x_m]/I'$ and let $L = L' + \frac{1}{
-3}P.$ Suppose $L$ and $L'$ satisfy $sat(Eff(L')) = sat(Eff(L)) = 2.$
-Suppose $\deg x_i = i$ for $i \in \{2, 3\}$ and that the ordering on $k[x]$ satisfies
-\begin{align*}
-	\ord_{x_2}(f) < \ord_{x_2}(g) \implies f \prec g.
-\end{align*}
-Then, the following statements hold.
-\begin{enumerate}
-	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3, 4\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
-		_3,y_4,$ minimally generate $R$ over $R'$.
-	\item[(b)] Equip $k[y_3, y_4]$ with $grlex$ so that $y_4 \prec 
-		y_3$
-		and equip the ring $k[y_3, y_4, x]$ with the block 
-		order so that $R = k[y_3, y_4, x]/I$. Let,
-		\begin{align*}
-			J &= gin_\prec(I')k[x, y_3, y_4] \\
-			&+\langle y_4 x_j \mid 2 \leq j \leq m \rangle \\
-			&+\langle y_4^2.\rangle
-		\end{align*}
-			Then, $gin_\prec(I) = J$.
-	\item[(c)] Any set of minimal generators for $I'$ together with 
-		any set of relations with leading terms as in (b) minimally 
-		generate $I$.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-The assumptions on $g,\sigma$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base point free: If $g \geq 2$ then $\deg 3L > 2g-1$ and $\deg 4L > 2g-1$, so $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. If $g = 1$, we assume $\deg 3L \geq 2 > 2g-1$, so we also have $\deg 4L \geq 2 > 2g -1,$ so again $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord
-_P(y_i) = 1$ by Riemann Roch, and the assumptions on $\sigma$. \todo{Understand why/whether we need 
-to cite lemma 5.4.7.} 
-
-In a fashion analogous to the proof of Proposition 
-~\ref{prop:sat_three_induction}, we see 
-the following is a $k$ basis for $R$ over $R'$:
-
-\begin{align}
-\label{eqn:sat_two_add_generator}
-	\begin{split}
-		&\{ y_3^ax_2^b x_3^\epsilon \mid a \geq 0, b 
-		\geq 0, \epsilon \in \{0, 1\}\} \\
-		&\cup \{ y_3^ay_4 \mid a \geq 0 \},
-	\end{split}
-\end{align}
-
-\noindent completing part (a).
-
-To show part (b), note that the generators in
-~\ref{eqn:sat_two_add_generator} are precisely a set of monomials which
-generate $k[x,y]/J$ over $k$. So, to show $J = in_\prec(I)$, it
-suffices to show that all generators of $J$ lie in $in_\prec(I)$.
-
-This follows, since there exist constants $A_j \in k$ for $3 \leq j \leq m,$ and a constnant $B \in k$ and
-elements $w_{i,j} \in R'$ so that the following linear combinations
-of elements lie in $R'$.
-
-\begin{align*}
-	y_4x_j &- A_j y_3 w_j & \text{ so that } 2 \leq j \leq m \text{ and } \deg w_j = \deg x_j + 1\\
-	y_4^2 &+ B y_3^2 x_2 \\
-\end{align*}
-
-\noindent
-Of course, the initial terms of these elements are precisely the
-generators of $J$, completing (b).
-
-Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
-\end{proof}
-
-Transition words.
-\todo{transition!}
-
-We will now prove a lemma that will be used to inductively deal with divisors that are sufficiently saturated, by combining and extending methods of VZB \todo{add 
-reference} and O'Dorney\todo{reference}.
-
 \begin{lem}
 \label{lem:deg1_sat_ind}
 Let $X$ be a genus $g$ curve with a $\mathbf{Q}$-divisor $D$ (as
 defined by O'Dorney \todo{reference this-Section 1 of Evan's paper, or preferably define it in the background section})
-satisfying $\deg(\lfloor{D}\rfloor)\ge 0$, so $R_D$ has a
-generator $u$ in degree 1.  Suppose $D$ is generated by $
-u, x_1, \ldots, x_m$ in degree at most $\bar{d}$ with relations generated 
+satisfying $\deg(\lfloor{D}\rfloor)\ge 0$.  Suppose $P$ is not a base point of $D$ meaning that $R_D$ has a
+generator $u$ in degree 1 that is a section of $\so_D$ with $\ord_P(u)=0$.  Let $D$ be generated by $u, x_1, \ldots, x_m$ in degree at most $\bar{d}$ with relations generated 
 in degree at most $\bar{\tau}$.  Suppose $D' = D + \frac{\alpha}{\beta} P$
-for some $P \not \in \Supp(D), \alpha,\beta \in \mathbf{N}$ such
+for some $\alpha,\beta \in \mathbf{N}$ such
 that
-
 \begin{equation}
 \label{eqn:deg1_sat_ind_dim}
 	h^0(X, \lfloor{dD + d\frac{\alpha}{\beta} P \rfloor}) = h^0(X,\lfloor dD
@@ -560,7 +385,7 @@ degree $d_i$ and has a pole at $P$ of degree $c_i$
 										 &+ \langle (y_i)^{\deg(y_{i+1}+1)}: 1\le i=\lfloor \frac{\alpha}{\beta} \rfloor
 \end{align*}
 In particular, if $\frac{\alpha}{\beta}\le 1$, then $I$ is minimally generated by elements with leading terms of the form $y_ix_j$ and $y_iy_j$.
-\item If $\gin_\prec(I)=\initial_\prec(I)$ then $\gin_\prec(I')=\initial_\prec(I')$.
+%\item If $\gin_\prec(I)=\initial_\prec(I)$ then $\gin_\prec(I')=\initial_\prec(I')$.
 \item A Grobner basis with the initial terms $y_i x_j$, $y_iy_j$, and possibly $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor \frac{\alpha}{\beta} \rfloor}+1}$ as shown above minimally generates $I'$.
 \end{itemize}
 \end{lem}
@@ -729,103 +554,91 @@ In the case when all $\frac{\alpha}{\beta}\le 1$, lemma \ref{lem:minimal_quadrat
 \todo{What about $\frac{\alpha}{beta}>1$?}
 \end{proof}
 
-\begin{rem}\label{rem:deg1_sat_ind_gen_rel_degrees}
-Notice that in lemma \ref{lem:deg1_sat_ind}, $D'$ is generated in degree at most $\max(\bar{d}, \beta)$ with relations generated in degree at most $\max(\bar{\tau}, \bar{d} + \beta, 2 \beta)$
-\end{rem}
-
-This yields some immediate corollaries:
-
-\begin{cor}\label{cor:effective_Q_divisor_can_ring}
-If the genus of $X$ is 0 and $D\sim\sum \frac{\alpha_i}{\beta_i} P_i$ is linearly equivalent to an effective $\mathbf{Q}$ divisor of $X$, then $R_D$ is generated in degree at most $\max(\beta_i,1)$ with relations generated in degree at most $2\max(\beta_i,1)$.
-\end{cor}
+\begin{lem}
+\label{lem:sat-two-induction-high-genus}
+Let $(\sx, \Delta, \halfcan_\sx)$ and $(\sx', \Delta, \halfcan_{\sx'})$ be log stacky curves with coarse space $(X, \Delta, L_X)$ and signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r-1}, \delta)$ respectively, with $g > 0,$ and, if $g = 1$ then $\deg 3L \geq 2$.
+Let $R_{L'} = R' = k[x]/I'= k[x_2, x_3
+, x_5,\ldots, x_m]/I'$ and let $\halfcan = \halfcan' + \frac{1}{
+3}P$, where $P\in X$ is a base point of $\halfcan'$ (which includes the case when $H^0(X,\lfloor \halfcan'\rfloor)=0$).  Suppose $\halfcan$ and $\halfcan'$ satisfy $sat(Eff(\halfcan')) = sat(Eff(\halfcan)) = 2.$
+Suppose $\deg x_i = i$ for $i \in \{2, 3\}$ and choose an ordering on $k[x_2, \ldots, x_m]$ satisfies
+\begin{align*}
+	\ord_{x_2}(f) < \ord_{x_2}(g) \implies f \prec g.
+\end{align*}
+Then, the following statements hold.
+\begin{enumerate}
+	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3, 4\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
+		_3,y_4,$ minimally generate $R$ over $R'$.
+	\item[(b)] Equip $k[y_3, y_4]$ with $grlex$ so that $y_4 \prec 
+		y_3$
+		and equip the ring $k[y_3, y_4, x]$ with the block 
+		order so that $R = k[y_3, y_4, x]/I$. Let,
+		\begin{align*}
+			\initial_\prec(I) &= \initial_\prec(I')k[x, y_3, y_4] \\
+			&+\langle y_4 x_j \mid 2 \leq j \leq m \rangle \\
+			&+\langle y_4^2.\rangle
+		\end{align*}
+	\item[(c)] Any set of minimal generators for $I'$ together with 
+		any set of relations with leading terms as in (b) minimally 
+		generate $I$.
+\end{enumerate}
+\end{lem}
 
 \begin{proof}
-We can prove this by induction.  As a base case, let $D\sim 0$.  Then $R_D\cong k[x]$ which is generated in degree 1 with no relations, satisfying the inductive hypothesis.
-Now, suppose the result is proven for all effective $D$ with support at most $r$ points; then if $D'\sim \sum_{i=1}^{r+1} \frac{\alpha_i}{\beta_i}$, we set $D=\sum_i^{r} \frac{\alpha_i}{\beta_i}$.  By hypothesis, $R_D$ is generated in degree at most $\max_{1\le i\le r}(\beta_i)$ with relations generated in degree at most 2$\max_{1\le i\le r}(\beta_i)$.  Since $D$ is effective, the condition of equation \ref{eqn:deg1_sat_ind_dim} is met, so by remark \ref{rem:deg1_sat_ind_gen_rel_degrees} of lemma \ref{lem:deg1_sat_ind}, $R_{D'}$ is generated in degree at most $\max(\beta_i)$ with relations generated in degree at most $2\max(\beta_i)$.
-\end{proof}
+The assumptions on $g,\sigma$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base point free: If $g \geq 2$ then $\deg 3L > 2g-1$ and $\deg 4L > 2g-1$, so $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. If $g = 1$, we assume $\deg 3L \geq 2 > 2g-1$, so we also have $\deg 4L \geq 2 > 2g -1,$ so again $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord
+_P(y_i) = 1$ by Riemann Roch, and the assumptions on $\sigma$. \todo{Understand why/whether we need 
+to cite lemma 5.4.7.} 
 
-\todo{do these corollaries fit here?}
+In a fashion analogous to the proof of Lemma 
+~\ref{lem:sat_three_induction}, we see 
+the following is a $k$ basis for $R$ over $R'$:
 
-\begin{cor}\label{cor:genus_0_positive_delta}
-Let $\halfcan$ be a stacky log spin canonical divisor of $(X,\Delta)$ with signature $(g;e_1,\ldots, e_n;\delta)$ such that $2\halfcan=K_\sx+\Delta$ with $\delta=\deg(\Delta)>0$.  Then $\halfcan$ is effective so we can inductively apply lemma \ref{lem:deg1_sat_ind}.
-\end{cor}
-\begin{proof}
-Since $\halfcan$ is a half canonical divisor, 
-\[
-	2\halfcan=D+\sum \subhalf{e_i}P_i
-\] 
-where 
-\[
-	D\sim K_X+\Delta\sim -2\infty+ \Delta
-\] is a divisor of $X$ (i.e. with 
-possibly negative integer coefficients).  Since $\Delta$ is non-
-zero effective, $\deg(D)\ge -1$.   Noting that the coefficient of 
-any point $P$ occurring in a stacky divisor of $\sx$ must have 
-coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
-s appearing in the characteristic of $(\sx,\Delta)$).
- 
-Since all $e_i$s are odd, $2$ cannot appear in a denominator of the 
-coefficient of a point $P$ in $\halfcan$, meaning that $\frac{D}{2}$
- must be a $X$-divisor.  Since $\deg(\frac{D}{2})=\frac{1}{2}\deg(D)
-\ge -\frac{1}{2}$, we in fact have $\deg(D)\ge 0$.  Thus $\halfcan$ 
-is linearly equivalent to an effective $X$ divisor plus $\sum 
-\subhalf{i}P_i$.  We have thus shown $\halfcan$ is linearly equivalent to an effective divisor.  Thus, by \ref{cor:effective_Q_divisor_can_ring} the desired result follows.
-\end{proof}
+\begin{align}
+\label{eqn:sat_two_add_generator}
+	\begin{split}
+		&\{ y_3^ax_2^b x_3^\epsilon \mid a \geq 0, b 
+		\geq 0, \epsilon \in \{0, 1\}\} \\
+		&\cup \{ y_3^ay_4 \mid a \geq 0 \},
+	\end{split}
+\end{align}
 
-\begin{cor}
-Let $D$ be a fractional $\frac{a}{b}$-canonical divisor of a genus 0 stacky curve with denominator $b > 2$ when $\frac{a}{b}$ is written in reduced form.
-\end{cor}
-\begin{proof}
-For a similar reason as in corollary \ref{cor:genus_0_posiive_delta}, $D$ must be equivalent to an effective divisor (in this case even when $\delta=0$), so by corollary \ref{cor:effective_Q_divisor_can_ring} we get the desired result.
-\end{proof}
+\noindent completing part (a).
 
-\todo{Move this lemma:}
-\begin{lem}\label{lem:add_point_effective_divisor_no_deg_1_generators}
-Let $(X,\Delta,\halfcan)\to (X,\Delta',\halfcan)$ be the natural map of genus $g$ log curves with $\Delta=\Delta'+P$, such that $2\halfcan\sim K_X+\Delta$, $2\halfcan'\sim K_X+\Delta'$, and $\Delta=\Delta'+P$ with $\Delta'\ne 0$ for some $P\not\in supp(\halfcan)$.  
-Suppose $\deg(\lfloor{\halfcan}\rfloor)=\deg(\lfloor \halfcan'\rfloor)\ge 0$, so $R_{\halfcan}$ has a
-generator $u$ in degree 1, and $R_{\halfcan'}$ has no new generators in degree 0.  Suppose $D$ is generated by $u, x_1, \ldots, x_m$ in degree at most $\bar{d}$ with relations generated 
-in degree at most $\bar{\tau}$.
-Then 
-\begin{itemize}
-\item $R_{D'}$ is generated over $R_D$ by elements $y_1, y_2, y_3$ in degrees 2, 2, and 3 respectively.  
-\item If $I$ and $I'$ are the ideal of relations of $R_D$ and $R_{D'}$ respectively, then 
+To show part (b), note that the generators in
+~\ref{eqn:sat_two_add_generator} are precisely a set of monomials which
+generate $k[x,y]/J$ over $k$. So, to show $J = in_\prec(I)$, it
+suffices to show that all generators of $J$ lie in $in_\prec(I)$.
+
+This follows, since there exist constants $A_j \in k$ for $3 \leq j \leq m,$ and a constnant $B \in k$ and
+elements $w_{i,j} \in R'$ so that the following linear combinations
+of elements lie in $R'$.
 
 \begin{align*}
-	\initial_\prec(I') &= \initial_\prec(I) k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
-										 &+ \langle y_i x_j \rangle \\
-										 &+ \langle y_3^2, y_3y_2, y_2y_1, y_1^2\rangle \\
+	y_4x_j &- A_j y_3 w_j & \text{ so that } 2 \leq j \leq m \text{ and } \deg w_j = \deg x_j + 1\\
+	y_4^2 &+ B y_3^2 x_2 \\
 \end{align*}
-\item A Grobner basis with initial terms described above minimally generates $I'$ over $I$.
-\end{itemize}
-\end{lem}
-\begin{proof}
-Similar to all the other lemmas\todo{combine sections?}
+
+\noindent
+Of course, the initial terms of these elements are precisely the
+generators of $J$, completing (b).
+
+Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \end{proof}
 
-Transition words.
-\todo{transition!}
-
-\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 3-saturated divisor}
-\label{ssec:g_0_ram_pts}
-
-\begin{prop}
-\label{prop:sat_three_induction}
+\begin{lem}
+\label{lem:sat-two-induction-genus-0}
 \todo{Make explicit assumptions on genus.}
-\todo{Should switch either $R$ and $R'$ or $\sx$ and $\sx'$ to make prime notation consistent (note that inclusion is reversed since this map adds a stacky point to $\sx$; note that we should also say that this map is only ramified at $P$), Aaron: you're right, I wrote the inclusion on rings in the wrong direction. Actually, the map isn't ramified at $P$, it's just defined away from $P$. I decided to remove this from the proposition though.} Let $R_{L'} = R' = k[x]/I'= k[x_3, x_4
-, x_5,\ldots, x_m]/I'$ satisfy $sat(Eff(D')) = 3.$ Let $L = L' + \frac{1}{
-3}P$, and let $R = R_L$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that the ordering on $k[x]$ satisfies
+Suppose $L'$ is a log half-canonical divisor of $\sx$ with course space $X$ of genus 0 such that $sat(Eff(\halfcan')) = 3$ with $R_{\halfcan'} = k[x_3, x_4
+, x_5,\ldots, x_m]/I'$.  Let $L = L' + \frac{1}{
+3}P$.  Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that the ordering on $k[x]$ satisfies
 \begin{align*}
 	\ord_{x_3}(f) < \ord_{x_3}(h) \implies f \prec h.
 \end{align*}
 Then, the following statements hold.
 
-\todo{Peter: Do you mean to have $D=\frac{1}{3}P+D'$ or is it correct as written?}.
-\todo{Peter: We can generalize to arbitrary genus with the condition $\deg(D)>2g-2$ meaning $h^0(X,K-D)=0$ so Riemann-Roch gives us everything we wanted from $\mathbb{P}^1$.}
-
 \begin{enumerate}
 	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3,
 		4,5\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
-		_3,y_4,$ and$ y_5$ minimally generate $R$ over $R'$.
+		_3,y_4,$ and $y_5$ minimally generate $R$ over $R'$.
 	\item[(b)] Equip $k[y_3, y_4, y_5]$ with $grlex$ so that $y_5 \prec 
 		y_4 \prec y_3$
 		and equip the ring $k[y_3, y_4, y_5, x]$ with the block 
@@ -840,10 +653,10 @@ Then, the following statements hold.
 		any set of relations with leading terms as in (b) minimally 
 		generate $I$.
 \end{enumerate}
-\end{prop}
+\end{lem}
 
 \begin{proof}
-First, the elements $y_3,y_4,$ and $y_5$ are general and have $-\ord
+First, note that since we are in genus 0, we can choose the elements $y_3,y_4,$ and $y_5$ are general and have $-\ord
 _P(y_i) = 1$ by Riemann Roch. \todo{Understand why/whether we need 
 to cite lemma 5.4.7.} To complete the proof of (a) we only need 
 show these elements generate $R$ over $R'$. We can first see that 
@@ -899,6 +712,182 @@ generators of $J$, completing (b).
 
 Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \end{proof}
+
+
+
+
+
+\iffalse{
+\begin{lem}\label{lem:adding_points_saturation_2_to_1_with_log}
+Let $(\sx, \Delta, \halfcan)$ and $(\sx, \Delta', L')$ be tame separably rooted log stacky spin 
+curves with $0\ne \Delta=\Delta'+2P$ for some non-stacky point $P$ not in the support of $
+\halfcan'$, meaning that $L=L'+P$.  Let $(g; e_1, \ldots, e_\tau; \delta+2)$ and $(g; e_1, 
+\ldots, e_\tau, \delta)$ with $g\ge 2$ be their respective signatures.  Suppose 
+$sat(Eff(\halfcan))=1$ and $sat(Eff(\halfcan'))=2$.  Further suppose $R_{\halfcan'} = k[x_2, 
+x_3, \ldots, x_m]/I'$ with $\deg(x_2) = 2$ and $\deg(x_3) = 3$.  Then
+\begin{enumerate}
+\item[(a)] Then generic elements $y_1$ and $y_2$ in $(R_{\halfcan})_1$ and $
+(R_{\halfcan})_2$ respectively, such that $-\ord_P(y_2)>0$ and $\{y_1^2, y_2\}$ is linearly 
+independent, generate $R_\halfcan$ over $R_{\halfcan'}$.
+\item[(b)] Equip $k[y_1,y_2]$ with $grlex$ so that $y_2 \prec y_1$ and equip $k[y_1, y_2, 
+x_2, \ldots, x_m]$ with the block order so that $R_\halfcan=k[y_1, y_2, x_2, \ldots, x_m]/I$.  
+Then
+\begin{align*}
+			in_\prec(I) &= in_\prec(I')k[x_2, \ldots, x_m, y_1, y_2] \\
+			&+\langle y_2 x_j \mid 2 \leq j \leq m \rangle \\
+			&+\langle y_2^2\rangle.
+		\end{align*}
+\item[(c)] Any set of minimal generators for $I'$ together with any set of relations with 
+leading terms as above minimally generate $I$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Since adding $P$ to $L'$, reduces saturation from 2 to 1, $h^0(X, \lfloor L \rfloor)=1$.  
+Choose any $y_1\in H^0(X,\lfloor L\rfloor)$; we know by saturation arguments that $-
+\ord_P(y_1)=1$.  Furthermore, since $\delta>0$, we use Riemann-Roch to deduce that for 
+all $d>1$ $h^0(X,\lfloor dL\rfloor)=h^0(dL')+d$, so $(R_\halfcan)_d$ is a $d$ dimension $k
+$-vector space over $(R_{\halfcan'})_d$.  In particular, this means we can generically 
+choose an element $y_2\in H^0(X,\lfloor 2L\rfloor)$ linearly independent from $y_1^2$.  By 
+dimension counting, we see that 
+\[
+	\langle y_1^a x_2^b x_3^c: a\ge 0, b\ge 0, c\in \{0,1\}\rangle
+\]
+\[
+	\langle y_1^a y_2: a\ge 0\rangle
+\]
+form a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$.  This completes part (a).
+
+To show part (b), we note that the monomials in the basis above generate $k[x,y]/\initial_
+\prec(I)$.  Thus, it is sufficient to show that $J\subseteq \initial_\prec(I)$.  For $j\ge 2$, we 
+can choose $w_j$ in degree $\deg(x_j)+1$ and $A_j\in k$ such that
+\[
+	y_2x_j-A_jy_3w_j
+\]
+has no pole at $P$ at thus lies in $R_{\halfcan'}$.  Similarly, we can choose $B$ and $C$ 
+such that
+\[y^2_4+By_1^2x_2+Cy_1x_3\]
+has no pole at $P$, so it lies in $R_{\halfcan'}$.  These give us relations with initial terms 
+as desired, concluding part (b).
+
+Finally, (c) follows immediately from Lemma \ref{lem:minimal_quadratic}.
+
+\end{proof}
+
+\begin{lem}
+\label{lem:adding_points_saturation_2_to_1_no_log}
+Let $(\sx, 2P, \halfcan)$ and $(\sx, 0, L')$ be tame separably rooted log stacky spin curves 
+with $P$ not in the support of $\halfcan'$, meaning that $L=L'+P$.  Let $(g; e_1, \ldots, e_
+\tau; 2)$ and $(g; e_1, \ldots, e_\tau, 0)$ with $g\ge 2$ be their respective signatures.  
+Suppose $sat(Eff(\halfcan))=1$ and $sat(Eff(\halfcan'))=2$.  Further suppose 
+$R_{\halfcan'} = k[x_2, x_3, \ldots, x_m]/I'$ with $\deg(x_2) = 2$ and $\deg(x_3) = 3$.  
+Then
+\begin{enumerate}
+\item[(a)] Then generic elements $y_1$ and $y_3$ in $(R_{\halfcan})_1$ and $
+(R_{\halfcan})_3$ respectively, such that $-\ord_P(y_3)>1$ and $\{y_1^3, y_2\}$ is linearly 
+independent, generate $R_\halfcan$ over $R_{\halfcan'}$.
+\item[(b)] Equip $k[y_1,y_3]$ with $grlex$ so that $y_3 \prec y_1$ and equip $k[y_1, y_3, 
+x_2, \ldots, x_m]$ with the block order so that $R_\halfcan=k[y_1, y_3, x_2, \ldots, x_m]/I$.  
+Then
+\begin{align*}
+			in_\prec(I) &= in_\prec(I')k[x_2, \ldots, x_m, y_1, y_2] \\
+			&+\langle y_3 x_j \mid 2 \leq j \leq m \rangle \\
+			&+\langle y_3^2
+		\end{align*}
+\item[(c)] Any set of minimal generators for $I'$ together with any set of relations with 
+leading terms as above minimally generate $I$.
+\end{enumerate}
+\end{lem}
+\begin{proof}
+The proof follows similarly to that of lemma 
+\ref{lem:adding_points_saturation_2_to_1_with_log}, with the change that $(R_
+\halfcan)_2$ is only a degree 1 $k$-vector space over $(R_{\halfcan'})_2$ forcing a 
+generator in degree 3 rather than degree 2.  
+\end{proof}
+
+We prove an inductive theorem on adding 2-sat here.
+
+
+We will now prove a lemma that will be used to inductively deal with divisors that are sufficiently saturated, by combining and extending methods of VZB \todo{add 
+reference} and O'Dorney\todo{reference}.
+
+\begin{rem}\label{rem:deg1_sat_ind_gen_rel_degrees}
+Notice that in lemma \ref{lem:deg1_sat_ind}, $D'$ is generated in degree at most $\max(\bar{d}, \beta)$ with relations generated in degree at most $\max(\bar{\tau}, \bar{d} + \beta, 2 \beta)$
+\end{rem}
+
+This yields some immediate corollaries:
+
+\begin{cor}\label{cor:effective_Q_divisor_can_ring}
+If the genus of $X$ is 0 and $D\sim\sum \frac{\alpha_i}{\beta_i} P_i$ is linearly equivalent to an effective $\mathbf{Q}$ divisor of $X$, then $R_D$ is generated in degree at most $\max(\beta_i,1)$ with relations generated in degree at most $2\max(\beta_i,1)$.
+\end{cor}
+
+\begin{proof}
+We can prove this by induction.  As a base case, let $D\sim 0$.  Then $R_D\cong k[x]$ which is generated in degree 1 with no relations, satisfying the inductive hypothesis.
+Now, suppose the result is proven for all effective $D$ with support at most $r$ points; then if $D'\sim \sum_{i=1}^{r+1} \frac{\alpha_i}{\beta_i}$, we set $D=\sum_i^{r} \frac{\alpha_i}{\beta_i}$.  By hypothesis, $R_D$ is generated in degree at most $\max_{1\le i\le r}(\beta_i)$ with relations generated in degree at most 2$\max_{1\le i\le r}(\beta_i)$.  Since $D$ is effective, the condition of equation \ref{eqn:deg1_sat_ind_dim} is met, so by remark \ref{rem:deg1_sat_ind_gen_rel_degrees} of lemma \ref{lem:deg1_sat_ind}, $R_{D'}$ is generated in degree at most $\max(\beta_i)$ with relations generated in degree at most $2\max(\beta_i)$.
+\end{proof}
+
+\todo{do these corollaries fit here?}
+
+\begin{cor}\label{cor:genus_0_positive_delta}
+Let $\halfcan$ be a stacky log spin canonical divisor of $(X,\Delta)$ with signature $(g;e_1,\ldots, e_n;\delta)$ such that $2\halfcan=K_\sx+\Delta$ with $\delta=\deg(\Delta)>0$.  Then $\halfcan$ is effective so we can inductively apply lemma \ref{lem:deg1_sat_ind}.
+\end{cor}
+\begin{proof}
+Since $\halfcan$ is a half canonical divisor, 
+\[
+	2\halfcan=D+\sum \subhalf{e_i}P_i
+\] 
+where 
+\[
+	D\sim K_X+\Delta\sim -2\infty+ \Delta
+\] is a divisor of $X$ (i.e. with 
+possibly negative integer coefficients).  Since $\Delta$ is non-
+zero effective, $\deg(D)\ge -1$.   Noting that the coefficient of 
+any point $P$ occurring in a stacky divisor of $\sx$ must have 
+coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
+s appearing in the characteristic of $(\sx,\Delta)$).
+ 
+Since all $e_i$s are odd, $2$ cannot appear in a denominator of the 
+coefficient of a point $P$ in $\halfcan$, meaning that $\frac{D}{2}$
+ must be a $X$-divisor.  Since $\deg(\frac{D}{2})=\frac{1}{2}\deg(D)
+\ge -\frac{1}{2}$, we in fact have $\deg(D)\ge 0$.  Thus $\halfcan$ 
+is linearly equivalent to an effective $X$ divisor plus $\sum 
+\subhalf{i}P_i$.  We have thus shown $\halfcan$ is linearly equivalent to an effective divisor.  Thus, by \ref{cor:effective_Q_divisor_can_ring} the desired result follows.
+\end{proof}
+
+\begin{cor}
+Let $D$ be a fractional $\frac{a}{b}$-canonical divisor of a genus 0 stacky curve with denominator $b > 2$ when $\frac{a}{b}$ is written in reduced form.
+\end{cor}
+\begin{proof}
+For a similar reason as in corollary \ref{cor:genus_0_positive_delta}, $D$ must be equivalent to an effective divisor (in this case even when $\delta=0$), so by corollary \ref{cor:effective_Q_divisor_can_ring} we get the desired result.
+\end{proof}
+
+\todo{Move this lemma:}
+\begin{lem}\label{lem:add_point_effective_divisor_no_deg_1_generators}
+Let $(X,\Delta,\halfcan)\to (X,\Delta',\halfcan)$ be the natural map of genus $g$ log curves with $\Delta=\Delta'+P$, such that $2\halfcan\sim K_X+\Delta$, $2\halfcan'\sim K_X+\Delta'$, and $\Delta=\Delta'+P$ with $\Delta'\ne 0$ for some $P\not\in supp(\halfcan)$.  
+Suppose $\deg(\lfloor{\halfcan}\rfloor)=\deg(\lfloor \halfcan'\rfloor)\ge 0$, so $R_{\halfcan}$ has a
+generator $u$ in degree 1, and $R_{\halfcan'}$ has no new generators in degree 0.  Suppose $D$ is generated by $u, x_1, \ldots, x_m$ in degree at most $\bar{d}$ with relations generated 
+in degree at most $\bar{\tau}$.
+Then 
+\begin{itemize}
+\item $R_{D'}$ is generated over $R_D$ by elements $y_1, y_2, y_3$ in degrees 2, 2, and 3 respectively.  
+\item If $I$ and $I'$ are the ideal of relations of $R_D$ and $R_{D'}$ respectively, then 
+
+\begin{align*}
+	\initial_\prec(I') &= \initial_\prec(I) k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
+										 &+ \langle y_i x_j \rangle \\
+										 &+ \langle y_3^2, y_3y_2, y_2y_1, y_1^2\rangle \\
+\end{align*}
+\item A Grobner basis with initial terms described above minimally generates $I'$ over $I$.
+\end{itemize}
+\end{lem}
+\begin{proof}
+Similar to all the other lemmas\todo{combine sections?}
+\end{proof}
+
+
+
+}
+\fi
 
 Transition words.
 \todo{transition!}
@@ -959,6 +948,11 @@ condition for the triple: $(\sx',\sx,J)$.}
 		\end{align*}
 \end{enumerate}
 \end{defn}
+
+\begin{lem}\label{lem:n-3s-admissible}
+\todo{lemma and proof}
+\end{lem}
+
 
 \begin{lem}
 \label{lem:admissible_inequality}
@@ -1376,7 +1370,7 @@ In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half can
 \section{Genus one}
 \label{sec:g_1}
 
-In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P-Q$ where $P,Q$ are distinct points, fixed under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Theorem ~\ref{thm:ram_order_ind} and add additional points using Lemma ~\ref{lem:deg1_sat_ind} and Proposition ~\ref{prop:sat_two_induction}.
+In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P-Q$ where $P,Q$ are distinct points, fixed under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Theorem ~\ref{thm:ram_order_ind} and add additional points using Lemma ~\ref{lem:deg1_sat_ind} and Proposition ~\ref{lem:sat_two_induction}.
 
 \ssec{Genus 1 Base Cases}
 \label{ssec:g_1_base}
@@ -1597,7 +1591,7 @@ Here we describe induction of raising degrees from Theorem ~\ref{thm:ram_order_i
 \ssec{Base Cases}
 \label{ssec:g_0_base}
 Now we have an inductive statement on the number of ramified
-points in Proposition ~\ref{prop:sat_three_induction} and
+points in Lemma ~\ref{lem:sat_three_induction} and
 an inductive statement on ramification orders in Theorem
 ~\ref{thm:ram_order_ind}. After verifying that explicit pairs
 $(\sx, J)$ of stacky curves $\sx$ with particular signatures and
@@ -1880,12 +1874,12 @@ Thus, all of the cases are admissible and satisfy the additional
 desired conditions.
 \end{proof}
 
-Now we can induct on cases (a)-(e) of \ref{lem:g_0_admissible_cases}
+Now we can induct on cases (a)-(k) of \ref{lem:g_0_admissible_cases}
 to obtain bounds on the minimal generator and relation degrees for
 canonical rings of curves in the genus 0 case.
 
 Through the application of two processes of induction, by adding 
-points via Proposition ~\ref{prop:sat_three_induction} and by raising
+points via Lemma ~\ref{lem:sat_three_induction} and by raising
 ramification orders via Theorem ~\ref{thm:ram_order_ind},
 we obtain Theorem ~\ref{thm:g_0_generators_relations} for any tame
 log spin curve $(\sx, \Delta, L)$ over a perfect field $k$ with
@@ -1938,7 +1932,7 @@ in the genus 0 case.
 \end{longtable}
 
 \begin{center}
-\label{table:g-0-exceptional}
+\label{table:g_0_exceptional}
 \textbf{Table (IV)}: Genus 0 exceptional cases
 \end{center}
 
@@ -1970,14 +1964,64 @@ If $g = 0$, then the canonical ring
 
 \noindent
 is generated as a $k$-algebra by elements of degree at most $e =
-\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $\max
-(10, e_1, \ldots, e_r),$ so long as $\sigma$ does not lie in a
-finite list of exceptional cases, as listed in Table
-~\ref{table:g-0-exceptional}.
+\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e$,
+so long as $\sigma$ does not lie in a finite list of exceptional
+cases, as listed in Table ~\ref{table:g_0_exceptional}.
 \end{thm}
 
 \begin{proof}
+If $\sx$ has no ramification points, then we have the classical
+case which is done in Chapter 4 of Voight and Zureick-Brown
+\cite{vzb:stacky}.
 
+Now let us consider the case when $\delta \geq 2$. In this case,
+$\halfcan$ is an effective divisor. \todo{need to do this case}
+
+Now suppose $\delta = 0$, so $\halfcan$ is not necessarily effective.
+Let $\sigma = (0; e_1, \ldots, e_r; 0)$ be a signature with $r > 0$
+and not one of the exceptional cases in Table
+~\ref{table:g_0_exceptional}.
+
+If $r > 5$, then we can use Lemma
+~\ref{lem:sat_three_induction} to add ramified points with
+ramification order $3$ to case (k) of Lemma
+~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
+= (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
+clearly satisfies the conditions of Lemma
+~\ref{lem:sat_three_induction} (recall from Subsection ~\ref
+{ssec:g_0_saturation} that saturation is 3 here), and the
+immediate consequence of parts (a) and (c) of Lemma
+~\ref{lem:sat_three_induction} is that any $R(\sx', \Delta,
+\halfcan')$ corresponding to signatures $\sigma'$ with ramification
+orders all equal to $3$ for any $r > 5$ is generated up to
+degree $e := \max(5, e_1', \ldots, e_r')$ with relations generated
+up to degree $2e$. Furthermore, Lemma ~\ref{lem:n-3s-admissible}
+implies that these cases satisfy all of the conditions of Theorem
+~\ref{thm:ram_order_ind}.
+
+So if $r > 5$, then $\sigma$ ``lies above'' the case $(\sigma', J)$
+where $\sigma'$ has $r$ many ramification points all of order $3$
+and $J = \{1, \ldots, r\}$ and these underlying cases satisfy
+all of the hypotheses of Theorem ~\ref{thm:ram_order_ind}.
+If $r \leq 5$, then $\sigma$ ``lies above'' one of the base cases
+of Lemma ~\ref{lem:g_0_admissible_cases}, all of which satisfy
+the hypotheses of Theorem ~\ref{thm:ram_order_ind} as well.
+
+So for any $r > 0$, there is a $(\sigma', J)$, either from
+Lemma ~\ref{lem:g_0_admissible_cases} or corresponding to
+the $r > 5$ case with ramification orders all $3$, with $\sigma' =
+(0; e_1', \ldots, e_r'; 0)$ satisfying the property that for all $i
+\in J$, $e_i \geq e_i'$ and $e_i = e_i'$ otherwise.
+
+All such base cases satisfy all of the hypotheses of
+Theorem ~\ref{thm:ram_order_ind} and their corresponding $R' :=
+R(\sx', \Delta, \halfcan')$ are generated, as $k$-algebras, up
+to degree $e' := \max(5, e_1', \ldots, e_r')$ with relations
+generated up to degree $2e'$ by Lemma ~\ref{g_0_admissible_cases}.
+It follows from Theorem ~\ref{thm:ram_order_ind}(b) that $R :=
+R(\sx, \Delta, \halfcan)$ is generated up to degree $e := \max(5,
+e_1, \ldots, e_r)$. It follows from Theorem ~\ref{thm:ram_order_ind}
+(d) that the relations are generated up to degree $2e$.
 
 
 %By Lemma ~\ref{lem:g_0_admissible_cases}, we know that for
@@ -2000,7 +2044,7 @@ finite list of exceptional cases, as listed in Table
 %some ordering.
 %
 %Then we can apply two processes of induction, by adding points via
-%Proposition ~\ref{prop:sat_three_induction} and by raising
+%Lemma ~\ref{lem:sat_two_induction} and by raising
 %ramification orders via Theorem ~\ref{thm:ram_order_ind},
 %to obtain the desired result for any tame log spin curve $(\sx,
 %\Delta, L)$ over a perfect field $k$ with signature $\sigma$
@@ -2017,8 +2061,8 @@ finite list of exceptional cases, as listed in Table
 %~\ref{lem:g_0_admissible_cases} case (d) will give the desired
 %result for curves with four ramified points excluding signature
 %$(0; 3, 3, 3, 3; 0)$. A process of induction increasing the
-%number of ramified points via Proposition
-%~\ref{prop:sat_three_induction} on Lemma ~\ref{lem:g_0_admissible_cases}
+%number of ramified points via Lemma
+%~\ref{lem:sat_three_induction} on Lemma ~\ref{lem:g_0_admissible_cases}
 %case (e) combined with the induction process on ramification orders
 %will yield the result for curves with at least five ramified points.
 \end{proof}
