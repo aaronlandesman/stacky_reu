@@ -169,18 +169,7 @@
 \tableofcontents
 
 
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
 
 
 \section{Introduction}
@@ -206,7 +195,7 @@ We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{e_i}$.
 
 
 \begin{thm}
-\label{thm:g_0_generators_relations}
+\label{thm:general_generators_relations}
 Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$, so
 that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
@@ -216,34 +205,20 @@ canonical ring
 \end{align*}
 
 \noindent
-is generated as a $k$-algebra by elements of degree at most $e = 
-\max(5,e_1,\ldots, e_r).$ If the genus $g \geq 2,$ then $R(\sx, \Delta, \halfcan)$ has relations in degree at most $\max(11,e_1,\ldots, e_r).$ If the genus $g = 0$ or $g = 1,$ then $R(\sx, \Delta, \halfcan)$ has relations in degree at most $\max(10,e_1,\ldots, e_r),$ so
-long as $\sigma$ does not lie in a finite list of exceptional cases, as listed in Table ~\ref{table:g-1-exceptional} for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional} for signatures with $g = 0$.
+is generated as a $k$-algebra by elements of degree at most $e =
+\max(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ then $R(\sx,
+\Delta, \halfcan)$ has relations in degree at most $\max(11, e_1,
+\ldots, e_r).$ If the genus $g = 0$ or $g = 1,$ then $R(\sx, \Delta
+, \halfcan)$ has relations in degree at most $\max(10, e_1, \ldots,
+e_r),$ so long as $\sigma$ does not lie in a finite list of
+exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
+for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
+for signatures with $g = 0$.
 \end{thm}
 \todo{Say that this follows immediately from the three theorems for the special cases.}
 Note that in the course of the proof of Theorem ~\ref{thm:g_0_generators_relations} we will not merely obtain bounds on the degrees of the generators and relations. In fact, if the genus $g = 0$ or $g = 1$, the proof yields an explicit system of generators and the initial ideal of relations. While in the genus $g \geq 2$ case, the proof does not always yield an explicit system of generators and relations, if the halfcanonical divisor $\halfcan$ can be written as $\halfcan' + \Lambda$ with $(\halfcan',0,X)$ a log spin curve, and a system of generators and relations for $\halfcan'$ is known, then our proof provides an inductive procedure for determining the generators and initial ideal of relations for $\halfcan$. In fact, such a system of generators and relations are known for $\halfcan'$ in many cases, as detailed in Neves ~\cite{neves:halfcan}[Section III.4].
 
-In order to prove Theorem 
-
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-
-
-
 
 
 \section{Background}
@@ -260,26 +235,7 @@ Here are some definitions.
 \end{defn}
 
 
-
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive Lemmata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-
-
-
 
 
 \section{Inductive Lemmata}
@@ -779,7 +735,7 @@ Now, suppose the result is proven for all effective $D$ with support at most $r$
 
 \todo{do these corollaries fit here?}
 
-\begin{cor}\label{cor:genus_0_posiive_delta}
+\begin{cor}\label{cor:genus_0_positive_delta}
 Let $\halfcan$ be a stacky log spin canonical divisor of $(X,\Delta)$ with signature $(g;e_1,\ldots, e_n;\delta)$ such that $2\halfcan=K_\sx+\Delta$ with $\delta=\deg(\Delta)>0$.  Then $\halfcan$ is effective so we can inductively apply lemma \ref{lem:deg1_sat_ind}.
 \end{cor}
 \begin{proof}
@@ -933,161 +889,6 @@ generators of $J$, completing (b).
 Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \end{proof}
 
-<<<<<<< HEAD
-\begin{lem}
-\label{lem:sat_two_induction}
-Let $(\sx, \Delta, L)$ and $(\sx', \Delta, L')$ be tame separably rooted log stacky spin curves. 
-Let $\sx \rightarrow \sx'$ be a birational map of tame, separably rooted log stacky curves so that $\sx$ has signature 
-$\sigma = (g;e_1,\ldots, e_r;\delta)$ with $g > 0,$ and, if $g = 1$ then $\deg 3L \geq 2$.
-Let $R_{L'} = R' = k[x]/I'= k[x_2, x_3
-, x_5,\ldots, x_m]/I'$ and let $L = L' + \frac{1}{
-3}P.$ Suppose $L$ and $L'$ satisfy $sat(Eff(L')) = sat(Eff(L)) = 2.$
-Suppose $\deg x_i = i$ for $i \in \{2, 3\}$ and that the ordering on $k[x]$ satisfies
-\begin{align*}
-	\ord_{x_2}(f) < \ord_{x_2}(g) \implies f \prec g.
-\end{align*}
-Then, the following statements hold.
-\begin{enumerate}
-	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3, 4\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
-		_3,y_4,$ minimally generate $R$ over $R'$.
-	\item[(b)] Equip $k[y_3, y_4]$ with $grlex$ so that $y_4 \prec 
-		y_3$
-		and equip the ring $k[y_3, y_4, x]$ with the block 
-		order so that $R = k[y_3, y_4, x]/I$. Let,
-		\begin{align*}
-			J &= gin_\prec(I')k[x, y_3, y_4] \\
-			&+\langle y_4 x_j \mid 2 \leq j \leq m \rangle \\
-			&+\langle y_4^2.\rangle
-		\end{align*}
-			Then, $gin_\prec(I) = J$.
-	\item[(c)] Any set of minimal generators for $I'$ together with 
-		any set of relations with leading terms as in (b) minimally 
-		generate $I$.
-\end{enumerate}
-\end{lem}
-
-\begin{proof}
-The assumptions on $g,\sigma$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base point free: If $g \geq 2$ then $\deg 3L > 2g-1$ and $\deg 4L > 2g-1$, so $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. If $g = 1$, we assume $\deg 3L \geq 2 > 2g-1$, so we also have $\deg 4L \geq 2 > 2g -1,$ so again $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord
-_P(y_i) = 1$ by Riemann Roch, and the assumptions on $\sigma$. \todo{Understand why/whether we need 
-to cite lemma 5.4.7.} 
-
-In a fashion analogous to the proof of Proposition 
-~\ref{prop:sat_three_induction}, we see 
-the following is a $k$ basis for $R$ over $R'$:
-
-\begin{align}
-\label{eqn:sat_two_add_generator}
-	\begin{split}
-		&\{ y_3^ax_2^b x_3^\epsilon \mid a \geq 0, b 
-		\geq 0, \epsilon \in \{0, 1\}\} \\
-		&\cup \{ y_3^ay_4 \mid a \geq 0 \},
-	\end{split}
-\end{align}
-
-\noindent completing part (a).
-
-To show part (b), note that the generators in
-~\ref{eqn:sat_two_add_generator} are precisely a set of monomials which
-generate $k[x,y]/J$ over $k$. So, to show $J = in_\prec(I)$, it
-suffices to show that all generators of $J$ lie in $in_\prec(I)$.
-
-This follows, since there exist constants $A_j \in k$ for $3 \leq j \leq m,$ and a constnant $B \in k$ and
-elements $w_{i,j} \in R'$ so that the following linear combinations
-of elements lie in $R'$.
-
-\begin{align*}
-	y_4x_j &- A_j y_3 w_j & \text{ so that } 2 \leq j \leq m \text{ and } \deg w_j = \deg x_j + 1\\
-	y_4^2 &+ B y_3^2 x_2 \\
-\end{align*}
-
-\noindent
-Of course, the initial terms of these elements are precisely the
-generators of $J$, completing (b).
-
-Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
-\end{proof}
-
-\todo{Move this lemma:}
-\begin{lem}\label{lem:add_point_effective_divisor_no_deg_1_generators}
-Let $(X,\Delta,\halfcan)\to (X,\Delta',\halfcan)$ be the natural map of genus $g$ log curves with $\Delta=\Delta'+P$, such that $2\halfcan\sim K_X+\Delta$, $2\halfcan'\sim K_X+\Delta'$, and $\Delta=\Delta'+P$ with $\Delta'\ne 0$ for some $P\not\in supp(\halfcan)$.  
-Suppose $\deg(\lfloor{\halfcan}\rfloor)=\deg(\lfloor \halfcan'\rfloor)\ge 0$, so $R_{\halfcan}$ has a
-generator $u$ in degree 1 and $R_{\halfcan'}$ has no new generators in degree 1.  Suppose $D$ is generated by $u, x_1, \ldots, x_m$ in degree at most $\bar{d}$ with relations generated 
-in degree at most $\bar{\tau}$.
-Then 
-\begin{itemize}
-\item $R_{D'}$ is generated over $R_D$ by elements $y_1, y_2, y_3$ in degrees 2, 2, and 3 respectively.  
-\item If $I$ and $I'$ are the ideal of relations of $R_D$ and $R_{D'}$ respectively, then 
-
-\begin{align*}
-	\initial_\prec(I') &= \initial_\prec(I) k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
-										 &+ \langle y_i x_j \rangle \\
-										 &+ \langle y_3^2, y_3y_2, y_2y_1, y_1^2\rangle \\
-\end{align*}
-\item A Grobner basis with initial terms described above minimally generates $I'$ over $I$.
-\end{itemize}
-\end{lem}
-\begin{proof}
-Similar to all the other lemmas\todo{combine sections?}
-\end{proof}
-
-Transition words.
-\todo{transition!}
-
-We will now prove a lemma that will be used to inductively deal with divisors that are sufficiently saturated, by combining and extending methods of VZB \todo{add 
-reference} and O'Dorney\todo{reference}.
-
-\begin{rem}\label{rem:deg1_sat_ind_gen_rel_degrees}
-Notice that in lemma \ref{lem:deg1_sat_ind}, $D'$ is generated in degree at most $\max(\bar{d}, \beta)$ with relations generated in degree at most $\max(\bar{\tau}, \bar{d} + \beta, 2 \beta)$
-\end{rem}
-
-This yields some immediate corollaries:
-
-\begin{cor}\label{cor:effective_Q_divisor_can_ring}
-If the genus of $X$ is 0 and $D\sim\sum \frac{\alpha_i}{\beta_i} P_i$ is linearly equivalent to an effective $\mathbf{Q}$ divisor of $X$, then $R_D$ is generated in degree at most $\max(\beta_i,1)$ with relations generated in degree at most $2\max(\beta_i,1)$.
-\end{cor}
-
-\begin{proof}
-We can prove this by induction.  As a base case, let $D\sim 0$.  Then $R_D\cong k[x]$ which is generated in degree 1 with no relations, satisfying the inductive hypothesis.
-Now, suppose the result is proven for all effective $D$ with support at most $r$ points; then if $D'\sim \sum_{i=1}^{r+1} \frac{\alpha_i}{\beta_i}$, we set $D=\sum_i^{r} \frac{\alpha_i}{\beta_i}$.  By hypothesis, $R_D$ is generated in degree at most $\max_{1\le i\le r}(\beta_i)$ with relations generated in degree at most 2$\max_{1\le i\le r}(\beta_i)$.  Since $D$ is effective, the condition of equation \ref{eqn:deg1_sat_ind_dim} is met, so by remark \ref{rem:deg1_sat_ind_gen_rel_degrees} of lemma \ref{lem:deg1_sat_ind}, $R_{D'}$ is generated in degree at most $\max(\beta_i)$ with relations generated in degree at most $2\max(\beta_i)$.
-\end{proof}
-
-\todo{do these corollaries fit here?}
-
-\begin{cor}\label{cor:genus_0_posiive_delta}
-Let $\halfcan$ be a stacky log spin canonical divisor of $(X,\Delta)$ with signature $(g;e_1,\ldots, e_n;\delta)$ such that $2\halfcan=K_\sx+\Delta$ with $\delta=\deg(\Delta)>0$.  Then $\halfcan$ is effective so we can inductively apply lemma \ref{lem:deg1_sat_ind}.
-\end{cor}
-\begin{proof}
-Since $\halfcan$ is a half canonical divisor, 
-\[
-	2\halfcan=D+\sum \subhalf{e_i}P_i
-\] 
-where 
-\[
-	D\sim K_X+\Delta\sim -2\infty+ \Delta
-\] is a divisor of $X$ (i.e. with 
-possibly negative integer coefficients).  Since $\Delta$ is non-
-zero effective, $\deg(D)\ge -1$.   Noting that the coefficient of 
-any point $P$ occurring in a stacky divisor of $\sx$ must have 
-coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
-s appearing in the characteristic of $(\sx,\Delta)$).
- 
-Since all $e_i$s are odd, $2$ cannot appear in a denominator of the 
-coefficient of a point $P$ in $\halfcan$, meaning that $\frac{D}{2}$
- must be a $X$-divisor.  Since $\deg(\frac{D}{2})=\frac{1}{2}\deg(D)
-\ge -\frac{1}{2}$, we in fact have $\deg(D)\ge 0$.  Thus $\halfcan$ 
-is linearly equivalent to an effective $X$ divisor plus $\sum 
-\subhalf{i}P_i$.  We have thus shown $\halfcan$ is linearly equivalent to an effective divisor.  Thus, by \ref{cor:effective_Q_divisor_can_ring} the desired result follows.
-\end{proof}
-
-\begin{cor}
-Let $D$ be a fractional $\frac{a}{b}$-canonical divisor of a genus 0 stacky curve with denominator $b > 2$ when $\frac{a}{b}$ is written in reduced form.
-\end{cor}
-\begin{proof}
-For a similar reason as in corollary \ref{cor:genus_0_posiive_delta}, $D$ must be equivalent to an effective divisor (in this case even when $\delta=0$), so by corollary \ref{cor:effective_Q_divisor_can_ring} we get the desired result.
-\end{proof}
-
-=======
->>>>>>> 0c0a81b752adddce68b29041d098bdaacf89ecbe
 Transition words.
 \todo{transition!}
 
@@ -1098,7 +899,7 @@ In this section, we aim to prove the inductive theorem, Theorem
 conditions, this theorem will allow us to show that if Theorem ~\ref
 {thm:ram_order_ind} holds for a curve with signature
 $(0;e_1',\ldots, e_r';0)$ then it also holds for a curve with
-signature $(0;e_1,\ldots, e_r;0)$ with $e_i' - e_i \in \{0,2\}$.
+signature $(0;e_1, \ldots, e_r; 0)$ with $e_i' - e_i \in \{0,2\}$.
 
 \begin{defn}
 \label{defn:admissible}
@@ -1106,7 +907,7 @@ Let $(\sx', 0, L'),(\sx, 0, L)$ be tame,
 separably rooted log stacky spin
 curves, both ramified over ramified at $Q_1,\ldots, Q_r$. Suppose
 there is a birational map $\sx \rightarrow \sx'$, and let $J \subset
-\{1, \ldots, r\}$. Suppose $e_i'+ 2\chi_J(i) = e_i$ where
+\{1, \ldots, r\}$. Suppose $e_i'+ 2 \chi_J (i) = e_i$ where
 
 $$\chi_J(i) = \begin{cases}
 	1, &\text{ if }i \in J\\
@@ -1190,7 +991,7 @@ if they hold for $J$.
 
 \begin{thm}
 \label{thm:ram_order_ind}
-Suppose $(\sx', 0, L')$ \todo{Peter: You should also instantiate $(\sx,0,L)$ as well} is a tame separably rooted log stacky spin
+Suppose $(\sx', 0, L')$ \todo{Peter: You should also instantiate $(\sx, 0, L)$ as well} is a tame separably rooted log stacky spin
 curve and $(\sx', J)$ is admissible with generators $y_{i,e_i'} \in
 R' = R_{L'}$ as in (Ad-i) of Definition ~\ref{defn:admissible}.
 Then the following are true:
@@ -1206,7 +1007,7 @@ Then the following are true:
 			\frac{1}{\deg(y_{i,e_i})e_j'}
 		\end{align*}
 		for all $j \in J$ with $j \neq i$.
-	\item[(b)] The elements $y_{i,e_i'}^ay_{i,e_i}^b,$ with $a \geq 0,
+	\item[(b)] The elements $y_{i,e_i'}^ay_{i,e_i}^b$ with $a \geq 0,
 		b > 0$ span $R$ over $R'$ and the elements $y_{i,e_i}$ minimally
 		generate $R$ over $R'$.
 	\item[(c)] Equip $k[y] = k[y_{i,e_i}]_{i \in J}$ and $k[x]$ with
@@ -1408,7 +1209,7 @@ $W \subset J$ by Lemma ~\ref{lem:admissible_subset}.
 
 \section{High genus}
 \label{sec:g_high}
-We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the half canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Sections ~\ref{sec:g_1} and ~\ref{sec:g_0_effective} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved. We begin with the case that $g \geq 2$.
+We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the half canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Subsection ~\ref{ssec:g_0_effective} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved. We begin with the case that $g \geq 2$.
 
 \ssec{Bounds on Generators and Relations in high genus}
 
@@ -1650,13 +1451,34 @@ The proof of this can be gotten by first using Riemann--Roch and counting the po
 \ssec{Main Theorem for Genus 1}
 \label{ssec:main_g_1}
 
+\begin{thm}
+\label{thm:g_1_generators_relations}
+Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$,
+so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
+If $g = 1$, then the canonical ring
+
+\begin{align*}
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
+\end{align*}
+
+\noindent
+is generated as a $k$-algebra by elements of degree at most $e =
+\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $\max
+(10, e_1, \ldots, e_r),$ so long as $\sigma$ does not lie in a
+finite list of exceptional cases, as listed in Table
+~\ref{table:g-1-exceptional}.
+\end{thm}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus zero %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Genus Zero Effective}
-\label{sec:g_0_effective}
+\section{Genus Zero}
+\label{sec:g_0}
 Now we consider the genus zero case.
 \todo{write intro}
+
+\ssec{Genus Zero Effective}
+\label{ssec:g_0_effective}
 
 In this section, we examine the case $2\halfcan\sim K_\sx+\Delta$ 
 when $\Delta$ is a non- zero effective divisor.  Using this, we can 
@@ -1681,11 +1503,8 @@ Let $2\halfcan=K_X$ of a non-stacky curve $X$ such that $h^0(X, \halfcan) > 0$. 
 \todo{add proof}
 \end{proof}
 
-\section{Genus Zero Non-effective}
-\label{sec:g_0_non_effective}
-
-\todo{Peter: throughout this section I will provide a few notes of how we can generalize this to arbitrary genus with the appropriate conditions}
-
+\ssec{Genus Zero Non-effective}
+\label{ssec:g_0_non_effective}
 In this section, we will prove that if $(\sx , 0, L)$ is a spin curve,
 so that $\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; 0)$, then
 $R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1, \ldots,
@@ -1693,7 +1512,7 @@ e_r)$ with relations generated in degree at most $2e$, so long as $\sigma$
 does not lie in a finite list of exceptions. This is proven in
 Subsection ~\ref{ssec:g_0_noneff_induction}. The proof is a rather
 involved induction. In Subsections ~\ref{ssec:g_0_ram_pts},
-~\ref{ssec:g_0_ram_orders} we prove inductive theorems, and in
+~\ref{ssec:g_0_ram_orders} \todo{fix} we prove inductive theorems, and in
 Subsection ~\ref{ssec:g_0_base} we check the base cases of the
 induction. Finally, in Subsection ~\ref{ssec:g_0_exceptional} we
 list out the exceptional cases.
@@ -1761,11 +1580,15 @@ of a finite set of exceptional cases.
 
 \begin{lem}
 \label{lem:g_0_admissible_cases}
-Let $(\sx', \Delta, \halfcan')$ be a tame log spin curve over a perfect field $k$,
-so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; 0)$.
-Then $R' := R(\sx', \Delta, \halfcan')$ is generated as a $k$-algebra by elements
-of degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree
-at most $2e$ and $(\sx', J)$ is admissible for the following cases:
+Let $(\sx', \Delta, \halfcan')$ be a tame log spin curve over a
+perfect field $k$, so that $\sx$ has signature $\sigma = (0; e_1,
+\ldots, e_r; 0)$. Then $R' := R(\sx', \Delta, \halfcan')$ has a
+presentation 
+
+is
+generated as a $k$-algebra by elements of degree at most $e = \max(5
+,e_1,\ldots, e_r)$ with relations in degree at most $2e$ and $(\sx
+', J)$ is admissible for the following cases:
 
 \begin{enumerate}
 	\item[(a)] $\sigma_1 = (0; 3, 3, 11; 0), J_1 = \{3\}$
@@ -2031,55 +1854,22 @@ Now we can induct on cases (a)-(e) of \ref{lem:g_0_admissible_cases}
 to obtain bounds on the minimal generator and relation degrees for
 canonical rings of curves in the genus 0 case.
 
-Using the results of Proposition ~\ref{prop:sat_three_induction}
-and Theorem ~\ref{thm:ram_order_ind}, we can inductively raise
-the ramification orders and number of ramified points in all of the
-cases in Lemma ~\ref{lem:g_0_admissible_cases} to obtain the following
-result.
-
-\begin{cor}
-\label{cor:g_0_gen_rel_base_cases}
-Let $(\sx, \Delta, L)$ be a tame log spin curve over a perfect field $k$, so
-that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; 0)$. Then the
-canonical ring
-
-\[
-	R(\sx, 0, L) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
-\]
-
-\noindent
-is generated as a $k$-algebra by elements of degree at most $e := 
-\max(5, e_1, \ldots, e_r)$ with relations in degree at most $2e$, so 
-long as $\sigma \notin S$ where
-
-\begin{align*}
-	S &:= \{(0; 3, 3, k; 0) : 3 \leq k \leq 9 \text{ odd}\} \\
-		&\cup \{(0; 3, 5, 5; 0) ,(0; 3, 5, 7; 0), (0; 5, 5, 5; 0), (0; 3, 3, 3, 3; 0)\}
-\end{align*}
-
-\noindent
-is a finite set.
-\end{cor}
-
-\begin{proof}
-A process of induction raising the ramification orders of
-the ramified points of the spin curves corresponding to Lemma
-~\ref{lem:g_0_admissible_cases} cases (a)-(c) via Theorem
-~\ref{thm:ram_order_ind} will demonstrate the desired generator and
-relation degree results for curves with three ramified points.
-Similarly, this induction process on Lemma
-~\ref{lem:g_0_admissible_cases} case (d) will give the desired
-result for curves with four ramified points excluding signature
-$(0; 3, 3, 3, 3; 0)$. A process of induction increasing the
-number of ramified points via Proposition
-~\ref{prop:sat_three_induction} on Lemma ~\ref{lem:g_0_admissible_cases}
-case (e) combined with the induction process on ramification orders
-will yield the result for curves with at least five ramified points.
-\todo{Detailed description of how the inductive lemmata yield e and 2e}
-\end{proof}
+Through the application of two processes of induction, by adding 
+points via Proposition ~\ref{prop:sat_three_induction} and by raising
+ramification orders via Theorem ~\ref{thm:ram_order_ind},
+we obtain Theorem ~\ref{thm:g_0_generators_relations} for any tame
+log spin curve $(\sx, \Delta, L)$ over a perfect field $k$ with
+signature $\sigma$ covered by this induction process.
+In particular, this induction process covers all signatures $\sigma
+= (0; e_1, \ldots, e_r; 0)$ such that either $r \geq 5$ or
+for some listed base case $(\sigma', J)$ with $\sigma' = (0; e_1',
+\ldots, e_r'; 0)$, $e_i \geq e_i'$ for all $i$.
+Before we prove the main theorem, we describe the cases not be
+covered by induction.
 
 \ssec{Exceptional Cases}
 \label{ssec:g_0_exceptional}
+First, we describe the cases that would not be covered by induction.
 Here we present the explicit generators and relations of the remaining
 cases given by signatures in the finite set
 
@@ -2138,23 +1928,70 @@ in the generic case.
 Now we can combine this.
 \todo{write this section}
 
-\todo{Aaron: Use thmrestate instead of rewriting the Theorem}
 \begin{thm}
-\label{thm:g_0_generators_relations_rep}
-Let $(\sx, \Delta, L)$ be a tame log spin curve over a perfect field $k$, so
-that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
-canonical ring
+\label{thm:g_0_generators_relations}
+Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$,
+so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
+If $g = 0$, then the canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, L) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
 \end{align*}
 
 \noindent
-is generated as a $k$-algebra by elements of degree at most $e = 
-\max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$, so 
-long as $\sigma$ does not lie in a finite list of exceptions. \todo{
-Include reference to the table with this list of exceptions.}
+is generated as a $k$-algebra by elements of degree at most $e =
+\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $\max
+(10, e_1, \ldots, e_r),$ so long as $\sigma$ does not lie in a
+finite list of exceptional cases, as listed in Table
+~\ref{table:g-0-exceptional}.
 \end{thm}
+
+\begin{proof}
+
+
+
+%By Lemma ~\ref{lem:g_0_admissible_cases}, we know that for
+%any tame log spin curves $(\sx', \Delta, \halfcan')$ over a perfect
+%field $k$ with signature $\sigma'$ and set $J$ such that $(\sigma',
+%J)$ is one of the listed base cases, $(\sigma', J)$ is admissible.
+%Furthermore, $R' := R(\sx', \Delta, \halfcan')$ is generated as a $k
+%$- algebra by elements of degree at most $e = \max(5, e_1, \ldots, e
+%_r)$ with relations in degree at most $2e$. It also admits a
+%presentation
+%
+%\begin{align*}
+	%R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i,e_i'}]_{i \in J} \right)/I'
+%\end{align*}
+%
+%\noindent
+%given by admissibility satisfying the statements that for all $i \in 
+%J$, $e_i > \deg z$ for any generator $z$ of $R'$ and that $in_\prec
+%(I')$ is minimally generated by products of two monomials under
+%some ordering.
+%
+%Then we can apply two processes of induction, by adding points via
+%Proposition ~\ref{prop:sat_three_induction} and by raising
+%ramification orders via Theorem ~\ref{thm:ram_order_ind},
+%to obtain the desired result for any tame log spin curve $(\sx,
+%\Delta, L)$ over a perfect field $k$ with signature $\sigma$
+%covered by this induction process.
+%
+%
+%
+%A process of induction raising the ramification orders of
+%the ramified points of the spin curves corresponding to Lemma
+%~\ref{lem:g_0_admissible_cases} cases (a)-(c) via Theorem
+%~\ref{thm:ram_order_ind} will demonstrate the desired generator and
+%relation degree results for curves with three ramified points.
+%Similarly, this induction process on Lemma
+%~\ref{lem:g_0_admissible_cases} case (d) will give the desired
+%result for curves with four ramified points excluding signature
+%$(0; 3, 3, 3, 3; 0)$. A process of induction increasing the
+%number of ramified points via Proposition
+%~\ref{prop:sat_three_induction} on Lemma ~\ref{lem:g_0_admissible_cases}
+%case (e) combined with the induction process on ramification orders
+%will yield the result for curves with at least five ramified points.
+\end{proof}
 
 \section{Further Research}
 \begin{itemize}
