@@ -604,7 +604,7 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \end{proof}
 
 \begin{lem}
-\label{lem:sat-two-induction-genus-0}
+\label{lem:sat-three-induction-g-0}
 \todo{Make explicit assumptions on genus.}
 Suppose $L'$ is a log half-canonical divisor of $\sx$ with course space $X$ of genus 0 such that $sat(Eff(\halfcan')) = 3$ with $R_{\halfcan'} = k[x_3, x_4
 , x_5,\ldots, x_m]/I'$.  Let $L = L' + \frac{1}{
@@ -1546,7 +1546,7 @@ Here we describe induction of raising degrees from Theorem ~\ref{thm:ram_order_i
 \ssec{Base Cases}
 \label{ssec:g_0_base}
 Now we have an inductive statement on the number of ramified
-points in Lemma ~\ref{lem:sat_three_induction} and
+points in Lemma ~\ref{lem:sat-three-induction-g-0} and
 an inductive statement on stabilizer orders in Theorem
 ~\ref{thm:ram_order_ind}. After verifying that explicit pairs
 $(\sx, J)$ of stacky curves $\sx$ with particular signatures and
@@ -1834,7 +1834,7 @@ to obtain bounds on the minimal generator and relation degrees for
 canonical rings of curves in the genus 0 case.
 
 Through the application of two processes of induction, by adding 
-points via Lemma ~\ref{lem:sat_three_induction} and by raising
+points via Lemma ~\ref{sat-three-induction-g-0} and by raising
 stabilizer orders via Theorem ~\ref{thm:ram_order_ind},
 we obtain Theorem ~\ref{thm:g_0_generators_relations} for any tame
 log spin curve $(\sx, \Delta, L)$ over a perfect field $k$ with
@@ -1942,15 +1942,15 @@ and not one of the exceptional cases in Table
 ~\ref{table:g_0_exceptional}.
 
 If $r > 5$, then we can use Lemma
-~\ref{lem:sat_three_induction} to add ramified points with
+~\ref{sat-three-induction-g-0} to add ramified points with
 stabilizer order $3$ to case (k) of Lemma
 ~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
 = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
 clearly satisfies the conditions of Lemma
-~\ref{lem:sat_three_induction} (recall from Subsection ~\ref
+~\ref{sat-three-induction-g-0} (recall from Subsection ~\ref
 {ssec:g_0_saturation} that saturation is 3 here), and the
 immediate consequence of parts (a) and (c) of Lemma
-~\ref{lem:sat_three_induction} is that any $R(\sx', \Delta,
+~\ref{sat-three-induction-g-0} is that any $R(\sx', \Delta,
 \halfcan')$ corresponding to signatures $\sigma'$ with ramification
 orders all equal to $3$ for any $r > 5$ is generated up to
 degree $e := \max(5, e_1', \ldots, e_r')$ with relations generated
