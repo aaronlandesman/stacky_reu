@@ -183,14 +183,22 @@ We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{e_i}$.
 
 \subsection{Main Results}
 \begin{enumerate}
-	\item Petri's Theorem
 	\item Modular Forms
-	\item Stacky Relations
+	\todo{Reference independence of base field}
 \end{enumerate}
 
+Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is well known that the sheaf $\Omega_X,$ with associated divisor $K_X$ determines the {\bf canonical map} $\pi:X \rightarrow \BP_k^{g-1}.$ Then, the {\bf canonical ring}, is defined as
+\begin{align*}
+	R(X,K_X) = \bigoplus_{n \geq 0} H^0(X,nK_X),
+\end{align*}
+with multiplication structure corresponding to tensor product of sections. Since $\Omega_X$ is ample, $X \cong \proj R$. Petri's theorem gives generators and relations for $R(X,K_X),$ see for example, \cite{saint-donat:proj}[Theorem, p. 157], showing that in most cases $R(X,K_X)$ is generated in degree 1 with relations in degree 2. This has the pleasant geometric consequence that all such canonically embedded curves are scheme theoretically cut out by quadratic equations.
 
-
-
+In Voight and Zureick-Brown, \cite{vzb:stacky} examine a much more general setting, generalizing Petri's theorem in many directions.
+A divisor $\Delta \in \d X$ is a {\bf log divisor} if $\Delta = \sum_{i}^{}P_i \in \di X,$ with all $P_i$ distinct. Let $(\sx,\Delta)$ denote a tame seperably rooted stacky curve over a field $k$ so that $X$ is the coarse space of $\sx$, as defined in \cite{vzb:stacky}[Section 5.2] so that $\di \sx = \div X \bigoplus_{i=1}^r \langle \frac{1}{e_i}P_i \rangle,$ with $e_i \in \BZ$. Let $K_\sx = K_X + \sum_{i=1}^{r}\frac{e_i-1}{e_i}P_i.$ In this case, we say $\sx$ has {\bf ramification order} $e_i$ at $P_i$. Call $\halfcan \in \di \sx$ a {\bf log half-canonical divisor} on $(\sx,\Delta)$, be a divisor $\halfcan \in \di \sx$ so that $2\halfcan \sim K_\sx + \Delta.$ If $X$ has genus $g$ and $\delta = \deg \Delta,$ then we say $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$. A {\bf log spin curve} is a triple $(X,\Delta,\halfcan)$ where $(X,\Delta)$ and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$. The central object of study in this paper is the {\bf log spin canonical ring} of $(X,\Delta,L)$ is
+\begin{align*}
+	R(X,\Delta,L) = \oplus_{n=0}^\infty H^0(X,nL)
+\end{align*}
+The main theorem of this paper is the following bound on the degree of generators and relations of arbitrary log spin canonical rings:
 
 \begin{thm}
 \label{thm:general_generators_relations}
@@ -214,6 +222,8 @@ for signatures with $g = 0$.
 \end{thm}
 \todo{Say that this follows immediately from the three theorems for the special cases.}
 Note that in the course of the proof of Theorem ~\ref{thm:g_0_generators_relations} we will not merely obtain bounds on the degrees of the generators and relations. In fact, if the genus $g = 0$ or $g = 1$, the proof yields an explicit system of generators and the initial ideal of relations. While in the genus $g \geq 2$ case, the proof does not always yield an explicit system of generators and relations, if the halfcanonical divisor $\halfcan$ can be written as $\halfcan' + \Lambda$ with $(\halfcan',0,X)$ a log spin curve, and a system of generators and relations for $\halfcan'$ is known, then our proof provides an inductive procedure for determining the generators and initial ideal of relations for $\halfcan$. In fact, such a system of generators and relations are known for $\halfcan'$ in many cases, as detailed in Neves ~\cite{neves:halfcan}[Section III.4].
+
+
 
 The remainder of the paper will be primarily devoted to proving Theorem ~\ref{thm:general_generators_relations}. The idea of the proof will be to induct on the order and number of elliptic points. To this end, we first review important background in Section ~\ref{sec:background}. Then, in Section ~\ref{sec:induction}, we develop various inductive tools. In Sections ~\ref{sec:g_high}, ~\ref{sec:g_1} and ~\ref{sec:g_0}, we prove Theorem \ref{thm:general_generators_relations} in the cases that the genus $g \geq 2, g = 1$ and $g = 0$ respectively. Finally, in Section ~\ref{further-questions}, we pose several questions for future research.
 
@@ -427,7 +437,12 @@ The proof follows similarly to that of lemma
 generator in degree 3 rather than degree 2.  
 \end{proof}
 
+Transition to genus one.
+\todo{transition!}
+
+\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 2-Saturated Divisor}
 We prove an inductive theorem on adding 2-sat here.
+\todo{description}
 
 \begin{prop}
 \label{prop:sat_two_induction}
@@ -502,6 +517,8 @@ generators of $J$, completing (b).
 Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \end{proof}
 
+Transition words.
+\todo{transition!}
 
 We will now prove a lemma that will be used to inductively deal with divisors that are sufficiently saturated, by combining and extending methods of VZB \todo{add 
 reference} and O'Dorney\todo{reference}.
