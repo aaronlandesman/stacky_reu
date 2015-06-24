@@ -346,7 +346,7 @@ Let $\halfcan'$ be $\mathbf{Q}$-divisor of $X$ (and often a log half canonical d
 \todo{definition and basic properties of best lower approximations}
 
 \begin{lem}
-\label{lem:deg1_sat_ind}
+\label{lem:deg1-sat-ind}
 Let $X$ be a genus $g$ curve with a $\mathbf{Q}$-divisor $D$ (as
 defined by O'Dorney \todo{reference this-Section 1 of Evan's paper, or preferably define it in the background section})
 satisfying $h^0(X, \lfloor{D}\rfloor)\ge 1$.  Suppose $P$ is not a base-point of $dD$ for all $d\in \mathbf{N}^+$ meaning that $R_D$ has generically chosen generators (in the appropriate respective degrees)
@@ -582,7 +582,7 @@ The assumptions on $g,\sigma$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base p
 _P(y_i) = 1$ by Riemann-Roch, and the assumptions on $\sigma$. \todo{Understand why/whether we need to cite lemma 5.4.7.} 
 
 In a fashion analogous to the proof of Lemma 
-~\ref{lem:sat_three_induction}, we see 
+~\ref{lem:sat-three-induction-g-0}, we see 
 the following is a $k$ basis for $R$ over $R'$:
 
 \begin{align}
@@ -696,7 +696,8 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 
 
 \iffalse{
-\begin{lem}\label{lem:adding_points_saturation_2_to_1_with_log}
+\begin{lem}
+\label{lem:adding_points_saturation_2_to_1_with_log}
 Let $(\sx, \Delta, \halfcan)$ and $(\sx, \Delta', L')$ be tame separably rooted log stacky spin 
 curves with $0\ne \Delta=\Delta'+2P$ for some non-stacky point $P$ not in the support of $
 \halfcan'$, meaning that $L=L'+P$.  Let $(g; e_1, \ldots, e_\tau; \delta+2)$ and $(g; e_1, 
@@ -1199,7 +1200,7 @@ $W \subset J$ by Lemma ~\ref{lem:admissible_subset}.
 
 \section{High genus}
 \label{sec:g_high}
-We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the half canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Subsection ~\ref{ssec:g_0_effective} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved. We begin with the case that $g \geq 2$.
+We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the half canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved. We begin with the case that $g \geq 2$.
 
 \ssec{Bounds on Generators and Relations in high genus}
 
@@ -1348,7 +1349,7 @@ In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half can
 \section{Genus one}
 \label{sec:g_1}
 
-In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P-Q$ where $P,Q$ are distinct points, fixed under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Theorem ~\ref{thm:ram_order_ind} and add additional points using Lemma ~\ref{lem:deg1_sat_ind} and Proposition ~\ref{lem:sat_two_induction}.
+In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P-Q$ where $P,Q$ are distinct points, fixed under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Theorem ~\ref{thm:ram_order_ind} and add additional points using Lemma ~\ref{lem:deg1-sat-ind} and Lemma ~\ref{lem:sat-two-induction-high-genus}.
 
 \ssec{Genus 1 Base Cases}
 \label{ssec:g_1_base}
@@ -1486,15 +1487,15 @@ There are two main cases: when $\delta \geq 2$ and when $\delta = 0$
  (note that $\delta$ must be odd or zero because $\halfcan \in \text
 { Div } \sx$). In the first case, $\deg \lfloor \halfcan \rfloor
 \geq 0$ so the result directly follows from Lemma
-~\ref{rem:deg1_sat_ind}. When $\delta = 0$, this is not necessarily
+~\ref{lem:deg1-sat-ind}. When $\delta = 0$, this is not necessarily
 true so the proof is a rather involved induction using Lemma
-~\ref{lem:sat_three_ induction} and Theorem ~\ref{thm:ram_order_ind}.
+~\ref{lem:sat-three-induction-g-0} and Theorem ~\ref{thm:ram_order_ind}.
 The remainder of this section is dedicated to characterizing the
-saturations ( Subsection ~\ref{ssec:g_0_saturation}), inductive
-base cases ( Subsection ~\ref{ssec:g_0_base}), and exceptional
+saturations (Subsection ~\ref{ssec:g_0_saturation}), inductive
+base cases (Subsection ~\ref{ssec:g_0_base}), and exceptional
 cases (Subsection ~\ref{ssec:g_0_exceptional}) when $\delta = 0$
 before proving the main theorem in full for all $\delta$ in
-Subsection ~\ref{ssec:g_0_ main}.
+Subsection ~\ref{ssec:g_0_main}.
 
 \ssec{Saturation}
 \label{ssec:g_0_saturation}
@@ -1834,7 +1835,7 @@ to obtain bounds on the minimal generator and relation degrees for
 canonical rings of curves in the genus 0 case.
 
 Through the application of two processes of induction, by adding 
-points via Lemma ~\ref{sat-three-induction-g-0} and by raising
+points via Lemma ~\ref{lem:sat-three-induction-g-0} and by raising
 stabilizer orders via Theorem ~\ref{thm:ram_order_ind},
 we obtain Theorem ~\ref{thm:g_0_generators_relations} for any tame
 log spin curve $(\sx, \Delta, L)$ over a perfect field $k$ with
@@ -1931,7 +1932,7 @@ case which is done in Voight and Zureick-Brown ~\cite[Section 4.2]
 
 Now let us consider the case when $\delta \geq 2$. In any such case,
 $\lfloor \halfcan \rfloor$ is an effective divisor and the conditions
-of Lemma ~\ref{rem:deg1_sat_ind} are satisfied. Thus, we can apply
+of Lemma ~\ref{lem:deg1-sat-ind} are satisfied. Thus, we can apply
 the lemma inductively on the classical case with no stacky points
 to get that $R(\sx, \Delta, \halfcan)$ is generated up to degree $e$
 with relations generated up to degree $2e$.
@@ -1942,15 +1943,15 @@ and not one of the exceptional cases in Table
 ~\ref{table:g_0_exceptional}.
 
 If $r > 5$, then we can use Lemma
-~\ref{sat-three-induction-g-0} to add ramified points with
+~\ref{lem:sat-three-induction-g-0} to add ramified points with
 stabilizer order $3$ to case (k) of Lemma
 ~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
 = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
 clearly satisfies the conditions of Lemma
-~\ref{sat-three-induction-g-0} (recall from Subsection ~\ref
+~\ref{lem:sat-three-induction-g-0} (recall from Subsection ~\ref
 {ssec:g_0_saturation} that saturation is 3 here), and the
 immediate consequence of parts (a) and (c) of Lemma
-~\ref{sat-three-induction-g-0} is that any $R(\sx', \Delta,
+~\ref{lem:sat-three-induction-g-0} is that any $R(\sx', \Delta,
 \halfcan')$ corresponding to signatures $\sigma'$ with ramification
 orders all equal to $3$ for any $r > 5$ is generated up to
 degree $e := \max(5, e_1', \ldots, e_r')$ with relations generated
@@ -1976,7 +1977,7 @@ All such base cases satisfy all of the hypotheses of
 Theorem ~\ref{thm:ram_order_ind} and their corresponding $R' :=
 R(\sx', \Delta, \halfcan')$ are generated, as $k$-algebras, up
 to degree $e' := \max(5, e_1', \ldots, e_r')$ with relations
-generated up to degree $2e'$ by Lemma ~\ref{g_0_admissible_cases}.
+generated up to degree $2e'$ by Lemma ~\ref{lem:g_0_admissible_cases}.
 It follows from Theorem ~\ref{thm:ram_order_ind}(b) that $R :=
 R(\sx, \Delta, \halfcan)$ is generated up to degree $e := \max(5,
 e_1, \ldots, e_r)$. It follows from Theorem ~\ref{thm:ram_order_ind}
@@ -1988,7 +1989,7 @@ e_1, \ldots, e_r)$. It follows from Theorem ~\ref{thm:ram_order_ind}
 \begin{itemize}
 	\item More on fractional modular forms
 	\item Make explicit generators and relations for base case of non-stacky higher genus half-canonical divisors
-	\item In the case $g \geq 2$, can the bound from Proposition ~\ref{prop:relation_generation} be reduced from 11 to 10 (which would then be sharp by Remark ~\ref{rem:relations_generation_ten})? \todo{Possibly think more about this} 
+	\item In the case $g \geq 2$, can the bound from Proposition ~\ref{prop:relations_generation} be reduced from 11 to 10 (which would then be sharp by Remark ~\ref{rem:relations_generation_ten})? \todo{Possibly think more about this} 
 	\item Generic Initial ideal (and other genericness properties?)
 \end{itemize}
 
