@@ -1564,7 +1564,7 @@ and that $(\sx',\{3,3\})$ is admissible.
 Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P$ but not at $Q$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $Q$ but not at $P$. Let $y_4 \in H^0(\sx,3\halfcan')$ be an element with a pole of order 1 at both $P$ and $Q$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q + R_1, 3P - 3Q + R_2$ are one dimensional, while the linear system $3P - 3Q \sim P-Q$ is zero dimensional.
 
 Then, there exist constants $\alpha,\beta,\gamma \in k$ so that 
-$R_{\halfcan'} \cong k[u,x,y_3,y_4]/(xy_3- \alpha uy_4,y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic, and analogous to that completed in Example ~\ref{ex:base-377}.
+$R_{\halfcan'} \cong k[u,x,y_3,y_4]/(xy_3- \alpha uy_4,y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zeros and poles. The details are omitted as it is analogous to Example ~\ref{ex:base-377}.
 
 We next check $(\sx',\{3,3\})$ is admissible. We clearly have two generators $x_3,y_3$ in degree 3 with a pole of order $\frac{3-1}{2}$ by construction. Hence, (Ad-i) holds. We next check (Ad-ii) for the point $R_1$, as the case of $R_2$ is symmetric. Here, by construction
 $$
@@ -1579,15 +1579,39 @@ Finally, to check (Ad-iii) note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ The
 \ssec{Genus 1 Exceptional Cases}
 
 \todo{remove stuff about tame and separably rooted, change to $\BQ$ divisor.}
-Let $\sx$ be a tame, seperably rooted stacky curve of genus 1. Let $P,Q$ are distinct hyperelliptic fixed points, and $R_1,\ldots, R_n$ be points on $\sx$. In this section, will compute the canonical ring $R_{\halfcan'}$ in the cases that $\sigma = (1;-;0),\sigma = (1;e;0)$. That is, we will consider the cases.
-\begin{enumerate}
-	\item $\halfcan' = P-Q$
-	\item $\halfcan' = P - Q + \frac{1}{3}R$
-	\item $\halfcan' = P - Q + \frac{1}{5}R$
-	\item $\halfcan' = P - Q + \frac{e-1}{2e}R, e > 5, e \equiv 1 \bmod 2$ 
-\end{enumerate}
-\todo{make table}
+Let $\sx$ be a tame, seperably rooted stacky curve of genus 1. Let $P,Q$ are distinct hyperelliptic fixed points, and $R_1,\ldots, R_n$ be points on $\sx$. \todo{cite genus 1 final theorem here, to explain what these cases are exceptional to} 
 
+\todo{Why is there a pagebreak here}
+
+\begin{longtable}	{| c || c | c | c |}
+	\hline
+	L' & Generator Degrees & Degrees of Minimal Relations \\
+	\hline
+	\hline
+	$(1;-; 0)$ & $\{2\}$ & $\emptyset$ \\	\hline
+
+	$(1; 3; 0)$ & $\{2,3,7\}$ & $\{14\}$ \\	\hline
+
+	$(1; 5; 0)$ & $\{2,3,5\}$ & $\{12\}$ \\	\hline
+
+	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10,\ldots, e+2, e+3, e+5,e+7,\ldots, 2e-4\}$ \\	\hline
+\end{longtable}
+
+\begin{center}
+\label{table:g-1-exceptional}
+\textbf{Table (IV)}: Genus 1 exceptional cases, where $L' = P-Q + \frac{e-1}{2e}R$, with $P \neq Q$.
+\end{center}
+
+\begin{rem}
+\label{rem:g-1-exceptional-e}
+Note that for $e > 5$ generators and relations for $L = P -Q + \frac{e-1}{2e}R$, which has signature $(1;e;0)$, can be computed inductively $L' = P-Q + \frac{(e-2)-1}{2(e-2)}R$ using 
+Theorem ~\ref{thm:ram_order_ind}.
+\end{rem}
+
+We now elaborate on the computation of the results in 
+Table ~\ref{table:g-1-exceptional}. By Remark ~\ref{rem:g-1-exceptional-e}, we only need explain how to obtain the signatures $(1;-;0),(1;3;0),(1;5;0).$ In the following example we will explain the case $\sigma = (1;5;0)$ as the other cases are even easier. 
+
+\iffalse
 \begin{example}
 \label{eg:exceptional-1-0}
 In the case $L=P - Q.$ Then, we have $R_{(2k+1)L} \cong 0$ while $R_{2kL} \cong k$, with a single generator in degree 2. Therefore, $R_L \cong k[y]$, where $y$ is a generator in degree 2. 
@@ -1596,24 +1620,23 @@ In the case $L=P - Q.$ Then, we have $R_{(2k+1)L} \cong 0$ while $R_{2kL} \cong 
 \begin{example}
 \label{eg:exceptional-1-3}
 Let $L = P - Q + \frac{1}{3}R$. Since $P \neq Q$, we see $h^0(L) = 0,$ and we know $h^0(2L) = h^0(K) = 1$. For $n > 2$, we have $\deg nL > 0$ and so by Riemann--Roch, we have $h^0(nL) = \deg \lfloor nL/3 \rfloor.$ Next, 
-We find that $R_L \cong k[u,x,z]/(z^2 - ux^4),$ where $\deg u = 2, \deg x = 3, \deg z = 7$ so that $\di u|_L = -2P + 2Q, \di x|_L = -3P + 3Q - R, \di z|_L = -7P + 7Q - 2R.$\todo{Peter: Why don't we have something in degree 4?}
+We find that $R_L \cong k[u,x,z]/(z^2 - ux^4),$ where $\deg u = 2, \deg x = 3, \deg z = 7$ so that $\di u|_L = -2P + 2Q, \di x|_L = -3P + 3Q - R, \di z|_L = -7P + 7Q - 2R.$\todo{This is unfinished}
 \end{example}
 
-\begin{example}
-\label{eg:exception-1-5}
-Let $L = P - Q + \frac{2}{5}R_1.$ Here, we 
-\todo{say what the variables are}
-$R_L \cong k[u,y_3, y_5]/(y_3^4 - \alpha uy_5^2),$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Theorem ~\ref{thm:ram_order_ind} so that $in(I_e) = in(I_{e-2})k[u, y_3,\ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$
-Furthermore, $\deg u = 2, \deg y_i = i$.
-\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
-\todo{Check admissibility}
-\end{example}
 
 \begin{example}
 \label{eg:exception-1-e}
 Let $L = P - Q + \frac{e-1}{2e}R_1.$ Here, we claim $R_L \cong k[u,y_3, y_5, \ldots, y_e]/I_e,$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Theorem ~\ref{thm:ram_order_ind} so that $in(I_e) = in(I_{e-2})k[u, y_3,\ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$
 Furthermore, $\deg u = 2, \deg y_i = i$.
 \todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
+\end{example}
+\fi
+
+\begin{example}
+\label{eg:exception-1-5}
+Let $L = P - Q + \frac{2}{5}R_1$ be a half canonical divisor on a stacky curve $\sx$. Let $u \in (R_L)_1$ be any nonzero element. We obtain $\di u|_R = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch $\dim_k (R_L)_1 = 1$ let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_R = - R,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx,P-Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_R = -R$. Then, we claim there is some $\alpha \in k$ so that
+$R_L \cong k[u,y_3, y_5]/(y_3^4 - \alpha uy_5^2).$
+The proof of this can be gotten by first using Riemann--Roch and counting the pole order at $R$ considerations to check the above relation exists, and that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. It is analogous to Example ~\ref{ex:base-377}, and is omittied.
 \end{example}
 
 
@@ -1911,11 +1934,10 @@ generated as a $k$-algebra by elements of degree at most $e$
 with relations in degree at most $2e$ for each case. Also note
 that in these cases, $e_i = e + 2 > \deg z$ for all $i \in J$
 and any generator $z$ of $R'$.
-
 \begin{longtable}
 	{| c || c | c | c |}
 	\hline
-	Case & Generator Degrees & Minimal Relation Degrees & $e$\\
+	Case & Generator Degrees & Degrees of Minimal Relations & $e$\\
 	\hline
 	\hline
 
@@ -2067,7 +2089,7 @@ in the genus 0 case.
 \begin{longtable}
 	{| c || c | c | c |}
 	\hline
-	Signature & Generator Degrees & Minimal Relation Degrees & $e$ \\
+	Signature & Generator Degrees & Degrees of Minimal Relations & $e$ \\
 	\hline
 	\hline
 
@@ -2102,7 +2124,6 @@ signature with non-generic saturation (i.e. saturation not equal to
 ``forcing'' generators (and thus relations) in higher degrees than
 in the generic case.
 \end{rem}
-
 
 \ssec{Application of induction}
 \label{ssec:g_0_noneff_induction}
