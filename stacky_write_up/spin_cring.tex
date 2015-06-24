@@ -1396,10 +1396,30 @@ In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the
 
 We first analyze the following two examples, which will be crucial base cases for our inductive approach, completed in Subsection ~\ref{ssec:main_g_1}.
 
+
+
+\begin{longtable}	{| c || c | c | c |}
+	\hline
+	L' & Generator Degrees & Degrees of Minimal Relations \\
+	\hline
+	\hline
+	$0$ & $\{1\}$ & $\emptyset$ \\	\hline
+
+	$P-Q + \frac{2}{5}R_1$ & $\{2,3,5\}$ & $\{12\}$ \\	\hline
+	
+	$\frac{3}{7}R_1$ & $\{1,5,7\}$ & $\{15\}$ \\	\hline
+
+	$P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_2$ & $\{2, 3, 3, 4\}$ & $\{6,8\}$ \\	\hline
+	
+%	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10,\ldots, e+2, e+3, e+5,e+7,\ldots, 2e-4\}$ \\	\hline
+\end{longtable}
 \begin{enumerate}
 	\item $\halfcan' = 0$
-	\item $\halfcan' = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_3.$
+	\item $\halfcan' = P - Q + \frac{2}{5}R_1.$
+	\item $\halfcan' = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_2.$
+	\item $\halfcan' = \frac{3}{7}R_1.$
 \end{enumerate}
+\todo{Is it ok that two genus 1 base cases are also exceptional, in terms of their relation degree?}
 
 \begin{example}
 \label{eg:base-1-0}
@@ -1409,7 +1429,7 @@ In the case $\halfcan' = 0,$ it is immediately clear that $R_{\halfcan'} \cong k
 \begin{example}
 \label{eg:base-1-33}
 Let $\sx'$ be a stacky curve so that $\halfcan' = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_2$. In this example, we show
-$$R_{\halfcan'} \cong k[u,x_3,y_3,y_4]/(xy_3- \alpha uy_4,y_4^2 - \beta x^2 u - \gamma y^2u)$$
+$$R_{\halfcan'} \cong k[u,x_3,y_3,y_4]/(x_3 y_3- \alpha uy_4,y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$
 and that $(\sx',\{3,3\})$ is admissible.
 
 Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P$ but not at $Q$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $Q$ but not at $P$. Let $y_4 \in H^0(\sx,3\halfcan')$ be an element with a pole of order 1 at both $P$ and $Q$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q + R_1, 3P - 3Q + R_2$ are one dimensional, while the linear system $3P - 3Q \sim P-Q$ is zero dimensional.
@@ -1427,6 +1447,25 @@ Since $0 < \frac{1}{4} < \frac{1}{3}$, (Ad-ii) holds.
 Finally, to check (Ad-iii) note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = 2 \cdot 1 -1 + 0$.
 \end{example}
 
+\begin{example}
+\label{eg:exception-1-5}
+Let $L' = \frac{2}{5}R_1$ be a half canonical divisor on a stacky curve $\sx$. Let $u \in (R_L)_1$ be any nonzero element. We obtain $\di u|_{R_1} = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch $\dim_k (R_L)_1 = 1.$ Let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_{R_1} = - R_1,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx,P-Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_{R_1} = -R_1$. Then, we claim there is some $\alpha \in k$ so that
+$R_L \cong k[u,y_3, y_5]/(y_3^4 - \alpha uy_5^2).$
+The proof of this can be gotten by first using Riemann--Roch and counting the pole order at $R_1$ considerations to check the above relation exists, and that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. It is analogous to Example ~\ref{ex:base-377}, and is omittied.
+
+Note that $L'$ is admissible, as can be checked in a fashion analogous to the verification in Example ~\ref{eg:base-1-33}.
+
+Finally, note that this particular case is also exceptional, because there is a relation in degree $12 > 2 \cdot 5$, but once $e' = 5$ is incremented to $e = e'+2 = 7,$ using Theorem ~\ref{thm:ram_order_ind}, this relation in degree 12 caries over, and so the case $L' = P - Q + \frac{3}{7}R_1$ is not exceptional because $12 < 2 \cdot 7$.
+\end{example}
+
+
+\iffalse
+The base case of $L' = \frac{3}{7}R_1$ has $R_L \cong k[u,y_5,y_7]/(y_5)^3 - uy_7^2.$ 
+\fi
+
+The base case of $L' = \frac{3}{7}R_1$ can be similarly computed. Note this is yet another exceptional case.
+
+
 \ssec{Genus One Exceptional Cases}
 
 \todo{remove stuff about tame and separably rooted, change to $\BQ$ divisor.}
@@ -1438,12 +1477,19 @@ Let $\sx$ be a tame, seperably rooted stacky curve of genus 1. Let $P,Q$ are dis
 	L' & Generator Degrees & Degrees of Minimal Relations \\
 	\hline
 	\hline
-	$(1;-; 0)$ & $\{2\}$ & $\emptyset$ \\	\hline
+	$P-Q$ & $\{2\}$ & $\emptyset$ \\	\hline
 
-	$(1; 3; 0)$ & $\{2,3,7\}$ & $\{14\}$ \\	\hline
+	$P-Q + \frac{1}{3}R_1$ & $\{2,3,7\}$ & $\{14\}$ \\	\hline
 
-	$(1; 5; 0)$ & $\{2,3,5\}$ & $\{12\}$ \\	\hline
+	$P-Q + \frac{2}{5}R_1$ & $\{2,3,5\}$ & $\{12\}$ \\	\hline
+	
+	$\frac{1}{3}R_1$ & $\{1,6,9\}$ & $\{18\}$ \\	\hline
 
+	$\frac{2}{5}R_1$ & $\{1,5,8\}$ & $\{16\}$ \\	\hline
+	
+	$\frac{3}{7}R_1$ & $\{1,5,7\}$ & $\{15\}$ \\	\hline
+	
+	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10,\ldots, e+2, e+3, e+5,e+7,\ldots, 2e-4\}$ \\	\hline
 \end{longtable}
 
@@ -1460,7 +1506,8 @@ Theorem ~\ref{thm:ram_order_ind}.
 \fi
 
 We now elaborate on the computation of the results in 
-Table ~\ref{table:g-1-exceptional}. In the following example we will explain the case $\sigma = (1;5;0)$ as the other cases are even easier. 
+Table ~\ref{table:g-1-exceptional}. We have already explained the case of 
+$L' = P-Q + \frac{1}{5}R_1$ above in Example ~\ref{eg:exception-1-5}. The other cases are similar.
 
 \iffalse
 \begin{example}
@@ -1482,13 +1529,6 @@ Furthermore, $\deg u = 2, \deg y_i = i$.
 \todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
 \end{example}
 \fi
-
-\begin{example}
-\label{eg:exception-1-5}
-Let $L = P - Q + \frac{2}{5}R_1$ be a half canonical divisor on a stacky curve $\sx$. Let $u \in (R_L)_1$ be any nonzero element. We obtain $\di u|_R = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch $\dim_k (R_L)_1 = 1$ let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_R = - R,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx,P-Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_R = -R$. Then, we claim there is some $\alpha \in k$ so that
-$R_L \cong k[u,y_3, y_5]/(y_3^4 - \alpha uy_5^2).$
-The proof of this can be gotten by first using Riemann--Roch and counting the pole order at $R$ considerations to check the above relation exists, and that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. It is analogous to Example ~\ref{ex:base-377}, and is omittied.
-\end{example}
 
 
 \ssec{Main Theorem for Genus One}
