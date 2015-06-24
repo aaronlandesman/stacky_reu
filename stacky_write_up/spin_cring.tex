@@ -1193,6 +1193,8 @@ $W \subset J$ by Lemma ~\ref{lem:admissible_subset}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% High genus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{High genus}
+\label{sec:g_high}
+We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the half canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Sections ~\ref{sec:g_1} and ~\ref{sec:g_0_effective} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved. We begin with the case that $g \geq 2$.
 
 \ssec{Bounds on Generators and Relations in high genus}
 
@@ -1321,24 +1323,26 @@ In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half can
 
 
 \ssec{Main theorem for high genus}
+\label{ssec:main_g_high}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus one %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Genus one}
-We now consider the case when the genus is positive. The genus zero
-case is the most complicated and reserve that for Section ~\ref{sec:g_0_effective}
-and Section ~\ref{sec:g_0_non_effective}. We begin with the genus one case.
+\label{sec:g_1}
 
+In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P-Q$ where $P,Q$ are distinct points, fixed under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Theorem ~\ref{thm:ram_order_ind} and add additional points using Lemma ~\ref{lem:deg1_sat_ind} and Proposition ~\ref{prop:sat_two_induction}.
 
 \ssec{Genus 1 Base Cases}
+\label{ssec:g_1_base}
 
-In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P-Q$ where $P,Q$ are distinct points, fixed under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Theorem ~\ref{thm:ram_order_ind} and add additional points using Lemma ~\ref{lem:deg1_sat_ind} and Proposition ~\ref{prop:sat_two_induction}
+We first analyze the following two examples, which will be crucial base cases for our inductive approach, completed in Subsection ~\ref{ssec:main_g_1}.
 
 \begin{enumerate}
 	\item $\halfcan' = 0$
 	\item $\halfcan' = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_3.$
 \end{enumerate}
+\todo{make table}
 
 \begin{example}
 \label{eg:base-1-0}
@@ -1369,43 +1373,47 @@ Finally, to check (Ad-iii) note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ The
 \ssec{Genus 1 Exceptional Cases}
 
 \todo{remove stuff about tame and separably rooted, change to $\BQ$ divisor.}
-Let $\sx$ be a tame, seperably rooted stacky curve of genus 1. Let $P,Q$ are distinct hyperelliptic fixed points, and $R_1,\ldots, R_n$ be points on $\sx$. In this section, will compute the canonical ring $R_{\halfcan'}$ in the cases that
+Let $\sx$ be a tame, seperably rooted stacky curve of genus 1. Let $P,Q$ are distinct hyperelliptic fixed points, and $R_1,\ldots, R_n$ be points on $\sx$. In this section, will compute the canonical ring $R_{\halfcan'}$ in the cases that $\sigma = (1;-;0),\sigma = (1;e;0)$. That is, we will consider the cases.
 \begin{enumerate}
 	\item $\halfcan' = P-Q$
-	\item $\halfcan' = 0$
-	\item $\halfcan' = P-Q$
 	\item $\halfcan' = P - Q + \frac{1}{3}R$
-	\item $\halfcan' = P - Q + \frac{e-1}{2e}R, e > 3, e \equiv 1 \bmod 2$ 
-	\item $\halfcan' = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_3$
+	\item $\halfcan' = P - Q + \frac{1}{5}R$
+	\item $\halfcan' = P - Q + \frac{e-1}{2e}R, e > 5, e \equiv 1 \bmod 2$ 
 \end{enumerate}
-In addition to being illustrative examples, these will serve as the base cases of induction, in order to compute generators and relations for an arbitrary genus 1, stacky log half canonical divisor. In each of the following examples, we will give explicit generators and relations, and in case $(3)$ and $(4)$ we check the corresponding signature is admissible.
-
+\todo{make table}
 
 \begin{example}
-\label{eg:g_1_half_can}
+\label{eg:exceptional-1-0}
 In the case $L=P - Q.$ Then, we have $R_{(2k+1)L} \cong 0$ while $R_{2kL} \cong k$, with a single generator in degree 2. Therefore, $R_L \cong k[y]$, where $y$ is a generator in degree 2. 
 \end{example}
 
 \begin{example}
-\label{eg:g_1_deg_third}
+\label{eg:exceptional-1-3}
 Let $L = P - Q + \frac{1}{3}R$. Since $P \neq Q$, we see $h^0(L) = 0,$ and we know $h^0(2L) = h^0(K) = 1$. For $n > 2$, we have $\deg nL > 0$ and so by Riemann--Roch, we have $h^0(nL) = \deg \lfloor nL/3 \rfloor.$ Next, 
 We find that $R_L \cong k[u,x,z]/(z^2 - ux^4),$ where $\deg u = 2, \deg x = 3, \deg z = 7$ so that $\di u|_L = -2P + 2Q, \di x|_L = -3P + 3Q - R, \di z|_L = -7P + 7Q - 2R.$\todo{Peter: Why don't we have something in degree 4?}
 \end{example}
 
 \begin{example}
-\label{}
-Let $L = P - Q + \frac{e-1}{2e}R_1.$ Here, we claim $R_L \cong k[u,y_3, y_5, \ldots, y_e]/I_e,$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Theorem ~\ref{thm:ram_order_ind} so that $in(I_e) = in(I_{e-2})k[u, y_3,\ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$ 
+\label{eg:exception-1-5}
+Let $L = P - Q + \frac{2}{5}R_1.$ Here, we 
+\todo{say what the variables are}
+$R_L \cong k[u,y_3, y_5]/(y_3^4 - \alpha uy_5^2),$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Theorem ~\ref{thm:ram_order_ind} so that $in(I_e) = in(I_{e-2})k[u, y_3,\ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$
 Furthermore, $\deg u = 2, \deg y_i = i$.
-\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.} \todo{Check admissibility}
+\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
+\todo{Check admissibility}
 \end{example}
 
 \begin{example}
-Let $L = P - Q + \frac{1}{3}R_1 + \frac{1}{3}R_2$. Here, we claim $R_L \cong k[u,x,y_3,y_4]/(xy_3- \alpha uy_4,y_4^2 - \beta x^2 u - \gamma y^2u)$ where $\alpha,\beta,\gamma \in k$, and $\deg u = 2, \deg x = \deg y_3 = 3, \deg y_4 = 4,$ where $u,x$ are as in Example ~\ref{eg:g_1_deg_third} and $y_3, y_4$ are as in Proposition ~\ref{prop:sat_two_induction}. \todo{Explain why this forms a system of generators and relations, and also state more clearly what $y_i$ are.} \todo{check admissibility}
+\label{eg:exception-1-e}
+Let $L = P - Q + \frac{e-1}{2e}R_1.$ Here, we claim $R_L \cong k[u,y_3, y_5, \ldots, y_e]/I_e,$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Theorem ~\ref{thm:ram_order_ind} so that $in(I_e) = in(I_{e-2})k[u, y_3,\ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$
+Furthermore, $\deg u = 2, \deg y_i = i$.
+\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
 \end{example}
 
 
 \ssec{Main Theorem for Genus 1}
-Words.
+\label{ssec:main_g_1}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus zero %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
