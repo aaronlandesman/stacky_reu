@@ -186,8 +186,6 @@ We consider divisors of the form $D = \sum_{i = 1}^{r} \subhalf{e_i}$.
 	\item Petri's Theorem
 	\item Modular Forms
 	\item Stacky Relations
-	\item Statement of Results
-	\item Outline of paper
 \end{enumerate}
 
 
@@ -206,11 +204,10 @@ canonical ring
 
 \noindent
 is generated as a $k$-algebra by elements of degree at most $e =
-\max(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ then $R(\sx,
-\Delta, \halfcan)$ has relations in degree at most $\max(11, e_1,
-\ldots, e_r).$ If the genus $g = 0$ or $g = 1,$ then $R(\sx, \Delta
-, \halfcan)$ has relations in degree at most $\max(10, e_1, \ldots,
-e_r),$ so long as $\sigma$ does not lie in a finite list of
+\max(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ and $\Delta = 0$ then 
+$R(\sx,\Delta, \halfcan)$ has relations in degree at most $\max(11, e_1,
+\ldots, e_r).$ Otherwise, $R(\sx, \Delta, \halfcan)$ has relations in degree at most
+$\max(10, e_1, \ldots, e_r),$ so long as $\sigma$ does not lie in a finite list of
 exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
 for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
 for signatures with $g = 0$.
@@ -218,10 +215,13 @@ for signatures with $g = 0$.
 \todo{Say that this follows immediately from the three theorems for the special cases.}
 Note that in the course of the proof of Theorem ~\ref{thm:g_0_generators_relations} we will not merely obtain bounds on the degrees of the generators and relations. In fact, if the genus $g = 0$ or $g = 1$, the proof yields an explicit system of generators and the initial ideal of relations. While in the genus $g \geq 2$ case, the proof does not always yield an explicit system of generators and relations, if the halfcanonical divisor $\halfcan$ can be written as $\halfcan' + \Lambda$ with $(\halfcan',0,X)$ a log spin curve, and a system of generators and relations for $\halfcan'$ is known, then our proof provides an inductive procedure for determining the generators and initial ideal of relations for $\halfcan$. In fact, such a system of generators and relations are known for $\halfcan'$ in many cases, as detailed in Neves ~\cite{neves:halfcan}[Section III.4].
 
+The remainder of the paper will be primarily devoted to proving Theorem ~\ref{thm:general_generators_relations}. The idea of the proof will be to induct on the order and number of elliptic points. To this end, we first review important background in Section ~\ref{sec:background}. Then, in Section ~\ref{sec:induction}, we develop various inductive tools. In Sections ~\ref{sec:g_high}, ~\ref{sec:g_1} and ~\ref{sec:g_0}, we prove Theorem \ref{thm:general_generators_relations} in the cases that the genus $g \geq 2, g = 1$ and $g = 0$ respectively. Finally, in Section ~\ref{further-questions}, we pose several questions for future research.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Background}
+\label{sec:background}
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
 \todo{edit this}
 
@@ -239,6 +239,7 @@ Here are some definitions.
 
 
 \section{Inductive Lemmata}
+\label{sec:induction}
 First we present the general inductive lemmata that will be applied
 for all genera.  We offer various inductive lemmata that will allow us to add fractional point $\frac{\alpha}{\beta}P$ to a $\mathbf{Q}$ divisor $D$ of $X$ and describe the new generators and relations of $R_{D+p}$ not in $R_D$.  Next, we provide a method specific to the case of stacky canonical divisors with no log component, which under certain conditions allows us to transfer information about the generators and relations of the half canonical ring of a stacky curve $\sx$' with signature $(g; e_1', \ldots, e_\tau'; 0)$ to a stacky curve $\sx$ with signature $(g; e_1', \ldots, e_\tau'; 0)$ where each $e_i\in \{e_i', e_i'+2\}$.    
 
@@ -1241,7 +1242,7 @@ $$\begin{tikzcd}
 0 \ar r & H^0((n-2)L) \ar r & V \otimes H^0(nL) \ar{r}{f} & H^0((n+2)L)
 \end{tikzcd}$$
 We wish to show $f$ is surjective.
-Note that $\dim \ker f = \dim H^0((n-2)L) = (n-3)(g-1)$ using Riemann--Roch and the assumption if $n \geq 5$ or ($n = 5$ and $\Delta > 0$).
+Note that $\dim \ker f = \dim H^0((n-2)L) = (n-3)(g-1)$ using Riemann--Roch and the assumption if $n \geq 5$ or ($n = 5$ and $\Delta > 0$), as in the case $\Delta > 0$ we have $\deg \Delta \geq 2$.
 Additionally, $\dim V \otimes H^0(nL) = 2 \cdot (n-1)(g-1)$, again using Riemann--Roch.
 Therefore, $$\dim \im f = 2 \cdot (n-1)(g-1) -(n-3)(g-1) = (n+1)(g-1) = \dim H^0((n+2)L),$$
 again using Riemann-Roch, implying $f$ is surjective.
@@ -1291,17 +1292,23 @@ order at $P_1$, and is therefore independent from the image of $\sym^3 H^0(X,3L)
 
 \begin{lem}
 \label{lem:generation_5}
-Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K$. Then, $R_L$ is generated in degree at most $5$.
+Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K +\Delta$. Then, $R_L$ is generated in degree at most $5$.
 \end{lem}
 \begin{proof}
-If $g = 2$ then the claim follows from 
-Proposition ~\ref{prop:genus_2_generation_5}. However, if $g > 2$, then by \cite{vzb:stacky}[Theorem 3.2.1], we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective, so again there are no new generators in degree 6.
+If $\Delta > 0$, this holds by Lemma ~\ref{lem:semicanonical_generation}. If $g = 2$ and $\Delta = 0,$ then the claim follows from
+Proposition ~\ref{prop:genus_2_generation_5}. Finally, if $g > 2$, then by \cite{vzb:stacky}[Theorem 3.2.1], we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective, so again there are no new generators in degree 6.
 \end{proof}
 
 \todo{This should be $k[x_1,\ldots, x_n]$ instead of $\sym H^0$.}
 \begin{lem}
 \label{lem:reducing_degree}
-Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K$. Choose generators $x_1,\ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1,\ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L,d}$ be the $d$th graded piece of $I_L$ and $J_{L,d} = \sum_{j = 1}^{d-1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j}.$ Let for any $f \in k[x_1, \ldots, x_n]$ with $\deg f \geq 12,$ there exist $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ and $g,h \in k[x_1, \ldots, x_n]_{d-2}$ so that $s_1g + s_2h = f \bmod J_{L,d}.$
+Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K+\Delta$. Choose generators $x_1,\ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1,\ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L,d}$ be the $d$th graded piece of $I_L$ and let $J_{L,d} = \sum_{j = 1}^{d-1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j}.$ For any $f \in k[x_1, \ldots, x_n]$ such that
+$$
+\deg f \geq \begin{cases}
+	12 &\text{ if }\Delta = 0\\
+	11 &\text{ if }\Delta > 0
+\end{cases}$$
+there exist $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ and $g,h \in k[x_1, \ldots, x_n]_{d-2}$ so that $s_1g + s_2h = f \bmod J_{L,d}.$
 \end{lem}
 \begin{proof}
 Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1),\phi(s_2) \in H^0(2L)$ are independent elements.
@@ -1311,7 +1318,13 @@ Let $V \subset H^0(K)$ be the vector subspace generated by $\phi(s_1)$ and $\phi
 \begin{align*}
 	V \otimes H^0((\deg f-\deg x_i-2)L) \rightarrow H^0((\deg f-\deg x_i)L)
 \end{align*}
-is surjective, since $\deg f - \deg a_i - 2 \geq 12 - 5 - 2 = 5$. In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Chosing $g_i,h_i$ so that $\phi(g_i) = \alpha,\phi(h_i) = \beta$, we have $a_i = s_1 g_i + s_2 h_i \bmod I_{L,\deg a_i}$, as claimed.
+is surjective, since
+$$
+\deg f- \deg a_i-2 \geq \begin{cases}
+	5 &\text{ if }\Delta = 0\\
+	4 &\text{ if }\Delta > 0.
+\end{cases}$$
+In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Chosing $g_i,h_i$ so that $\phi(g_i) = \alpha,\phi(h_i) = \beta$, we have $a_i = s_1 g_i + s_2 h_i \bmod I_{L,\deg a_i}$, as claimed.
 
 Finally, we may then take $g = \sum_{i}^{}g_ix_i,h = \sum_{i}^{}h_ix_i,$ so that 
 \begin{align*}
@@ -1322,7 +1335,7 @@ Finally, we may then take $g = \sum_{i}^{}g_ix_i,h = \sum_{i}^{}h_ix_i,$ so that
 
 \begin{prop}
 \label{prop:relations_generation}
-Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K$. Then $I_L$ is generated in degree at most $11$.
+Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K + \Delta$. Then $I_L$ is generated in degree at most $11$ if $\Delta = 0$ and degree at most $10$ if $\Delta > 0$.
 \end{prop}
 \begin{proof}
 Suppose $f \in I_L$ with $\deg f \geq 12$. To complete the proof, it suffices to show $f \in I_{L,d}'$. By Lemma ~\ref{lem:reducing_degree}, it suffices to show $s_1g+s_2h \in I_{L,d}'$. 
@@ -2001,6 +2014,7 @@ finite list of exceptional cases, as listed in Table
 \end{proof}
 
 \section{Further Research}
+\label{sec:further-questions}
 \begin{itemize}
 	\item More on fractional modular forms
 	\item Make explicit generators and relations for base case of non-stacky higher genus half-canonical divisors
