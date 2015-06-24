@@ -209,7 +209,7 @@ $R(\sx,\Delta, \halfcan)$ has relations in degree at most $\max(11, e_1,
 \ldots, e_r).$ Otherwise, $R(\sx, \Delta, \halfcan)$ has relations in degree at most
 $\max(10, e_1, \ldots, e_r),$ so long as $\sigma$ does not lie in a finite list of
 exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
-for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
+for signatures with $g = 1$ and Table ~\ref{table:g_0_exceptional}
 for signatures with $g = 0$.
 \end{thm}
 \todo{Say that this follows immediately from the three theorems for the special cases.}
@@ -795,7 +795,7 @@ Transition words.
 \label{prop:sat_three_induction}
 \todo{Make explicit assumptions on genus.}
 \todo{Should switch either $R$ and $R'$ or $\sx$ and $\sx'$ to make prime notation consistent (note that inclusion is reversed since this map adds a stacky point to $\sx$; note that we should also say that this map is only ramified at $P$), Aaron: you're right, I wrote the inclusion on rings in the wrong direction. Actually, the map isn't ramified at $P$, it's just defined away from $P$. I decided to remove this from the proposition though.} Let $R_{L'} = R' = k[x]/I'= k[x_3, x_4
-, x_5,\ldots, x_m]/I'$ satisfy $sat(Eff(D')) = 3.$ Let $L = L' + \frac{1}{
+, x_5,\ldots, x_m]/I'$ satisfy $sat(Eff(\halfcan')) = 3.$ Let $L = L' + \frac{1}{
 3}P$, and let $R = R_L$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that the ordering on $k[x]$ satisfies
 \begin{align*}
 	\ord_{x_3}(f) < \ord_{x_3}(h) \implies f \prec h.
@@ -808,7 +808,7 @@ Then, the following statements hold.
 \begin{enumerate}
 	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in \{3,
 		4,5\}$ satisfy $-\ord_P(y_i) = 1$ and any such choice of elements $y
-		_3,y_4,$ and$ y_5$ minimally generate $R$ over $R'$.
+		_3,y_4,$ and $y_5$ minimally generate $R$ over $R'$.
 	\item[(b)] Equip $k[y_3, y_4, y_5]$ with $grlex$ so that $y_5 \prec 
 		y_4 \prec y_3$
 		and equip the ring $k[y_3, y_4, y_5, x]$ with the block 
@@ -1921,7 +1921,7 @@ in the genus 0 case.
 \end{longtable}
 
 \begin{center}
-\label{table:g-0-exceptional}
+\label{table:g_0_exceptional}
 \textbf{Table (IV)}: Genus 0 exceptional cases
 \end{center}
 
@@ -1953,14 +1953,42 @@ If $g = 0$, then the canonical ring
 
 \noindent
 is generated as a $k$-algebra by elements of degree at most $e =
-\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $\max
-(10, e_1, \ldots, e_r),$ so long as $\sigma$ does not lie in a
-finite list of exceptional cases, as listed in Table
-~\ref{table:g-0-exceptional}.
+\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e$,
+so long as $\sigma$ does not lie in a finite list of exceptional
+cases, as listed in Table ~\ref{table:g_0_exceptional}.
 \end{thm}
 
 \begin{proof}
+If $\sx$ has no ramification points, then we have the classical
+case which is done in Chapter 4 of Voight and Zureick-Brown
+\cite{vzb:stacky}.
 
+Now let us consider the case when $\delta \geq 2$. In this case,
+$\halfcan$ is an effective divisor.
+
+Now suppose $\delta = 0$, so $\halfcan$ is not necessarily effective.
+If $\sigma = (0; e_1, \ldots, e_r; 0)$ is not one of the
+exceptional cases in Table ~\ref{table:g_0_exceptional} and $r \leq
+5$, then $\sigma$ ``lies above'' one of the base cases of Lemma
+~\ref{lem:g_0_admissible_cases}. In other words, one of the base
+cases $(\sigma', J)$ with $\sigma' = (0; e_1', \ldots, e_r'; 0)$
+satisfies the property that for all $i \in J$, $e_i \geq e_i'$ and
+$e_i = e_i'$ otherwise. If $r > 5$, then we can use Proposition
+~\ref{prop:sat_three_induction} to add ramified points with
+ramification order $3$ to case (k) of Lemma
+~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
+= (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$, since the
+saturation in this case is equal to $3$. 
+
+We know that each base case satisfies all of the hypotheses of
+Theorem ~\ref{thm:ram_order_ind} and their corresponding $R' :=
+R(\sx', \Delta, \halfcan')$ are generated, as $k$-algebras, up
+to degree $e' := \max (5, e_1', \ldots, e_r')$ with relations
+generated up to degree $2e'$ by Lemma ~\ref{g_0_admissible_cases}.
+It follows from Theorem ~\ref{thm:ram_order_ind}(b) that $R :=
+R(\sx, \Delta, \halfcan)$ is generated up to degree $e := \max(5,
+e_1, \ldots, e_r)$. It follows from Theorem ~\ref{thm:ram_order_ind}
+(d) that the relations are generated up to degree $2e$.
 
 
 %By Lemma ~\ref{lem:g_0_admissible_cases}, we know that for
