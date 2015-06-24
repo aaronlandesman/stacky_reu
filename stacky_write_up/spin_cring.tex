@@ -186,7 +186,7 @@ Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is well known that
 with multiplication structure corresponding to tensor product of sections. Since $\Omega_X$ is ample, $X \cong \proj R$. Petri's theorem gives generators and relations for $R(X,K_X),$ see for example, \cite{saint-donat:proj}[Theorem, p. 157], showing that in most cases $R(X,K_X)$ is generated in degree 1 with relations in degree 2. This has the pleasant geometric consequence that all such canonically embedded curves are scheme theoretically cut out by quadratic equations.
 
 Folloing Voight and Zureick-Brown, \cite{vzb:stacky}, we examine a much more general setting, generalizing Petri's theorem in many directions.
-A divisor $\Delta \in \d X$ is a {\bf log divisor} if $\Delta = \sum_{i}^{}P_i \in \di X,$ with all $P_i$ distinct. Let $(\sx,\Delta)$ denote a tame seperably rooted stacky curve over a field $k$ so that $X$ is the coarse space of $\sx$, as defined in \cite[Section 5.2]{vzb:stacky} so that $\di \sx = \div X \bigoplus_{i=1}^r \langle \frac{1}{e_i}P_i \rangle,$ with $e_i \in \BZ$. Let $K_\sx = K_X + \sum_{i=1}^{r}\frac{e_i-1}{e_i}P_i.$ In this case, we say $\sx$ has {\bf stabilizer order} $e_i$ at $P_i$. Call $\halfcan \in \di \sx$ a {\bf log half-canonical divisor} on $(\sx,\Delta)$, be a divisor $\halfcan \in \di \sx$ so that $2\halfcan \sim K_\sx + \Delta.$ If $X$ has genus $g$ and $\delta = \deg \Delta,$ then we say $\sx$ has signature $(g; e_1, \ldots, e_r;\delta)$. A {\bf log spin curve} is a triple $(X,\Delta,\halfcan)$ where $(X,\Delta)$ and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$. The central object of study in this paper is the {\bf log spin canonical ring} of $(X,\Delta,L)$ is
+A divisor $\Delta \in d X$ is a {\bf log divisor} if $\Delta = \sum_{i}^{}P_i \in \di X,$ with all $P_i$ distinct. Let $(\sx,\Delta)$ denote a tame seperably rooted stacky curve over a field $k$ so that $X$ is the coarse space of $\sx$, as defined in \cite[Section 5.2]{vzb:stacky} so that $\di \sx = \div X \bigoplus_{i=1}^r \langle \frac{1}{e_i}P_i \rangle,$ with $e_i \in \BZ$. Let $K_\sx = K_X + \sum_{i=1}^{r}\frac{e_i-1}{e_i}P_i.$ In this case, we say $\sx$ has {\bf stabilizer order} $e_i$ at $P_i$. Call $\halfcan \in \di \sx$ a {\bf log half-canonical divisor} on $(\sx,\Delta)$, be a divisor $\halfcan \in \di \sx$ so that $2\halfcan \sim K_\sx + \Delta.$ If $X$ has genus $g$ and $\delta = \deg \Delta,$ then we say $\sx$ has signature $(g; e_1, \ldots, e_r;\delta)$. A {\bf log spin curve} is a triple $(X,\Delta,\halfcan)$ where $(X,\Delta)$ and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$. The central object of study in this paper is the {\bf log spin canonical ring} of $(X,\Delta,L)$ is
 \begin{align*}
 	R(X,\Delta,L) = \oplus_{n=0}^\infty H^0(X,nL)
 \end{align*}
@@ -217,7 +217,7 @@ Note that in the course of the proof of Theorem ~\ref{thm:g_0_generators_relatio
 
 
 
-The remainder of the paper will be primarily devoted to proving Theorem ~\ref{thm:general_generators_relations}. The idea of the proof will be to induct on the order and number of elliptic points. To this end, we first review important background in Section ~\ref{sec:background}. Then, in Section ~\ref{sec:induction}, we develop various inductive tools. In Sections ~\ref{sec:g_high}, ~\ref{sec:g_1} and ~\ref{sec:g_0}, we prove Theorem \ref{thm:general_generators_relations} in the cases that the genus $g \geq 2, g = 1$ and $g = 0$ respectively. Finally, in Section ~\ref{further-questions}, we pose several questions for future research.
+The remainder of the paper will be primarily devoted to proving Theorem ~\ref{thm:general_generators_relations}. The idea of the proof will be to induct on the order and number of elliptic points. To this end, we first review important background in Section ~\ref{sec:background}. Then, in Section ~\ref{sec:induction}, we develop various inductive tools. In Sections ~\ref{sec:g_high}, ~\ref{sec:g_1} and ~\ref{sec:g_0}, we prove Theorem \ref{thm:general_generators_relations} in the cases that the genus $g \geq 2, g = 1$ and $g = 0$ respectively. Finally, in Section ~\ref{sec:further-questions}, we pose several questions for future research.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1981,49 +1981,6 @@ It follows from Theorem ~\ref{thm:ram_order_ind}(b) that $R :=
 R(\sx, \Delta, \halfcan)$ is generated up to degree $e := \max(5,
 e_1, \ldots, e_r)$. It follows from Theorem ~\ref{thm:ram_order_ind}
 (d) that the relations are generated up to degree $2e$.
-
-
-%By Lemma ~\ref{lem:g_0_admissible_cases}, we know that for
-%any tame log spin curves $(\sx', \Delta, \halfcan')$ over a perfect
-%field $k$ with signature $\sigma'$ and set $J$ such that $(\sigma',
-%J)$ is one of the listed base cases, $(\sigma', J)$ is admissible.
-%Furthermore, $R' := R(\sx', \Delta, \halfcan')$ is generated as a $k
-%$- algebra by elements of degree at most $e = \max(5, e_1, \ldots, e
-%_r)$ with relations in degree at most $2e$. It also admits a
-%presentation
-%
-%\begin{align*}
-	%R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i,e_i'}]_{i \in J} \right)/I'
-%\end{align*}
-%
-%\noindent
-%given by admissibility satisfying the statements that for all $i \in 
-%J$, $e_i > \deg z$ for any generator $z$ of $R'$ and that $in_\prec
-%(I')$ is minimally generated by products of two monomials under
-%some ordering.
-%
-%Then we can apply two processes of induction, by adding points via
-%Lemma ~\ref{lem:sat_two_induction} and by raising
-%stabilizer orders via Theorem ~\ref{thm:ram_order_ind},
-%to obtain the desired result for any tame log spin curve $(\sx,
-%\Delta, L)$ over a perfect field $k$ with signature $\sigma$
-%covered by this induction process.
-%
-%
-%
-%A process of induction raising the stabilizer orders of
-%the ramified points of the spin curves corresponding to Lemma
-%~\ref{lem:g_0_admissible_cases} cases (a)-(c) via Theorem
-%~\ref{thm:ram_order_ind} will demonstrate the desired generator and
-%relation degree results for curves with three ramified points.
-%Similarly, this induction process on Lemma
-%~\ref{lem:g_0_admissible_cases} case (d) will give the desired
-%result for curves with four ramified points excluding signature
-%$(0; 3, 3, 3, 3; 0)$. A process of induction increasing the
-%number of ramified points via Lemma
-%~\ref{lem:sat_three_induction} on Lemma ~\ref{lem:g_0_admissible_cases}
-%case (e) combined with the induction process on stabilizer orders
-%will yield the result for curves with at least five ramified points.
 \end{proof}
 
 \section{Further Research}
