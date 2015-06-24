@@ -323,14 +323,14 @@ Fact about quotient.
 %\ldots, f_j$ is such a set, it is minimal.
 %\end{proof}
 %
-
-\begin{rem}
-\label{rem:minimal_quadratic_trivial_case}
-It will be useful to use lemma \ref{lem:minimal_quadratic} in the
-case $m=0$, in which case we find explicitly that $f_1, \ldots, f_r$
-are $k$-minimal generators for $I'$ (over the trivial base vector
-space).  
-\end{rem}
+%
+%\begin{rem}
+%\label{rem:minimal_quadratic_trivial_case}
+%It will be useful to use lemma \ref{lem:minimal_quadratic} in the
+%case $m=0$, in which case we find explicitly that $f_1, \ldots, f_r$
+%are $k$-minimal generators for $I'$ (over the trivial base vector
+%space).  
+%\end{rem}
 
 With this result, we will be able to show that the sets of generators of the ideal of relations in many of the following inductive arguments are minimal.
 
@@ -338,6 +338,7 @@ With this result, we will be able to show that the sets of generators of the ide
 \label{ssec:add_pts}
 In this section, we prove various inductive statements under the following setup:
 Let $\halfcan'$ be $\mathbf{Q}$-divisor of $X$ (and often a log half canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbf{N}$ and certain saturation conditions.  Let $\halfcan=\halfcan'+P$ for some $P$ not in the support of $\halfcan$.\todo{do we always assume this?}  Then we will explicitly describe elements that minimally generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that minimally generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Grobner Basis).   The proofs of these lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
+
 
 \begin{lem}\label{lem:adding_points_saturation_2_to_1_with_log}
 Let $(\sx, \Delta, \halfcan)$ and $(\sx, \Delta', L')$ be tame separably rooted log stacky spin 
@@ -783,12 +784,6 @@ Then
 \begin{proof}
 Similar to all the other lemmas\todo{combine sections?}
 \end{proof}
-
-Transition words.
-\todo{transition!}
-
-\ssec{Inductive Theorem: Increasing the Number of Ramified Points for a 3-saturated divisor}
-\label{ssec:g_0_ram_pts}
 
 \begin{prop}
 \label{prop:sat_three_induction}
