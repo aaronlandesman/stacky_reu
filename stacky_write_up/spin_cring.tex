@@ -735,7 +735,7 @@ Now, suppose the result is proven for all effective $D$ with support at most $r$
 
 \todo{do these corollaries fit here?}
 
-\begin{cor}\label{cor:genus_0_posiive_delta}
+\begin{cor}\label{cor:genus_0_positive_delta}
 Let $\halfcan$ be a stacky log spin canonical divisor of $(X,\Delta)$ with signature $(g;e_1,\ldots, e_n;\delta)$ such that $2\halfcan=K_\sx+\Delta$ with $\delta=\deg(\Delta)>0$.  Then $\halfcan$ is effective so we can inductively apply lemma \ref{lem:deg1_sat_ind}.
 \end{cor}
 \begin{proof}
@@ -899,7 +899,7 @@ In this section, we aim to prove the inductive theorem, Theorem
 conditions, this theorem will allow us to show that if Theorem ~\ref
 {thm:ram_order_ind} holds for a curve with signature
 $(0;e_1',\ldots, e_r';0)$ then it also holds for a curve with
-signature $(0;e_1,\ldots, e_r;0)$ with $e_i' - e_i \in \{0,2\}$.
+signature $(0;e_1, \ldots, e_r; 0)$ with $e_i' - e_i \in \{0,2\}$.
 
 \begin{defn}
 \label{defn:admissible}
@@ -907,7 +907,7 @@ Let $(\sx', 0, L'),(\sx, 0, L)$ be tame,
 separably rooted log stacky spin
 curves, both ramified over ramified at $Q_1,\ldots, Q_r$. Suppose
 there is a birational map $\sx \rightarrow \sx'$, and let $J \subset
-\{1, \ldots, r\}$. Suppose $e_i'+ 2\chi_J(i) = e_i$ where
+\{1, \ldots, r\}$. Suppose $e_i'+ 2 \chi_J (i) = e_i$ where
 
 $$\chi_J(i) = \begin{cases}
 	1, &\text{ if }i \in J\\
@@ -991,7 +991,7 @@ if they hold for $J$.
 
 \begin{thm}
 \label{thm:ram_order_ind}
-Suppose $(\sx', 0, L')$ \todo{Peter: You should also instantiate $(\sx,0,L)$ as well} is a tame separably rooted log stacky spin
+Suppose $(\sx', 0, L')$ \todo{Peter: You should also instantiate $(\sx, 0, L)$ as well} is a tame separably rooted log stacky spin
 curve and $(\sx', J)$ is admissible with generators $y_{i,e_i'} \in
 R' = R_{L'}$ as in (Ad-i) of Definition ~\ref{defn:admissible}.
 Then the following are true:
@@ -1007,7 +1007,7 @@ Then the following are true:
 			\frac{1}{\deg(y_{i,e_i})e_j'}
 		\end{align*}
 		for all $j \in J$ with $j \neq i$.
-	\item[(b)] The elements $y_{i,e_i'}^ay_{i,e_i}^b,$ with $a \geq 0,
+	\item[(b)] The elements $y_{i,e_i'}^ay_{i,e_i}^b$ with $a \geq 0,
 		b > 0$ span $R$ over $R'$ and the elements $y_{i,e_i}$ minimally
 		generate $R$ over $R'$.
 	\item[(c)] Equip $k[y] = k[y_{i,e_i}]_{i \in J}$ and $k[x]$ with
@@ -1505,9 +1505,6 @@ Let $2\halfcan=K_X$ of a non-stacky curve $X$ such that $h^0(X, \halfcan) > 0$. 
 
 \ssec{Genus Zero Non-effective}
 \label{ssec:g_0_non_effective}
-
-\todo{Peter: throughout this section I will provide a few notes of how we can generalize this to arbitrary genus with the appropriate conditions}
-
 In this section, we will prove that if $(\sx , 0, L)$ is a spin curve,
 so that $\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; 0)$, then
 $R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1, \ldots,
@@ -1583,11 +1580,15 @@ of a finite set of exceptional cases.
 
 \begin{lem}
 \label{lem:g_0_admissible_cases}
-Let $(\sx', \Delta, \halfcan')$ be a tame log spin curve over a perfect field $k$,
-so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; 0)$.
-Then $R' := R(\sx', \Delta, \halfcan')$ is generated as a $k$-algebra by elements
-of degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree
-at most $2e$ and $(\sx', J)$ is admissible for the following cases:
+Let $(\sx', \Delta, \halfcan')$ be a tame log spin curve over a
+perfect field $k$, so that $\sx$ has signature $\sigma = (0; e_1,
+\ldots, e_r; 0)$. Then $R' := R(\sx', \Delta, \halfcan')$ has a
+presentation 
+
+is
+generated as a $k$-algebra by elements of degree at most $e = \max(5
+,e_1,\ldots, e_r)$ with relations in degree at most $2e$ and $(\sx
+', J)$ is admissible for the following cases:
 
 \begin{enumerate}
 	\item[(a)] $\sigma_1 = (0; 3, 3, 11; 0), J_1 = \{3\}$
@@ -1853,55 +1854,22 @@ Now we can induct on cases (a)-(e) of \ref{lem:g_0_admissible_cases}
 to obtain bounds on the minimal generator and relation degrees for
 canonical rings of curves in the genus 0 case.
 
-Using the results of Proposition ~\ref{prop:sat_three_induction}
-and Theorem ~\ref{thm:ram_order_ind}, we can inductively raise
-the ramification orders and number of ramified points in all of the
-cases in Lemma ~\ref{lem:g_0_admissible_cases} to obtain the following
-result.
-
-\begin{cor}
-\label{cor:g_0_gen_rel_base_cases}
-Let $(\sx, \Delta, L)$ be a tame log spin curve over a perfect field $k$, so
-that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; 0)$. Then the
-canonical ring
-
-\[
-	R(\sx, 0, L) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
-\]
-
-\noindent
-is generated as a $k$-algebra by elements of degree at most $e := 
-\max(5, e_1, \ldots, e_r)$ with relations in degree at most $2e$, so 
-long as $\sigma \notin S$ where
-
-\begin{align*}
-	S &:= \{(0; 3, 3, k; 0) : 3 \leq k \leq 9 \text{ odd}\} \\
-		&\cup \{(0; 3, 5, 5; 0) ,(0; 3, 5, 7; 0), (0; 5, 5, 5; 0), (0; 3, 3, 3, 3; 0)\}
-\end{align*}
-
-\noindent
-is a finite set.
-\end{cor}
-
-\begin{proof}
-A process of induction raising the ramification orders of
-the ramified points of the spin curves corresponding to Lemma
-~\ref{lem:g_0_admissible_cases} cases (a)-(c) via Theorem
-~\ref{thm:ram_order_ind} will demonstrate the desired generator and
-relation degree results for curves with three ramified points.
-Similarly, this induction process on Lemma
-~\ref{lem:g_0_admissible_cases} case (d) will give the desired
-result for curves with four ramified points excluding signature
-$(0; 3, 3, 3, 3; 0)$. A process of induction increasing the
-number of ramified points via Proposition
-~\ref{prop:sat_three_induction} on Lemma ~\ref{lem:g_0_admissible_cases}
-case (e) combined with the induction process on ramification orders
-will yield the result for curves with at least five ramified points.
-\todo{Detailed description of how the inductive lemmata yield e and 2e}
-\end{proof}
+Through the application of two processes of induction, by adding 
+points via Proposition ~\ref{prop:sat_three_induction} and by raising
+ramification orders via Theorem ~\ref{thm:ram_order_ind},
+we obtain Theorem ~\ref{thm:g_0_generators_relations} for any tame
+log spin curve $(\sx, \Delta, L)$ over a perfect field $k$ with
+signature $\sigma$ covered by this induction process.
+In particular, this induction process covers all signatures $\sigma
+= (0; e_1, \ldots, e_r; 0)$ such that either $r \geq 5$ or
+for some listed base case $(\sigma', J)$ with $\sigma' = (0; e_1',
+\ldots, e_r'; 0)$, $e_i \geq e_i'$ for all $i$.
+Before we prove the main theorem, we describe the cases not be
+covered by induction.
 
 \ssec{Exceptional Cases}
 \label{ssec:g_0_exceptional}
+First, we describe the cases that would not be covered by induction.
 Here we present the explicit generators and relations of the remaining
 cases given by signatures in the finite set
 
@@ -1977,6 +1945,53 @@ is generated as a $k$-algebra by elements of degree at most $e =
 finite list of exceptional cases, as listed in Table
 ~\ref{table:g-0-exceptional}.
 \end{thm}
+
+\begin{proof}
+
+
+
+%By Lemma ~\ref{lem:g_0_admissible_cases}, we know that for
+%any tame log spin curves $(\sx', \Delta, \halfcan')$ over a perfect
+%field $k$ with signature $\sigma'$ and set $J$ such that $(\sigma',
+%J)$ is one of the listed base cases, $(\sigma', J)$ is admissible.
+%Furthermore, $R' := R(\sx', \Delta, \halfcan')$ is generated as a $k
+%$- algebra by elements of degree at most $e = \max(5, e_1, \ldots, e
+%_r)$ with relations in degree at most $2e$. It also admits a
+%presentation
+%
+%\begin{align*}
+	%R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i,e_i'}]_{i \in J} \right)/I'
+%\end{align*}
+%
+%\noindent
+%given by admissibility satisfying the statements that for all $i \in 
+%J$, $e_i > \deg z$ for any generator $z$ of $R'$ and that $in_\prec
+%(I')$ is minimally generated by products of two monomials under
+%some ordering.
+%
+%Then we can apply two processes of induction, by adding points via
+%Proposition ~\ref{prop:sat_three_induction} and by raising
+%ramification orders via Theorem ~\ref{thm:ram_order_ind},
+%to obtain the desired result for any tame log spin curve $(\sx,
+%\Delta, L)$ over a perfect field $k$ with signature $\sigma$
+%covered by this induction process.
+%
+%
+%
+%A process of induction raising the ramification orders of
+%the ramified points of the spin curves corresponding to Lemma
+%~\ref{lem:g_0_admissible_cases} cases (a)-(c) via Theorem
+%~\ref{thm:ram_order_ind} will demonstrate the desired generator and
+%relation degree results for curves with three ramified points.
+%Similarly, this induction process on Lemma
+%~\ref{lem:g_0_admissible_cases} case (d) will give the desired
+%result for curves with four ramified points excluding signature
+%$(0; 3, 3, 3, 3; 0)$. A process of induction increasing the
+%number of ramified points via Proposition
+%~\ref{prop:sat_three_induction} on Lemma ~\ref{lem:g_0_admissible_cases}
+%case (e) combined with the induction process on ramification orders
+%will yield the result for curves with at least five ramified points.
+\end{proof}
 
 \section{Further Research}
 \begin{itemize}
