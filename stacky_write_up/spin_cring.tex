@@ -137,6 +137,8 @@
 \newcommand \Supp{\text{Supp}}
 \newcommand \initial{\text{in}}
 \newcommand \gin{\text{gin}}
+\newcommand \Eff{\text{Eff}}
+\newcommand \sat{\text{sat}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -288,7 +290,6 @@ research.
 
 \section{Background}
 \label{sec:background}
-\todo{Reference independence of base field}
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
 Include the following:
 \begin{enumerate}
@@ -312,13 +313,37 @@ associated to $\Gamma$, we can form a space $\Gamma \backslash
 associated {\bf divisor of cusps} $\Delta$.
 
 \subsection{Definitions}
+We reserve the notation $\halfcan$ for the halfcanonical divisor
+where $\halfcan \sim $.
+
 Here are some definitions.
+
+We define the notion of the saturation of a divisor, taken from
+Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
+
+\begin{defn}
+Let $D$ be a divisor on $\sx$. The \textbf{effective monoid} of $D$
+is the monoid
+\[
+	\Eff(D) = \{d \in \BZ_{\geq 0} : \deg \lfloor dD \rfloor \geq 0 \}
+\]
+\end{defn}
 
 \begin{defn}
 \label{defn:sat}
-\textbf{Saturations} of the canonical divisor, as defined in Voight
-and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
+The \textbf{saturation} for a monoid $M \subseteq \BZ_{\geq 0}$,
+denoted $\sat(M)$, is the smallest integer $s$ such that $M
+\supseteq \BZ_{\geq s}$, if such an integer exists.
 \end{defn}
+
+\begin{rem}
+For our purposes, it is useful to call the saturation of the
+effective monoid of a divisor $D$ as the saturation $s$ of the
+divisor $D$ on $\sx$. In this case, the saturation $s$ of a divisor
+$D$ on $\sx$ (i.e. $\sat(\Eff(D))$) is the smallest positive $s \in
+\BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d \geq s$.
+\end{rem}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive Lemmata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -791,7 +816,7 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}.
 \label{lem:sat-three-induction-g-0}
 \todo{Make explicit assumptions on genus.}
 Suppose $L'$ is a log half-canonical divisor of $\sx$ with course
-space $X$ of genus 0 such that $'sat(Eff(\halfcan')) = 3$ with $R_
+space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ with $R_
 {\halfcan'} = k[x_3, x_4 , x_5, \ldots, x_m]/I'$. Let $L = L' + \frac
 {1}{3}P$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that
 the ordering on $k[x]$ satisfies
@@ -887,7 +912,7 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 %curves with $0\ne \Delta=\Delta'+2P$ for some non-stacky point $P$ not in the support of $
 %\halfcan'$, meaning that $L=L'+P$. Let $(g; e_1, \ldots, e_\tau; \delta+2)$ and $(g; e_1, 
 %\ldots, e_\tau, \delta)$ with $g\ge 2$ be their respective signatures. Suppose 
-%$'sat(Eff(\halfcan))= 1$ and $'sat(Eff(\halfcan'))=2$. Further suppose $R_{\halfcan'} = k[x_2, 
+%$\sat(\Eff(\halfcan))= 1$ and $\sat(\Eff(\halfcan'))=2$. Further suppose $R_{\halfcan'} = k[x_2, 
 %x_3, \ldots, x_m]/I'$ with $\deg(x_2) = 2$ and $\deg(x_3) = 3$. Then
 %
 %\begin{enumerate}
@@ -944,7 +969,7 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 %Let $(\sx, 2P, \halfcan)$ and $(\sx, 0, L')$ be log spin log stacky spin curves 
 %with $P$ not in the support of $\halfcan'$, meaning that $L=L'+P$. Let $(g; e_1, \ldots, e_
 %\tau; 2)$ and $(g; e_1, \ldots, e_\tau, 0)$ with $g\ge 2$ be their respective signatures. 
-%Suppose $'sat(Eff(\halfcan))= 1$ and $'sat(Eff(\halfcan'))=2$. Further suppose 
+%Suppose $'\sat(\Eff(\halfcan))= 1$ and $'\sat(\Eff(\halfcan'))=2$. Further suppose 
 %$R_{\halfcan'} = k[x_2, x_3, \ldots, x_m]/I'$ with $\deg(x_2) = 2$ and $\deg(x_3) = 3$. 
 %Then
 %\begin{enumerate}
@@ -2281,7 +2306,7 @@ stabilizer order $3$ to case (k) of Lemma
 = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
 clearly satisfies the conditions of Lemma
 ~\ref{lem:sat-three-induction-g-0} (recall from Subsection ~\ref
-{ssec:g_0_saturation} that $sat(Eff(\sigma_{11})) = 3$), and the
+{ssec:g_0_saturation} that $\sat(\Eff(\sigma_{11})) = 3$), and the
 immediate consequence of parts (a) and (c) of Lemma
 ~\ref{lem:sat-three-induction-g-0} is that any $R(\sx', \Delta,
 \halfcan')$ corresponding to signatures $\sigma'$ with ramification
