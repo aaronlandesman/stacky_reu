@@ -1137,11 +1137,11 @@ if they hold for $J$.
 
 \begin{thm}
 \label{thm:ram_order_ind}
-Suppose $(\sx', 0, \halfcan')$ is a log spin curve with coarse
+Suppose $(\sx', \Delta, \halfcan')$ \todo{For some reason this $\Delta$ was set to 0. Was there any reason for this?} is a log spin curve with coarse
 space $X'$ and signature $(g; e_1', \ldots, e_r'; \delta)$ and
 $(\sx', J)$ is admissible with generators $x_j, y_{i, e_i'} \in R' =
 R_{L'}$ with $i \in J$ as in Definition ~\ref{defn:admissible}. Let
-$(\sx, 0, \halfcan)$ be another log spin curve
+$(\sx, \Delta, \halfcan)$ be another log spin curve
 with coarse space $X = X'$ and signature $(g; e_1, \ldots, e_r;
 \delta)$ such that $e_i = e_i' + 2$ for all $i \in J$ and
 $e_j = e_j'$ for $j \notin J$. Then the following are true:
@@ -1354,9 +1354,31 @@ Finally, if (Ad-iii) holds for $e$ then it holds for $e+2$ by
 definition. This is where we use that (Ad-iii) holds for $d > 0$
 and not just for $d = 0$.
 
-Finally, if $(\sx, J)$ is admissible then so is $(\sx,W)$ for any
+Finally, if $(\sx , J)$ is admissible then so is $(\sx,W)$ for any
 $W \subset J$ by Lemma ~\ref{lem:admissible_subset}.
 \end{proof}
+
+\begin{cor}
+\label{cor:raise-stacky-order}
+Suppose $(\sx',L',J')$ is admissible with signature $\sigma' = (e_1',\ldots,e_r')$ with $J' = \{t,t+1,\ldots,r\}$ and $e_1' \leq e_2' \leq \cdots \leq e_t' = e_{t+1}' =\cdots = e_r'$
+so that $(\sx',\Delta, L)$ satisfies the conditions of Theorem ~\ref{thm:ram_order_ind} and Theorem ~\ref{thm:general_generators_relations}. Then, for any spin curve $(\sx,\Delta,L)$ so that $\sx$ and $\sx'$ have the same coarse space $X = X'$ with the same set of ramified points, and $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$ with $e_1 \leq e_2 \leq \cdots e_r$ so that
+$$
+e_i \begin{cases}
+	= e_i' &\text{ if }i \notin J\\
+	\leq e_i' &\text{ if } i \in J
+\end{cases}$$
+then Theorem ~\ref{thm:general_generators_relations} holds for $(\sx,\Delta,L)$
+\end{cor}
+\begin{proof}
+For $t \leq i \leq r$. Let $(\sx_i,\Delta, L_i)$ be the log stacky spin curve with the same coarse space as $L'$ and with the same stacky points as $(\sx',\Delta,L),$ having signature $(g;e_1, \ldots e_{i-1}, e_i, e_i, \ldots, e_i;\delta),$ and let 
+$J_i = \{i,\ldots, r\}.$ Note that $(\sx_k,L_k,J_0) = (\sx',L',J')$ and $(\sx_r ,L_r ,J_r) = (\sx, L, J)$.
+
+Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the conditions $(\sx',\Delta, L)$ satisfies the conditions of Theorem ~\ref{thm:ram_order_ind} and Theorem ~\ref{thm:general_generators_relations} and $(\sx_i, L_i, J_i)$ is admissible.
+
+Since $(*_0)$ holds by assumption, by induction on $i$, it suffices to show that if $(*_i)$ holds then so does $(*_{i+1}).$ 
+Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, L_i, J_{i+1})$ is admissible, as $J_{i+1} \subset J_i$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e_{i+1}-e_i}{2}$ times, we see $(*_{i+1})$ holds.
+\end{proof}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% High genus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1480,7 +1502,7 @@ Finally, we may then take $g = \sum_{i}^{}g_i x_i,h = \sum_{i}^{}h_i x_i,$ so th
 \end{proof}
 
 \begin{prop}
-\label{prop:relations_generation}
+\label{prop:relation_11}
 Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K + \Delta$. Then $I_L$ is generated in degree at most $11$ if $\Delta = 0$ and degree at most $10$ if $\Delta > 0$.
 \end{prop}
 \begin{proof}
@@ -1498,7 +1520,7 @@ So, using the refined version of the basepoint-free pencil trick, as shown in th
 
 \begin{rem}
 \label{rem:relations_generation_ten}
-In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half canonical divisor on a genus 2 curve, then $R_L$ has a relation in degree 10. Therefore, the bound from Proposition ~\ref{prop:relations_generation}, that $I_L$ is generated in degree at most 11 is close to sharp.
+In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half canonical divisor on a genus 2 curve, then $R_L$ has a relation in degree 10. Therefore, the bound from Proposition ~\ref{prop:relation_11}, that $I_L$ is generated in degree at most 11 is close to sharp.
 \end{rem}
 
 
@@ -1506,6 +1528,27 @@ In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half can
 \ssec{Main theorem for high genus}
 \label{ssec:main_g_high}
 
+\begin{thm}
+\label{thm:general_generators_relations}
+Let $g \geq 2$ and let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$, so
+that $\sx$ has signature $\sigma = (g; e_1, \ldots, e_r; \delta)$. Then the
+canonical ring
+
+\begin{align*}
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \sco(L)^{\otimes d})
+\end{align*}
+
+\noindent
+is generated as a $k$-algebra by elements of degree at most $e =
+\max(5, e_1, \ldots, e_r).$ If $\Delta = 0$ then 
+$R(\sx,\Delta, \halfcan)$ has minimal relations in degree at most $\max(11, 2e_1,
+\ldots, 2e_r).$ Otherwise, $R(\sx, \Delta, \halfcan)$ has minimal relations in degree at most
+$\max(10, 2e_1, \ldots, 2e_r).$
+\end{thm}
+
+\begin{proof}
+By Lemma ~\ref{lem:generation_5} and Proposition ~\ref{prop:relation_11}, we are done in the case that there are no stacky points. 
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus one %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1697,8 +1740,7 @@ Note that we are assuming $L$ is not one of the exceptional cases listed in Tabl
 
 First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception- 1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12, is admissible, and satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. While $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$, after applying Theorem ~\ref{thm:ram_order_ind}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, while the previous relation lies in degree $12$, which is less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
-\todo{Aaron: It becomes a bit tedious for this proof to alternatingly cite ~\ref{lem:admissible_subset} and ~\ref{thm:ram_order_ind} is there a reason these were separated/can we merge the back together? Better yet, this should probably be a corollary somewhere, since we have to use this implicitly in all three genus cases.}
-Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base- 1-33}, it follows that $(\sx', \{3,3\})$ is admissible and satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. Therefore, applying Lemma ~\ref{lem:n-3s-admissible} $r-2$ times, we see that for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i,$ the pair $(\sx',\{3, \ldots, 3\})$ is admissible. Assume for convenience that $e_1 \leq e_2 \leq \cdots \leq e_r$. Applying Theorem ~\ref{thm:ram_order_ind} $\frac{e_1-3}{2}$ times, and letting $J_1 = \{e_1, \ldots, e_1\}$ so that $\# J_1 = r$, we obtain that the theorem holds for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\subhalf{e_1}P_i,$ and that $(\sx',J_1)$ is admissible. Hence, by Lemma ~\ref{lem:admissible_subset}, it follows that $(\sx',J')$ is admissible, with $J' \subset \{e_1, \ldots, e_1\},$ with $\# J' = r- 1$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e_2-e_1}{2}$ times, and letting $J_2 = \{e_2, \ldots, e_2\}$ so that $\# J_2 = r- 1$, we obtain that the theorem holds for $(\sx',\Delta',L')$ with $L' = P - Q + \subhalf{e_1}P_1 + \sum_{i =2}^{r}\subhalf{e_2}P_i,$ and that $(\sx',J_1)$ is admissible. Continuing to altenatively apply Lemma ~\ref{lem:admissible_subset} and Theorem ~\ref{thm:ram_order_ind}, we eventually obtain the theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
+Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base- 1-33}, it follows that $(\sx', \{3,3\})$ is admissible and satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. Therefore, applying Lemma ~\ref{lem:n-3s-admissible} $r-2$ times, we see that for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i,$ the pair $(\sx',\{3, \ldots, 3\})$ is admissible. Assume for convenience that $e_1 \leq e_2 \leq \cdots \leq e_r$. Then, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
 
 \vskip.1in
 \noindent
@@ -2227,7 +2269,7 @@ e_1, \ldots, e_r)$. It follows from Theorem ~\ref{thm:ram_order_ind}
 \begin{itemize}
 	\item More on fractional modular forms
 	\item Make explicit generators and relations for base case of non-stacky higher genus half-canonical divisors
-	\item In the case $g \geq 2$, can the bound from Proposition ~\ref{prop:relations_generation} be reduced from 11 to 10 (which would then be sharp by Remark ~\ref{rem:relations_generation_ten})? \todo{Possibly think more about this} 
+	\item In the case $g \geq 2$, can the bound from Proposition ~\ref{prop:relation_11} be reduced from 11 to 10 (which would then be sharp by Remark ~\ref{rem:relations_generation_ten})? \todo{Possibly think more about this} 
 	\item Generic Initial ideal (and other genericness properties?)
 \end{itemize}
 
