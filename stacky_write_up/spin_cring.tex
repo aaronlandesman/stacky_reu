@@ -545,7 +545,8 @@ $(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.
 
 For any $j < i$, $\frac{c_i}{d_i} > \frac{c_j}{d_j}$
 by construction, so any product of $\prod z_i$ of elements of
-degrees less than $d_i$ must have 
+degrees less than $d_i$ must have
+\todo{Aaron: at what point is the following order taken at?}
 \[
 	\frac{-\ord(z_i)}{\deg(z_i)} < \frac{c_i}{d _i},
 \]
@@ -1045,8 +1046,15 @@ $(0;e_1', \ldots, e_r';0)$ then it also holds for a curve with
 signature $(0; e_1, \ldots, e_r; 0)$ with $e_i' - e_i \in \{0 , 2\}$.
 
 \begin{defn}
+\label{}
+If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
+\end{defn}
+
+
+
+\begin{defn}
 \label{defn:admissible}
-Let $(\sx', 0, L'),(\sx, 0, L)$ be log spin
+Let $(\sx', \Delta, L'),(\sx, \Delta , L)$ be log spin
 curves, both ramified over ramified at $Q_1, \ldots, Q_r$. Suppose
 there is a birational map $\sx \rightarrow \sx'$, and let $J \subset
 \{1, \ldots, r\}$. Suppose $e_i'+ 2 \chi_J (i) = e_i$ where
@@ -1070,12 +1078,11 @@ three conditions hold.
 
 \todo{Peter:I'm still kind of unhappy with the notation $y_{e_i'}$ because it is treating $e_i'$ like a formal object rather than a number. What I mean is if $e_1'=e_2'$ that a reader might reasonably interpret $y_{e_1'}$ the same as $y_{e_2'}$}
 \begin{enumerate}
-	\item[(Ad-i)] $\deg y_{e_i'} = e_i'$ and $-ord_{Q_i}(y_{i, e_i'})
+	\item[(Ad-i)] $\deg y_{e_i'} = e_i'$ and $-\ord_{Q_i}(y_{i, e_i'})
 		= \frac{e_i'- 1}{2}$.
-	\item[(Ad-ii)] Either $e_j' = 3$ for all $j \in \{1, \ldots, r\}$
-		or any generator $z \neq y_{i, e_i'}$	of $R'$ satisfies
+	\item[(Ad-ii)] If every generator $z \neq y_{i, e_i'}$	of $R'$ satisfies
 		\begin{align*}
-			\frac{- ord_{Q_i}(z)}{\deg z} < \subhalf {e_i'}.
+			\frac{-\ord_{Q_i}(z)}{\deg z} < \subhalf {e_i'}.
 		\end{align*}
 	\item[(Ad-iii)] The minimality condition
 		\begin{align*}
@@ -1094,7 +1101,7 @@ three conditions hold.
 Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ ramified points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
 \end{lem}
 \begin{proof}
-To show (Ad-i) and (Ad-ii) look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies (Ad-i). Furthermore, since $'s$ is an admissible set of $L'$, in particular, we must have (Ad-ii) satisfied so $\frac{-\ord_{Q_l}(y_i)}= 0$ for\todo{I'm confused how (Ad-ii) follows in genus 0?}
+To show (Ad-i) and (Ad-ii) look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies (Ad-i). Furthermore, since $'s$ is an admissible set of $L'$, in particular, we must have (Ad-ii) satisfied so $\frac{-\ord_{Q_l}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how (Ad-ii) follows in genus 0?}
 
  follows immediately from the base-point freeness of $3\halfcan$ which we have for the following reasons in the various genera:
 \begin{itemize}
@@ -1147,8 +1154,7 @@ if they hold for $J$.
 \begin{thm}
 \label{thm:ram_order_ind}
 Suppose $(\sx', \Delta, \halfcan')$ \todo{For some reason this $\Delta$ was set to 0. Was there any reason for this?} is a log spin curve with coarse
-space $X'$ and signature $(g; e_1', \ldots, e_r'; \delta)$ and
-$(\sx', J)$ is admissible with generators $x_j, y_{i, e_i'} \in R' =
+space $X'$ and signature $(g; e_1', \ldots, e_r'; \delta)$ and either $e_1' = \cdots = e_r' = 3$ or $(\sx',J)$ is admissible with generators $x_j, y_{i, e_i'} \in R' =
 R_{L'}$ with $i \in J$ as in Definition ~\ref{defn:admissible}. Let
 $(\sx, \Delta, \halfcan)$ be another log spin curve
 with coarse space $X = X'$ and signature $(g; e_1, \ldots, e_r;
@@ -1158,7 +1164,7 @@ $e_j = e_j'$ for $j \notin J$. Then the following are true:
 	\item[(a)] For all $i \in J$, there exists $y_{i, e_i} \in
 		H^0(\sx, e_i(K_\sx))$ so that
 		\begin{align*}
-			-ord_{Q_i}(y_{i, e_i}) = \frac{e_i - 1}{2}
+			-\ord_{Q_i}(y_{i, e_i}) = \frac{e_i - 1}{2}
 		\end{align*}
 		and
 		\begin{align*}
@@ -1190,6 +1196,8 @@ as in
 \end{thm}
 
 \begin{proof}
+We will only prove this in the harder case $(\sx, L', J)$ is admissible, as the case $e_1 = \cdots = e_r = 3$ is similar.
+
 Let $(\sx, 0, L)$ and $(\sx', 0, L')$ be the two log spin curves in 
 question, with coarse spaces $X = X'$. 
 \todo{possibly generalize these to arbitrary log  $\Delta \neq 0$ spin curves}
@@ -1391,7 +1399,6 @@ Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the condit
 Since $(*_0)$ holds by assumption, by induction on $i$, it suffices to show that if $(*_i)$ holds then so does $(*_{i+1}).$ 
 Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, L_i, J_{i+1})$ is admissible, as $J_{i+1} \subset J_i$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e_{i+1}-e_i}{2}$ times, we see $(*_{i+1})$ holds.
 \end{proof}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% High genus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
