@@ -1118,9 +1118,8 @@ $$\chi_J(i) = \begin{cases}
 	0, &\text{ otherwise. } 
 \end{cases}$$
 
-Let $R'$ be the canonical ring associated to $\sx'$. Define $(\sx',J)$
+Let $R'$ be the canonical ring associated to $\sx'$. Define $(\sx',L',J)$
 to be {\bf admissible} if the $R'$ admits a presentation
-\todo{We should incorporate dependence on $L$ into the definition of admissible.}
 \begin{align*}
 	R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i, e_i'}]_{i \in J} \right)/I'
 \end{align*}
@@ -1205,8 +1204,8 @@ we must have
 
 \begin{lem}
 \label{lem:admissible_subset}
-If $(\sx', J)$ is admissible and $W \subset J$ is any subset,
-then $(\sx', W)$ is also admissible.
+If $(\sx',\Delta,L')$ is a log spin curve, $(\sx',L', J)$ is admissible and $W \subset J$ is any subset,
+then $(\sx', L', W)$ is also admissible.
 \end{lem}
 
 \begin{proof}
@@ -1234,7 +1233,7 @@ curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
 Suppose $(\sx', \Delta, \halfcan')$ is a log spin curve with coarse
 space $X'$ and signature $\sigma = (g; e_1', \ldots, e_r'; \delta)$ and either 
 \begin{enumerate}
-	\item  $(\sx',J)$ is admissible with generators $x_j, y_{i, e_i'} \in R' = R_{L'}$ with $i \in J$ as in Definition ~\ref{defn:admissible}
+	\item  $(\sx',\halfcan', J)$ is admissible with generators $x_j, y_{i, e_i'} \in R' = R_{L'}$ with $i \in J$ as in Definition ~\ref{defn:admissible}
 	\item or $\sigma$ is one of the signatures described in Remark ~\ref{rem:three-cases}, with $y_{1, 3} = y_{2,3} = \ldots, y_{r,3}$ be a rational section of $\sco(\halfcan_X)$ so that $\ord_{P_i}^{\halfcan_X'}(y_{1,3}) = 1$ at $P_i$ for all $i = 1,\ldots, r$.
 \end{enumerate}
 Let
@@ -1269,12 +1268,12 @@ $e_j = e_j'$ for $j \notin J$. Then the following are true:
 			\neq y_{i, e_i}, y_{i, e_i'} \rangle
 		\end{align*}
 		as $z$ ranges over all generators of $R$.
-	\item[(d)] For any $W \subset J,$ the set $(\sx,W)$ is admissible.
+	\item[(d)] The triple $(\sx, \halfcan', J)$ is admissible.
 \end{enumerate}
 \end{thm}
 
 \begin{proof}
-We will only prove this in the case (1), that $(\sx', L', J)$ is admissible, as the case (2) that $\sigma$ is as in Remark ~\ref{rem:three-cases} is completely analogous.
+We will only prove this in the case (1), that $(\sx', \halfcan', J)$ is admissible, as the case (2) that $\sigma$ is as in Remark ~\ref{rem:three-cases} is completely analogous.
 
 Let $(\sx, \Delta, L)$ and $(\sx', \Delta, L')$ be the two log spin curves in 
 question, with coarse spaces $X = X'$.
@@ -1456,16 +1455,12 @@ completing part (c).
 %by construction, and therefore are minimal by Lemma
 %~\ref{lem:minimal_quadratic}.
 
-Finally, to check (d), we will first show that $(\sx, J)$ is
-admissible. We know (Ad-i) is satisfied by part (b), taking the $y_{
+Finally, we check (d), by checking $(Ad-i),(Ad-ii)$ and $(Ad-iii)$ are satisfied. We know (Ad-i) holds by part (b), taking the $y_{
 i, e_i}$ as the generators in degree $e_i$. Next, (Ad-ii) is
 strictly monotonic in the $e_i$ and hence also holds for $(\sx, J)$.
 Finally, if (Ad-iii) holds for $e$ then it holds for $e + 2$ by
 definition. This is where we use that (Ad-iii) holds for $d > 0$
 and not just for $d = 0$.
-
-Finally, if $(\sx , J)$ is admissible then so is $(\sx, W)$ for any
-$W \subset J$ by Lemma ~\ref{lem:admissible_subset}.
 \end{proof}
 
 \begin{cor}
@@ -1480,13 +1475,13 @@ e_i \begin{cases}
 then Theorem ~\ref{thm:general_generators_relations} holds for $(\sx,\Delta,L)$
 \end{cor}
 \begin{proof}
-For $t \leq i \leq r$. Let $(\sx_i,\Delta, L_i)$ be the log spin curve with the same coarse space as $L'$ and with the same stacky points as $(\sx',\Delta,L),$ having signature $(g;e_1, \ldots e_{i-1}, e_i, e_i, \ldots, e_i;\delta),$ and let 
+For $t \leq i \leq r$. Let $(\sx_i,\Delta, L_i)$ be the log spin curve with the same coarse space as $L'$ and with the same stacky points as $(\sx',\Delta,L),$ having signature $(g; e_1, \ldots. e_{i-1}, e_i, e_i, \ldots, e_i;\delta),$ and let 
 $J_i = \{i,\ldots, r\}.$ Note that $(\sx_k,L_k,J_0) = (\sx',L',J')$ and $(\sx_r ,L_r ,J_r) = (\sx, L, J)$.
 
-Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the conditions $(\sx',\Delta, L)$ satisfies the conditions of Theorem ~\ref{thm:ram_order_ind} and Theorem ~\ref{thm:general_generators_relations} and $(\sx_i, L_i, J_i)$ is admissible.
+Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the conditions $(\sx',\Delta, L)$ satisfies the conditions of Theorem ~\ref{thm:ram_order_ind} and Theorem ~\ref{thm:general_generators_relations} and $(\sx_i, \halfcan_i, J_i)$ is admissible.
 
 Since $(*_0)$ holds by assumption, by induction on $i$, it suffices to show that if $(*_i)$ holds then so does $(*_{i+1}).$ 
-Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, L_i, J_{i+1})$ is admissible, as $J_{i+1} \subset J_i$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e_{i+1}-e_i}{2}$ times, we see $(*_{i+1})$ holds.
+Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \halfcan_i, J_{i+1})$ is admissible, as $J_{i+1} \subset J_i$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e_{i+1}-e_i}{2}$ times, we see $(*_{i+1})$ holds.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% High genus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1668,15 +1663,11 @@ in the case $P$  is a not basepoint of $\halfcan'$, Equation
 ~\ref{eqn:deg1-sat-ind} holds by Riemann Roch, and the fact that $d
 \geq 3$.
 
-In this case, we claim $(\sx',L',\{1\})$ is admissible. Indeed, (Ad-
-i) holds by part (a) of Lemmas
+In this case, we claim the theorem holds for $(\sx',\Delta, L')$. Indeed, the bound on the generators holds by part (a) of Lemmas
 ~\ref{lem:sat-two-induction-high-genus} and ~\ref{lem:deg1-sat-ind},
-(Ad-ii) holds by part (b) of Lemmas
-~\ref{lem:sat-two-induction-high-genus} and ~\ref{lem:deg1-sat-ind},
-and (Ad-iii) holds as $5\deg L \geq 5(g-1)> 2g-1.$ Therefore, by
-Lemma ~\ref{lem:n-3s-admissible} , Any triple of the form $(\sx', L',
-\{1,\ldots, r\})$ is admissible, with $e_1 = \cdots = e_r = 3$.
-Hence, by Corollary ~\ref{cor:raise-stacky-order}, this theorem 
+and the bound on the relations holds by part (b) of Lemmas
+~\ref{lem:sat-two-induction-high-genus} and ~\ref{lem:deg1-sat-ind}.
+Therefore, by Corollary ~\ref{cor:raise-stacky-order}, this theorem 
 holds for all log spin curves $(\sx, L, J)$. 
 \end{proof}
 
@@ -1720,14 +1711,14 @@ In the case $\halfcan' = 0,$ it is immediately clear that $R_{\halfcan'} \cong k
 \label{eg:base- 1-33}
 Let $\sx'$ be a stacky curve so that $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show
 $$R_{\halfcan'} \cong k[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$
-and that $(\sx',\{3,3\})$ is admissible.
+and that $(\sx', \halfcan',\{1,2\})$ is admissible.
 
 Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P$ but not at $Q$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $Q$ but not at $P$. Let $y_4 \in H^0(\sx,3\halfcan')$ be an element with a pole of order 1 at both $P$ and $Q$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q + P_1, 3P - 3Q + P_2$ are one dimensional, while the linear system $3P - 3Q \sim P - Q$ is zero dimensional.
 
 Then, there exist constants $\alpha,\beta,\gamma \in k$ so that 
 $R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zeros and poles. The details are omitted as it is analogous to Example ~\ref{ex:base-377}.
 
-We next check $(\sx',\{1,2\})$ is admissible. We clearly have two generators $x_3, y_3$ in degree 3 with a pole of order $\frac{3- 1}{2}$ by construction. Hence, (Ad-i) holds. We next check (Ad-ii) for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
+We next check $(\sx', \halfcan',\{1,2\})$ is admissible. We clearly have two generators $x_3, y_3$ in degree 3 with a pole of order $\frac{3- 1}{2}$ by construction. Hence, (Ad-i) holds. We next check (Ad-ii) for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
 $$
 \frac{-\ord_{P_1}(z)}{\ord(z)} = \begin{cases}
 	0 &\text{ if }z \in \{u, y_3\}\\
@@ -1743,7 +1734,7 @@ Let $L' = \frac{2}{5}P_1$ be a half canonical divisor on a stacky curve $\sx$. L
 $R_L \cong k[u, y_3, y_5]/(y_3^4 - \alpha uy_5^2).$
 The proof of this can be gotten by first using Riemann--Roch and counting the pole order at $P_1$ considerations to check the above relation exists, and that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. It is analogous to Example ~\ref{ex:base-377}, and is omittied.
 
-Note that $L'$ is admissible, as can be checked in a fashion analogous to the verification in Example ~\ref{eg:base- 1-33}.
+Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashion analogous to the verification in Example ~\ref{eg:base- 1-33}.
 
 Finally, note that this particular case is also exceptional, because there is a relation in degree $12 > 2 \cdot 5$, but once $e' = 5$ is incremented to $e = e'+2 = 7,$ using Theorem ~\ref{thm:ram_order_ind}, this relation in degree 12 caries over, and so the case $L' = P - Q + \frac{3}{7}P_1$ is not exceptional because $12 < 2 \cdot 7$.
 \end{example}
@@ -1832,7 +1823,7 @@ If $g = 1$, then the canonical ring
 \end{align*}
 
 \noindent
-is generated as a $k$-algebra by elements of degree at most $\max(5, e_1, \ldots, e_r)$ and has minimal relations in degree at most $2e,$ so long as $\sigma$ does not lie in a
+is generated as a $k$-algebra by elements of degree at most $\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e,$ so long as $\sigma$ does not lie in a
 finite list of exceptional cases, as listed in Table
 ~\ref{table:g-1-exceptional}.
 \end{thm}
@@ -1866,9 +1857,9 @@ Since $\Delta = 0$, we may write $L = L_X + \sum_{i = 1}^{r}\subhalf{e_i}P_i.$ T
 
 Note that we are assuming $L$ is not one of the exceptional cases listed in Table ~\ref{table:g-1-exceptional}, so we may either assume $\sx$ has 1 stacky point with $e_1 > 5$ or at least 2 stacky points
 
-First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12, is admissible, and satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. While $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$, after applying Theorem ~\ref{thm:ram_order_ind}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, while the previous relation lies in degree $12$, which is less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
+First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. While $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$, after applying Theorem ~\ref{thm:ram_order_ind}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, while the previous relation lies in degree $12$, which is less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
-Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base- 1-33}, it follows that $(\sx', \{3,3\})$ is admissible and satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. Therefore, applying Lemma ~\ref{lem:n-3s-admissible} $r-2$ times, we see that for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i,$ the pair $(\sx',\{3, \ldots, 3\})$ is admissible. Assume for convenience that $e_1 \leq e_2 \leq \cdots \leq e_r$. Then, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
+Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base- 1-33}, it follows that the signature $\sigma = (1;3, 3; \delta)$ satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. Therefore, applying Lemma ~\ref{lem:n-3s-admissible} $r-2$ times, we see that for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i,$ the pair $(\sx', \halfcan', \{1, \ldots, r\})$. Assume for convenience  $e_1 \leq e_2 \leq \cdots \leq e_r$. Then, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
 
 \vskip.1in
 \noindent
@@ -1970,13 +1961,10 @@ of a finite set of exceptional cases.
 \label{lem:g_0_admissible_cases}
 Let $(\sx', \Delta, \halfcan')$ be a log spin curve over a
 perfect field $k$, so that $\sx$ has signature $\sigma = (0; e_1,
-\ldots, e_r; 0)$. Then $R' := R(\sx', \Delta, \halfcan')$ has a
-presentation 
-
-is
-generated as a $k$-algebra by elements of degree at most $e = \max(5
+\ldots, e_r; 0)$. Then, $R' := R(\sx', \Delta, \halfcan')$ has a
+presentation generated as a $k$-algebra by elements of degree at most $e = \max(5
 , e_1, \ldots, e_r)$ with relations in degree at most $2e$ and $(\sx
-', J)$ is admissible for the following cases:
+', \halfcan', J)$ is admissible for the following cases:
 
 \begin{enumerate}
 	\item[(a)] $\sigma_1 = (0; 3, 3, 11; 0), J_1 = \{3\}$
@@ -2191,7 +2179,7 @@ and any generator $z$ of $R'$.
 
 We can also always find a presentation for these cases such that
 they satisfy (Ad-i) and (Ad-ii) and that $in_\prec(I')$ is
-minimally generated by products of two monomials. The procedure for
+generated by products of two monomials. The procedure for
 verifying these are similar to those for the given example.
 
 Furthermore, each case always satisfies (Ad-iii) as demonstrated below.
