@@ -621,7 +621,7 @@ this we can deduce that
 Therefore, we can generate an element of $(R_{\halfcan})_d$ as a product of lower degrees that 
 has pole degree $c$ at $P$ by either $y_i u^b$, $y_i z u^b$, or $zu^b$ satisfying $i>
 \lfloor \frac{\alpha}{\beta} \rfloor$ and $z=y_j (y_{\lfloor \frac{\alpha}{\beta} \rfloor})^b$, 
-with $d_j = 1$ ($=d_{{\lfloor \frac{a}{b} \rfloor}}$) and $b<d_{\lfloor \frac{\alpha}{\beta} 
+with $d_j = 1 =d_{{\lfloor \frac{a}{b} \rfloor}}$ and $b<d_{\lfloor \frac{\alpha}{\beta} 
 \rfloor + 1}$.
 
 Thus, for a general $d$ (not necessarily less than $\beta$), if $\frac{c}{d} \le
@@ -1093,7 +1093,6 @@ If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$
 \end{defn}
 
 
-
 \begin{defn}
 \label{defn:admissible}
 Let $(\sx', \Delta, L'),(\sx, \Delta , L)$ be log spin
@@ -1120,11 +1119,13 @@ three conditions hold.
 
 \todo{Peter:I'm still kind of unhappy with the notation $y_{e_i'}$ because it is treating $e_i'$ like a formal object rather than a number. What I mean is if $e_1'=e_2'$ that a reader might reasonably interpret $y_{e_1'}$ the same as $y_{e_2'}$}
 \begin{enumerate}
-	\item[(Ad-i)] $\deg y_{e_i'} = e_i'$ and $-\ord_{Q_i}(y_{i, e_i'})
+	\item[(Ad-i)] $\deg y_{e_i'} = e_i'$ and $-\ord_{Q_i}
+^{\halfcan_X'}(y_{i, e_i'})
 		= \frac{e_i'- 1}{2}$.
 	\item[(Ad-ii)] If every generator $z \neq y_{i, e_i'}$	of $R'$ satisfies
 		\begin{align*}
-			\frac{-\ord_{Q_i}(z)}{\deg z} < \subhalf {e_i'}.
+			\frac{-\ord_{Q_i}
+^{\halfcan_X'}(z)}{\deg z} < \subhalf {e_i'}.
 		\end{align*}
 	\item[(Ad-iii)] The minimality condition
 		\begin{align*}
@@ -1143,7 +1144,8 @@ three conditions hold.
 Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ ramified points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
 \end{lem}
 \begin{proof}
-To show (Ad-i) and (Ad-ii) look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies (Ad-i). Furthermore, since $'s$ is an admissible set of $L'$, in particular, we must have (Ad-ii) satisfied so $\frac{-\ord_{Q_l}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how (Ad-ii) follows in genus 0?}
+To show (Ad-i) and (Ad-ii) look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies (Ad-i). Furthermore, since $'s$ is an admissible set of $L'$, in particular, we must have (Ad-ii) satisfied so $\frac{-\ord_{Q_l}
+^{\halfcan_X'}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how (Ad-ii) follows in genus 0?}
 
  follows immediately from the base-point freeness of $3\halfcan$ which we have for the following reasons in the various genera:
 \begin{itemize}
@@ -1159,7 +1161,8 @@ Condition (Ad-ii) of Definition ~\ref{defn:admissible} implies the
 stronger condition that
 
 \begin{align*}
-	-\ord_{Q_i}(z) \leq \deg(z) \subhalf{e_i'} -\frac{1}{e_i'}
+	-\ord_{Q_i}
+^{\halfcan_X'}(z) \leq \deg(z) \subhalf{e_i'} -\frac{1}{e_i'}
 \end{align*}
 \end{lem}
 
@@ -1167,17 +1170,20 @@ stronger condition that
 We know by (Ad-ii) that
 
 \begin{align*}
-	-\ord_{Q_i}(z) < \deg(z) \subhalf{e_i'}
+	-\ord_{Q_i}
+^{\halfcan_X'}(z) < \deg(z) \subhalf{e_i'}
 \end{align*}
 
 \noindent
 If we write $\frac{\alpha}{\beta} = \deg(z) \frac{e_i'- 1}{2e_i'}$ 
 as a fraction in lowest terms, then we see $\beta \mid e_i'$ since $
-e_i'- 1$ is even. Therefore, since $-\ord_{Q_i}(z)$ is an integer, 
+e_i'- 1$ is even. Therefore, since $-\ord_{Q_i}
+^{\halfcan_X'}(z)$ is an integer, 
 we must have
 
 \begin{align*}
-	-\ord_{Q_i}(z) \leq \deg(z) \subhalf{e_i'} - \frac{1}{\beta} \leq 
+	-\ord_{Q_i}
+^{\halfcan_X'}(z) \leq \deg(z) \subhalf{e_i'} - \frac{1}{\beta} \leq 
 	\deg(z) \subhalf{e_i'} - \frac{1}{e_i'}.
 \end{align*}
 \end{proof}
@@ -1206,11 +1212,13 @@ $e_j = e_j'$ for $j \notin J$. Then the following are true:
 	\item[(a)] For all $i \in J$, there exists $y_{i, e_i} \in
 		H^0(\sx, e_i(K_\sx))$ so that
 		\begin{align*}
-			-\ord_{Q_i}(y_{i, e_i}) = \frac{e_i - 1}{2}
+			-\ord_{Q_i}
+^{\halfcan_X'}(y_{i, e_i}) = \frac{e_i - 1}{2}
 		\end{align*}
 		and
 		\begin{align*}
-			\frac{-\ord_{Q_j}(y_{i, e_i})}{\deg (y_{i, e_i})} \leq 
+			\frac{-\ord_{Q_j}
+^{\halfcan_X'}(y_{i, e_i})}{\deg (y_{i, e_i})} \leq 
 \subhalf{
 			e_j'} - \frac{1}{\deg(y_{i, e_i})e_j'}
 		\end{align*}
@@ -1284,7 +1292,8 @@ Riemann Roch \todo{Peter: Or more for higher genus, by our hypothesis}, and so a
 \noindent
 satisfies
 \begin{align*}
-	-\ord_{Q_i}(y_{i, e_i}) = \lfloor e_i \subhalf {e_i'} \rfloor + 1 =
+	-\ord_{Q_i}
+^{\halfcan_X'}(y_{i, e_i}) = \lfloor e_i \subhalf {e_i'} \rfloor + 1 =
 	\frac{e_i - 1}{2}
 \end{align*}
 
@@ -1298,14 +1307,16 @@ claim of $(a),$ by considering separately the cases of whether $j
 If $j \in S(i,0)$ then, since $E_i \geq Q_j$, and $y_{i, e_i} \in H^0
 (\sx', e_iL'-E_i + Q_i)$,
 \begin{align*}
-	-\ord_{Q_j}(y_{i, e_i}) \leq e_i\subhalf {e_j'} - 1 \leq e_i 
+	-\ord_{Q_j}
+^{\halfcan_X'}(y_{i, e_i}) \leq e_i\subhalf {e_j'} - 1 \leq e_i 
 	\subhalf{e_j'} - \frac{1}{e_j'}.
 \end{align*}
 
 If instead $j \notin S(i,0)$, then since $e_j' \nmid e_i$, we know
 $e_i\subhalf{e_j'} \notin \BZ$, so
 \begin{align*}
-	-\ord_{Q_j}(y_{i, e_i}) \leq \lfloor  e_i\subhalf{e_j'} \rfloor 
+	-\ord_{Q_j}
+^{\halfcan_X'}(y_{i, e_i}) \leq \lfloor  e_i\subhalf{e_j'} \rfloor 
 	\leq e_i\subhalf{e_j'} - \frac{1}{e_j'},
 \end{align*}
 
@@ -1329,7 +1340,8 @@ injectivity of the linear map
 
 \begin{align*}
 	(a,b) \mapsto \left( \deg\left(y_{i, e_i'}^ay_{i, e_i}^b\right),-
-	\ord_{Q_i}\left( y_{i, e_i'}^ay_{i, e_i}^b \right)  \right) = (a,b) 
+	\ord_{Q_i}
+^{\halfcan_X'}\left( y_{i, e_i'}^ay_{i, e_i}^b \right)  \right) = (a,b) 
 	\begin{pmatrix}
 		e_i -2 & \frac{e_i -3}{2} \\
 		e_i	 & \frac{e_i - 1}{2}
@@ -1349,23 +1361,29 @@ completing part (b).
 
 To show (c), we wish to show, for all generators $z$ of $R'$
 such that $z \neq y_{i, e_i} \text{ and } z \neq y_{i, e_i'}$, that
-$f := y_{i, e_i}z \in R'$. Note that $f \in R$ lies in $R'$ if and
+$y_{i, e_i}z \in R'$. Note that $f \in R$ lies in $R'$ if and
 only if for all $j \in J$ we have
-\begin{align*}
-	-\ord_{Q_j}(f) \leq \deg f \left( \subhalf {e_j'} \right) 
-\end{align*}
+\begin{align}
+\label{eqn:order-degree}
+	-\ord_{Q_j}
+^{\halfcan_X'}(f) \leq \deg f \left( \subhalf {e_j'} \right) 
+\end{align}
 
 \noindent
-We now check this in three cases, depending on whether $j \notin \{
+We now apply Equation ~\eqref{eqn:order-degree} with $f = y_{i, e_i}z$, to check $y_{i,e_i}z \in R'$ in three cases, depending on whether $j \notin \{
 i \} \cup S(i, 0), j = i,$ or $j \in S(i, 0)$.
 
 \vskip.1in
 \noindent
 {\sf Case 1: $j \notin \{i \} \cup S(i,0).$}
 
-Here, $-\ord_{Q_j}(L) = -\ord_{Q_j}(L'),$ so
+Here, $-\ord_{Q_j}
+^{\halfcan_X'}(L) = -\ord_{Q_j}
+^{\halfcan_X'}(L'),$ so
 \begin{align*}
-	-\ord_{Q_j}(y_{i, e_i})-\ord_{Q_j}(z) \leq e_i \subhalf {e_j'} +
+	-\ord_{Q_j}
+^{\halfcan_X'}(y_{i, e_i})-\ord_{Q_j}
+^{\halfcan_X'}(z) \leq e_i \subhalf {e_j'} +
 	\deg z \subhalf {e_j'} = \deg (y_{i, e_i}z) \subhalf{e_j'}. 
 \end{align*}
 
@@ -1379,7 +1397,9 @@ we know that
 Otherwise by part (a), condition (Ad-ii), and Lemma
 ~\ref{lem:admissible_inequality} we have
 \begin{align*}
-	-\ord_{Q_j}(y_{i, e_i})-\ord_{Q_j}(z)
+	-\ord_{Q_j}
+^{\halfcan_X'}(y_{i, e_i})-\ord_{Q_j}
+^{\halfcan_X'}(z)
 	&\leq \frac{e_j - 1}{2} + \deg z \left( \subhalf{e_j'} \right) -\frac{1}{e_j'} \\
 	& = \frac{e_j - 1}{2} -\frac{1}{e_j'} +\deg z \left( \subhalf{e_j'} \right) \\
 	&= \frac{e_j(e_j -3)}{2(e_j -2)} +\deg z \left( \subhalf{e_j'} \right) \\
@@ -1394,11 +1414,11 @@ In this case, we may first assume $z \neq y_{j, e_j}$,
 as this is covered by case 2, with $i$ and $j$ reversed. 
 Hence, 
 \begin{align*}
-	-\ord_{Q_j}(z) \leq \deg z \subhalf{e_j'}
+	-\ord_{Q_j}^{\halfcan_X'}(z) \leq \deg z \subhalf{e_j'}
 \end{align*}
 implying
 \begin{align*}
-	-\ord_{Q_j}(y_{i, e_i})-\ord_{Q_j}(z) 
+	-\ord_{Q_j}^{\halfcan_X'}(y_{i, e_i})-\ord_{Q_j}^{\halfcan_X'}(z) 
 	&\leq  e_i \subhalf{e_j'} + \deg z \subhalf{e_j'} 
 	= \deg (y_{i, e_i}z) \subhalf{e_j'},
 \end{align*}
