@@ -458,7 +458,18 @@ If $\frac{\alpha}{\beta}\in \mathbf{Q}$ (for $\alpha\in \mathbf{Z}, \beta\in \ma
 
 O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbf{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
 
-The following lemma provides an inductive method to extend O'Dorney's result on $\mathbf{P}^1$ to divisors $D=\sum_i \frac{\alpha_i}{\beta_i}P_i$ consisting of arbitrarily many points satisfying $H^0(X,\lfloor D\rfloor)>0$, showing that they are generated in degrees at most $e=\max(\beta_i)$ with relations generated in degrees at most $2e$.  Furthermore, given some constraints on $H^0(X, \lfloor dD\rfloor)$ for various values of $d$, we can apply the same Riemann-Roch arguments from $\mathbf{P}^1$ in arbitrary genus, allowing a similar inductive result in arbitrary genus $e=\max(\beta_i)$.  To do this, we extend an inductive result by Voight and Zurich-Brown on stacky canonical rings to arbitrary $\mathbf{Q}$-divisors. \todo{cite theorem 8.3.1}
+The following lemma provides an inductive method to extend
+O'Dorney's result on $\BP^1$ to divisors $D = \sum_i \frac{\alpha_i
+}{\beta_i} P_i$ consisting of arbitrarily many points satisfying $H^
+0(X, \lfloor D \rfloor) > 0$, showing that they are generated in
+degrees at most $e = \max(\beta_i)$ with relations generated in
+degrees at most $2e$.  Furthermore, given some constraints on $H^0(
+X, \lfloor dD \rfloor)$ for various values of $d$, we can apply the
+same Riemann-Roch arguments from $\BP^1$ in arbitrary genus,
+allowing a similar inductive result in arbitrary genus $e = \max(
+\beta_i)$. To do this, we extend an inductive result by Voight and
+Zureick-Brown on stacky canonical rings to arbitrary $\BQ$-
+divisors. \todo{cite theorem 8.3.1}
 
 \begin{lem}
 \label{lem:deg1-sat-ind}
@@ -768,7 +779,7 @@ completing part (a).
 
 For any $x_j$, notice that $-\ord_P(y_4x_j)\le 1$. If it is non-positive, then it lies in $R_{\halfcan'}$ immediately giving us a relation with initial term $y_4x_j$. Otherwise, 
 we can choose $A_j \in k$ and $w_j\in R_{\halfcan'}$ such that $y_4x_j -A_jy_3w_j$ has no pole at $P$ and thus lies in $R_{\halfcan'}$ giving us a desired relation. 
-Similarly, we can find $B, C \in k$ such that $y_4^2 + B y_3^2 x_2+ Cy_3x_2x_3$ has no pole at $P$ and is thus in $R_D$. In both cases we induce a relation, with initial term described in the Lemma's statement. Noting that any monomial is either a multiple of one of these initial terms, is a basis element (described above), or is in $R_D$, we see that these monomials in fact generate the initial ideal of $I$ over $\initial(I')$.
+Similarly, we can find $B, C \in k$ such that $y_4^2 + B y_3^2 x_2+ Cy_3x_2x_3$ has no pole at $P$ and is thus in $R_D$. In both cases we induce a relation, with initial term described in the lemma's statement. Noting that any monomial is either a multiple of one of these initial terms, is a basis element (described above), or is in $R_D$, we see that these monomials in fact generate the initial ideal of $I$ over $\initial(I')$.
 
 Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}.
 \end{proof}
@@ -1075,8 +1086,8 @@ three conditions hold.
 \begin{enumerate}
 	\item[(Ad-i)] $\deg y_{e_i'} = e_i'$ and $-ord_{Q_i}(y_{i, e_i'})
 		= \frac{e_i'- 1}{2}$.
-	\item[(Ad-ii)] Any generator $z \neq y_{i, e_i'}$
-		of $R'$ satisfies
+	\item[(Ad-ii)] Either $e_j' = 3$ for all $j \in \{1, \ldots, r\}$
+		or any generator $z \neq y_{i, e_i'}$	of $R'$ satisfies
 		\begin{align*}
 			\frac{- ord_{Q_i}(z)}{\deg z} < \subhalf {e_i'}.
 		\end{align*}
@@ -1246,7 +1257,7 @@ Therefore, $y_{i, e_i}$ satisfies the first part of the claim of $(a)$.
 
 We next show $y_{i, e_i}$ also satisfies the second part of the
 claim of $(a),$ by considering separately the cases of whether $j
-\in S(i,0),$ and $j \notin S(i,0)$.
+\in S(i, 0),$ and $j \notin S(i,0)$.
 
 If $j \in S(i,0)$ then, since $E_i \geq Q_j$, and $y_{i, e_i} \in H^0
 (\sx', e_iL'-E_i + Q_i)$,
@@ -1300,16 +1311,17 @@ _i -2, \frac{e_i -3}{2} \right)$ and $\left(e_i, \frac{e_i - 1}{2}
 \end{align*}
 completing part (b).
 
-To show (c), we wish to show $y_{i, e_i}z \in R'$ for $z \neq y_{i, e_
-i}, y_{i, e_i'}$. Note that $f\in R$ lies in $R'$ if and only if for
-all $j \in J$ we have
+To show (c), we wish to show, for all generators $z$ of $R'$
+such that $z \neq y_{i, e_i} \text{ and } z \neq y_{i, e_i'}$, that
+$f := y_{i, e_i}z \in R'$. Note that $f \in R$ lies in $R'$ if and
+only if for all $j \in J$ we have
 \begin{align*}
 	-\ord_{Q_j}(f) \leq \deg f \left( \subhalf {e_j'} \right) 
 \end{align*}
 
 \noindent
 We now check this in three cases, depending on whether $j \notin \{
-i \} \cup S(i,0),j = i,$ or $j \in S(i,0)$.
+i \} \cup S(i, 0), j = i,$ or $j \in S(i, 0)$.
 
 \vskip.1in
 \noindent
@@ -1325,7 +1337,10 @@ Here, $-\ord_{Q_j}(L) = -\ord_{Q_j}(L'),$ so
 \noindent
 {\sf Case 2: $j =i.$}
 
-By part (a), condition (Ad-ii), and Lemma
+For the case when $e_j' = 3$ for all $j \in \{1, \ldots, r\}$,
+we know that
+
+Otherwise by part (a), condition (Ad-ii), and Lemma
 ~\ref{lem:admissible_inequality} we have
 \begin{align*}
 	-\ord_{Q_j}(y_{i, e_i})-\ord_{Q_j}(z)
@@ -1361,12 +1376,12 @@ by construction, and therefore are minimal by Lemma
 Finally, to check (e), we will first show that $(\sx,J)$ is
 admissible. We know (Ad-i) is satisfied by part (b), taking the $y_{
 i, e_i}$ as the generators in degree $e_i$. Next, (Ad-ii) is
-strictly monotonic in the $e_i$, and hence also holds for $(\sx,J)$.
+strictly monotonic in the $e_i$ and hence also holds for $(\sx,J)$.
 Finally, if (Ad-iii) holds for $e$ then it holds for $e+2$ by
 definition. This is where we use that (Ad-iii) holds for $d > 0$
 and not just for $d = 0$.
 
-Finally, if $(\sx , J)$ is admissible then so is $(\sx,W)$ for any
+Finally, if $(\sx , J)$ is admissible then so is $(\sx, W)$ for any
 $W \subset J$ by Lemma ~\ref{lem:admissible_subset}.
 \end{proof}
 
@@ -1541,7 +1556,7 @@ In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half can
 \label{ssec:main_g_high}
 
 \begin{thm}
-\label{thm:general_generators_relations}
+\label{thm:high_generators_relations}
 Let $g \geq 2$ and let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$, so
 that $\sx$ has signature $\sigma = (g; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
@@ -1559,9 +1574,28 @@ $\max(10, 2e_1, \ldots, 2e_r).$
 \end{thm}
 
 \begin{proof}
-Let $\halfcan_X \in \di X$ satisfy $2\halfcan_X + 2 K_X + \Delta$. By Lemma ~\ref{lem:generation_5} and Proposition ~\ref{prop:relation_11}, the theorem holds for $(\sx, \Delta, \halfcan_X)$. Next, consider a divisor of the form $\halfcan' = \halfcan_X + \frac{1}{3}P_i$. Then, the theorem holds for $(\sx,\Delta, \halfcan')$ by Lemma ~\ref{lem:sat-two-induction-high-genus} if $P_i$ is a basepoint of $\halfcan'$ or by Lemma ~\ref{deg1-sat-ind} if $P_i$ is not a basepoint of $L'$. Note, in the case $P$ is a not basepoint of $\halfcan'$, Equation ~\ref{eqn:deg1-sat-ind} holds by Riemann Roch, and the fact that $d \geq 3$.
+Let $\halfcan_X \in \di X$ satisfy $2\halfcan_X + 2 K_X + \Delta$.
+By Lemma ~\ref{lem:generation_5} and Proposition
+~\ref{prop:relation_11}, the theorem holds for $(\sx, \Delta,
+\halfcan_X)$. Next, consider a divisor of the form $\halfcan' =
+\halfcan_X + \frac{1}{3} P_i$. Then, the theorem holds for $(\sx,
+\Delta, \halfcan')$ by Lemma ~\ref{lem:sat-two-induction-high-genus}
+ if $P_i$ is a basepoint of $\halfcan'$ or by Lemma
+~\ref{lem:deg1-sat-ind} if $P_i $ is not a basepoint of $L'$. Note,
+in the case $P$  is a not basepoint of $\halfcan'$, Equation
+~\ref{eqn:deg1-sat-ind} holds by Riemann Roch, and the fact that $d
+\geq 3$.
 
-In this case, we claim $(\sx',L',\{1\})$ is admissible. Indeed, (Ad-i) holds by part (a) of Lemmas ~\ref{lem:sat-two-induction-high-genus} and ~\ref{deg1-sat-ind}, (Ad-ii) holds by part (b) of Lemmas ~\ref{lem:sat-two-induction-high-genus} and ~\ref{deg1-sat-ind}, and (Ad-iii) holds as $5\deg L \geq 5(g-1)> 2g-1.$ Therefore, by Lemma ~\ref{lem:n-3s-admissible}, Any triple of the form $(\sx',L',\{1,\ldots, r\})$ is admissible, with $e_1 = \cdots = e_r = 3$. Hence, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for all log spin curves $(\sx, L, J).$ 
+In this case, we claim $(\sx',L',\{1\})$ is admissible. Indeed, (Ad-
+i) holds by part (a) of Lemmas
+~\ref{lem:sat-two-induction-high-genus} and ~\ref{lem:deg1-sat-ind},
+(Ad-ii) holds by part (b) of Lemmas
+~\ref{lem:sat-two-induction-high-genus} and ~\ref{lem:deg1-sat-ind},
+and (Ad-iii) holds as $5\deg L \geq 5(g-1)> 2g-1.$ Therefore, by
+Lemma ~\ref{lem:n-3s-admissible} , Any triple of the form $(\sx', L',
+\{1,\ldots, r\})$ is admissible, with $e_1 = \cdots = e_r = 3$.
+Hence, by Corollary ~\ref{cor:raise-stacky-order}, this theorem 
+holds for all log spin curves $(\sx, L, J)$. 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus one %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1793,10 +1827,10 @@ Subsection ~\ref{ssec:g_0_main}.
 
 \ssec{Saturation}
 \label{ssec:g_0_saturation}
-First, we present the saturations $'s$ of the canonical divisor for
+First, we present the saturations $s$ of the canonical divisor for
 all cases where $g = 0, \delta = 0$ as defined in Definition
 ~\ref{defn:sat}. The saturation can be computed via the application
-of Riemann-Roch on degrees up to $'s$. Exceptional cases are listed
+of Riemann-Roch on degrees up to $s$. Exceptional cases are listed
 first and generic cases follow.
 
 \begin{longtable}
@@ -2220,14 +2254,15 @@ cases, as listed in Table ~\ref{table:g_0_exceptional}.
 \end{thm}
 
 \begin{proof}
-If $\sx$ has no stacky points, then we have the classical
-case which is done in Voight and Zureick-Brown ~\cite[Section 4.2]
-{vzb:stacky}. \todo{This confused me because while they do technically prove this, they only prove it for the canonical divisor, not the log canonical divisor. It would be clearer to write that in this case, we can assume $L = n \cdot \infty$ with $n \in \BZ$, which is covered in 4.2, with $L$ replaced by $K$.}
+If $\sx$ has no stacky points, then we can assume that $L \sim
+n \cdot \infty$ with $n \in \BZ$. This is the classical
+case which is done, with $L$ replaced by $K$, by Voight and
+Zureick-Brown ~\cite[Section 4.2]{vzb:stacky}.
 
 Now let us consider the case when $\delta \geq 2$. In any such case,
 $\lfloor \halfcan \rfloor$ is an effective divisor and the conditions
 of Lemma ~\ref{lem:deg1-sat-ind} are satisfied. Thus, we can apply
-the Lemma inductively on the classical case with no stacky points
+the lemma inductively on the classical case with no stacky points
 to get that $R(\sx, \Delta, \halfcan)$ is generated up to degree $e$
 with relations generated up to degree $2e$.
 
@@ -2243,23 +2278,22 @@ stabilizer order $3$ to case (k) of Lemma
 = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
 clearly satisfies the conditions of Lemma
 ~\ref{lem:sat-three-induction-g-0} (recall from Subsection ~\ref
-{ssec:g_0_saturation} that saturation is 3 here \todo{Write this out more precisely, it should be something like $'sat(Eff(\sigma)) = 3$}), and the
+{ssec:g_0_saturation} that $sat(Eff(\sigma_{11})) = 3$), and the
 immediate consequence of parts (a) and (c) of Lemma
 ~\ref{lem:sat-three-induction-g-0} is that any $R(\sx', \Delta,
 \halfcan')$ corresponding to signatures $\sigma'$ with ramification
 orders all equal to $3$ for any $r > 5$ is generated up to
 degree $e := \max(5, e_1', \ldots, e_r')$ with relations generated
-up to degree $2e$. Furthermore, Lemma ~\ref{lem:n-3s-admissible}
-implies that these cases satisfy all of the conditions of Theorem
-~\ref{thm:ram_order_ind}.
+up to degree $2e$. Furthermore, these cases satisfy all of the
+conditions of Theorem ~\ref{thm:ram_order_ind}.
 
-So if $r > 5$, then $\sigma$ ``lies above'' \todo{Aaron: what does this mean} the case $(\sigma', J)$
+So if $r > 5$, then $\sigma$ ``lies above'' the case $(\sigma', J)$
 where $\sigma'$ has $r$ many stacky points all of order $3$
-and $J = \{1, \ldots, r\}$ and these underlying cases satisfy
-all of the hypotheses of Theorem ~\ref{thm:ram_order_ind}.
-If $r \leq 5$, then $\sigma$ ``lies above'' one of the base cases
-of Lemma ~\ref{lem:g_0_admissible_cases}, all of which satisfy
-the hypotheses of Theorem ~\ref{thm:ram_order_ind} as well.
+and $J = \{1, \ldots, r\}$ in the sense that for all $i
+\in J$, $e_i \geq e_i'$ and $e_i = e_i'$ otherwise.
+If $r \leq 5$, then $\sigma$ similarly ``lies above'' one of the
+base cases of Lemma ~\ref{lem:g_0_admissible_cases}, all of which
+satisfy the hypotheses of Theorem ~\ref{thm:ram_order_ind} as well.
 
 So for any $r > 0$, there is a $(\sigma', J)$, either from
 Lemma ~\ref{lem:g_0_admissible_cases} or corresponding to
