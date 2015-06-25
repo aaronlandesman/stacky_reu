@@ -158,7 +158,7 @@
 
 \date{\today}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -219,11 +219,10 @@ field $k$ so that $X$ is the coarse space of $\sx$, as defined in
 = 1}^r \langle \frac{1}{e_i}P_i \rangle,$ with $e_i \in \BZ$. Let $K_
 \sx = K_X + \sum_{i = 1}^{r}\frac{e_i - 1}{e_i}P_i.$ In this case, we
 say $\sx$ has {\bf stabilizer order} $e_i$ at $P_i$. Call $\halfcan
-\in \di \sx$ a {\bf log half-canonical divisor} on $(\sx,\Delta)$,
-be a divisor $\halfcan \in \di \sx$ so that $2\halfcan \sim K_\sx +
-\Delta.$ If $X$ has genus $g$ and $\delta = \deg \Delta,$ then we
-say $\sx$ has \textbf{signature} $(g; e_1, \ldots, e_r;\delta)$. A
-{\bf log spin curve} is a triple $(X,\Delta,\halfcan)$ where $(X,\Delta)$
+\in \di \sx$ a {\bf log half-canonical divisor} on $(\sx,\Delta)$ if
+$2\halfcan \sim K_\sx + \Delta$. If $X$ has genus $g$ and $\delta := \deg \Delta,$ then we
+say $\sx$ has \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$. A
+{\bf log spin curve} is a triple $(X, \Delta, \halfcan)$ where $(X,\Delta)$
 and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$.
 The central object of study in this paper is the {\bf log spin
 canonical ring} of $(X,\Delta,L)$ is
@@ -257,32 +256,37 @@ for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
 for signatures with $g = 0$.
 \end{thm}
 
-\todo{Say that this follows immediately from the three theorems for the special cases.}
+This theorem is proven in three different genus cases, each of
+which use similar inductive processes. The high genus case is
+proven in Theorem ~\ref{thm:high_generators_relations}. In Theorem
+~\ref{thm:g_1_generators_relations} and Theorem
+~\ref{thm:g_0_generators_relations}, we also give the respective
+genus one and genus zero results after using a similar induction
+process while dealing with more complicated base cases and
+exceptional cases.
 
-Note that in the course of the proof of Theorem
-~\ref{thm:g_0_generators_relations} we will not merely obtain
-bounds on the degrees of the generators and relations. In fact, if
-the genus $g = 0$ or $g = 1$, the proof yields an explicit system
-of generators and the initial ideal of relations. While in the
-genus $g \geq 2$ case, the proof does not always yield an explicit
-system of generators and relations, if the halfcanonical divisor
-$\halfcan$ can be written as $\halfcan' + \Lambda$ with $(\halfcan',
-0, X)$ a log spin curve, and a system of generators and relations for
-$ \halfcan'$ is known, then our proof provides an inductive
-procedure for determining the generators and initial ideal of
-relations for $\halfcan$. In fact, such a system of generators and
-relations are known for $\halfcan'$ in many cases, as detailed in
-Neves ~\cite[ Section III.4]{neves:halfcan}.
+\begin{rem}
+The proofs of the main theorems in the low genus cases not only
+obtain bounds on the degrees of the generators and relations, but
+also yield explicit systems of generators and the initial ideal of
+relations. Furthermore, our proof of the high genus case also
+provides an inductive procedure for determining the generators and
+initial ideal of relations for $\halfcan'$ when the halfcanonical
+divisor $\halfcan$ can be written as $\halfcan' + \Lambda$ with
+$(\halfcan', 0, X)$ a log spin curve. In fact, such a system of
+generators and relations are known for $\halfcan'$ in many cases,
+as detailed in Neves ~\cite[ Section III.4]{neves:halfcan}.
+\end{rem}
 
 The remainder of the paper will be primarily devoted to proving
 Theorem ~\ref{thm:general_generators_relations}. The idea of the
-proof will be to induct on the order and number of elliptic points.
-To this end, we first review important background in Section
-~\ref{sec:background}. Then, in Section ~\ref{sec:induction}, we
-develop various inductive tools. In Sections ~\ref{sec:g_high},
+proof will be to induct on the order and number of hyperelliptic-
+fixed points. To this end, we first review important background in
+Section ~\ref{sec:background}. Then, we develop various inductive
+tools in Section ~\ref{sec:induction}. In Sections ~\ref{sec:g_high},
 ~\ref{sec:g_1} and ~\ref{sec:g_0}, we prove Theorem
-~\ref{thm:general_generators_relations} in the cases that the genus
-$g \geq 2, g = 1$ and $g = 0$ respectively. Finally, in Section
+~\ref{thm:general_generators_relations} in the high genus, genus
+one, and genus zero cases respectively. Finally, in Section
 ~\ref{sec:further-questions}, we pose several questions for future
 research.
 
@@ -314,7 +318,7 @@ associated {\bf divisor of cusps} $\Delta$.
 
 \subsection{Definitions}
 We reserve the notation $\halfcan$ for the halfcanonical divisor
-where $\halfcan \sim $.
+where $2\halfcan \sim K_\sx + \Delta$.
 
 Here are some definitions.
 
@@ -363,12 +367,12 @@ curve $\sx$' with signature $(g; e_1', \ldots, e_\tau'; 0)$ to a
 stacky curve $\sx$ with signature $(g; e_1, \ldots, e_\tau; 0)$
 where each $e_i\in \{e_i', e_i' + 2\}$.   
 
-However, before we can answer these general Lemmata, it is useful
-to prove a nice result about minimal generation of ideals of
-relations.
-
-\todo{Include one of the following, if the first one, include a 
-remark for quotient}
+%However, before we can answer these general Lemmata, it is useful
+%to prove a nice result about minimal generation of ideals of
+%relations.
+%
+%\todo{Include one of the following, if the first one, include a 
+%remark for quotient}
 
 %\begin{lem}
 %\label{lem:minimal_quadratic}
@@ -414,70 +418,71 @@ remark for quotient}
 %\]
 %\todo{how do we make this proof?}
 %\end{rem}
+%\begin{lem}
+%\label{lem:minimal_quadratic}
+%Suppose $k[x_1, \ldots, x_n]\hookrightarrow k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ be graded ring, not necessarily
+%generated in degree 1 that are equipped with monomial ordering $\prec$.
+%Let $\phi: k[x_1, \ldots, x_n] \twoheadrightarrow B, \phi':k[x_1, \ldots, x_n, y_1, \ldots, y_m]\twoheadrightarrow B'$ be maps of graded
+%rings with kernels $I \hookrightarrow I'$ such that the following diagram commutes:
+%\[
+	%\begin{tikzcd}
+	%I\ar[hookrightarrow]{r}\ar[hookrightarrow]{d} & k[x_1, \ldots, x_n]\ar[twoheadrightarrow]{r} \ar[hookrightarrow]{d} & B \ar[hookrightarrow]{d}\\
+	%I' \ar[hookrightarrow]{r} & k[x_1, \ldots, x_n, y_1, \ldots, y_m] \ar[twoheadrightarrow]{r}& B'
+	%\end{tikzcd}
+%\]
+%Further suppose that $I'$ is generated over $I$ by elements $f_1,
+%\ldots, f_j$ as a $k$-vector space, where $in_\prec(f_i) \in \{y_i x_j, y_i y_j\}$ and no monomial of $f_i$
+%is of the form $y_i$. Then, the elements $f_i$ determine minimal
+%generators for $I'$ over $I$.
+%\end{lem}
+%
+%\begin{proof}
+%Regrade the rings $k[x_1, \ldots, x_n], k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ so that all $x_i$ and $y_j$ lie in
+%degree 1. Then,
+%\[
+	%\phi : k[x_1, \ldots, x_n] \twoheadrightarrow B 
+%\]
+%\[
+	%\phi': k[x_1, \ldots, x_n, y_1, \ldots, y_m] \twoheadrightarrow B'
+%\]
+%
+%
+%\noindent
+%determines map of rings, no longer necessarily graded. 
+%By assumption, $I'$ is generated over $I$ as a $k$-vector space by elements $f_1, \ldots, f_n$ whose initial terms have degree 2 and are linearly independent. By the theory of Gr\"{o}bner basis,
+%\[
+	%\dim_k(B'/B)_2=\dim_k(k[x_1, \ldots, x_n, y_1, \ldots, y_m]/k[x_1, \ldots, x_n])_2 - j
+%\]
+%so
+%\[
+	%\dim_k (I'/I)_2=j.
+%\]
+%This implies any set of
+%generators for $I$ must have at least $j$ elements. Since $f_1,
+%\ldots, f_j$ is such a set, it is minimal.
+%\end{proof}
+%
+%\begin{rem}
+%\label{rem:minimal_quadratic_trivial_case}
+%It will be useful to use Lemma ~\ref{lem:minimal_quadratic} in the
+%case $m= 0$, in which case we find explicitly that $f_1, \ldots, f_r$
+%are $k$-minimal generators for $I'$ (over the trivial base vector
+%space). 
+%\end{rem}
+%With this result, we will be able to show that the sets of generators of the ideal of relations in many of the following inductive arguments are minimal.
 
-\begin{lem}
-\label{lem:minimal_quadratic}
-Suppose $k[x_1, \ldots, x_n]\hookrightarrow k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ be graded ring, not necessarily
-generated in degree 1 that are equipped with monomial ordering $\prec$.
-Let $\phi: k[x_1, \ldots, x_n] \twoheadrightarrow B, \phi':k[x_1, \ldots, x_n, y_1, \ldots, y_m]\twoheadrightarrow B'$ be maps of graded
-rings with kernels $I \hookrightarrow I'$ such that the following diagram commutes:
-\[
-	\begin{tikzcd}
-	I\ar[hookrightarrow]{r}\ar[hookrightarrow]{d} & k[x_1, \ldots, x_n]\ar[twoheadrightarrow]{r} \ar[hookrightarrow]{d} & B \ar[hookrightarrow]{d}\\
-	I' \ar[hookrightarrow]{r} & k[x_1, \ldots, x_n, y_1, \ldots, y_m] \ar[twoheadrightarrow]{r}& B'
-	\end{tikzcd}
-\]
-Further suppose that $I'$ is generated over $I$ by elements $f_1,
-\ldots, f_j$ as a $k$-vector space, where $in_\prec(f_i) \in \{y_i x_j, y_i y_j\}$ and no monomial of $f_i$
-is of the form $y_i$. Then, the elements $f_i$ determine minimal
-generators for $I'$ over $I$.
-\end{lem}
-
-\begin{proof}
-Regrade the rings $k[x_1, \ldots, x_n], k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ so that all $x_i$ and $y_j$ lie in
-degree 1. Then,
-\[
-	\phi : k[x_1, \ldots, x_n] \twoheadrightarrow B 
-\]
-\[
-	\phi': k[x_1, \ldots, x_n, y_1, \ldots, y_m] \twoheadrightarrow B'
-\]
 
 
-\noindent
-determines map of rings, no longer necessarily graded. 
-By assumption, $I'$ is generated over $I$ as a $k$-vector space by elements $f_1, \ldots, f_n$ whose initial terms have degree 2 and are linearly independent. By the theory of Gr\"{o}bner basis,
-\[
-	\dim_k(B'/B)_2=\dim_k(k[x_1, \ldots, x_n, y_1, \ldots, y_m]/k[x_1, \ldots, x_n])_2 - j
-\]
-so
-\[
-	\dim_k (I'/I)_2=j.
-\]
-This implies any set of
-generators for $I$ must have at least $j$ elements. Since $f_1,
-\ldots, f_j$ is such a set, it is minimal.
-\end{proof}
 
-
-\begin{rem}
-\label{rem:minimal_quadratic_trivial_case}
-It will be useful to use Lemma ~\ref{lem:minimal_quadratic} in the
-case $m= 0$, in which case we find explicitly that $f_1, \ldots, f_r$
-are $k$-minimal generators for $I'$ (over the trivial base vector
-space). 
-\end{rem}
-
-With this result, we will be able to show that the sets of generators of the ideal of relations in many of the following inductive arguments are minimal.
 
 \ssec{Inductive Lemmata: Adding Points}
 \label{ssec:add_pts}
 In this section, we prove various inductive statements under the following setup:
-Let $\halfcan'$ be $\mathbb{Q}$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that minimally generate\todo{check minimal generation actually works} $R_\halfcan$ over $\halfcan$' and initial terms of relations that minimally generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  The proofs of these Lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
+Let $\halfcan'$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbf{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that minimally generate\todo{check minimal generation actually works} $R_\halfcan$ over $\halfcan$' and initial terms of relations that minimally generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  The proofs of these Lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
 
 First, let's introduce some notation from O'Dorney.   \todo{cite O'downey}
 \begin{defn}\label{den:lower-approximation}
-If $\frac{\alpha}{\beta}\in \mathbf{Q}$ (for $\alpha\in \mathbf{Z}, \beta\in \mathbf{N}$ written in reduced form), then a \begin{bf}{best lower approximation}\end{bf} to $\frac{\alpha}{\beta}$ is a a fraction $\frac{c}{d}$ (written in reduced form with $d>0$) such that there is no $\frac{c'}{d'}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$.  Moreover, the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a sequence
+If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha\in \mathbf{Z}, \beta\in \mathbf{N}$ written in reduced form), then a \begin{bf}{best lower approximation}\end{bf} to $\frac{\alpha}{\beta}$ is a a fraction $\frac{c}{d}$ (written in reduced form with $d>0$) such that there is no $\frac{c'}{d'}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$.  Moreover, the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a sequence
 \[
 	0=\frac{c_0}{d_0} < \frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{\alpha}{\beta}.
 \]
@@ -501,15 +506,15 @@ divisors. \todo{cite theorem 8.3.1}
 
 \begin{lem}
 \label{lem:deg1-sat-ind}
-Let $X$ be a genus $g$ curve with a $\mathbb{Q}$-divisor $\halfcan'$
-satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
+Let $X$ be a genus $g$ curve with a $\BQ$-divisor $\halfcan'$
+satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbf{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
 $u, x_1, \ldots, x_m$ with $\ord_P(x_i)=0\; \forall x_i$, $\ord_P(u) = 0$, \todo{Aaron: Instead of having $\deg u = 0$, don't we only need that $\ord_P(u) = \lfloor \halfcan'|_P \rfloor$?} and $\deg(u)= 1$ when viewed as sections of $\so_{\halfcan'}$.  Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\bar{d}$ with relations generated
 in degree at most $\bar{\tau}$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
-for some $\alpha,\beta \in \mathbb{N}$ such that
+for some $\alpha,\beta \in \mathbf{N}$ such that
 \begin{equation}
 \label{eqn:deg1_sat_ind_dim}
 	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
-	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \text{ for all } d \in \mathbb{
+	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \text{ for all } d \in \mathbf{
 	N} \text{ such that } d \ge \frac{\beta}{\alpha}.
 \end{equation}
 \label{eqn:deg1-sat-ind}
@@ -536,33 +541,41 @@ degree $d_i$ and has a pole at $P$ of degree $c_i$
 
 In particular, if $\frac{\alpha}{\beta}\le 1$, then $I$ is minimally generated by elements with leading terms of the form $y_i x_j$ and $y_i y_j$.
 %\item If $\gin_\prec(I')=\initial_\prec(I')$ then $\gin_\prec(I)=\initial_\prec(I)$.
-\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
-	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
-	\frac{\alpha}{\beta} \rfloor} + 1}$ (really the subset of these with positive subscripts) as shown above minimally
-generates $I'$.
+%\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
+%	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
+%	\frac{\alpha}{\beta} \rfloor} + 1}$ (really the subset of these with positive subscripts) as shown above minimally
+%generates $I'$.
 \end{enumerate}
 \end{lem}
 
 Before presenting a proof of this, we first prove a lemma that will allow parts $(b)$ and $(c)$ to immediately follow from an appropriate construction of generators in part $(a)$.
 
 \begin{lem}\label{lem:relations_from_generators_induction} 
-Suppose $\halfcan$ and $\halfcan'$ are $\mathbf{Q}$ divisors on a curve $X$ with $D=D'+\frac{\alpha}{\beta}P$.  Suppose $R_{\halfcan'}$ is generated by $x_1, \ldots, x_m$ and $R_{\halfcan}$ is minimally generated by $y_1, \ldots, y_n$ over $R_{\halfcan'}$; specifically, suppose $S$ is a $k$ basis for $R_\halfcan$ over $R_{\halfcan'}$ such that $S$ consists only of monomials in $x_1, \ldots, x_m, y_1, \ldots, y_n$ and each $m\in S$ is not contained in $R_{\halfcan'}$.  Let $T\subseteq R_\halfcan - (S \cup R_{\halfcan'})$, such that any monomial of $(k[x_1, \ldots, x_m, y_1, \ldots, y_n])_{\ge 2}$ (the degrees at least 2 with respect to the regrading of each $x_1, \ldots, x_m, y_1, \ldots, y_n$) is either in $S$, $\langle T\rangle$, or $R_{\halfcan'}$.  Moreover, suppose there is some ordering $\prec$ such that if $f\in S$ and $g\not\in S, g\not\in R_{\halfcan'}$ is a quadratic monomial in $x_1, \ldots, x_m, y_1, \ldots, y_n$ in the same degree as $f$, then $g\prec f$.  Then if $I$ and $I'$ are the ideal of relations of $R_{\halfcan'}$ and $R_{\halfcan}$ with the given generating sets, then 
+Suppose $\halfcan$ and $\halfcan'$ are $\BQ$ divisors on a curve $X$ with $D=D'+\frac{\alpha}{\beta}P$.  Suppose $R_{\halfcan'}$ is generated by $x_1, \ldots, x_m$ and $R_{\halfcan}$ is minimally generated by $y_1, \ldots, y_n$ over $R_{\halfcan'}$; specifically, suppose there is a $k$-basis $S$ for $R_\halfcan$ over $R_{\halfcan'}$ such that $S$ consists only of monomials in $x_1, \ldots, x_m, y_1, \ldots, y_n$ and each $m\in S$ is not contained in $R_{\halfcan'}$.  
+Let $I$ and $I'$ be the ideals of relations of $R_{\halfcan'}$ and $R_{\halfcan}$, for the given generating sets.  
+Let $T\subseteq R_\halfcan - (S \cup R_{\halfcan'})$, such that any monomial of $(k[x_1, \ldots, x_m, y_1, \ldots, y_n])_{\ge 2}$ (the degrees at least 2 with respect to the regrading of each $x_1, \ldots, x_m, y_1, \ldots, y_n$) is either in $S$, $\langle T\rangle$, or $I' k[x_1, \ldots, x_m, y_1, \ldots, y_n]$.  Moreover, suppose there is some ordering $\prec$ such that if $T\prec S\prec k[x_1, \ldots, x_n]$ (that is, all elements of $T$ precede elements of $S$ which proceed monomials only in the $x_i$s). , then 
 \begin{align*}
 	\initial(I) & = \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]\\
 		     & + \langle T \rangle.
 \end{align*}
-Furthermore, if $T$ consists only of quadratic monomials, then $I$ is minimally generated over $I'$ by a Gr\"{o}bner Basis with an initial term for each element of $T$.
 \end{lem}
 \begin{proof}
-
-
+Suppose monomial $f\in T$ has a pole order $a$ at $P$.  Then since $S$ forms a $k$-basis of $R_{\halfcan}$ over $R_{\halfcan'}$, we can write $f + (\sum_{g\in S'} C_g g)+r$ for some finite subset $S'\subseteq S_{\deg(f)}$ and $r\in R_{\halfcan'}$.  This demonstrates that 
+\begin{align*}
+	\initial(I) & \supseteq \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]\\
+		     & + \langle T \rangle.
+\end{align*}
+Since every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ either lies in $\langle T\rangle + \initial_\prec(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ or $S$, 
+\begin{align*}
+	\initial(I) & = \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]\\
+		     & + \langle T \rangle.
+\end{align*}
 \end{proof}
-
 
 \begin{proof}[Proof of Lemma \ref{lem:deg1-sat-ind}]
 By
 our hypothesis (Equation ~\ref{eqn:deg1_sat_ind_dim}), for any $d
-\in \mathbb{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
+\in \mathbf{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
 	h^0 (X, d \halfcan ) = h^0(X, d\halfcan') + \deg(d\frac{\alpha}{\beta})
@@ -741,10 +754,10 @@ is the initial ideal of $I$.
 %Furthermore, since our choice of $y_i
 %$'s was generic, this is in fact the generic initial ideal.
 
-In the case when all $\frac{\alpha}{\beta}\le 1$, Lemma
-~\ref{lem:minimal_quadratic} immediately tells us that the Gr\"{o}bner
-basis defined above is minimal.
-\todo{What about $\frac{\alpha}{\beta} > 1$?}
+%In the case when all $\frac{\alpha}{\beta}\le 1$, Lemma
+%~\ref{lem:minimal_quadratic} immediately tells us that the Gr\"{o}bner
+%basis defined above is minimal.
+%\todo{What about $\frac{\alpha}{\beta} > 1$?}
 \end{proof}
 
 \begin{rem}\label{rem:sat-1-gen-lem-generic}
@@ -780,9 +793,9 @@ Then, the following statements hold.
 			&+\langle y_4 x_j \mid 2 \leq j \leq m \rangle \\
 			&+\langle y_4^2.\rangle
 		\end{align*}
-	\item[(c)] Any set of minimal generators for $I'$ together with 
-		any set of relations with leading terms as in (b) minimally 
-		generate $I$.
+	%\item[(c)] Any set of minimal generators for $I'$ together with 
+		%any set of relations with leading terms as in (b) minimally 
+		%generate $I$.
 \end{enumerate}
 \end{lem}
 
@@ -810,7 +823,7 @@ For any $x_j$, notice that $-\ord_P(y_4x_j)\le 1$. If it is non-positive, then i
 we can choose $A_j \in k$ and $w_j\in R_{\halfcan'}$ such that $y_4x_j -A_jy_3w_j$ has no pole at $P$ and thus lies in $R_{\halfcan'}$ giving us a desired relation. 
 Similarly, we can find $B, C \in k$ such that $y_4^2 + B y_3^2 x_2+ Cy_3x_2x_3$ has no pole at $P$ and is thus in $R_D$. In both cases we induce a relation, with initial term described in the lemma's statement. Noting that any monomial is either a multiple of one of these initial terms, is a basis element (described above), or is in $R_D$, we see that these monomials in fact generate the initial ideal of $I$ over $\initial(I')$.
 
-Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}.
+%Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}.
 \end{proof}
 
 \begin{lem}
@@ -903,7 +916,7 @@ of elements lie in $R'$.
 Of course, the initial terms of these elements are precisely the
 generators of $J$, completing (b).
 
-Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
+%Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \end{proof}
 
 
@@ -1009,7 +1022,7 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 %This yields some immediate corollaries:
 %
 %\begin{cor}\label{cor:effective_Q_divisor_can_ring}
-%If the genus of $X$ is 0 and $D\sim\sum \frac{\alpha_i}{\beta_i} P_i$ is linearly equivalent to an effective $\mathbb{Q}$ divisor of $X$, then $R_D$ is generated in degree at most $\max(\beta_i,1)$ with relations generated in degree at most $2\max(\beta_i,1)$.
+%If the genus of $X$ is 0 and $D\sim\sum \frac{\alpha_i}{\beta_i} P_i$ is linearly equivalent to an effective $\BQ$ divisor of $X$, then $R_D$ is generated in degree at most $\max(\beta_i,1)$ with relations generated in degree at most $2\max(\beta_i,1)$.
 %\end{cor}
 %
 %\begin{proof}
@@ -1034,7 +1047,7 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 %possibly negative integer coefficients). Since $\Delta$ is non-
 %zero effective, $\deg(D)\ge - 1$.  Noting that the coefficient of 
 %any point $P$ occurring in a stacky divisor of $\sx$ must have 
-%coefficient lying in $\mathbb{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
+%coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
 %s appearing in the characteristic of $(\sx,\Delta)$).
  %
 %Since all $e_i$'s are odd, $2$ cannot appear in a denominator of the 
@@ -1140,19 +1153,20 @@ three conditions hold.
 \end{enumerate}
 \end{defn}
 
-\begin{lem}\label{lem:n-3s-admissible}
-Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ ramified points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
-\end{lem}
-\begin{proof}
-To show (Ad-i) and (Ad-ii) look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies (Ad-i). Furthermore, since $'s$ is an admissible set of $L'$, in particular, we must have (Ad-ii) satisfied so $\frac{-\ord_{Q_l}
-^{\halfcan_X'}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how (Ad-ii) follows in genus 0?}
+%\begin{lem}\label{lem:n-3s-admissible}
+%Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ ramified points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
+%\end{lem}
+%\begin{proof}
+%To show (Ad-i) and (Ad-ii) look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies (Ad-i). Furthermore, since $'s$ is an admissible set of $L'$, in particular, we must have (Ad-ii) satisfied so $\frac{-\ord_{Q_l}
+%^{\halfcan_X'}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how (Ad-ii) follows in genus 0?}
+%
+ %follows immediately from the base-point freeness of $3\halfcan$ which we have for the following reasons in the various genera:
+%\begin{itemize}
+%\item When $g> 0$, $\deg(\lfloor 3 L\rfloor)\ge 3g-3+2\ge 2g$ (the added two comes from the fact that $r\ge 2$).
+%\item When $g= 0$, since $L'$ has a nontrivial admissible subset within $\{e_1, \ldots, e_{r- 1}\}$ satisfying (ad-i), we know $\deg(\lfloor 3\lfloor)\ge 0$, so it is base-point free.
+%\end{itemize}
+%\end{proof}
 
- follows immediately from the base-point freeness of $3\halfcan$ which we have for the following reasons in the various genera:
-\begin{itemize}
-\item When $g> 0$, $\deg(\lfloor 3 L\rfloor)\ge 3g-3+2\ge 2g$ (the added two comes from the fact that $r\ge 2$).
-\item When $g= 0$, since $L'$ has a nontrivial admissible subset within $\{e_1, \ldots, e_{r- 1}\}$ satisfying (ad-i), we know $\deg(\lfloor 3\lfloor)\ge 0$, so it is base-point free.
-\end{itemize}
-\end{proof}
 
 
 \begin{lem}
@@ -1454,16 +1468,16 @@ implying
 \end{align*}
 completing part (c).
 
-Next, note that the minimal generators of $I'$ together with the
-new generators of $I$ given in (c) have independent initial terms
-by construction, and therefore are minimal by Lemma
-~\ref{lem:minimal_quadratic}.
+%Next, note that the minimal generators of $I'$ together with the
+%new generators of $I$ given in (c) have independent initial terms
+%by construction, and therefore are minimal by Lemma
+%~\ref{lem:minimal_quadratic}.
 
-Finally, to check (e), we will first show that $(\sx,J)$ is
+Finally, to check (e), we will first show that $(\sx, J)$ is
 admissible. We know (Ad-i) is satisfied by part (b), taking the $y_{
 i, e_i}$ as the generators in degree $e_i$. Next, (Ad-ii) is
-strictly monotonic in the $e_i$ and hence also holds for $(\sx,J)$.
-Finally, if (Ad-iii) holds for $e$ then it holds for $e+2$ by
+strictly monotonic in the $e_i$ and hence also holds for $(\sx, J)$.
+Finally, if (Ad-iii) holds for $e$ then it holds for $e + 2$ by
 definition. This is where we use that (Ad-iii) holds for $d > 0$
 and not just for $d = 0$.
 
@@ -1494,11 +1508,11 @@ Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, L_i,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% High genus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{High genus}
+\section{High Genus}
 \label{sec:g_high}
 We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the half canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved. We begin with the case that $g \geq 2$.
 
-\ssec{Bounds on Generators and Relations in high genus}
+\ssec{Bounds on Generators and Relations in High Genus}
 
 \begin{lem}
 \label{lem:semicanonical_generation}
@@ -1637,7 +1651,7 @@ In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half can
 
 
 
-\ssec{Main theorem for high genus}
+\ssec{Main Theorem for High Genus}
 \label{ssec:main_g_high}
 
 \begin{thm}
@@ -1741,7 +1755,7 @@ Finally, to check (Ad-iii) note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ The
 \end{example}
 
 \begin{example}
-\label{eg:exception- 1-5}
+\label{eg:exception-1-5}
 Let $L' = \frac{2}{5}P_1$ be a half canonical divisor on a stacky curve $\sx$. Let $u \in (P_L)_1$ be any nonzero element. We obtain $\di u|_{P_1} = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_{P_1} = -P_1$. Then, we claim there is some $\alpha \in k$ so that
 $R_L \cong k[u, y_3, y_5]/(y_3^4 - \alpha uy_5^2).$
 The proof of this can be gotten by first using Riemann--Roch and counting the pole order at $P_1$ considerations to check the above relation exists, and that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. It is analogous to Example ~\ref{ex:base-377}, and is omittied.
@@ -1752,9 +1766,8 @@ Finally, note that this particular case is also exceptional, because there is a 
 \end{example}
 
 
-\iffalse
-The base case of $L' = \frac{3}{7}P_1$ has $R_L \cong k[u, y_5, y_7]/(y_5)^3 - uy_7^2.$ 
-\fi
+%The base case of $L' = \frac{3}{7}P_1$ has $R_L \cong k[u, y_5, y_7]/(y_5)^3 - uy_7^2.$ 
+
 
 The base cases of $L' = \frac{3}{7}P_1$ and $L' = \frac{1}{3}P_1 +\frac{1}{3}P_2$ can be similarly computed. Note this is yet another exceptional case.
 
@@ -1790,38 +1803,37 @@ Let $\sx$ be a tame, seperably rooted stacky curve of genus 1. Let $P,Q$ are dis
 \label{table:g-1-exceptional}
 \textbf{Table (IV)}: Genus 1 exceptional cases, where $L' = P - Q + \frac{e- 1}{2e}R$, with $P \neq Q$.
 \end{center}
-\iffalse
-\begin{rem}
-\label{rem:g-1-exceptional-e}
-Note that for $e > 5$ generators and relations for $L = P - Q + \frac{e- 1}{2e}R$, which has signature $(1;e;0)$, can be computed inductively $L' = P - Q + \frac{(e-2) - 1}{2(e - 2)}R$ using 
-Theorem ~\ref{thm:ram_order_ind}.
-\end{rem}
-\fi
+
+
+%\begin{rem}
+%\label{rem:g-1-exceptional-e}
+%Note that for $e > 5$ generators and relations for $L = P - Q + \frac{e- 1}{2e}R$, which has signature $(1;e;0)$, can be computed inductively $L' = P - Q + \frac{(e-2) - 1}{2(e - 2)}R$ using 
+%Theorem ~\ref{thm:ram_order_ind}.
+%\end{rem}
 
 We now elaborate on the computation of the results in 
 Table ~\ref{table:g-1-exceptional}. We have already explained the case of 
-$L' = P - Q + \frac{1}{5}P_1$ above in Example ~\ref{eg:exception- 1-5}. The other cases are similar.
-
-\iffalse
-\begin{example}
-\label{eg:exceptional-1-0}
-In the case $L=P - Q.$ Then, we have $R_{(2k+ 1)L} \cong 0$ while $R_{2kL} \cong k$, with a single generator in degree 2. Therefore, $R_L \cong k[y]$, where $y$ is a generator in degree 2. 
-\end{example}
-
-\begin{example}
-\label{eg:exceptional- 1-3}
-Let $L = P - Q + \frac{1}{3}R$. Since $P \neq Q$, we see $h^0(L) = 0,$ and we know $h^0(2L) = h^0(K) = 1$. For $n > 2$, we have $\deg nL > 0$ and so by Riemann--Roch, we have $h^0(nL) = \deg \lfloor nL/3 \rfloor.$ Next, 
-We find that $R_L \cong k[u, x,z]/(z^2 - ux^4),$ where $\deg u = 2, \deg x = 3, \deg z = 7$ so that $\di u|_L = -2P + 2Q, \di x|_L = -3P + 3Q - R, \di z|_L = -7P + 7Q - 2R.$\todo{This is unfinished}
-\end{example}
+$L' = P - Q + \frac{1}{5}P_1$ above in Example ~\ref{eg:exception-1-5}. The other cases are similar.
 
 
-\begin{example}
-\label{eg:exception- 1-e}
-Let $L = P - Q + \frac{e- 1}{2e}P_1.$ Here, we claim $R_L \cong k[u, y_3, y_5, \ldots, y_e]/I_e,$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Theorem ~\ref{thm:ram_order_ind} so that $in(I_e) = in(I_{e-2})k[u, y_3, \ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$
-Furthermore, $\deg u = 2, \deg y_i = i$.
-\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
-\end{example}
-\fi
+%\begin{example}
+%\label{eg:exceptional-1-0}
+%In the case $L=P - Q.$ Then, we have $R_{(2k+ 1)L} \cong 0$ while $R_{2kL} \cong k$, with a single generator in degree 2. Therefore, $R_L \cong k[y]$, where $y$ is a generator in degree 2. 
+%\end{example}
+%
+%\begin{example}
+%\label{eg:exceptional- 1-3}
+%Let $L = P - Q + \frac{1}{3}R$. Since $P \neq Q$, we see $h^0(L) = 0,$ and we know $h^0(2L) = h^0(K) = 1$. For $n > 2$, we have $\deg nL > 0$ and so by Riemann--Roch, we have $h^0(nL) = \deg \lfloor nL/3 \rfloor.$ Next, 
+%We find that $R_L \cong k[u, x,z]/(z^2 - ux^4),$ where $\deg u = 2, \deg x = 3, \deg z = 7$ so that $\di u|_L = -2P + 2Q, \di x|_L = -3P + 3Q - R, \di z|_L = -7P + 7Q - 2R.$\todo{This is unfinished}
+%\end{example}
+%
+%
+%\begin{example}
+%\label{eg:exception-1-e}
+%Let $L = P - Q + \frac{e- 1}{2e}P_1.$ Here, we claim $R_L \cong k[u, y_3, y_5, \ldots, y_e]/I_e,$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Theorem ~\ref{thm:ram_order_ind} so that $in(I_e) = in(I_{e-2})k[u, y_3, \ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$
+%Furthermore, $\deg u = 2, \deg y_i = i$.
+%\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
+%\end{example}
 
 
 \ssec{Main Theorem for Genus One}
@@ -1871,7 +1883,7 @@ Since $\Delta = 0$, we may write $L = L_X + \sum_{i = 1}^{r}\subhalf{e_i}P_i.$ T
 
 Note that we are assuming $L$ is not one of the exceptional cases listed in Table ~\ref{table:g-1-exceptional}, so we may either assume $\sx$ has 1 stacky point with $e_1 > 5$ or at least 2 stacky points
 
-First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception- 1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12, is admissible, and satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. While $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$, after applying Theorem ~\ref{thm:ram_order_ind}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, while the previous relation lies in degree $12$, which is less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
+First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12, is admissible, and satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. While $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$, after applying Theorem ~\ref{thm:ram_order_ind}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, while the previous relation lies in degree $12$, which is less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Theorem ~\ref{thm:ram_order_ind} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
 Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base- 1-33}, it follows that $(\sx', \{3,3\})$ is admissible and satisfies the hypotheses of Theorem ~\ref{thm:ram_order_ind}. Therefore, applying Lemma ~\ref{lem:n-3s-admissible} $r-2$ times, we see that for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i,$ the pair $(\sx',\{3, \ldots, 3\})$ is admissible. Assume for convenience that $e_1 \leq e_2 \leq \cdots \leq e_r$. Then, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
 
@@ -2111,8 +2123,9 @@ Therefore, the canonical ring $R'$ has presentation $R' =
 k[x_{7, 1}, x_{7, 2}, x_{5, 1}, x_{3, 1}] / I$ with
 initial ideal $in_\prec(I)$ generated by quadratics under grlex
 with $x_{i, j} \prec x_{k, l}$ if $i > j$ or $i = j$ and $j < l$.
-These quadratics must also determine minimal generators for $I$ by
-Lemma ~\ref{lem:minimal_quadratic}. Thus, $R'$ is generated up to
+%These quadratics must also determine minimal generators for $I$ by
+%Lemma ~\ref{lem:minimal_quadratic}.
+Thus, $R'$ is generated up to
 degree $e = 7$ with relations up to degree $2e = 14$, as desired.
 We can also see that $e_i > \deg z$ for any generator $z$ of $R'$
 since $e_i = 9 > e$ for all $i \in J$.
@@ -2354,7 +2367,10 @@ with relations generated up to degree $2e$.
 Now suppose $\delta = 0$, so $\halfcan$ is not necessarily effective.
 Let $\sigma = (0; e_1, \ldots, e_r; 0)$ be a signature with $r > 0$
 and not one of the exceptional cases in Table
-~\ref{table:g-0-exceptional}.
+~\ref{table:g-0-exceptional}. Note that if $r < 3$, then $\deg 
+\lfloor d \halfcan \rfloor < 0$ for all $d \geq 0$ so we have the
+trivial case where $R(\sx, \Delta, \halfcan) = k$. Thus, we now
+only consider when $r \geq 3$.
 
 If $r > 5$, then we can use Lemma
 ~\ref{lem:sat-three-induction-g-0} to add ramified points with
@@ -2386,16 +2402,18 @@ the $r > 5$ case with stabilizer orders all $3$, with $\sigma' =
 (0; e_1', \ldots, e_r'; 0)$ satisfying the property that for all $i
 \in J$, $e_i \geq e_i'$ and $e_i = e_i'$ otherwise.
 
-All such base cases satisfy all of the hypotheses of
-Theorem ~\ref{thm:ram_order_ind} and their corresponding $R' :=
-R(\sx', \Delta, \halfcan')$ are generated, as $k$-algebras, up
-to degree $e' := \max(5, e_1', \ldots, e_r')$ with relations
-generated up to degree $2e'$ by Lemma ~\ref{lem:g_0_admissible_cases}.
-It follows from Theorem ~\ref{thm:ram_order_ind}(b) that $R :=
-R(\sx, \Delta, \halfcan)$ is generated up to degree $e := \max(5,
-e_1, \ldots, e_r)$. It follows from Theorem ~\ref{thm:ram_order_ind}
-(d) that the relations are generated up to degree $2e$.
-\end{proof}
+All such base cases satisfy all of the hypotheses of Theorem
+~\ref{thm:ram_order_ind} and their corresponding $R' := R(\sx',
+\Delta, \halfcan')$ are generated, as $k$-algebras, up to degree
+$e' := \max(5, e_1', \ldots, e_r')$ with relations generated up to
+degree $2e'$ by Lemma ~\ref{lem:g_0_admissible_cases}. It follows
+from induction using Theorem ~\ref{thm:ram_order_ind}(b) and
+Corollary ~ \ref{cor:raise-stacky-order} that $R := R(\sx, \Delta,
+\halfcan)$ is generated up to degree $e := \max(5, e_1, \ldots, e_r)$.
+It also follows from induction on Theorem ~\ref{thm:ram_order_ind}(c)
+and ~\ref{cor:raise-stacky-order} that the relations are generated
+up to degree $2e$.
+ \end{proof}
 
 \section{Further Research}
 \label{sec:further-questions}
