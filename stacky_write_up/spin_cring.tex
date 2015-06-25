@@ -79,22 +79,22 @@
 \nc\renc{\renewcommand}
 \newcommand\ssec{\subsection}
 \newcommand\sssec{\subsubsection}
-\newcommand\bh{{\mathbb H}}
+\newcommand\bh{{\mathbf H}}
 \newcommand\bO{{\mathbf O}}
 \newcommand\CC{{\mathcal C}}
-\newcommand\BN{{\mathbb N}}
-\newcommand\BC{{\mathbb C}}
-\newcommand\BF{{\mathbb F}}
-\newcommand\BR{{\mathbb R}}
-\newcommand\BQ{{\mathbb Q}}
-\newcommand\BP{{\mathbb P}}
-\newcommand\BBZ{{\mathbb Z}}
+\newcommand\BN{{\mathbf N}}
+\newcommand\BC{{\mathbf C}}
+\newcommand\BF{{\mathbf F}}
+\newcommand\BR{{\mathbf R}}
+\newcommand\BQ{{\mathbf Q}}
+\newcommand\BP{{\mathbf P}}
+\newcommand\BBZ{{\mathbf Z}}
 \newcommand\uR{\underline{R}}
 \newcommand\uZ{\underline{\BBZ}}
 \newcommand\CF{{\mathcal F}}
 \newcommand\uCF{\underline{{\mathcal F}}}
-\newcommand\BZ{{\mathbb Z}}
-\newcommand\BA{{\mathbb A}}
+\newcommand\BZ{{\mathbf Z}}
+\newcommand\BA{{\mathbf A}}
 \newcommand\fa{{\mathfrak a}}
 \newcommand\fp{{\mathfrak p}}
 \newcommand\fq{{\mathfrak q}}
@@ -363,6 +363,7 @@ curve $\sx$' with signature $(g; e_1', \ldots, e_\tau'; 0)$ to a
 stacky curve $\sx$ with signature $(g; e_1, \ldots, e_\tau; 0)$
 where each $e_i\in \{e_i', e_i' + 2\}$.   
 
+\iffalse{
 However, before we can answer these general Lemmata, it is useful
 to prove a nice result about minimal generation of ideals of
 relations.
@@ -414,7 +415,6 @@ remark for quotient}
 %\]
 %\todo{how do we make this proof?}
 %\end{rem}
-
 \begin{lem}
 \label{lem:minimal_quadratic}
 Suppose $k[x_1, \ldots, x_n]\hookrightarrow k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ be graded ring, not necessarily
@@ -459,7 +459,6 @@ generators for $I$ must have at least $j$ elements. Since $f_1,
 \ldots, f_j$ is such a set, it is minimal.
 \end{proof}
 
-
 \begin{rem}
 \label{rem:minimal_quadratic_trivial_case}
 It will be useful to use Lemma ~\ref{lem:minimal_quadratic} in the
@@ -467,13 +466,16 @@ case $m= 0$, in which case we find explicitly that $f_1, \ldots, f_r$
 are $k$-minimal generators for $I'$ (over the trivial base vector
 space). 
 \end{rem}
-
 With this result, we will be able to show that the sets of generators of the ideal of relations in many of the following inductive arguments are minimal.
+}\fi
+
+
+
 
 \ssec{Inductive Lemmata: Adding Points}
 \label{ssec:add_pts}
 In this section, we prove various inductive statements under the following setup:
-Let $\halfcan'$ be $\mathbb{Q}$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that minimally generate\todo{check minimal generation actually works} $R_\halfcan$ over $\halfcan$' and initial terms of relations that minimally generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  The proofs of these Lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
+Let $\halfcan'$ be $\mathbf{Q}$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbf{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that minimally generate\todo{check minimal generation actually works} $R_\halfcan$ over $\halfcan$' and initial terms of relations that minimally generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  The proofs of these Lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
 
 First, let's introduce some notation from O'Dorney.   \todo{cite O'downey}
 \begin{defn}\label{den:lower-approximation}
@@ -501,15 +503,15 @@ divisors. \todo{cite theorem 8.3.1}
 
 \begin{lem}
 \label{lem:deg1-sat-ind}
-Let $X$ be a genus $g$ curve with a $\mathbb{Q}$-divisor $\halfcan'$
-satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
+Let $X$ be a genus $g$ curve with a $\mathbf{Q}$-divisor $\halfcan'$
+satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbf{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
 $u, x_1, \ldots, x_m$ with $\ord_P(x_i)=0\; \forall x_i$, $\ord_P(u) = 0$, \todo{Aaron: Instead of having $\deg u = 0$, don't we only need that $\ord_P(u) = \lfloor \halfcan'|_P \rfloor$?} and $\deg(u)= 1$ when viewed as sections of $\so_{\halfcan'}$.  Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\bar{d}$ with relations generated
 in degree at most $\bar{\tau}$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
-for some $\alpha,\beta \in \mathbb{N}$ such that
+for some $\alpha,\beta \in \mathbf{N}$ such that
 \begin{equation}
 \label{eqn:deg1_sat_ind_dim}
 	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
-	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \text{ for all } d \in \mathbb{
+	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \text{ for all } d \in \mathbf{
 	N} \text{ such that } d \ge \frac{\beta}{\alpha}.
 \end{equation}
 \label{eqn:deg1-sat-ind}
@@ -536,33 +538,41 @@ degree $d_i$ and has a pole at $P$ of degree $c_i$
 
 In particular, if $\frac{\alpha}{\beta}\le 1$, then $I$ is minimally generated by elements with leading terms of the form $y_i x_j$ and $y_i y_j$.
 %\item If $\gin_\prec(I')=\initial_\prec(I')$ then $\gin_\prec(I)=\initial_\prec(I)$.
-\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
-	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
-	\frac{\alpha}{\beta} \rfloor} + 1}$ (really the subset of these with positive subscripts) as shown above minimally
-generates $I'$.
+%\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
+%	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
+%	\frac{\alpha}{\beta} \rfloor} + 1}$ (really the subset of these with positive subscripts) as shown above minimally
+%generates $I'$.
 \end{enumerate}
 \end{lem}
 
 Before presenting a proof of this, we first prove a lemma that will allow parts $(b)$ and $(c)$ to immediately follow from an appropriate construction of generators in part $(a)$.
 
 \begin{lem}\label{lem:relations_from_generators_induction} 
-Suppose $\halfcan$ and $\halfcan'$ are $\mathbf{Q}$ divisors on a curve $X$ with $D=D'+\frac{\alpha}{\beta}P$.  Suppose $R_{\halfcan'}$ is generated by $x_1, \ldots, x_m$ and $R_{\halfcan}$ is minimally generated by $y_1, \ldots, y_n$ over $R_{\halfcan'}$; specifically, suppose $S$ is a $k$ basis for $R_\halfcan$ over $R_{\halfcan'}$ such that $S$ consists only of monomials in $x_1, \ldots, x_m, y_1, \ldots, y_n$ and each $m\in S$ is not contained in $R_{\halfcan'}$.  Let $T\subseteq R_\halfcan - (S \cup R_{\halfcan'})$, such that any monomial of $(k[x_1, \ldots, x_m, y_1, \ldots, y_n])_{\ge 2}$ (the degrees at least 2 with respect to the regrading of each $x_1, \ldots, x_m, y_1, \ldots, y_n$) is either in $S$, $\langle T\rangle$, or $R_{\halfcan'}$.  Moreover, suppose there is some ordering $\prec$ such that if $f\in S$ and $g\not\in S, g\not\in R_{\halfcan'}$ is a quadratic monomial in $x_1, \ldots, x_m, y_1, \ldots, y_n$ in the same degree as $f$, then $g\prec f$.  Then if $I$ and $I'$ are the ideal of relations of $R_{\halfcan'}$ and $R_{\halfcan}$ with the given generating sets, then 
+Suppose $\halfcan$ and $\halfcan'$ are $\mathbf{Q}$ divisors on a curve $X$ with $D=D'+\frac{\alpha}{\beta}P$.  Suppose $R_{\halfcan'}$ is generated by $x_1, \ldots, x_m$ and $R_{\halfcan}$ is minimally generated by $y_1, \ldots, y_n$ over $R_{\halfcan'}$; specifically, suppose there is a $k$-basis $S$ for $R_\halfcan$ over $R_{\halfcan'}$ such that $S$ consists only of monomials in $x_1, \ldots, x_m, y_1, \ldots, y_n$ and each $m\in S$ is not contained in $R_{\halfcan'}$.  
+Let $I$ and $I'$ be the ideals of relations of $R_{\halfcan'}$ and $R_{\halfcan}$, for the given generating sets.  
+Let $T\subseteq R_\halfcan - (S \cup R_{\halfcan'})$, such that any monomial of $(k[x_1, \ldots, x_m, y_1, \ldots, y_n])_{\ge 2}$ (the degrees at least 2 with respect to the regrading of each $x_1, \ldots, x_m, y_1, \ldots, y_n$) is either in $S$, $\langle T\rangle$, or $I' k[x_1, \ldots, x_m, y_1, \ldots, y_n]$.  Moreover, suppose there is some ordering $\prec$ such that if $T\prec S\prec k[x_1, \ldots, x_n]$ (that is, all elements of $T$ precede elements of $S$ which proceed monomials only in the $x_i$s). , then 
 \begin{align*}
 	\initial(I) & = \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]\\
 		     & + \langle T \rangle.
 \end{align*}
-Furthermore, if $T$ consists only of quadratic monomials, then $I$ is minimally generated over $I'$ by a Gr\"{o}bner Basis with an initial term for each element of $T$.
 \end{lem}
 \begin{proof}
-
-
+Suppose monomial $f\in T$ has a pole order $a$ at $P$.  Then since $S$ forms a $k$-basis of $R_{\halfcan}$ over $R_{\halfcan'}$, we can write $f + (\sum_{g\in S'} C_g g)+r$ for some finite subset $S'\subseteq S_{\deg(f)}$ and $r\in R_{\halfcan'}$.  This demonstrates that 
+\begin{align*}
+	\initial(I) & \supseteq \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]\\
+		     & + \langle T \rangle.
+\end{align*}
+Since every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ either lies in $\langle T\rangle + \initial_\prec(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ or $S$, 
+\begin{align*}
+	\initial(I) & = \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]\\
+		     & + \langle T \rangle.
+\end{align*}
 \end{proof}
-
 
 \begin{proof}[Proof of Lemma \ref{lem:deg1-sat-ind}]
 By
 our hypothesis (Equation ~\ref{eqn:deg1_sat_ind_dim}), for any $d
-\in \mathbb{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
+\in \mathbf{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
 	h^0 (X, d \halfcan ) = h^0(X, d\halfcan') + \deg(d\frac{\alpha}{\beta})
@@ -1008,7 +1018,7 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 %This yields some immediate corollaries:
 %
 %\begin{cor}\label{cor:effective_Q_divisor_can_ring}
-%If the genus of $X$ is 0 and $D\sim\sum \frac{\alpha_i}{\beta_i} P_i$ is linearly equivalent to an effective $\mathbb{Q}$ divisor of $X$, then $R_D$ is generated in degree at most $\max(\beta_i,1)$ with relations generated in degree at most $2\max(\beta_i,1)$.
+%If the genus of $X$ is 0 and $D\sim\sum \frac{\alpha_i}{\beta_i} P_i$ is linearly equivalent to an effective $\mathbf{Q}$ divisor of $X$, then $R_D$ is generated in degree at most $\max(\beta_i,1)$ with relations generated in degree at most $2\max(\beta_i,1)$.
 %\end{cor}
 %
 %\begin{proof}
@@ -1033,7 +1043,7 @@ Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 %possibly negative integer coefficients). Since $\Delta$ is non-
 %zero effective, $\deg(D)\ge - 1$.  Noting that the coefficient of 
 %any point $P$ occurring in a stacky divisor of $\sx$ must have 
-%coefficient lying in $\mathbb{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
+%coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
 %s appearing in the characteristic of $(\sx,\Delta)$).
  %
 %Since all $e_i$'s are odd, $2$ cannot appear in a denominator of the 
@@ -1132,6 +1142,7 @@ three conditions hold.
 \end{enumerate}
 \end{defn}
 
+\iffalse{
 \begin{lem}\label{lem:n-3s-admissible}
 Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ ramified points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
 \end{lem}
@@ -1144,6 +1155,7 @@ To show (Ad-i) and (Ad-ii) look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q
 \item When $g= 0$, since $L'$ has a nontrivial admissible subset within $\{e_1, \ldots, e_{r- 1}\}$ satisfying (ad-i), we know $\deg(\lfloor 3\lfloor)\ge 0$, so it is base-point free.
 \end{itemize}
 \end{proof}
+}\fi
 
 
 \begin{lem}
