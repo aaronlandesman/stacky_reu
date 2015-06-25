@@ -174,34 +174,26 @@
 
 \section{Introduction}
 Let $\Gamma$ be a {\bf Fuchsian} subgroup, i.e. a discrete subgroup
-of $PSL_2(\BR)$ acting on the {\bf upper half plane} $\bh$ by
-fractional linear transformations. We can then consider the
-orbifold $\Gamma \backslash \bh$ over $\BC$. For example, in the
-case $\Gamma$ acts freely on $\bh$, $\Gamma \backslash \bh$ is a
-Riemann Surface over $\BC$. It may well be that $\Gamma \backslash
-\bh$ is not compact. Defining $\Delta$ as the divisor of cusps
-associated to $\Gamma$, we can form a space $\Gamma \backslash
-\bh^*$ which is a compactification of $\Gamma \backslash \bh,$ with
-associated {\bf divisor of cusps} $\Delta$.
+of $PSL_2(\BR)$ acting on the upper half plane $\bh$ by fractional
+linear transformations. We consider the {\bf ring of modular forms}
+$M(\Gamma) = \bigoplus_k M_k(\Gamma)$. In this paper, for general
+$\Gamma$, we sharply bound the degree of the generators and
+relations for $M(\Gamma).$ The case where $M(\Gamma)$ has $M_{2k + 1
+}(\Gamma) = 0$ for all $k \in \BZ$, i.e. when $\Gamma$ has no odd
+weight modular forms, is answered in Voight and Zureick-Brown
+\cite[Chapters 7-9]{vzb:stacky}. This work extends this result to
+all Fuchsian subgroups $\Gamma$. In order to answer this question,
+we translate the seemingly analytic question into the algebraic
+category, using a generalization of the GAGA principle. By
+\cite[Proposition 6.1.5]{vzb:stacky}, there is an equivalence of
+categories between orbifold curves and log stacky curves over $\BC$
+. Hence, for the remainder of the paper, we will work in the
+algebraic category.
 
-We can now consider the
-{\bf ring of modular forms} $M(\Gamma) = \oplus_k M_k(\Gamma)$. In
-this paper, for general $\Gamma$, we sharply bound the degree of
-the generators and relations for $M(\Gamma).$ This was already
-answered in \cite[Chapters 7-9]{vzb:stacky} in the case that
-$M(\Gamma)$ has $M_{2k}(\Gamma) = 0$ for all $k \in \BZ$, that is,
-when $\Gamma$ has no odd weight modular forms, and we extend this
-to all Fuchsian subgroups $\Gamma$. In order to answer this
-question, we translate the seemingly analytic question into the
-algebraic category, using a generalization of the GAGA principle.
-That is, by \cite[Proposition 6.1.5]{vzb:stacky}, there is an
-equivalence of categories between orbifold curves and log stacky
-curves over $\BC$. Hence, for the remainder of the paper, we will
-work in the algebraic category. Let $X$ be a smooth algebraic
-curve over $k$ of genus $g$. It is well known that the sheaf $\Omega
-_X,$ with associated divisor $K_X$ determines the {\bf canonical map
-} $\pi:X \rightarrow \BP_k^{g - 1}.$ Then, the {\bf canonical ring},
-is defined as
+Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is
+well known that the sheaf $\Omega _X,$ with associated divisor $K_X$
+ determines the {\bf canonical map } $\pi:X \rightarrow \BP_k^{g - 1}$.
+Then, the {\bf canonical ring} is defined to be
 \begin{align*}
 	R(X,K_X) = \bigoplus_{n \geq 0} H^0(X,nK_X),
 \end{align*}
@@ -209,12 +201,11 @@ is defined as
 \noindent
 with multiplication structure corresponding to tensor product of
 sections. Since $\Omega_X$ is ample, $X \cong \proj R$. Petri's
-theorem gives generators and relations for $R(X,K_X),$ see for
-example, \cite{saint-donat:proj}[Theorem, p. 157], showing that in
-most cases $R(X,K_X)$ is generated in degree 1 with relations in
-degree 2. This has the pleasant geometric consequence that all such
-canonically embedded curves are scheme theoretically cut out by
-quadratic equations.
+theorem gives generators and relations for $R(X, K_X)$ showing that
+in most cases $R(X, K_X)$ is generated in degree 1 with relations
+in degree 2 (see \cite[p. 157]{saint-donat:proj}). This has the
+pleasant geometric consequence that all such canonically embedded
+curves are scheme theoretically cut out by quadratic equations
 
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we examine a
 much more general setting, generalizing Petri's theorem in many
@@ -229,8 +220,8 @@ say $\sx$ has {\bf stabilizer order} $e_i$ at $P_i$. Call $\halfcan
 \in \di \sx$ a {\bf log half-canonical divisor} on $(\sx,\Delta)$,
 be a divisor $\halfcan \in \di \sx$ so that $2\halfcan \sim K_\sx +
 \Delta.$ If $X$ has genus $g$ and $\delta = \deg \Delta,$ then we
-say $\sx$ has signature $(g; e_1, \ldots, e_r;\delta)$. A {\bf log
-spin curve} is a triple $(X,\Delta,\halfcan)$ where $(X,\Delta)$
+say $\sx$ has \textbf{signature} $(g; e_1, \ldots, e_r;\delta)$. A
+{\bf log spin curve} is a triple $(X,\Delta,\halfcan)$ where $(X,\Delta)$
 and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$.
 The central object of study in this paper is the {\bf log spin
 canonical ring} of $(X,\Delta,L)$ is
@@ -254,12 +245,13 @@ canonical ring
 
 \noindent
 is generated as a $k$-algebra by elements of degree at most $e =
-\max(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ and $\Delta = 0$ then 
-$R(\sx,\Delta, \halfcan)$ has minimal relations in degree at most $\max(11, 2e_1,
-\ldots, 2e_r).$ Otherwise, $R(\sx, \Delta, \halfcan)$ has minimal relations in degree at most
-$\max(10, 2e_1, \ldots, 2e_r),$ so long as $\sigma$ does not lie in a finite list of
-exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
-for signatures with $g = 1$ and Table ~\ref{table:g_0_exceptional}
+\max(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ and $\Delta = 0
+$ then $R(\sx,\Delta, \halfcan)$ has relations generated in degrees
+up to $\max(11, 2e_1, \ldots, 2e_r)$. Otherwise, $R(\sx, \Delta,
+\halfcan)$ has relations generated in degrees up to $\max(10, 2e_1,
+\ldots, 2e_r),$ so long as $\sigma$ does not lie in a finite list
+of exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
+for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
 for signatures with $g = 0$.
 \end{thm}
 
@@ -306,6 +298,19 @@ Include the following:
 	\item Why we have these fractions $\frac{e_i - 1}{2e_i}$ and why $e_i$ must be odd.
 \end{enumerate}
 
+\subsection{Junk}
+This is stuff that has been moved out of the introduction to possibly
+be retooled for this section.
+
+We can then consider the
+orbifold $\Gamma \backslash \bh$ over $\BC$. For example, in the
+case $\Gamma$ acts freely on $\bh$, $\Gamma \backslash \bh$ is a
+Riemann Surface over $\BC$. It may well be that $\Gamma \backslash
+\bh$ is not compact. Defining $\Delta$ as the divisor of cusps
+associated to $\Gamma$, we can form a space $\Gamma \backslash
+\bh^*$ which is a compactification of $\Gamma \backslash \bh,$ with
+associated {\bf divisor of cusps} $\Delta$.
+
 \subsection{Definitions}
 Here are some definitions.
 
@@ -325,7 +330,7 @@ First we present the general inductive Lemmata that will be applied
 for all genera. We offer various inductive Lemmata that will allow
 us to add fractional point $\frac{\alpha}{\beta}P$ to a $\BQ$
  divisor $D$ of $X$ and describe the new generators and relations
-of $R_{D+p}$ not in $R_D$. Next, we provide a method specific to
+of $R_{D + P}$ not in $R_D$. Next, we provide a method specific to
 the case of stacky canonical divisors, which
 under certain conditions allows us to transfer information about
 the generators and relations of the half canonical ring of a stacky
@@ -339,56 +344,54 @@ relations.
 
 \todo{Include one of the following, if the first one, include a 
 remark for quotient}
-\iffalse{
+
+%\begin{lem}
+%\label{lem:minimal_quadratic}
+%Suppose $k[x_1, \ldots, x_n]$ is a graded ring, not necessarily
+%generated in degree 1, is equipped with a monomial ordering $\prec$.
+ %Let $\phi:k[x_1, \ldots, x_n] \rightarrow B'$ be a map of graded
+%rings with kernel $I'$, such that $I'$ is generated by elements $f_1,
+%\ldots, f_j$, where $in_\prec(f_i) = x_i x_j,$ and no term of $f_i$
+%is of the form $x_k$. Then, the elements $f_i$ determine minimal
+%generators for $I$.
+%\end{lem}
+%\begin{proof}
+%Regrade the ring $k[x_1, \ldots, x_n]$ so that all $x_i$ lie in
+%degree 1. Then,
+%\[
+	%\phi : k[x_1, \ldots, x_n] \rightarrow B
+%\]
+%\noindent
+%determines a map of rings, no longer necessarily graded. Consider
+%the grlex monomial ordering $\prec$ on $k[x_1, \ldots, x_n]$.
+%\todo{This ordering isn't quite right. 
+%We need to preserve the ordering on quadratic terms}
+%By
+%assumption, the kernel $I$ is generated by elements whose initial
+%terms have degree 2 and are all distinct. Therefore, $\dim_k (k[x_1,
+%\ldots, x_n])_2 = \binom{n}{2} - j.$ This implies any set of
+%generators for $I$ must have at least $j$ elements. Since $f_1,
+%\ldots, f_j$ is such a set, it is minimal.
+%\end{proof}
+%
+%\begin{rem}
+%In particular, in the case of
+%\[
+	%\begin{tikzcd}
+		%I\ar[hookrightarrow]{r}\ar[hookrightarrow]{d} & k[x_1, \ldots, x_n]
+		%\ar[twoheadrightarrow]{r} \ar[hookrightarrow]{d} & B \ar[hookrightarrow]{d} \\
+		%I' \ar[hookrightarrow]{r} & k[x_1, \ldots, x_n, y_1, \ldots, y_m] \ar[twoheadrightarrow]{r}& B'
+	%\end{tikzcd}
+%\]
+%inducing
+%\[
+	%I/I'\hookrightarrow k[y_1, \ldots, y_m]\twoheadrightarrow B'/B
+%\]
+%\todo{how do we make this proof?}
+%\end{rem}
+
 \begin{lem}
 \label{lem:minimal_quadratic}
-Suppose $k[x_1, \ldots, x_n]$ is a graded ring, not necessarily
-generated in degree 1, is equipped with a monomial ordering $\prec$.
- Let $\phi:k[x_1, \ldots, x_n] \rightarrow B'$ be a map of graded
-rings with kernel $I'$, such that $I'$ is generated by elements $f_1,
-\ldots, f_j$, where $in_\prec(f_i) = x_i x_j,$ and no term of $f_i$
-is of the form $x_k$. Then, the elements $f_i$ determine minimal
-generators for $I$.
-\end{lem}
-\begin{proof}
-Regrade the ring $k[x_1, \ldots, x_n]$ so that all $x_i$ lie in
-degree 1. Then,
-\[
-	\phi : k[x_1, \ldots, x_n] \rightarrow B
-\]
-\noindent
-determines a map of rings, no longer necessarily graded. Consider
-the grlex monomial ordering $\prec$ on $k[x_1, \ldots, x_n]$.
-\todo{This ordering isn't quite right. 
-We need to preserve the ordering on quadratic terms}
-By
-assumption, the kernel $I$ is generated by elements whose initial
-terms have degree 2 and are all distinct. Therefore, $\dim_k (k[x_1,
-\ldots, x_n])_2 = \binom{n}{2} - j.$ This implies any set of
-generators for $I$ must have at least $j$ elements. Since $f_1,
-\ldots, f_j$ is such a set, it is minimal.
-\end{proof}
-
-\begin{rem}
-In particular, in the case of
-\[
-	\begin{tikzcd}
-		I\ar[hookrightarrow]{r}\ar[hookrightarrow]{d} & k[x_1, \ldots, x_n]
-		\ar[twoheadrightarrow]{r} \ar[hookrightarrow]{d} & B \ar[hookrightarrow]{d} \\
-		I' \ar[hookrightarrow]{r} & k[x_1, \ldots, x_n, y_1, \ldots, y_m] \ar[twoheadrightarrow]{r}& B'
-	\end{tikzcd}
-\]
-inducing
-\[
-	I/I'\hookrightarrow k[y_1, \ldots, y_m]\twoheadrightarrow B'/B
-\]
-\todo{how do we make this proof?}
-\end{rem}
-}\fi
-
-
-\begin{lem}
-\label{lem:minimal_quadratic_2}
 Suppose $k[x_1, \ldots, x_n]\hookrightarrow k[x_1, \ldots, x_n, y_1, \ldots, y_m]$ be graded ring, not necessarily
 generated in degree 1 that are equipped with monomial ordering $\prec$.
 Let $\phi: k[x_1, \ldots, x_n] \twoheadrightarrow B, \phi':k[x_1, \ldots, x_n, y_1, \ldots, y_m]\twoheadrightarrow B'$ be maps of graded
@@ -1821,7 +1824,7 @@ true so the proof is a rather involved induction using Lemma
 The remainder of this section is dedicated to characterizing the
 saturations (Subsection ~\ref{ssec:g_0_saturation}), inductive
 base cases (Subsection ~\ref{ssec:g_0_base}), and exceptional
-cases (Subsection ~\ref{ssec:g_0_exceptional}) when $\delta = 0$
+cases (Subsection ~\ref{ssec:g-0-exceptional}) when $\delta = 0$
 before proving the main theorem in full for all $\delta$ in
 Subsection ~\ref{ssec:g_0_main}.
 
@@ -2176,7 +2179,7 @@ Before we prove the main theorem, we describe the cases not be
 covered by induction.
 
 \ssec{Exceptional Cases}
-\label{ssec:g_0_exceptional}
+\label{ssec:g-0-exceptional}
 First, we describe the cases that would not be covered by induction.
 Here we present the explicit generators and relations of the remaining
 cases given by signatures in the finite set
@@ -2216,7 +2219,7 @@ in the genus 0 case.
 \end{longtable}
 
 \begin{center}
-\label{table:g_0_exceptional}
+\label{table:g-0-exceptional}
 \textbf{Table (IV)}: Genus 0 exceptional cases
 \end{center}
 
@@ -2250,7 +2253,7 @@ If $g = 0$, then the canonical ring
 is generated as a $k$-algebra by elements of degree at most $e =
 \max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e$,
 so long as $\sigma$ does not lie in a finite list of exceptional
-cases, as listed in Table ~\ref{table:g_0_exceptional}.
+cases, as listed in Table ~\ref{table:g-0-exceptional}.
 \end{thm}
 
 \begin{proof}
@@ -2269,7 +2272,7 @@ with relations generated up to degree $2e$.
 Now suppose $\delta = 0$, so $\halfcan$ is not necessarily effective.
 Let $\sigma = (0; e_1, \ldots, e_r; 0)$ be a signature with $r > 0$
 and not one of the exceptional cases in Table
-~\ref{table:g_0_exceptional}.
+~\ref{table:g-0-exceptional}.
 
 If $r > 5$, then we can use Lemma
 ~\ref{lem:sat-three-induction-g-0} to add ramified points with
