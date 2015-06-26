@@ -300,6 +300,7 @@ Include the following:
 	\item Notation $h^0 = \dim_k H^0$.
 	\item Why we have these fractions $\frac{e_i - 1}{2e_i}$ and why $e_i$ must be odd.
 	\item Include notation for $X$ as coarse space and $L_X$ the corresponding log half canonical divisor.
+	\item Notation for grobner bases and orderings (include grlex, grevlex, and block order, as defined in \cite[Definition 8.1.1]{vzb:stacky})
 \end{enumerate}
 
 \subsection{Junk}
@@ -1239,19 +1240,19 @@ curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
 \end{enumerate}
 \end{rem}
 
-
+We next come to Lemma ~\ref{lem:raise-stacky-order}, which is an analog of Lemma ~\ref[Theorem 8.5.7]{vzb:stacky}
 
 \begin{lem}
 \label{lem:raise-stacky-order}
 Suppose $(\sx', \Delta, \halfcan')$ is a log spin curve with coarse
-space $X'$ and signature $\sigma = (g; e_1', \ldots, e_r'; \delta)$ and either 
+space $X'$ and signature $\sigma = (g; e_1', \ldots, e_r'; \delta).$ Further, assume either 
 \begin{enumerate}
-	\item  $(\sx',\halfcan', J)$ is admissible with generators $x_j, y_{i, e_i'} \in R' = R_{L'}$ with $i \in J$ as in Definition ~\ref{defn:admissible}
-	\item or $\sigma$ is one of the signatures described in Remark ~\ref{rem:three-cases}, with $y_{1, 3} = y_{2,3} = \ldots, y_{r,3}$ be a rational section of $\sco(\halfcan_X)$ so that $\ord_{P_i}^{\halfcan_X'}(y_{1,3}) = 1$ at $P_i$ for all $i = 1,\ldots, r$.
+	\item  $(\sx',\halfcan', J)$ is admissible with generators $x_1,\ldots, x_m \in R'$ and $y_{i, e_i'} \in R' = R_{L'}$ for all $i \in J,$ as in Definition ~\ref{defn:admissible} or
+	\item $\sigma$ is one of the signatures described in cases (1), (2) and (3) of Remark ~\ref{rem:three-cases} and $y_{1, 3} = y_{2,3} = \ldots= y_{r,3}$ is a rational section of $\sco(\halfcan_X)$ with $\ord_{P_i}^{\halfcan_X'}(y_{1,3}) = 1$ for $1 \leq  i \leq r$.
 \end{enumerate}
 Let
 $(\sx, \Delta, \halfcan)$ be another log spin curve
-with coarse space $X = X'$ and signature $(g; e_1, \ldots, e_r;
+with coarse space $X$, so that $X \cong X'$ and signature $(g; e_1, \ldots, e_r;
 \delta)$ such that $e_i = e_i' + 2$ for all $i \in J$ and
 $e_j = e_j'$ for $j \notin J$. Then the following are true:
 \begin{enumerate}
@@ -1269,15 +1270,13 @@ $e_j = e_j'$ for $j \notin J$. Then the following are true:
 			e_j'} - \frac{1}{\deg(y_{i, e_i})e_j'}
 		\end{align*}
 		for all $j \in J$ with $j \neq i$.
-	\item[(b)] If $(\sx',\halfcan',J)$ is admissible, then $y_{i, e_i'}^a y_{i, e_i}^b$ with $a \geq 
+	\item[(b)] The monomials $y_{i, e_i'}^a \cdot y_{i, e_i}^b$ with $a \geq 
 0,
 		b > 0$ span $R$ over $R'$ and the elements $y_{i, e_i}$ minimally
 		generate $R$ over $R'$.
-	\item[(c)] If $(\sx',\halfcan',J)$ is admissible, equip $k[y] = k[y_{i, e_i}]_{i \in J}$ and $k[x]$ with
-		any graded monomial order and $k[y, x] = k[y] \otimes k[x]$ with
-		block order. Let $R = k[y, x]/I.$ Then,
+	\item[(c)] Endow $k[y] := k[y_{i, e_i}]_{i \in J}$ and $k[x]:=k[x_1,\ldots, x_m]$ with graded monomial orders and give $k[y, x] = k[y] \otimes k[x]$ block order, as defined in \cite[Definition 8.1.1]{vzb:stacky}. \todo{Possibly reference definition in this paper instead.} Let $R = k[y, x]/I.$ Then,
 		\begin{align*}
-			in_\prec(I) = in_\prec(I')k[x, y] + \langle y_{i, e_i}z \mid z 
+			in_\prec(I) = in_\prec(I')k[x, y] + \langle y_{i, e_i}z : z 
 			\neq y_{i, e_i}, y_{i, e_i'} \rangle
 		\end{align*}
 		as $z$ ranges over all generators of $R$.
@@ -1286,20 +1285,19 @@ $e_j = e_j'$ for $j \notin J$. Then the following are true:
 \end{lem}
 
 \begin{proof}
-We will only prove this in the case (1), that $(\sx', \halfcan', J)$ is admissible, as the case (2) that $\sigma$ is as in Remark ~\ref{rem:three-cases} is completely analogous.
+We will only prove this in the case (1), in which $(\sx', \halfcan', J)$ is admissible, as the case (2), in which $\sigma$ is as in Remark ~\ref{rem:three-cases}, is completely analogous.
 
-Let $(\sx, \Delta, L)$ and $(\sx', \Delta, L')$ be the two log spin curves in 
-question, with coarse spaces $X = X'$.
-Define
+{\bf Part (a):} 
+Recall from Definition ~\ref{defn:admissible} that
 
 \begin{align*}
-	S(i,0) = \{j \in J : j \neq i \text{ and }e_j' \mid e_i\}
+	S(i,0) = \{j \in J : j \neq i \text{ and }e_j' \mid e_i-e_j'\} = \{j \in J : j \neq i \text{ and }e_j' \mid e_i\}.
 \end{align*}
 
 \noindent
 Define
 \begin{align*}
-	E_i = \sum_{j \in S(i,0)}^{}Q_j
+	E_i = \sum_{j \in S(i,0)}^{}Q_j.
 \end{align*}
 
 \noindent
@@ -1318,12 +1316,13 @@ H^0(\sx, e_iL).
 \noindent
 The assumption (Ad-iii) implies
 \begin{align*}
-	\deg \left( e_i L' - E_i \right) \geq 2g - 1
+	\deg \left( e_i L' - E_i \right) \geq 2g - 1,
 \end{align*}
 
 \noindent
-implying that $H^0(\sx', e_iL'-E_i + Q_i)$ is base point free by 
-Riemann Roch \todo{Peter: Or more for higher genus, by our hypothesis}, and so a general element
+and so $H^0(\sx', e_iL'-E_i + Q_i)$ is base point free by 
+Riemann Roch.
+Hence, a general element
 \begin{align*}
 	y_{i, e_i} \in H^0(\sx', e_iL'-E_i + Q_i)
 \end{align*}
@@ -1332,7 +1331,7 @@ Riemann Roch \todo{Peter: Or more for higher genus, by our hypothesis}, and so a
 satisfies
 \begin{align*}
 	-\ord_{Q_i}
-^{\halfcan_X'}(y_{i, e_i}) = \lfloor e_i \subhalf {e_i'} \rfloor + 1 =
+^{\halfcan_X'}(y_{i, e_i}) = \left\lfloor e_i \subhalf {e_i'} \right\rfloor + 1 =
 	\frac{e_i - 1}{2}
 \end{align*}
 
@@ -1340,10 +1339,10 @@ satisfies
 Therefore, $y_{i, e_i}$ satisfies the first part of the claim of $(a)$.
 
 We next show $y_{i, e_i}$ also satisfies the second part of the
-claim of $(a),$ by considering separately the cases of whether $j
+claim of $(a),$ by considering separately the cases in which $j
 \in S(i, 0),$ and $j \notin S(i,0)$.
 
-If $j \in S(i,0)$ then, since $E_i \geq Q_j$, and $y_{i, e_i} \in H^0
+If $j \in S(i,0)$, since $E_i \geq Q_j$ and $y_{i, e_i} \in H^0
 (\sx', e_iL'-E_i + Q_i)$,
 \begin{align*}
 	-\ord_{Q_j}
@@ -1355,26 +1354,26 @@ If instead $j \notin S(i,0)$, then since $e_j' \nmid e_i$, we know
 $e_i\subhalf{e_j'} \notin \BZ$, so
 \begin{align*}
 	-\ord_{Q_j}
-^{\halfcan_X'}(y_{i, e_i}) \leq \lfloor  e_i\subhalf{e_j'} \rfloor 
+^{\halfcan_X'}(y_{i, e_i}) \leq \left\lfloor  e_i\subhalf{e_j'} \right\rfloor 
 	\leq e_i\subhalf{e_j'} - \frac{1}{e_j'},
 \end{align*}
 
 \noindent
 completing the proof of (a).
 
-Next, define $R_0 = R'$ and for $i \in \{1,\ldots, r\},$ inductively define 
+{\bf Part (b):}
+Define $R_0 = R'$ and for $i \in \{1,\ldots, r\},$ inductively define 
 $$R_i = \begin{cases}
 	R_{i - 1} &\text{ if }i \notin J\\
-	R_{i - 1}[y_{i, e_i}] &\text{ otherwise.} 
+	R_{i - 1}[y_{i, e_i}] &\text{ if }i \in J. 
 \end{cases}$$
 
 \noindent
 To prove (b), it suffices to show that elements of the form $y_{i, e_
 i'}^ay_{i, e_i}^b$ with $a \geq 0, b > 0$ are linearly independent,
 and that these elements together with $R_{i - 1}$ span $R_i$ as a $k$-
-vector space. These elements do not lie in $R_{i - 1}$ because their
-order of pole at $Q_i$ is bigger than the order of any element in $R
-_{i - 1}$, and are linearly independent amongst themselves because of
+vector space. These elements do not lie in $R_{i - 1}$ because when viewed as a rational section of $\sco(L_X')$, their order of pole at $Q_i$ is bigger than the order of any element in $R
+_{i - 1}$. Additionally, these elements are linearly independent amongst themselves because of
 injectivity of the linear map
 
 \begin{align*}
@@ -1389,7 +1388,7 @@ injectivity of the linear map
 
 \noindent
 The fact the the elements $y_{i, e_i'}^a y_{i, e_i}^b$ with $a \geq 0,
-b > 0$ span $R_i$ over $R{i - 1}$ follows from the fact that the
+b > 0$ span $R_i$ over $R_{i - 1}$ follows from the fact that the
 integer lattice points in the cone generated by the vectors $\left(e
 _i -2, \frac{e_i -3}{2} \right)$ and $\left(e_i, \frac{e_i - 1}{2}
 \right)$ is saturated, as the corresponding determinant is
@@ -1398,9 +1397,9 @@ _i -2, \frac{e_i -3}{2} \right)$ and $\left(e_i, \frac{e_i - 1}{2}
 \end{align*}
 completing part (b).
 
-To show (c), we wish to show, for all generators $z$ of $R'$
-such that $z \neq y_{i, e_i} \text{ and } z \neq y_{i, e_i'}$, that
-$y_{i, e_i}z \in R'$. Note that $f \in R$ lies in $R'$ if and
+{\bf Part (c):}
+To show (c), we wish to show that $y_{i, e_i}z \in R'$ for all generators $z$ of $R'$
+with $z \neq y_{i, e_i} \text{ and } z \neq y_{i, e_i'}$. Note that $f \in R$ further satisfies $f \in R'$ if and
 only if for all $j \in J$ we have
 \begin{align}
 \label{eqn:order-degree}
@@ -1409,7 +1408,7 @@ only if for all $j \in J$ we have
 \end{align}
 
 \noindent
-We now apply Equation ~\eqref{eqn:order-degree} with $f = y_{i, e_i}z$, to check $y_{i,e_i}z \in R'$ in three cases, depending on whether $j \notin \{
+We now apply Equation ~\eqref{eqn:order-degree} with $f = y_{i, e_i}z$, to check $y_{i,e_i}z \in R'$ in the three cases that $j \notin \{
 i \} \cup S(i, 0), j = i,$ or $j \in S(i, 0)$.
 
 \vskip.1in
@@ -1429,11 +1428,7 @@ Here, $-\ord_{Q_j}
 \vskip.1in
 \noindent
 {\sf Case 2: $j =i.$}
-
-For the case when $e_j' = 3$ for all $j \in \{1, \ldots, r\}$,
-we know that
-
-Otherwise by part (a), condition (Ad-ii), and Lemma
+By part (a), condition (Ad-ii), and Lemma
 ~\ref{lem:admissible_inequality} we have
 \begin{align*}
 	-\ord_{Q_j}
@@ -1468,7 +1463,8 @@ completing part (c).
 %by construction, and therefore are minimal by Lemma
 %~\ref{lem:minimal_quadratic}.
 
-Finally, we check (d), by checking $(Ad-i),(Ad-ii)$ and $(Ad-iii)$ are satisfied. We know (Ad-i) holds by part (b), taking the $y_{
+{\bf Part (d):}
+To check (d), we show $(Ad-i),(Ad-ii)$ and $(Ad-iii)$ are satisfied. We know (Ad-i) holds by part (b), taking the $y_{
 i, e_i}$ as the generators in degree $e_i$. Next, (Ad-ii) is
 strictly monotonic in the $e_i$ and hence also holds for $(\sx, J)$.
 Finally, if (Ad-iii) holds for $e$ then it holds for $e + 2$ by
