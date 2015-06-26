@@ -502,7 +502,7 @@ Zureick-Brown on stacky canonical rings to arbitrary $\BQ$-
 divisors. \todo{cite theorem 8.3.1}
 
 \begin{lem}
-\label{lem:deg1-sat-ind}
+\label{lem:sat-1}
 Let $X$ be a genus $g$ curve with a $\BQ$-divisor $\halfcan'$
 satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
 $u, x_1, \ldots, x_m$ with $\ord_P(x_i)=0$ for all $x_i$, $\ord_P(u) = 0$, \todo{Aaron: Instead of having $\deg u = 0$, don't we only need that $\ord_P(u) = \lfloor \halfcan'|_P \rfloor$?} and $\deg(u)= 1$ when viewed as sections of $\so_{\halfcan'}$.  Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\bar{d}$ with relations generated
@@ -569,7 +569,7 @@ Since every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ either lies in $
 \end{align*}
 \end{proof}
 
-\begin{proof}[Proof of Lemma \ref{lem:deg1-sat-ind}]
+\begin{proof}[Proof of Lemma \ref{lem:sat-1}]
 By
 our hypothesis (Equation ~\ref{eqn:deg1_sat_ind_dim}), for any $d
 \in \mathbb{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
@@ -762,7 +762,7 @@ The generators in the previous lemma are generic if $\frac{\alpha}{\beta}\le 1$ 
 \end{rem}
 
 \begin{lem}
-\label{lem:sat-two-induction-high-genus}
+\label{lem:sat-2}
 Let $(\sx, \Delta, \halfcan_\sx)$ and $(\sx', \Delta, \halfcan_{\sx'})$ be log spin curves with coarse space $(X, \Delta, L_X)$ and signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$ respectively, with $g > 0,$ and, if $g = 1$ then $\deg 3L \geq 2$.
 
 Let $R_{L'} = R' = k[x]/I'= k[x_2, x_3
@@ -801,7 +801,7 @@ The assumptions on $g,\sigma$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base p
 _P(y_i) = 1$ by Riemann-Roch, and the assumptions on $\sigma$. \todo{Understand why/whether we need to cite Lemma 5.4.7.} 
 
 In a fashion analogous to the proof of Lemma 
-~\ref{lem:sat-three-induction-g-0}, we see 
+~\ref{lem:sat-3}, we see 
 the following is a $k$ basis for $R$ over $R'$:
 
 \begin{align}
@@ -824,7 +824,7 @@ Similarly, we can find $B, C \in k$ such that $y_4^2 + B y_3^2 x_2+ Cy_3x_2x_3$ 
 \end{proof}
 
 \begin{lem}
-\label{lem:sat-three-induction-g-0}
+\label{lem:sat-3}
 \todo{Make explicit assumptions on genus.}
 Suppose $L'$ is a log half-canonical divisor of $\sx$ with course
 space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ with $R_
@@ -1653,17 +1653,17 @@ By Lemma ~\ref{lem:generation_5} and Proposition
 ~\ref{prop:relation_11}, the theorem holds for $(\sx, \Delta,
 \halfcan_X)$. Next, consider a divisor of the form $\halfcan' =
 \halfcan_X + \frac{1}{3} P_i$. Then, the theorem holds for $(\sx,
-\Delta, \halfcan')$ by Lemma ~\ref{lem:sat-two-induction-high-genus}
+\Delta, \halfcan')$ by Lemma ~\ref{lem:sat-2}
  if $P_i$ is a basepoint of $\halfcan'$ or by Lemma
-~\ref{lem:deg1-sat-ind} if $P_i $ is not a basepoint of $L'$. Note,
+~\ref{lem:sat-1} if $P_i $ is not a basepoint of $L'$. Note,
 in the case $P$  is a not basepoint of $\halfcan'$, Equation
 ~\ref{eqn:deg1-sat-ind} holds by Riemann Roch, and the fact that $d
 \geq 3$.
 
 In this case, we claim the theorem holds for $(\sx',\Delta, L')$. Indeed, the bound on the generators holds by part (a) of Lemmas
-~\ref{lem:sat-two-induction-high-genus} and ~\ref{lem:deg1-sat-ind},
+~\ref{lem:sat-2} and ~\ref{lem:sat-1},
 and the bound on the relations holds by part (b) of Lemmas
-~\ref{lem:sat-two-induction-high-genus} and ~\ref{lem:deg1-sat-ind}.
+~\ref{lem:sat-2} and ~\ref{lem:sat-1}.
 Therefore, by Corollary ~\ref{cor:raise-stacky-order}, this theorem 
 holds for all log spin curves $(\sx, L, J)$. 
 \end{proof}
@@ -1673,7 +1673,7 @@ holds for all log spin curves $(\sx, L, J)$.
 \section{Genus One}
 \label{sec:g_1}
 
-In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P - Q$ where $P,Q$ are distinct points, fi xed under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Lemma ~\ref{lem:raise-stacky-order} and add additional points using Lemma ~\ref{lem:deg1-sat-ind} and Lemma ~\ref{lem:sat-two-induction-high-genus}.
+In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P - Q$ where $P,Q$ are distinct points, fi xed under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Lemma ~\ref{lem:raise-stacky-order} and add additional points using Lemma ~\ref{lem:sat-1} and Lemma ~\ref{lem:sat-2}.
 
 \ssec{Genus One Base Cases}
 \label{ssec:g_1_base}
@@ -1832,15 +1832,15 @@ finite list of exceptional cases, as listed in Table
 {\sf Case 1: $\Delta > 0$}
 
 If $\Delta > 0$, we must have $\Delta \geq 2$. In this case, let $L_X \in \di X$ be so that $2L_X \sim K_X + \Delta$. We have $\deg L_X \geq 1$, so, by Riemann--Roch, $h^0(\sx,L) \geq 1.$ Therefore, $L$ is linearly equivalent to an effective divisor, so without loss of generality, we may assume $L$ is an effective divisor. We know the theorem holds for $L' = 0$ by Example ~\ref{eg:base- 1-0}.
-\todo{fi x this to accomodate the possibility that $P \in supp(L')$, this has already been done suppose ~\ref{lem:deg1-sat-ind} accommodates it. }
+\todo{fi x this to accomodate the possibility that $P \in supp(L')$, this has already been done suppose ~\ref{lem:sat-1} accommodates it. }
 
 We first now show the theorem holds for $L_X$ by induction. Assume it holds for $L' \in \di X$, with $L'$ effective. We will show it holds for $L' + P$. There are two cases, depending on whether $P$ is a basepoint of $L'$. 
 
-First, if $P$ is not a basepoint of $L',$ then the hypotheses of Lemma ~\ref{lem:deg1-sat-ind}. In particular, we may take $u \in h^0(\sx,L)$ with $u \neq 0$ and $\ord_P(u) = \lfloor L|_P \rfloor $ with $\ord_P(u) = 0$, as $P$ is not a basepoint of $L'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg L' \geq 1.$ Therefore, by Lemma ~\ref{lem:deg1-sat-ind}, the theorem holds for $L= L'+P$.
+First, if $P$ is not a basepoint of $L',$ then the hypotheses of Lemma ~\ref{lem:sat-1}. In particular, we may take $u \in h^0(\sx,L)$ with $u \neq 0$ and $\ord_P(u) = \lfloor L|_P \rfloor $ with $\ord_P(u) = 0$, as $P$ is not a basepoint of $L'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg L' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $L= L'+P$.
 
-Second, if $P$ is a basepoint of $L'$, then the hypotheses of Lemma ~\ref{lem:sat-two-induction-high-genus} are satisfied since $\deg 3(L'+P) \geq 2$ as $\deg L' + P \geq 1$. Therefore, by Lemma ~\ref{lem:sat-two-induction-high-genus}, the theorem holds for $L = L'+P$. This shows the theorem holds for $L_X$.
+Second, if $P$ is a basepoint of $L'$, then the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(L'+P) \geq 2$ as $\deg L' + P \geq 1$. Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $L = L'+P$. This shows the theorem holds for $L_X$.
 
-To complete the case that $\Delta > 0$, we only need show the theorem holds for $L$, assuming it holds for $L_X$. By induction, it suffices to show that if the theorem holds for a divisor $L'$ with $\deg \lfloor L' \rfloor > 0$, then it holds for $L' + \subhalf {e_i}P_i,$ with $e_i$ odd. Similarly to the above, if $P$ is not a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by emma ~\ref{lem:deg1-sat-ind}, while if $P$ is a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-two-induction-high-genus}.
+To complete the case that $\Delta > 0$, we only need show the theorem holds for $L$, assuming it holds for $L_X$. By induction, it suffices to show that if the theorem holds for a divisor $L'$ with $\deg \lfloor L' \rfloor > 0$, then it holds for $L' + \subhalf {e_i}P_i,$ with $e_i$ odd. Similarly to the above, if $P$ is not a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by emma ~\ref{lem:sat-1}, while if $P$ is a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-2}.
 
 \vskip.1in
 \noindent
@@ -1882,8 +1882,8 @@ $, so long as $\sigma$ does not lie in the finite list given in Table ~\ref{tabl
 There are two main cases: when $\delta \geq 2$ and when $\delta = 0$
  (note that $\delta$ must be even because $\halfcan_X \in \di X$ with $2\halfcan_X \sim K_X +\Delta$, where $\deg K_X$ is even). \todo{make a remark about this somewhere in the begining and reference it} In the first case, $\deg \lfloor \halfcan \rfloor
 \geq 0$ so the result directly follows from Lemma
-~\ref{lem:deg1-sat-ind}. When $\delta = 0$, the proof is a rather involved induction using Lemma
-~\ref{lem:sat-three-induction-g-0} and Lemma ~\ref{lem:raise-stacky-order}.
+~\ref{lem:sat-1}. When $\delta = 0$, the proof is a rather involved induction using Lemma
+~\ref{lem:sat-3} and Lemma ~\ref{lem:raise-stacky-order}.
 The remainder of this section is dedicated to characterizing the
 saturations (Subsection ~\ref{ssec:g_0_saturation}), inductive
 base cases (Subsection ~\ref{ssec:g_0_base}), and exceptional
@@ -1947,11 +1947,11 @@ Here we describe induction of raising degrees from Lemma ~\ref{lem:raise-stacky-
 \ssec{Base Cases}
 \label{ssec:g_0_base}
 Now we have an inductive statement on the number of stacky
-points in Lemma ~\ref{lem:sat-three-induction-g-0} and
+points in Lemma ~\ref{lem:sat-3} and
 an inductive statement on stabilizer orders in Theorem
 ~\ref{lem:raise-stacky-order}. After verifying that explicit triples
 $(\sx, L, J)$ of stacky curves $\sx$ with particular signatures and
-particular choices of $J$ are admissible, we will use Lemmas ~\ref{lem:raise-stacky-order}, and ~\ref{lem:sat-three-induction-g-0} imply that the spin canonical ring
+particular choices of $J$ are admissible, we will use Lemmas ~\ref{lem:raise-stacky-order}, and ~\ref{lem:sat-3} imply that the spin canonical ring
 $R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1,
 \ldots, e_r)$ with relations generated in degree at most $2e$ for
 $\sx$ with any signature $\sigma = (0; e_1, \ldots , e_r; 0)$ outside
@@ -2229,7 +2229,7 @@ canonical rings of genus 0 curves. This process will be carried out in Subsectio
 
 \iffalse
 Through the application of two inductively adding 
-points via Lemma ~\ref{lem:sat-three-induction-g-0} and inductively raising
+points via Lemma ~\ref{lem:sat-3} and inductively raising
 stabilizer orders via Lemma ~\ref{lem:raise-stacky-order},
 we obtain Theorem ~\ref{thm:g_0_generators_relations} for any
 log spin curve $(\sx, \Delta, L)$ over a perfect field $k$ with
@@ -2327,8 +2327,8 @@ Zureick-Brown ~\cite[Section 4.2]{vzb:stacky}.
 
 First, let us consider the case when $\delta \geq 2$. In any such case,
 $\lfloor \halfcan \rfloor$ is an effective divisor and the conditions
-of Lemma ~\ref{lem:deg1-sat-ind} are satisfied. Thus, we can apply
-the Lemma ~\ref{lem:deg1-sat-ind} inductively on the classical case with no stacky points
+of Lemma ~\ref{lem:sat-1} are satisfied. Thus, we can apply
+the Lemma ~\ref{lem:sat-1} inductively on the classical case with no stacky points
 to get that $R(\sx, \Delta, \halfcan)$ is generated up to degree $e$
 with relations generated up to degree $2e$.
 
@@ -2341,15 +2341,15 @@ trivial case where $R(\sx, \Delta, \halfcan) = k$. Thus, we now
 only consider the cases with $r \geq 3$.
 
 If $r > 5$, then we can use Lemma
-~\ref{lem:sat-three-induction-g-0} to add stacky points with
+~\ref{lem:sat-3} to add stacky points with
 stabilizer order $3$ to case (k) of Lemma
 ~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
 = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
 clearly satisfies the conditions of Lemma
-~\ref{lem:sat-three-induction-g-0} (recall from Subsection ~\ref
+~\ref{lem:sat-3} (recall from Subsection ~\ref
 {ssec:g_0_saturation} that $\sat(\Eff(\sigma_{11})) = 3$), and the
 immediate consequence of parts (a) and (c) of Lemma
-~\ref{lem:sat-three-induction-g-0} is that any $R(\sx', \Delta,
+~\ref{lem:sat-3} is that any $R(\sx', \Delta,
 \halfcan')$ corresponding to signatures $\sigma'$ with ramification
 orders all equal to $3$ for any $r > 5$ is generated up to
 degree $e := \max(5, e_1', \ldots, e_r')$ with relations generated
