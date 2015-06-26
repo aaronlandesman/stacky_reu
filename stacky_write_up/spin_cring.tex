@@ -175,17 +175,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-Let $\Gamma$ be a {\bf Fuchsian} subgroup, i.e. a discrete subgroup
+Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup
 of $PSL_2(\BR)$ acting on the upper half plane $\bh$ by fractional
 linear transformations. We consider the {\bf ring of modular forms}
 $M(\Gamma) = \bigoplus_k M_k(\Gamma)$. In this paper, for general
 $\Gamma$, we sharply bound the degree of the generators and
-relations for $M(\Gamma).$ The case where $M(\Gamma)$ has $M_{2k + 1
-}(\Gamma) = 0$ for all $k \in \BZ$, i.e. when $\Gamma$ has no odd
-weight modular forms, is answered in Voight and Zureick-Brown
-\cite[Chapters 7-9]{vzb:stacky}. This work extends this result to
-all Fuchsian subgroups $\Gamma$. In order to answer this question,
-we translate the seemingly analytic question into the algebraic
+relations for $M(\Gamma).$ In the special that $\Gamma$ has no odd weight modular forms, Voight and Zureick-Brown
+\cite[Chapters 7-9]{vzb:stacky} give similar bounds, and we extend their work to all Fuchsian groups $\Gamma$. In order to answer this question, we translate the seemingly analytic question of understanding the ring of modular forms into the algebraic
 category, using a generalization of the GAGA principle. By
 \cite[Proposition 6.1.5]{vzb:stacky}, there is an equivalence of
 categories between orbifold curves and log stacky curves over $\BC$
@@ -301,6 +297,7 @@ Include the following:
 	\item background on Gr\"{o}bner bases
 	\item Notation $h^0 = \dim H^0$.
 	\item Why we have these fractions $\frac{e_i - 1}{2e_i}$ and why $e_i$ must be odd.
+	\item Include notation for $X$ as coarse space and $L_X$ the corresponding log half canonical divisor.
 \end{enumerate}
 
 \subsection{Junk}
@@ -478,23 +475,23 @@ where each $e_i\in \{e_i', e_i' + 2\}$.
 \ssec{Inductive Lemmata: Adding Points}
 \label{ssec:add_pts}
 In this section, we prove various inductive statements under the following setup:
-Let $\halfcan'$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbf{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that minimally generate\todo{check minimal generation actually works} $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  The proofs of these Lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
+Let $\halfcan'$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that minimally generate \todo{check minimal generation actually works} $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  The proofs of these Lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
 
-First, let's introduce some notation from O'Dorney.   \todo{cite O'downey}
+First, let's introduce some notation from O'Dorney.  \cite{dorney:canonical}
 \begin{defn}\label{den:lower-approximation}
-If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha\in \mathbf{Z}, \beta\in \mathbf{N}$ written in reduced form), then a \begin{bf}{best lower approximation}\end{bf} to $\frac{\alpha}{\beta}$ is a a fraction $\frac{c}{d}$ (written in reduced form with $d>0$) such that there is no $\frac{c'}{d'}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$.  Moreover, the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a sequence
+If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha\in \mathbb{Z}, \beta\in \mathbb{N}$ written in reduced form), then a \begin{bf}{best lower approximation}\end{bf} to $\frac{\alpha}{\beta}$ is a a fraction $\frac{c}{d}$ (written in reduced form with $d>0$) such that there is no $\frac{c'}{d'}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$.  Moreover, the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a sequence
 \[
 	0=\frac{c_0}{d_0} < \frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{\alpha}{\beta}.
 \]
 \end{defn}
 \todo{add a picture of lattice}
 
-O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbf{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
+In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbb{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
 
 The following lemma provides an inductive method to extend
-O'Dorney's result on $\BP^1$ to divisors $D = \sum_i \frac{\alpha_i
+O'Dorney's result \todo{Aaron: Which result? If anything, wouldn't this be a strengthening of his bounds from Theorem 8, instead of an extension? I guess it is an extension in that it generalizes to higher genus? Cite the theorem number you are talking about} on $\BP^1$ to divisors $D = \sum_i \frac{\alpha_i
 }{\beta_i} P_i$ consisting of arbitrarily many points satisfying $H^
-0(X, \lfloor D \rfloor) > 0$, showing that they are generated in
+0(X, \lfloor D \rfloor) > 0$, showing that they \todo{What are generated?} are generated in
 degrees at most $e = \max(\beta_i)$ with relations generated in
 degrees at most $2e$.  Furthermore, given some constraints on $H^0(
 X, \lfloor dD \rfloor)$ for various values of $d$, we can apply the
@@ -507,14 +504,14 @@ divisors. \todo{cite theorem 8.3.1}
 \begin{lem}
 \label{lem:deg1-sat-ind}
 Let $X$ be a genus $g$ curve with a $\BQ$-divisor $\halfcan'$
-satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbf{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
-$u, x_1, \ldots, x_m$ with $\ord_P(x_i)=0\; \forall x_i$, $\ord_P(u) = 0$, \todo{Aaron: Instead of having $\deg u = 0$, don't we only need that $\ord_P(u) = \lfloor \halfcan'|_P \rfloor$?} and $\deg(u)= 1$ when viewed as sections of $\so_{\halfcan'}$.  Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\bar{d}$ with relations generated
+satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
+$u, x_1, \ldots, x_m$ with $\ord_P(x_i)=0$ for all $x_i$, $\ord_P(u) = 0$, \todo{Aaron: Instead of having $\deg u = 0$, don't we only need that $\ord_P(u) = \lfloor \halfcan'|_P \rfloor$?} and $\deg(u)= 1$ when viewed as sections of $\so_{\halfcan'}$.  Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\bar{d}$ with relations generated
 in degree at most $\bar{\tau}$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
-for some $\alpha,\beta \in \mathbf{N}$ such that
+for some $\alpha,\beta \in \mathbb{N}$ such that
 \begin{equation}
 \label{eqn:deg1_sat_ind_dim}
 	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
-	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \text{ for all } d \in \mathbf{
+	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \text{ for all } d \in \mathbb{
 	N} \text{ such that } d \ge \frac{\beta}{\alpha}.
 \end{equation}
 \label{eqn:deg1-sat-ind}
@@ -575,7 +572,7 @@ Since every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ either lies in $
 \begin{proof}[Proof of Lemma \ref{lem:deg1-sat-ind}]
 By
 our hypothesis (Equation ~\ref{eqn:deg1_sat_ind_dim}), for any $d
-\in \mathbf{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
+\in \mathbb{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
 	h^0 (X, d \halfcan ) = h^0(X, d\halfcan') + \deg(d\frac{\alpha}{\beta})
@@ -1047,7 +1044,7 @@ generators of $J$, completing (b).
 %possibly negative integer coefficients). Since $\Delta$ is non-
 %zero effective, $\deg(D)\ge - 1$.  Noting that the coefficient of 
 %any point $P$ occurring in a stacky divisor of $\sx$ must have 
-%coefficient lying in $\mathbf{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
+%coefficient lying in $\mathbb{Z}[\frac{1}{e_i}]$ (ranging over $e_i$
 %s appearing in the characteristic of $(\sx,\Delta)$).
  %
 %Since all $e_i$'s are odd, $2$ cannot appear in a denominator of the 
@@ -1109,7 +1106,7 @@ If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$
 \begin{defn}
 \label{defn:admissible}
 Let $(\sx', \Delta, L'),(\sx, \Delta , L)$ be log spin
-curves, both ramified over ramified at $Q_1, \ldots, Q_r$. Suppose
+curves, with the same stacky points $Q_1, \ldots, Q_r$. Suppose
 there is a birational map $\sx \rightarrow \sx'$, and let $J \subset
 \{1, \ldots, r\}$. Suppose $e_i'+ 2 \chi_J (i) = e_i$ where
 
@@ -1154,7 +1151,7 @@ three conditions hold.
 \end{defn}
 
 %\begin{lem}\label{lem:n-3s-admissible}
-%Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ ramified points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
+%Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ stacky points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
 %\end{lem}
 %\begin{proof}
 %To show (Ad-i) and (Ad-ii) look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies (Ad-i). Furthermore, since $'s$ is an admissible set of $L'$, in particular, we must have (Ad-ii) satisfied so $\frac{-\ord_{Q_l}
@@ -1466,7 +1463,7 @@ and not just for $d = 0$.
 \begin{cor}
 \label{cor:raise-stacky-order}
 Suppose $(\sx',L',J')$ is admissible with signature $\sigma' = (e_1',\ldots,e_r')$ or $\sigma$ satisfies one of the conditions of Remark ~\ref{rem:three cases}. Let $J' = \{t,t+1,\ldots,r\}$ and $e_1' \leq e_2' \leq \cdots \leq e_t' = e_{t+1}' =\cdots = e_r'$
-so that $(\sx',\Delta, L)$ satisfies the conditions of Theorem ~\ref{thm:ram_order_ind} and Theorem ~\ref{thm:general_generators_relations}. Then, for any spin curve $(\sx,\Delta,L)$ so that $\sx$ and $\sx'$ have the same coarse space $X = X'$ with the same set of ramified points, and $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$ with $e_1 \leq e_2 \leq \cdots e_r$ so that
+so that $(\sx',\Delta, L)$ satisfies the conditions of Theorem ~\ref{thm:ram_order_ind} and Theorem ~\ref{thm:general_generators_relations}. Then, for any spin curve $(\sx,\Delta,L)$ so that $\sx$ and $\sx'$ have the same coarse space $X = X'$ with the same set of stacky points, and $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$ with $e_1 \leq e_2 \leq \cdots e_r$ so that
 $$
 e_i \begin{cases}
 	= e_i' &\text{ if }i \notin J\\
@@ -1876,18 +1873,16 @@ In addition to the bound on the degree of the generators and relations, as detai
 
 \section{Genus Zero}
 \label{sec:g_0}
-We will prove that if $(\sx , 0, \halfcan)$ is a spin curve, so
+We will prove that if $(\sx , \Delta, \halfcan)$ is a log spin curve and
 that $\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; \delta)$,
 then $R(\sx , \Delta, L)$ is generated in degree at most $e := \max(
 5, e_1, \ldots, e_r)$ with relations generated in degree at most $2e
-$, so long as $\sigma$ does not lie in a finite list of exceptions.
+$, so long as $\sigma$ does not lie in the finite list given in Table ~\ref{table:g-0-exceptional}.
 
 There are two main cases: when $\delta \geq 2$ and when $\delta = 0$
- (note that $\delta$ must be odd or zero because $\halfcan \in \text
-{ Div } \sx$). In the first case, $\deg \lfloor \halfcan \rfloor
+ (note that $\delta$ must be even because $\halfcan_X \in \di X$ with $2\halfcan_X \sim K_X +\Delta$, where $\deg K_X$ is even) \todo{make a remark about this somewhere in the begining and reference it}. In the first case, $\deg \lfloor \halfcan \rfloor
 \geq 0$ so the result directly follows from Lemma
-~\ref{lem:deg1-sat-ind}. When $\delta = 0$, this is not necessarily
-true so the proof is a rather involved induction using Lemma
+~\ref{lem:deg1-sat-ind}. When $\delta = 0$, the proof is a rather involved induction using Lemma
 ~\ref{lem:sat-three-induction-g-0} and Theorem ~\ref{thm:ram_order_ind}.
 The remainder of this section is dedicated to characterizing the
 saturations (Subsection ~\ref{ssec:g_0_saturation}), inductive
@@ -1898,10 +1893,10 @@ Subsection ~\ref{ssec:g_0_main}.
 
 \ssec{Saturation}
 \label{ssec:g_0_saturation}
-First, we present the saturations $s$ of the canonical divisor for
+First, we present the saturations of the canonical divisor for
 all cases where $g = 0, \delta = 0$ as defined in Definition
 ~\ref{defn:sat}. The saturation can be computed via the application
-of Riemann-Roch on degrees up to $s$. Exceptional cases are listed
+of Riemann-Roch on degrees up to the saturation. Exceptional cases are listed
 first and generic cases follow.
 
 \begin{longtable}
@@ -1945,7 +1940,7 @@ Here we describe induction of raising degrees from Theorem ~\ref{thm:ram_order_i
 
 \ssec{Base Cases}
 \label{ssec:g_0_base}
-Now we have an inductive statement on the number of ramified
+Now we have an inductive statement on the number of stacky
 points in Lemma ~\ref{lem:sat-three-induction-g-0} and
 an inductive statement on stabilizer orders in Theorem
 ~\ref{thm:ram_order_ind}. After verifying that explicit pairs
@@ -2344,7 +2339,7 @@ trivial case where $R(\sx, \Delta, \halfcan) = k$. Thus, we now
 only consider when $r \geq 3$.
 
 If $r > 5$, then we can use Lemma
-~\ref{lem:sat-three-induction-g-0} to add ramified points with
+~\ref{lem:sat-three-induction-g-0} to add stacky points with
 stabilizer order $3$ to case (k) of Lemma
 ~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
 = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
