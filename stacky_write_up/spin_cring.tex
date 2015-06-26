@@ -231,7 +231,7 @@ The main theorem of this paper is the following bound on the degree
 of generators and relations of arbitrary log spin canonical rings:
 
 \begin{thm}
-\label{thm:general_generators_relations}
+\label{thm:main}
 Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$, so
 that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
@@ -267,7 +267,7 @@ obtain bounds on the degrees of the generators and relations, but
 also yield explicit systems of generators and the initial ideal of
 relations. Furthermore, our proof of the high genus case also
 provides an inductive procedure for determining the generators and
-initial ideal of relations for $\halfcan'$ when the halfcanonical
+initial ideal of relations for $\halfcan'$ when the half-canonical
 divisor $\halfcan$ can be written as $\halfcan' + \Lambda$ with
 $(\halfcan', 0, X)$ a log spin curve. In fact, such a system of
 generators and relations are known for $\halfcan'$ in many cases,
@@ -275,13 +275,13 @@ as detailed in Neves ~\cite[ Section III.4]{neves:halfcan}.
 \end{rem}
 
 The remainder of the paper will be primarily devoted to proving
-Theorem ~\ref{thm:general_generators_relations}. The idea of the
+Theorem ~\ref{thm:main}. The idea of the
 proof will be to induct on the order and number of hyperelliptic-
 fixed points. To this end, we first review important background in
 Section ~\ref{sec:background}. Then, we develop various inductive
 tools in Section ~\ref{sec:induction}. In Sections ~\ref{sec:g_high},
 ~\ref{sec:g_1} and ~\ref{sec:g_0}, we prove Theorem
-~\ref{thm:general_generators_relations} in the high genus, genus
+~\ref{thm:main} in the high genus, genus
 one, and genus zero cases respectively. Finally, in Section
 ~\ref{sec:further-questions}, we pose several questions for future
 research.
@@ -314,7 +314,7 @@ associated to $\Gamma$, we can form a space $\Gamma \backslash
 associated {\bf divisor of cusps} $\Delta$.
 
 \subsection{Definitions}
-We reserve the notation $\halfcan$ for the halfcanonical divisor
+We reserve the notation $\halfcan$ for the half-canonical divisor
 where $2\halfcan \sim K_\sx + \Delta$.
 
 Here are some definitions.
@@ -1471,20 +1471,20 @@ and not just for $d = 0$.
 
 \begin{cor}
 \label{cor:raise-stacky-order}
-Suppose $(\sx',L',J')$ is admissible with signature $\sigma' = (e_1',\ldots,e_r')$ or $\sigma$ satisfies one of the conditions of Remark ~\ref{rem:three cases}. Let $J' = \{t,t+1,\ldots,r\}$ and $e_1' \leq e_2' \leq \cdots \leq e_t' = e_{t+1}' =\cdots = e_r'$
-so that $(\sx',\Delta, L)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:general_generators_relations}. Then, for any spin curve $(\sx,\Delta,L)$ so that $\sx$ and $\sx'$ have the same coarse space $X = X'$ with the same set of stacky points, and $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$ with $e_1 \leq e_2 \leq \cdots e_r$ so that
+Suppose $(\sx',L',J')$ is admissible with signature $\sigma' = (e_1',\ldots,e_r')$ or $\sigma$ satisfies one of the conditions of Remark ~\ref{rem:three-cases}. Let $J' = \{t,t+1,\ldots,r\}$ and $e_1' \leq e_2' \leq \cdots \leq e_t' = e_{t+1}' =\cdots = e_r'$
+so that $(\sx',\Delta, L)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main}. Then, for any spin curve $(\sx,\Delta,L)$ so that $\sx$ and $\sx'$ have the same coarse space $X = X'$ with the same set of stacky points, and $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$ with $e_1 \leq e_2 \leq \cdots e_r$ so that
 $$
 e_i \begin{cases}
 	= e_i' &\text{ if }i \notin J\\
 	\leq e_i' &\text{ if } i \in J
 \end{cases}$$
-then Theorem ~\ref{thm:general_generators_relations} holds for $(\sx,\Delta,L)$
+then Theorem ~\ref{thm:main} holds for $(\sx,\Delta,L)$
 \end{cor}
 \begin{proof}
 For $t \leq i \leq r$. Let $(\sx_i,\Delta, L_i)$ be the log spin curve with the same coarse space as $L'$ and with the same stacky points as $(\sx',\Delta,L),$ having signature $(g; e_1, \ldots. e_{i-1}, e_i, e_i, \ldots, e_i;\delta),$ and let 
 $J_i = \{i,\ldots, r\}.$ Note that $(\sx_k,L_k,J_0) = (\sx',L',J')$ and $(\sx_r ,L_r ,J_r) = (\sx, L, J)$.
 
-Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the conditions $(\sx',\Delta, L)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:general_generators_relations} and $(\sx_i, \halfcan_i, J_i)$ is admissible.
+Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the conditions $(\sx',\Delta, L)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main} and $(\sx_i, \halfcan_i, J_i)$ is admissible.
 
 Since $(*_0)$ holds by assumption, by induction on $i$, it suffices to show that if $(*_i)$ holds then so does $(*_{i+1}).$ 
 Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \halfcan_i, J_{i+1})$ is admissible, as $J_{i+1} \subset J_i$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e_{i+1}-e_i}{2}$ times, we see $(*_{i+1})$ holds.
@@ -1541,7 +1541,7 @@ Then, $R_L$ is generated in degree at most $5$.
 \end{prop}
 \begin{proof}
 By Lemma ~\ref{lem:semicanonical_generation} it suffices to show there are no new generators in degree 6.
-Let $P_1, \ldots, P_6$ be the si x hyperelliptic fi xed points of $X$. 
+Let $P_1, \ldots, P_6$ be the six hyperelliptic fixed points of $X$. 
 Recall that all spin divisors on $X$ can be written as 
 $$L = P_1 + \sum_{i =2}^{6} \epsilon_i (P_1 - P_i),$$ 
 with $\epsilon_i \in \{0,1\},$ and some $i \in \{2, 3, 4, 5, 6\}$ for which $\epsilon_i = 0$. \todo{cite this somewhere, maybe ask david for a place to cite?}
@@ -1865,7 +1865,7 @@ Note that we are assuming $L$ is not one of the exceptional cases listed in Tabl
 
 First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. While $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, while the previous relation lies in degree $12$, which is less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
-Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base- 1-33}, it follows that the signature $\sigma = (1;3, 3; \delta)$ satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Therefore, applying Lemma ~\ref{lem:n-3s-admissible} $r-2$ times, we see that for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i,$ the pair $(\sx', \halfcan', \{1, \ldots, r\})$. Assume for convenience  $e_1 \leq e_2 \leq \cdots \leq e_r$. Then, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
+Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base- 1-33}, it follows that the signature $\sigma = (1;3, 3; \delta)$ satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ Assume for convenience  $e_1 \leq e_2 \leq \cdots \leq e_r$. Then, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
 
 \vskip.1in
 \noindent
@@ -1898,7 +1898,7 @@ saturations (Subsection ~\ref{ssec:g_0_saturation}), inductive
 base cases (Subsection ~\ref{ssec:g_0_base}), and exceptional
 cases (Subsection ~\ref{ssec:g-0-exceptional}) when $\delta = 0$
 before proving the main theorem in full for all $\delta$ in
-Subsection ~\ref{ssec:g_0_main}.
+Subsection ~\ref{ssec:g-0-main}.
 
 \begin{rem}
 Since all points are linearly equivalent on $\BP^1_k$, we may assume without loss of generality that $L_X = n \infty$ for some $n \in \BN$ and $K_X = -2 \infty.$ We will use this convention throughout this section.
@@ -2307,7 +2307,7 @@ expected.
 \end{rem}
 
 \ssec{Main Theorem for Genus Zero}
-\label{ssec:g_0_main}
+\label{ssec:g-0-main}
 Now we can combine this.
 \todo{write this section}
 
