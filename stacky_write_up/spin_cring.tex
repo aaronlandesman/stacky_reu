@@ -254,9 +254,9 @@ for signatures with $g = 0$.
 
 This theorem is proven in three different genus cases, each of
 which use similar inductive processes. The high genus case is
-proven in Theorem ~\ref{thm:high_generators_relations}. In Theorem
-~\ref{thm:g_1_generators_relations} and Theorem
-~\ref{thm:g_0_generators_relations}, we also give the respective
+proven in Theorem ~\ref{thm:g-high-main}. In Theorem
+~\ref{thm:g-1-main} and Theorem
+~\ref{thm:g-0-main}, we also give the respective
 genus one and genus zero results after using a similar induction
 process while dealing with more complicated base cases and
 exceptional cases.
@@ -293,6 +293,8 @@ research.
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
 Include the following:
 \begin{enumerate}
+	\item Notation for Coarse space
+	\item Notation for Stacky points with associated stabilizer orders (I.e. as those points for which the divisor can have rational coefficients with denominator equal to the stabilizer order)
 	\item Note that this result is independence of base field
 	\item background on Gr\"{o}bner bases
 	\item Notation $h^0 = \dim_k H^0$.
@@ -1094,17 +1096,18 @@ generators of $J$, completing (b).
 %Similar to all the other Lemmas\todo{combine sections?}
 %\end{proof}
 
-Transition words.
 \todo{transition!}
 
-\ssec{Inductive Lemma: Raising stabilizer orders}
+\ssec{Raising Stabilizer Orders}
 \label{ssec:ram_orders}
-In this section, we aim to prove the inductive theorem, Theorem
-~\ref{lem:raise-stacky-order}. Under fairly general
-conditions, this theorem will allow us to show that if Theorem ~\ref
-{lem:raise-stacky-order} holds for a curve with signature
-$(0;e_1', \ldots, e_r';0)$ then it also holds for a curve with
-signature $(0; e_1, \ldots, e_r; 0)$ with $e_i' - e_i \in \{0 , 2\}$.
+In this subsection, we aim to prove Lemma
+~\ref{lem:raise-stacky-order}, whose proof is almost identical to that of \cite[Theorem 8.5.7]{vzb:stacky}. In many cases, Lemma ~\ref{lem:raise-stacky-order} implies that if the main result, Theorem 
+~\ref{thm:main}, holds for a curve with signature
+$(g;e_1', \ldots, e_k', e_{k+1}' \ldots, e_r';\delta),$ with $e_{k+1}' = \cdots = e_r',$ then Theorem ~\ref{thm:main} also holds for a curve with
+signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta).$ In order to state Lemma
+~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}. 
+
+One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and \cite[Definition 8.5.1]{vzb:stacky} is that in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ However, we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $L_X$ is not necessarily basepoint-free. Therefore, we will have to work with orders of zeros of poles relative to the divisor we are inducting from, instead of relative to the structure sheaf. Hence, we introduce the following notation.
 
 \begin{defn}
 \label{}
@@ -1115,8 +1118,7 @@ If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$
 \begin{defn}
 \label{defn:admissible}
 Let $(\sx', \Delta, L'),(\sx, \Delta , L)$ be log spin
-curves, with the same stacky points $Q_1, \ldots, Q_r$. Suppose
-there is a birational map $\sx \rightarrow \sx'$, and let $J \subset
+curves, with the same stacky points $Q_1, \ldots, Q_r$. Let $J \subset
 \{1, \ldots, r\}$. Suppose $e_i'+ 2 \chi_J (i) = e_i$ where
 
 $$\chi_J(i) = \begin{cases}
@@ -1159,6 +1161,11 @@ three conditions hold.
 \end{enumerate}
 \end{defn}
 
+\begin{rem}
+Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
+\end{rem}
+
+
 %\begin{lem}\label{lem:n-3s-admissible}
 %Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ stacky points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
 %\end{lem}
@@ -1173,7 +1180,7 @@ three conditions hold.
 %\end{itemize}
 %\end{proof}
 
-
+The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}. Lemma ~\ref{lem:admissible_inequality} can be thought of as an analog of \cite[Lemma 8.5.3]{vzb:stacky}
 
 \begin{lem}
 \label{lem:admissible_inequality}
@@ -1221,14 +1228,14 @@ if they hold for $J$.
 
 \begin{rem}
 \label{rem:three-cases}
-For the purposes of our induction, we will often be adding in a single 
+For the purposes of our induction, carried out in Theorems ~\ref{thm:g-high-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-0-main}, we will often add in a single
 stacky point with stabilizer order $3$. Say $(\sx,\Delta,\halfcan)$ is a log spin
 curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
-\delta)$. We will need to deal with signatures $\sigma$ satisfying one of the following three cases:
+\delta)$. We will need to deal with signatures $\sigma$ satisfying one of the following three cases, which we will soon refer to in Lemma ~\ref{lem:raise-stacky-order}:
 \begin{enumerate}
-	\item $g = 0, \delta = 0, $ and $r \geq 5$
-	\item $g = 1, \delta = 0,$ and $ r \geq 2$
-	\item $g \geq 2, \delta$ arbitrary, and $r \geq 1$.
+	\item $g = 0, e_1 = \cdots = e_r = 3, \delta = 0$ and $r \geq 5$
+	\item $g = 1, e_1 = \cdots = e_r = 3, \delta = 0,$ and $ r \geq 2$
+	\item $g \geq 2, e_1 = \cdots = e_r = 3, \delta$ arbitrary, and $r \geq 1$.
 \end{enumerate}
 \end{rem}
 
@@ -1636,10 +1643,10 @@ In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half can
 
 
 \ssec{Main Theorem for High Genus}
-\label{ssec:main_g_high}
+\label{ssec:g-high-main}
 
 \begin{thm}
-\label{thm:high_generators_relations}
+\label{thm:g-high-main}
 Let $g \geq 2$ and let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$, so
 that $\sx$ has signature $\sigma = (g; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
@@ -1820,7 +1827,7 @@ $L' = P - Q + \frac{1}{5}P_1$ above in Example ~\ref{eg:exception-1-5}. The othe
 \label{ssec:main_g_1}
 
 \begin{thm}
-\label{thm:g_1_generators_relations}
+\label{thm:g-1-main}
 Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$,
 so that $\sx$ has signature $\sigma = (1; e_1, \ldots, e_r; \delta)$.
 If $g = 1$, then the canonical ring
@@ -1875,7 +1882,7 @@ This case is completely analogous to 2a.
 \end{proof}
 
 \begin{rem}
-In addition to the bound on the degree of the generators and relations, as detailed in Theorem ~\ref{thm:g_1_generators_relations}, proof of Theorem ~\ref{thm:g_1_generators_relations} yields an explicit procedure for computing those minimal generators and relations. That, is one can start with the generators and relations for the base cases, and then inductively add in generators and relations, according to the inductive theorems.
+In addition to the bound on the degree of the generators and relations, as detailed in Theorem ~\ref{thm:g-1-main}, proof of Theorem ~\ref{thm:g-1-main} yields an explicit procedure for computing those minimal generators and relations. That, is one can start with the generators and relations for the base cases, and then inductively add in generators and relations, according to the inductive theorems.
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus zero %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2240,7 +2247,7 @@ canonical rings of genus 0 curves. This process will be carried out in Subsectio
 Through the application of two inductively adding 
 points via Lemma ~\ref{lem:sat-3} and inductively raising
 stabilizer orders via Lemma ~\ref{lem:raise-stacky-order},
-we obtain Theorem ~\ref{thm:g_0_generators_relations} for any
+we obtain Theorem ~\ref{thm:g-0-main} for any
 log spin curve $(\sx, \Delta, L)$ over a perfect field $k$ with
 signature $\sigma$ covered by this induction process.
 In particular, this induction process covers all signatures $\sigma
@@ -2312,7 +2319,7 @@ Now we can combine this.
 \todo{write this section}
 
 \begin{thm}
-\label{thm:g_0_generators_relations}
+\label{thm:g-0-main}
 Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$,
 so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
 Then, the canonical ring
