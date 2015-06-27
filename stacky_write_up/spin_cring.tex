@@ -645,11 +645,11 @@ Let
 be the positive best lower approximations of $\frac{
 \alpha}{\beta}$ as described in this lemma's statement. Note that elements of $H^0(X, d\halfcan)$ have poles of
 orders ranging from 0 to $\lfloor d_i \frac{\alpha}{\beta}\rfloor =
-c_i $ at $P$.  Moreover, a set $\lfloor d_i \frac{\alpha}{\beta}\rfloor$ elements in $(R_{D})_{d_i}$ with respective pole orders $1, \ldots, \lfloor
+c_i $ at $P$.  Moreover, a set $\lfloor d_i \frac{\alpha}{\beta}\rfloor$ \todo{how is this a set?} elements in $(R_{D})_{d_i}$ with respective pole orders $1, \ldots, \lfloor
 d_i \frac{\alpha}{\beta} \rfloor$ are linearly independent over $(R_{\halfcan'})_d$, and thus by dimension counting form a $k$-basis for
 $(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.
 
-For any $j < i \in \mathbf{N}$, $\frac{c_i}{d_i} > \frac{c_j}{d_j}$, so for any $z_1, \ldots, z_n$ with $\deg(z_j)<d_i$ for all $z_j$, $\prod_{j=1}^n z_j$ must satisfy
+For any $j, i \in \mathbb{N}$, with $i < j$, we have $\frac{c_i}{d_i} > \frac{c_j}{d_j}$. So, for any $z_1, \ldots, z_n$ with $\deg(z_j)<d_i$ \todo{are the $i$ and $j$ mismatched?} for all $z_j$, \todo{It might be clearer to say for all $j \in \{1,\ldots, ?\},$ since the subscript is really want is changing, or instead for all $j$ with $1 \leq j \leq ?$ } $\prod_{j=1}^n z_j$ must satisfy \todo{It seems like each $z_j$ must satisfy this, instead of the product satisfying this}
 \todo{In the next equations, are we viewing these as rational functions on the structure sheaf or on $L'$, what point is the order of $z_j$ taken with respect to?}
 \[
 	\frac{-\ord_P(z_i)}{\deg(z_i)} < \frac{c_i}{d_i},
