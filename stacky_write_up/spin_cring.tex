@@ -475,7 +475,7 @@ where each $e_i\in \{e_i', e_i' + 2\}$.
 \ssec{Inductive Lemmata: Adding Points}
 \label{ssec:add_pts}
 In this section, we prove various inductive statements under the following setup:
-Let $\halfcan'$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that minimally generate \todo{check minimal generation actually works} $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  The proofs of these Lemmas all follow similar patterns, so we will present a few \todo{give the precise number we show} and leave the rest to the reader.
+Let $\halfcan'$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  
 
 First, let's introduce some notation from O'Dorney.  \cite{dorney:canonical}
 \begin{defn}\label{den:lower-approximation}
@@ -488,71 +488,26 @@ If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha\in \mathbb{Z}, \beta\in \mathbb{N}
 
 In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbb{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
 
-The following lemma provides an inductive method to extend
-O'Dorney's result \todo{Aaron: Which result? If anything, wouldn't this be a strengthening of his bounds from Theorem 8, instead of an extension? I guess it is an extension in that it generalizes to higher genus? Cite the theorem number you are talking about} on $\BP^1_k$ to divisors $D = \sum_i \frac{\alpha_i
-}{\beta_i} P_i$ consisting of arbitrarily many points satisfying $H^
-0(X, \lfloor D \rfloor) > 0$, showing that they \todo{What are generated?} are generated in
+In Lemma \ref{lem:sat-1} we provide an inductive method to strengthen
+O'Dorney's result \todo{cite theorem 8} on $\BP^1_k$ to divisors $D = \sum_{i=1}^n \frac{\alpha_i
+}{\beta_i} P_i$ for points $P_1, \ldots, P_n$ on a curve $X$ such that $H^
+0(X, \lfloor D \rfloor) > 0$; our result implies that $R_D$ is generated in
 degrees at most $e = \max(\beta_i)$ with relations generated in
-degrees at most $2e$.  Furthermore, given some constraints on $H^0(
+degrees at most $2e$.  Furthermore, given additional constraints on $H^0(
 X, \lfloor dD \rfloor)$ for various values of $d$, we can apply the
-same Riemann-Roch arguments from $\BP^1_k$ in arbitrary genus,
-allowing a similar inductive result in arbitrary genus $e = \max(
-\beta_i)$. To do this, we extend an inductive result by Voight and
+same Riemann-Roch arguments in arbitrary genus. 
+To do this, we extend an inductive result by Voight and
 Zureick-Brown on stacky canonical rings to arbitrary $\BQ$-
 divisors. \todo{cite theorem 8.3.1}
 
-\begin{lem}
-\label{lem:sat-1}
-Let $X$ be a genus $g$ curve with a $\BQ$-divisor $\halfcan'$
-satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
-$u, x_1, \ldots, x_m$ with $\ord_P(x_i)=0$ for all $x_i$, $\ord_P(u) = 0$, \todo{Aaron: Instead of having $\deg u = 0$, don't we only need that $\ord_P(u) = \lfloor \halfcan'|_P \rfloor$?} and $\deg(u)= 1$ when viewed as sections of $\so_{\halfcan'}$.  Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\bar{d}$ with relations generated
-in degree at most $\bar{\tau}$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
-for some $\alpha,\beta \in \mathbb{N}$ such that
-\begin{equation}
-\label{eqn:deg1_sat_ind_dim}
-	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
-	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \text{ for all } d \in \mathbb{
-	N} \text{ such that } d \ge \frac{\beta}{\alpha}.
-\end{equation}
-\label{eqn:deg1-sat-ind}
-Let 
-\[
-	0 < \frac{c_1}{d_1} < \ldots < \frac{c_n}{d_n} = \frac{\alpha}{\beta}
-\]
-be the positive best lower approximations of $\frac{\alpha}{\beta}$.
-Then 
-
-\begin{enumerate}
-\item[(a)] $R_{\halfcan}$ is generated over $R_{\halfcan'}$ by elements $y_1, \ldots, y_n$ such that $y_i$ lies in  
-degree $d_i$ and has a pole at $P$ of degree $c_i$
-
-\item[(b)] If $I$ and $I'$ are the ideal of relations of $R_{\halfcan}$ and $R_{\halfcan'}$ respectively, then 
-
-\begin{align*}
-	\initial_\prec(I) &= \initial_\prec(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
-										 &+ \langle y_i x_j: 1 \le i \le n, 1 \le j \le m \rangle \\
-										 &+ \langle y_i y_j: \lfloor \frac{\alpha}{\beta} \rfloor \rangle \le i \le j \le n- 1 \\
-										 &+ \langle y_i y_j: 1\le i\le j\lfloor \frac{\alpha}{\beta} \rfloor\\
-										 &+ \langle (y_i)^{\deg(y_{i + 1} + 1)}: 1\le i =\lfloor \frac{\alpha}{\beta} \rfloor
-\end{align*}
-
-In particular, if $\frac{\alpha}{\beta}\le 1$, then $I$ is minimally \todo{Aaron: Should the word minimally be removed here?} generated by elements with leading terms of the form $y_i x_j$ and $y_i y_j$.
-%\item If $\gin_\prec(I')=\initial_\prec(I')$ then $\gin_\prec(I)=\initial_\prec(I)$.
-%\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
-%	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
-%	\frac{\alpha}{\beta} \rfloor} + 1}$ (really the subset of these with positive subscripts) as shown above minimally
-%generates $I'$.
-\end{enumerate}
-\end{lem}
-
-Before presenting a proof of this, we first prove a lemma that will allow parts $(b)$ and $(c)$ to immediately follow from an appropriate construction of generators in part $(a)$. \todo{Would it make sense to put this lemma before the previous theorem, instead of after the statement?}
+First, however, we give a criteria to determine if a set of monomials generates the initial ideal of relations, and define notation for a type of monomial ordering.
 
 \begin{lem}\label{lem:relations_from_generators_induction} 
 Suppose $\halfcan$ and $\halfcan'$ are $\BQ$ divisors on a curve $X$ with $\halfcan=\halfcan'+\frac{\alpha}{\beta}P$, that $R_{\halfcan'}$ is generated by $x_1, \ldots, x_m$ and $R_{\halfcan}$ is minimally generated by $y_1, \ldots, y_n$ over $R_{\halfcan'}$ with ideals of relations $I'$ and $I$ respectively.  Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T\subseteq R_\halfcan-(S\cup R_\halfcan')$, and an ordering $\prec$ such 
 \begin{enumerate}
-\item $T\prec S\prec k[x_1, \ldots, x_n]$ (meaning all monomials in $T$ precede all monomials in $S$ which proceed all monomials in $k[x_1, \ldots, x_n]$)
-\item $S$ forms a $k$-basis for $R_\halfcan$ over $R_\halfcan'$
-\item All monomials in $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ lie in 
+\item[(\ref{lem:relations_from_generators_induction}.1)]  $T\prec S\prec k[x_1, \ldots, x_n]$ (meaning all monomials in $T$ precede all monomials in $S$ which proceed all monomials in $k[x_1, \ldots, x_n]$)
+\item[(\ref{lem:relations_from_generators_induction}.2)] $S$ forms a $k$-basis for $R_\halfcan$ over $R_\halfcan'$
+\item[(\ref{lem:relations_from_generators_induction}.3)] All monomials in $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ lie in 
 \begin{align*}
 	& S \\
 	\cup \; &\langle T\rangle \\
@@ -571,14 +526,78 @@ Suppose monomial $f\in T$ has a pole order $a$ at $P$.  Then since $S$ forms a $
 	\initial(I) & \supseteq \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]\\
 		     & + \langle T \rangle.
 \end{align*}
-Since every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ either lies in $\langle T\rangle + \initial_\prec(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ or $S$, 
+Since every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ is an element of either $S$, $\langle T\rangle$, or $\initial_\prec(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]$,
 \begin{align*}
 	\initial(I) & = \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]\\
 		     & + \langle T \rangle.
 \end{align*}
 \end{proof}
 
-\begin{proof}[Proof of Lemma \ref{lem:sat-1}]
+As suggested by the previous lemma, we will need an ordering on monomials, and the following definition will prove useful in the ensuing lemma.
+\begin{defn}
+We equip the graded ring $k[x_1, \ldots x_m]$, with weight $a_i$ and pole order $-\ord_P(x_i)$ attached to $x_i$, the graded $P$ reverse lexicographic order {\bf{g-P-revlex}} if for $f=\prod_{i=1}^m {x_i}^{q_i}\ne g=\prod_{i=1}^m {x_i}^{r_i}$, $f\prec g$ iff one of the following holds
+\begin{enumerate}
+\item $\deg(f) < \deg(g)$
+\item $\deg(f) = \deg(g)$ and $-\ord(f) > -\ord(g)$
+\item $\deg(f) = \deg(g)$, $-\ord(f) = -\ord(g)$, and for $i$ maximal such that $q_i-r_i$ is non-zero, that expression is negative.  
+\end{enumerate}
+\end{defn}
+We leave it as an exercise to verify that this is an order.  \todo{check for ourselves that this actually is}
+We now offer a lemma that allows us to inductively add $\mathbb{Q}$-points to a divisor and describe the new generators and relations.
+
+\begin{lem}
+\label{lem:sat-1}
+Let $X$ be a genus $g$ curve with a $\BQ$-divisor $\halfcan'$
+satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
+$u, x_1, \ldots, x_m$ with $\ord_P(x_i)=0$ for all $x_i$, $\ord_P(u) = 0$, \todo{Aaron: Instead of having $\deg u = 0$, don't we only need that $\ord_P(u) = \lfloor \halfcan'|_P \rfloor$?} and $\deg(u)= 1$ when viewed as sections of $\so_{\halfcan'}$.  Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\sigma$ with relations generated
+in degree at most $\tau$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
+for some $\alpha,\beta \in \mathbb{N}$ such that
+\begin{equation}
+\label{eqn:deg1_sat_ind_dim}
+	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
+	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \text{ for all } d \in \mathbb{
+	N} \text{ such that } d \ge \frac{\beta}{\alpha}.
+\end{equation}
+\label{eqn:deg1-sat-ind}
+Let 
+\[
+	0 < \frac{c_1}{d_1} < \ldots < \frac{c_n}{d_n} = \frac{\alpha}{\beta}
+\]
+be the positive best lower approximations of $\frac{\alpha}{\beta}$.
+Then 
+
+\begin{enumerate}
+\item[(a)] $R_{\halfcan}$ is generated over $R_{\halfcan'}$ by elements $y_1, \ldots, y_n$ such that $y_i$ lies in  
+degree $d_i$ and has a pole at $P$ of degree $c_i$, when viewed as sections of $\so_{\halfcan'}$
+
+\item[(b)] Choose an ordering $\prec$ on $k[u, x_1, \ldots, x_m]$ such that
+\[
+	\ord_u(f) < \ord_u(g) \implies f\prec g
+\]
+and equip $k[y_1, \ldots, y_n]$ with g-P-revlex and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ with a block order.
+If $I$ and $I'$ are the ideal of relations of $R_{\halfcan}$ and $R_{\halfcan'}$ respectively, then 
+
+\begin{align*}
+	\initial_\prec(I) &= \initial_\prec(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
+										 &+ \langle U_i: 1 \le i \le n-1 \rangle\\
+										 &+ \langle V \rangle\\
+\end{align*}
+where 
+$V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
+ and $U_i$ is the set of monomials of the form $\prod_{j=1}^{i} y_i^{a_i}$ with $a_j\in \mathbb{Z}^{\ge 0}, a_i\ne 0$ such that
+$\sum_{j=1}^i a_j c_j \ge c_{j+1}$
+and there does not exist $((b_1, \ldots b_i)\ne (a_1, \ldots a_i)$ such that with all $b_j\le a_j$ and 
+$\sum_{j=1}^i b_jc_j\ge c_{j+1})\}$.  \\
+
+\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with relations $I$ generated over $I'$ by relations in degree is generated $\max(2\beta, \beta + \sigma)$ (where $\sigma=\max(\deg(x_i))$).
+%\item If $\gin_\prec(I')=\initial_\prec(I')$ then $\gin_\prec(I)=\initial_\prec(I)$.
+%\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
+%	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
+%	\frac{\alpha}{\beta} \rfloor} + 1}$ (really the subset of these with positive subscripts) as shown above minimally
+%generates $I'$.
+\end{enumerate}
+\end{lem}
+\begin{proof}
 By
 our hypothesis (Equation ~\ref{eqn:deg1_sat_ind_dim}), for any $d
 \in \mathbb{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
@@ -600,49 +619,68 @@ Let
 \]
 
 \noindent
-be the non-negative best lower approximation of $\frac{
+be the positive best lower approximation of $\frac{
 \alpha}{\beta}$ as described in the lemma's statement.  Note that elements of $H^0(X, d\halfcan)$ have pole of
 orders ranging from 0 to $\lfloor d_i \frac{\alpha}{\beta}\rfloor =
 c_i $ at $P$.  Moreover, a set $\lfloor d_i \frac{\alpha}{\beta}\rfloor$ elements in $(R_{D})_{d_i}$ with respective pole orders $1, \ldots, \lfloor
 d_i \frac{\alpha}{\beta} \rfloor$ are linearly independent over $(R_{\halfcan'})_d$, and thus by dimension counting form a $k$-basis for
 $(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.
 
-For any $j < i$, $\frac{c_i}{d_i} > \frac{c_j}{d_j}$ \todo{Where do the $z_i$ live? How many $z_i$ are there, what indexing sets are the product and sums taken over?}
-by construction, so any product of $\prod z_i$ of elements of
-degrees less than $d_i$ must have
-\todo{Aaron: at what point is the following order taken at?}
+For any $j < i \in \mathbf{N}$, $\frac{c_i}{d_i} > \frac{c_j}{d_j}$, so for any $z_1, \ldots, z_n$ with $\deg(z_j)<d_i$ for all $z_j$, $\prod_{j=1}^n z_j$ must satisfy
 \[
-	\frac{-\ord(z_i)}{\deg(z_i)} < \frac{c_i}{d _i},
+	\frac{-\ord_P(z_i)}{\deg(z_i)} < \frac{c_i}{d _i},
 \]
 
 \noindent
-so we have the pole order of $\prod z_i$ is 
+so we have the pole order of $\prod_{j=1}^n z_j$ is 
 \[
-	\sum -\ord(z_i) < c_i .
+	\sum -\ord(z_j) < c_i .
 \]
 
 \noindent
 Thus, the elements of $(R_{\halfcan})_{d_i}$ with pole order $c_i$ at $P$ are not generated by 
 lower degrees. 
 Choose some $y_i \in(R_{
-\halfcan})_{d_i}$ with $-\ord_{P}(y_i)=c_i$.
+\halfcan})_{d_i}$ with $-\ord_{P}(y_i)=c_i$.  Note that this choice is generic if $d_i>1$ and if $d_i=1$ and $c_i=\lfloor \frac{\alpha}{\beta}\rfloor$. 
 
-Suppose $d\le \beta$ and positive $\frac{c}{d} \le \frac{\alpha}{
-\beta}$ not a best lower approximation. Then choose
-best lower approximation $\frac{c_i}{d_i}$ such that $c_i\le c$ is
-maximal; since $c<c_{i + 1}$, $\frac{c_i}{d_i}\ge \frac{c}{d}$. From
-this we can deduce that 
+Suppose $c,d\in \mathbb{N}$ with $d\le \beta$ and $\frac{c}{d} \le \frac{\alpha}{
+\beta}$ is not a best lower approximation. Then choose
+best lower approximation $\frac{c_i}{d_i}$ with $c_i$ maximal such that $d_i< d$.  This implies $\frac{c_i}{d_i}\ge \frac{c}{d}$ so 
+%  The argument goes $c_i d \ge c d_i$
+% implies c_i \frac{d}{d_i} \ge c
+% implies c_i + \frac{d-d_i}{d_i}c_i \ge c
+% \implies c_i (d-d_i) \frac{c_i}{d_i}\ge c
+% so since everything is an integer $c_i +\lfloor (d - d_i) \frac{c_i}{d_i}\rfloor \ge c$
+% \implies the equation below:
 \[
-	c_i +(d-d_i) \lfloor \frac{\alpha}{\beta} \rfloor \ge c.
+	c_i +\lfloor (d-d_i) \frac{\alpha}{\beta} \rfloor \ge c.
 \]
 
-\noindent
-Therefore, we can generate an element of $(R_{\halfcan})_d$ as a product of lower degrees that 
-has pole degree $c$ at $P$ by either $y_i u^b$, $y_i z u^b$, or $zu^b$ satisfying $i>
-\lfloor \frac{\alpha}{\beta} \rfloor$ and $z=y_j (y_{\lfloor \frac{\alpha}{\beta} \rfloor})^b$, 
-with $d_j = 1 =d_{{\lfloor \frac{a}{b} \rfloor}}$ and $b<d_{\lfloor \frac{\alpha}{\beta} 
-\rfloor + 1}$.
+This suggests how we can recursively define a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$.  Define 
+\[
+	S_0 = \{u^l : l\in \mathbb{Z}^{\ge 0}\}
+\]
+and for $i \in \mathbf{N}$, if $c_j$ is the maximal element among of $c_1, \ldots c_n$ at most $i$ (note that this always exists since $1=c_1\le i$), define
+\[
+	S_i = y_j S_{i-j}.
+\]
+Then define 
+\[
+	S = \cup_{i=1}^{\infty} S_i.
+\]
+A quick computation checks that $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$, so we have proven part (a).
 
+Furthermore, if we define $U_i$ and $V$ as in the lemma's statement and
+\[
+	T = (\bigcup_{i=1}^{n-1} U_i) \cup V,
+\]
+then we observe that $S$ and $T$ satisfy the hypothesis of Lemma \ref{lem:relations_from_generators_induction}, so we immediately prove part (b) of this lemma.
+
+
+
+
+
+\iffalse{
 Thus, for a general $d$ (not necessarily less than $\beta$), if $\frac{c}{d} \le
 \frac{\alpha}{\beta}$ is not a best lower approximation than we can
 construct an element in degree $d$ with pole degree $c$ by either $y
@@ -757,6 +795,8 @@ which are the elements of our chosen $k$-basis for $k[u, x_1, \ldots
 , x_m, y_1, \ldots, y_n]/I'$ over $k[u, x_1, \ldots, x_m]/I$.
 Therefore, by dimension counting (in each degree), we see that $J$
 is the initial ideal of $I$. 
+}\fi
+
 %Furthermore, since our choice of $y_i
 %$'s was generic, this is in fact the generic initial ideal.
 
@@ -766,18 +806,25 @@ is the initial ideal of $I$.
 %\todo{What about $\frac{\alpha}{\beta} > 1$?}
 \end{proof}
 
+\begin{rem}\label{rem:quad-gen}
+If $\frac{\alpha}{\beta}=\frac{e_i-1}{2 e_ii}$ for some odd $3\le e_i\in \mathbf{N}$, then $T$ from the previous lemma consists only of terms of the form $x_i y_j$ and $y_i y_j$, which are quadratic in the generators.
+\end{rem}
+
+
 \begin{rem}\label{rem:sat-1-gen-lem-generic}
 The generators in the previous lemma are generic if $\frac{\alpha}{\beta}\le 1$ (so there is not more than one $d_i=1$).  When $\frac{\alpha}{\beta}$, the choice of generators in degrees above 1 is generic, and we can make the choice in degree 1 generic by choosing $\lfloor \frac{\alpha}{\beta}\rfloor$ linearly independent elements in degree 1 with pole at $P$ of order $\lfloor \frac{\alpha}{\beta}\rfloor$ rather than elements with poles of order $1, \ldots, \lfloor \frac{\alpha}{\beta}\rfloor$.
 \end{rem}
 
+\todo{Something about fractional weight modular forms?}
+
+
+
 \begin{lem}
 \label{lem:sat-2}
-Let $(\sx, \Delta, \halfcan_\sx)$ and $(\sx', \Delta, \halfcan_{\sx'})$ be log spin curves with coarse space $(X, \Delta, L_X)$ and signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$ respectively, with $g > 0,$ and, if $g = 1$ then $\deg 3L \geq 2$.
-
-Let $R_{L'} = R' = k[x]/I'= k[x_2, x_3
+Let $(\sx, \Delta, \halfcan_\sx)$ and $(\sx', \Delta, \halfcan_{\sx'})$ be log spin curves with coarse space $(X, \Delta, \halfcan_X)$ with signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$ respectively with $g > 0,$ and, if $g = 1$ then $\deg 3\halfcan' \geq 2$.
+Let $R_{L'} = k[x]/I'= k[x_2, x_3
 , x_5, \ldots, x_m]/I'$ and let $\halfcan = \halfcan' + \frac{1}{
 3}P$, where $P\in X$ is a base point of $\halfcan'$ (which includes the case when $H^0(X, \lfloor \halfcan'\rfloor) = 0$).
-
 Suppose for $i \in \{2, 3\}$, $\deg x_i = i$ and $\ord_P(x_i)= 0$ (which is satisfied generically in degree 2 and 3, since base-point freeness follows by Riemann-Roch). Choose an ordering on $k[x_2, \ldots, x_m]$ that satisfies
 \begin{align*}
 	\ord_{x_2}(f) < \ord_{x_2}(g) \implies f \prec g.
@@ -835,7 +882,7 @@ Similarly, we can find $B, C \in k$ such that $y_4^2 + B y_3^2 x_2+ Cy_3x_2x_3$ 
 \begin{lem}
 \label{lem:sat-3}
 \todo{Make explicit assumptions on genus.}
-Suppose $L'$ is a log half-canonical divisor of $\sx$ with course
+Suppose $L'$ is a log half-canonical divisor of $\sx'$ with course
 space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ with $R_
 {\halfcan'} = k[x_3, x_4 , x_5, \ldots, x_m]/I'$. Let $L = L' + \frac
 {1}{3}P$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that
@@ -2071,7 +2118,7 @@ in degrees $10$ and $14$. In particular, we have relations
 
 Let $I$ be the ideal generated by these relations in
 $k[x_{7, 1}, x_{7, 2}, x_{5, 1}, x_{3, 1}]$. Under grlex with
-$x_{7,1} \prec x_{7,2} \prec x_{5,1} \prec x_{3,1}$), the initial ideal of $I$ is \todo{This will only be the case if $a_1,b_1 \neq 0$. We can definitely make this hold if we set up the variables in the right way, but I'm not sure if it's always true.}
+$x_{7,1} \prec x_{7,2} \prec x_{5,1} \prec x_{3,1}$, the initial ideal of $I$ is \todo{This will only be the case if $a_1,b_1 \neq 0$. We can definitely make this hold if we set up the variables in the right way, but I'm not sure if it's always true.}
 \[
 	in_\prec(I) = \langle x_{5, 1}^2, x_{7, 1}^2 \rangle
 \]
