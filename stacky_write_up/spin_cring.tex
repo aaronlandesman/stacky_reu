@@ -375,11 +375,23 @@ $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 
 \section{Inductive Lemmata}
 \label{sec:induction}
-<<<<<<< HEAD
-First we present several lemmata which play a crucial role in the inductive step of the proof of the main theorem, Theorem ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove Lemma ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3} which describe the generators and relations of $R_{D + \frac{\alpha}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di X \otimes \BQ$ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in Subsection ~\ref{ssec:raise-orders}, we prove Lemma ~\ref{lem:raise-stacky-order}, which the generators and relations of the log spin canonical ring curve with signature $(g; e_1', \ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a curve with a certain subset of the $e_i'$ incremented by $2$. While Lemma ~\ref{lem:sat-1} may be applied in a fairly general context, Lemma ~\ref{lem:sat-2} and ~\ref{lem:sat-3} are more specific to half-canonical divisors.
-=======
-First we present several lemmata which play a crucial role in the inductive step of the proof of the main theorem, Theorem ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove Lemma ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3} which describe the generators and relations of $R_{D + \frac{\alpha}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di X \otimes \BQ$ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in Subsection ~\ref{ssec:raise-orders}, we prove Lemma ~\ref{lem:raise-stacky-order}, which the generators and relations of the log spin canonical ring curve with signature $(g; e_1', \ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a curve with a certain subset of the $e_i'$ incremented by $2$. While Lemma ~\ref{lem:sat-1} may be applied in a fairly general context, Lemma ~\ref{lem:raise-stacky-order} is more specific to half-canonical divisors, although even Lemma ~\ref{lem:raise-stacky-order} has certain generalizations, as noted in Remark ~\ref{rem:raise-fractional-order}
->>>>>>> a22dc5ac4f194ce42b94b70a359f935712b14cb1
+First we present several lemmata which play a crucial role in the
+inductive step of the proof of the main theorem, Theorem
+~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove
+Lemma ~\ref {lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3}
+which describe the generators and relations of $R_{D + \frac{\alpha
+}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di
+X \otimes \BQ $ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in
+Subsection ~\ref{ssec:raise-orders}, we prove Lemma
+~\ref{lem:raise-stacky-order}, which the generators and relations 
+of the log spin canonical ring curve with signature $(g; e_1', 
+\ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a 
+curve with a certain subset of the $e_ i'$ incremented by $2$. 
+While Lemma ~\ref{lem:sat-1} may be applied in a fairly general 
+context, Lemma ~\ref{lem:raise-stacky-order} is more specific to 
+half-canonical divisors, although even Lemma
+~\ref{lem:raise-stacky-order} has certain generalizations, as noted
+in Remark ~\ref{rem:raise-fractional-order}
 
 %However, before we can answer these general Lemmata, it is useful
 %to prove a nice result about minimal generation of ideals of
@@ -504,11 +516,7 @@ If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha, \beta \in \mathbb{Z}, \beta> 0$ w
 \end{defn}
 \todo{add a picture of lattice}
 
-<<<<<<< HEAD
-In ~\cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbb{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
-=======
 In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) \todo{Can we remove this parenthetical? I don't see why the reader would assume effective.} divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\BP_k^1$ \todo{This comes up a lot, but instead of saying $D$ is a divisor of $X$, I'd prefer to say $D \in \di X$ to be more precise. Of course, this is minor, and it's fine to keep it this way.} consisting of at most 2 points in its support, \todo{It might be clearer to say $\# \Supp(D) \leq 2.$} to show it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$. \todo{Can you break the previous sentence into two sentences?} He \todo{Probably better not to say he, maybe give a theorem number where he does this?} further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points. \todo{This sentence seems very imprecise to me, and I wouldn't understand it if I hadn't read Evan's paper. Can you state this more precisely, or possibly just remove it.}
->>>>>>> a22dc5ac4f194ce42b94b70a359f935712b14cb1
 
 In Lemma ~\ref{lem:sat-1} we provide an inductive method to strengthen
 O'Dorney's result \cite[Theorem 8]{dorney:canonical} on $\BP^1_k$ to divisors $D = \sum_{i=1}^n \frac{\alpha_i
@@ -517,17 +525,10 @@ O'Dorney's result \cite[Theorem 8]{dorney:canonical} on $\BP^1_k$ to divisors $D
 degrees at most $e = \max(\beta_i)$ with relations generated in
 degrees at most $2e$. \todo{Are you sure you're not assuming $\frac{\alpha}{\beta}$ is effective? If not, doesn't what you say contradict Evan's example showing that his bounds of about lcm are asymptotically sharp?} Furthermore, given additional constraints on $H^0(
 X, \lfloor dD \rfloor)$ for various values of $d$, we can apply the
-<<<<<<< HEAD
-same Riemann-Roch arguments in arbitrary genus. 
-To do this, we extend an inductive result by Voight and
-Zureick-Brown ~\cite[Theorem 8.3.1]{vzb:stacky} on stacky canonical rings to arbitrary $\BQ$-
-divisors.
-=======
 same Riemann-Roch \todo{same as what? Maybe just say we can generalize his results to arbitrary genus?} arguments in arbitrary genus. 
 To do this, we extend an inductive result \todo{Is ``inductive result'' a phrase? Can we just remove the word ``inductive'' every time it appears?} by Voight and
-Zureick-Brown on stacky canonical rings to arbitrary $\BQ$-
-divisors. \todo{cite theorem 8.3.1} \todo{Again, I don't think it can be arbitrary, and what are the $\BQ$ divisors on?}
->>>>>>> a22dc5ac4f194ce42b94b70a359f935712b14cb1
+Zureick-Brown \cite[Theorem 8.3.1]{vzb:stacky} on stacky canonical rings to arbitrary $\BQ$-
+divisors. \todo{Again, I don't think it can be arbitrary, and what are the $\BQ$ divisors on?}
 
 First, however, we give a criteria to determine if a set of monomials generates the initial ideal of relations, and define notation for a type of monomial ordering. \todo{Perhaps say which parts of the proofs of which future lemmas it will be used in?}
 
