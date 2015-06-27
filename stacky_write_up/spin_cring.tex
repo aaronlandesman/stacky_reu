@@ -285,6 +285,7 @@ research.
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
 Include the following:
 \begin{enumerate}
+	\item Include explanation of Kodaira spencer, and use \cite[Lemma 10.2.1]{vzb:stacky} to obtain the desired translation to algebraic geometry.
 	\item Possibly include some of the following notation, it it isn't dealt with well in the background.
 	
  A divisor $\Delta \in \di X$ is a {\bf log divisor} if
@@ -374,17 +375,7 @@ $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 
 \section{Inductive Lemmata}
 \label{sec:induction}
-First we present the general inductive Lemmata that will be applied
-for all genera. We offer various inductive Lemmata that will allow
-us to add fractional point $\frac{\alpha}{\beta}P$ to a $\BQ$
- divisor $D$ of $X$ and describe the new generators and relations
-of $R_{D + P}$ not in $R_D$. Next, we provide a method specific to
-the case of stacky canonical divisors, which
-under certain conditions allows us to transfer information about
-the generators and relations of the half canonical ring of a stacky
-curve $\sx$' with signature $(g; e_1', \ldots, e_\tau'; 0)$ to a
-stacky curve $\sx$ with signature $(g; e_1, \ldots, e_\tau; 0)$
-where each $e_i\in \{e_i', e_i' + 2\}$.   
+First we present several lemmata which play a crucial role in the inductive step of the proof of the main theorem, Theorem ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove Lemma ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3} which describe the generators and relations of $R_{D + \frac{\alpha}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di X \otimes \BQ$ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in Subsection ~\ref{ssec:raise-orders}, we prove Lemma ~\ref{lem:raise-stacky-order}, which the generators and relations of the log spin canonical ring curve with signature $(g; e_1', \ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a curve with a certain subset of the $e_i'$ incremented by $2$. While Lemma ~\ref{lem:sat-1} may be applied in a fairly general context, Lemma ~\ref{lem:raise-stacky-orders} is more specific to half-canonical divisors, although even Lemma ~\ref{lem:raise-stacky-orders} has certain generalizations, as noted in Remark ~\ref{rem:raise-fractional-orders}
 
 %However, before we can answer these general Lemmata, it is useful
 %to prove a nice result about minimal generation of ideals of
@@ -495,7 +486,7 @@ where each $e_i\in \{e_i', e_i' + 2\}$.
 
 
 \ssec{Inductive Lemmata: Adding Points}
-\label{ssec:add_pts}
+\label{ssec:add-points}
 In this section, we prove various inductive statements under the following setup:
 Let $\halfcan'$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  
 
@@ -1181,13 +1172,13 @@ generators of $J$, completing (b).
 \todo{transition!}
 
 \ssec{Raising Stabilizer Orders}
-\label{ssec:ram_orders}
+\label{ssec:raise-orders}
 In this subsection, we aim to prove Lemma
 ~\ref{lem:raise-stacky-order}, whose proof is almost identical to that of \cite[Theorem 8.5.7]{vzb:stacky}. In many cases, Lemma ~\ref{lem:raise-stacky-order} implies that if the main result, Theorem 
 ~\ref{thm:main}, holds for a curve with signature
 $(g;e_1', \ldots, e_k', e_{k+1}' \ldots, e_r';\delta),$ with $e_{k+1}' = \cdots = e_r',$ then Theorem ~\ref{thm:main} also holds for a curve with
 signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta).$ In order to state Lemma
-~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}. 
+~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}.
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and \cite[Definition 8.5.1]{vzb:stacky} is that in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ However, we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $L_X$ is not necessarily basepoint-free. Therefore, we will have to work with orders of zeros of poles relative to the divisor we are inducting from, instead of relative to the structure sheaf. Hence, we introduce the following notation.
 
@@ -1551,6 +1542,13 @@ Finally, if (Ad-iii) holds for $e$ then it holds for $e + 2$ by
 definition. This is where we use that (Ad-iii) holds for $d > 0$
 and not just for $d = 0$.
 \end{proof}
+
+\begin{rem}
+\label{rem:raise-fractional-order}
+It is no coincidence that the proofs of Lemma ~\ref{lem:raise-stacky-orders} and \cite[Theorem 8.5.7]{vzb:stacky} are almost identical. In fact, the proofs of both results can easily be generalized generalized to the case of fractional canonical divisors, that is $L \in \di X$ with $nL \sim K$, for any $n \in \BZ_{\geq 1}$.
+\end{rem}
+
+
 
 \begin{cor}
 \label{cor:raise-stacky-order}
