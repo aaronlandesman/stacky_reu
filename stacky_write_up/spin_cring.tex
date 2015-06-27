@@ -375,11 +375,23 @@ $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 
 \section{Inductive Lemmata}
 \label{sec:induction}
-<<<<<<< HEAD
-First we present several lemmata which play a crucial role in the inductive step of the proof of the main theorem, Theorem ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove Lemma ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3} which describe the generators and relations of $R_{D + \frac{\alpha}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di X \otimes \BQ$ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in Subsection ~\ref{ssec:raise-orders}, we prove Lemma ~\ref{lem:raise-stacky-order}, which the generators and relations of the log spin canonical ring curve with signature $(g; e_1', \ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a curve with a certain subset of the $e_i'$ incremented by $2$. While Lemma ~\ref{lem:sat-1} may be applied in a fairly general context, Lemma ~\ref{lem:sat-2} and ~\ref{lem:sat-3} are more specific to half-canonical divisors.
-=======
-First we present several lemmata which play a crucial role in the inductive step of the proof of the main theorem, Theorem ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove Lemma ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3} which describe the generators and relations of $R_{D + \frac{\alpha}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di X \otimes \BQ$ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in Subsection ~\ref{ssec:raise-orders}, we prove Lemma ~\ref{lem:raise-stacky-order}, which the generators and relations of the log spin canonical ring curve with signature $(g; e_1', \ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a curve with a certain subset of the $e_i'$ incremented by $2$. While Lemma ~\ref{lem:sat-1} may be applied in a fairly general context, Lemma ~\ref{lem:raise-stacky-order} is more specific to half-canonical divisors, although even Lemma ~\ref{lem:raise-stacky-order} has certain generalizations, as noted in Remark ~\ref{rem:raise-fractional-order}
->>>>>>> a22dc5ac4f194ce42b94b70a359f935712b14cb1
+First we present several lemmata which play a crucial role in the
+inductive step of the proof of the main theorem, Theorem
+~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove
+Lemma ~\ref {lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3}
+which describe the generators and relations of $R_{D + \frac{\alpha
+}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di
+X \otimes \BQ $ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in
+Subsection ~\ref{ssec:raise-orders}, we prove Lemma
+~\ref{lem:raise-stacky-order}, which the generators and relations 
+of the log spin canonical ring curve with signature $(g; e_1', 
+\ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a 
+curve with a certain subset of the $e_ i'$ incremented by $2$. 
+While Lemma ~\ref{lem:sat-1} may be applied in a fairly general 
+context, Lemma ~\ref{lem:raise-stacky-order} is more specific to 
+half-canonical divisors, although even Lemma
+~\ref{lem:raise-stacky-order} has certain generalizations, as noted
+in Remark ~\ref{rem:raise-fractional-order}
 
 %However, before we can answer these general Lemmata, it is useful
 %to prove a nice result about minimal generation of ideals of
@@ -504,11 +516,7 @@ If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha, \beta \in \mathbb{Z}, \beta> 0$ w
 \end{defn}
 \todo{add a picture of lattice}
 
-<<<<<<< HEAD
-In ~\cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbb{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
-=======
 In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) \todo{Can we remove this parenthetical? I don't see why the reader would assume effective.} divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\BP_k^1$ \todo{This comes up a lot, but instead of saying $D$ is a divisor of $X$, I'd prefer to say $D \in \di X$ to be more precise. Of course, this is minor, and it's fine to keep it this way.} consisting of at most 2 points in its support, \todo{It might be clearer to say $\# \Supp(D) \leq 2.$} to show it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$. \todo{Can you break the previous sentence into two sentences?} He \todo{Probably better not to say he, maybe give a theorem number where he does this?} further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points. \todo{This sentence seems very imprecise to me, and I wouldn't understand it if I hadn't read Evan's paper. Can you state this more precisely, or possibly just remove it.}
->>>>>>> a22dc5ac4f194ce42b94b70a359f935712b14cb1
 
 In Lemma ~\ref{lem:sat-1} we provide an inductive method to strengthen
 O'Dorney's result \cite[Theorem 8]{dorney:canonical} on $\BP^1_k$ to divisors $D = \sum_{i=1}^n \frac{\alpha_i
@@ -517,17 +525,10 @@ O'Dorney's result \cite[Theorem 8]{dorney:canonical} on $\BP^1_k$ to divisors $D
 degrees at most $e = \max(\beta_i)$ with relations generated in
 degrees at most $2e$. \todo{Are you sure you're not assuming $\frac{\alpha}{\beta}$ is effective? If not, doesn't what you say contradict Evan's example showing that his bounds of about lcm are asymptotically sharp?} Furthermore, given additional constraints on $H^0(
 X, \lfloor dD \rfloor)$ for various values of $d$, we can apply the
-<<<<<<< HEAD
-same Riemann-Roch arguments in arbitrary genus. 
-To do this, we extend an inductive result by Voight and
-Zureick-Brown ~\cite[Theorem 8.3.1]{vzb:stacky} on stacky canonical rings to arbitrary $\BQ$-
-divisors.
-=======
 same Riemann-Roch \todo{same as what? Maybe just say we can generalize his results to arbitrary genus?} arguments in arbitrary genus. 
 To do this, we extend an inductive result \todo{Is ``inductive result'' a phrase? Can we just remove the word ``inductive'' every time it appears?} by Voight and
-Zureick-Brown on stacky canonical rings to arbitrary $\BQ$-
-divisors. \todo{cite theorem 8.3.1} \todo{Again, I don't think it can be arbitrary, and what are the $\BQ$ divisors on?}
->>>>>>> a22dc5ac4f194ce42b94b70a359f935712b14cb1
+Zureick-Brown \cite[Theorem 8.3.1]{vzb:stacky} on stacky canonical rings to arbitrary $\BQ$-
+divisors. \todo{Again, I don't think it can be arbitrary, and what are the $\BQ$ divisors on?}
 
 First, however, we give a criteria to determine if a set of monomials generates the initial ideal of relations, and define notation for a type of monomial ordering. \todo{Perhaps say which parts of the proofs of which future lemmas it will be used in?}
 
@@ -1829,6 +1830,11 @@ The inductive strategy we will adopt to prove Theorem ~\ref{thm:main} is similar
 We first analyze the following two examples, which will be crucial base cases for our inductive approach, completed in Subsection ~\ref{ssec:main_g_1}.
 
 \begin{longtable}	{| c || c | c |}
+	\caption{Genus 1 Base Cases}
+	\label{table:g-1-base}
+	
+	\tabularnewline
+	
 	\hline
 	L' & Generator Degrees & Degrees of Minimal Relations \\
 	\hline
@@ -1846,12 +1852,6 @@ We first analyze the following two examples, which will be crucial base cases fo
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
 \end{longtable}
 
-\begin{center}
-\label{table:g-1-base}
-Genus 1 base cases
-\end{center}
-
-\todo{label/ref of long tables doesn't work!}
 
 \begin{example}
 \label{eg:base-1-0}
@@ -1903,6 +1903,11 @@ The base cases of $L' = \frac{3}{7}P_1$ and $L' = \frac{1}{3}P_1 +\frac{1}{3}P_2
 Let $\sx$ be a stacky curve, with Let $P,Q$ distinct hyperelliptic fixed points on $X$. The following table provides a list of all cases which are not generated in degrees $e=\max(5,e_1,\ldots, e_r)$ with relations in degrees $2e$, as described in Theorem ~\ref{thm:g-1-main}.
 
 \begin{longtable}	{| c || c | c |}
+	\caption{Genus 1 Exceptional Cases}
+	\label{table:g-1-exceptional}
+	
+	\tabularnewline
+	
 	\hline
 	L' & Generator Degrees & Degrees of Minimal Relations \\
 	\hline
@@ -1922,14 +1927,6 @@ Let $\sx$ be a stacky curve, with Let $P,Q$ distinct hyperelliptic fixed points 
 	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
 \end{longtable}
-\todo{Possibly add an autoincrement counter to deal with table numbering}
-\todo{label/ref of long tables doesn't work!}
-
-\begin{center}
-\label{table:g-1-exceptional}
-Genus 1 exceptional cases
-\end{center}
-
 
 %\begin{rem}
 %\label{rem:g-1-exceptional-e}
@@ -2060,6 +2057,11 @@ first and generic cases follow.
 
 \begin{longtable}
 	{| c | c |}
+	\caption{Genus 0 Saturation}
+	\label{table:g-0-sat}
+	
+	\tabularnewline
+	
 	\hline
 	Signature & Saturation \\
 	\hline
@@ -2089,9 +2091,7 @@ first and generic cases follow.
 	$(0; e_1, \ldots, e_r; 0)$ & $3$ \\	\hline
 \end{longtable}
 
-\begin{center}
-Genus 0 saturation \todo{I see it says this above, but I think in the table, it should be made clear exactly what the hypotheses on $k,a,b,c,e_i$ are.}
-\end{center}
+\todo{I see it says this above, but I think in the table, it should be made clear exactly what the hypotheses on $k,a,b,c,e_i$ are.}
 
 \todo{transition}
 Here we describe induction of raising degrees from Lemma ~\ref{lem:raise-stacky-order}
@@ -2291,6 +2291,11 @@ that in these cases, $e_i = e + 2 > \deg z$ for all $i \in J$
 and any generator $z$ of $R'$.
 \begin{longtable}
 	{| c || c | c | c |}
+	\caption{Genus 0 Non-effective Base Cases Generators/Relations}
+	\label{table:g-0-base-cases}
+	
+	\tabularnewline
+	
 	\hline
 	Case & Generator Degrees & Degrees of Relations & $e$\\
 	\hline
@@ -2321,10 +2326,6 @@ and any generator $z$ of $R'$.
 	(k) &	\{3, 3, 3, 4,	4, 5\} & \{6, 7, 7, 8, 8, 8, 9, 9, 10\} & 5\\ \hline
 \end{longtable}
 
-\begin{center}
-Genus 0 non-effective base cases generator/relations
-\end{center}
-
 We can also always find a presentation for these cases such that
 they satisfy (Ad-i) and (Ad-ii) and that $in_\prec(I')$ is
 generated by products of two monomials. The procedure for
@@ -2338,6 +2339,11 @@ independent of the choice of $i$.
 
 \begin{longtable}
 	{| c | c | c || c | c |}
+	\caption{Genus 0 Non-Effective Base Cases (Ad-iii)}
+	\label{table:g-0-base-cases-admissibility}
+	
+	\tabularnewline
+	
 	\hline
 	Case & $\sigma$ & $J$ & $\deg \lfloor e_i L \rfloor$ &
 	$\max_{d \geq 0} \#S_{(\sigma, J)}(i)$ \\
@@ -2366,10 +2372,6 @@ independent of the choice of $i$.
 
 	(k) & $(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & 5 & 0 \\ \hline
 \end{longtable}
-
-\begin{center}
-Genus 0 non-effective base cases (Ad-iii)
-\end{center}
 
 Thus, all of the cases are admissible and satisfy the additional
 desired conditions.
@@ -2411,6 +2413,11 @@ in the case $g = 0$.
 
 \begin{longtable}
 	{| c || c | c | c |}
+	\caption{Genus 0 Exceptional Cases}
+	\label{table:g-0-exceptional}
+	
+	\tabularnewline
+	
 	\hline
 	Signature & Generator Degrees & Degrees of Relations & $e$ \\
 	\hline
@@ -2432,11 +2439,6 @@ in the case $g = 0$.
 	
 	$(0; 3, 3, 3, 3; 0)$ & $\{3, 3, 4\}$ & $\{12\}$ & $3$ \\	\hline
 \end{longtable}
-
-\begin{center}
-\label{table:g-0-exceptional}
-Genus 0 exceptional cases
-\end{center}
 
 \begin{rem}
 These cases give all of the exceptions to the $e$ and $2e$ bounds on
