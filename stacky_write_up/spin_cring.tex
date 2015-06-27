@@ -206,21 +206,13 @@ pleasant geometric consequence that all such canonically embedded
 curves are scheme theoretically cut out by quadratic equations.
 
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize Petri's theorem in many
-directions. A divisor $\Delta \in \di X$ is a {\bf log divisor} if
-$\Delta = \sum_{i=1}^{n}P_i \in \di X,$ with $P_i$ distinct points of $X$. Let
-$\sx$ denote a tame separably rooted curve over a
-field $k$ so that $X$ is the coarse space of $\sx$, as defined in
-\cite[Section 5.2]{vzb:stacky}, with $\di \sx = \di X \oplus \left(\bigoplus_{i
-= 1}^r \langle \frac{1}{e_i}P_i \rangle \right),$ so that $e_i \in \BZ$. Let $K_
-\sx = K_X + \sum_{i = 1}^{r}\frac{e_i - 1}{e_i}P_i.$ In this case, we
-say $\sx$ has {\bf stabilizer order} $e_i$ at $P_i$. Call $\halfcan
-\in \di \sx$ a {\bf log half-canonical divisor}, also known as a theta-characteristic, on the {\bf log stacky curve} $(\sx,\Delta)$ if
-$2\halfcan \sim K_\sx + \Delta$. If $X$ has genus $g$ and $\deg \Delta =\delta,$ then we
-say $\sx$ has \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$. A
-{\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $(\sx,\Delta)$
-is a log stacky curve and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$.
+directions. 
+If $X$ is a curve, then we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$ and {\bf stacky points} $P_1,\ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{\geq 2}$ if 
+$$\di \sx = \di X \oplus \left(\bigoplus_{i
+= 1}^r \left\langle \frac{1}{e_i}P_i \right\rangle \right) \subset \BQ \otimes \di X.$$
+As is done in \cite{vzb:stacky} one may view a stacky curve as a stack, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of ``fractional points,'' i.e., stacky points. A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
 The central object of study in this paper is the {\bf log spin
-canonical ring} of $(X,\Delta,L)$ is
+canonical ring} of $(\sx,\Delta,L)$ is
 \begin{align*}
 	R(\sx,\Delta,L) = \bigoplus_{d \geq 0} H^0(\sx,\sco(L)^{\otimes d})
 \end{align*}
@@ -228,6 +220,7 @@ canonical ring} of $(X,\Delta,L)$ is
 \noindent
 The main theorem of this paper is the following bound on the degree
 of generators and relations of arbitrary log spin canonical rings:
+
 
 \begin{thm}
 \label{thm:main}
@@ -285,13 +278,27 @@ research.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\todo{Somewhere in the paper, we should probably give an example showing the generators and relations are sharply bounded at degree e, 2e. Robin: Aren't the base cases suitable examples?}
+\todo{Somewhere in the paper, we should probably give an example showing the generators and relations are sharply bounded at degree e, 2e. Robin: Aren't the base cases suitable examples? Aaron: Those don't show it for general e, do they? I don't think we really need an example, just a remark somewhere that one cannot really hope to do better than e, 2e somewhere.}
 
 \section{Background}
 \label{sec:background}
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
 Include the following:
 \begin{enumerate}
+	\item Possibly include some of the following notation, it it isn't dealt with well in the background.
+	
+ A divisor $\Delta \in \di X$ is a {\bf log divisor} if
+$\Delta = \sum_{i=1}^{n}P_i \in \di X,$ with $P_i$ distinct points of $X$. \todo{Do we want to assume they are distinct?} Let
+$\sx$ denote a tame separably rooted curve over a
+field $k$ so that $X$ is the coarse space of $\sx$, as defined in
+\cite[Section 5.2]{vzb:stacky}, with $\di \sx = \di X \oplus \left(\bigoplus_{i
+= 1}^r \langle \frac{1}{e_i}P_i \rangle \right),$ so that $e_i \in \BZ$. Let $K_
+\sx = K_X + \sum_{i = 1}^{r}\frac{e_i - 1}{e_i}P_i.$ In this case, we
+say $\sx$ has {\bf stabilizer order} $e_i$ at $P_i$. Call $\halfcan
+\in \di \sx$ a {\bf log half-canonical divisor}, also known as a theta-characteristic, on the {\bf log stacky curve} $(\sx,\Delta)$ if
+$2\halfcan \sim K_\sx + \Delta$. If $X$ has genus $g$ and $\deg \Delta =\delta,$ then we
+say $\sx$ has \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$. 
+
 	\item Fix notation $\delta$ for $\deg \Delta$, $g$ for genus.
 	\item While the remainder paper could be writen using stack-theoretic terms, as is done in \cite{vzb:stacky}, we shall adopt the simpler language of $\BQ$ divisors, thinking of $\sx$ as the underlying scheme $X$ with fractional points.
 	\item Include explicit definitions for what we are assuming about a curve, i.e. smooth, projective, etc. Also, possibly discuss the relations to stacks, either here in or in the introduction. Make sure to make clear the assumption that we will work over an algebraically closed field through tensoring up.
@@ -504,7 +511,7 @@ If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha\in \mathbb{Z}, \beta\in \mathbb{N}
 In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbb{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
 
 In Lemma \ref{lem:sat-1} we provide an inductive method to strengthen
-O'Dorney's result \todo{cite theorem 8} on $\BP^1_k$ to divisors $D = \sum_{i=1}^n \frac{\alpha_i
+O'Dorney's result \todo{cite theorem 8, Aaron: If you want to cite Theorem 8, just do \cite[Theorem 8]{dorney:canonical}} on $\BP^1_k$ to divisors $D = \sum_{i=1}^n \frac{\alpha_i
 }{\beta_i} P_i$ for points $P_1, \ldots, P_n$ on a curve $X$ such that $H^
 0(X, \lfloor D \rfloor) > 0$; our result implies that $R_D$ is generated in
 degrees at most $e = \max(\beta_i)$ with relations generated in
@@ -557,7 +564,7 @@ We equip the graded ring $k[x_1, \ldots x_m]$, with weight $a_i$ and pole order 
 \item $\deg(f) = \deg(g)$, $-\ord(f) = -\ord(g)$, and for $i$ maximal such that $q_i-r_i$ is non-zero, that expression is negative.  
 \end{enumerate}
 \end{defn}
-We leave it as an exercise to verify that this is an order.  \todo{check for ourselves that this actually is}
+We leave it as an exercise to verify that this is an order.  \todo{check for ourselves that this actually is, Aaron: I suggest not to use the phrase ``leave as an exercise'' in a paper}
 We now offer a lemma that allows us to inductively add $\mathbb{Q}$-points to a divisor and describe the new generators and relations.
 
 \begin{lem}
@@ -1212,7 +1219,7 @@ with $y_{i, e_i'} \in R'$ for each $i \in J$ such that the following
 three conditions hold.
 
 
-\todo{Peter:I'm still kind of unhappy with the notation $y_{e_i'}$ because it is treating $e_i'$ like a formal object rather than a number. What I mean is if $e_1'=e_2'$ that a reader might reasonably interpret $y_{e_1'}$ the same as $y_{e_2'}$}
+\todo{Peter:I'm still kind of unhappy with the notation $y_{e_i'}$ because it is treating $e_i'$ like a formal object rather than a number. What I mean is if $e_1'=e_2'$ that a reader might reasonably interpret $y_{e_1'}$ the same as $y_{e_2'}$. Aaron: By all means, please suggest better notation and we can discuss it. However, I think your particular concern is well answered because we include the further subscript $i$. That is, $y_{1,e_1} \neq y_{2,e_2}$ even if $e_1 = e_2=5$, because $y_{1,5}$ and $y_{2,5}$ are different variables. Another thing to note here is that $e_i' = e_i + 2,$ so that the two will never be equal. Does this assuage your concern? Also, Further, when I read David's paper, he used this notation, and I was never confused by this notation.}
 \begin{enumerate}
 	\item[(Ad-i)] First, 
 	\begin{align*}
