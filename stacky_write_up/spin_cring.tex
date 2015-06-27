@@ -375,7 +375,7 @@ $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 
 \section{Inductive Lemmata}
 \label{sec:induction}
-First we present several lemmata which play a crucial role in the inductive step of the proof of the main theorem, Theorem ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove Lemma ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3} which describe the generators and relations of $R_{D + \frac{\alpha}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di X \otimes \BQ$ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in Subsection ~\ref{ssec:raise-orders}, we prove Lemma ~\ref{lem:raise-stacky-order}, which the generators and relations of the log spin canonical ring curve with signature $(g; e_1', \ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a curve with a certain subset of the $e_i'$ incremented by $2$. While Lemma ~\ref{lem:sat-1} may be applied in a fairly general context, Lemma ~\ref{lem:raise-stacky-orders} is more specific to half-canonical divisors, although even Lemma ~\ref{lem:raise-stacky-orders} has certain generalizations, as noted in Remark ~\ref{rem:raise-fractional-orders}
+First we present several lemmata which play a crucial role in the inductive step of the proof of the main theorem, Theorem ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove Lemma ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3} which describe the generators and relations of $R_{D + \frac{\alpha}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di X \otimes \BQ$ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in Subsection ~\ref{ssec:raise-orders}, we prove Lemma ~\ref{lem:raise-stacky-order}, which the generators and relations of the log spin canonical ring curve with signature $(g; e_1', \ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a curve with a certain subset of the $e_i'$ incremented by $2$. While Lemma ~\ref{lem:sat-1} may be applied in a fairly general context, Lemma ~\ref{lem:raise-stacky-orders} is more specific to half-canonical divisors, although even Lemma ~\ref{lem:raise-stacky-orders} has certain generalizations, as noted in Remark ~\ref{rem:raise-fractional-order}
 
 %However, before we can answer these general Lemmata, it is useful
 %to prove a nice result about minimal generation of ideals of
@@ -488,35 +488,38 @@ First we present several lemmata which play a crucial role in the inductive step
 \ssec{Inductive Lemmata: Adding Points}
 \label{ssec:add-points}
 In this section, we prove various inductive statements under the following setup:
-Let $\halfcan'$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis).  
+Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
 
-First, let's introduce some notation from O'Dorney.  \cite{dorney:canonical}
+First, we introduce some notation from O'Dorney.  \cite{dorney:canonical}
 \begin{defn}\label{den:lower-approximation}
-If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha\in \mathbb{Z}, \beta\in \mathbb{N}$ written in reduced form), then a \begin{bf}{best lower approximation}\end{bf} to $\frac{\alpha}{\beta}$ is a a fraction $\frac{c}{d}$ (written in reduced form with $d>0$) such that there is no $\frac{c'}{d'}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$.  Moreover, the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a sequence
+If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha, \beta \in \mathbb{Z}, \beta> 0$ written in reduced form), then a \begin{bf}{best lower approximation}\end{bf} to $\frac{\alpha}{\beta}$ is a a fraction $\frac{c}{d}$ (written in reduced form with $d>0$) such that there is no $\frac{c'}{d'}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$.  Moreover, the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a sequence
 \[
 	0=\frac{c_0}{d_0} < \frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{\alpha}{\beta}.
 \]
+\todo{This Moreover statement shouldn't really be part of the definition.}
 \end{defn}
 \todo{add a picture of lattice}
 
-In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbb{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
+In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) \todo{Can we remove this parenthetical? I don't see why the reader would assume effective.} divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\BP_k^1$ \todo{This comes up a lot, but instead of saying $D$ is a divisor of $X$, I'd prefer to say $D \in \di X$ to be more precise. Of course, this is minor, and it's fine to keep it this way.} consisting of at most 2 points in its support, \todo{It might be clearer to say $\# \Supp(D) \leq 2.$} to show it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$. \todo{Can you break the previous sentence into two sentences?} He \todo{Probably better not to say he, maybe give a theorem number where he does this?} further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points. \todo{This sentence seems very imprecise to me, and I wouldn't understand it if I hadn't read Evan's paper. Can you state this more precisely, or possibly just remove it.}
 
 In Lemma \ref{lem:sat-1} we provide an inductive method to strengthen
 O'Dorney's result \todo{cite theorem 8, Aaron: If you want to cite Theorem 8, just do \cite[Theorem 8]{dorney:canonical}} on $\BP^1_k$ to divisors $D = \sum_{i=1}^n \frac{\alpha_i
 }{\beta_i} P_i$ for points $P_1, \ldots, P_n$ on a curve $X$ such that $H^
-0(X, \lfloor D \rfloor) > 0$; our result implies that $R_D$ is generated in
+0(X, \lfloor D \rfloor) > 0$. Our result implies that $R_D$ is generated in
 degrees at most $e = \max(\beta_i)$ with relations generated in
-degrees at most $2e$.  Furthermore, given additional constraints on $H^0(
+degrees at most $2e$. \todo{Are you sure you're not assuming $\frac{\alpha}{\beta}$ is effective? If not, doesn't what you say contradict Evan's example showing that his bounds of about lcm are asymptotically sharp?} Furthermore, given additional constraints on $H^0(
 X, \lfloor dD \rfloor)$ for various values of $d$, we can apply the
-same Riemann-Roch arguments in arbitrary genus. 
-To do this, we extend an inductive result by Voight and
+same Riemann-Roch \todo{same as what? Maybe just say we can generalize his results to arbitrary genus?} arguments in arbitrary genus. 
+To do this, we extend an inductive result \todo{Is ``inductive result'' a phrase? Can we just remove the word ``inductive'' every time it appears?} by Voight and
 Zureick-Brown on stacky canonical rings to arbitrary $\BQ$-
-divisors. \todo{cite theorem 8.3.1}
+divisors. \todo{cite theorem 8.3.1} \todo{Again, I don't think it can be arbitrary, and what are the $\BQ$ divisors on?}
 
-First, however, we give a criteria to determine if a set of monomials generates the initial ideal of relations, and define notation for a type of monomial ordering.
+First, however, we give a criteria to determine if a set of monomials generates the initial ideal of relations, and define notation for a type of monomial ordering. \todo{Perhaps say which parts of the proofs of which future lemmas it will be used in?}
+
+\todo{Somehow, I feel like most of this page can be cut, it seems to mostly vaguely describe what we are doing, and takes up a lot of space.}
 
 \begin{lem}\label{lem:relations_from_generators_induction} 
-Suppose $\halfcan$ and $\halfcan'$ are $\BQ$ divisors on a curve $X$ with $\halfcan=\halfcan'+\frac{\alpha}{\beta}P$, that $R_{\halfcan'}$ is generated by $x_1, \ldots, x_m$ and $R_{\halfcan}$ is minimally generated by $y_1, \ldots, y_n$ over $R_{\halfcan'}$ with ideals of relations $I'$ and $I$ respectively.  Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T\subseteq R_\halfcan-(S\cup R_\halfcan')$, and an ordering $\prec$ such 
+Suppose $\halfcan, \halfcan' \in \di X \otimes \BQ$ with $\halfcan=\halfcan'+\frac{\alpha}{\beta}P$, that $R_{\halfcan'}$ is generated by $x_1, \ldots, x_m$ and $R_{\halfcan}$ is minimally generated by $y_1, \ldots, y_n$ over $R_{\halfcan'}$ with ideals of relations $I'$ and $I$ respectively.  Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T\subseteq R_\halfcan-(S\cup R_\halfcan')$, and an ordering $\prec$ such 
 \begin{enumerate}
 \item[(\ref{lem:relations_from_generators_induction}.1)]  $T\prec S\prec k[x_1, \ldots, x_n]$ (meaning all monomials in $T$ precede all monomials in $S$ which proceed all monomials in $k[x_1, \ldots, x_n]$)
 \item[(\ref{lem:relations_from_generators_induction}.2)] $S$ forms a $k$-basis for $R_\halfcan$ over $R_\halfcan'$
