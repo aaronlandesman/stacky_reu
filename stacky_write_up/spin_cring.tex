@@ -181,7 +181,7 @@ linear transformations. We consider the {\bf ring of modular forms}
 $M(\Gamma) = \bigoplus_k M_k(\Gamma)$. In this paper, for general
 $\Gamma$, we sharply bound the degree of the generators and
 relations for $M(\Gamma).$ In the special that $\Gamma$ has no odd weight modular forms, Voight and Zureick-Brown
-\cite[Chapters 7-9]{vzb:stacky} give similar bounds, and we extend their work to all Fuchsian groups $\Gamma$. In order to answer this question, we translate the seemingly analytic question of understanding the ring of modular forms into the algebraic
+\cite[Chapters 7-9]{vzb:stacky} give similar bounds, and we extend their work to all Fuchsian groups $\Gamma$. In order to find generators and relations for $M(\Gamma)$, we translate the seemingly analytic question of understanding the ring of modular forms into the algebraic
 category, using a generalization of the GAGA principle. By
 \cite[Proposition 6.1.5]{vzb:stacky}, there is an equivalence of
 categories between orbifold curves and log stacky curves over $\BC$
@@ -189,7 +189,7 @@ categories between orbifold curves and log stacky curves over $\BC$
 algebraic category.
 
 Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is
-well known that the sheaf $\Omega _X,$ with associated divisor $K_X$
+well known that the canonical sheaf $\Omega _X,$ with associated canonical divisor $K_X$
  determines the {\bf canonical map } $\pi:X \rightarrow \BP_k^{g - 1}$.
 Then, the {\bf canonical ring} is defined to be
 \begin{align*}
@@ -198,32 +198,31 @@ Then, the {\bf canonical ring} is defined to be
 
 \noindent
 with multiplication structure corresponding to tensor product of
-sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X \cong \proj R$. Petri's
+sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X \cong \proj R$. When $g \geq 2$, Petri's
 theorem gives generators and relations for $R(X, K_X)$ showing that
 in most cases $R(X, K_X)$ is generated in degree 1 with relations
-in degree 2 (see \cite[p. 157]{saint-donat:proj}). This has the
+in degree 2, as shown in \cite[p. 157]{saint-donat:proj}. This has the
 pleasant geometric consequence that all such canonically embedded
-curves are scheme theoretically cut out by quadratic equations
+curves are scheme theoretically cut out by quadratic equations.
 
-Following Voight and Zureick-Brown \cite{vzb:stacky}, we examine a
-much more general setting, generalizing Petri's theorem in many
-directions. A divisor $\Delta \in d X$ is a {\bf log divisor} if
-$\Delta = \sum_{i}^{}P_i \in \di X,$ with all $P_i$ distinct. Let
-$(\sx,\Delta)$ denote a tame separably rooted curve over a
+Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize Petri's theorem in many
+directions. A divisor $\Delta \in \di X$ is a {\bf log divisor} if
+$\Delta = \sum_{i=1}^{n}P_i \in \di X,$ with $P_i$ distinct points of $X$. Let
+$\sx$ denote a tame separably rooted curve over a
 field $k$ so that $X$ is the coarse space of $\sx$, as defined in
-\cite[Section 5.2]{vzb:stacky} so that $\di \sx = \di X \bigoplus_{i
-= 1}^r \langle \frac{1}{e_i}P_i \rangle,$ with $e_i \in \BZ$. Let $K_
+\cite[Section 5.2]{vzb:stacky}, with $\di \sx = \di X \oplus \left(\bigoplus_{i
+= 1}^r \langle \frac{1}{e_i}P_i \rangle \right),$ so that $e_i \in \BZ$. Let $K_
 \sx = K_X + \sum_{i = 1}^{r}\frac{e_i - 1}{e_i}P_i.$ In this case, we
 say $\sx$ has {\bf stabilizer order} $e_i$ at $P_i$. Call $\halfcan
-\in \di \sx$ a {\bf log half-canonical divisor} on $(\sx,\Delta)$ if
-$2\halfcan \sim K_\sx + \Delta$. If $X$ has genus $g$ and $\delta := \deg \Delta,$ then we
+\in \di \sx$ a {\bf log half-canonical divisor}, also known as a theta-characteristic, on the {\bf log stacky curve} $(\sx,\Delta)$ if
+$2\halfcan \sim K_\sx + \Delta$. If $X$ has genus $g$ and $\deg \Delta =\delta,$ then we
 say $\sx$ has \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$. A
-{\bf log spin curve} is a triple $(X, \Delta, \halfcan)$ where $(X,\Delta)$
-and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$.
+{\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $(\sx,\Delta)$
+is a log stacky curve and $\halfcan$ is a log half-canonical divisor on $(\sx,\Delta)$.
 The central object of study in this paper is the {\bf log spin
 canonical ring} of $(X,\Delta,L)$ is
 \begin{align*}
-	R(X,\Delta,L) = \bigoplus_{n \geq 0} H^0(X,nL)
+	R(\sx,\Delta,L) = \bigoplus_{d \geq 0} H^0(\sx,\sco(L)^{\otimes d})
 \end{align*}
 
 \noindent
@@ -253,7 +252,7 @@ for signatures with $g = 0$.
 \end{thm}
 
 This theorem is proven in three different genus cases, each of
-which use similar inductive processes. The high genus case is
+which use similar inductive processes. The genus $g \geq 2$ case is
 proven in Theorem ~\ref{thm:g-high-main}. In Theorem
 ~\ref{thm:g-1-main} and Theorem
 ~\ref{thm:g-0-main}, we also give the respective
@@ -267,20 +266,18 @@ obtain bounds on the degrees of the generators and relations, but
 also yield explicit systems of generators and the initial ideal of
 relations. Furthermore, our proof of the high genus case also
 provides an inductive procedure for determining the generators and
-initial ideal of relations for $\halfcan'$ when the half-canonical
-divisor $\halfcan$ can be written as $\halfcan' + \Lambda$ with
-$(\halfcan', 0, X)$ a log spin curve. In fact, such a system of
-generators and relations are known for $\halfcan'$ in many cases,
+initial ideal of relations for the half-canonical divisor $\halfcan$ can be written as $\halfcan = \halfcan' + \Lambda$ with
+$(\halfcan', \Delta, \sx)$ when $\Lambda \in \di \sx$ effective. In fact, such a system of
+generators and relations are known for $\halfcan'$ in many interesting low genus cases,
 as detailed in Neves ~\cite[ Section III.4]{neves:halfcan}.
 \end{rem}
 
 The remainder of the paper will be primarily devoted to proving
 Theorem ~\ref{thm:main}. The idea of the
-proof will be to induct on the order and number of hyperelliptic-
-fixed points. To this end, we first review important background in
+proof will be to induct on the order and number of stacky points. To this end, we first review important background in
 Section ~\ref{sec:background}. Then, we develop various inductive
 tools in Section ~\ref{sec:induction}. In Sections ~\ref{sec:g_high},
-~\ref{sec:g_1} and ~\ref{sec:g_0}, we prove Theorem
+~\ref{sec:g_1}, and ~\ref{sec:g_0}, we prove Theorem
 ~\ref{thm:main} in the high genus, genus
 one, and genus zero cases respectively. Finally, in Section
 ~\ref{sec:further-questions}, we pose several questions for future
@@ -288,11 +285,16 @@ research.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\todo{Somewhere in the paper, we should probably give an example showing the generators and relations are sharply bounded at degree e, 2e.}
+
 \section{Background}
 \label{sec:background}
 Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
 Include the following:
 \begin{enumerate}
+	\item Fix notation $\delta$ for $\deg \Delta$, $g$ for genus.
+	\item While the remainder paper could be writen using stack-theoretic terms, as is done in \cite{vzb:stacky}, we shall adopt the simpler language of $\BQ$ divisors, thinking of $\sx$ as the underlying scheme $X$ with fractional points.
+	\item Include explicit definitions for what we are assuming about a curve, i.e. smooth, projective, etc. Also, possibly discuss the relations to stacks, either here in or in the introduction. Make sure to make clear the assumption that we will work over an algebraically closed field through tensoring up.
 	\item Notation for Coarse space
 	\item Notation for Stacky points with associated stabilizer orders (I.e. as those points for which the divisor can have rational coefficients with denominator equal to the stabilizer order)
 	\item Note that this result is independence of base field
@@ -359,8 +361,6 @@ divisor $D$ on $\sx$. In this case, the saturation $s :=
 $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 \geq s$.
 \end{rem}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive Lemmata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1665,9 +1665,11 @@ In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half can
 \ssec{Main Theorem for High Genus}
 \label{ssec:g-high-main}
 
+We are finally ready to prove our main theorem ~\ref{thm:main} in the case $g \geq 2$. The idea of the proof is to use Lemma ~\ref{lem:generation_5} and Proposition ~\ref{prop:relation_11} to complete the base case when $L = L_X$ and then apply Lemmas ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:raise-stacky-order} to complete the induction step.
+
 \begin{thm}
 \label{thm:g-high-main}
-Let $g \geq 2$ and let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$, so
+Let $g \geq 2$ and let $(\sx, \Delta, \halfcan)$ be a log spin curve so
 that $\sx$ has signature $\sigma = (g; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
 
@@ -1677,30 +1679,30 @@ canonical ring
 
 \noindent
 is generated as a $k$-algebra by elements of degree at most $e =
-\max(5, e_1, \ldots, e_r).$ If $\Delta = 0$ then 
+\max(5, e_1, \ldots, e_r).$ If $\Delta = 0,$ then 
 $R(\sx,\Delta, \halfcan)$ has minimal relations in degree at most $\max(11, 2e_1,
 \ldots, 2e_r).$ Otherwise, $R(\sx, \Delta, \halfcan)$ has minimal relations in degree at most
 $\max(10, 2e_1, \ldots, 2e_r).$
 \end{thm}
 
 \begin{proof}
-Let $\halfcan_X \in \di X$ satisfy $2\halfcan_X \sim 2 K_X + \Delta$.
+As the base case, let $\halfcan_X \in \di X$ satisfy $2\halfcan_X \sim 2 K_X + \Delta$.
+
 By Lemma ~\ref{lem:generation_5} and Proposition
 ~\ref{prop:relation_11}, the theorem holds for $(\sx, \Delta,
 \halfcan_X)$. Next, consider a divisor of the form $\halfcan' =
-\halfcan_X + \frac{1}{3} P_i$. Then, the theorem holds for $(\sx,
+\halfcan_X + \frac{1}{3} P_i$. Then, the theorem holds for $(\sx',
 \Delta, \halfcan')$ by Lemma ~\ref{lem:sat-2}
  if $P_i$ is a basepoint of $\halfcan'$ or by Lemma
 ~\ref{lem:sat-1} if $P_i $ is not a basepoint of $L'$. Note,
 in the case $P$  is a not basepoint of $\halfcan'$, Equation
-~\ref{eqn:deg1-sat-ind} holds by Riemann Roch, and the fact that $d
-\geq 3$.
-
-In this case, we claim the theorem holds for $(\sx',\Delta, L')$. Indeed, the bound on the generators holds by part (a) of Lemmas
+~\ref{eqn:deg1-sat-ind} holds by Riemann Roch since $\frac{\beta}{\alpha} = \frac{3}{1}=3$. In this case, we claim the theorem holds for $(\sx',\Delta, L')$. Indeed, the bound on the generators holds by part (a) of Lemmas
 ~\ref{lem:sat-2} and ~\ref{lem:sat-1},
 and the bound on the relations holds by part (b) of Lemmas
 ~\ref{lem:sat-2} and ~\ref{lem:sat-1}.
-Therefore, by Corollary ~\ref{cor:raise-stacky-order}, this theorem 
+
+Applying this argument $r-1$ additional times, we obtain that the Theorem holds for $(\sx', \Delta, \halfcan')$ where $\sx'$ has signature $(g;3,\ldots, 3;\delta)$ with $g \geq 2$. Therefore, by Corollary 
+~\ref{cor:raise-stacky-order}, this theorem 
 holds for all log spin curves $(\sx, L, J)$. 
 \end{proof}
 
@@ -1709,7 +1711,9 @@ holds for all log spin curves $(\sx, L, J)$.
 \section{Genus One}
 \label{sec:g_1}
 
-In the case of a smooth genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P - Q$ where $P,Q$ are distinct points, fixed  under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Lemma ~\ref{lem:raise-stacky-order} and add additional points using Lemma ~\ref{lem:sat-1} and Lemma ~\ref{lem:sat-2}.
+In this section, we prove Theorem ~\ref{thm:main} in the case that $g = 1$. Unlike the $g \geq 2$ case, here we obtain explicit generators and relations for any log spin curve $(\sx, \Delta, L)$ with $g = 1$.
+
+The inductive strategy we will adopt to prove Theorem ~\ref{thm:main} is similar to that of the genus $g \geq 2$ case. In the case of a genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P - Q$ where $P,Q$ are distinct points, fixed  under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Lemma ~\ref{lem:raise-stacky-order} and add additional points using Lemma ~\ref{lem:sat-1} and Lemma ~\ref{lem:sat-2}.
 
 \ssec{Genus One Base Cases}
 \label{ssec:g_1_base}
@@ -1725,66 +1729,70 @@ We first analyze the following two examples, which will be crucial base cases fo
 	\hline
 	$0$ & $\{1\}$ & $\emptyset$ \\	\hline
 
+	$\frac{3}{7}P_1$ & $\{1,5,7\}$ & $\{15\}$ \\	\hline
+	
+	$\frac{1}{3}P_1 + \frac{1}{3}P_2$ & $\{1, 3, 3\}$ & $\{6\}$ \\	\hline
+	
 	$P - Q + \frac{2}{5}P_1$ & $\{2,3,5\}$ & $\{12\}$ \\	\hline
 	
-	$\frac{3}{7}P_1$ & $\{1,5,7\}$ & $\{15\}$ \\	\hline
-
 	$P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$ & $\{2, 3, 3, 4\}$ & $\{6,8\}$ \\	\hline
-	$\frac{1}{3}P_1 + \frac{1}{3}P_2$ & $\{1, 3, 3\}$ & $\{6\}$ \\	\hline
 	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
 \end{longtable}
+\begin{center}
+\label{table:g-1-base}
+Genus 1 base cases
+\end{center}
 
 \begin{example}
-\label{eg:base- 1-0}
+\label{eg:base-1-0}
 In the case $\halfcan' = 0,$ it is immediately clear that $R_{\halfcan'} \cong k[x]$ with $x$ a generator in degree 1.
 \end{example}
 
 \begin{example}
-\label{eg:base- 1-33}
+\label{eg:base-1-33}
 Let $\sx'$ be a stacky curve so that $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show
 $$R_{\halfcan'} \cong k[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$
 and that $(\sx', \halfcan',\{1,2\})$ is admissible.
 
-Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P$ but not at $Q$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $Q$ but not at $P$. Let $y_4 \in H^0(\sx,3\halfcan')$ be an element with a pole of order 1 at both $P$ and $Q$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q + P_1, 3P - 3Q + P_2$ are one dimensional, while the linear system $3P - 3Q \sim P - Q$ is zero dimensional.
+Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_1$ but not at $P_2$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_2$ but not at $P_1$. Let $y_4 \in H^0(\sx,4\halfcan')$ be an element with a pole of order 1 at both $P_1$ and $P_2$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q + P_1, 3P - 3Q + P_2$ are both one dimensional, while the linear system $3P - 3Q \sim P - Q$ is zero dimensional.
 
 Then, there exist constants $\alpha,\beta,\gamma \in k$ so that 
 $R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zeros and poles. The details are omitted as it is analogous to Example ~\ref{ex:base-377}.
 
-We next check $(\sx', \halfcan',\{1,2\})$ is admissible. We clearly have two generators $x_3, y_3$ in degree 3 with a pole of order $\frac{3- 1}{2}$ by construction. Hence, (Ad-i) holds. We next check (Ad-ii) for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
+We next check $(\sx', \halfcan',\{1,2\})$ is admissible. We clearly have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, (Ad-i) holds. We next check (Ad-ii) for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
 $$
 \frac{-\ord_{P_1}(z)}{\ord(z)} = \begin{cases}
 	0 &\text{ if }z \in \{u, y_3\}\\
 	\frac{1}{4} &\text{ if }z = y_4
 \end{cases}.$$
 Since $0 < \frac{1}{4} < \frac{1}{3}$, (Ad-ii) holds.
-Finally, to check (Ad-iii) note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = 2 \cdot 1 - 1 + 0$.
+Finally, to check (Ad-iii), note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = 2 \cdot 1 - 1 + 0$.
 \end{example}
 
 \begin{example}
 \label{eg:exception-1-5}
-Let $L' = \frac{2}{5}P_1$ be a half canonical divisor on a stacky curve $\sx$. Let $u \in (P_L)_1$ be any nonzero element. We obtain $\di u|_{P_1} = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_{P_1} = -P_1$. Then, we claim there is some $\alpha \in k$ so that
+Let $L' = P - Q + \frac{2}{5}P_1$ be a half canonical divisor on a stacky curve $\sx$. Let $u \in (P_L)_1$ be any nonzero element. We obtain $\di u|_{P_1} = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch, $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_{P_1} = -P_1$. Then, we claim there is some $\alpha \in k$ so that
 $R_L \cong k[u, y_3, y_5]/(y_3^4 - \alpha uy_5^2).$
-The proof of this can be gotten by first using Riemann--Roch and counting the pole order at $P_1$ considerations to check the above relation exists, and that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. It is analogous to Example ~\ref{ex:base-377}, and is omitted.
 
-Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashion analogous to the verification in Example ~\ref{eg:base- 1-33}.
+In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. The verification is analogous to Example ~\ref{ex:base-377} and is omitted.
 
-Finally, note that this particular case is also exceptional, because there is a relation in degree $12 > 2 \cdot 5$, but once $e' = 5$ is incremented to $e = e'+2 = 7,$ using Lemma ~\ref{lem:raise-stacky-order}, this relation in degree 12 caries over, and so the case $L' = P - Q + \frac{3}{7}P_1$ is not exceptional because $12 < 2 \cdot 7$.
+Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashion analogous to the verification in Example ~\ref{eg:base-1-33}.
+
+Finally, note that this particular case is also exceptional, because there is a relation in degree $12 > 2 \cdot 5$, but once $e' = 5$ is incremented to $e = e'+2 = 7,$ using Lemma ~\ref{lem:raise-stacky-order}, this relation in degree 12 also determines a relation in the canonical ring for $L = P - Q + \frac{3}{7}$, and so the case $L' = P - Q + \frac{3}{7}P_1$ is not exceptional because $12 < 2 \cdot 7$.
 \end{example}
 
 
 %The base case of $L' = \frac{3}{7}P_1$ has $R_L \cong k[u, y_5, y_7]/(y_5)^3 - uy_7^2.$ 
 
 
-The base cases of $L' = \frac{3}{7}P_1$ and $L' = \frac{1}{3}P_1 +\frac{1}{3}P_2$ can be similarly computed. Note this is yet another exceptional case.
+The base cases of $L' = \frac{3}{7}P_1$ and $L' = \frac{1}{3}P_1 +\frac{1}{3}P_2$ can be similarly computed. Note that just like $L' = P - Q + \frac{2}{5}P_1$ is an exceptional case, as noted at the end of Example ~\ref{eg:exception-1-5}, $L' = \frac{3}{7}P_1$ is yet another exceptional case.
 
 
 \ssec{Genus One Exceptional Cases}
 \label{ssec:g-1-exceptional}
-\todo{remove stuff about tame and separably rooted, change to $\BQ$ divisor.}
-Let $\sx$ be a tame, separably rooted stacky curve of genus 1. Let $P,Q$ are distinct hyperelliptic fixed points, and $R$ be a point on $\sx$.
+Let $\sx$ be a stacky curve, with Let $P,Q$ distinct hyperelliptic fixed points on $X$. The following table provides a list of all cases which are not generated in degrees $e=\max(5,e_1,\ldots, e_r)$ with relations in degrees $2e$, as described in Theorem ~\ref{thm:g-1-main}.
 
-\todo{cite genus 1 final theorem here, to explain what these cases are exceptional to}
 \begin{longtable}	{| c || c | c | c |}
 	\hline
 	L' & Generator Degrees & Degrees of Minimal Relations \\
@@ -1805,10 +1813,10 @@ Let $\sx$ be a tame, separably rooted stacky curve of genus 1. Let $P,Q$ are dis
 	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
 \end{longtable}
-
+\todo{Possibly add an autoincrement counter to deal with table numbering}
 \begin{center}
 \label{table:g-1-exceptional}
-\textbf{Table (IV)}: Genus 1 exceptional cases, where $L' = P - Q + \frac{e- 1}{2e}R$, with $P \neq Q$.
+Genus 1 exceptional cases
 \end{center}
 
 
@@ -1818,8 +1826,7 @@ Let $\sx$ be a tame, separably rooted stacky curve of genus 1. Let $P,Q$ are dis
 %Lemma ~\ref{lem:raise-stacky-order}.
 %\end{rem}
 
-We now elaborate on the computation of the results in 
-Table ~\ref{table:g-1-exceptional}. We have already explained the case of 
+We have already checked the case of 
 $L' = P - Q + \frac{1}{5}P_1$ above in Example ~\ref{eg:exception-1-5}. The other cases are similar.
 
 
@@ -1846,10 +1853,11 @@ $L' = P - Q + \frac{1}{5}P_1$ above in Example ~\ref{eg:exception-1-5}. The othe
 \ssec{Main Theorem for Genus One}
 \label{ssec:main_g_1}
 
+We now have all the tools necessary to prove our main theorem, ~\ref{thm:main} in the case $g = 1$. 
+
 \begin{thm}
 \label{thm:g-1-main}
-Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$,
-so that $\sx$ has signature $\sigma = (1; e_1, \ldots, e_r; \delta)$.
+Let $(\sx, \Delta, \halfcan)$ log spin curve so that $\sx$ has signature $\sigma = (1; e_1, \ldots, e_r; \delta)$.
 If $g = 1$, then the canonical ring
 \begin{align*}
 	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
@@ -1867,12 +1875,11 @@ finite list of exceptional cases, as listed in Table
 \noindent
 {\sf Case 1: $\Delta > 0$}
 
-If $\Delta > 0$, we must have $\Delta \geq 2$. In this case, let $L_X \in \di X$ be so that $2L_X \sim K_X + \Delta$. We have $\deg L_X \geq 1$, so, by Riemann--Roch, $h^0(\sx,L) \geq 1.$ Therefore, $L$ is linearly equivalent to an effective divisor, so without loss of generality, we may assume $L$ is an effective divisor. We know the theorem holds for $L' = 0$ by Example ~\ref{eg:base- 1-0}.
-\todo{fix this to accommodate the possibility that $P \in supp(L')$, this has already been done suppose ~\ref{lem:sat-1} accommodates it. }
+If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $L_X \in \di X$ satisfy $2L_X \sim K_X + \Delta$. We have $\deg L_X \geq 1$, so, by Riemann--Roch, $h^0(\sx,L) \geq 1.$ Therefore, $L$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $L$ is an effective divisor.
 
-We first now show the theorem holds for $L_X$ by induction. Assume it holds for $L' \in \di X$, with $L'$ effective. We will show it holds for $L' + P$. There are two cases, depending on whether $P$ is a basepoint of $L'$. 
+We first now show the theorem holds for $L_X$ by induction. Since $L$ is effective, we may induct on the degree of the divisor. The base case is easy: the theorem holds for $L' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $L' \in \di X$, with $L'$ effective. We will show it holds for $L' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $L'$.
 
-First, if $P$ is not a basepoint of $L',$ then the hypotheses of Lemma ~\ref{lem:sat-1}. In particular, we may take $u \in h^0(\sx,L)$ with $u \neq 0$ and $\ord_P(u) = \lfloor L|_P \rfloor $ with $\ord_P(u) = 0$, as $P$ is not a basepoint of $L'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg L' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $L= L'+P$.
+First, if $P$ is not a basepoint of $L',$ then the hypotheses of Lemma ~\ref{lem:sat-1} are satisfied. In particular, we may take $u \in h^0(\sx,L)$ with $u \neq 0$ and $\ord_P(u) = \lfloor L|_P \rfloor $, as $P$ is not a basepoint of $L'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg L' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $L= L'+P$.
 
 Second, if $P$ is a basepoint of $L'$, then the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(L'+P) \geq 2$ as $\deg L' + P \geq 1$. Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $L = L'+P$. This shows the theorem holds for $L_X$.
 
@@ -1888,17 +1895,17 @@ Since $\Delta = 0$, we may write $L = L_X + \sum_{i = 1}^{r}\subhalf{e_i}P_i.$ T
 \noindent
 {\sf Case 2a: $L_X = P - Q, P \neq Q$}
 
-Note that we are assuming $L$ is not one of the exceptional cases listed in Table ~\ref{table:g-1-exceptional}, so we may either assume $\sx$ has 1 stacky point with $e_1 > 5$ or at least 2 stacky points
+Note that we are assuming $L$ is not one of the exceptional cases listed in Table ~\ref{table:g-1-exceptional}, so we may either assume $\sx$ has 1 stacky point with $e_1 > 5$ or at least 2 stacky points.
 
-First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. While $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, while the previous relation lies in degree $12$, which is less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
+First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12. Furthermore, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Observe that $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$. However, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, and the relation in degree $12$ coming from $R_{L'}$, lies in a degree less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
-Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base- 1-33}, it follows that the signature $\sigma = (1;3, 3; \delta)$ satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ Assume for convenience  $e_1 \leq e_2 \leq \cdots \leq e_r$. Then, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
+Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base-1-33}, it follows that the signature $\sigma = (1;3, 3; \delta)$ satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ Finally, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
 
 \vskip.1in
 \noindent
 {\sf Case 2b: $L_X = 0$}
 
-This case is completely analogous to 2a.
+This case is analogous to 2a.
 \end{proof}
 
 \begin{rem}
@@ -1972,7 +1979,7 @@ first and generic cases follow.
 \end{longtable}
 
 \begin{center}
-\textbf{Table (I)}: Genus 0 saturation \todo{I see it says this above, but I think in the table, it should be made clear exactly what the hypotheses on $k,a,b,c,e_i$ are.}
+Genus 0 saturation \todo{I see it says this above, but I think in the table, it should be made clear exactly what the hypotheses on $k,a,b,c,e_i$ are.}
 \end{center}
 
 \todo{transition}
@@ -2204,7 +2211,7 @@ and any generator $z$ of $R'$.
 \end{longtable}
 
 \begin{center}
-\textbf{Table (II)}: Genus 0 non-effective base cases generator/relations
+Genus 0 non-effective base cases generator/relations
 \end{center}
 
 We can also always find a presentation for these cases such that
@@ -2250,7 +2257,7 @@ independent of the choice of $i$.
 \end{longtable}
 
 \begin{center}
-\textbf{Table (III)}: Genus 0 non-effective base cases (Ad-iii)
+Genus 0 non-effective base cases (Ad-iii)
 \end{center}
 
 Thus, all of the cases are admissible and satisfy the additional
@@ -2266,7 +2273,7 @@ Through the application of two inductively adding
 points via Lemma ~\ref{lem:sat-3} and inductively raising
 stabilizer orders via Lemma ~\ref{lem:raise-stacky-order},
 we obtain Theorem ~\ref{thm:g-0-main} for any
-log spin curve $(\sx, \Delta, L)$ over a perfect field $k$ with
+log spin curve $(\sx, \Delta, L)$ with
 signature $\sigma$ covered by this induction process.
 In particular, this induction process covers all signatures $\sigma
 = (0; e_1, \ldots, e_r; 0)$ such that either $r \geq 5$ or
@@ -2317,7 +2324,7 @@ in the case $g = 0$.
 
 \begin{center}
 \label{table:g-0-exceptional}
-\textbf{Table (IV)}: Genus 0 exceptional cases
+Genus 0 exceptional cases
 \end{center}
 
 \begin{rem}
@@ -2337,7 +2344,7 @@ Now we can combine this.
 
 \begin{thm}
 \label{thm:g-0-main}
-Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$,
+Let $(\sx, \Delta, \halfcan)$ log spin curve,
 so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
 Then, the canonical ring
 
