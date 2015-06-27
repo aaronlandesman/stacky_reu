@@ -301,7 +301,15 @@ Include the following:
 	\item Why we have these fractions $\frac{e_i - 1}{2e_i}$ and why $e_i$ must be odd.
 	\item Include notation for $X$ as coarse space and $L_X$ the corresponding log half canonical divisor.
 	\item Notation for grobner bases and orderings (include grlex, grevlex, and block order, as defined in \cite[Definition 8.1.1]{vzb:stacky})
+	\item Make sure to standardize the notation $\sx,\sx'$ for stacky curves, $L,L'$ for half canonical divisors, and $X,X'$ for (non stacky) curves.
 \end{enumerate}
+
+\begin{rem}
+\label{rem:delta-not-1}
+Suppose $(\sx,\Delta,L)$ is a log spin curve. Note that $\deg \lfloor L \rfloor$ is even. because $2 \cdot \deg L = \deg \Delta + \deg \lfloor K \rfloor = \deg \Delta + 2(g-1).$ Therefore, $\deg \Delta$ is even. In particular, we shall often use $\deg \Delta \neq 1$.
+\end{rem}
+
+
 
 \subsection{Junk}
 This is stuff that has been moved out of the introduction to possibly
@@ -1499,44 +1507,39 @@ We now consider the case when the genus is at least 2. In this case, we are able
 
 \ssec{Bounds on Generators and Relations in High Genus}
 
-The main result of this subsection is that for a log spin curve (with no stacky points) $(X,\Delta,L)$, the half-canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $11$ if $\Delta = 0$ and at most $10$ if $\Delta > 0$. The generation bound is shown in Lemma ~\ref{lem:generation_5} and the relations bound is shown in Lemma ~\ref{prop:relations_11}. In fact, it is fairly immediate from Riemann--Roch and the basepoint-free pencil trick that $R_L$ is generated in degree at most $6$, as is demonstrated in the following
-Lemma ~\ref{lem:semicanonical_generation}. However, to reduce the bound from 5 to 6 in the case $g =2$, we will have to work a little in Proposition ~\ref{prop:genus_2_generation_5}. The following proof of Lemma ~\ref{lem:semicanonical_generation} is due to Neves \cite[Proposition III.4]{neves:halfcan}, although he omits the fairly tricky genus 2 case. We produce the proof here for completeness.
+The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the half-canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $11$ if $\Delta = 0$ and at most $10$ if $\Delta > 0$. The generation bound is shown in Lemma ~\ref{lem:generation_5} and the relations bound is shown in Lemma ~\ref{prop:relation_11}. In fact, it is fairly immediate from Riemann--Roch and the basepoint-free pencil trick that $R_L$ is generated in degree at most $6$, as is demonstrated in the following
+Lemma ~\ref{lem:semicanonical_generation}. However, to reduce the bound from 5 to 6 in the case $g =2$, we will have to work a little in Proposition ~\ref{prop:genus_2_generation_5}. 
+
+\begin{rem}
+The following proof of Lemma ~\ref{lem:semicanonical_generation} is shown in Neves \cite[Proposition III.4]{neves:halfcan}, although he omits the fairly tricky genus 2 case. We produce the proof here for completeness.
+\end{rem}
 
 \begin{lem}
 \label{lem:semicanonical_generation}
-Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K + \Delta$. Then, the map
+Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K + \Delta$. Let $s_1,s_2 \in H^0(X,2L)$ be two independent sections such that the vector subspace $V = ks_1 \oplus k s_2 \subset H^0(K)$ is basepoint free. Then, the map
 \begin{align*}
-	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
+	V \otimes H^0(nL) \rightarrow H^0((n+2)L)
 \end{align*}
-is surjective if $n \geq 5$ or if ($n = 5$ and $\Delta > 0$).
+is surjective if $n \geq 5$ and if {\rm(}$n = 4$ and $\Delta > 0${\rm)}.
 In particular, $R_L$ is generated in degree at most $6$ if $\Delta = 0$ and in degree at most $5$ if $\Delta > 0$.
 \end{lem}
 \begin{proof}
-Therefore, to show there are no new generators in degree at least $7$, it suffices to show that if $n \geq 5$ or if ($n = 5$ and $\Delta > 0$), the map
+To show there are no new generators in degree at least $7$ if $\Delta = 0$ and in degree at least $6$ if $\Delta > 0$, it suffices to show that if $n \geq 5$ or if ($n = 4$ and $\Delta > 0$), the map
 \begin{align*}
 	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
 \end{align*}
-is surjective. Indeed, let $s_1,s_2 \in H^0(2L) \cong H^0(K)$ be two independent sections. 
-Since $K$ is basepoint-free, so is the vector subspace $V = ks_1 \oplus k s_2 \subset H^0(K)$. 
-Then, by the basepoint-free pencil trick, we obtain an exact sequence
+is surjective. Indeed, since $V= ks_1 \oplus k s_2 \subset H^0(K)$ is basepoint free, by the basepoint-free pencil trick, (see \cite[Lemma 2.6]{saint-donat:proj} for a proof,) we obtain an exact sequence
 $$\begin{tikzcd}
 0 \ar r & H^0((n-2)L) \ar r & V \otimes H^0(nL) \ar{r}{f} & H^0((n+2)L)
 \end{tikzcd}$$
 
 
 We wish to show $f$ is surjective.
-Note that $\dim_k \ker f = \dim_k H^0((n-2)L) = (n-3)(g - 1)$ using Riemann--Roch and the assumption if $n \geq 5$ or ($n = 5$ and $\Delta > 0$), as in the case $\Delta > 0$ we have $\deg \Delta \geq 2$.
+Note that $\dim_k \ker f = \dim_k H^0((n-2)L) = (n-3)(g - 1)$ using Riemann--Roch and the assumption $n \geq 5$ or ($n = 4$ and $\Delta > 0$). Note that here we are implicitly using the Remark ~\ref{rem:delta-not-1}
 Additionally, $\dim_k V \otimes H^0(nL) = 2 \cdot (n- 1)(g - 1)$, again using Riemann--Roch.
 Therefore, $$\dim_k \im f = 2 \cdot (n- 1)(g - 1) -(n-3)(g - 1) = (n+ 1)(g - 1) = \dim_k H^0((n+2)L),$$
 again using Riemann-Roch, implying $f$ is surjective.
 \end{proof}
-
-\begin{rem}
-\todo{This remark isn't quite right, we're changing the proof}
-In \cite[Proposition III.4]{neves:halfcan}, Neves claims to prove that $R_L$ is generated in degree at most 5. However, when the proof is carefully examined, it only shows generation in degree at most 6. For this reason, we only state Lemma ~\ref{lem:semicanonical_generation} as generation in degree at most 6. We next proceed to show this can be reduced to generation in degree 5. The trickiest case is genus 2, which we address next.
-\end{rem}
-
-
 
 \begin{prop}
 \label{prop:genus_2_generation_5}
@@ -1892,8 +1895,7 @@ then $R(\sx , \Delta, L)$ is generated in degree at most $e := \max(
 5, e_1, \ldots, e_r)$ with relations generated in degree at most $2e
 $, so long as $\sigma$ does not lie in the finite list given in Table ~\ref{table:g-0-exceptional}.
 
-There are two main cases: when $\delta \geq 2$ and when $\delta = 0$
- (note that $\delta$ must be even because $\halfcan_X \in \di X$ with $2\halfcan_X \sim K_X +\Delta$, where $\deg K_X$ is even). \todo{make a remark about this somewhere in the beginning and reference it} In the first case, $\deg \lfloor \halfcan \rfloor
+There are two main cases: when $\delta \geq 2$ and when $\delta = 0$, where we are implicitly appealing to Remark ~\ref{rem:delta-not-1}. In the first case, $\deg \lfloor \halfcan \rfloor
 \geq 0$ so the result directly follows from Lemma
 ~\ref{lem:sat-1}. When $\delta = 0$, the proof is a rather involved induction using Lemma
 ~\ref{lem:sat-3} and Lemma ~\ref{lem:raise-stacky-order}.
