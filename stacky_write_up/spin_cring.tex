@@ -557,23 +557,28 @@ We equip the graded ring $k[x_1, \ldots x_m]$, with weight $a_i$ and pole order 
 \begin{enumerate}
 \item $\deg(f) < \deg(g)$
 \item $\deg(f) = \deg(g)$ and $-\ord(f) > -\ord(g)$ \todo{Order at which point, in this line and the next}
-\item $\deg(f) = \deg(g)$, $-\ord(f) = -\ord(g)$, and for $i$ maximal such that $q_i-r_i$ is non-zero, that expression is negative. \todo{I do not understand what this means, maximal under what ordering? Also, }
+\item $\deg(f) = \deg(g)$, $-\ord(f) = -\ord(g)$, and for $i$ maximal such that $q_i-r_i$ is non-zero, that expression is negative. \todo{I do not understand what this means, maximal under what ordering? Also, what expression are you talking about?}
 \end{enumerate}
 \end{defn}
-We leave it as an exercise to verify that this is an order.  \todo{check for ourselves that this actually is, Aaron: I suggest not to use the phrase ``leave as an exercise'' in a paper}
-We now offer a lemma that allows us to inductively add $\mathbb{Q}$-points to a divisor and describe the new generators and relations.
+We leave it as an exercise to verify that this is an order.  \todo{check for ourselves that this actually is, Aaron: I suggest not to use the phrase ``leave as an exercise'' in a paper.}
+We now offer \todo{Maybe state instead of offer?} a lemma that allows us to inductively add $\mathbb{Q}$-points \todo{$\BQ$ points usually refers to maps to $\spec \BQ$. Maybe we can just say a rational multiple of a poitn?} to a divisor and describe the new generators and relations.
+
+\begin{defn}
+\label{}
+If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
+\end{defn}
 
 \begin{lem}
 \label{lem:sat-1}
-Let $X$ be a genus $g$ curve with a $\BQ$-divisor $\halfcan'$
-satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}^+$ meaning that $R_{\halfcan'}$ has generically chosen generators (in the necessary degrees)
-$u, x_1, \ldots, x_m$ with $\ord_P(x_i)=0$ for all $x_i$, $\ord_P(u) = 0$, \todo{Aaron: Instead of having $\deg u = 0$, don't we only need that $\ord_P(u) = \lfloor \halfcan'|_P \rfloor$?} and $\deg(u)= 1$ when viewed as sections of $\so_{\halfcan'}$.  Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\sigma$ with relations generated
+Let $X$ be a genus $g$ curve and $\halfcan' \in \di X \otimes \BQ$
+satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}^+$ meaning that $R_{\halfcan'}$ has generators (in the necessary degrees \todo{What does this mean?})
+$u, x_1, \ldots, x_m$ with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\sigma$ with relations generated
 in degree at most $\tau$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
 for some $\alpha,\beta \in \mathbb{N}$ such that
 \begin{equation}
 \label{eqn:deg1_sat_ind_dim}
 	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
-	\rfloor) + \lfloor d\frac{\alpha} {\beta} \rfloor \text{ for all } d \in \mathbb{
+	\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor \text{ for all } d \in \mathbb{
 	N} \text{ such that } d \ge \frac{\beta}{\alpha}.
 \end{equation}
 \label{eqn:deg1-sat-ind}
@@ -582,32 +587,32 @@ Let
 	0 < \frac{c_1}{d_1} < \ldots < \frac{c_n}{d_n} = \frac{\alpha}{\beta}
 \]
 be the positive best lower approximations of $\frac{\alpha}{\beta}$.
-Then 
+Then,
 
 \begin{enumerate}
 \item[(a)] $R_{\halfcan}$ is generated over $R_{\halfcan'}$ by elements $y_1, \ldots, y_n$ such that $y_i$ lies in  
-degree $d_i$ and has a pole at $P$ of degree $c_i$, when viewed as sections of $\so_{\halfcan'}$
+degree $d_i$ and has a pole at $P$ of degree $c_i$, when viewed as sections of $\so_{\halfcan'}$ \todo{Clearer to say $\deg (y_i) = d_i,\ord_P^{L'} = c_i.$}
 
 \item[(b)] Choose an ordering $\prec$ on $k[u, x_1, \ldots, x_m]$ such that
 \[
 	\ord_u(f) < \ord_u(g) \implies f\prec g
 \]
-and equip $k[y_1, \ldots, y_n]$ with g-P-revlex and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ with a block order.
+and equip $k[y_1, \ldots, y_n]$ with g-P-revlex and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ with a block order \todo{it should be called block order, instead of ``a block order''}.
 If $I$ and $I'$ are the ideal of relations of $R_{\halfcan}$ and $R_{\halfcan'}$ respectively, then 
 
 \begin{align*}
-	\initial_\prec(I) &= \initial_\prec(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
-										 &+ \langle U_i: 1 \le i \le n-1 \rangle\\
-										 &+ \langle V \rangle\\
+	\initial_\prec(I) &= \initial_\prec(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] 
+										 + \langle U_i: 1 \le i \le n-1 \rangle
+										 + \langle V \rangle\\
 \end{align*}
 where 
 $V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
- and $U_i$ is the set of monomials of the form $\prod_{j=1}^{i} y_i^{a_i}$ with $a_j\in \mathbb{Z}^{\ge 0}, a_i\ne 0$ such that
+ and $U_i$ is the set of monomials of the form $\prod_{j=1}^{i} y_i^{a_i}$ \todo{should this be $y_j^{a_j}$ instead of $y_i^{a_i}$?} with $a_j\in \mathbb{Z}^{\ge 0}, a_i\ne 0$ \todo{this conflation of $j$ and $i$ is confusing me, is $j$ ranging over all indices from $1$ to $i$?} such that
 $\sum_{j=1}^i a_j c_j \ge c_{j+1}$
 and there does not exist $((b_1, \ldots b_i)\ne (a_1, \ldots a_i)$ such that with all $b_j\le a_j$ and 
-$\sum_{j=1}^i b_jc_j\ge c_{j+1})\}$.  \\
+$\sum_{j=1}^i b_jc_j\ge c_{j+1})\}$. \todo{what is this close bracket closing?}  \\
 
-\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with relations $I$ generated over $I'$ by relations in degree is generated $\max(2\beta, \beta + \sigma)$ (where $\sigma=\max(\deg(x_i))$).
+\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with relations $I$ generated over $I'$ by relations in degree is generated $\max(2\beta, \beta + \sigma)$ {\rm(}where $\sigma=\max(\deg(x_i))$ \todo{include what indexing set this $i$ is over ($ i = 1,\ldots, m$).}{\rm)}.
 %\item If $\gin_\prec(I')=\initial_\prec(I')$ then $\gin_\prec(I)=\initial_\prec(I)$.
 %\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
 %	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
@@ -617,7 +622,7 @@ $\sum_{j=1}^i b_jc_j\ge c_{j+1})\}$.  \\
 \end{lem}
 \begin{proof}
 By
-our hypothesis (Equation ~\ref{eqn:deg1_sat_ind_dim}), for any $d
+Equation ~\ref{eqn:deg1_sat_ind_dim}, for any $d
 \in \mathbb{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
@@ -625,10 +630,10 @@ our hypothesis (Equation ~\ref{eqn:deg1_sat_ind_dim}), for any $d
 \]
 
 \noindent
-so in $H^0 (X, \lfloor d\halfcan \rfloor)$ we can find elements with pole
+\todo{why is there no floor in the above equation, as in ~\ref{eqn:deg1_sat_ind_dim}} so in $H^0 (X, \lfloor d\halfcan \rfloor)$ we can find elements with pole
 order $i$ at $P$ for any $i \in \{0, \ldots, \lfloor d \frac{\alpha}{
 \beta} \rfloor \}$. We will use O'Dorney's method of best lower approximations to
-construct the $y_i$'s as desired. \todo{cite where}
+construct the $y_i$'s as desired. \todo{cite where} \todo{What do we desire about the $y_i$?}
 
 Let 
 \[
@@ -637,20 +642,21 @@ Let
 \]
 
 \noindent
-be the positive best lower approximation of $\frac{
-\alpha}{\beta}$ as described in the lemma's statement.  Note that elements of $H^0(X, d\halfcan)$ have pole of
+be the positive best lower approximations of $\frac{
+\alpha}{\beta}$ as described in this lemma's statement. Note that elements of $H^0(X, d\halfcan)$ have poles of
 orders ranging from 0 to $\lfloor d_i \frac{\alpha}{\beta}\rfloor =
 c_i $ at $P$.  Moreover, a set $\lfloor d_i \frac{\alpha}{\beta}\rfloor$ elements in $(R_{D})_{d_i}$ with respective pole orders $1, \ldots, \lfloor
 d_i \frac{\alpha}{\beta} \rfloor$ are linearly independent over $(R_{\halfcan'})_d$, and thus by dimension counting form a $k$-basis for
 $(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.
 
 For any $j < i \in \mathbf{N}$, $\frac{c_i}{d_i} > \frac{c_j}{d_j}$, so for any $z_1, \ldots, z_n$ with $\deg(z_j)<d_i$ for all $z_j$, $\prod_{j=1}^n z_j$ must satisfy
+\todo{In the next equations, are we viewing these as rational functions on the structure sheaf or on $L'$, what point is the order of $z_j$ taken with respect to?}
 \[
-	\frac{-\ord_P(z_i)}{\deg(z_i)} < \frac{c_i}{d _i},
+	\frac{-\ord_P(z_i)}{\deg(z_i)} < \frac{c_i}{d_i},
 \]
 
 \noindent
-so we have the pole order of $\prod_{j=1}^n z_j$ is 
+so we have the pole order of $\prod_{j=1}^n z_j$ is \todo{what is the following sum taken over?}
 \[
 	\sum -\ord(z_j) < c_i .
 \]
@@ -1185,13 +1191,7 @@ $(g;e_1', \ldots, e_k', e_{k+1}' \ldots, e_r';\delta),$ with $e_{k+1}' = \cdots 
 signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta).$ In order to state Lemma
 ~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}.
 
-One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and \cite[Definition 8.5.1]{vzb:stacky} is that in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ However, we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $L_X$ is not necessarily basepoint-free. Therefore, we will have to work with orders of zeros of poles relative to the divisor we are inducting from, instead of relative to the structure sheaf. Hence, we introduce the following notation.
-
-\begin{defn}
-\label{}
-If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
-\end{defn}
-
+One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and \cite[Definition 8.5.1]{vzb:stacky} is that in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ However, we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $L_X$ is not necessarily basepoint-free. Therefore, we will have to work with orders of zeros of poles relative to the divisor we are inducting from, instead of relative to the structure sheaf.
 
 \begin{defn}
 \label{defn:admissible}
