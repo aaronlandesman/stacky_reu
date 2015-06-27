@@ -1415,9 +1415,7 @@ i \} \cup S(i, 0), j = i,$ or $j \in S(i, 0)$.
 \noindent
 {\sf Case 1: $j \notin \{i \} \cup S(i,0).$}
 
-Here, $-\ord_{Q_j}
-^{\halfcan_X'}(L) = -\ord_{Q_j}
-^{\halfcan_X'}(L'),$ so
+Here, $L|_{Q_j} = L'|_{Q_j},$ so
 \begin{align*}
 	-\ord_{Q_j}
 ^{\halfcan_X'}(y_{i, e_i})-\ord_{Q_j}
@@ -1448,7 +1446,7 @@ In this case, we may first assume $z \neq y_{j, e_j}$,
 as this is covered by case 2, with $i$ and $j$ reversed. 
 Hence, 
 \begin{align*}
-	-\ord_{Q_j}^{\halfcan_X'}(z) \leq \deg z \subhalf{e_j'}
+	-\ord_{Q_j}^{\halfcan_X'}(z) \leq \deg z \subhalf{e_j'},
 \end{align*}
 implying
 \begin{align*}
@@ -1464,7 +1462,7 @@ completing part (c).
 %~\ref{lem:minimal_quadratic}.
 
 {\bf Part (d):}
-To check (d), we show $(Ad-i),(Ad-ii)$ and $(Ad-iii)$ are satisfied. We know (Ad-i) holds by part (b), taking the $y_{
+To check (d), we show (Ad-i),(Ad-ii), and (Ad-iii) are satisfied. We know (Ad-i) holds by part (b), taking the $y_{
 i, e_i}$ as the generators in degree $e_i$. Next, (Ad-ii) is
 strictly monotonic in the $e_i$ and hence also holds for $(\sx, J)$.
 Finally, if (Ad-iii) holds for $e$ then it holds for $e + 2$ by
@@ -1474,32 +1472,35 @@ and not just for $d = 0$.
 
 \begin{cor}
 \label{cor:raise-stacky-order}
-Suppose $(\sx',L',J')$ is admissible with signature $\sigma' = (e_1',\ldots,e_r')$ or $\sigma$ satisfies one of the conditions of Remark ~\ref{rem:three-cases}. Let $J' = \{t,t+1,\ldots,r\}$ and $e_1' \leq e_2' \leq \cdots \leq e_t' = e_{t+1}' =\cdots = e_r'$
+Suppose $(\sx',L',J')$ is admissible with signature $\sigma' = (e_1',\ldots,e_r')$ or $\sigma$ satisfies one of the conditions of Remark ~\ref{rem:three-cases}. Let $J' = \{t,t+1,\ldots,r\}$ and $e_1' \leq e_2' \leq \cdots \leq e_t' = e_{t+1}' =\cdots = e_r'$,
 so that $(\sx',\Delta, L)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main}. Then, for any spin curve $(\sx,\Delta,L)$ so that $\sx$ and $\sx'$ have the same coarse space $X = X'$ with the same set of stacky points, and $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$ with $e_1 \leq e_2 \leq \cdots e_r$ so that
 $$
 e_i \begin{cases}
 	= e_i' &\text{ if }i \notin J\\
 	\leq e_i' &\text{ if } i \in J
 \end{cases}$$
-then Theorem ~\ref{thm:main} holds for $(\sx,\Delta,L)$
+then Theorem ~\ref{thm:main} holds for $(\sx,\Delta,L).$
 \end{cor}
 \begin{proof}
-For $t \leq i \leq r$. Let $(\sx_i,\Delta, L_i)$ be the log spin curve with the same coarse space as $L'$ and with the same stacky points as $(\sx',\Delta,L),$ having signature $(g; e_1, \ldots. e_{i-1}, e_i, e_i, \ldots, e_i;\delta),$ and let 
-$J_i = \{i,\ldots, r\}.$ Note that $(\sx_k,L_k,J_0) = (\sx',L',J')$ and $(\sx_r ,L_r ,J_r) = (\sx, L, J)$.
+For $t \leq i \leq r$, let $(\sx_i,\Delta, L_i)$ be the log spin curve with coarse space $X_i$ so that $X_i = X',$ with the same stacky points as $(\sx',\Delta,L),$ and having signature $(g; e_1, \ldots. e_{i-1}, e_i, e_i, \ldots, e_i; \delta).$ Let 
+$J_i = \{i,\ldots, r\}.$ Note that $(\sx_0,L_0,J_0) = (\sx',L',J')$ and $(\sx_r ,L_r ,J_r) = (\sx, L, J)$.
 
-Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the conditions $(\sx',\Delta, L)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main} and $(\sx_i, \halfcan_i, J_i)$ is admissible.
+Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main}, and $(\sx_i, \halfcan_i, J_i)$ is admissible.
 
 Since $(*_0)$ holds by assumption, by induction on $i$, it suffices to show that if $(*_i)$ holds then so does $(*_{i+1}).$ 
-Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \halfcan_i, J_{i+1})$ is admissible, as $J_{i+1} \subset J_i$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e_{i+1}-e_i}{2}$ times, we see $(*_{i+1})$ holds.
+Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \halfcan_i, J_{i+1})$ is admissible, as $J_{i+1} \subset J_i$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e_{i+1}-e_i}{2},$ times, for the fixed set $J_{i+1},$ we see $(*_{i+1})$ holds.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% High genus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{High Genus}
 \label{sec:g_high}
-We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the half canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved. We begin with the case that $g \geq 2$.
+We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the half canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved, while in this section we will be able to appeal to general theory.
 
 \ssec{Bounds on Generators and Relations in High Genus}
+
+The main result of this subsection is that for a log spin curve (with no stacky points) $(X,\Delta,L)$, the half-canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $11$ if $\Delta = 0$ and at most $10$ if $\Delta > 0$. The generation bound is shown in Lemma ~\ref{lem:generation_5} and the relations bound is shown in Lemma ~\ref{prop:relations_11}. In fact, it is fairly immediate from Riemann--Roch and the basepoint-free pencil trick that $R_L$ is generated in degree at most $6$, as is demonstrated in the following
+Lemma ~\ref{lem:semicanonical_generation}. However, to reduce the bound from 5 to 6 in the case $g =2$, we will have to work a little in Proposition ~\ref{prop:genus_2_generation_5}. The following proof of Lemma ~\ref{lem:semicanonical_generation} is due to Neves \cite[Proposition III.4]{neves:halfcan}, although he omits the fairly tricky genus 2 case. We produce the proof here for completeness.
 
 \begin{lem}
 \label{lem:semicanonical_generation}
