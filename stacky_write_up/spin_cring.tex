@@ -375,7 +375,7 @@ $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 
 \section{Inductive Lemmata}
 \label{sec:induction}
-First we present several lemmata which play a crucial role in the inductive step of the proof of the main theorem, Theorem ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove Lemma ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3} which describe the generators and relations of $R_{D + \frac{\alpha}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di X \otimes \BQ$ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in Subsection ~\ref{ssec:raise-orders}, we prove Lemma ~\ref{lem:raise-stacky-order}, which the generators and relations of the log spin canonical ring curve with signature $(g; e_1', \ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a curve with a certain subset of the $e_i'$ incremented by $2$. While Lemma ~\ref{lem:sat-1} may be applied in a fairly general context, Lemma ~\ref{lem:raise-stacky-orders} is more specific to half-canonical divisors, although even Lemma ~\ref{lem:raise-stacky-orders} has certain generalizations, as noted in Remark ~\ref{rem:raise-fractional-orders}
+First we present several lemmata which play a crucial role in the inductive step of the proof of the main theorem, Theorem ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove Lemma ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3} which describe the generators and relations of $R_{D + \frac{\alpha}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di X \otimes \BQ$ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in Subsection ~\ref{ssec:raise-orders}, we prove Lemma ~\ref{lem:raise-stacky-order}, which the generators and relations of the log spin canonical ring curve with signature $(g; e_1', \ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a curve with a certain subset of the $e_i'$ incremented by $2$. While Lemma ~\ref{lem:sat-1} may be applied in a fairly general context, Lemma ~\ref{lem:sat-2} and ~\ref{lem:sat-3} are more specific to half-canonical divisors.
 
 %However, before we can answer these general Lemmata, it is useful
 %to prove a nice result about minimal generation of ideals of
@@ -499,10 +499,10 @@ If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha\in \mathbb{Z}, \beta\in \mathbb{N}
 \end{defn}
 \todo{add a picture of lattice}
 
-In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbb{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
+In ~\cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\mathbb{P}^1$ consisting of at most 2 points in its support, showing that it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$.  He further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points.  
 
-In Lemma \ref{lem:sat-1} we provide an inductive method to strengthen
-O'Dorney's result \todo{cite theorem 8, Aaron: If you want to cite Theorem 8, just do \cite[Theorem 8]{dorney:canonical}} on $\BP^1_k$ to divisors $D = \sum_{i=1}^n \frac{\alpha_i
+In Lemma ~\ref{lem:sat-1} we provide an inductive method to strengthen
+O'Dorney's result \cite[Theorem 8]{dorney:canonical} on $\BP^1_k$ to divisors $D = \sum_{i=1}^n \frac{\alpha_i
 }{\beta_i} P_i$ for points $P_1, \ldots, P_n$ on a curve $X$ such that $H^
 0(X, \lfloor D \rfloor) > 0$; our result implies that $R_D$ is generated in
 degrees at most $e = \max(\beta_i)$ with relations generated in
@@ -510,8 +510,8 @@ degrees at most $2e$.  Furthermore, given additional constraints on $H^0(
 X, \lfloor dD \rfloor)$ for various values of $d$, we can apply the
 same Riemann-Roch arguments in arbitrary genus. 
 To do this, we extend an inductive result by Voight and
-Zureick-Brown on stacky canonical rings to arbitrary $\BQ$-
-divisors. \todo{cite theorem 8.3.1}
+Zureick-Brown ~\cite[Theorem 8.3.1]{vzb:stacky} on stacky canonical rings to arbitrary $\BQ$-
+divisors.
 
 First, however, we give a criteria to determine if a set of monomials generates the initial ideal of relations, and define notation for a type of monomial ordering.
 
@@ -828,9 +828,28 @@ If $\frac{\alpha}{\beta}=\frac{e_i-1}{2 e_ii}$ for some odd $3\le e_i\in \mathbf
 The generators in the previous lemma are generic if $\frac{\alpha}{\beta}\le 1$ (so there is not more than one $d_i=1$).  When $\frac{\alpha}{\beta}$, the choice of generators in degrees above 1 is generic, and we can make the choice in degree 1 generic by choosing $\lfloor \frac{\alpha}{\beta}\rfloor$ linearly independent elements in degree 1 with pole at $P$ of order $\lfloor \frac{\alpha}{\beta}\rfloor$ rather than elements with poles of order $1, \ldots, \lfloor \frac{\alpha}{\beta}\rfloor$.
 \end{rem}
 
+Lemma \ref{lem:sat-1} leads to the the following corollaries.
+\todo{do we want this here?}
+\begin{cor}\label{cor-gen-0-with-log}
+If $(\sx, \halfcan, \Delta)$ is a stacky curve with signature $(g; e_1, \ldots, e_n; \delta)$ with $g=0$ and $\delta>0$, then $R_\halfcan$ is generated in degree at most $e=\max(e_i)$ with relations generated in degree at most $2e$.
+\end{cor}
+\begin{proof}
+By remark \ref{rem:delta-not-1}, $\delta\ge 2$ so $\halfcan$ is linearly equivalent to an effective divisor.  Thus, we can recursively apply Lemma \ref{lem:sat-1} to prove the corollary.
+\end{proof}
+
 \todo{Something about fractional weight modular forms?}
+\iffalse{
+\begin{cor}
+Let $R_\halfcan$ be the fractional weight canonical ring associated to a fractional $\frac{2\alpha}{\beta}$-weight cusp forms with $\frac{\alpha}{\beta}$ in reduced form and $\beta\ge 3$, with signature $(g; e_1, \ldots, e_n; \delta)$ where $g=0$.  Then $R_\halfcan$ is generated in degrees at most $e = \max(e_i)$ with relations generated in degrees at most $2e$.
+\end{cor}
+\begin{proof}
+Let $K$ be the log canonical divisor of the curve $(\sx, \Delta)$ associated to the $\frac{2\alpha}{\beta}$ weight cusp forms.  We see that $\frac{\beta}{\alpha}\halfcan_\sx\sim K_\sx$, so the floors of each 
 
+Then $\beta \halfcan_\sx \sim \alpha K_{\sx}$ so $\beta\lfloor so $\beta | \alpha \deg(K_\sx)$; since $\gcd(\alpha, \beta)=1$, $\beta| \deg(K_\sx)\ge -2$.  Thus, since $\beta\ge 3$, $\deg(K_\sx)\ge 0$.  Thus $\deg(
+\end{proof}
+}\fi
 
+We now restrict our attention to log canonical rings of stacky curves.  The previous lemma deals with most relevant induction cases when inducting from a half-canonical ring saturated at one.  We complement it with the following two lemmas that allow us to induct under certain conditions when the half-canonical ring is saturated at two and three.
 
 \begin{lem}
 \label{lem:sat-2}
@@ -1169,7 +1188,7 @@ generators of $J$, completing (b).
 %Similar to all the other Lemmas\todo{combine sections?}
 %\end{proof}
 
-\todo{transition!}
+One can prove similar results in cases with different conditions on saturation, base-point freeness, and the coefficients of added points, but only these three cases (Lemmas ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3}) are needed for the remainder of this paper.  Instead we turn now to inductive methods to incrementally increase the $e_i$s.  Combined with the previous lemma on adding points, these will provide all the necessary inductive tools.
 
 \ssec{Raising Stabilizer Orders}
 \label{ssec:raise-orders}
