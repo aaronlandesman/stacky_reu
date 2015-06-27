@@ -689,7 +689,7 @@ Furthermore, if we define $U_i$ and $V$ as in the lemma's statement and
 \[
 	T = (\bigcup_{i=1}^{n-1} U_i) \cup V,
 \]
-then we observe that $S$ and $T$ satisfy the hypothesis of Lemma \ref{lem:relations_from_generators_induction}, so we immediately prove part (b) of this lemma.
+then we observe that $S$ and $T$ satisfy the hypothesis of Lemma \ref{lem:relations_from_generators_induction}, so parts (b) and (c) of the lemma follow immediately
 
 
 
@@ -859,7 +859,7 @@ Then, the following statements hold.
 		\begin{align*}
 			\initial_\prec(I) &= \initial_\prec(I')k[x, y_3, y_4] \\
 			&+\langle y_4 x_j \mid 2 \leq j \leq m \rangle \\
-			&+\langle y_4^2.\rangle
+			&+\langle y_4^2 \rangle.
 		\end{align*}
 	%\item[(c)] Any set of minimal generators for $I'$ together with 
 		%any set of relations with leading terms as in (b) minimally 
@@ -868,8 +868,8 @@ Then, the following statements hold.
 \end{lem}
 
 \begin{proof}
-The assumptions on $g,\sigma$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base point free: If $g \geq 2$ then $\deg 3L > 2g - 1$ and $\deg 4L > 2g - 1$, so $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. If $g = 1$, we assume $\deg 3L \geq 2 > 2g - 1$, so we also have $\deg 4L \geq 2 > 2g - 1,$ so again $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord
-_P(y_i) = 1$ by Riemann-Roch, and the assumptions on $\sigma$. \todo{Understand why/whether we need to cite Lemma 5.4.7.} 
+The assumptions on $g$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base point free: If $g \geq 2$ then $\deg 3L > 2g - 1$ and $\deg 4L > 2g - 1$, so $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. If $g = 1$, we assume $\deg 3L \geq 2 > 2g - 1$, so we also have $\deg 4L \geq 2 > 2g - 1,$ so again $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord
+_P(y_i) = 1$ by Riemann-Roch. \todo{Understand why/whether we need to cite Lemma 5.4.7.} 
 
 In a fashion analogous to the proof of Lemma 
 ~\ref{lem:sat-3}, we see 
@@ -877,25 +877,34 @@ the following is a $k$ basis for $R$ over $R'$:
 
 \begin{align}
 \label{eqn:sat_two_add_generator}
-		\{ y_3^ax_2^b x_3^\epsilon \mid a \geq 0, b 
-		\geq 0, \epsilon \in \{0, 1\}\} \cup \{ y_3^ay_4 \mid a \geq 0 \}
+	S =	& \; \{ y_3^ax_2^b x_3^\epsilon \mid a \geq 0, b 
+		\geq 0, \epsilon \in \{0, 1\}\} \\
+	\cup	& \; \{ y_3^ay_4 \mid a \geq 0 \}
 \end{align}
 
 \noindent
 completing part (a).
 
+Letting
+\begin{align*}
+	T =   &\; \{ y_4 x_j \mid 2 \leq j \leq m \} \\
+	\cup &\; \{ y_4^2 \}
+\end{align*}
+part (b) follows immediately from lemma \ref{lem:relations_from_generators_induction} 
+
+\iffalse{
 For any $x_j$, notice that $-\ord_P(y_4x_j)\le 1$. If it is non-positive, then it lies in $R_{\halfcan'}$ immediately giving us a relation with initial term $y_4x_j$. Otherwise, 
 we can choose $A_j \in k$ and $w_j\in R_{\halfcan'}$ such that $y_4x_j -A_jy_3w_j$ has no pole at $P$ and thus lies in $R_{\halfcan'}$ giving us a desired relation. 
 Similarly, we can find $B, C \in k$ such that $y_4^2 + B y_3^2 x_2+ Cy_3x_2x_3$ has no pole at $P$ and is thus in $R_D$. In both cases we induce a relation, with initial term described in the lemma's statement. Noting that any monomial is either a multiple of one of these initial terms, is a basis element (described above), or is in $R_D$, we see that these monomials in fact generate the initial ideal of $I$ over $\initial(I')$.
-
 %Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}.
+}\fi
 \end{proof}
 
 \begin{lem}
 \label{lem:sat-3}
 \todo{Make explicit assumptions on genus.}
 Suppose $L'$ is a log half-canonical divisor of $\sx'$ with course
-space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ with $R_
+space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ and $R_
 {\halfcan'} = k[x_3, x_4 , x_5, \ldots, x_m]/I'$. Let $L = L' + \frac
 {1}{3}P$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that
 the ordering on $k[x]$ satisfies
@@ -917,32 +926,40 @@ Then, the following statements hold.
 		\begin{align*}
 			\initial_\prec(I) &= \initial_\prec(I) k[x, y_3, y_4, y_5] \\
 			&+ \langle y_i x_j \mid 4 \leq i \leq 5, 3 \leq j \leq m\rangle \\
-			&+ \langle y_i y_k \mid 4 \leq i \leq j \leq 5.\rangle 
+			&+ \langle y_i y_k \mid 4 \leq i \leq j \leq 5\rangle.
 		\end{align*}
-	\item[(c)] Any set of generators for $I'$ together with 
-		any set of relations with leading terms as in (b) 
-		generate $I$.
+	%\item[(c)] Any set of generators for $I'$ together with 
+	%	any set of relations with leading terms as in (b) 
+	%	generate $I$.
 \end{enumerate}
 \end{lem}
 
 \begin{proof}
-First, note that since we are in genus 0, we can choose the
-elements $y_3, y_4,$ and $y_5$ are general and have $- \ord_P(y_i) =
-1$ by Riemann Roch. \todo{Understand why/whether we need to cite 
-Lemma 5.4.7.} To complete the proof of (a) we only need show these
-elements generate $R$ over $R'$. We can first see that the
-following is a $k$ basis for $R$ over $R'$:
+Since we are genus 0, general
+elements $y_3, y_4,$ and $y_5$ in weights 3, 4, and 5 respectively satisfy $- \ord_P(y_i) =
+1$. \todo{Understand why/whether we need to cite 
+Lemma 5.4.7.}  We see by pole order considerations that
 
 \begin{align}
 \label{eqn:add_one_generator}
 	\begin{split}
-		&\langle y_3^ax_3^b x_4^\epsilon x_5^{\epsilon'} \mid a \geq 0, b 
-		\geq 0,(\epsilon,\epsilon') \in \{(0,0),(0,1),(1,0)\} \rangle \\
-		&+\langle y_3^ay_4, y_3^by_5 \mid a \geq 0, b \geq 0 \rangle
+	S=	&\{ y_3^ax_3^b x_4^\epsilon x_5^{\epsilon'} \mid a \geq 0, b 
+		\geq 0,(\epsilon,\epsilon') \in \{(0,0),(0,1),(1,0)\} \} \\
+	\cup \;&\{y_3^ay_4, y_3^by_5 \mid a \geq 0, b \geq 0 \}
 	\end{split}
 \end{align}
 
-\noindent
+\noindent forms a $k$ basis for $R$ over $R'$, which concludes part (a) of the proof.
+
+Letting
+\begin{align*}
+	T = & \{ y_i x_j \mid 4 \leq i \leq 5, 3 \leq j \leq m\} \\
+	   + & \{ y_i y_k \mid 4 \leq i \leq j \leq 5\} 
+\end{align*}
+we see that $S$ and $T$ along with $\prec$ satisfy the hypothesis of Lemma \ref{lem:relations_from_generators_induction}, immediately implying part (b) of this proof.
+
+
+\iffalse{
 To see these generate $R'$ over $R$, note that $\dim_k R'_d - \dim_k R
 _d = \lfloor \frac{d}{3} \rfloor,$ by Riemann--Roch. So, it
 suffices to show that we have precisely $\lfloor \frac{d}{3} \rfloor
@@ -980,6 +997,7 @@ of elements lie in $R'$.
 \noindent
 Of course, the initial terms of these elements are precisely the
 generators of $J$, completing (b).
+}\fi
 
 %Finally, (c) follows immediately from Lemma ~\ref{lem:minimal_quadratic}
 \end{proof}
