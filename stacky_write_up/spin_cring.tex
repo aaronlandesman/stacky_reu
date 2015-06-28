@@ -957,7 +957,7 @@ part (b) follows immediately from lemma \ref{lem:relations_from_generators_induc
 \begin{lem}
 \label{lem:sat-3}
 \todo{Make explicit assumptions on genus.}
-Suppose $L'$ is a log half-canonical divisor of $\sx'$ with course
+Suppose $L'$ is a log half-canonical divisor of $\sx'$ with coarse
 space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ and $R_
 {\halfcan'} = k[x_3, x_4 , x_5, \ldots, x_m]/I'$. Let $L = L' + \frac
 {1}{3}P$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that
@@ -2074,9 +2074,11 @@ Since all points are linearly equivalent on $\BP^1_k$, we may assume without los
 \label{ssec:g_0_saturation}
 First, we present the saturations of the canonical divisor for
 all cases where $g = 0$ and $\delta = 0,$ as defined in Definition
-~\ref{defn:sat}. The saturation can be computed via applications
-of Riemann-Roch. Exceptional cases are listed
-first and generic cases follow.
+~\ref{defn:sat}. The saturations can be computed using Riemann-Roch.
+By classifying the saturations of all signatures, we can determine
+the base cases on which we can apply inductive lemmata from
+Section ~\ref{sec:induction}. Exceptional cases are listed first
+and generic cases follow.
 
 \begin{longtable}
 	{| c | c || c |}
@@ -2114,24 +2116,21 @@ first and generic cases follow.
 	$(0; e_1, \ldots, e_r; 0)$ & not listed above & $3$ \\	\hline
 \end{longtable}
 
-\todo{transition}
-Here we describe induction of raising degrees from Lemma ~\ref{lem:raise-stacky-order}
-
 \ssec{Base Cases}
 \label{ssec:g_0_base}
-Now we have an inductive statement on the number of stacky
-points in Lemma ~\ref{lem:sat-3} and
-an inductive statement on stabilizer orders in Theorem
-~\ref{lem:raise-stacky-order}. After verifying that explicit triples
-$(\sx, L, J)$ of stacky curves $\sx$ with particular signatures and
-particular choices of $J$ are admissible, we will use Lemmas ~\ref{lem:raise-stacky-order}, and ~\ref{lem:sat-3} imply that the spin canonical ring
-$R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1,
-\ldots, e_r)$ with relations generated in degree at most $2e$ for
-$\sx$ with any signature $\sigma = (0; e_1, \ldots , e_r; 0)$ outside
-of the list of exceptional cases in Table ~\ref{table:g-0-exceptional}.
+In order to apply Lemma ~\ref{lem:sat-3} and Lemma
+~\ref{lem:raise-stacky-order} when $\delta = 0$,
+we need to determine appropriate base cases that will
+cover all but finitely many signatures by induction.
+Here we provide such base cases and demonstrate that
+they satisfy all of the necessary conditions of
+Lemma ~\ref{lem:sat-3} and Lemma ~\ref{lem:raise-stacky-order}
+(e.g. admissibility). We also show that that the associated spin
+canonical rings are generated in degree at most $e := \max(5, e_1,
+\ldots, e_r)$ with relations generated in degree at most $2e$.
 
 \begin{lem}
-\label{lem:g_0_admissible_cases}
+\label{lem:g-0-admissible-cases}
 Let $(\sx', \Delta, \halfcan')$ be a log spin curve so that $\sx$ has signature $\sigma = (0; e_1,
 \ldots, e_r; 0)$. Then, $R' := R(\sx', \Delta, \halfcan')$ has a
 presentation generated as a $k$-algebra by elements of degree at most $e = \max(5
@@ -2139,19 +2138,40 @@ presentation generated as a $k$-algebra by elements of degree at most $e = \max(
 ', \halfcan', J) =(\sx
 ', -\infty + \sum_{i=1}^{r}\subhalf{e_i}P_i, J)$ is admissible for the following cases:
 
-\begin{enumerate}
-	\item[(a)] $\sigma_1 = (0; 3, 3, 11; 0), J_1 = \{3\}$
-	\item[(b)] $\sigma_2 = (0; 3, 5, 9; 0), J_2 = \{3\}$
-	\item[(c)] $\sigma_3 = (0; 3, 7, 7; 0), J_3 = \{2, 3\}$
-	\item[(d)] $\sigma_4 = (0; 5, 5, 7; 0), J_4 = \{3\}$
-	\item[(e)] $\sigma_5 = (0; 5, 7, 7; 0), J_5 = \{2, 3\}$
-	\item[(f)] $\sigma_6 = (0; 7, 7, 7; 0), J_6 = \{1, 2, 3\}$
-	\item[(g)] $\sigma_7 = (0; 3, 3, 3, 5; 0), J_7 = \{4\}$
-	\item[(h)] $\sigma_8 = (0; 3, 3, 5, 5; 0), J_8 = \{3, 4\}$
-	\item[(i)] $\sigma_9 = (0; 3, 5, 5, 5; 0), J_9 = \{2, 3, 4\}$
-	\item[(j)] $\sigma_{10} = (0; 5, 5, 5, 5; 0), J_{10} = \{1, 2, 3, 4\}$
-	\item[(k)] $\sigma_{11} = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$
-\end{enumerate}
+\begin{longtable}
+	{| c || c | c | c |}
+	\caption{Genus 0 Base Cases}
+	\label{table:g-0-base-cases}
+	
+	\tabularnewline
+	
+	\hline
+	Case & Signature $\sigma$ & $J$ & $e$\\
+	\hline
+	\hline
+
+	(a) & (0; 3, 3, 11; 0) & \{3\} & 11\\	\hline
+
+	(b) & (0; 3, 5, 9; 0) & \{3\}	& 9\\ \hline
+
+	(c) & (0; 3, 7, 7; 0) & \{2, 3\}	& 7\\ \hline
+	
+	(d) & (0; 5, 5, 7; 0) & \{3\}	& 7\\ \hline
+	
+	(e) & (0; 5, 7, 7; 0) & \{2, 3\}	& 7\\ \hline
+	
+	(f) & (0; 7, 7, 7; 0) & \{1, 2, 3\}	& 7\\ \hline
+
+	(g) & (0; 3, 3, 3, 5; 0) & \{4\} & 5\\ \hline
+	
+	(h) & (0; 3, 3, 5, 5; 0) & \{3, 4\} & 5\\ \hline
+	
+	(i) & (0; 3, 5, 5, 5; 0) & \{2, 3, 4\} & 5\\ \hline
+	
+	(j) & (0; 5, 5, 5, 5; 0) & \{1, 2, 3, 4\} & 5\\ \hline
+
+	(k) &	(0; 3, 3, 3, 3, 3; 0) & \{1, 2, 3, 4, 5\} & 5\\ \hline
+\end{longtable}
 
 %\noindent
 %Furthermore, $R'$ satisfies the hypothesis of Lemma ~\ref
@@ -2162,14 +2182,14 @@ presentation generated as a $k$-algebra by elements of degree at most $e = \max(
 
 \end{lem}
 
-Before proving Lemma ~\ref{lem:g_0_admissible_cases} in general, we check the lemma holds for case (b).
+Before proving Lemma ~\ref{lem:g-0-admissible-cases} in general, we check the lemma holds for case (b).
 
 \begin{example}
 \label{ex:base-377}
-Here we demonstrate, in detail, that case (b) with ($\sigma_2 =
+Here we demonstrate, in detail, that case (b) with ($\sigma =
 (0; 3, 7, 7; 0), \halfcan' \sim -\infty + \frac{1}{3} P_1 +
-\frac{3}{7} P_2 + \frac{3}{7} P_3, J_2 = \{3, 4\},$) with distinct points $P_i \neq \infty$,
-satisfies the conditions of Lemma ~\ref{lem:g_0_admissible_cases}.
+\frac{3}{7} P_2 + \frac{3}{7} P_3, J = \{3, 4\},$) with distinct points $P_i \neq \infty$,
+satisfies the conditions of Lemma ~\ref{lem:g-0-admissible-cases}.
 We exhibit a (minimal) presentation for $R'$.
 
 Notice that $\deg \lfloor d K_{\sx'} \rfloor= -d + \lfloor \frac{d}{3}
@@ -2185,7 +2205,7 @@ and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
 
 \noindent
 is surjective whenever $\deg (\lfloor (d - 21) K_{\sx'} \rfloor)
-\geq 0$. Since $\sigma_2$ has saturation $s = 5$, as noted in
+\geq 0$. Since $\sigma$ has saturation $s = 5$, as noted in
 Table ~\ref{table:g-0-sat}, then this map is surjective
 when $d \geq 21 + s = 26$ (i.e. $R'$ is generated up to degree 25).
 
@@ -2243,12 +2263,12 @@ $x_{7, 2}$ respectively).
 \end{figure}
 
 Also note that $e_j' + 2d = 7 + 2d \nmid 2 = e_i - e_j'$ for all
-$i, j \in J_2 = \{2, 3\}$ such that $j \neq i$ and for all $d \geq
-0$. Thus, $s_{\sigma_2, J_2}(i, d) = \emptyset$ for each $i \in J$.
+$i, j \in J = \{2, 3\}$ such that $j \neq i$ and for all $d \geq
+0$. Thus, $s_{\sigma, J}(i, d) = \emptyset$ for each $i \in J$.
 Furthermore, $\deg \lfloor e_i \halfcan \rfloor = \deg \lfloor 9
 \halfcan \rfloor = 2 \lfloor \frac{4 * 9}{9} \rfloor + \lfloor
 \frac{9}{3} \rfloor - 9 = 2$, so (Ad-iii) is satisfied and
-$\sigma_2, J_2$ is admissible.
+$\sigma, J$ is admissible.
 
 %Let $(-ord_{P_1}(x_j)$, $-ord_{P_2}(x_j)$, $-ord_{P_3}(x_j))$
 %represent the pole orders of $x_i$ at each point. Then these generators
@@ -2318,7 +2338,7 @@ degree $2e = 14$, as desired.
 %since $e_i = 9 > e$ for all $i \in J$.
 \end{example}
 
-\begin{proof}[Proof of Lemma ~\ref{lem:g_0_admissible_cases}]
+\begin{proof}[Proof of Lemma ~\ref{lem:g-0-admissible-cases}]
 For the remaining cases, we can use a similar method to the one
 used in Example ~\ref{ex:base-377} to find a presentation the
 desired conditions.
@@ -2331,7 +2351,7 @@ and any generator $z$ of $R'$.
 \begin{longtable}
 	{| c || c | c | c |}
 	\caption{Genus 0 Non-effective Base Cases Generators/Relations}
-	\label{table:g-0-base-cases}
+	\label{table:g-0-base-cases-degrees}
 	
 	\tabularnewline
 	
@@ -2416,13 +2436,13 @@ Thus, all of the cases are admissible and satisfy the additional
 desired conditions.
 \end{proof}
 
-Now we can induct on cases (a)-(k) of Lemma
-~\ref{lem:g_0_admissible_cases} to obtain bounds on the minimal
-generator and relation degrees for canonical rings of genus 0
-curves. This process will be carried out in Subsection
+Now we can use Lemma ~\ref{lem:sat-3}, Lemma
+~\ref{lem:raise-stacky-order}, and Corollary
+~\ref{cor:raise-stacky-order} inductively on the cases of Table
+~\ref{table:g-0-base-cases} to obtain the desired bounds on the
+generator and relation degrees for log spin canonical rings of
+genus 0 curves. This process will be carried out in Subsection
 ~\ref{ssec:g-0-main}.
-
-\todo{induct on cases?}
 
 
 %Through the application of two inductively adding 
@@ -2529,7 +2549,7 @@ with relations generated up to degree $2e$.
 
 It only remains to deal with the case $\delta = 0$, so $\halfcan$ is not effective.
 Let $\sigma = (0; e_1, \ldots, e_r; 0)$ be a signature with $r > 0$
-so that $\sigma \neq \sigma_i$ where $\sigma_i$ is one of the exceptional cases in Table
+so that $\sigma$ is not one of the exceptional cases in Table
 ~\ref{table:g-0-exceptional}. Note that if $r < 3$, then $\deg 
 \lfloor d \halfcan \rfloor < 0$ for all $d \geq 0$ so we have the
 trivial case where $R(\sx, \Delta, \halfcan) = k$. Thus, we now
@@ -2537,45 +2557,30 @@ only consider the cases with $r \geq 3$.
 
 If $r > 5$, then we can use Lemma
 ~\ref{lem:sat-3} to add stacky points with
-stabilizer order $3$ to case (k) of Lemma
-~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
-= (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
+stabilizer order $3$ to case (k) of Table
+~\ref{table:g-0-base-cases}, which corresponds to $\sigma
+= (0; 3, 3, 3, 3, 3; 0), J = \{1, 2, 3, 4, 5\}$. This case
 clearly satisfies the conditions of Lemma
 ~\ref{lem:sat-3} (recall from Table ~\ref
-{table:g-0-sat} that $\sat(\Eff(\sigma_{11})) = 3$), and the
+{table:g-0-sat} that $\sat(\Eff(\sigma)) = 3$), and the
 immediate consequence of parts (a) and (c) of Lemma
 ~\ref{lem:sat-3} is that any $R(\sx', \Delta,
 \halfcan')$ corresponding to signatures $\sigma'$ with ramification
 orders all equal to $3$ for any $r > 5$ is generated up to
-degree $e := \max(5, e_1', \ldots, e_r')$ with relations generated
-up to degree $2e$. Furthermore, these cases satisfy all of the
-conditions of Lemma ~\ref{lem:raise-stacky-order}.
+degree $e' := \max(5, e_1', \ldots, e_r')$ with relations generated
+up to degree $2e'$. Furthermore, these cases satisfy all of the
+conditions of Lemma ~\ref{lem:raise-stacky-order}. Now we can
+apply Corollary ~\ref{cor:raise-stacky-order} to deduce that
+$R(\sx, \delta, \halfcan)$ is generated up to degree $e :=
+\max(5, e_1, \ldots, e_r)$ with relations generated up to degree
+$2e$.
 
-So if $r > 5$, then $\sigma$ ``lies above'' the case $(\sigma', J)$
-where $\sigma'$ has $r$ many stacky points all of order $3$
-and $J = \{1, \ldots, r\}$ in the sense that for all $i
-\in J$, $e_i \geq e_i'$ and $e_i = e_i'$ otherwise.
-If $r \leq 5$, then $\sigma$ similarly ``lies above'' one of the
-base cases of Lemma ~\ref{lem:g_0_admissible_cases}, all of which
-satisfy the hypotheses of Lemma ~\ref{lem:raise-stacky-order} as well. \todo{Aaron: I think we replace the above paragraph with an application of Corollary ~\ref{cor:raise-stacky-order}.}
-
-So for any $r > 0$, there is a $(\sigma', J)$, either from
-Lemma ~\ref{lem:g_0_admissible_cases} or corresponding to
-the $r > 5$ case with stabilizer orders all $3$, with $\sigma' =
-(0; e_1', \ldots, e_r'; 0)$ satisfying the property that for all $i
-\in J$, $e_i \geq e_i'$ and $e_i = e_i'$ otherwise.
-
-All such base cases satisfy all of the hypotheses of Theorem
-~\ref{lem:raise-stacky-order} and their corresponding $R' := R(\sx',
-\Delta, \halfcan')$ are generated, as $k$-algebras, up to degree
-$e' := \max(5, e_1', \ldots, e_r')$ with relations generated up to
-degree $2e'$ by Lemma ~\ref{lem:g_0_admissible_cases}. It follows
-from induction using Lemma ~\ref{lem:raise-stacky-order}(b) and
-Corollary ~\ref{cor:raise-stacky-order} that $R := R(\sx, \Delta,
-\halfcan)$ is generated up to degree $e := \max(5, e_1, \ldots, e_r)$.
-It also follows from induction on Lemma ~\ref{lem:raise-stacky-order}(c)
-and ~\ref{cor:raise-stacky-order} that the relations are generated
-up to degree $2e$. \todo{What does it mean to induct on the statements of two lemmas? Clarify this please.}
+If $r \leq 5$ and $\sigma$ is not one of the exceptional cases,
+then we may similarly apply Lemma ~\ref{g-0-admissible-cases} and
+Corollary ~\ref{cor:raise-stacky-order} to an appropriate base case
+from Table ~\ref{table:g-0-base-cases} and deduce that $R(\sx,
+\delta, \halfcan)$ is generated up  to degree $e := \max(5, e_1,
+\ldots, e_r)$ with relations generated up to degree $2e$.
  \end{proof}
 
 \section{Further Research}
