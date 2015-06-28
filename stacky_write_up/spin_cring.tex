@@ -390,23 +390,24 @@ $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 
 \section{Inductive Lemmata}
 \label{sec:induction}
-First we present several lemmata which play a crucial role in the
-inductive step of the proof of the main theorem, Theorem
-~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove
-Lemma ~\ref {lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3}
+First we present several lemmata which provide the
+inductive steps in the proof of the main theorem, Theorem
+~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove three lemmas
+%Lemma ~\ref {lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3}
 which describe the generators and relations of $R_{D + \frac{\alpha
-}{\beta}P},$ given those in $R_D,$ where $X$ is a curve, $D \in \di
-X \otimes \BQ $ and  $\frac{\alpha}{\beta} \in \BQ.$ Next, in
-Subsection ~\ref{ssec:raise-orders}, we prove Lemma
-~\ref{lem:raise-stacky-order}, which the generators and relations 
-of the log spin canonical ring curve with signature $(g; e_1', 
-\ldots, e_\tau'; 0)$ to that of the log spin canonical ring of a 
-curve with a certain subset of the $e_ i'$ incremented by $2$. 
-While Lemma ~\ref{lem:sat-1} may be applied in a fairly general 
-context, Lemma ~\ref{lem:raise-stacky-order} is more specific to 
-half-canonical divisors, although even Lemma
-~\ref{lem:raise-stacky-order} has certain generalizations, as noted
-in Remark ~\ref{rem:raise-fractional-order}
+}{\beta}P},$ given those in $R_D,$ 
+where $X$ is a curve, \todo{Peter: I don't think we need to include this instantiation; $X$ always represents a curve throughout the paper, and we should say something to that effect in the background}
+$D \in \di
+X \otimes \BQ $ and  $\frac{\alpha}{\beta} \in \BQ.$ 
+In
+Subsection ~\ref{ssec:raise-orders}, we prove a inductive lemma allowing us to transfer information about the log half canonical ring of a curve with signature $(g; e_1', 
+\ldots, e_\tau'; 0)$ to that of a
+curve with the same log divisor, the same stacky points, and some subset of the $e_ i'$ incremented by $2$. 
+%While Lemma ~\ref{lem:sat-1} may be applied in a fairly general 
+%context, Lemma ~\ref{lem:raise-stacky-order} is more specific to 
+%half-canonical divisors, although even Lemma
+%~\ref{lem:raise-stacky-order} has certain generalizations, as noted
+%in Remark ~\ref{rem:raise-fractional-order}
 
 %However, before we can answer these general Lemmata, it is useful
 %to prove a nice result about minimal generation of ideals of
@@ -513,37 +514,19 @@ in Remark ~\ref{rem:raise-fractional-order}
 %With this result, we will be able to show that the sets of generators of the ideal of relations in many of the following inductive arguments are minimal.
 
 
-\ssec{Inductive Lemmata: Adding Points}
+\ssec{Adding Points}
 \label{ssec:add-points}
 %In this section, we prove various inductive statements under the following setup:
 %Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
 
-Before proving three inductive lemmas, we introduce some notation from O'Dorney \cite{dorney:canonical}. 
-\begin{defn}\label{den:lower-approximation}
-If $\frac{\alpha}{\beta}\in \BQ$ (for $\alpha, \beta \in \mathbb{Z}, \beta> 0$ written in reduced form), then a \begin{bf}{best lower approximation}\end{bf} to $\frac{\alpha}{\beta}$ is a a fraction $\frac{c}{d}$ (written in reduced form with $d>0$) such that there is no $\frac{c'}{d'}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$. 
-\end{defn}
-Moreover, the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a sequence
-\[
-	0=\frac{c_0}{d_0} < \frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{\alpha}{\beta}.
-\]
-Refer to figure \ref{fig:s14/5-lattice} for an example of the positive best lower approximations of $\frac{\alpha}{\beta}=\frac{14}{5}$.
-
-\begin{figure}[H]\label{fig:s14/5-lattice}
-\includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
-\caption{This figure shows the positive best lower approximations shown as $*$ and other lattice points shown in $o$ of $\frac{14}{5}$.  Note that they minimally generate lattice in $\mathbb{N}\times \mathbb{N}$ not above $5y=14x$.}
-\end{figure}
-
-Previously discussed O'Dorney's result and our improvement when restricting to effective. Moved to Intro.
-\todo{new transition}
-
-Before proving three inductive lemmas, we give a criteria to determine if a set of monomials generates the initial ideal of relations.  \todo{Perhaps say which parts of the proofs of which future lemmas it will be used in?}
+Before proving three inductive lemmas, we give a criteria to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m]\to R_D$.  \todo{Perhaps say which parts of the proofs of which future lemmas it will be used in?}
 
 
 \begin{lem}\label{lem:relations_from_generators_induction} 
-Suppose $\halfcan, \halfcan' \in \di X \otimes \BQ$ with $\halfcan=\halfcan'+\frac{\alpha}{\beta}P$, that $R_{\halfcan'}$ is generated by $x_1, \ldots, x_m$
-and $R_{\halfcan}$ is minimally generated by $y_1, \ldots, y_n$ over 
+Suppose $\halfcan, \halfcan' \in \di X \otimes \BQ$ with $\halfcan=\halfcan'+\frac{\alpha}{\beta}P$, such that $R_{\halfcan'}$ generated by $x_1, \ldots, x_m$
+and $R_{\halfcan}$ minimally generated by $y_1, \ldots, y_n$ over 
 $R_{\halfcan'}$.  Let $I'$ and $I$ be the ideals relations of $k[x_1, \ldots, x_m]\to R_{\halfcan'}$ and $k[x_1, \ldots, x_m, y_1, \ldots y_n]\to R_{\halfcan}$ respectively.
-Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T\subseteq R_\halfcan-(S\cup R_\halfcan')$, and an ordering $\prec$ such 
+Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T\subseteq R_\halfcan-(S\cup R_\halfcan')$, and a monomial ordering $\prec$ such 
 \begin{enumerate}
 \item $S$ forms a $k$-basis for $R_\halfcan$ over $R_\halfcan'$
 \item $T\prec S\prec k[x_1, \ldots, x_n]$ (meaning all monomials in $T$ precede all monomials in $S$ which proceed all monomials in $k[x_1, \ldots, x_n]$)
@@ -564,12 +547,12 @@ First, notice that $I'\subseteq I$ so
 	\initial(I)\supseteq \initial(I')k[x_1, \ldots, x_m, y_1, \ldots, y_n].
 \]
 
-Now, suppose a monomial $f\in T$ has a pole order $a$ at $P$. Then, since $S$ forms a $k$-basis of $R_{\halfcan}$ over $R_{\halfcan'}$ by (1), we can write $f - (\sum_{g\in S'} C_g g)-r=0$ for some finite subset $S'\subseteq S_{\deg(f)}$, $C_g\in k$ for all $g\in S'$, and $r\in R_{\halfcan'}$.  This demonstrates that 
+Now, let $f\in T$.  Since $S$ forms a $k$-basis of $R_{\halfcan}$ over $R_{\halfcan'}$ by (1), we can write $f - (\sum_{g\in S'} C_g g)-r=0$ for some finite subset $S'\subseteq S_{\deg(f)}$, $C_g\in k$ for all $g\in S'$, and $r\in R_{\halfcan'}$.  This demonstrates that 
 \begin{align*}
 	\initial(I) & \supseteq \langle T \rangle.
 \end{align*}
 
-Finally, suppose $f\in S$.  Note that by (2) any polynomial $G$ in $x_1,\ldots, x_m, y_1, \ldots, y_n$ with initial term in $S$ cannot have a term in $T$.  Furthermore, since $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ by (1), any such polynomial does not map to an element of $R_{\halfcan'}$ (since it has a non-zero constant factor with $f$).  Thus, $G=0$ is not a relation, so $f\not\in \initial(I)$.  Therefore, 
+Next, suppose $f\in S$.  Note that by (2) any polynomial $G$ in $x_1,\ldots, x_m, y_1, \ldots, y_n$ with initial term in $S$ cannot have a term in $T$.  Furthermore, since $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ by (1), any such polynomial does not map to an element of $R_{\halfcan'}$ (since it has a non-zero constant factor with $f$).  Thus, $G=0$ is not a relation, so $f\not\in \initial(I)$.  Therefore, 
 \[
 	\initial(I)\subseteq R_\halfcan-S.
 \]
@@ -580,38 +563,55 @@ Since every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ is an element of
 \end{align*}
 \end{proof}
 
-As suggested by the the previous lemma, \todo{Reference the lemma, instead of using previous, since things might get moved around} we will need an ordering on monomials, and the following definition will prove useful in the ensuing lemma. \todo{Again, reference this}
+To apply the previous lemma, we will need an appropriate monomial ordering.  \todo{Reference the lemma, instead of using previous, since things might get moved around}
+The following definition provides the necessary ordering for the subsequent lemma (Lemma \ref{lem:sat-1}).
 \begin{defn}
-We equip the graded ring $k[x_1, \ldots x_m]$, with weight $a_i$ and pole order $-\ord_P(x_i)$ attached to $x_i$, \todo{attached to $x_i$ doesn't really sound like the correct terminology to me} the graded $P$ reverse lexicographic order {\bf{graded P-revlex}} \todo{This name seems a bit funny looking to me} if for $f=\prod_{i=1}^m {x_i}^{q_i}\ne g=\prod_{i=1}^m {x_i}^{r_i}$, then $f\prec g$ if one of the following holds:
+Suppose $\halfcan$ is a divisor of $X$ such that $R_\halfcan$ is generated $x_1, \ldots x_m$.  Then we have a map $\phi: k[z_1, \ldots z_m]\to R_\halfcan$ given by $z_i\mapsto x_i$.  If $P$ is a point in $X$, then $\phi$ defines a graded $P$ reverse lexicographic order {\bf{graded P-revlex}} on $k[z_1, \ldots, z_m]$ as follows: 
+If $f=\prod_{i=1}^m {x_i}^{q_i}\ne g=\prod_{i=1}^m {x_i}^{r_i}$, then $f\prec g$ if one of the following holds:
 \begin{enumerate}
 \item $\deg(f) < \deg(g)$
 \item $\deg(f) = \deg(g)$ and $-\ord_P(f) > -\ord_P(g)$
 \item $\deg(f) = \deg(g)$, $-\ord_P(f) = -\ord_P(g)$, and $q_i<r_i$ for the largest $i$ such that $q_i\ne r_i$
 \end{enumerate}
 \end{defn}
-One can easily verify that these satisfy the conditions of an ordering.  
-We now state a lemma that allows us to inductively add rational multiples of a point to a divisor and describe the new generators and relations.
+\noindent One can easily verify that these satisfy the conditions of an ordering.  
 
-\begin{defn}
+Before stating the subsequent lemma, which improves O'Dorney's bounds on generators and relations over $\mathbb{P}^1$ \cite[Theorem 8]{dorney:canonical} in the case of effective divisors, we first introduce some of his notation \cite{dorney:canonical}. 
+
+\begin{defn}\label{den:lower-approximation}
+If $\frac{\alpha}{\beta}\in \BQ$ (written in reduced form with $\alpha \in \mathbb{Z}, \beta> \mathbb{N}$), then $\frac{c}{d}$ (written in reduced form) is a {\bf{best lower approximation}} to $\frac{\alpha}{\beta}$ if there is no $\frac{c'}{d'}\in \mathbf{Q}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$. 
+\end{defn}
+Moreover, if $\frac{\alpha}{\beta}\ge 0$, then the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a sequence
+\[
+	0=\frac{c_0}{d_0} < \frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{\alpha}{\beta}.
+\]
+Refer to figure \ref{fig:s14/5-lattice} for an example of the positive best lower approximations of $\frac{\alpha}{\beta}=\frac{14}{5}$.
+
+\begin{figure}[H]\label{fig:s14/5-lattice}
+\includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
+\caption{This figure illustrates each non-negative best lower approximation of $\frac{14}{5}$ with a ``$\bullet$'' and each other lattice point below $5y=14x$ with a ``$\circ$''.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}
+\end{figure}
+
+\begin{defn}\todo{move to background}
 \label{}
 If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
 \end{defn}
 
+We can now prove our first adding-points lemma.
+
 \begin{lem}
 \label{lem:sat-1}
 Let $X$ be a genus $g$ curve and $\halfcan' \in \di X \otimes \BQ$
-satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}^+$ meaning that $R_{\halfcan'}$ has generators
-$u, x_1, \ldots, x_m$ with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.Suppose $u, x_1, \ldots, x_m$ generate $R_{\halfcan'}$ in degree at most $\sigma$ with relations generated
-in degree at most $\tau$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
+satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}$ meaning that $R_{\halfcan'}$ has generators
+$u, x_1, \ldots, x_m$ in degree at most $\sigma$, with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
 for some $\alpha,\beta \in \mathbb{N}$ such that
 \begin{equation}
 \label{eqn:deg1_sat_ind_dim}
 	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
 	\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor \text{ for all } d \in \mathbb{
-	N} \text{ such that } d \ge \frac{\beta}{\alpha}.
+	N} \text{ such that } d \ge \frac{\beta}{\alpha},
 \end{equation}
-\label{eqn:deg1-sat-ind}
-Let 
+and let
 \[
 	0 < \frac{c_1}{d_1} < \ldots < \frac{c_n}{d_n} = \frac{\alpha}{\beta}
 \]
@@ -619,14 +619,14 @@ be the positive best lower approximations of $\frac{\alpha}{\beta}$.
 Then,
 
 \begin{enumerate}
-\item[(a)] $R_{\halfcan}$ is generated over $R_{\halfcan'}$ by elements $y_1, \ldots, y_n$ such thaty $\deg(y_i)=d_i$ and $-\ord_P(y_i)=c_i$ when viewed as sections of $\so_{\halfcan'}$.
+\item[(a)] $R_{\halfcan}$ is generated over $R_{\halfcan'}$ by elements $y_1, \ldots, y_n$ such that $\deg(y_i)=d_i$ and $-\ord_P^{L'}(y_i)=c_i$.
 
 \item[(b)] Choose an ordering $\prec$ on $k[u, x_1, \ldots, x_m]$ such that
 \[
-	\ord_u(f) < \ord_u(g) \implies f\prec g
+	\ord_u(f) < \ord_u(g) \implies f\prec g.
 \]
-and equip $k[y_1, \ldots, y_n]$ with graded P-revlex and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ with block order \todo{it should be called block order, instead of ``a block order''}.
-If $I$ and $I'$ are the ideal of relations of $R_{\halfcan}$ and $R_{\halfcan'}$ respectively, then 
+Equip $k[y_1, \ldots, y_n]$ with graded P-revlex and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ with block order.  
+If $I'$ and $I$ are the ideal of relations of $k[u, x_1, \ldots, x_m]\to R_{\halfcan'}$ and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]\to R_{\halfcan}$ respectively, then 
 
 \begin{align*}
 	\initial_\prec(I) &= \initial_\prec(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] 
@@ -637,12 +637,12 @@ where
 $V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
  and $U_i$ is the set of monomials of the form $\prod_{j=1}^{i} y_j^{a_j}$ with $a_j\in \mathbb{Z}^{\ge 0}, a_i\ne 0$ such that
 \begin{enumerate}
-	\item $\sum_{j=1}^i a_j c_j \ge c_{i+1}$\\
-	\item there does not exist $((b_1, \ldots b_i)\ne (a_1, \ldots a_i)$ such that with all $b_j\le a_j$ and $\sum_{j=1}^i b_jc_j\ge c_{i+1})$ \\
-	\item there does not exist $h<i$ such that $\sum_{j=1}^h y_j^{a_j}\ge c_{h+1}$
+	\item[(1)] $\sum_{j=1}^i a_j c_j \ge c_{i+1}$\\
+	\item[(2)] there does not exist $((b_1, \ldots b_i)\ne (a_1, \ldots a_i)$ with all $b_j\le a_j$ and $\sum_{j=1}^i b_jc_j\ge c_{i+1})$ \\
+	\item[(3)] there does not exist $h<i$ such that $\sum_{j=1}^h y_j^{a_j}\ge c_{h+1}$
 \end{enumerate}
 
-\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with relations $I$ generated over $I'$ by relations in degree is generated $\max(2\beta, \beta + \sigma)$ {\rm(}where $\sigma=\max(\deg(x_i))$ \todo{include what indexing set this $i$ is over ($ i = 1,\ldots, m$).}{\rm)}.
+\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with $I$ generated over $I'$ in degrees at most $\max(2\beta, \beta + \sigma)$.
 %\item If $\gin_\prec(I')=\initial_\prec(I')$ then $\gin_\prec(I)=\initial_\prec(I)$.
 %\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
 %	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
@@ -656,7 +656,7 @@ Equation ~\ref{eqn:deg1_sat_ind_dim}, for any $d
 \in \mathbb{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
-	h^0 (X, d \halfcan ) = h^0(X, d\halfcan') + \deg(d\frac{\alpha}{\beta})
+	h^0 (X, d \halfcan ) = h^0(X, d\halfcan') + d\frac{\alpha}{\beta}
 \]
 
 \noindent
@@ -675,8 +675,8 @@ Let
 be the positive best lower approximations of $\frac{
 \alpha}{\beta}$ as described in this lemma's statement. Note that elements of $H^0(X, d\halfcan)$ have poles of
 orders ranging from 0 to $\lfloor d_i \frac{\alpha}{\beta}\rfloor =
-c_i $ at $P$.  Moreover, a set $\lfloor d_i \frac{\alpha}{\beta}\rfloor$ \todo{how is this a set?} elements in $(R_{D})_{d_i}$ with respective pole orders $1, \ldots, \lfloor
-d_i \frac{\alpha}{\beta} \rfloor$ are linearly independent over $(R_{\halfcan'})_d$, and thus by dimension counting form a $k$-basis for
+c_i $ at $P$.  Moreover, a set of $\lfloor d_i \frac{\alpha}{\beta}\rfloor$ elements in $(R_{D})_{d_i}$ with pole orders $1, \ldots, \lfloor
+d_i \frac{\alpha}{\beta} \rfloor$ are linearly independent over $(R_{\halfcan'})_d$, and thus form a $k$-basis for
 $(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.
 
 For any $j, i \in \mathbb{N}$, with $i < j$, we have $\frac{c_i}{d_i} > \frac{c_j}{d_j}$. So, for any $z_1, \ldots, z_n$ with $\deg(z_j)<d_i$ \todo{are the $i$ and $j$ mismatched?} for all $z_j$, \todo{It might be clearer to say for all $j \in \{1,\ldots, ?\},$ since the subscript is really want is changing, or instead for all $j$ with $1 \leq j \leq ?$ } $\prod_{j=1}^n z_j$ must satisfy \todo{It seems like each $z_j$ must satisfy this, instead of the product satisfying this}
@@ -890,7 +890,7 @@ Then $\beta \halfcan_\sx \sim \alpha K_{\sx}$ so $\beta\lfloor so $\beta | \alph
 \end{proof}
 }\fi
 
-We now restrict our attention to log canonical rings of stacky curves.  The previous lemma deals with most relevant induction cases when inducting from a half-canonical ring saturated at one.  We complement it with the following two lemmas that allow us to induct under certain conditions when the half-canonical ring is saturated at two and three.
+We now restrict our attention to log canonical rings of stacky curves.  The previous lemma accounts for the relevant induction cases when the half-canonical ring is already saturated in 1.  We complement it with the following two lemmas that allow us to inductively add points, under certain conditions when the half-canonical ring is saturated at degrees two and three.
 
 \begin{lem}
 \label{lem:sat-2}
@@ -1224,7 +1224,7 @@ we see that $S$ and $T$ along with $\prec$ satisfy the hypothesis of Lemma \ref{
 %Similar to all the other Lemmas\todo{combine sections?}
 %\end{proof}
 
-One can prove similar results in cases with different conditions on saturation, base-point freeness, and the coefficients of added points, but only these three cases (Lemmas ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3}) are needed for the remainder of this paper.  Instead we turn now to inductive methods to incrementally increase the $e_i$s.  Combined with the previous lemma on adding points, these will provide all the necessary inductive tools.
+One can prove similar results in cases with different conditions on saturation, base-point freeness, and the coefficients of added points, but only these three cases (Lemmas ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3}) are needed for the remainder of this paper.  Instead we turn now to inductive methods to incrementally increase the $e_i$s.  Combined with the previous lemmata on adding points, these will provide all the necessary inductive tools for the remainder of the paper.
 
 \ssec{Raising Stabilizer Orders}
 \label{ssec:raise-orders}
