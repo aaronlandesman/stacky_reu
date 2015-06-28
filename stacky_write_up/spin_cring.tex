@@ -582,15 +582,15 @@ Since every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ is an element of
 
 As suggested by the the previous lemma, \todo{Reference the lemma, instead of using previous, since things might get moved around} we will need an ordering on monomials, and the following definition will prove useful in the ensuing lemma. \todo{Again, reference this}
 \begin{defn}
-We equip the graded ring $k[x_1, \ldots x_m]$, with weight $a_i$ and pole order $-\ord_P(x_i)$ attached to $x_i$, \todo{attached to $x_i$ doesn't really sound like the correct terminology to me} the graded $P$ reverse lexicographic order {\bf{g-P-revlex}} \todo{This name seems a bit funny looking to me} if for $f=\prod_{i=1}^m {x_i}^{q_i}\ne g=\prod_{i=1}^m {x_i}^{r_i}$, $f\prec g$ if one of the following holds
+We equip the graded ring $k[x_1, \ldots x_m]$, with weight $a_i$ and pole order $-\ord_P(x_i)$ attached to $x_i$, \todo{attached to $x_i$ doesn't really sound like the correct terminology to me} the graded $P$ reverse lexicographic order {\bf{graded Prevlex}} \todo{This name seems a bit funny looking to me} if for $f=\prod_{i=1}^m {x_i}^{q_i}\ne g=\prod_{i=1}^m {x_i}^{r_i}$, then $f\prec g$ if one of the following holds:
 \begin{enumerate}
 \item $\deg(f) < \deg(g)$
-\item $\deg(f) = \deg(g)$ and $-\ord_P(f) > -\ord_O(g)$
-\item $\deg(f) = \deg(g)$, $-\ord_P(f) = -\ord_P(g)$, and for $i$ maximal such that $q_i-r_i$ is non-zero, $q_i-r_i$ is negative. \todo{I do not understand what this means, maximal under what ordering?}
+\item $\deg(f) = \deg(g)$ and $-\ord_P(f) > -\ord_P(g)$
+\item $\deg(f) = \deg(g)$, $-\ord_P(f) = -\ord_P(g)$, and $q_i<r_i$ for the largest $i$ such that $q_i\ne r_i$
 \end{enumerate}
 \end{defn}
 One can easily verify that these satisfy the conditions of an ordering.  
-We now state a lemma that allows us to inductively add $\mathbb{Q}$-points \todo{$\BQ$ points usually refers to maps to $\spec \BQ$. Maybe we can just say a rational multiple of a poitn?} to a divisor and describe the new generators and relations.
+We now state a lemma that allows us to inductively add rational multiples of a point to a divisor and describe the new generators and relations.
 
 \begin{defn}
 \label{}
@@ -625,7 +625,7 @@ Then,
 \[
 	\ord_u(f) < \ord_u(g) \implies f\prec g
 \]
-and equip $k[y_1, \ldots, y_n]$ with g-P-revlex and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ with block order \todo{it should be called block order, instead of ``a block order''}.
+and equip $k[y_1, \ldots, y_n]$ with graded Prevlex and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ with block order \todo{it should be called block order, instead of ``a block order''}.
 If $I$ and $I'$ are the ideal of relations of $R_{\halfcan}$ and $R_{\halfcan'}$ respectively, then 
 
 \begin{align*}
