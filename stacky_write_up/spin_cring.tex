@@ -2060,42 +2060,40 @@ of Riemann-Roch. Exceptional cases are listed
 first and generic cases follow.
 
 \begin{longtable}
-	{| c | c |}
+	{| c | c || c |}
 	\caption{Genus 0 Saturation}
 	\label{table:g-0-sat}
 	
 	\tabularnewline
 	
 	\hline
-	Signature & Saturation \\
+	Signature & Note & Saturation \\
 	\hline
 	\hline
 
-	$(0; 3, 3, 3; 0)$ & $\infty$ \\	\hline
+	$(0; 3, 3, 3; 0)$ & & $\infty$ \\	\hline
 
-	$(0; 3, 3, 5; 0)$ & $18$ \\	\hline
+	$(0; 3, 3, 5; 0)$ & & $18$ \\	\hline
 	
-	$(0; 3, 3, 7; 0)$ & $12$ \\	\hline
+	$(0; 3, 3, 7; 0)$ & & $12$ \\	\hline
 	
-	$(0; 3, 3, 9; 0)$ & $12$ \\	\hline
+	$(0; 3, 3, 9; 0)$ & & $12$ \\	\hline
 	
-	$(0; 3, 5, 5; 0)$ & $8$ \\	\hline
+	$(0; 3, 5, 5; 0)$ & & $8$ \\	\hline
 	
-	$(0; 5, 5, 5; 0)$ & $8$ \\	\hline
+	$(0; 5, 5, 5; 0)$ & & $8$ \\	\hline
 	
-	$(0; 3, 3, 3, 3; 0)$ & $6$ \\	\hline
+	$(0; 3, 3, 3, 3; 0)$ & & $6$ \\	\hline
 	
 	\hline
 	\hline
 	
-	$(0; 3, 3, k; 0)$ & $9$ \\	\hline
+	$(0; 3, 3, k; 0)$ & $k > 9$ & $9$ \\	\hline
 	
-	$(0; a, b, c; 0)$ & $5$ \\	\hline
+	$(0; a, b, c; 0)$ & not listed above & $5$ \\	\hline
 	
-	$(0; e_1, \ldots, e_r; 0)$ & $3$ \\	\hline
+	$(0; e_1, \ldots, e_r; 0)$ & not listed above & $3$ \\	\hline
 \end{longtable}
-
-\todo{I see it says this above, but I think in the table, it should be made clear exactly what the hypotheses on $k,a,b,c,e_i$ are.}
 
 \todo{transition}
 Here we describe induction of raising degrees from Lemma ~\ref{lem:raise-stacky-order}
@@ -2169,7 +2167,7 @@ and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
 \noindent
 is surjective whenever $\deg (\lfloor (d - 21) K_{\sx'} \rfloor)
 \geq 0$. Since $\sigma_2$ has saturation $s = 5$, as noted in
-Subsection ~\ref{ssec:g_0_saturation}, then this map is surjective
+Table ~\ref{table:g-0-sat}, then this map is surjective
 when $d \geq 21 + s = 26$ (i.e. $R'$ is generated up to degree 25).
 
 For $d = 0, 1, 2, \ldots$ we have
@@ -2385,6 +2383,8 @@ Now we can induct on cases (a)-(k) of Lemma ~\ref{lem:g_0_admissible_cases}
 to obtain bounds on the minimal generator and relation degrees for
 canonical rings of genus 0 curves. This process will be carried out in Subsection ~\ref{ssec:g-0-main}.
 
+\todo{induct on cases?}
+
 
 %Through the application of two inductively adding 
 %points via Lemma ~\ref{lem:sat-3} and inductively raising
@@ -2449,10 +2449,9 @@ These cases give all of the exceptions to the $e$ and $2e$ bounds on
 the generator and relation degree. Notice that each of these
 exceptional cases, apart from $(0; 3, 5, 7; 0)$, corresponds to a
 signature with saturation not equal to
-3, 5, or 9. as seen in the table in Subsection
-~\ref{ssec:g_0_saturation}. Heuristically, these exceptional saturations can be viewed as
-``forcing'' generators (and thus relations) to lie in higher degrees than
-expected.
+3, 5, or 9. as seen in Table ~\ref{table:g-0-sat}. Heuristically,
+these exceptional saturations can be viewed as ``forcing'' generators
+(and thus relations) to lie in higher degrees than expected.
 \end{rem}
 
 \ssec{Main Theorem for Genus Zero}
@@ -2503,8 +2502,8 @@ stabilizer order $3$ to case (k) of Lemma
 ~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
 = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
 clearly satisfies the conditions of Lemma
-~\ref{lem:sat-3} (recall from Subsection ~\ref
-{ssec:g_0_saturation} that $\sat(\Eff(\sigma_{11})) = 3$), and the
+~\ref{lem:sat-3} (recall from Table ~\ref
+{table:g-0-sat} that $\sat(\Eff(\sigma_{11})) = 3$), and the
 immediate consequence of parts (a) and (c) of Lemma
 ~\ref{lem:sat-3} is that any $R(\sx', \Delta,
 \halfcan')$ corresponding to signatures $\sigma'$ with ramification
