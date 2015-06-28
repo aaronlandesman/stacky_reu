@@ -915,9 +915,7 @@ Then, the following statements hold.
 		and equip the ring $k[y_3, y_4, x]$ with the block 
 		order so that $R = k[y_3, y_4, x]/I$. Let,
 		\begin{align*}
-			\initial_\prec(I) &= \initial_\prec(I')k[x, y_3, y_4] \\
-			&+\langle y_4 x_j \mid 2 \leq j \leq m \rangle \\
-			&+\langle y_4^2 \rangle.
+			\initial_\prec(I) &= \initial_\prec(I')k[x, y_3, y_4]+\langle y_4 x_j \mid 2 \leq j \leq m \rangle +\langle y_4^2 \rangle.
 		\end{align*}
 	%\item[(c)] Any set of minimal generators for $I'$ together with 
 		%any set of relations with leading terms as in (b) minimally 
@@ -936,8 +934,7 @@ the following is a $k$ basis for $R$ over $R'$:
 \begin{align}
 \label{eqn:sat_two_add_generator}
 	S =	& \; \{ y_3^ax_2^b x_3^\epsilon \mid a \geq 0, b 
-		\geq 0, \epsilon \in \{0, 1\}\} \\
-	\cup	& \; \{ y_3^ay_4 \mid a \geq 0 \}
+		\geq 0, \epsilon \in \{0, 1\}\} \cup \{ y_3^ay_4 \mid a \geq 0 \}
 \end{align}
 
 \noindent
@@ -945,8 +942,7 @@ completing part (a).
 
 Letting
 \begin{align*}
-	T =   &\; \{ y_4 x_j \mid 2 \leq j \leq m \} \\
-	\cup &\; \{ y_4^2 \}
+	T =   &\; \{ y_4 x_j \mid 2 \leq j \leq m \}\cup \{ y_4^2 \}
 \end{align*}
 part (b) follows immediately from lemma \ref{lem:relations_from_generators_induction} 
 
@@ -1011,8 +1007,7 @@ Lemma 5.4.7.}  We see by pole order considerations that
 
 Letting
 \begin{align*}
-	T = & \{ y_i x_j \mid 4 \leq i \leq 5, 3 \leq j \leq m\} \\
-	   + & \{ y_i y_k \mid 4 \leq i \leq j \leq 5\} 
+	T = & \{ y_i x_j \mid 4 \leq i \leq 5, 3 \leq j \leq m\}+ \{ y_i y_k \mid 4 \leq i \leq j \leq 5\} 
 \end{align*}
 we see that $S$ and $T$ along with $\prec$ satisfy the hypothesis of Lemma \ref{lem:relations_from_generators_induction}, immediately implying part (b) of this proof.
 
