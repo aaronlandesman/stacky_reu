@@ -958,7 +958,7 @@ part (b) follows immediately from lemma \ref{lem:relations_from_generators_induc
 \begin{lem}
 \label{lem:sat-3}
 \todo{Make explicit assumptions on genus.}
-Suppose $L'$ is a log half-canonical divisor of $\sx'$ with course
+Suppose $L'$ is a log half-canonical divisor of $\sx'$ with coarse
 space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ and $R_
 {\halfcan'} = k[x_3, x_4 , x_5, \ldots, x_m]/I'$. Let $L = L' + \frac
 {1}{3}P$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that
@@ -1630,12 +1630,16 @@ We now consider the case when the genus is at least 2. In this case, we are able
 
 \ssec{Bounds on Generators and Relations in High Genus}
 
-The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the half-canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $11$ if $\Delta = 0$ and at most $10$ if $\Delta > 0$. The generation bound is shown in Lemma ~\ref{lem:generation_5} and the relations bound is shown in Lemma ~\ref{prop:relation_11}. In fact, it is fairly immediate from Riemann--Roch and the basepoint-free pencil trick that $R_L$ is generated in degree at most $6$, as is demonstrated in the following
-Lemma ~\ref{lem:semicanonical_generation}. However, to reduce the bound from 5 to 6 in the case $g =2$, we will have to work a little in Proposition ~\ref{prop:genus_2_generation_5}. 
+The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the half-canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $11$ if $\Delta = 0$ and at most $10$ if $\Delta > 0$. The generation bound is shown in Lemma ~\ref{lem:generation_5} and the relations bound is shown in Lemma ~\ref{prop:relation_11}. 
 
-\begin{rem}
-The following proof of Lemma ~\ref{lem:semicanonical_generation} is shown in Neves \cite[Proposition III.4]{neves:halfcan}, although he omits the fairly tricky genus 2 case. We produce the proof here for completeness.
-\end{rem}
+The proofs of these results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}, although ~\cite[Proposition III.4]{neves:halfcan} has a key ommission, as noted in Remark ~\ref{rem:neves-omission}
+
+\begin{lem}
+\label{lem:generation_5}
+Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K +\Delta$. Then, $R_L$ is generated in degree at most $5$.
+\end{lem}
+
+The strategy of the proof of Lemma ~\ref{lem:generation_5} is to use Riemann--Roch and the basepoint-free pencil trick to show that $R_L$ is generated in degree at most $6,$ as is done in Lemma ~\ref{lem:semicanonical_generation}. When $g > 3$, it is easy to reduce the bound from 5 to 6. The trickiest case is to show $R_L$ is generated in degree 5 when $g = 2$, which is done in Lemma ~\ref{lem:genus-2-generation-5}. After proving these 2 lemmas, we concisely prove Lemma ~\ref{lem:generation_5}.
 
 \begin{lem}
 \label{lem:semicanonical_generation}
@@ -1646,7 +1650,13 @@ Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K
 is surjective if $n \geq 5$ and if {\rm(}$n = 4$ and $\Delta > 0${\rm)}.
 In particular, $R_L$ is generated in degree at most $6$ if $\Delta = 0$ and in degree at most $5$ if $\Delta > 0$.
 \end{lem}
-\begin{proof}
+
+\begin{rem}
+\label{rem:neves-omission}
+The following proof of Lemma ~\ref{lem:semicanonical_generation} is shown in Neves \cite[Proposition III.4]{neves:halfcan}. However, Neves states that this proof also proves Lemma ~\ref{lem:generation_5}, while it crucially omits the case of genus 2 curves. We produce the proof here for completeness.
+\end{rem}
+
+\begin{proof}[Proof of Lemma ~\ref{lem:semicanonical_generation}]
 To show there are no new generators in degree at least $7$ if $\Delta = 0$ and in degree at least $6$ if $\Delta > 0$, it suffices to show that if $n \geq 5$ or if ($n = 4$ and $\Delta > 0$), the map
 \begin{align*}
 	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
@@ -1664,11 +1674,11 @@ Therefore, $$\dim_k \im f = 2 \cdot (n- 1)(g - 1) -(n-3)(g - 1) = (n+ 1)(g - 1) 
 again using Riemann-Roch. Ergo, $f$ is surjective.
 \end{proof}
 
-\begin{prop}
-\label{prop:genus_2_generation_5}
+\begin{lem}
+\label{lem:genus-2-generation-5}
 Let $X$ be a smooth genus 2 curve with canonical divisor $K$ and let $L \in \di X$ be so that $2L \sim K$. 
 Then, $R_L$ is generated in degree at most $5$.
-\end{prop}
+\end{lem}
 \begin{proof}
 By Lemma ~\ref{lem:semicanonical_generation} it suffices to show $R_L$ has no minimal generators in degree 6.
 Let $P_1, \ldots, P_6$ be the six hyperelliptic fixed points of $X$. 
@@ -1706,20 +1716,25 @@ Then, $h \cdot f \in H^0(X,2L + 4P_1) \cong H^0(X,6L)$ has a pole of odd
 order at $P_1$, and is therefore independent from the image of $\sym^3 H^0(X,3L)$.
 \end{proof}
 
-\begin{lem}
-\label{lem:generation_5}
-Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K +\Delta$. Then, $R_L$ is generated in degree at most $5$.
-\end{lem}
-\begin{proof}
+We are now equipped to prove Lemma ~\ref{lem:generation_5}, completing the desired bound on the degree of the generators.
+
+\begin{proof}[Proof of Lemma ~\ref{lem:generation_5}]
 If $\Delta > 0$, this holds by Lemma ~\ref{lem:semicanonical_generation}. If $g = 2$ and $\Delta = 0,$ then the claim follows from
-Proposition ~\ref{prop:genus_2_generation_5}. Finally, if $g > 2$, then by \cite{vzb:stacky}[Theorem 3.2.1], we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective, so again there are no new generators in degree 6.
+Lemma ~\ref{lem:genus-2-generation-5}. Finally, if $g > 2$ and $\Delta = 0$, using Lemma ~\ref{lem:semicanonical_generation}, there are no minimal generators in degree $\geq 7$. By \cite{vzb:stacky}[Theorem 3.2.1], we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective and so there are also no minimal generators in degree 6. Hence, $R_L$ is generated in degree at most 5.
 \end{proof}
+
+The next step is to bound the degrees of the relations of $R_L$. This is done in Proposition ~\ref{prop:relation_11}. The idea of the proof of Proposition ~\ref{prop:relation_11} is to use the basepoint-free pencil trick to show that if a relation lies in a sufficiently high degree, it lies in the ideal generated by the relations in lower degrees. We now fix notation for this ideal generated by lower degrees relations.
+
+\begin{defn}
+\label{defn:lower-ideal}
+Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K+\Delta$. Choose generators $x_1, \ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1, \ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L,d}$ be the $d$th graded piece of $I_L$ and define
+$$J_{L,d} = \sum_{j = 1}^{d- 1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j}.$$
+\end{defn}
+
 
 \begin{lem}
 \label{lem:reducing_degree}
-Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K+\Delta$. Choose generators $x_1, \ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1, \ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L,d}$ be the $d$th graded piece of $I_L$ let 
-$$J_{L,d} = \sum_{j = 1}^{d- 1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j},$$
-and let $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ be two elements so that $k\phi(s_1) \oplus k\phi(s_2) = V \subset H^0(X,2L)$ is basepoint free.
+Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K+\Delta$. Choose generators $x_1, \ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1, \ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ be two elements so that $k\phi(s_1) \oplus k\phi(s_2) = V \subset H^0(X,2L)$ is basepoint free.
 For any $f \in k[x_1, \ldots, x_n]$ such that
 $$
 \deg f \geq \begin{cases}
@@ -1729,21 +1744,20 @@ $$
 there exist $g,h \in k[x_1, \ldots, x_n]_{d-2}$ so that $s_1g + s_2h = f \bmod J_{L,d}.$
 \end{lem}
 \begin{proof}
-Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1),\phi(s_2) \in H^0(2L)$ generate a base point free pencil $V = k \phi(s_1) \oplus k \phi(s_2)\subset H^0(X,2L)$.
+% Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1),\phi(s_2) \in H^0(2L)$ generate a base point free pencil $V = k \phi(s_1) \oplus k \phi(s_2)\subset H^0(X,2L)$.
 By Lemma ~\ref{lem:generation_5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Then, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in k[x_1, \ldots, x_n]_{d-\deg x_i}$.
 We will next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in k[x_1, \ldots, x_n]_{d - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{L,\deg a_i}.$ 
 By Lemma ~\ref{lem:semicanonical_generation},
 \begin{align*}
 	V \otimes H^0((\deg f-\deg x_i -2)L) \rightarrow H^0((\deg f-\deg x_i)L)
 \end{align*}
-is surjective, since
+is surjective, since the restriction on $\deg f$ guarantees
 $$
 \deg f- \deg a_i -2 \geq \begin{cases}
-	5 &\text{ if }\Delta = 0\\
-	4 &\text{ if }\Delta > 0,
+	5 &\text{ if }\Delta = 0,\\
+	4 &\text{ if }\Delta > 0.
 \end{cases}$$
-by the assumption on $\deg f$.
-In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Choosing $g_i,h_i$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha,\phi(h_i) = \beta$, we have $a_i = s_1 g_i + s_2 h_i \bmod I_{L,\deg a_i}$, as claimed.
+In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Choosing $g_i,h_i$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha,\phi(h_i) = \beta$, we have $a_i \equiv s_1 g_i + s_2 h_i \bmod I_{L,\deg a_i}$, as claimed.
 
 Finally, we may then take $g = \sum_{i}^{}g_i x_i,h = \sum_{i}^{}h_i x_i,$ so that 
 \begin{align*}
@@ -1776,7 +1790,7 @@ So, by the explicit isomorphism given in the proof of the basepoint-free pencil 
 
 \begin{rem}
 \label{rem:relations_generation_ten}
-In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half canonical divisor on a genus 2 curve, then $R_L$ has a relation in degree 10. Therefore, the bound from Proposition ~\ref{prop:relation_11}, that $I_L$ is generated in degree at most 11 if $\Delta = 0$ and at most $10$ if $\Delta > 0$ is close to sharp.
+In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half canonical divisor on a genus 2 curve, then $R_L$ has a relation in degree 10. Therefore, the bound from Proposition ~\ref{prop:relation_11}, that $I_L$ is generated in degree at most 11 if $\Delta = 0$ and at most $10$ if $\Delta > 0,$ is close to sharp.
 \end{rem}
 
 
@@ -2061,9 +2075,11 @@ Since all points are linearly equivalent on $\BP^1_k$, we may assume without los
 \label{ssec:g_0_saturation}
 First, we present the saturations of the canonical divisor for
 all cases where $g = 0$ and $\delta = 0,$ as defined in Definition
-~\ref{defn:sat}. The saturation can be computed via applications
-of Riemann-Roch. Exceptional cases are listed
-first and generic cases follow.
+~\ref{defn:sat}. The saturations can be computed using Riemann-Roch.
+By classifying the saturations of all signatures, we can determine
+the base cases on which we can apply inductive lemmata from
+Section ~\ref{sec:induction}. Exceptional cases are listed first
+and generic cases follow.
 
 \begin{longtable}
 	{| c | c || c |}
@@ -2101,24 +2117,21 @@ first and generic cases follow.
 	$(0; e_1, \ldots, e_r; 0)$ & not listed above & $3$ \\	\hline
 \end{longtable}
 
-\todo{transition}
-Here we describe induction of raising degrees from Lemma ~\ref{lem:raise-stacky-order}
-
 \ssec{Base Cases}
 \label{ssec:g_0_base}
-Now we have an inductive statement on the number of stacky
-points in Lemma ~\ref{lem:sat-3} and
-an inductive statement on stabilizer orders in Theorem
-~\ref{lem:raise-stacky-order}. After verifying that explicit triples
-$(\sx, L, J)$ of stacky curves $\sx$ with particular signatures and
-particular choices of $J$ are admissible, we will use Lemmas ~\ref{lem:raise-stacky-order}, and ~\ref{lem:sat-3} imply that the spin canonical ring
-$R(\sx , 0, L)$ is generated in degree at most $e := \max(5, e_1,
-\ldots, e_r)$ with relations generated in degree at most $2e$ for
-$\sx$ with any signature $\sigma = (0; e_1, \ldots , e_r; 0)$ outside
-of the list of exceptional cases in Table ~\ref{table:g-0-exceptional}.
+In order to apply Lemma ~\ref{lem:sat-3} and Lemma
+~\ref{lem:raise-stacky-order} when $\delta = 0$,
+we need to determine appropriate base cases that will
+cover all but finitely many signatures by induction.
+Here we provide such base cases and demonstrate that
+they satisfy all of the necessary conditions of
+Lemma ~\ref{lem:sat-3} and Lemma ~\ref{lem:raise-stacky-order}
+(e.g. admissibility). We also show that that the associated spin
+canonical rings are generated in degree at most $e := \max(5, e_1,
+\ldots, e_r)$ with relations generated in degree at most $2e$.
 
 \begin{lem}
-\label{lem:g_0_admissible_cases}
+\label{lem:g-0-admissible-cases}
 Let $(\sx', \Delta, \halfcan')$ be a log spin curve so that $\sx$ has signature $\sigma = (0; e_1,
 \ldots, e_r; 0)$. Then, $R' := R(\sx', \Delta, \halfcan')$ has a
 presentation generated as a $k$-algebra by elements of degree at most $e = \max(5
@@ -2126,19 +2139,40 @@ presentation generated as a $k$-algebra by elements of degree at most $e = \max(
 ', \halfcan', J) =(\sx
 ', -\infty + \sum_{i=1}^{r}\subhalf{e_i}P_i, J)$ is admissible for the following cases:
 
-\begin{enumerate}
-	\item[(a)] $\sigma_1 = (0; 3, 3, 11; 0), J_1 = \{3\}$
-	\item[(b)] $\sigma_2 = (0; 3, 5, 9; 0), J_2 = \{3\}$
-	\item[(c)] $\sigma_3 = (0; 3, 7, 7; 0), J_3 = \{2, 3\}$
-	\item[(d)] $\sigma_4 = (0; 5, 5, 7; 0), J_4 = \{3\}$
-	\item[(e)] $\sigma_5 = (0; 5, 7, 7; 0), J_5 = \{2, 3\}$
-	\item[(f)] $\sigma_6 = (0; 7, 7, 7; 0), J_6 = \{1, 2, 3\}$
-	\item[(g)] $\sigma_7 = (0; 3, 3, 3, 5; 0), J_7 = \{4\}$
-	\item[(h)] $\sigma_8 = (0; 3, 3, 5, 5; 0), J_8 = \{3, 4\}$
-	\item[(i)] $\sigma_9 = (0; 3, 5, 5, 5; 0), J_9 = \{2, 3, 4\}$
-	\item[(j)] $\sigma_{10} = (0; 5, 5, 5, 5; 0), J_{10} = \{1, 2, 3, 4\}$
-	\item[(k)] $\sigma_{11} = (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$
-\end{enumerate}
+\begin{longtable}
+	{| c || c | c | c |}
+	\caption{Genus 0 Base Cases}
+	\label{table:g-0-base-cases}
+	
+	\tabularnewline
+	
+	\hline
+	Case & Signature $\sigma$ & $J$ & $e$\\
+	\hline
+	\hline
+
+	(a) & (0; 3, 3, 11; 0) & \{3\} & 11\\	\hline
+
+	(b) & (0; 3, 5, 9; 0) & \{3\}	& 9\\ \hline
+
+	(c) & (0; 3, 7, 7; 0) & \{2, 3\}	& 7\\ \hline
+	
+	(d) & (0; 5, 5, 7; 0) & \{3\}	& 7\\ \hline
+	
+	(e) & (0; 5, 7, 7; 0) & \{2, 3\}	& 7\\ \hline
+	
+	(f) & (0; 7, 7, 7; 0) & \{1, 2, 3\}	& 7\\ \hline
+
+	(g) & (0; 3, 3, 3, 5; 0) & \{4\} & 5\\ \hline
+	
+	(h) & (0; 3, 3, 5, 5; 0) & \{3, 4\} & 5\\ \hline
+	
+	(i) & (0; 3, 5, 5, 5; 0) & \{2, 3, 4\} & 5\\ \hline
+	
+	(j) & (0; 5, 5, 5, 5; 0) & \{1, 2, 3, 4\} & 5\\ \hline
+
+	(k) &	(0; 3, 3, 3, 3, 3; 0) & \{1, 2, 3, 4, 5\} & 5\\ \hline
+\end{longtable}
 
 %\noindent
 %Furthermore, $R'$ satisfies the hypothesis of Lemma ~\ref
@@ -2149,14 +2183,14 @@ presentation generated as a $k$-algebra by elements of degree at most $e = \max(
 
 \end{lem}
 
-Before proving Lemma ~\ref{lem:g_0_admissible_cases} in general, we check the lemma holds for case (b).
+Before proving Lemma ~\ref{lem:g-0-admissible-cases} in general, we check the lemma holds for case (b).
 
 \begin{example}
 \label{ex:base-377}
-Here we demonstrate, in detail, that case (b) with ($\sigma_2 =
+Here we demonstrate, in detail, that case (b) with ($\sigma =
 (0; 3, 7, 7; 0), \halfcan' \sim -\infty + \frac{1}{3} P_1 +
-\frac{3}{7} P_2 + \frac{3}{7} P_3, J_2 = \{3, 4\},$) with distinct points $P_i \neq \infty$,
-satisfies the conditions of Lemma ~\ref{lem:g_0_admissible_cases}.
+\frac{3}{7} P_2 + \frac{3}{7} P_3, J = \{3, 4\},$) with distinct points $P_i \neq \infty$,
+satisfies the conditions of Lemma ~\ref{lem:g-0-admissible-cases}.
 We exhibit a (minimal) presentation for $R'$.
 
 Notice that $\deg \lfloor d K_{\sx'} \rfloor= -d + \lfloor \frac{d}{3}
@@ -2172,7 +2206,7 @@ and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
 
 \noindent
 is surjective whenever $\deg (\lfloor (d - 21) K_{\sx'} \rfloor)
-\geq 0$. Since $\sigma_2$ has saturation $s = 5$, as noted in
+\geq 0$. Since $\sigma$ has saturation $s = 5$, as noted in
 Table ~\ref{table:g-0-sat}, then this map is surjective
 when $d \geq 21 + s = 26$ (i.e. $R'$ is generated up to degree 25).
 
@@ -2230,12 +2264,12 @@ $x_{7, 2}$ respectively).
 \end{figure}
 
 Also note that $e_j' + 2d = 7 + 2d \nmid 2 = e_i - e_j'$ for all
-$i, j \in J_2 = \{2, 3\}$ such that $j \neq i$ and for all $d \geq
-0$. Thus, $s_{\sigma_2, J_2}(i, d) = \emptyset$ for each $i \in J$.
+$i, j \in J = \{2, 3\}$ such that $j \neq i$ and for all $d \geq
+0$. Thus, $s_{\sigma, J}(i, d) = \emptyset$ for each $i \in J$.
 Furthermore, $\deg \lfloor e_i \halfcan \rfloor = \deg \lfloor 9
 \halfcan \rfloor = 2 \lfloor \frac{4 * 9}{9} \rfloor + \lfloor
 \frac{9}{3} \rfloor - 9 = 2$, so (Ad-iii) is satisfied and
-$\sigma_2, J_2$ is admissible.
+$\sigma, J$ is admissible.
 
 %Let $(-ord_{P_1}(x_j)$, $-ord_{P_2}(x_j)$, $-ord_{P_3}(x_j))$
 %represent the pole orders of $x_i$ at each point. Then these generators
@@ -2305,7 +2339,7 @@ degree $2e = 14$, as desired.
 %since $e_i = 9 > e$ for all $i \in J$.
 \end{example}
 
-\begin{proof}[Proof of Lemma ~\ref{lem:g_0_admissible_cases}]
+\begin{proof}[Proof of Lemma ~\ref{lem:g-0-admissible-cases}]
 For the remaining cases, we can use a similar method to the one
 used in Example ~\ref{ex:base-377} to find a presentation the
 desired conditions.
@@ -2318,7 +2352,7 @@ and any generator $z$ of $R'$.
 \begin{longtable}
 	{| c || c | c | c |}
 	\caption{Genus 0 Non-effective Base Cases Generators/Relations}
-	\label{table:g-0-base-cases}
+	\label{table:g-0-base-cases-degrees}
 	
 	\tabularnewline
 	
@@ -2403,13 +2437,13 @@ Thus, all of the cases are admissible and satisfy the additional
 desired conditions.
 \end{proof}
 
-Now we can induct on cases (a)-(k) of Lemma
-~\ref{lem:g_0_admissible_cases} to obtain bounds on the minimal
-generator and relation degrees for canonical rings of genus 0
-curves. This process will be carried out in Subsection
+Now we can use Lemma ~\ref{lem:sat-3}, Lemma
+~\ref{lem:raise-stacky-order}, and Corollary
+~\ref{cor:raise-stacky-order} inductively on the cases of Table
+~\ref{table:g-0-base-cases} to obtain the desired bounds on the
+generator and relation degrees for log spin canonical rings of
+genus 0 curves. This process will be carried out in Subsection
 ~\ref{ssec:g-0-main}.
-
-\todo{induct on cases?}
 
 
 %Through the application of two inductively adding 
@@ -2516,7 +2550,7 @@ with relations generated up to degree $2e$.
 
 It only remains to deal with the case $\delta = 0$, so $\halfcan$ is not effective.
 Let $\sigma = (0; e_1, \ldots, e_r; 0)$ be a signature with $r > 0$
-so that $\sigma \neq \sigma_i$ where $\sigma_i$ is one of the exceptional cases in Table
+so that $\sigma$ is not one of the exceptional cases in Table
 ~\ref{table:g-0-exceptional}. Note that if $r < 3$, then $\deg 
 \lfloor d \halfcan \rfloor < 0$ for all $d \geq 0$ so we have the
 trivial case where $R(\sx, \Delta, \halfcan) = k$. Thus, we now
@@ -2524,45 +2558,30 @@ only consider the cases with $r \geq 3$.
 
 If $r > 5$, then we can use Lemma
 ~\ref{lem:sat-3} to add stacky points with
-stabilizer order $3$ to case (k) of Lemma
-~\ref{lem:g_0_admissible_cases}, which corresponds to $\sigma_{11}
-= (0; 3, 3, 3, 3, 3; 0), J_{11} = \{1, 2, 3, 4, 5\}$. This case
+stabilizer order $3$ to case (k) of Table
+~\ref{table:g-0-base-cases}, which corresponds to $\sigma
+= (0; 3, 3, 3, 3, 3; 0), J = \{1, 2, 3, 4, 5\}$. This case
 clearly satisfies the conditions of Lemma
 ~\ref{lem:sat-3} (recall from Table ~\ref
-{table:g-0-sat} that $\sat(\Eff(\sigma_{11})) = 3$), and the
+{table:g-0-sat} that $\sat(\Eff(\sigma)) = 3$), and the
 immediate consequence of parts (a) and (c) of Lemma
 ~\ref{lem:sat-3} is that any $R(\sx', \Delta,
 \halfcan')$ corresponding to signatures $\sigma'$ with ramification
 orders all equal to $3$ for any $r > 5$ is generated up to
-degree $e := \max(5, e_1', \ldots, e_r')$ with relations generated
-up to degree $2e$. Furthermore, these cases satisfy all of the
-conditions of Lemma ~\ref{lem:raise-stacky-order}.
+degree $e' := \max(5, e_1', \ldots, e_r')$ with relations generated
+up to degree $2e'$. Furthermore, these cases satisfy all of the
+conditions of Lemma ~\ref{lem:raise-stacky-order}. Now we can
+apply Corollary ~\ref{cor:raise-stacky-order} to deduce that
+$R(\sx, \delta, \halfcan)$ is generated up to degree $e :=
+\max(5, e_1, \ldots, e_r)$ with relations generated up to degree
+$2e$.
 
-So if $r > 5$, then $\sigma$ ``lies above'' the case $(\sigma', J)$
-where $\sigma'$ has $r$ many stacky points all of order $3$
-and $J = \{1, \ldots, r\}$ in the sense that for all $i
-\in J$, $e_i \geq e_i'$ and $e_i = e_i'$ otherwise.
-If $r \leq 5$, then $\sigma$ similarly ``lies above'' one of the
-base cases of Lemma ~\ref{lem:g_0_admissible_cases}, all of which
-satisfy the hypotheses of Lemma ~\ref{lem:raise-stacky-order} as well. \todo{Aaron: I think we replace the above paragraph with an application of Corollary ~\ref{cor:raise-stacky-order}.}
-
-So for any $r > 0$, there is a $(\sigma', J)$, either from
-Lemma ~\ref{lem:g_0_admissible_cases} or corresponding to
-the $r > 5$ case with stabilizer orders all $3$, with $\sigma' =
-(0; e_1', \ldots, e_r'; 0)$ satisfying the property that for all $i
-\in J$, $e_i \geq e_i'$ and $e_i = e_i'$ otherwise.
-
-All such base cases satisfy all of the hypotheses of Theorem
-~\ref{lem:raise-stacky-order} and their corresponding $R' := R(\sx',
-\Delta, \halfcan')$ are generated, as $k$-algebras, up to degree
-$e' := \max(5, e_1', \ldots, e_r')$ with relations generated up to
-degree $2e'$ by Lemma ~\ref{lem:g_0_admissible_cases}. It follows
-from induction using Lemma ~\ref{lem:raise-stacky-order}(b) and
-Corollary ~\ref{cor:raise-stacky-order} that $R := R(\sx, \Delta,
-\halfcan)$ is generated up to degree $e := \max(5, e_1, \ldots, e_r)$.
-It also follows from induction on Lemma ~\ref{lem:raise-stacky-order}(c)
-and ~\ref{cor:raise-stacky-order} that the relations are generated
-up to degree $2e$. \todo{What does it mean to induct on the statements of two lemmas? Clarify this please.}
+If $r \leq 5$ and $\sigma$ is not one of the exceptional cases,
+then we may similarly apply Lemma ~\ref{g-0-admissible-cases} and
+Corollary ~\ref{cor:raise-stacky-order} to an appropriate base case
+from Table ~\ref{table:g-0-base-cases} and deduce that $R(\sx,
+\delta, \halfcan)$ is generated up  to degree $e := \max(5, e_1,
+\ldots, e_r)$ with relations generated up to degree $2e$.
  \end{proof}
 
 \section{Further Research}
