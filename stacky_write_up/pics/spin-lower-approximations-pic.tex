@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{pstricks}
+\usepackage{pstricks-add}
+\usepackage{auto-pst-pdf}
+\usepackage{forloop}
+
+\begin{document}
+\psset{unit=0.5cm}
+\begin{pspicture}(-1,-1)(5,14)
+\psset{xunit= 20 mm,yunit= 3 mm}
+
+\psdots*[dotstyle=*,dotsize=3pt]( 1, 0 )
+\psdots*[dotstyle=*,dotsize=3pt]( 1, 1 )
+\psdots*[dotstyle=*,dotsize=3pt]( 1, 2 )
+\psdots*[dotstyle=*,dotsize=3pt]( 2, 5 )
+\psdots*[dotstyle=*,dotsize=3pt]( 3, 8 )
+\psdots*[dotstyle=*,dotsize=3pt]( 4, 11 )
+\psdots*[dotstyle=*,dotsize=3pt]( 5, 14 )
+
+\newcounter{y}
+\forloop{y}{1}{\value{y}< 5}{\psdots*[dotstyle=o,dotsize=3pt]( 2, \value{y} )}
+\forloop{y}{1}{\value{y}< 8}{\psdots*[dotstyle=o,dotsize=3pt]( 3, \value{y} )}
+\forloop{y}{1}{\value{y}< 11}{\psdots*[dotstyle=o,dotsize=3pt]( 4, \value{y} )}
+\forloop{y}{1}{\value{y}< 14}{\psdots*[dotstyle=o,dotsize=3pt]( 5, \value{y} )}
+
+
+\psline(0,0)(5,14)
+\psaxes[Dx=1, Dy=2]{->}(0,0)(0,0)(6,15)
+\end{pspicture}
+
+\end{document}
