@@ -327,8 +327,14 @@ say $\sx$ has \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
 	\item Include notation for $X$ as coarse space and $L_X$ the corresponding log half canonical divisor.
 	\item Notation for Gr\"{o}bner bases and orderings (include grlex, grevlex, and block order, as defined in \cite[Definition 8.1.1]{vzb:stacky})
 	\item Make sure to standardize the notation $\sx,\sx'$ for stacky curves, $L,L'$ for half canonical divisors, and $X,X'$ for (non-stacky) curves.
+	\item \begin{defn}
+\label{}
+If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
+\end{defn}
 \end{enumerate}
 
+
+	
 \begin{rem}
 \label{rem:delta-not-1}
 Suppose $(\sx,\Delta,L)$ is a log spin curve. Note that $\deg \Delta
@@ -592,11 +598,6 @@ Refer to figure \ref{fig:s14/5-lattice} for an example of the positive best lowe
 \caption{This figure illustrates each non-negative best lower approximation of $\frac{14}{5}$ with a ``$\bullet$'' and each other lattice point below $5y=14x$ with a ``$\circ$''.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}
 \end{figure}
 
-\begin{defn}\todo{move to background}
-\label{}
-If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
-\end{defn}
-
 We can now prove our first adding-points lemma.
 
 \begin{lem}
@@ -688,7 +689,7 @@ For any $j, i \in \mathbb{N}$, with $i < j$, we have $\frac{c_i}{d_i} > \frac{c_
 \noindent
 so we have the pole order of $\prod_{j=1}^n z_j$ is \todo{what is the following sum taken over?}
 \[
-	\sum -\ord(z_j) < c_i .
+	\sum_{j=1}^n -\ord(z_j) < c_i .
 \]
 
 \noindent
