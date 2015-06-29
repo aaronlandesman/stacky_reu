@@ -79,7 +79,7 @@
 \nc\renc{\renewcommand}
 \newcommand\ssec{\subsection}
 \newcommand\sssec{\subsubsection}
-\newcommand\bh{{\mathbb H}}
+\newcommand\BH{{\mathbb H}}
 \newcommand\bO{{\mathbf O}}
 \newcommand\CC{{\mathcal C}}
 \newcommand\BN{{\mathbb N}}
@@ -181,7 +181,7 @@
 
 \section{Introduction}
 Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup
-of $PSL_2(\BR)$ acting on the upper half plane $\bh$ by fractional
+of $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations. We consider the {\bf ring of modular forms}
 $M(\Gamma) = \bigoplus_k M_k(\Gamma)$. In this paper, we sharply bound the degree of the generators and
 relations for $M(\Gamma)$, for general $\Gamma$ \todo{Peter: Why do you say general gamma?  I think you should either add "general fuchsian groups gamma" or just take out that clause, since you just defined what gamma is.}  \todo{Peter: also, its not clear to me that this should be said right here.  I think we may want to say a bit more about what's already known instead of going directly to what we have done}.  In the special that $\Gamma$ has no odd weight modular forms, Voight and Zureick-Brown
@@ -222,8 +222,6 @@ canonical ring} of $(\sx, \Delta, \halfcan)$ is
 	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx,\lfloor d \halfcan \rfloor)
 \end{align*}
 
-\noindent
-\todo{incorporate some chunk on O'Dorney somewhere in intro, below is previously written stuff}
 In particular, we would like to bound the degrees in which the
 graded ring and its relations are generated. The work by O'Dorney
 shows that the canonical ring of any $\BQ$-divisor $D =
@@ -245,21 +243,6 @@ strict for arbitrary $\BQ$-divisors on $\BP^1$, but restricting
 to the log spin curve case allows for lower bounds.
 The main theorem of this paper is the following improved bound on
 the degree of generators and relations of log spin canonical rings:
-
-%uses best lower approximations to provide a minimal presentation for the canonical ring of an arbitrary $\BQ$-divisor $D = \frac{\alpha_1}{\beta_1}P_1 + \frac{\alpha_2}{\beta_2}P_2$ of $\BP_k^1$ with $\# \Supp(D) \leq 2$ and shows that it is generated in degree $e := \max(\beta_1, \beta_2)$ with relations generated in degrees at most $2e$ \cite[Section 4]{dorney:canonical}. For arbitrarily many points, O'Dorney also provides much larger bounds \cite[Section 5]{dorney:canonical}. While
-%
-%In Lemma ~\ref{lem:sat-1} we provide an inductive method to strengthen
-%O'Dorney's result \cite[Theorem 8]{dorney:canonical} on $\BP^1_k$ to divisors $D = \sum_{i = 1}^n \frac{\alpha_i
-%}{\beta_i} P_i$ for points $P_1, \ldots, P_n$ on a curve $X$ such that $H^
-%0(X, \lfloor D \rfloor) > 0$. Our result implies that $R_D$ is generated in
-%degrees at most $e = \max(\beta_i)$ with relations generated in
-%degrees at most $2e$. \todo{Are you sure you're not assuming $\frac{\alpha}{\beta}$ is effective? If not, doesn't what you say contradict Evan's example showing that his bounds of about lcm are asymptotically sharp?} Furthermore, given additional constraints on $H^0(
-%X, \lfloor dD \rfloor)$ for various values of $d$, we can apply the
-%same Riemann-Roch \todo{same as what? Maybe just say we can generalize his results to arbitrary genus?} arguments in arbitrary genus. 
-%To do this, we extend a result by Voight and
-%Zureick-Brown \cite[Theorem 8.3.1]{vzb:stacky} on stacky canonical rings to arbitrary $\BQ$-
-%divisors. \todo{Again, I don't think it can be arbitrary, and what are the $\BQ$ divisors on?}
-
 
 \todo{State for even weight modular forms attributed to VZB.}
 \begin{thm}
@@ -314,25 +297,19 @@ Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky}.
 
 \begin{cor}
 \label{cor:main-mod-forms}
-There exists a log half-canonical divisor $\halfcan$ on $\sx$ such
-that we have a graded isomorphism of $\BC$-algebras
-\[
-	\bigoplus_{k = 0}^{\infty} M_k(\Gamma) \cong R(\sx (\Gamma), 
-\Delta, \halfcan)
-\]
-
-\noindent
-Let $\sigma = (g; e_1, \ldots, e_r; \delta)$ be the signature
-of $\sx$. Then $\bigoplus_{k = 0}^{\infty} M_k(\Gamma)$ is
+Let $\Gamma$ be a Fuchsian group and $\sx$ the stacky curve
+associated to $\Gamma \backslash \BH$ with signature $(g; e_1,
+\ldots, e_r; \delta)$. Then the ring of modular forms
+$M(\Gamma) := \bigoplus_{k = 0}^{\infty} M_k(\Gamma)$ is
 generated as a $\BC$-algebra by elements of degree at most $e = \max
-(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ and $\Delta = 0$
-then $R(\sx,\Delta, \halfcan)$ has relations generated in degrees
-up to $\max(11, 2e_1, \ldots, 2e_r)$. Otherwise, $R(\sx, \Delta,
-\halfcan)$ has relations generated in degrees up to $\max(10, 2e_1,
-\ldots, 2e_r),$ so long as $\sigma$ does not lie in a finite list
-of exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
-for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
-for signatures with $g = 0$.
+ (5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ and $\Delta = 0$
+then $M(\Gamma)$ has relations generated in degrees up to $\max(11,
+2e_1, \ldots, 2e_r)$. Otherwise, $M(\Gamma)$ has relations
+generated in degrees up to $\max(10, 2e_1, \ldots, 2e_r)$, so long
+as $\sigma$ does not lie in a finite list of exceptional cases, as
+listed in Table ~\ref{table:g-1-exceptional} for signatures with $g
+= 1$ and Table ~\ref{table:g-0-exceptional} for signatures with $g =
+0$.
 \end{cor}
 
 The remainder of the paper will be primarily devoted to proving
@@ -414,12 +391,16 @@ Now we can define the analogy to canonical rings for
 log spin curves.
 
 \begin{defn}
+If divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
+with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
+\rfloor$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
+\lfloor \alpha_i \rfloor P_i$.
+
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, L) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d L \rfloor)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
 \]
 \end{defn}
-\todo{what about floors?}
 
 \noindent
 When the log spin curve is fixed, we usually use $R$ or $R_L$ to
@@ -500,12 +481,12 @@ This is stuff that has been moved out of the introduction to possibly
 be retooled for this section.
 
 We can then consider the
-orbifold $\Gamma \backslash \bh$ over $\BC$. For example, in the
-case $\Gamma$ acts freely on $\bh$, $\Gamma \backslash \bh$ is a
+orbifold $\Gamma \backslash \BH$ over $\BC$. For example, in the
+case $\Gamma$ acts freely on $\BH$, $\Gamma \backslash \BH$ is a
 Riemann Surface over $\BC$. It may well be that $\Gamma \backslash
-\bh$ is not compact. Defining $\Delta$ as the divisor of cusps
+\BH$ is not compact. Defining $\Delta$ as the divisor of cusps
 associated to $\Gamma$, we can form a space $\Gamma \backslash
-\bh^*$ which is a compactification of $\Gamma \backslash \bh,$ with
+\BH^*$ which is a compactification of $\Gamma \backslash \BH,$ with
 associated {\bf divisor of cusps} $\Delta$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive lemmas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
