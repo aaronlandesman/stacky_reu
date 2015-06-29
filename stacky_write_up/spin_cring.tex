@@ -197,7 +197,7 @@ well known that the canonical sheaf $\Omega _X,$ with associated canonical divis
  determines the {\bf canonical map } $\pi:X \rightarrow \BP_k^{g - 1}$.
 Then, the {\bf canonical ring} is defined to be
 \begin{align*}
-	R(X,K_X) = \bigoplus_{n \geq 0} H^0(X,nK_X),
+	R(X,K_X) = \bigoplus_{d \geq 0} H^0(X, dK_X),
 \end{align*}
 
 \noindent
@@ -271,9 +271,36 @@ generators and relations are known for $\halfcan'$ in many interesting low genus
 as detailed in Neves ~\cite[ Section III.4]{neves:halfcan}.
 \end{rem}
 
+The main theorem of this paper provides the following application
+to modular forms when combined with a result from Voight and
+Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky}.
+
+\begin{cor}
+\label{cor:main-mod-forms}
+There exists a log half-canonical divisor $\halfcan$ on $\sx$ such
+that we have a graded isomorphism of $\BC$-algebras
+\[
+	\bigoplus_{k = 0}^{\infty} M_k(\Gamma) \cong R(\sx (\Gamma), 
+\Delta, \halfcan)
+\]
+
+\noindent
+Let $\sigma = (g; e_1, \ldots, e_r; \delta)$ be the signature
+of $\sx$. Then $\bigoplus_{k = 0}^{\infty} M_k(\Gamma)$ is
+generated as a $\BC$-algebra by elements of degree at most $e = \max
+(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ and $\Delta = 0$
+then $R(\sx,\Delta, \halfcan)$ has relations generated in degrees
+up to $\max(11, 2e_1, \ldots, 2e_r)$. Otherwise, $R(\sx, \Delta,
+\halfcan)$ has relations generated in degrees up to $\max(10, 2e_1,
+\ldots, 2e_r),$ so long as $\sigma$ does not lie in a finite list
+of exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
+for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
+for signatures with $g = 0$.
+\end{cor}
+
 The remainder of the paper will be primarily devoted to proving
 Theorem ~\ref{thm:main}. The idea of the
-proof will be to induct on the order and number of stacky points. To this end, we first review important background in
+proof will be to induct on the stabilizer order of and number of stacky points. To this end, we first review important background in
 Section ~\ref{sec:background}. Then, we develop various inductive
 tools in Section ~\ref{sec:induction}. In Sections ~\ref{sec:g_high},
 ~\ref{sec:g_1}, and ~\ref{sec:g_0}, we prove Theorem
@@ -283,7 +310,7 @@ one, and genus zero cases respectively. Finally, in Section
 research.
 
 \todo{incorporate some chunk on O'Dorney somewhere in intro, below is previously written stuff}
-In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a (not-necessarily effective) \todo{Can we remove this parenthetical? I don't see why the reader would assume effective.} divisor $D=\frac{\alpha_1}{\beta_1}P_1+\frac{\alpha_2}{\beta_2}P_2$ of $\BP_k^1$ \todo{This comes up a lot, but instead of saying $D$ is a divisor of $X$, I'd prefer to say $D \in \di X$ to be more precise. Of course, this is minor, and it's fine to keep it this way.} consisting of at most 2 points in its support, \todo{It might be clearer to say $\# \Supp(D) \leq 2.$} to show it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$. \todo{Can you break the previous sentence into two sentences?} He \todo{Probably better not to say he, maybe give a theorem number where he does this?} further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points. \todo{This sentence seems very imprecise to me, and I wouldn't understand it if I hadn't read Evan's paper. Can you state this more precisely, or possibly just remove it.}
+In \cite{dorney:canonical}, O'Dorney uses best lower approximations to provide a minimal presentation for the canonical ring of a divisor $D = \frac{\alpha_1}{\beta_1}P_1 + \frac{\alpha_2}{\beta_2}P_2$ of $\BP_k^1$ \todo{This comes up a lot, but instead of saying $D$ is a divisor of $X$, I'd prefer to say $D \in \di X$ to be more precise. Of course, this is minor, and it's fine to keep it this way.} with at most 2 points in its support, \todo{It might be clearer to say $\# \Supp(D) \leq 2.$} to show it is generated in degree $e=\max{\beta_1,\beta_2}$ with relations generated in degrees at most $2e$. \todo{Can you break the previous sentence into two sentences?} He \todo{Probably better not to say he, maybe give a theorem number where he does this?} further extends the result to more points, but only bounds the degree of minimal generation by a value on the order the least common multiple of the denominators of fractional points. \todo{This sentence seems very imprecise to me, and I wouldn't understand it if I hadn't read Evan's paper. Can you state this more precisely, or possibly just remove it.}
 
 In Lemma ~\ref{lem:sat-1} we provide an inductive method to strengthen
 O'Dorney's result \cite[Theorem 8]{dorney:canonical} on $\BP^1_k$ to divisors $D = \sum_{i=1}^n \frac{\alpha_i
