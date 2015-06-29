@@ -212,10 +212,12 @@ curves are scheme theoretically cut out by quadratic equations.
 \todo{Peter: I think we need something about odd weight modular forms before going right into stacks.}  
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize Petri's theorem in many \todo{Peter: not clear to me that ``many'' is a good word to use here.  We mostly generalize in one direction}
 directions. 
-If $X$ is a curve, \todo{why do you start with a curve and then move to a stacky curve? shouldn't it be the opposite order?} then we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$ and {\bf stacky points} $P_1,\ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{\geq 2}$ if 
-$$\di \sx = \di X \oplus \left(\bigoplus_{i
-= 1}^r \left\langle \frac{1}{e_i}P_i \right\rangle \right) \subset \BQ \otimes \di X.$$
-As is done in Voight and Zureick-Brown \cite{vzb:stacky} one may view a stacky curve as a stack, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of ``fractional points,'' i.e., stacky points. A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
+If $X$ is a curve, \todo{why do you start with a curve and then move to a stacky curve? shouldn't it be the opposite order?} then we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$ and {\bf stacky points} (also called {\bf{fractional points}}) $P_1,\ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{\geq 2}$ if 
+\[
+	\di \sx = \di X \oplus \left(\bigoplus_{i
+	= 1}^r \left\langle \frac{1}{e_i}P_i \right\rangle \right) \subset \BQ \otimes \di X.
+\]\todo{Peter: Would it be better to say $Div(\sx)=(Div(X))[\frac{1}{e_i}P_i]_{1\le i\le r}$ or something like that?}
+As is done in Voight and Zureick-Brown \cite{vzb:stacky} stacky curves may be formalized as stacks, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of stacky points. \todo{I don't know if this is a good statement to make.  We aren't really viewing $\sx$ as a scheme.  Rather we're are determining information about its canonical rings through knowledge of scheme data.}  A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
 The central object of study in this paper is the {\bf log spin
 canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \begin{align*}
@@ -223,14 +225,14 @@ canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \end{align*}
 
 In particular, we would like to bound the degrees in which the
-graded ring and its relations are generated. The work by O'Dorney
+graded ring and its relations are generated.  O'Dorney
 shows that the canonical ring of any $\BQ$-divisor $D =
 \frac{\alpha_1}{\beta_1}P_1 + \frac{\alpha_2}{\beta_2}P_2$ of
-$\BP_k^1$ with $\# \Supp(D) \leq 2$ is generated in degrees up
+$\BP_k^1$ (i.e. $\# \Supp(D) \leq 2$) is generated in degrees up
 to $e := \max(\beta_1, \beta_2)$ with relations generated in
-degrees up to $2e$ \cite[Section 4]{dorney:canonical}. Furthermore,
-O'Dorney gives a larger bound when the support of $D$ is allowed to
-have arbitrarily many points in terms of least-common-multiples.
+degrees up to $2e$ \cite[Theorem 6]{dorney:canonical}. Furthermore,
+O'Dorney gives a larger bound in terms of least common multiples of the denominators when the support of $D$ is allowed to
+have arbitrarily many points.
 Voight and Zureick-Brown also bounded the generator and relation
 degrees of log spin canonical rings of $(\sx, \Delta, \halfcan)$,
 in the case that genus is positive and $\halfcan$ is effective,
