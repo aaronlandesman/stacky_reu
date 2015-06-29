@@ -224,7 +224,7 @@ of generators and relations of arbitrary log spin canonical rings:
 
 \begin{thm}
 \label{thm:main}
-Let $(\sx, \Delta, \halfcan)$ log spin curve over a perfect field $k$, so
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere?} so
 that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
 
@@ -254,6 +254,7 @@ process while dealing with more complicated base cases and
 exceptional cases.
 
 \begin{rem}
+\label{rem:explicit-generators}
 The proofs of the main theorems in the low genus cases not only
 obtain bounds on the degrees of the generators and relations, but
 also yield explicit systems of generators and the initial ideal of
@@ -891,7 +892,7 @@ Then $\beta \halfcan_\sx \sim \alpha K_{\sx}$ so $\beta\lfloor so $\beta | \alph
 \end{proof}
 }\fi
 
-We now restrict our attention to log canonical rings of stacky curves.  The previous lemma accounts for the relevant induction cases when the half-canonical ring is already saturated in 1.  We complement it with the following two lemmas that allow us to inductively add points, under certain conditions when the half-canonical ring is saturated at degrees two and three.
+We now restrict our attention to log canonical rings of stacky curves.  The previous lemma accounts for the relevant induction cases when the spin canonical ring is already saturated in 1.  We complement it with the following two lemmas that allow us to inductively add points, under certain conditions when the spin canonical ring is saturated at degrees two and three.
 
 \begin{lem}
 \label{lem:sat-2}
@@ -1630,7 +1631,7 @@ We now consider the case when the genus is at least 2. In this case, we are able
 
 \ssec{Bounds on Generators and Relations in High Genus}
 
-The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the half-canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $11$ if $\Delta = 0$ and at most $10$ if $\Delta > 0$. The generation bound is shown in Lemma ~\ref{lem:generation_5} and the relations bound is shown in Lemma ~\ref{prop:relation_11}. 
+The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $11$ if $\Delta = 0$ and at most $10$ if $\Delta > 0$. The generation bound is shown in Lemma ~\ref{lem:generation_5} and the relations bound is shown in Lemma ~\ref{prop:relation_11}. 
 
 The proofs of these results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}, although ~\cite[Proposition III.4]{neves:halfcan} has a key ommission, as noted in Remark ~\ref{rem:neves-omission}
 
@@ -2586,13 +2587,45 @@ from Table ~\ref{table:g-0-base-cases} and deduce that $R(\sx,
 
 \section{Further Research}
 \label{sec:further-questions}
-\begin{itemize}
-	\item More on fractional modular forms
-	\item Make explicit generators and relations for base case of non-stacky higher genus half-canonical divisors
-	\item In the case $g \geq 2$, can the bound from Proposition ~\ref{prop:relation_11} be reduced from 11 to 10 (which would then be sharp by Remark ~\ref{rem:relations_generation_ten})? \todo{Possibly think more about this} 
-	\item Generic Initial ideal (and other genericness properties?)
-	\item Complete minimal generation
-\end{itemize}
+
+This paper leaves open many directions for further research.
+
+\begin{enumerate}
+	\item In the case $g \geq 2$, Proposition ~\ref{prop:relation_11} gives a bound on the degree of generators of the relations of a log spin canonical ring $R_L$. Additionally, by Remark ~\ref{rem:relations_generation_ten}, any curve of genus 2 with half canonical divisor $L = P$ has spin canonical ring $R_L$ with relations in degree 10. This raises the question of whether the bound of 11 on the degree of the relations in $R_L$ can be reduced to $10$. In particlar, we make the following conjecture.
+\begin{conjecture}
+\label{conj:relations-10}
+If $X$ is a curve of genus $g \geq 2$ and $L \in \di X$ with $2L \sim K,$ the ideal of relations in $R_L$ is generated in degree at most $10$. More precisely, if $x_1,\ldots, x_n$ is a minimal set of generators for $R_L$ and $\phi:k[y_1,\ldots, y_n] \rightarrow R_L, y_i \mapsto x_i,$ then $I_L := \ker \phi$, is generated in degree at most 10. 
+\end{conjecture}
+Note that in the case $\dim L \geq 2$ and $L$ is basepoint-free, by Neves ~\cite[Proposition III.12]{neves:halfcan}, $I_L$ is generated in degree at most 8. Additionally, if Conjecture ~\ref{conj:relations-10} were true, by Theorem ~\ref{thm:main} we would immediately obtain the following corollary, providing a more concise statement than that of Theorem ~\ref{thm:main}.
+\begin{cor}
+\label{}
+Let $(\sx,\Delta,L)$ be a log spin curve over a perfect field $k$ with signature $(g;e_1,\ldots, e_r;\delta)$ and let $R_L$ be the log canonical ring. Then, $R_L$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e,$ apart from a finite list of exceptions.
+\end{cor}
+	\item Another direction for further research is to extend the results of this paper to fractional modular forms, just as this paper extends the results of Voight and Zureick-Brown \cite{vzb:stacky} from even weight modular forms to odd weight modular forms. In particular, we pose the following question:
+\begin{question}
+\label{ques:fractional-weight}
+If $\sx$ is a stacky curve and $D \in \di \sx$ with $nD \sim K,$ where $K$ is the canonical divisor of $\sx$, can one bound the degrees of generators and relations of $R_D$?
+\end{question}
+Note that that the above question is answered affirmatively in the case that $\sx$ has signature $(0;e_1,\ldots, e_r;\delta)$ in \todo{Aren't we supposed to mention fractional weight modular forms after an early inductive lemma? Can we include this as a remark somewhere?} \todo{Include reference to the fractional weight modular forms remark, in this remark, we should probably reference \cite[Remark 10.2.3]{vzb:stacky}}. In fact, we show that if $D \in \di \sx$ so that $nD = K$ for some $n \geq 2$, then $R_D$ is generated in degree at most $e=\max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$. Additionally, Lemma ~\ref{lem:raise-stacky-order} naturally extends to the setting fractional weight modular forms, as noted in Remark ~\ref{rem:raise-fractional-order}.
+	\item In Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky}, the notion of a generic initial ideal is defined, which encapsulates the idea of whether the relations for $R_L$ are generically chosen, in a precise sense. The proof of Theorem ~\ref{thm:main} decidedly does not yield a generic initial ideal, as generators and relations are constructed in a highly nongeneric manner. In particular, Lemma ~\ref{lem:raise-order-stacky} constructs generators with non-maximal pole orders at certain points, making the relations non-generic. 
+\begin{question}
+\label{}
+If $(\sx,\Delta,L)$ is a log spin curve with signature $\sigma$, does there exist a function $\sigma \mapsto d(\sigma)$ so that the generic initial ideal {\rm(} with some specified ordering{\rm)} is generated in degree at most $d(\sigma)$? Can one write down the generic initial ideal explicitly?
+\end{question}
+	\item As noted in Remark ~\ref{rem:explicit-generators}, the proof of Theorem ~\ref{thm:main} given in this paper gives an explicit procedure for computing the generators and relations of $R_L$ when the genus of $\sx$ is $0$ or $1$.
+\begin{question}
+\label{}
+Can one give an algorithm for explicitly computing the generators and relations for an arbitrary genus $g \geq 2$ curve?
+\end{question}
+Suppose the generators and relations of $R_{L_X}$ are known, where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the coarse space of $\sx$, and $L_X \leq L$ is a half canonical divisor of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an algorithm for determining the generators of $L$. This raises the following Petri-like question:
+\begin{question}
+\label{ques:half-canonical-petri}
+Given a {\rm(}non-stacky {\rm)} curve $X$ and a half canonical divisor $L \in \di X$, can one write down a set of minimal generators and minimal relations for $R_L$? If so, can one give the generic ideal of $R_L$ or the generic initial ideal of $R_L$, as defined in Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky}?
+\end{question}
+In particular, if Question ~\ref{ques:half-canonical-petri} were answered affirmatively one would be able to write down explicit generators and relations for $R_L$ on a stacky curve, essentially by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
+	\todo{This last one doesn't seem particularly interesting. Should we remove it?}
+	\item While Theorem ~\ref{thm:main} gives a minimal set of generators for the log spin canonical ring $R_L,$ the set of relations is not minimal. In many of the $g = 0$ and $g=1$ cases, it is not too difficult to see that our inductive procedure also yields a minimal set of relations for $R_L$. One might investigate whether the generators and relations given by the inductive proof of Theorem ~\ref{thm:main} are always minimal.
+	\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
