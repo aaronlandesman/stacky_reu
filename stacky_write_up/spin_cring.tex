@@ -200,13 +200,13 @@ with multiplication structure corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X \cong \proj R$. When $g \geq 2$, Petri's
 theorem gives generators and relations for $R(X, K_X)$ showing that
 in most cases $R(X, K_X)$ is generated in degree 1 with relations
-in degree 2, as shown in Saint-Donat\cite[p. 157]{saint-donat:proj}. This has the
+in degree 2 (one demonstration is given by Saint-Donat\cite[p. 157]{saint-donat:proj}). This has the
 pleasant geometric consequence that all such canonically embedded
 curves are scheme theoretically cut out by quadratic equations.
 
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize Petri's theorem in many
 directions. 
-If $X$ is a curve, then we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$ and {\bf stacky points} $P_1,\ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{\geq 2}$ if 
+If $X$ is a curve, \todo{why do you start with a curve and then move to a stacky curve? shouldn't it be the opposite order?} then we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$ and {\bf stacky points} $P_1,\ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{\geq 2}$ if 
 $$\di \sx = \di X \oplus \left(\bigoplus_{i
 = 1}^r \left\langle \frac{1}{e_i}P_i \right\rangle \right) \subset \BQ \otimes \di X.$$
 As is done in Voight and Zureick-Brown \cite{vzb:stacky} one may view a stacky curve as a stack, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of ``fractional points,'' i.e., stacky points. A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
@@ -292,41 +292,96 @@ Zureick-Brown \cite[Theorem 8.3.1]{vzb:stacky} on stacky canonical rings to arbi
 divisors. \todo{Again, I don't think it can be arbitrary, and what are the $\BQ$ divisors on?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \todo{Somewhere in the paper, we should probably give an example showing the generators and relations are sharply bounded at degree e, 2e. Robin: Aren't the base cases suitable examples? Aaron: Those don't show it for general e, do they? I don't think we really need an example, just a remark somewhere that one cannot really hope to do better than e, 2e somewhere.}
 
 \section{Background}
 \label{sec:background}
-Look at Spencer-Kodaira \cite{kodaira:complex-manifolds}.
-Include the following:
-\begin{enumerate}
-	\item Include explanation of Kodaira spencer, and use \cite[Lemma 10.2.1]{vzb:stacky} to obtain the desired translation to algebraic geometry.
-	\item Possibly include some of the following notation, it it isn't dealt with well in the background.
-	
- A divisor $\Delta \in \di X$ is a {\bf log divisor} if
-$\Delta = \sum_{i=1}^{n}P_i \in \di X,$ with $P_i$ distinct points of $X$. \todo{Do we want to assume they are distinct?} Let
-$\sx$ denote a tame separably rooted curve over a
-field $k$ so that $X$ is the coarse space of $\sx$, as defined in
-\cite[Section 5.2]{vzb:stacky}, with $\di \sx = \di X \oplus \left(\bigoplus_{i
-= 1}^r \langle \frac{1}{e_i}P_i \rangle \right),$ so that $e_i \in \BZ$. Let $K_
-\sx = K_X + \sum_{i = 1}^{r}\frac{e_i - 1}{e_i}P_i.$ In this case, we
-say $\sx$ has {\bf stabilizer order} $e_i$ at $P_i$. Call $\halfcan
-\in \di \sx$ a {\bf log half-canonical divisor}, also known as a theta-characteristic, on the {\bf log stacky curve} $(\sx,\Delta)$ if
-$2\halfcan \sim K_\sx + \Delta$. If $X$ has genus $g$ and $\deg \Delta =\delta,$ then we
-say $\sx$ has \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$. 
+Here we denote various definitions and useful notation that will be
+used throughout the paper. Many of the conventions come from existing
+literature. In particular, we use much of the notation from Voight
+and Zureick-Brown. Here, we briefly present the definitions
+and notation we use.
 
-	\item Fix notation $\delta$ for $\deg \Delta$, $g$ for genus.
-	\item While the remainder paper could be writen using stack-theoretic terms, as is done in \cite{vzb:stacky}, we shall adopt the simpler language of $\BQ$ divisors, thinking of $\sx$ as the underlying scheme $X$ with fractional points.
-	\item Include explicit definitions for what we are assuming about a curve, i.e. smooth, projective, etc. Also, possibly discuss the relations to stacks, either here in or in the introduction. Make sure to make clear the assumption that we will work over an algebraically closed field through tensoring up.
-	\item Notation for Coarse space
-	\item Notation for Stacky points with associated stabilizer orders (I.e. as those points for which the divisor can have rational coefficients with denominator equal to the stabilizer order)
+A \textbf{stacky curve} $\sx$ over a field $k$ is a smooth proper
+geometrically-connected Deligne-Mumford stack of dimension $1$ over
+$k$ with a dense open subscheme. A stacky curve is \textbf{tame} if
+its stabilizers are coprime to char $k$. Throughout this paper,
+stacky curves will be assumed to be tame and $k$ will always be
+algebraically closed. The language of stacks will be omitted in
+this paper, as it is sufficient to view stacky curves and related
+objects $\sx$ as a scheme whose associated divisor group allows for
+a finite number of \textbf{stacky points} which may be viewed
+heuristically as ``fractional points''. See Voight and
+Zureick-Brown for more thorough treatment of these definitions
+\cite[Chapter 5]{vzb:stacky}.
+
+If $P_1, \ldots, P_r$ are the stacky points of a stacky curve $\sx$,
+then we use $e_1,\ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
+of the stabilizer groups of the points with non-trivial
+stabilizers. We call $e_i$ the \textbf{stabilizer order} of $P_i$.
+In order to study objects associated with stacky curves, it is often
+useful to consider them in the context of ordinary schemes. 
+
+\begin{defn}
+Let $\sx$ be a stacky curve over $k$ with stacky points $P_1, \ldots,
+P_r$ with stabilizer orders $e_1,\ldots, e_r \in \BZ_{\geq 2}$.
+Let $X$ be a nonsingular projective (algebraic) curve over $k$ of
+genus $g$. Then $X$ is the \textbf{coarse space} associated to $\sx$
+if
+
+\[
+	\di \sx = \di X \oplus \left(\bigoplus_{i
+	= 1}^r \left\langle \frac{1}{e_i}P_i \right\rangle \right) \subset \BQ \otimes \di X
+\]
+\end{defn}
+
+We can equip stacky curves with a divisor $\Delta$ that is a 
+sum of distinct points each with trivial stabilizer. A divisor
+$\Delta$ of this form is called a \textbf{log divisor}. We use
+$\delta := \deg \Delta$ to refer to the degree of the log divisor.
+If $\sx$ has coarse space $X$ of genus $g$, then we say $\sx$ has
+\textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
+
+\todo{canonical divisor?}
+The pairs $(\sx, \Delta)$ are called \textbf{log stacky curves}
+and the study of their canonical rings is the main focus of
+the work by Voight and Zureick-Brown \cite{vzb:stacky}.
+For this paper, we consider \textbf{log spin curves} which are
+triples $(\sx, \Delta, \halfcan)$ where $\Delta$ is a log divisor
+and a divisor $\halfcan$ which satisfies the property that
+$2\halfcan \sim K_\sx + \Delta$. Such a divisor $\halfcan$
+is called a \textbf{half-canonical divisor} on $(\sx, \Delta)$
+and are sometimes referred to as theta-characteristics in other
+literature. We also use $\halfcan_X$ to refer to the half-canonical
+divisor associated with the coarse space $X$ of $\sx$, where
+$\halfcan_X$ is a divisor such that $2\halfcan \sim K_X$.
+Now we can define the analogy to canonical rings for
+log spin curves.
+
+\begin{defn}
+The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
+\[
+	R(\sx, \Delta, L) = \bigoplus_{d \geq 0} H^0(\sx, \sco(L)^{\otimes d})
+\]
+\end{defn}
+\todo{what about floors?}
+
+\noindent
+When the log spin curve is fixed, we usually use $R$ to represent
+$R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D) :=
+H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim H^0(\sx, \sco(D))$.
+
+\todo{do this part}
+Part on Kodaira-Spencer \cite{kodaira:complex-manifolds}.
+Use \cite[Lemma 10.2.1]{vzb:stacky} to obtain the desired translation to algebraic 
+geometry.
+
+
+\begin{enumerate}
 	\item Note that this result is independence of base field
 	\item background on Gr\"{o}bner bases
-	\item Notation $h^0 = \dim_k H^0$.
 	\item Why we have these fractions $\frac{e_i - 1}{2e_i}$ and why $e_i$ must be odd.
-	\item Include notation for $X$ as coarse space and $L_X$ the corresponding log half canonical divisor.
 	\item Notation for Gr\"{o}bner bases and orderings (include grlex, grevlex, and block order, as defined in \cite[Definition 8.1.1]{vzb:stacky})
-	\item Make sure to standardize the notation $\sx,\sx'$ for stacky curves, $L,L'$ for half canonical divisors, and $X,X'$ for (non-stacky) curves.
 	\item
 	
 	\begin{defn}
@@ -335,7 +390,6 @@ say $\sx$ has \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
 	\item Define $(R_\halfcan)_d$ to refer to the $d^{th}$ component.
 	\end{defn}
 \end{enumerate}
-
 
 	
 \begin{rem}
@@ -346,26 +400,6 @@ $ is even. because $2 \cdot \deg L = \deg \Delta + \deg \lfloor K
 In particular, we shall often use $\deg \Delta \neq 1$.
 \end{rem}
 
-
-
-\subsection{Junk}
-This is stuff that has been moved out of the introduction to possibly
-be retooled for this section.
-
-We can then consider the
-orbifold $\Gamma \backslash \bh$ over $\BC$. For example, in the
-case $\Gamma$ acts freely on $\bh$, $\Gamma \backslash \bh$ is a
-Riemann Surface over $\BC$. It may well be that $\Gamma \backslash
-\bh$ is not compact. Defining $\Delta$ as the divisor of cusps
-associated to $\Gamma$, we can form a space $\Gamma \backslash
-\bh^*$ which is a compactification of $\Gamma \backslash \bh,$ with
-associated {\bf divisor of cusps} $\Delta$.
-
-\subsection{Definitions}
-We reserve the notation $\halfcan$ for the half-canonical divisor
-where $2\halfcan \sim K_\sx + \Delta$.
-
-Here are some definitions.
 
 We define the notion of the saturation of a divisor, taken from
 Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
@@ -393,6 +427,19 @@ divisor $D$ on $\sx$. In this case, the saturation $s :=
 $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 \geq s$.
 \end{rem}
+
+\subsection{Junk}
+This is stuff that has been moved out of the introduction to possibly
+be retooled for this section.
+
+We can then consider the
+orbifold $\Gamma \backslash \bh$ over $\BC$. For example, in the
+case $\Gamma$ acts freely on $\bh$, $\Gamma \backslash \bh$ is a
+Riemann Surface over $\BC$. It may well be that $\Gamma \backslash
+\bh$ is not compact. Defining $\Delta$ as the divisor of cusps
+associated to $\Gamma$, we can form a space $\Gamma \backslash
+\bh^*$ which is a compactification of $\Gamma \backslash \bh,$ with
+associated {\bf divisor of cusps} $\Delta$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive lemmas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
