@@ -742,7 +742,7 @@ $V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
 	\item[(3)] there does not exist $h<i$ such that $\sum_{j=1}^h y_j^{a_j}\ge c_{h+1}$
 \end{enumerate}
 
-\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with $I$ generated over $I'$ in degrees at most $\max(2\beta, \beta + \tau)$ (where $\tau = \max(1, \max_{1\le i, m}(\deg(x_i)))$.  \todo{Peter: Part (c) is immediate from (a) and (b), so maybe it shouldn't be its own section.  On the other hand, the other parts already have a lot of information written down (especial part (b)), so its not clear where it should be put.  Maybe in a remark after the lemma?}
+\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with $I$ generated over $I'$ in degrees at most $\max(2\beta, \beta + \tau)$ (where $\tau = \max(1, \max_{1\le i, m}(\deg(x_i)))$).  \todo{Peter: Part (c) is immediate from (a) and (b), so maybe it shouldn't be its own section.  On the other hand, the other parts already have a lot of information written down (especial part (b)), so its not clear where it should be put.  Maybe in a remark after the lemma?}
 %\item If $\gin_\prec(I')=\initial_\prec(I')$ then $\gin_\prec(I)=\initial_\prec(I)$.
 %\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
 %	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
@@ -1320,14 +1320,17 @@ One can prove similar results in cases with different conditions on saturation, 
 
 \ssec{Raising Stabilizer Orders}
 \label{ssec:raise-orders}
-In this subsection, we aim to prove Lemma
-~\ref{lem:raise-stacky-order}, whose proof is almost identical to that of \cite[Theorem 8.5.7]{vzb:stacky}. In many cases, Lemma ~\ref{lem:raise-stacky-order} implies that if the main result, Theorem 
+In this subsection, we present Lemma
+~\ref{lem:raise-stacky-order}, whose proof is almost identical to one of Voight and Zureick-Brown \cite[Theorem 8.5.7]{vzb:stacky}.  Lemma ~\ref{lem:raise-stacky-order} implies that if the main result, Theorem 
 ~\ref{thm:main}, holds for a curve with signature
-$(g;e_1', \ldots, e_k', e_{k+1}' \ldots, e_r';\delta),$ with $e_{k+1}' = \cdots = e_r',$ then Theorem ~\ref{thm:main} also holds for a curve with
-signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta).$ In order to state Lemma
-~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}.
+$(g;e_1', \ldots, e_k', e_{k+1}' \ldots, e_r';\delta)$ with $e_{k+1}' = \cdots = e_r'$ satisfying certain admissibility (cf. Definition ~\ref{defn:admissible}), then Theorem ~\ref{thm:main} also holds for a curve with
+signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta)$. 
+%In order to state Lemma
+%~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in %Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}.
 
-One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and \cite[Definition 8.5.1]{vzb:stacky} is that in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ However, we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $L_X$ is not necessarily basepoint-free. Therefore, we will have to work with orders of zeros of poles relative to the divisor we are inducting from, instead of relative to the structure sheaf.
+One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
+%in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
+we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $H^0(X, L_X)$ may have no global sections.  We circumvent this issue by working with orders of zeros and poles relative to the divisor we are inducting from, instead of relative to the structure sheaf.
 
 \begin{defn}
 \label{defn:admissible}
