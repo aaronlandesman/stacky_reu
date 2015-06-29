@@ -226,7 +226,7 @@ canonical ring} of $(\sx,\Delta,L)$ is
 The main theorem of this paper is the following bound on the degree
 of generators and relations of arbitrary log spin canonical rings:
 
-
+\todo{State for even weight modular forms attributed to VZB.}
 \begin{thm}
 \label{thm:main}
 Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere?} so
@@ -945,6 +945,7 @@ If $\frac{\alpha}{\beta}=\frac{e_i-1}{2 e_ii}$ for some odd $3\le e_i\in \mathbb
 The generators in the previous lemma are generic if $\frac{\alpha}{\beta}\le 1$ (since there is at most one positive best lower approximation $\frac{c_i}{d_i}$ with $d_i=1$).  When $\frac{\alpha}{\beta}>1$, the choice of generators in degrees great than 1 is generic; furthermore, we can make the choice in degree 1 generic by choosing $\lfloor \frac{\alpha}{\beta}\rfloor$ linearly independent elements in degree 1 with pole at $P$ of order $\lfloor \frac{\alpha}{\beta}\rfloor$ rather than elements with poles of order $1, \ldots, \lfloor \frac{\alpha}{\beta}\rfloor$; this requires minor complications in the construction of generators of the ideal of relations.
 \end{rem}
 
+\iffalse{
 Lemma \ref{lem:sat-1} leads to the the following corollaries.
 \todo{do we want this here?}
 \begin{cor}\label{cor-gen-0-with-log}
@@ -953,17 +954,7 @@ If $(\sx, \halfcan, \Delta)$ is a stacky curve with signature $(g; e_1, \ldots, 
 \begin{proof}
 By remark \ref{rem:delta-not-1}, $\delta\ge 2$ so $\halfcan$ is linearly equivalent to an effective divisor.  Thus, we can recursively apply Lemma \ref{lem:sat-1} to prove the corollary.
 \end{proof}
-
-\todo{Something about fractional weight modular forms?}
-
-\begin{cor}
-Let $R_\halfcan$ be the fractional weight canonical ring associated to a fractional $\frac{2\alpha}{\beta}$-weight cusp forms with $\frac{\alpha}{\beta}$ in reduced form and $\beta\ge 3$, with signature $(g; e_1, \ldots, e_n; \delta)$ where $g=0$.  Then $R_\halfcan$ is generated in degrees at most $e = \max(e_i)$ with relations generated in degrees at most $2e$.
-\end{cor}
-\begin{proof}
-Let $K$ be the log canonical divisor of the curve $(\sx, \Delta)$ associated to the $\frac{2\alpha}{\beta}$ weight cusp forms.  We see that $\frac{\beta}{\alpha}\halfcan_\sx\sim K_\sx$, so the floors of each 
-
-Then $\beta \halfcan_\sx \sim \alpha K_{\sx}$ so $\beta\lfloor$ so $\beta | \alpha \deg(K_\sx)$; since $\gcd(\alpha, \beta)=1$, $\beta| \deg(K_\sx)\ge -2$.  Thus, since $\beta\ge 3$, $\deg(K_\sx)\ge 0$.  Thus $\deg($
-\end{proof}
+}\fi
 
 We now restrict our attention to log canonical rings of stacky curves.  The previous lemma accounts for the relevant induction cases when the spin canonical ring is already saturated in 1.  We complement it with the following two lemmas that allow us to inductively add points, under certain conditions when the spin canonical ring is saturated at degrees two and three.
 
