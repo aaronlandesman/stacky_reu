@@ -1399,12 +1399,12 @@ signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta)$.
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
 %in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
-we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $H^0(X, L_X)$ may have no global sections.  We circumvent this issue by working with orders of zeros and poles relative to the divisor we are inducting from, instead of relative to the structure sheaf.
+we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $H^0(X, L_X)$ may have no global sections.  We circumvent this issue by working with the orders of zeros and poles relative to the divisor we are inducting from, rather than relative to the structure sheaf.\todo{Peter: This last sentence is kind of awkward.  I changed ``instead of relative to the structure sheaf'' to ``rather than relative to the structure sheaf,'' but it can still be made to sound cleaner... I hope...}
 
 \begin{defn}
 \label{defn:admissible}
 Let $(\sx', \Delta, L'),(\sx, \Delta , L)$ be log spin
-curves, with the same stacky points $Q_1, \ldots, Q_r$. Let $J \subset
+curves, with the same course space $X$ and stacky points $Q_1, \ldots, Q_r$. Let $J \subset
 \{1, \ldots, r\}$. Suppose $e_i'+ 2 \chi_J (i) = e_i$ where
 
 $$\chi_J(i) = \begin{cases}
@@ -1413,24 +1413,21 @@ $$\chi_J(i) = \begin{cases}
 \end{cases}$$
 
 Let $R'$ be the canonical ring associated to $\sx'$. Define $(\sx',L',J)$
-to be {\bf admissible} if the $R'$ admits a presentation
+to be {\bf admissible} if $R'$ admits a presentation
 \begin{align*}
 	R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i, e_i'}]_{i \in J} \right)/I'
 \end{align*}
 
 \noindent
-with $y_{i, e_i'} \in R'$ for each $i \in J$ such that the following
-three conditions hold.
-
-
-\todo{Peter:I'm still kind of unhappy with the notation $y_{e_i'}$ because it is treating $e_i'$ like a formal object rather than a number. What I mean is if $e_1'=e_2'$ that a reader might reasonably interpret $y_{e_1'}$ the same as $y_{e_2'}$. Aaron: By all means, please suggest better notation and we can discuss it. However, I think your particular concern is well answered because we include the further subscript $i$. That is, $y_{1,e_1} \neq y_{2,e_2}$ even if $e_1 = e_2=5$, because $y_{1,5}$ and $y_{2,5}$ are different variables. Another thing to note here is that $e_i' = e_i + 2,$ so that the two will never be equal. Does this assuage your concern? Also, Further, when I read David's paper, he used this notation, and I was never confused by this notation.}
+with each $y_{i, e_i'}$ viewed in $R'$ through the image of this isomorphism and such that for each $i \in J$ such that the following
+three conditions hold:
 \begin{enumerate}
 	\item[(Ad-i)] First, 
 	\begin{align*}
 	\deg y_{e_i'} &= e_i'  &\text{ and } &&-\ord_{Q_i}^{\halfcan_X'}(y_{i, e_i'})
 		= \frac{e_i'- 1}{2}.
 	\end{align*}
-		\item[(Ad-ii)] Second, every generator $z \neq y_{i, e_i'}$	of $R'$ satisfies
+		\item[(Ad-ii)] Second, every generator $z \in \{x_1, \ldots, x_m\} \cup \{y_{j,e_ij'}: j\in J - \{i\} \}$ satisfies
 		\begin{align*}
 			\frac{-\ord_{Q_i}
 ^{\halfcan_X'}(z)}{\deg z} < \subhalf {e_i'}.
@@ -1448,9 +1445,9 @@ three conditions hold.
 \end{defn}
 
 \begin{rem}
-Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
+Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}. 
 \end{rem}
-
+\todo{Peter: I'm not sure how useful this remark is.  After seeing the definition of $S_{\sigma, J}(I,d)$ a reader will probably be a little mystified why it is a useful condition.  The inclusion of the relationship to something defined in VZB that also seems ad hoc and that they probably will not have seen may not be the most helpful use of this space.}
 
 %\begin{lem}\label{lem:n-3s-admissible}
 %Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ stacky points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
@@ -1466,12 +1463,12 @@ Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~
 %\end{itemize}
 %\end{proof}
 
-The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}. Lemma ~\ref{lem:admissible_inequality} can be thought of as an analog of \cite[Lemma 8.5.3]{vzb:stacky}
+The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}. Lemma ~\ref{lem:admissible_inequality} can be thought of as an analog of \cite[Lemma 8.5.3]{vzb:stacky}.  \todo{Peter: In general, I'm not sure how important it is for us to draw all the analogs between your definition and proofs and those of VZB.  As long as we make not in the section's introduction that they are similar, we might leave it out of the remaining transitions and remarks.}
 
 \begin{lem}
 \label{lem:admissible_inequality}
 Condition (Ad-ii) of Definition ~\ref{defn:admissible} implies the
-stronger condition that
+stronger condition \todo{Peter: How is it a stronger condition if it implied by that of (Ad-ii).  If $a\implies b$ then $b$ is by definition a weaker condition right?  I agree that the latter condition is somehow better, but it seems inaccurate to call it stronger.  I may be being over picky here...} that
 
 \begin{align*}
 	-\ord_{Q_i}
@@ -1514,10 +1511,10 @@ if they hold for $J$.
 
 \begin{rem}
 \label{rem:three-cases}
-For the purposes of our induction, carried out in Theorems ~\ref{thm:g-high-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-0-main}, we will often add in a single
+For our inductive arguments in Theorems ~\ref{thm:g-high-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-0-main}, we will often add in a single
 stacky point with stabilizer order $3$. Say $(\sx,\Delta,\halfcan)$ is a log spin
 curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
-\delta)$. We will need to deal with signatures $\sigma$ satisfying one of the following three cases, which we will soon refer to in Lemma ~\ref{lem:raise-stacky-order}:
+\delta)$, and our base cases include signatures $\sigma$ characterized by one of the following:
 \begin{enumerate}
 	\item $g = 0, e_1 = \cdots = e_r = 3, \delta = 0$ and $r \geq 5$
 	\item $g = 1, e_1 = \cdots = e_r = 3, \delta = 0,$ and $ r \geq 2$
@@ -1526,7 +1523,7 @@ curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
 \end{rem}
 
 We next come to Lemma ~\ref{lem:raise-stacky-order}, which is an
-analog of ~\cite[Theorem 8.5.7]{vzb:stacky}
+analog of ~\cite[Theorem 8.5.7]{vzb:stacky}.
 
 \begin{lem}
 \label{lem:raise-stacky-order}
