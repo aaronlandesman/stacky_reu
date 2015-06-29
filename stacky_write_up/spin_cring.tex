@@ -331,6 +331,7 @@ say $\sx$ has \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
 	\item \begin{defn}
 \label{}
 If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
+	\item Define $(R_\halfcan)_d$ to refer to the $d^{th}$ component.
 \end{defn}
 \end{enumerate}
 
@@ -398,18 +399,18 @@ $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 \section{Inductive Lemmas}
 \label{sec:induction}
 First we present several lemmas which provide the
-inductive steps in the proof of the main theorem, Theorem
+inductive steps in the proof of the main theorem: Theorem
 ~\ref{thm:main}. In Subsection ~\ref{ssec:add-points} we prove three lemmas
 %Lemma ~\ref {lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:sat-3}
-which describe the generators and relations of $R_{D + \frac{\alpha
-}{\beta}P},$ given those in $R_D,$ 
-where $X$ is a curve, \todo{Peter: I don't think we need to include this instantiation; $X$ always represents a curve throughout the paper, and we should say something to that effect in the background}
-$D \in \di
-X \otimes \BQ $ and  $\frac{\alpha}{\beta} \in \BQ.$ 
+which determine the generators and relations of $R_\halfcan=R_{\halfcan' + \frac{\alpha
+}{\beta}P}$ from those of $R_{\halfcan'}$, where
+%where $X$ is a curve, \todo{Peter: I don't think we need to include this instantiation; $X$ always represents a curve throughout the paper, and we should say something to that effect in the background}
+$\halfcan \in \di
+X \otimes \BQ $ and  $\frac{\alpha}{\beta} \in \BQ$. 
 In
 Subsection ~\ref{ssec:raise-orders}, we prove a inductive lemma allowing us to transfer information about the log half canonical ring of a curve with signature $(g; e_1', 
 \ldots, e_\tau'; 0)$ to that of a
-curve with the same log divisor, the same stacky points, and some subset of the $e_ i'$ incremented by $2$. 
+curve with the same log divisor, the same stacky points, and some subset of the $e_ i'$ incremented by $2$. \todo{Peter: I tried to edit this, but I can't figure out how to make this sentence work well.  There are too many clauses...}
 %While Lemma ~\ref{lem:sat-1} may be applied in a fairly general 
 %context, Lemma ~\ref{lem:raise-stacky-order} is more specific to 
 %half-canonical divisors, although even Lemma
@@ -526,7 +527,7 @@ curve with the same log divisor, the same stacky points, and some subset of the 
 %In this section, we prove various inductive statements under the following setup:
 %Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
 
-Before proving three inductive lemmas, we give a criteria to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m]\to R_D$.  \todo{Perhaps say which parts of the proofs of which future lemmas it will be used in?}
+Before proving three lemmas that allow us to inductively add points to the support of a divisor (i.e. $\halfcan\to \halfcan + \frac{\alpha}{\beta}P$), we give a criteria to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m]\to R_D$.  This will be used in the subsequent three lemmas of this section to show, in each case, that a chosen homogeneous ideal is in fact the ideal of relations.\todo{Peter:This last sentence is a little redundant}
 
 
 \begin{lem}\label{lem:relations_from_generators_induction} 
@@ -554,12 +555,12 @@ First, notice that $I'\subseteq I$ so
 	\initial(I)\supseteq \initial(I')k[x_1, \ldots, x_m, y_1, \ldots, y_n].
 \]
 
-Now, let $f\in T$.  Since $S$ forms a $k$-basis of $R_{\halfcan}$ over $R_{\halfcan'}$ by (1), we can write $f - (\sum_{g\in S'} C_g g)-r=0$ for some finite subset $S'\subseteq S_{\deg(f)}$, $C_g\in k$ for all $g\in S'$, and $r\in R_{\halfcan'}$.  This demonstrates that 
+Now, let $f\in T$.  Since $S$ forms a $k$-basis of $R_{\halfcan}$ over $R_{\halfcan'}$ by (1), we can write a relation $f - (\sum_{g\in S'} C_g g)-r=0$ for some finite subset $S'\subseteq S_{\deg(f)}$, $C_g\in k$ for all $g\in S'$, and $r\in R_{\halfcan'}$.  This demonstrates that 
 \begin{align*}
 	\initial(I) & \supseteq \langle T \rangle.
 \end{align*}
 
-Next, suppose $f\in S$.  Note that by (2) any polynomial $G$ in $x_1,\ldots, x_m, y_1, \ldots, y_n$ with initial term in $S$ cannot have a term in $T$.  Furthermore, since $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ by (1), any such polynomial does not map to an element of $R_{\halfcan'}$ (since it has a non-zero constant factor with $f$).  Thus, $G=0$ is not a relation, so $f\not\in \initial(I)$.  Therefore, 
+Next, suppose $f\in S$.  Note that by (2) any polynomial $G$ in $x_1,\ldots, x_m, y_1, \ldots, y_n$ with initial term in $S$ cannot have a term in $T$.  Furthermore, since $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ by (1), any such polynomial does not map to an element of $R_{\halfcan'}$ (since it has a non-zero constant factor with $f$). \todo{Peter: Is this abuse of notation okay?} Thus, $G=0$ is not a relation, so $f\not\in \initial(I)$.  Therefore, 
 \[
 	\initial(I)\subseteq R_\halfcan-S.
 \]
@@ -573,30 +574,31 @@ Since every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ is an element of
 To apply the previous lemma, we will need an appropriate monomial ordering.  \todo{Reference the lemma, instead of using previous, since things might get moved around}
 The following definition provides the necessary ordering for the subsequent lemma (Lemma \ref{lem:sat-1}).
 \begin{defn}
-Suppose $\halfcan$ is a divisor of $X$ such that $R_\halfcan$ is generated $x_1, \ldots x_m$.  Then we have a map $\phi: k[z_1, \ldots z_m]\to R_\halfcan$ given by $z_i\mapsto x_i$.  If $P$ is a point in $X$, then $\phi$ defines a graded $P$ reverse lexicographic order {\bf{graded P-revlex}} on $k[z_1, \ldots, z_m]$ as follows: 
-If $f=\prod_{i=1}^m {x_i}^{q_i}\ne g=\prod_{i=1}^m {x_i}^{r_i}$, then $f\prec g$ if one of the following holds:
+Suppose $\halfcan$ is a divisor of $X$ such that $R_\halfcan$ is generated by $x_1, \ldots x_m$.  Then we have a map $\phi$ from the polynomial ring $k[z_1, \ldots z_m]$ to $R_\halfcan$ given by $z_i\mapsto x_i$. \todo{Do we need to instantiate the $z_i$.  If so, what is the best way to do so.  Saying for indeterminates $z_1, \ldots, z_m$ seems excessive.}  If $P$ is a point in $X$, then $\phi$ defines a graded $P$ reverse lexicographic order {\bf{graded P-revlex}} on $k[z_1, \ldots, z_m]$ as follows: 
+If $f=\prod_{i=1}^m {z_i}^{q_i}\ne g=\prod_{i=1}^m {z_i}^{r_i}$, then $f\prec g$ if one of the following holds:
 \begin{enumerate}
 \item $\deg(f) < \deg(g)$
 \item $\deg(f) = \deg(g)$ and $-\ord_P(f) > -\ord_P(g)$
 \item $\deg(f) = \deg(g)$, $-\ord_P(f) = -\ord_P(g)$, and $q_i<r_i$ for the largest $i$ such that $q_i\ne r_i$
 \end{enumerate}
 \end{defn}
-\noindent One can easily verify that these satisfy the conditions of an ordering.  
+\noindent One can easily verify graded $P$-reflex these satisfy the conditions of an ordering.  
 
-Before stating the subsequent lemma, which improves O'Dorney's bounds on generators and relations over $\mathbb{P}^1$ \cite[Theorem 8]{dorney:canonical} in the case of effective divisors, we first introduce some of his notation \cite{dorney:canonical}. 
+Before stating the subsequent lemma, which improves O'Dorney's bounds on generators and relations over $\mathbb{P}^1$ \cite[Theorem 8]{dorney:canonical} in the case of effective divisors, we first introduce some of his notation \cite{dorney:canonical}. \todo{Peter: This sentence is very ugly.  On the other hand, I feel we need to say something about O'Dorney before the following definition, or else it is completely unmotivated.  How should we state it better?  Also note that in its current form this sentence neglects that we also extend the result to higher genus; it was too difficult to have this in though.}
 
 \begin{defn}\label{den:lower-approximation}
-If $\frac{\alpha}{\beta}\in \BQ$ (written in reduced form with $\alpha \in \mathbb{Z}, \beta> \mathbb{N}$), then $\frac{c}{d}$ (written in reduced form) is a {\bf{best lower approximation}} to $\frac{\alpha}{\beta}$ if there is no $\frac{c'}{d'}\in \mathbf{Q}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$. 
+If $\frac{\alpha}{\beta}\in \BQ$, then $\frac{c}{d}$ (written in reduced form with $c\in \mathbb{Z}, d\in \mathbb{N}$) is a {\bf{best lower approximation}} to $\frac{\alpha}{\beta}$ if there does not exist any $\frac{c'}{d'}\in \mathbf{Q}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$. 
 \end{defn}
 Moreover, if $\frac{\alpha}{\beta}\ge 0$, then the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a sequence
 \[
 	0=\frac{c_0}{d_0} < \frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{\alpha}{\beta}.
 \]
-Refer to figure \ref{fig:s14/5-lattice} for an example of the positive best lower approximations of $\frac{\alpha}{\beta}=\frac{14}{5}$.
+Refer to figure \ref{fig:s14/5-lattice} for an example of the positive best lower approximations of $\frac{\alpha}{\beta}=\frac{14}{5}$.  
 
+\todo{Peter: Do we want this as an [H] figure; this seems a little non-standard and can create problems with display.  Nonetheless, I copied this format to match the figure in a later section}
 \begin{figure}[H]\label{fig:s14/5-lattice}
 \includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
-\caption{This figure illustrates each non-negative best lower approximation of $\frac{14}{5}$ with a ``$\bullet$'' and each other lattice point below $5y=14x$ with a ``$\circ$''.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}
+\caption{This figure shows each non-negative best lower approximation of $\frac{14}{5}$ with a ``$\bullet$'' and each other lattice point below $5y=14x$ with a ``$\circ$''.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}
 \end{figure}
 
 We can now prove our first adding-points lemma.
@@ -604,8 +606,7 @@ We can now prove our first adding-points lemma.
 \begin{lem}
 \label{lem:sat-1}
 Let $X$ be a genus $g$ curve and $\halfcan' \in \di X \otimes \BQ$
-satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}$ meaning that $R_{\halfcan'}$ has generators
-$u, x_1, \ldots, x_m$ in degree at most $\sigma$, with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
+satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}$, meaning we can choose generators $u, x_1, \ldots, x_m$ of $R_{\halfcan'}$ in degree at most $\sigma$ for some $\sigma\in \mathbb{N}$, with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
 for some $\alpha,\beta \in \mathbb{N}$ such that
 \begin{equation}
 \label{eqn:deg1_sat_ind_dim}
@@ -637,7 +638,7 @@ If $I'$ and $I$ are the ideal of relations of $k[u, x_1, \ldots, x_m]\to R_{\hal
 \end{align*}
 where 
 $V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
- and $U_i$ is the set of monomials of the form $\prod_{j=1}^{i} y_j^{a_j}$ with $a_j\in \mathbb{Z}^{\ge 0}, a_i\ne 0$ such that
+ and $U_i$ is the set of monomials of the form $\prod_{j=1}^{i} y_j^{a_j}$ with $a_j\in \mathbb{Z}^{\ge 0}$ such that
 \begin{enumerate}
 	\item[(1)] $\sum_{j=1}^i a_j c_j \ge c_{i+1}$\\
 	\item[(2)] there does not exist $((b_1, \ldots b_i)\ne (a_1, \ldots a_i)$ with all $b_j\le a_j$ and $\sum_{j=1}^i b_jc_j\ge c_{i+1})$ \\
@@ -658,13 +659,13 @@ Equation ~\ref{eqn:deg1_sat_ind_dim}, for any $d
 \in \mathbb{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
-	h^0 (X, d \halfcan ) = h^0(X, d\halfcan') + d\frac{\alpha}{\beta}
+	h^0 (X, d \halfcan ) = h^0(X, d\halfcan') + \lfloor d\frac{\alpha}{\beta}\rfloor
 \]
 
 \noindent
 so in $H^0 (X, \lfloor d\halfcan \rfloor)$ we can find elements with pole
 order $i$ at $P$ for any $i \in \{0, \ldots, \lfloor d \frac{\alpha}{
-\beta} \rfloor \}$. We will use positive best lower approximations to
+\beta} \rfloor \}$. We will the use positive best lower approximations to
 construct the generators $\{y_i\}$ as described in the lemma's statement.
 
 Let 
@@ -675,32 +676,30 @@ Let
 
 \noindent
 be the positive best lower approximations of $\frac{
-\alpha}{\beta}$ as described in this lemma's statement. Note that elements of $H^0(X, d\halfcan)$ have poles of
-orders ranging from 0 to $\lfloor d_i \frac{\alpha}{\beta}\rfloor =
-c_i $ at $P$.  Moreover, a set of $\lfloor d_i \frac{\alpha}{\beta}\rfloor$ elements in $(R_{D})_{d_i}$ with pole orders $1, \ldots, \lfloor
-d_i \frac{\alpha}{\beta} \rfloor$ are linearly independent over $(R_{\halfcan'})_d$, and thus form a $k$-basis for
+\alpha}{\beta}$ as described in this lemma's statement. Note that a set of $\lfloor d_i \frac{\alpha}{\beta}\rfloor$ elements in $(R_{\halfcan})_{d_i}$ with respective pole orders $1, \ldots, \lfloor
+d_i \frac{\alpha}{\beta} \rfloor$ (viewed as sections of $\so_{L'}$) are linearly independent over $(R_{\halfcan'})_d$, and thus by dimension counting form a $k$-basis for
 $(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.
 
-For any $j, i \in \mathbb{N}$, with $i < j$, we have $\frac{c_i}{d_i} > \frac{c_j}{d_j}$. So, for any $z_1, \ldots, z_n$ with $\deg(z_j)<d_i$ \todo{are the $i$ and $j$ mismatched?} for all $z_j$, \todo{It might be clearer to say for all $j \in \{1,\ldots, ?\},$ since the subscript is really want is changing, or instead for all $j$ with $1 \leq j \leq ?$ } $\prod_{j=1}^n z_j$ must satisfy \todo{It seems like each $z_j$ must satisfy this, instead of the product satisfying this}
-\todo{In the next equations, are we viewing these as rational functions on the structure sheaf or on $L'$, what point is the order of $z_j$ taken with respect to?}
+%For any $1\le i < j \le n$, we have $\frac{c_i}{d_i} < \frac{c_j}{d_j}$.  
+Choose a positive best lower approximation $\frac{c_i}{d_i}$.  Let $z_1, \ldots, z_r \in R_\halfcan$ with $\deg(z_j)<d_i$ for all $j\in \{1, \ldots r\}$.  Then for each $z_j$,
 \[
-	\frac{-\ord_P(z_i)}{\deg(z_i)} < \frac{c_i}{d_i},
+	\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)} < \frac{c_i}{d_i},
 \]
 
 \noindent
-so we have the pole order of $\prod_{j=1}^n z_j$ is \todo{what is the following sum taken over?}
+so
 \[
-	\sum_{j=1}^n -\ord(z_j) < c_i .
+	-\ord^{\halfcan'}_P(\prod_{j=1}^n z_j) = \sum_{j=1}^n -\ord^{\halfcan'}_P(z_j) < c_i .
 \]
 
 \noindent
 Thus, the elements of $(R_{\halfcan})_{d_i}$ with pole order $c_i$ at $P$ are not generated by 
 lower degrees. 
 Choose some $y_i \in(R_{
-\halfcan})_{d_i}$ with $-\ord_{P}(y_i)=c_i$.  Note that this choice is generic if $d_i>1$ and if $d_i=1$ and $c_i=\lfloor \frac{\alpha}{\beta}\rfloor$. 
+\halfcan})_{d_i}$ with $-\ord_{P}(y_i)=c_i$.  Note that this choice is generic if $d_i>1$ or $d_i=1$ and $c_i=\lfloor \frac{\alpha}{\beta}\rfloor$. 
 
 Suppose $c,d\in \mathbb{N}$ with $d\le \beta$ and $\frac{c}{d} \le \frac{\alpha}{
-\beta}$ is not a best lower approximation. Then choose
+\beta}$ is not a best lower approximation. Then choose a
 best lower approximation $\frac{c_i}{d_i}$ with $c_i$ maximal such that $d_i< d$.  This implies $\frac{c_i}{d_i}\ge \frac{c}{d}$ so 
 %  The argument goes $c_i d \ge c d_i$
 % implies c_i \frac{d}{d_i} \ge c
@@ -712,7 +711,7 @@ best lower approximation $\frac{c_i}{d_i}$ with $c_i$ maximal such that $d_i< d$
 	c_i +\lfloor (d-d_i) \frac{\alpha}{\beta} \rfloor \ge c.
 \]
 
-This suggests how we can recursively define a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$.  Define 
+Using this fact, we can recursively define a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$.  Define 
 \[
 	S_0 = \{u^l : l\in \mathbb{Z}^{\ge 0}\}
 \]
