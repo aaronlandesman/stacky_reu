@@ -219,7 +219,7 @@ As is done in Voight and Zureick-Brown \cite{vzb:stacky} one may view a stacky c
 The central object of study in this paper is the {\bf log spin
 canonical ring} of $(\sx,\Delta,L)$ is
 \begin{align*}
-	R(\sx,\Delta,L) = \bigoplus_{d \geq 0} H^0(\sx,\sco(L)^{\otimes d})
+	R(\sx,\Delta,L) = \bigoplus_{d \geq 0} H^0(\sx,\lfloor d L \rfloor)
 \end{align*}
 
 \noindent
@@ -234,7 +234,7 @@ that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \sco(L)^{\otimes d})
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d L \rfloor)
 \end{align*}
 
 \noindent
@@ -348,7 +348,6 @@ $\delta := \deg \Delta$ to refer to the degree of the log divisor.
 If $\sx$ has coarse space $X$ of genus $g$, then we say $\sx$ has
 \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
 
-\todo{canonical divisor?}
 The pairs $(\sx, \Delta)$ are called \textbf{log stacky curves}
 and the study of their canonical rings is the main focus of
 the work by Voight and Zureick-Brown \cite{vzb:stacky}.
@@ -359,7 +358,7 @@ $2\halfcan \sim K_\sx + \Delta$. Such a divisor $\halfcan$
 is called a \textbf{half-canonical divisor} on $(\sx, \Delta)$
 and are sometimes referred to as theta-characteristics in other
 literature. We also use $\halfcan_X$ to refer to the half-canonical
-divisor associated with the coarse space $X$ of $\sx$, where
+divisor associated with the coarse space $X$ of $\sx$, i.e.
 $\halfcan_X$ is a divisor such that $2\halfcan \sim K_X$.
 Now we can define the analogy to canonical rings for
 log spin curves.
@@ -367,15 +366,15 @@ log spin curves.
 \begin{defn}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, L) = \bigoplus_{d \geq 0} H^0(\sx, \sco(L)^{\otimes d})
+	R(\sx, \Delta, L) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d L \rfloor)
 \]
 \end{defn}
 \todo{what about floors?}
 
 \noindent
-When the log spin curve is fixed, we usually use $R$ to represent
-$R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D) :=
-H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim H^0(\sx, \sco(D))$.
+When the log spin curve is fixed, we usually use $R$ or $R_L$ to
+represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D)
+:= H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim H^0(\sx, \sco(D))$.
 
 \todo{do this part}
 Part on Kodaira-Spencer \cite{kodaira:complex-manifolds}.
@@ -386,17 +385,29 @@ geometry.
 \begin{enumerate}
 	\item Note that this result is independence of base field
 	\item background on Gr\"{o}bner bases
-	\item Why we have these fractions $\frac{e_i - 1}{2e_i}$ and why $e_i$ must be odd.
 	\item Notation for Gr\"{o}bner bases and orderings (include grlex, grevlex, and block order, as defined in \cite[Definition 8.1.1]{vzb:stacky})
-	\item
-	
-	\begin{defn}
-	\label{def:order-sup}
-	If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
-	\item Define $(R_\halfcan)_d$ to refer to the $d^{th}$ component.
-	\end{defn}
 \end{enumerate}
 
+Define $(R)_d$ to refer to the $d^{th}$ component
+
+\begin{defn}
+\label{def:order-sup}
+If $z$ is a rational section of $\sco(D)$ denote the order of
+zero of $z$ at $P$ by $\ord_P^D(z)$.
+\end{defn}
+
+
+\begin{rem}
+\label{rem:odd-denom}
+Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that
+\[
+	L = \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i + \sum_{i = 1}^{s} a_i P_i
+\]
+
+\noindent
+where $a_i \in \BZ$ and $e_i$ are odd.
+\todo{give reason}
+\end{rem}
 	
 \begin{rem}
 \label{rem:delta-not-1}
@@ -1880,7 +1891,7 @@ that $\sx$ has signature $\sigma = (g; e_1, \ldots, e_r; \delta)$. Then the
 canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \sco(L)^{\otimes d})
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d L \rfloor)
 \end{align*}
 
 \noindent
@@ -2065,7 +2076,7 @@ We now have all the tools necessary to prove our main theorem, ~\ref{thm:main} i
 Let $(\sx, \Delta, \halfcan)$ log spin curve so that $\sx$ has signature $\sigma = (1; e_1, \ldots, e_r; \delta)$.
 If $g = 1$, then the canonical ring
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \lfloor d L \rfloor)
 \end{align*}
 
 \noindent
@@ -2598,7 +2609,7 @@ so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
 Then, the canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \sco(L)^{\otimes d})
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \lfloor d L \rfloor)
 \end{align*}
 
 \noindent
