@@ -327,11 +327,13 @@ say $\sx$ has \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
 	\item Include notation for $X$ as coarse space and $L_X$ the corresponding log half canonical divisor.
 	\item Notation for Gr\"{o}bner bases and orderings (include grlex, grevlex, and block order, as defined in \cite[Definition 8.1.1]{vzb:stacky})
 	\item Make sure to standardize the notation $\sx,\sx'$ for stacky curves, $L,L'$ for half canonical divisors, and $X,X'$ for (non-stacky) curves.
-	\item \begin{defn}
-\label{}
-If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
+	\item
+	
+	\begin{defn}
+	\label{def:order-sup}
+	If $z$ is a rational section of $\sco(D)$ denote the order of zero of $z$ at $P$ by $\ord_P^D(z)$.
 	\item Define $(R_\halfcan)_d$ to refer to the $d^{th}$ component.
-\end{defn}
+	\end{defn}
 \end{enumerate}
 
 
@@ -613,7 +615,7 @@ Let $X$ be a genus $g$ curve and $\halfcan' \in \di X \otimes \BQ$
 satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d\in \mathbb{N}$, meaning we can choose generators $u, x_1, \ldots, x_m$ of $R_{\halfcan'}$ in degree at most $\sigma$ for some $\sigma\in \mathbb{N}$, with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
 for some $\alpha,\beta \in \mathbb{N}$ such that
 \begin{equation}
-\label{eqn:deg1_sat_ind_dim}
+\label{eqn:deg1-sat-ind}
 	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
 	\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor \text{ for all } d \in \mathbb{
 	N} \text{ such that } d \ge \frac{\beta}{\alpha},
@@ -659,7 +661,7 @@ $V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
 \end{lem}
 \begin{proof}
 By
-Equation ~\ref{eqn:deg1_sat_ind_dim}, for any $d
+Equation ~\ref{eqn:deg1-sat-ind}, for any $d
 \in \mathbb{N}$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
@@ -1176,7 +1178,7 @@ we can argue similarly to Lemma $\ref{lem:sat-1}$ that $S$ and $T$ along with $\
 %
 %\begin{proof}
 %We can prove this by induction. As a base case, let $D\sim 0$. Then $R_D\cong k[x]$ which is generated in degree 1 with no relations, satisfying the inductive hypothesis.
-%Now, suppose the result is proven for all effective $D$ with support at most $r$ points; then if $D'\sim \sum_{i = 1}^{r+ 1} \frac{\alpha_i}{\beta_i}$, we set $D=\sum_i^{r} \frac{\alpha_i}{\beta_i}$. By hypothesis, $R_D$ is generated in degree at most $\max_{1\le i\le r}(\beta_i)$ with relations generated in degree at most 2$\max_{1\le i\le r}(\beta_i)$. Since $D$ is effective, the condition of equation ~\ref{eqn:deg1_sat_ind_dim} is met, so by remark ~\ref{rem:deg1_sat_ind_gen_rel_degrees} of Lemma ~\ref{lem:deg1_sat_ind}, $R_{D'}$ is generated in degree at most $\max(\beta_i)$ with relations generated in degree at most $2\max(\beta_i)$.
+%Now, suppose the result is proven for all effective $D$ with support at most $r$ points; then if $D'\sim \sum_{i = 1}^{r+ 1} \frac{\alpha_i}{\beta_i}$, we set $D=\sum_i^{r} \frac{\alpha_i}{\beta_i}$. By hypothesis, $R_D$ is generated in degree at most $\max_{1\le i\le r}(\beta_i)$ with relations generated in degree at most 2$\max_{1\le i\le r}(\beta_i)$. Since $D$ is effective, the condition of equation ~\ref{eqn:deg1-sat-ind} is met, so by remark ~\ref{rem:deg1_sat_ind_gen_rel_degrees} of Lemma ~\ref{lem:deg1_sat_ind}, $R_{D'}$ is generated in degree at most $\max(\beta_i)$ with relations generated in degree at most $2\max(\beta_i)$.
 %\end{proof}
 %
 %\todo{do these corollaries fit here?}
@@ -2591,7 +2593,7 @@ $R(\sx, \delta, \halfcan)$ is generated up to degree $e :=
 $2e$.
 
 If $r \leq 5$ and $\sigma$ is not one of the exceptional cases,
-then we may similarly apply Lemma ~\ref{g-0-admissible-cases} and
+then we may similarly apply Lemma ~\ref{lem:g-0-admissible-cases} and
 Corollary ~\ref{cor:raise-stacky-order} to an appropriate base case
 from Table ~\ref{table:g-0-base-cases} and deduce that $R(\sx,
 \delta, \halfcan)$ is generated up  to degree $e := \max(5, e_1,
@@ -2611,8 +2613,8 @@ If $X$ is a curve of genus $g \geq 2$ and $L \in \di X$ with $2L \sim K,$ the id
 \end{conjecture}
 Note that in the case $\dim L \geq 2$ and $L$ is basepoint-free, by Neves ~\cite[Proposition III.12]{neves:halfcan}, $I_L$ is generated in degree at most 8. Additionally, if Conjecture ~\ref{conj:relations-10} were true, by Theorem ~\ref{thm:main} we would immediately obtain the following corollary, providing a more concise statement than that of Theorem ~\ref{thm:main}.
 \begin{cor}
-\label{}
-Let $(\sx,\Delta,L)$ be a log spin curve over a perfect field $k$ with signature $(g;e_1,\ldots, e_r;\delta)$ and let $R_L$ be the log canonical ring. Then, $R_L$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e,$ apart from a finite list of exceptions.
+\label{cor:main-refined}
+Let $(\sx,\Delta,L)$ be a log spin curve over a perfect field $k$ with signature $(g;e_1,\ldots, e_r;\delta)$ and let $R_L$ be the log canonical ring. Suppose Conjecture ~\ref{conj:relations-10}. Then, $R_L$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e,$ apart from a finite list of exceptions.
 \end{cor}
 	\item Another direction for further research is to extend the results of this paper to fractional modular forms, just as this paper extends the results of Voight and Zureick-Brown \cite{vzb:stacky} from even weight modular forms to odd weight modular forms. In particular, we pose the following question:
 \begin{question}
@@ -2620,14 +2622,14 @@ Let $(\sx,\Delta,L)$ be a log spin curve over a perfect field $k$ with signature
 If $\sx$ is a stacky curve and $D \in \di \sx$ with $nD \sim K,$ where $K$ is the canonical divisor of $\sx$, can one bound the degrees of generators and relations of $R_D$?
 \end{question}
 Note that that the above question is answered affirmatively in the case that $\sx$ has signature $(0;e_1,\ldots, e_r;\delta)$ in \todo{Aren't we supposed to mention fractional weight modular forms after an early inductive lemma? Can we include this as a remark somewhere?} \todo{Include reference to the fractional weight modular forms remark, in this remark, we should probably reference \cite[Remark 10.2.3]{vzb:stacky}}. In fact, we show that if $D \in \di \sx$ so that $nD = K$ for some $n \geq 2$, then $R_D$ is generated in degree at most $e=\max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e$. Additionally, Lemma ~\ref{lem:raise-stacky-order} naturally extends to the setting fractional weight modular forms, as noted in Remark ~\ref{rem:raise-fractional-order}.
-	\item In Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky}, the notion of a generic initial ideal is defined, which encapsulates the idea of whether the relations for $R_L$ are generically chosen, in a precise sense. The proof of Theorem ~\ref{thm:main} decidedly does not yield a generic initial ideal, as generators and relations are constructed in a highly nongeneric manner. In particular, Lemma ~\ref{lem:raise-order-stacky} constructs generators with non-maximal pole orders at certain points, making the relations non-generic. 
+	\item In Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky}, the notion of a generic initial ideal is defined, which encapsulates the idea of whether the relations for $R_L$ are generically chosen, in a precise sense. The proof of Theorem ~\ref{thm:main} decidedly does not yield a generic initial ideal, as generators and relations are constructed in a highly nongeneric manner. In particular, Lemma ~\ref{lem:raise-stacky-order} constructs generators with non-maximal pole orders at certain points, making the relations non-generic. 
 \begin{question}
-\label{}
+\label{ques:generic-initial}
 If $(\sx,\Delta,L)$ is a log spin curve with signature $\sigma$, does there exist a function $\sigma \mapsto d(\sigma)$ so that the generic initial ideal {\rm(} with some specified ordering{\rm)} is generated in degree at most $d(\sigma)$? Can one write down the generic initial ideal explicitly?
 \end{question}
 	\item As noted in Remark ~\ref{rem:explicit-generators}, the proof of Theorem ~\ref{thm:main} given in this paper gives an explicit procedure for computing the generators and relations of $R_L$ when the genus of $\sx$ is $0$ or $1$.
 \begin{question}
-\label{}
+\label{ques:algorithm}
 Can one give an algorithm for explicitly computing the generators and relations for an arbitrary genus $g \geq 2$ curve?
 \end{question}
 Suppose the generators and relations of $R_{L_X}$ are known, where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the coarse space of $\sx$, and $L_X \leq L$ is a half canonical divisor of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an algorithm for determining the generators of $L$. This raises the following Petri-like question:
