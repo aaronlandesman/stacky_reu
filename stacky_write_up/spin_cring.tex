@@ -700,7 +700,7 @@ ideal of $I$.
 
 \ssec{Admissibility}
 
-In this subsection, we present a definition of admissibility, which is quite similar to that defined in Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky}, but is adapted to the case of spin-canonical divisors.
+In this subsection, we present a definition of admissibility, which is quite similar to that defined in Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky}, but is adapted to the case of spin canonical divisors.
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
 %in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
@@ -756,10 +756,11 @@ three conditions hold:
 \section{Examples}
 \label{sec:examples}
 
+In this section, we compute several examples of computing presentations for spin canonical rings. In several cases, we also check certain triples are admissible, as defined in Definition ~\ref{defn:admissible}. In addition to demonstrating the algorithmic procedure for computing presetations, these examples will also serve as useful base cases for our inductive proof of Theorem ~\ref{thm:main}.
 
 \begin{example}
 \label{eg:base-1-0}
-Let $(\sx',0,\halfcan')$ be a log stacky curve of genus $g = 1$. In the case $\halfcan' = 0,$ it is immediately clear that $R_{\halfcan'} \cong k[x]$ with $x$ a generator in degree 1.
+Let $(\sx',0,L')$ be a log stacky curve of genus $g = 1,$ with $\halfcan' = 0$. In the case $\halfcan' = 0,$ it is immediately clear that $R_{\halfcan'} \cong k[x]$ with $x$ a generator in degree 1.
 \end{example}
 
 
@@ -942,7 +943,8 @@ Finally, to check (Ad-iii), note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Th
 \begin{example}
 \label{eg:exception-1-5}
 Let $(\sx', 0, L')$ be a log spin curve of genus 1 so that $L' = P - Q + \frac{2}{5}P_1.$ Let $u \in (P_L)_1$ be any nonzero element. We obtain $\di u|_{P_1} = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch, $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_{P_1} = -P_1$. Then, we claim there is some $\alpha \in k$ so that
-$R_L \cong k[u, y_3, y_5]/(y_3^4 - \alpha uy_5^2).$
+
+$$R_L \cong k[u, y_3, y_5]/(y_3^4 - \alpha uy_5^2).$$
 
 In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. The verification is analogous to Example ~\ref{ex:base-377} and is omitted.
 
