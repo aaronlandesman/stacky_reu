@@ -262,7 +262,7 @@ the degree of generators and relations of log spin canonical rings:
 \todo{State for even weight modular forms attributed to VZB.}
 \begin{thm}
 \label{thm:main}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere?} so
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, so
 that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
 log spin canonical ring
 
@@ -281,6 +281,12 @@ of exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
 for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
 for signatures with $g = 0$.
 \end{thm}
+
+\begin{rem}
+In fact, the theorem only needs to assume that the stacky curve
+is separably rooted, i.e. the residue field at each stacky point
+is separable.
+\end{rem}
 
 This theorem is proven in three different genus cases, each of
 which use similar inductive processes. The genus $g \geq 2$ case is
@@ -364,13 +370,16 @@ geometrically-connected Deligne-Mumford stack of dimension $1$ over
 $k$ with a dense open subscheme. A stacky curve is \textbf{tame} if
 its stabilizers are coprime to char $k$. Throughout this paper,
 stacky curves will be assumed to be tame and $k$ will always be
-algebraically closed. The language of stacks will be omitted in
+algebraically closed. We also assume that the stacky curves are
+separably rooted, i.e. the residue field of each stacky points
+is separable. The language of stacks will be omitted in
 this paper, as it is sufficient to view stacky curves and related
 objects $\sx$ as a scheme whose associated divisor group allows for
 a finite number of \textbf{stacky points} which may be viewed
 heuristically as ``fractional points''. See Voight and
 Zureick-Brown for more thorough treatment of these definitions
-\cite[Chapter 5]{vzb:stacky}. \todo{again, not quite viewing as a scheme}
+\cite[Chapter 5]{vzb:stacky}. \todo{again, not quite viewing as a
+scheme}
 
 If $P_1, \ldots, P_r$ are the stacky points of a stacky curve $\sx$,
 then we use $e_1,\ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
