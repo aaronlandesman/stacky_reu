@@ -206,9 +206,10 @@ with multiplication structure corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X \cong \proj R$. When $g \geq 2$, Petri's
 theorem gives generators and relations for $R(X, K_X)$ showing that
 in most cases $R(X, K_X)$ is generated in degree 1 with relations
-in degree 2 (one demonstration is given by Saint-Donat\cite[p. 157]{saint-donat:proj}). This has the
-pleasant geometric consequence that all such canonically embedded
-curves are scheme theoretically cut out by quadratic equations.
+in degree 2 (one demonstration is given by Saint-Donat\cite[p. 157]
+{saint-donat:proj}). This has the pleasant geometric consequence \todo{maybe use a different ref}
+that all such canonically embedded curves are scheme theoretically 
+cut out by quadratic equations.
 
 \todo{Peter: I think we need something about odd weight modular 
 forms before going right into stacks.}
@@ -263,7 +264,7 @@ the degree of generators and relations of log spin canonical rings:
 \todo{State for even weight modular forms attributed to VZB.}
 \begin{thm}
 \label{thm:main}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere? No, use seperable stacky points} so
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere? No, use separable stacky points} so
 that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
 log spin canonical ring
 
@@ -604,11 +605,8 @@ ordering on $k[x_{d_1, 1}, \ldots, x_{d_n, n}] \otimes k[y_{d_1', 1},
 \ldots, y_{d_m', m}]$, we define $\alpha \succ \beta$ if
   \begin{enumerate}
 	\item[(i)] $\deg \alpha  > \deg \beta$ or
-  \item[(ii)] $\deg \alpha = \deg \beta$ and 
-    \begin{enumerate}
-    \item $\alpha_y \succ_y \beta_y$ or
-    \item $\alpha_y = \beta_y$ and $\alpha_x \succ_x \beta_x$
-    \end{enumerate}
+  \item[(ii)] $\deg \alpha = \deg \beta$ and $\alpha_y \succ_y \beta_y$ or
+	\item[(iii)] $\deg \alpha = \deg \beta$ and $\alpha_y = \beta_y$ and $\alpha_x \succ_x \beta_x$
   \end{enumerate}
 \end{defn}
 
