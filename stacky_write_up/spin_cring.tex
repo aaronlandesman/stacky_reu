@@ -243,12 +243,24 @@ and {\bf stacky points} (also called {\bf{fractional points}}) $P_1,
 	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
 	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
-\todo{Peter: Would it be better to say $Div(\sx)=(Div(X))[\frac{1}{e_i}P_i]_{1\le i\le r}$ or something like that? Aaron: I agree what is written isn't actually correct, maybe we should say the free direct sum over points not in the $P_i$, together with the fractional points. It's not a localization because we don't want to invert $P_i$.}
-As is done in Voight and Zureick-Brown \cite{vzb:stacky} stacky curves may be formalized as stacks, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of stacky points. \todo{I don't know if this is a good statement to make.  We aren't really viewing $\sx$ as a scheme.  Rather we're are determining information about its canonical rings through knowledge of scheme data.}  A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
+
+
+As is done in Voight and Zureick-Brown \cite{vzb:stacky} stacky
+curves may be formalized as stacks, but for the purposes of this
+paper, it suffices to view $\sx$ as a scheme whose associated
+divisor group allows a finite number of stacky points.
+\todo{I don't know if this is a good statement to make.  We aren't
+really viewing $\sx$ as a scheme.  Rather we're are determining 
+information about its canonical rings through knowledge of scheme 
+data.}
+
+A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where
+$\Delta \in \di X$ is an effective divisor and $2\halfcan = K _X +
+\Delta + \sum_{i=1}^{r} \subhalf{e_i} P_i.$
 The central object of study in this paper is the {\bf log spin
 canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx,\lfloor d \halfcan \rfloor)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan)
 \end{align*}
 
 In particular, we would like to bound the degrees in which the
@@ -257,9 +269,10 @@ $\sx$ be a stacky curve with signature $\sigma = (g; e_1, \ldots,
 e_r; \delta)$. The application of O'Dorney's work to log spin
 canonical rings gives a large bound for the genus zero case in
 terms of least common multiples of the $e_i$'s \cite[Chapter 5]
-{dorney:canonical}. Voight and Zureick-Brown bounded the 
-generator degrees by $3e$ and the relation degrees by $6e$ when
-$\halfcan$ is effective \cite[Corollary 10.4.6]{vzb:stacky}.
+{dorney:canonical}. In their treatment of log spin canonical
+rings, Voight and Zureick-Brown bounded generator degrees by $3e$
+and relation degrees by $6e$ when $\halfcan$ is effective
+\cite[Corollary 10.4.6]{vzb:stacky}.
 
 These bounds, particularly those derived from O'Dorney's work
 in the genus zero case, are far from tight and do not collectively
@@ -272,12 +285,12 @@ rings.
 \begin{thm}
 \label{thm:main}
 Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
-field $k$, so that $\sx$ has signature $\sigma = (0; e_1, \ldots,
+field $k$, so that $\sx$ has signature $\sigma = (g; e_1, \ldots,
 e_r; \delta)$.
 
 Then the log spin canonical ring is generated as a $k$-algebra by 
 elements of degree at most $e = \max(5, e_1, \ldots, e_r).$ If the 
-genus $g \geq 2,$ and $\Delta = 0$ then $R(\sx,\Delta, \halfcan)$
+genus $g \geq 2,$ and $\Delta = 0$ then $R(\sx, \Delta, \halfcan)$
 has relations generated in degrees up to $\max(11, 2e_1, \ldots,
 2e_r)$. Otherwise, $R(\sx, \Delta, \halfcan)$ has relations
 generated in degrees up to $\max(10, 2e_1, \ldots, 2e_r),$ so long
@@ -426,8 +439,7 @@ and are sometimes referred to as theta-characteristics in other
 literature. We also use $\halfcan_X$ to refer to the half-canonical
 divisor associated with the coarse space $X$ of $\sx$, i.e.
 $\halfcan_X$ is a divisor such that $2\halfcan \sim K_X$.
-Now we can define the analogy to canonical rings for
-log spin curves.
+Furthermore, we use the following analogous notations:
 
 \begin{defn}
 If Weil divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
@@ -435,10 +447,21 @@ with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
 \rfloor$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
 \lfloor \alpha_i \rfloor P_i$.
 \todo{cite lemma 5.4.7 from VZB maybe?}
+\end{defn}
 
+\begin{defn}
+Let $\sx$ be a stacky curve with coarse space $X$.
+If $D \in \di \sx$ is a Weil divisor, then we define
+
+\[
+	H^0(\sx, D) := H^0(X, \lfloor D \rfloor)
+\]
+\end{defn}
+
+\begin{defn}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan)
 \]
 \end{defn}
 
@@ -446,39 +469,42 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 When the log spin curve is fixed, we usually use $R$ or $R_L$ to
 represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D)
 := H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim H^0(\sx, \sco(D))$.
-If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^{th}$
+If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^\text{th}$
 degree component of $R$.
 
 \todo{Note that this result is independence of base field}
 
+\begin{rem}
+\label{rem:odd-denom}
+Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that
+\[
+	\halfcan = \sum_{i = 1}^{r} \subhalf{e_i} P_i + \sum_{i = 1}^{s} a_i P_i
+\]
+
+\noindent
+where $a_i \in \BZ$ and $e_i$ are odd. This is due to the fact
+that $\halfcan \in \di \sx$ by Kodaira--Spencer
+\cite{kodaira-spencer:deformations}. If $e_i$ were even,
+then $\frac{e_i - 1}{2e_i}$ would be in reduced form and
+the denominator would be too large for $\halfcan$ to be
+in $\di \sx$.
+\todo{refine above}
+\end{rem}
+	
+\begin{rem}
+\label{rem:delta-not-1}
+Suppose $(\sx, \Delta, \halfcan)$ is a log spin curve. Note that $\deg \Delta
+$ is even. because $2 \cdot \deg \halfcan = \deg \Delta + \deg \lfloor K
+\rfloor = \deg \Delta + 2(g-1).$ Therefore, $\deg \Delta$ is even.
+In particular, we shall often use $\deg \Delta \neq 1$.
+\end{rem}
 
 \begin{defn}
 \label{def:order-sup}
 If $z$ is a rational section of $\sco(D)$ denote the order of
 zero of $z$ at $P$ by $\ord_P^D(z)$.
 \end{defn}
-
-
-\begin{rem}
-\label{rem:odd-denom}
-Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that
-\[
-	L = \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i + \sum_{i = 1}^{s} a_i P_i
-\]
-
-\noindent
-where $a_i \in \BZ$ and $e_i$ are odd.
-\todo{give reason}
-\end{rem}
-	
-\begin{rem}
-\label{rem:delta-not-1}
-Suppose $(\sx,\Delta,L)$ is a log spin curve. Note that $\deg \Delta
-$ is even. because $2 \cdot \deg L = \deg \Delta + \deg \lfloor K
-\rfloor = \deg \Delta + 2(g-1).$ Therefore, $\deg \Delta$ is even.
-In particular, we shall often use $\deg \Delta \neq 1$.
-\end{rem}
-
+\todo{where to put above?}
 
 We define the notion of the saturation of a divisor, taken from
 Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
