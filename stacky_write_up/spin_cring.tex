@@ -1721,13 +1721,16 @@ $e_j = e_j'$ for $j \notin J$. Define $R := R_L$.  Then the following are true:
 %		b > 0$ span $R$ over $R'$ and
 		A choice of elements $y_{1, e_1}, \ldots, y_{r, e_r}$ as in part (a) minimally
 		generate $R$ over $R'$.
-	\item[(c)] Endow $k[y_{i, e_i}]_{i\in J}$ and $ k[x_1,\ldots, x_m\{y_{i, e_i'}:{i\in J}\}$ with graded monomial orders and give 
-$k[y_{i, e_i}]_{i\in J} \otimes \left(k[x_1, \ldots, x_m] \otimes k[y_{i, e_i'}]_{i\in J}\right)$
- block order. Let $R = k[y, x]/I.$ Then,
+	\item[(c)] Endow $k[y_{i, e_i}]_{i\in J}$ and $ k[x_1,\ldots, x_m, y_{i, e_i'}]_{i\in J}$ with graded monomial orders and give 
+$k[y_{i, e_i}]_{i\in J} \otimes k[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$
+ block order.  Let $I$ be the kernel of $k[x_1, \ldots, x_m, y_{i, e_i'}, y_{i, e_i}]_{i\in J} \to R$.
+  Then,
 		\begin{align*}
-			\initial(I) = \initial(I')k[x, y] + \langle y_{i, e_i}z : i\in J, z\in (\{x_1, \ldots, x_m, y_{1, e_1'}, \ldots y_{r},e_\{y_{i, e_i}, y_{i, e_i'}\} \rangle
+			\initial(I) \;	&= \; \initial(I')k[x, y] \\
+					&+ \; \langle y_{j, e_j}x_i  : 1\le i \le m, j\in J\rangle \\
+					&+ \; \langle y_{j, e_j}y_{i, e_i'}: i,j\in J, i\ne j\rangle \\
+					&+ \; \langle y_{j,e_j}y_{i,e_i}: i,j\in J, i\ne j\rangle.
 		\end{align*}
-		as $z$ ranges over all generators of $R$.
 	\item[(d)] The triple $(\sx, \halfcan', J)$ is admissible.
 \end{enumerate}
 \end{lem}
@@ -1851,12 +1854,12 @@ only if for all $j \in J$ we have
 \begin{align}
 \label{eqn:order-degree}
 	-\ord_{Q_j}
-^{\halfcan_X'}(f) \leq \deg f \left( \subhalf {e_j'} \right) 
+^{\halfcan_X'}(f) \leq \deg (f) \left( \subhalf {e_j'} \right).
 \end{align}
 
 \noindent
-We now apply Equation ~\eqref{eqn:order-degree} with $f = y_{i, e_i}z$, to check $y_{i,e_i}z \in R'$ in the three cases that $j \notin \{
-i \} \cup S(i, 0), j = i,$ or $j \in S(i, 0)$.
+We now apply Equation ~\eqref{eqn:order-degree} with $f = y_{i, e_i}z$, to check $y_{i,e_i}z \in R'$ in the three cases: 
+%$j \notin \{i \} \cup S(i, 0)$, $j = i,$ and $j \in S(i, 0)$.
 
 \vskip.1in
 \noindent
@@ -1867,21 +1870,22 @@ Here, $L|_{Q_j} = L'|_{Q_j},$ so
 	-\ord_{Q_j}
 ^{\halfcan_X'}(y_{i, e_i})-\ord_{Q_j}
 ^{\halfcan_X'}(z) \leq e_i \subhalf {e_j'} +
-	\deg z \subhalf {e_j'} = \deg (y_{i, e_i}z) \subhalf{e_j'}. 
+	\deg (z) \subhalf {e_j'} = \deg (y_{i, e_i}z) \subhalf{e_j'}. 
 \end{align*}
 
 \vskip.1in
 \noindent
 {\sf Case 2: $j =i.$}
+
 By part (a), condition (Ad-ii), and Lemma
 ~\ref{lem:admissible_inequality} we have
 \begin{align*}
 	-\ord_{Q_j}
 ^{\halfcan_X'}(y_{i, e_i})-\ord_{Q_j}
 ^{\halfcan_X'}(z)
-	&\leq \frac{e_j - 1}{2} + \deg z \left( \subhalf{e_j'} \right) -\frac{1}{e_j'} \\
-	& = \frac{e_j - 1}{2} -\frac{1}{e_j'} +\deg z \left( \subhalf{e_j'} \right) \\
-	&= \frac{e_j(e_j -3)}{2(e_j -2)} +\deg z \left( \subhalf{e_j'} \right) \\
+	&\leq \frac{e_j - 1}{2} + \deg (z) \left( \subhalf{e_j'} \right) -\frac{1}{e_j'} \\
+	& = \frac{e_j - 1}{2} -\frac{1}{e_j'} +\deg (z) \left( \subhalf{e_j'} \right) \\
+	&= \frac{e_j(e_j -3)}{2(e_j -2)} +\deg (z) \left( \subhalf{e_j'} \right) \\
 	&= \deg (y_{i, e_i}z) \subhalf{e_j'}.
 \end{align*}
 
