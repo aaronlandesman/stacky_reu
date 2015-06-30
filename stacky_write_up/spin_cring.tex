@@ -223,45 +223,61 @@ in degree 2 (one demonstration is given by Saint-Donat\cite[p. 157]
 that all such canonically embedded curves are scheme theoretically 
 cut out by quadratic equations.
 
-\todo{Peter: I think we need something about odd weight modular 
-forms before going right into stacks.}
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize 
-Petri's theorem in many \todo{Peter: not clear to me that ``many'' 
-is a good word to use here.  We mostly generalize in one direction}
-directions. 
+Petri's theorem in the direction of stacky curves equipped with
+log divisors. For a stacky curve $\sx$ with coarse space $X$ and
+stacky points (also called ``fractional points'') $P_1, \ldots, P_r$
+with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$,
 
-\todo{combine below two paragraphs with the corresponding
-near-duplicate part from the background}
-If $X$ is a curve, \todo{why do you start with a curve and then
-move to a stacky curve? shouldn't it be the opposite order?} then
-we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$
-and {\bf stacky points} (also called {\bf{fractional points}}) $P_1,
-\ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{
-\geq 2}$ if 
 \[
 	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle 
 	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
-	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
+	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X
 \]
 
+Then a {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$
+where $\Delta \in \di X$ is a log divisor and $2\halfcan = K_X +
+\Delta + \sum_{i = 1}^{r} \subhalf{e_i} P_i$.
 
-As is done in Voight and Zureick-Brown \cite{vzb:stacky} stacky
-curves may be formalized as stacks, but for the purposes of this
-paper, it suffices to view $\sx$ as a scheme whose associated
-divisor group allows a finite number of stacky points.
-\todo{I don't know if this is a good statement to make.  We aren't
-really viewing $\sx$ as a scheme.  Rather we're are determining 
-information about its canonical rings through knowledge of scheme 
-data.}
-
-A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where
-$\Delta \in \di X$ is an effective divisor and $2\halfcan = K _X +
-\Delta + \sum_{i=1}^{r} \subhalf{e_i} P_i.$
 The central object of study in this paper is the {\bf log spin
 canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(X, d \halfcan)
 \end{align*}
+
+\noindent
+A brief overview of stacky curves, log divisors, and log spin
+canonical rings and references are given in Subsection
+~\ref{ssec:stacky-background}.
+
+%If $X$ is a curve, \todo{why do you start with a curve and then
+%move to a stacky curve? shouldn't it be the opposite order?} then
+%we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$
+%and {\bf stacky points} (also called {\bf{fractional points}}) $P_1,
+%\ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{
+%\geq 2}$ if 
+%\[
+	%\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle 
+	%P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
+	%\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X
+%\]
+
+\begin{rem}
+\label{rem:stack-formalism}
+As is done in Voight and Zureick-Brown \cite{vzb:stacky} stacky
+curves may be formalized as stacks, but for the purposes of this
+paper, it suffices to treat $\sx$ as a scheme whose associated
+divisor group allows a finite number of stacky points.
+\end{rem}
+
+%A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where
+%$\Delta \in \di X$ is a log divisor and $2\halfcan = K_X +
+%\Delta + \sum_{i=1}^{r} \subhalf{e_i} P_i.$
+%The central object of study in this paper is the {\bf log spin
+%canonical ring} of $(\sx, \Delta, \halfcan)$ is
+%\begin{align*}
+	%R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(X, d \halfcan)
+%\end{align*}
 
 In particular, we would like to bound the degrees in which the
 log spin canonical ring and its relations are generated. Let
@@ -281,7 +297,6 @@ gives significantly tighter bounds across all cases in all
 genera on the generator and relation degrees of log spin canonical
 rings.
 
-\todo{State for even weight modular forms attributed to VZB.}
 \begin{thm}
 \label{thm:main}
 Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
@@ -301,6 +316,7 @@ listed in Table ~\ref{table:g-1-exceptional} for signatures with $g
 \end{thm}
 
 \begin{rem}
+\label{rem:separably-rooted}
 In fact, the theorem only needs to assume that the stacky curve
 is separably rooted, i.e. the residue field at each stacky point
 is separable.
@@ -386,18 +402,19 @@ in the introduction}
 A \textbf{stacky curve} $\sx$ over a field $k$ is a smooth proper
 geometrically-connected Deligne-Mumford stack of dimension $1$ over
 $k$ with a dense open subscheme. A stacky curve is \textbf{tame} if
-its stabilizers are coprime to char $k$. Throughout this paper,
-stacky curves will be assumed to be tame and $k$ will always be
-algebraically closed. We also assume that the stacky curves are
-separably rooted, i.e. the residue field of each stacky points
-is separable. The language of stacks will be omitted in
-this paper, as it is sufficient to view stacky curves and related
-objects $\sx$ as a scheme whose associated divisor group allows for
-a finite number of \textbf{stacky points} which may be viewed
-heuristically as ``fractional points''. See Voight and
+its stabilizers are coprime to char $k$.
+
+Throughout this paper, stacky curves will be assumed to be tame and
+$k$ will always be algebraically closed. We also assume that the
+stacky curves are separably rooted, i.e. the residue field of each
+stacky points is separable. As noted in Remark
+~\ref{rem:stack-formalism}, the language of stacks will be omitted
+in this paper, as it is sufficient to treat stacky curves and
+related objects $\sx$ as a scheme whose associated divisor group
+allows for a finite number of \textbf{stacky points} which may be
+viewed heuristically as ``fractional points''. See Voight and
 Zureick-Brown for more thorough treatment of these definitions
-\cite[Chapter 5]{vzb:stacky}. \todo{again, not quite viewing as a
-scheme}
+\cite[Chapter 5]{vzb:stacky}.
 
 If $P_1, \ldots, P_r$ are the stacky points of a stacky curve $\sx$,
 then we use $e_1,\ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
