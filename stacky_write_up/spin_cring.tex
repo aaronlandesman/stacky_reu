@@ -426,7 +426,7 @@ and are sometimes referred to as theta-characteristics in other
 literature. We also use $\halfcan_X$ to refer to the half-canonical
 divisor associated with the coarse space $X$ of $\sx$, i.e.
 $\halfcan_X$ is a divisor such that $2\halfcan \sim K_X$.
-Furthermore, we use the following analogous notation:
+Furthermore, we use the following analogous notations:
 
 \begin{defn}
 If Weil divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
@@ -461,34 +461,37 @@ degree component of $R$.
 
 \todo{Note that this result is independence of base field}
 
+\begin{rem}
+\label{rem:odd-denom}
+Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that
+\[
+	\halfcan = \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i + \sum_{i = 1}^{s} a_i P_i
+\]
+
+\noindent
+where $a_i \in \BZ$ and $e_i$ are odd. This is due to the fact
+that $\halfcan \in \di \sx$ by Kodaira--Spencer
+\cite{kodaira-spencer:deformations}. If $e_i$ were even,
+then $\frac{e_i - 1}{2e_i}$ would be in reduced form and
+the denominator would be too large for $\halfcan$ to be
+in $\di \sx$.
+\todo{refine above}
+\end{rem}
+	
+\begin{rem}
+\label{rem:delta-not-1}
+Suppose $(\sx, \Delta, \halfcan)$ is a log spin curve. Note that $\deg \Delta
+$ is even. because $2 \cdot \deg \halfcan = \deg \Delta + \deg \lfloor K
+\rfloor = \deg \Delta + 2(g-1).$ Therefore, $\deg \Delta$ is even.
+In particular, we shall often use $\deg \Delta \neq 1$.
+\end{rem}
 
 \begin{defn}
 \label{def:order-sup}
 If $z$ is a rational section of $\sco(D)$ denote the order of
 zero of $z$ at $P$ by $\ord_P^D(z)$.
 \end{defn}
-
-
-\begin{rem}
-\label{rem:odd-denom}
-Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that
-\[
-	L = \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i + \sum_{i = 1}^{s} a_i P_i
-\]
-
-\noindent
-where $a_i \in \BZ$ and $e_i$ are odd.
-\todo{give reason}
-\end{rem}
-	
-\begin{rem}
-\label{rem:delta-not-1}
-Suppose $(\sx,\Delta,L)$ is a log spin curve. Note that $\deg \Delta
-$ is even. because $2 \cdot \deg L = \deg \Delta + \deg \lfloor K
-\rfloor = \deg \Delta + 2(g-1).$ Therefore, $\deg \Delta$ is even.
-In particular, we shall often use $\deg \Delta \neq 1$.
-\end{rem}
-
+\todo{where to put above?}
 
 We define the notion of the saturation of a divisor, taken from
 Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
