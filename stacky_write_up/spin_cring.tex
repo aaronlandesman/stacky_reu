@@ -2322,7 +2322,8 @@ So, by the explicit isomorphism given in the proof of the basepoint-free pencil 
 \begin{rem}
 \label{rem:relations_generation_ten}
 In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L = P$
- is a spin canonical divisor on a genus 2 curve, then $R_L$ has a
+\todo{specify that this is a single point}
+is a spin canonical divisor on a genus 2 curve, then $R_L$ has a
 relation in degree 10. Therefore, the bound from Proposition
 ~\ref{prop:relation_11}, that $I_L$ is generated in degree at most
 11 if $\Delta = 0$ and at most $10$ if $\Delta > 0,$ is close to
@@ -2930,16 +2931,17 @@ This paper leaves open many directions for further research.
 
 \begin{enumerate}
 	\item In the case $g \geq 2$, Proposition ~\ref{prop:relation_11} gives a bound on the degree of generators of the relations of a log spin canonical ring $R_L$. Additionally, by Remark ~\ref{rem:relations_generation_ten}, any curve of genus 2 with spin canonical divisor $L = P$ has spin canonical ring $R_L$ with relations in degree 10. This raises the question of whether the bound of 11 on the degree of the relations in $R_L$ can be reduced to $10$. In particular, we make the following conjecture.
+\todo{specify that $L = P$ means it is a single point}
 \begin{conjecture}
 \label{conj:relations-10}
 If $X$ is a curve of genus $g \geq 2$ and $L \in \di X$ with $2L \sim K,$ the ideal of relations in $R_L$ is generated in degree at most $10$. More precisely, if $x_1,\ldots, x_n$ is a minimal set of generators for $R_L$ and $\phi:k[y_1,\ldots, y_n] \rightarrow R_L, y_i \mapsto x_i,$ then $I_L := \ker \phi$, is generated in degree at most 10. 
 \end{conjecture}
-Note that in the case $\dim L \geq 2$ and $L$ is basepoint-free, by Neves ~\cite[Proposition III.12]{neves:halfcan}, $I_L$ is generated in degree at most 8. Additionally, if Conjecture ~\ref{conj:relations-10} were true, by Theorem ~\ref{thm:main} we would immediately obtain the following corollary, providing a more concise statement than that of Theorem ~\ref{thm:main}.
+Note that in the case that $\dim L \geq 2$ and $L$ is basepoint-free, the ideal $I_L$ is generated in degree at most 8 by Neves ~\cite[Proposition III.12]{neves:halfcan}. Additionally, if Conjecture ~\ref{conj:relations-10} were true, by Theorem ~\ref{thm:main} we would immediately obtain the following corollary, providing a more concise statement than that of Theorem ~\ref{thm:main}.
 \begin{cor}
 \label{cor:main-refined}
-Let $(\sx,\Delta,L)$ be a log spin curve over a perfect field $k$ with signature $(g;e_1,\ldots, e_r;\delta)$ and let $R_L$ be the log canonical ring. Suppose Conjecture ~\ref{conj:relations-10}. Then, $R_L$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e,$ apart from a finite list of exceptions.
+Let $(\sx,\Delta,L)$ be a log spin curve over a perfect field $k$ with signature $(g;e_1,\ldots, e_r;\delta)$ and let $R_L$ be the log canonical ring. Suppose Conjecture ~\ref{conj:relations-10}. Then, $R_L$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e,$ apart from a finite list of exceptions given by Table ~\ref{table:g-1-exceptional} and Table ~\ref{table:g-0-exceptional}
 \end{cor}
-	\item Another direction for further research is to extend the results of this paper to divisors $D \in \di \sx$ on a stacky curve $\sx,$ where $nD \sim K.$ The canonical rings of such divisors would translate to rings of fractional weight modular forms. As defined in Adler and Ramanan, immediately following \cite[Corollary 24.5]{adler:moduli}, a {\bf modular form of fractional weight} $\frac{2a}{n}$ on $X(p)$ is a section of a line bundle $\eta$ so that there exists a line bundle $\gamma$ with $\gamma^{\otimes a} \cong \eta$ and $\gamma^{n} \cong \Omega_{X(p)}^1$. Adler and Ramanan \cite[Appendix 2]{adler:moduli} construct an explicit basis of weight $\frac{4}{5}$ modular forms for $X(11)$. Fractional modular forms also make an apperance in Milnor \cite[$\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3^{e_3} = 0$. 
+	\item Another direction for further research is to extend the results of this paper to divisors $D \in \di \sx$ on a stacky curve $\sx,$ where $nD \sim K.$ The canonical rings of such divisors would translate to rings of fractional weight modular forms. As defined in Adler and Ramanan (in the passage immediately following \cite[Corollary 24.5]{adler:moduli}), a {\bf modular form of fractional weight} $\frac{2a}{n}$ on $X(p)$ is a section of a line bundle $\eta$ so that there exists a line bundle $\gamma$ with $\gamma^{\otimes a} \cong \eta$ and $\gamma^{n} \cong \Omega_{X(p)}^1$. Adler and Ramanan \cite[Appendix 2]{adler:moduli} construct an explicit basis of weight $\frac{4}{5}$ modular forms for $X(11)$. Fractional modular forms also make an apperance in Milnor \cite[$\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3^{e_3} = 0$. 
 
 Having motivated the importance of fractional weight modular forms, we pose the following question:
 
