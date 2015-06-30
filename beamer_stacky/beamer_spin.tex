@@ -13,6 +13,7 @@
 \usepackage{graphicx}
 \usepackage{comment}
 \usepackage{amssymb}
+\usepackage{mathrsfs}
 \usepackage{latexsym,amsmath,amscd,amssymb,epsfig,verbatim}
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes}
@@ -44,11 +45,14 @@
 %\newtheorem{terminology}[thm]{Terminology}
 %\newtheorem{convention}[thm]{Convention}
 
+%%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand\nc{\newcommand}
 \nc\on{\operatorname}
 \nc\renc{\renewcommand}
 \newcommand\ssec{\subsection}
 \newcommand\sssec{\subsubsection}
+\newcommand\BH{{\mathbb H}}
 \newcommand\bO{{\mathbf O}}
 \newcommand\CC{{\mathcal C}}
 \newcommand\BN{{\mathbb N}}
@@ -56,6 +60,7 @@
 \newcommand\BF{{\mathbb F}}
 \newcommand\BR{{\mathbb R}}
 \newcommand\BQ{{\mathbb Q}}
+\newcommand\BP{{\mathbb P}}
 \newcommand\BBZ{{\mathbb Z}}
 \newcommand\uR{\underline{R}}
 \newcommand\uZ{\underline{\BBZ}}
@@ -63,18 +68,51 @@
 \newcommand\uCF{\underline{{\mathcal F}}}
 \newcommand\BZ{{\mathbb Z}}
 \newcommand\BA{{\mathbb A}}
-\newcommand\BP{{\mathbb P}}
 \newcommand\fa{{\mathfrak a}}
 \newcommand\fp{{\mathfrak p}}
 \newcommand\fq{{\mathfrak q}}
 \newcommand\fm{{\mathfrak m}}
-\newcommand\pt{\mathrm{pt}}
-\newcommand\rk{\operatorname{rk}}
-\newcommand\Aut{\operatorname{Aut}}
+\newcommand\so{{\mathscr O}}
+\newcommand\sg{{\mathscr G}}
+\newcommand \sx{{\mathscr X}}
 
-\def\Stab{\operatorname{Stab}}
-\def\Fix{\operatorname{Fix}}
-\newcommand\im{\text{Im}}
+\newcommand\scm{{\mathscr M}}
+\newcommand\scn{{\mathscr N}}
+\newcommand\scf{{\mathscr F}}
+\newcommand\scg{{\mathscr G}}
+\newcommand\sco{{\mathscr O}}
+\newcommand\sch{{\mathscr H}}
+\newcommand\scl{{\mathscr L}}
+\newcommand\sci{{\mathscr I}}
+
+\newcommand{\id}{\mathrm{id}}
+\newcommand\im{\text{im }}
+\newcommand\coker{\text{coker}}
+\newcommand \spec{\text{Spec }}
+\newcommand \proj{\text{Proj }}
+\newcommand \rspec{\textit{Spec }}
+\newcommand \rproj{\textit{Proj }}
+\newcommand{\gal}{\mathrm{Gal}}
+
+\newcommand \trdeg{\text{tr. deg }}
+\newcommand \codim{\text{codim}}
+\newcommand \rk{\text{rk }}
+\DeclareMathOperator\di{Div}
+\newcommand \depth{\text{depth }}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\sym}{Sym}
+
+%%%%%%%%%%%%%%%%%%%%% cring custom commands %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand \subhalf[1]{\frac{{#1} - 1}{2{#1}}}
+\newcommand{\se}[1]{\section*{Problem #1}}
+\newcommand{\halfcan}{L}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\initial}{in}
+\DeclareMathOperator{\gin}{gin}
+\DeclareMathOperator{\Eff}{Eff}
+\DeclareMathOperator{\sat}{sat}
+
 
 \newcommand\Wider[2][3em]{%
 \makebox[\linewidth][c]{%
@@ -91,15 +129,17 @@
 	\end{frame}
 }
 
+%\usepackage{beamerthemeshadow}
+
 \mode<presentation>{}
-\usetheme{Frankfurt}
-\usecolortheme{seahorse}
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
 
 %%%%%%%%%%%%   Title slide info  %%%%%%%%%%%%%
-\title{?????}
+\title{Log Spin Canonical Rings}
 \author{Aaron Landesman\inst{1}, Peter Ruhm\inst{2}, Robin Zhang\inst{3}}
  
-\institute[VFU] % (optional)
+\institute[] % (optional)
 {
   \inst{1}
 	Harvard University
@@ -119,8 +159,374 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%   Background Section   %%%%%%%%%%%%%%%%%%%
+\section{Background} 
+
+\begin{frame}
+\frametitle{Background: Introduction}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
 
 
+\begin{frame}
+\frametitle{Background: Stacky Curves}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Background: Monomial Ordering}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Previous Work}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%   Main Result Section   %%%%%%%%%%%%%%%%%%%
+\section{Main Result}
+
+\begin{frame}
+\frametitle{Main Result}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame} 
+
+\begin{frame}
+\frametitle{Main Idea}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Adding Points}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Raising Stabilizer Order}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%   Inductive Section   %%%%%%%%%%%%%%%%%%%
+\section{Inductive Lemmas} 
+
+\begin{frame}
+\frametitle{Inductive Lemmas}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%   High Genus Section   %%%%%%%%%%%%%%%%%%%
+\section{High Genus} 
+
+\begin{frame}
+\frametitle{High Genus}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%   Genus One Section   %%%%%%%%%%%%%%%%%%%
+\section{Genus One} 
+
+\begin{frame}
+\frametitle{Genus One}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%   Genus Zero Section   %%%%%%%%%%%%%%%%%%%
+\section{Genus Zero} 
+
+\begin{frame}
+\frametitle{Genus Zero}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Genus Zero Cases}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%   Further Research Section   %%%%%%%%%%%%%%%%%%%
+\section{Further Research} 
+
+\begin{frame}
+\frametitle{Further Research}
+Let $R$ be.
+
+\pause
+\begin{exampleblock}{Example of blah}
+Example
+\end{exampleblock}
+
+\pause
+\[
+   M(\Gamma)
+\]
+
+\pause
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Acknowledgments}
+Ken Ono!
+David Zureick-Brown!
+Great math atmosphere!
+
+\end{frame}
 
 \end{document}
 
