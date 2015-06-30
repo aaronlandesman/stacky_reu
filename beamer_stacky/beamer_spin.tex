@@ -265,25 +265,30 @@ The \textbf{log spin canonical ring} of a stacky curve is
 
 \begin{frame}
 \frametitle{Main Result}
-Let $R$ be.
+Our main result gives the following bound
 
 \pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
+\begin{thm}
+\label{thm:main}
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, so
+that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
+canonical ring
 
-\pause
-\[
-   M(\Gamma)
-\]
+\begin{align*}
+	R := R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\end{align*}
 
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\noindent
+is generated as a $k$-algebra by elements of degree at most $e =
+\max(5, e_1, \ldots, e_r)$. Furthermore, $R$ has relations generated
+in degrees up to
+$\begin{cases}
+	\max(11, 2e_1, \ldots, 2e_r) & g \geq 2 \\
+	\max(10, 2e_1, \ldots, 2e_r) & g < 2
+\end{cases}$
+so long as $\sigma$ does not lie in a finite list of exceptional
+cases.
+\end{thm}
 
 \end{frame} 
 
