@@ -227,7 +227,7 @@ and {\bf stacky points} (also called {\bf{fractional points}}) $P_1,
 \ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{
 \geq 2}$ if 
 \[
-	\di \sx = \di X \oplus \left(\bigoplus_{i = 1}^r \left\langle 
+	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle P  \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left\langle 
 	\frac{1}{e_i}P_i \right\rangle \right) \subseteq \BQ \otimes \di X.
 \]
 \todo{Peter: Would it be better to say $Div(\sx)=(Div(X))[\frac{1}{e_i}P_i]_{1\le i\le r}$ or something like that? Aaron: I agree what is written isn't actually correct, maybe we should say the free direct sum over points not in the $P_i$, together with the fractional points. It's not a localization because we don't want to invert $P_i$.}
@@ -398,8 +398,8 @@ genus $g$. Then $X$ is the \textbf{coarse space} associated to $\sx$
 if
 
 \[
-	\di \sx = \di X \oplus \left(\bigoplus_{i
-	= 1}^r \left\langle \frac{1}{e_i}P_i \right\rangle \right) \subseteq \BQ \otimes \di X
+	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle P  \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left\langle 
+	\frac{1}{e_i}P_i \right\rangle \right) \subseteq \BQ \otimes \di X.
 \]
 \end{defn}
 
