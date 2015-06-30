@@ -315,10 +315,11 @@ listed in Table ~\ref{table:g-1-exceptional} for signatures with $g
 \end{thm}
 
 \begin{rem}
-\label{rem:separably-rooted}
+\label{rem:main-weaker-assumptions}
 In fact, the theorem only needs to assume that the stacky curve
 is separably rooted, i.e. the residue field at each stacky point
-is separable.
+is separable. Furthermore, the proof works even when letting
+$\Delta$ be any effective divisor rather than just a log divisor.
 \end{rem}
 
 This theorem is proven in three different genus cases, each of
@@ -338,8 +339,8 @@ also yield explicit systems of generators and the initial ideal of
 relations. Furthermore, our proof of the high genus case also
 provides an inductive procedure for determining the generators and
 initial ideal of relations for the half-canonical divisor $\halfcan$
- can be written as $\halfcan = \halfcan' + \Lambda$ with $(\halfcan
-', \Delta, \sx)$ when $\Lambda \in \di \sx$ effective. In fact,
+can be written as $\halfcan = \halfcan' + \Lambda$ with $(\halfcan',
+\Delta, \sx)$ when $\Lambda \in \di \sx$ effective. In fact,
 such a system of generators and relations are known for $\halfcan'$
 in many interesting low genus cases, as detailed in Neves
 ~\cite[Section III.4]{neves:halfcan}.
@@ -396,8 +397,6 @@ Chapter 5]{vzb:stacky}.
 
 \ssec{Stacky Curves and Log Spin Canonical Rings}
 \label{ssec:stacky-background}
-\todo{combine the below chunk with the near-duplicate section
-in the introduction}
 A \textbf{stacky curve} $\sx$ over a field $k$ is a smooth proper
 geometrically-connected Deligne-Mumford stack of dimension $1$ over
 $k$ with a dense open subscheme. A stacky curve is \textbf{tame} if
@@ -416,13 +415,14 @@ Zureick-Brown for more thorough treatment of these definitions
 \cite[Chapter 5]{vzb:stacky}.
 
 If $P_1, \ldots, P_r$ are the stacky points of a stacky curve $\sx$,
-then we use $e_1,\ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
+then we use $e_1, \ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
 of the stabilizer groups of the points with non-trivial
 stabilizers. We call $e_i$ the \textbf{stabilizer order} of $P_i$.
 In order to study objects associated with stacky curves, it is often
 useful to consider them in the context of ordinary schemes. 
 
 \begin{defn}
+\label{defn:coarse-space}
 Let $\sx$ be a stacky curve over $k$ with stacky points $P_1, \ldots,
 P_r$ with stabilizer orders $e_1,\ldots, e_r \in \BZ_{\geq 2}$.
 Let $X$ be a nonsingular projective (algebraic) curve over $k$ of
@@ -458,6 +458,7 @@ $\halfcan_X$ is a divisor such that $2\halfcan \sim K_X$.
 Furthermore, we use the following analogous notations:
 
 \begin{defn}
+\label{defn:divisor-floor}
 If Weil divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
 with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
 \rfloor$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
@@ -466,6 +467,7 @@ with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
 \end{defn}
 
 \begin{defn}
+\label{defn:h0-stacky}
 Let $\sx$ be a stacky curve with coarse space $X$.
 If $D \in \di \sx$ is a Weil divisor, then we define
 
@@ -475,6 +477,7 @@ If $D \in \di \sx$ is a Weil divisor, then we define
 \end{defn}
 
 \begin{defn}
+\label{defn:log-spin-canonical-ring}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
 	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan)
