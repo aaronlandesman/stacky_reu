@@ -206,9 +206,10 @@ with multiplication structure corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X \cong \proj R$. When $g \geq 2$, Petri's
 theorem gives generators and relations for $R(X, K_X)$ showing that
 in most cases $R(X, K_X)$ is generated in degree 1 with relations
-in degree 2 (one demonstration is given by Saint-Donat\cite[p. 157]{saint-donat:proj}). This has the
-pleasant geometric consequence that all such canonically embedded
-curves are scheme theoretically cut out by quadratic equations.
+in degree 2 (one demonstration is given by Saint-Donat\cite[p. 157]
+{saint-donat:proj}). This has the pleasant geometric consequence \todo{maybe use a different ref}
+that all such canonically embedded curves are scheme theoretically 
+cut out by quadratic equations.
 
 \todo{Peter: I think we need something about odd weight modular 
 forms before going right into stacks.}
@@ -263,7 +264,7 @@ the degree of generators and relations of log spin canonical rings:
 \todo{State for even weight modular forms attributed to VZB.}
 \begin{thm}
 \label{thm:main}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere? No, use seperable stacky points} so
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere? No, use separable stacky points} so
 that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
 log spin canonical ring
 
@@ -507,7 +508,7 @@ $s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
 Here we give a brief overview of the three monomial orderings
 that we use. For further reference on monomial orderings,
 initial ideals, and Gr\"{o}bner bases, see Eisenbud
-\cite[Section 15.9]{eisenbud:comm-alg} and Cox--Little--Shea
+\cite[Section 15.9]{eisenbud:comm-alg} and Cox--Little--O'Shea
 \cite[Chapter 2]{cls:ideals-varieties-algorithms}.
 
 First, we give a definition of the graded degree of a monomial
@@ -604,11 +605,8 @@ ordering on $k[x_{d_1, 1}, \ldots, x_{d_n, n}] \otimes k[y_{d_1', 1},
 \ldots, y_{d_m', m}]$, we define $\alpha \succ \beta$ if
   \begin{enumerate}
 	\item[(i)] $\deg \alpha  > \deg \beta$ or
-  \item[(ii)] $\deg \alpha = \deg \beta$ and 
-    \begin{enumerate}
-    \item $\alpha_y \succ_y \beta_y$ or
-    \item $\alpha_y = \beta_y$ and $\alpha_x \succ_x \beta_x$
-    \end{enumerate}
+  \item[(ii)] $\deg \alpha = \deg \beta$ and $\alpha_y \succ_y \beta_y$ or
+	\item[(iii)] $\deg \alpha = \deg \beta$ and $\alpha_y = \beta_y$ and $\alpha_x \succ_x \beta_x$
   \end{enumerate}
 \end{defn}
 
@@ -832,7 +830,7 @@ If $f=\prod_{i=1}^m {z_i}^{q_i}$ and $g=\prod_{i=1}^m {z_i}^{r_i}$ with $f \neq 
 Observe that Definition \ref{defn:graded-p-lex} remains the same if we replace $-\ord_P$ with $-\ord_P^{L'}$ for any divisor $L'$ of $X$.
 \end{rem}
 
-\noindent One can easily verify graded $P$-lex is a monomial ordering in the sense defined in Cox--Little--Shea \cite[Chapter 2, $\mathsection$ 2, Definition 1]{cls:ideals-varieties-algorithms}.
+\noindent One can easily verify graded $P$-lex is a monomial ordering in the sense defined in Cox--Little--O'Shea \cite[Chapter 2, $\mathsection$ 2, Definition 1]{cls:ideals-varieties-algorithms}.
 
 We area almost ready to state Lemma ~\ref{lem:sat-1}, which will yield an inductive procedure for determining the generators and relations of $R_D$, where $D \in \di \BP^1$ is an effective $
 \mathbb{Q}$-divisor. Whereas O'Dorney considers arbitrary $\mathbb{Q}$ divisors in $Div(\mathbb{P}^1)$ \cite[Theorem 8]{dorney:canonical}, we restrict attention to effective divisors and in Lemma ~\ref{lem:sat-1} we are able to obtain much tighter bounds.  Moreover, Lemma ~\ref{lem:sat-1} also extends to curves of genus $g > 0$. Before stating Lemma ~\ref{lem:sat-1}, we recall some notation from O'Dorney \cite{dorney:canonical}.
@@ -982,7 +980,7 @@ Then define
 \end{equation}
 Note that $S_0$ is not part of this union and in fact $S\cap S_0 = \emptyset$ by pole order considerations.
 
-By equation \label{eqn:deg1-sat-ind} for $d\in \mathbb{N}$,
+By equation \ref{eqn:deg1-sat-ind} for $d\in \mathbb{N}$,
 \[
 	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
 		\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor,
