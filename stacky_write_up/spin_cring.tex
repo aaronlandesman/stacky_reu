@@ -180,18 +180,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup
-of $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
+Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup of
+$PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations. We consider the {\bf ring of modular forms}
-$M(\Gamma) = \bigoplus_k M_k(\Gamma)$. In this paper, we sharply bound the degree of the generators and
-relations for $M(\Gamma)$, for general $\Gamma$ \todo{Peter: Why do you say general gamma?  I think you should either add "general fuchsian groups gamma" or just take out that clause, since you just defined what gamma is.}  \todo{Peter: also, its not clear to me that this should be said right here.  I think we may want to say a bit more about what's already known instead of going directly to what we have done}.  In the special that $\Gamma$ has no odd weight modular forms, Voight and Zureick-Brown
-\cite[Chapters 7-9]{vzb:stacky} give similar bounds, and we extend their work to all Fuchsian groups $\Gamma$. In order to find generators and relations for $M(\Gamma)$, we translate the seemingly analytic question of understanding the ring of modular forms into the algebraic
-category, using a generalization of the GAGA principle. By
-\cite[Proposition 6.1.5]{vzb:stacky}, there is an equivalence of
-categories between orbifold curves and log stacky curves over $\BC$.
-Hence, for the remainder of the paper, we will work in the
-algebraic category. \todo{mention that we will use the language
-of Weil divisors?}
+$M(\Gamma) = \bigoplus_k M_k(\Gamma)$. Often, it is useful to
+bound the degree of the generators and relations for $M(\Gamma)$
+for general Fuchsian groups $\Gamma$. In the special case that $\Gamma$
+has no odd weight modular forms, Voight and Zureick-Brown
+\cite[Chapters 7-9]{vzb:stacky} give nice bounds.
+This work extends their work to all Fuchsian groups $\Gamma$.
+
+We can now consider the orbifold $\Gamma \backslash \BH$ over $\BC$.
+For example, in the case $\Gamma$ acts freely on $\BH$, $\Gamma
+\backslash \BH$ is a Riemann Surface over $\BC$. It may well be
+that $\Gamma \backslash \BH$ is not compact, but we can form a
+space $\Gamma \backslash \BH^*$ which is a compactification of
+$\Gamma \backslash \BH,$ with associated divisor of cusps $\Delta$.
+In order to find generators and relations for $M(\Gamma)$, we
+translate the seemingly analytic question of understanding the ring
+of modular forms into the algebraic category, using a
+generalization of the GAGA principle. By \cite[Proposition 6.1.5]
+{vzb:stacky}, there is an equivalence of categories between orbifold
+curves and log stacky curves over $\BC$. Hence, for the remainder
+of the paper, we will work in the algebraic category.
+\todo{mention that we will use the language of Weil divisors?}
 
 Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is
 well known that the canonical sheaf $\Omega _X,$ with associated canonical divisor $K_X$
@@ -227,8 +239,9 @@ and {\bf stacky points} (also called {\bf{fractional points}}) $P_1,
 \ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{
 \geq 2}$ if 
 \[
-	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle P  \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left\langle 
-	\frac{1}{e_i}P_i \right\rangle \right) \subseteq \BQ \otimes \di X.
+	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle 
+	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
+	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
 \todo{Peter: Would it be better to say $Div(\sx)=(Div(X))[\frac{1}{e_i}P_i]_{1\le i\le r}$ or something like that? Aaron: I agree what is written isn't actually correct, maybe we should say the free direct sum over points not in the $P_i$, together with the fractional points. It's not a localization because we don't want to invert $P_i$.}
 As is done in Voight and Zureick-Brown \cite{vzb:stacky} stacky curves may be formalized as stacks, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of stacky points. \todo{I don't know if this is a good statement to make.  We aren't really viewing $\sx$ as a scheme.  Rather we're are determining information about its canonical rings through knowledge of scheme data.}  A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
@@ -239,49 +252,39 @@ canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \end{align*}
 
 In particular, we would like to bound the degrees in which the
-graded ring and its relations are generated.  O'Dorney
-shows that the canonical ring of any $\BQ$-divisor $D =
-\frac{\alpha_1}{\beta_1}P_1 + \frac{\alpha_2}{\beta_2}P_2$ of
-$\BP_k^1$ is generated in degrees up
-to $e := \max(\beta_1, \beta_2)$ with relations generated in
-degrees up to $2e$ \cite[Theorem 6]{dorney:canonical}. Furthermore,
-O'Dorney gives a larger bound in terms of least common multiples of
-the denominators when the support of $D$ is allowed to
-have arbitrarily many points.
-Voight and Zureick-Brown also bounded the generator and relation
-degrees of log spin canonical rings of $(\sx, \Delta, \halfcan)$,
-in the case that genus is positive and $\halfcan$ is effective,
-by $3e$ and $6e$ for $e := \max(e_1, \ldots, e_r)$.
+log spin canonical ring and its relations are generated. Let
+$\sx$ be a stacky curve with signature $\sigma = (g; e_1, \ldots,
+e_r; \delta)$. The application of O'Dorney's work to log spin
+canonical rings gives a large bound for the genus zero case in
+terms of least common multiples of the $e_i$'s \cite[Chapter 5]
+{dorney:canonical}. Voight and Zureick-Brown bounded the 
+generator degrees by $3e$ and the relation degrees by $6e$ when
+$\halfcan$ is effective \cite[Corollary 10.4.6]{vzb:stacky}.
 
-The goal of this paper is to provide a stricter bound on the
-generator and relation degrees of log spin canonical rings
-for all genera. Note that O'Dorney's bounds are asymptotically
-tight for arbitrary $\BQ$-divisors on $\BP^1$, but restricting
-to the log spin curve case allows for lower bounds.
-The main theorem of this paper is the following improved bound on
-the degree of generators and relations of log spin canonical rings:
+These bounds, particularly those derived from O'Dorney's work
+in the genus zero case, are far from tight and do not collectively
+cover all cases in all genera. The main theorem of this paper
+gives significantly tighter bounds across all cases in all
+genera on the generator and relation degrees of log spin canonical
+rings.
 
 \todo{State for even weight modular forms attributed to VZB.}
 \begin{thm}
 \label{thm:main}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere? No, use separable stacky points} so
-that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
-log spin canonical ring
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
+field $k$, so that $\sx$ has signature $\sigma = (0; e_1, \ldots,
+e_r; \delta)$.
 
-\begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\end{align*}
-
-\noindent
-is generated as a $k$-algebra by elements of degree at most $e =
-\max(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ and $\Delta = 0
-$ then $R(\sx,\Delta, \halfcan)$ has relations generated in degrees
-up to $\max(11, 2e_1, \ldots, 2e_r)$. Otherwise, $R(\sx, \Delta,
-\halfcan)$ has relations generated in degrees up to $\max(10, 2e_1,
-\ldots, 2e_r),$ so long as $\sigma$ does not lie in a finite list
-of exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
-for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
-for signatures with $g = 0$.
+Then the log spin canonical ring is generated as a $k$-algebra by 
+elements of degree at most $e = \max(5, e_1, \ldots, e_r).$ If the 
+genus $g \geq 2,$ and $\Delta = 0$ then $R(\sx,\Delta, \halfcan)$
+has relations generated in degrees up to $\max(11, 2e_1, \ldots,
+2e_r)$. Otherwise, $R(\sx, \Delta, \halfcan)$ has relations
+generated in degrees up to $\max(10, 2e_1, \ldots, 2e_r),$ so long
+as $\sigma$ does not lie in a finite list of exceptional cases, as
+listed in Table ~\ref{table:g-1-exceptional} for signatures with $g
+= 1$ and Table ~\ref{table:g-0-exceptional} for signatures with $g =
+0$.
 \end{thm}
 
 \begin{rem}
@@ -398,8 +401,9 @@ genus $g$. Then $X$ is the \textbf{coarse space} associated to $\sx$
 if
 
 \[
-	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle P  \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left\langle 
-	\frac{1}{e_i}P_i \right\rangle \right) \subseteq \BQ \otimes \di X.
+	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle 
+	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
+	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
 \end{defn}
 
@@ -648,20 +652,6 @@ $x_{d_n, n}]$. A \textbf{Gr\"obner basis} for $I$, also known as a
 such that their initial terms form a basis for the initial
 ideal of $I$.
 \end{defn}
-
-\subsection{Junk}
-\todo{add this back into the intro}
-This is stuff that has been moved out of the introduction to possibly
-be retooled for this section.
-
-We can then consider the
-orbifold $\Gamma \backslash \BH$ over $\BC$. For example, in the
-case $\Gamma$ acts freely on $\BH$, $\Gamma \backslash \BH$ is a
-Riemann Surface over $\BC$. It may well be that $\Gamma \backslash
-\BH$ is not compact. Defining $\Delta$ as the divisor of cusps
-associated to $\Gamma$, we can form a space $\Gamma \backslash
-\BH^*$ which is a compactification of $\Gamma \backslash \BH,$ with
-associated {\bf divisor of cusps} $\Delta$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive lemmas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
