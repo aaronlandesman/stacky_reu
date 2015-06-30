@@ -264,7 +264,7 @@ the degree of generators and relations of log spin canonical rings:
 \label{thm:main}
 Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere?} so
 that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
-canonical ring
+log spin canonical ring
 
 \begin{align*}
 	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
@@ -308,7 +308,9 @@ in many interesting low genus cases, as detailed in Neves
 
 The main theorem of this paper provides the following application
 to modular forms when combined with a result from Voight and
-Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky}.
+Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky} which itself
+follows from the classical work of Kodaira--Spencer
+\cite{kodaira-spencer:deformations}.
 
 \begin{cor}
 \label{cor:main-mod-forms}
@@ -430,10 +432,6 @@ represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D)
 := H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim H^0(\sx, \sco(D))$.
 If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^{th}$
 degree component of $R$.
-
-\todo{do this part}
-Part on Kodaira--Spencer \cite{kodaira-spencer:deformations}.
-
 
 \todo{Note that this result is independence of base field}
 
@@ -892,6 +890,7 @@ $V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
 %generates $I'$.
 \end{enumerate}
 \end{lem}
+
 \begin{proof}
 {\bf Part (a):}
 By
