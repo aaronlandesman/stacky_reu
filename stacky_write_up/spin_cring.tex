@@ -213,10 +213,13 @@ curves are scheme theoretically cut out by quadratic equations.
 \todo{Peter: I think we need something about odd weight modular forms before going right into stacks.}  
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize Petri's theorem in many \todo{Peter: not clear to me that ``many'' is a good word to use here.  We mostly generalize in one direction}
 directions. 
-If $X$ is a curve, \todo{why do you start with a curve and then move to a stacky curve? shouldn't it be the opposite order?} then we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$ and {\bf stacky points} $P_1,\ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{\geq 2}$ if 
-$$\di \sx = \di X \oplus \left(\bigoplus_{i
-= 1}^r \left\langle \frac{1}{e_i}P_i \right\rangle \right) \subset \BQ \otimes \di X.$$
-As is done in Voight and Zureick-Brown \cite{vzb:stacky} one may view a stacky curve as a stack, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of ``fractional points,'' i.e., stacky points. A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
+If $X$ is a curve, \todo{why do you start with a curve and then move to a stacky curve? shouldn't it be the opposite order?} then we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$ and {\bf stacky points} (also called {\bf{fractional points}}) $P_1,\ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{\geq 2}$ if 
+\[
+\di \sx = \di X \oplus \left(\bigoplus_{i
+= 1}^r \left\langle \frac{1}{e_i}P_i \right\rangle \right) \subset \BQ \otimes \di X.
+\]
+\todo{Peter: Would it be better to say $Div(\sx)=(Div(X))[\frac{1}{e_i}P_i]_{1\le i\le r}$ or something like that?}
+As is done in Voight and Zureick-Brown \cite{vzb:stacky} stacky curves may be formalized as stacks, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of stacky points. \todo{I don't know if this is a good statement to make.  We aren't really viewing $\sx$ as a scheme.  Rather we're are determining information about its canonical rings through knowledge of scheme data.}  A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
 The central object of study in this paper is the {\bf log spin
 canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \begin{align*}
@@ -224,14 +227,14 @@ canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \end{align*}
 
 In particular, we would like to bound the degrees in which the
-graded ring and its relations are generated. The work by O'Dorney
+graded ring and its relations are generated.  O'Dorney
 shows that the canonical ring of any $\BQ$-divisor $D =
 \frac{\alpha_1}{\beta_1}P_1 + \frac{\alpha_2}{\beta_2}P_2$ of
-$\BP_k^1$ with $\# \Supp(D) \leq 2$ is generated in degrees up
+$\BP_k^1$ is generated in degrees up
 to $e := \max(\beta_1, \beta_2)$ with relations generated in
-degrees up to $2e$ \cite[Section 4]{dorney:canonical}. Furthermore,
-O'Dorney gives a larger bound when the support of $D$ is allowed to
-have arbitrarily many points in terms of least-common-multiples.
+degrees up to $2e$ \cite[Theorem 6]{dorney:canonical}. Furthermore,
+O'Dorney gives a larger bound in terms of least common multiples of the denominators when the support of $D$ is allowed to
+have arbitrarily many points.
 Voight and Zureick-Brown also bounded the generator and relation
 degrees of log spin canonical rings of $(\sx, \Delta, \halfcan)$,
 in the case that genus is positive and $\halfcan$ is effective,
@@ -485,71 +488,138 @@ initial ideals, and Gr\"{o}bner bases, see Eisenbud
 \cite[Section 15.9]{eisenbud:comm-alg} and Cox--Little--Shea
 \cite[Chapter 2]{cls:ideals-varieties-algorithms}.
 
-\begin{defn}
-We equip the polynomial ring $k[x_1, \ldots, x_n]$ with the
-(weighted graded) reverse lexicographic order \textbf{grevlex}
-$\prec$: if 
-\[
-	x^{\vec{m}} = \prod_{d,i} x_{d,i}^{m_{d,i}}
-\]
+First, we give a definition of the graded degree of a monomial
+in a graded polynomial ring.
 
-\noindent
-and $x^{\vec{n}}$ are monomials in $k[x]_{\vec{a}}$, then $x^{\vec{m
-}} \succ x^{\vec{n}}$ if and only if either
+ \begin{defn}
+\label{defn:monomial-degree}
+Let $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a graded polynomial
+ring and let $\alpha := \prod_{i = 1}^{n} x_{d_i, i}^{f_i} \in
+k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a monomial. Then
+we define
+\[
+	\deg \alpha := \sum_{i = 1}^{n} d f_i
+\]
+\end{defn}
+ 
+Now define the (graded) lexicographic order \textbf{grlex}
+$\prec_{\text{grlex}}$ on a polynomial ring $k[x_{d_1, 1}, \ldots,
+x_{d_n, n}]$ to be the monomial ordering such that:
+
+\begin{defn}
+\label{defn:grlex}
+If $\alpha := \prod_{i = 1}^{n} x_{d_i, i}
+^{f_i}$ and $\beta := \prod_{i = 1}^{n} x_{d_i, i}^{f_i'}$ are
+monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
+\succ_{\text{grlex}} \beta$ if either $\alpha$ has larger degree:
 \begin{equation}
-\vec{a}\cdot\vec{m} = \sum_{d,i} dm_{d,i}  > \vec{a} \cdot \vec{n}
+\deg \alpha := \sum_{i = 1}^{n} d f_i  > \sum_{i = 1}^{n} d f_i' =: \deg \beta
 \end{equation}
-or
-\begin{equation} \label{eqn:grevlexdef}
-\text{$\vec{a}\cdot\vec{m} = \vec{a} \cdot \vec{n}$ and the last (right-most) nonzero entry in $\vec{m}-\vec{n}$ is negative.}
+or $\alpha$ is larger using the lexicographical ordering event of equal
+degrees:
+
+\begin{equation}
+\label{eqn:grlex-tie}
+	\deg \alpha = \deg \beta \text{ and }
+	\alpha \succ_{\text{lex}} \beta
 \end{equation}
-It is important to note that in \eqref{eqn:grevlexdef}, the ordering of the variables matters: it corresponds to a choice of writing the exponents of a monomial as a vector.  A common choice for us will be
-\begin{equation} \label{eqn:xdOrder}
- x_{1,1}^{m_{1,1}} \cdots x_{D,a_D}^{m_{D,a_D}} \leftrightarrow (m_{D,1},\dots,m_{D,a_D},\ldots,m_{1,1},\dots,m_{1,a_1}) 
- \end{equation}
-in which case we have $x_{2,1} \succ x_{1,2}^2$
-and $x_{5,1} \succ x_{1,6}^2 x_{3,2}$, etc.
-We indicate this ordering in the presentation of the ring, e.g.~for the above we would write
-\[ k[x]_{\vec{a}}= k[x_{1,1},\dots,x_{1,a_1},\dots,x_{D,1},\dots,x_{D,a_D}]. \]
-In this way, our relations write generators in larger degree in terms of those in smaller degree (``later generators in terms of earlier generators''), which gives the most natural-looking canonical rings to our eyes.
 \end{defn}
 
-For a homogeneous polynomial $f \in k[x]_{\vec{a}}$, we define the \textbf{initial term} $\initial_{\prec}(f)$ to be the monomial in the support of $f$ that is largest with respect to $\prec$, and we define $\initial_{\prec}(0)=0$.  Let $I \subseteq k[x]_{\vec{a}}$ be a homogeneous ideal.  We define the \textbf{initial ideal} $\initial_{\prec}(I)$ to be the ideal generated by $\{\initial_{\prec}(f) : f \in I\}$.  A \textbf{Gr\"obner basis} (also called a \textbf{standard basis}) for $I$ is a set $\{f_1,\dots,f_n\} \subset I$ such that 
-\[ \langle \initial_{\prec}(f_1),\dots,\initial_{\prec}(f_n) \rangle = \initial_{\prec}(I). \]
+We can equip the polynomial ring $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$
+-with the (weighted graded) reverse lexicographic order
+-\textbf{grevlex} $\prec_{\text{grevlex}}$ as follows:
+-
+-\begin{defn}
+-\label{defn:grevlex}
+-If $\alpha := \prod_{i = 1}^{n} x_{d_i, i}
+-^{f_i}$ and $\beta := \prod_{i = 1}^{n} x_{d_i, i}^{f_i'}$ are
+-monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
+-\succ_{\text{grevlex}} \beta$ if either $\alpha$ has larger degree:
+-
+-\begin{equation}
+-	\deg \alpha := \sum_{i = 1}^{n} d f_i  > \sum_{i = 1}^{n} d f_i' =: \deg \beta
+-\end{equation}
+-or $\alpha$ has a smaller right-most entry in the event of equal
+-degrees:
+-
+-\begin{equation}
+-\label{eqn:grevlex-tie}
+-	\deg \alpha = \deg \beta \text{ and }	f_i - f_i' < 0 \text{ for
+-the	largest } i \text{ such that } f_i \neq f_i'
+-\end{equation}
+-\end{defn}
 
-\begin{rem}
-A Gr\"obner basis for $I$ \emph{a priori} depends on a choice of basis for the ambient graded polynomial ring.
-\end{rem}
-
-
-We also introduce a term ordering that is well-suited for inductive arguments: the \emph{block} term order.  
-In our inductive arguments, we will often have the following setup: an inclusion $R \supset R'$ of canonical rings such that $R'$ is generated by elements $x_{i,d}$ and $R$ is generated over $R$ by elements $y_j$.  It is natural, therefore, to consider term orders which treat these sets of variables separately.  More formally, we make the following definition.
-
-Let $k[x]_{\vec{a}}$ and $k[y]_{\vec{b}}$ be weighted polynomial rings with term orders $\prec_x$ and $\prec_y$, respectively, and consider $k[y,x]_{\vec{b},\vec{a}} = k[y]_{\vec{b}} \otimes_k k[x]_{\vec{a}}$ the common weighted polynomial ring in these two sets of variables $y,x$.
+We can equip the polynomial ring $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$
+with the (weighted graded) reverse lexicographic order
+\textbf{grevlex} $\prec_{\text{grevlex}}$ as follows:
 
 \begin{defn}
-The \textbf{(graded) block} (or \textbf{elimination}) term ordering on $k[y,x]_{\vec{b},\vec{a}}$ is defined as follows: we declare
-  \[ y^{\vec{m}}x^{\vec{n}}  \succ y^{\vec{m}'}x^{\vec{n}'}\]  
-  if and only if
+\label{defn:grevlex}
+If $\alpha := \prod_{i = 1}^{n} x_{d_i, i}
+^{f_i}$ and $\beta := \prod_{i = 1}^{n} x_{d_i, i}^{f_i'}$ are
+monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
+\succ_{\text{grevlex}} \beta$ if either $\alpha$ has larger degree:
+ 
+\begin{equation}
+	\deg \alpha := \sum_{i = 1}^{n} d f_i  > \sum_{i = 1}^{n} d f_i' =: \deg \beta
+\end{equation}
+or $\alpha$ has a smaller right-most entry in the event of equal
+degrees: 
+
+
+\begin{equation}
+\label{eqn:grevlex-tie}
+	\deg \alpha = \deg \beta \text{ and }	f_i - f_i' < 0 \text{ for
+the	largest } i \text{ such that } f_i \neq f_i'
+\end{equation}
+\end{defn}
+
+\begin{rem}
+Note that the ordering of the variables matters in both
+Equation ~\ref{eqn:grlex-tie} and Equation ~\ref{eqn:grevlex-tie}.
+\end{rem}
+
+Our inductive arguments in Section ~\ref{sec:induction} will
+usually have an inclusion $R \supset R'$ of log spin canonical
+rings such that $R'$ is generated by elements $x_{d_i, i}$ and $R$
+is generated over $R'$ by elements $y_j$. In these cases, it is
+natural to consider term orders which treat these sets of variables
+separately. We now present the \textbf{block term order} introduced
+by Voight and Zureick-Brown \cite[Section 8.1]{vzb:stacky}.
+
+\begin{defn}
+\label{defn:block-order}
+Let $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$ and $k[y_{c_1, 1}, \ldots,
+y_{c_m, m}]$ be weighted polynomial rings with existing term
+orders $\prec_x$ and $\prec_y$, respectively. Let $\alpha :=
+\prod_{i = 1}^{n} x_{d_i, i}^{f_i}$ $\prod_{j = 1}^{m} y_{c_j, j}
+^{h_i}$ and $\beta := \prod_{i = 1}^{n} x_{d_i, i}^{f_i'}
+\prod_{j = 1}^{m} y_{c_j, j}^{h_i'}$ be monomials in $k[x_{d_1, 1},
+\ldots, x_{d_n, n}] \otimes$ $k[y_{d_1', 1}, \ldots, y_{d_m', m}]$.
+Let $\alpha_x := \prod_{i = 1}^{n} x_{d_i, i}^{f_i}$ be the
+part of $\alpha$ in $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$ and
+likewise with $\alpha_y$, $\beta_x$, and $\beta_y$.
+
+In the \textbf{(graded) block} (or \textbf{elimination}) term
+ordering on $k[x_{d_1, 1}, \ldots, x_{d_n, n}] \otimes k[y_{d_1', 1},
+\ldots, y_{d_m', m}]$, we define $\alpha \succ \beta$ if
   \begin{enumerate}
-  \item[(i)] $\deg y^{\vec{m}} x^{\vec{n}}  > \deg y^{\vec{m}'} x^{\vec{n}'} $, or
-  \item[(ii)] $\deg y^{\vec{m}}x^{\vec{n}} = \deg y^{\vec{m}'} x^{\vec{n}'} $ and 
+  \item[(i)] $\deg \alpha  > \deg \beta$ or
+  \item[(ii)] $\deg \alpha = \deg \beta$ and 
     \begin{enumerate}
-    \item $y^{\vec{m}}\succ_y y^{\vec{m}'}$ or
-    \item $y^{\vec{m}} =  y^{\vec{m}'}$ and $x^{\vec{n}} \succ_x x^{\vec{n}'}$.
+    \item $\alpha_y \succ_y \beta_y$ or
+    \item $\alpha_y =  \beta_y$ and $\alpha_x \succ_x \beta_x$
     \end{enumerate}
   \end{enumerate}
 \end{defn}
 
-The block ordering is indeed a term order: the displayed inequalities directly give that any two monomials are comparable, and the inequalities are visibly stable under multiplication by a monomial.  One can similarly define an \textbf{iterated (graded) block} term ordering for any finite number of weighted polynomial rings.
-
-The block ordering is the most suitable ordering for the structure of $R$ as an $R'$-algebra
-
-
-
-background on Gr\"{o}bner bases
-Notation for Gr\"{o}bner bases and orderings (include grlex, grevlex, and block order, as defined in \cite[Definition 8.1.1]{vzb:stacky})
-
+\todo{write below part}
+For a homogeneous polynomial $f \in k[x]_{\vec{a}}$, we define the \textbf{initial term} $\initial_{\prec}(f)$ to be the monomial in the support of $f$ that is largest with respect to $\prec$, and we define $\initial_{\prec}(0)=0$.  Let $I \subseteq k[x]_{\vec{a}}$ be a homogeneous ideal.  We define the \textbf{initial ideal} $\initial_{\prec}(I)$ to be the ideal generated by $\{\initial_{\prec}(f) : f \in I\}$.  A \textbf{Gr\"obner basis} (also called a \textbf{standard basis}) for $I$ is a set $\{f_1,\dots,f_n\} \subset I$ such that 
++\[ \langle \initial_{\prec}(f_1),\dots,\initial_{\prec}(f_n) \rangle = \initial_{\prec}(I). \]
+ 
+\begin{rem}
+A Gr\"obner basis for $I$ \emph{a priori} depends on a choice of basis for the ambient graded polynomial ring.
+\end{rem}
 
 \subsection{Junk}
 This is stuff that has been moved out of the introduction to possibly
@@ -857,16 +927,18 @@ Let
 \noindent
 be the positive best lower approximations of $\frac{
 \alpha}{\beta}$. Note that the elements $t_1,\ldots, t_{\lfloor d_i \frac{\alpha}{\beta}\rfloor}$ in $(R_{\halfcan})_{d_i}$ with $\ord_P^{\halfcan'}(t_i) = i$ are linearly independent over $(R_{\halfcan'})_d$. Hence, by a dimension count, these sections form a $k$-basis for
-$(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.
+$(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.\todo{take out two sentences}
 
 %For any $1\le i < j \le n$, we have $\frac{c_i}{d_i} < \frac{c_j}{d_j}$.  
-Choose a positive best lower approximation $\frac{c_i}{d_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = d_i$ and $\deg(z_j)<d_i$ for all $j\in \{1, \ldots r\}$. Then for each $j$, \todo{Aaron: I don't see why either of the next 2 claims hold, but maybe I'm being silly.}
+Choose a positive best lower approximation $\frac{c_i}{d_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = d_i$ and $\deg(z_j)<d_i$ for all $j\in \{1, \ldots r\}$. Observe that $\frac{c_i}{d_i}$ is a best lower approximation for $\frac{\alpha}{\beta}$ and $\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)}< \frac{\alpha}{\beta}$, for each $j$.  Hence, for each $j$, 
 \[
 	\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)} < \frac{c_i}{d_i},
 \]
-
-\noindent
-so
+so the mediant inequality tells us
+\[
+	\frac{\sum_{j=1}^n -\ord^{\halfcan'}_P(z_j)}{\sum_{j=1}^n z_j } < \frac{c_i}{d_i}.
+\]
+Multiplying through by $d_i$ gives
 \[
 	-\ord^{\halfcan'}_P \left(\prod_{j=1}^n z_j \right) = \sum_{j=1}^n -\ord^{\halfcan'}_P(z_j) < c_i .
 \]
@@ -901,11 +973,11 @@ and for each $i \in \mathbb{N}$, suppose $c_j$ is the maximal element among of $
 Observe that this recursive definition ensures that $S_i$ contains only elements $z\in R_\halfcan$ satisfying $-\ord^{\halfcan'}_P(z)=i$. \todo{Perhaps it's worth reminding the reader here that $y_i$ are as in the statement of (a) and have order $-c_i$.}
 Then define 
 \[
-	S = \cup_{i=1}^{\infty} S_i.
-\]
+	S = \cup_{i=1}^{\infty} S_i.  
+\]\todo{make equation and reference}
 Note that $S_0$ is not part of this union and in fact $S\cap S_0 = \emptyset$ by pole order considerations.
 
-Applying Equation \ref{eqn:c-from-lower-terms}, we see that $S$ contains elements in degree $d\in \mathbb{N}$ with each pole order in $\{1 \ldots, \lfloor d\frac{\alpha}{\beta}\rfloor\}$. \todo{Maybe we should make reference these generating the desired lattice, as described in Evan's paper? I think this is basically a rehashing of Evan's 1-point case?} Thus, by dimension counting, $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a).
+Applying Equation \ref{eqn:c-from-lower-terms}, we see that $S$ contains elements in degree $d\in \mathbb{N}$ with each pole order in $\{1 \ldots, \lfloor d\frac{\alpha}{\beta}\rfloor\}$. \todo{Maybe we should make reference these generating the desired lattice, as described in Evan's paper? I think this is basically a rehashing of Evan's 1-point case?} Thus, by dimension counting, $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a) \todo{why follows from 3.1}.
 
 {\bf Part (b):}
 Define $U_i$ and $V$ as in the lemma's statement and define
@@ -1413,38 +1485,37 @@ signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta)$.
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
 %in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
-we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $H^0(X, L_X)$ may have no global sections.  We circumvent this issue by working with orders of zeros and poles relative to the divisor we are inducting from, instead of relative to the structure sheaf.
+we cannot assume that $\{P_i\} \cap \Supp(L_X) = \emptyset$, as $H^0(X, L_X)$ may have no global sections.  We circumvent this issue by working with the orders of zeros and poles relative to the divisor we are inducting from, rather than relative to the structure sheaf.\todo{Peter: This last sentence is kind of awkward.  I changed ``instead of relative to the structure sheaf'' to ``rather than relative to the structure sheaf,'' but it can still be made to sound cleaner... I hope...}
 
 \begin{defn}
 \label{defn:admissible}
 Let $(\sx', \Delta, L'),(\sx, \Delta , L)$ be log spin
-curves, with the same stacky points $Q_1, \ldots, Q_r$. Let $J \subset
+curves, with the same course space $X$ and stacky points $Q_1, \ldots, Q_r$. Let $J \subset
 \{1, \ldots, r\}$. Suppose $e_i'+ 2 \chi_J (i) = e_i$ where
 
-$$\chi_J(i) = \begin{cases}
+\[
+\chi_J(i) = \begin{cases}
 	1, &\text{ if }i \in J\\
 	0, &\text{ otherwise. } 
-\end{cases}$$
+\end{cases}
+\]
 
 Let $R'$ be the canonical ring associated to $\sx'$. Define $(\sx',L',J)$
-to be {\bf admissible} if the $R'$ admits a presentation
+to be {\bf admissible} if $R'$ admits a presentation
 \begin{align*}
 	R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i, e_i'}]_{i \in J} \right)/I'
 \end{align*}
 
 \noindent
-with $y_{i, e_i'} \in R'$ for each $i \in J$ such that the following
-three conditions hold.
-
-
-\todo{Peter:I'm still kind of unhappy with the notation $y_{e_i'}$ because it is treating $e_i'$ like a formal object rather than a number. What I mean is if $e_1'=e_2'$ that a reader might reasonably interpret $y_{e_1'}$ the same as $y_{e_2'}$. Aaron: By all means, please suggest better notation and we can discuss it. However, I think your particular concern is well answered because we include the further subscript $i$. That is, $y_{1,e_1} \neq y_{2,e_2}$ even if $e_1 = e_2=5$, because $y_{1,5}$ and $y_{2,5}$ are different variables. Another thing to note here is that $e_i' = e_i + 2,$ so that the two will never be equal. Does this assuage your concern? Also, Further, when I read David's paper, he used this notation, and I was never confused by this notation.}
+with each $y_{i, e_i'}$ viewed in $R'$ through the image of this isomorphism and such that for each $i \in J$ such that the following
+three conditions hold:
 \begin{enumerate}
 	\item[(Ad-i)] First, 
 	\begin{align*}
 	\deg y_{e_i'} &= e_i'  &\text{ and } &&-\ord_{Q_i}^{\halfcan_X'}(y_{i, e_i'})
 		= \frac{e_i'- 1}{2}.
 	\end{align*}
-		\item[(Ad-ii)] Second, every generator $z \neq y_{i, e_i'}$	of $R'$ satisfies
+		\item[(Ad-ii)] Second, every generator $z \in \{x_1, \ldots, x_m\} \cup \{y_{j,e_ij'}: j\in J - \{i\} \}$ satisfies
 		\begin{align*}
 			\frac{-\ord_{Q_i}
 ^{\halfcan_X'}(z)}{\deg z} < \subhalf {e_i'}.
@@ -1464,6 +1535,7 @@ three conditions hold.
 \begin{rem}
 Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
 \end{rem}
+\todo{Peter: I'm not sure how useful this remark is.  After seeing the definition of $S_{\sigma, J}(I,d)$ a reader will probably be a little mystified why it is a useful condition.  The inclusion of the relationship to something defined in VZB that also seems ad hoc and that they probably will not have seen may not be the most helpful use of this space.}
 
 
 %\begin{lem}\label{lem:n-3s-admissible}
@@ -1480,12 +1552,12 @@ Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~
 %\end{itemize}
 %\end{proof}
 
-The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}. Lemma ~\ref{lem:admissible_inequality} can be thought of as an analog of \cite[Lemma 8.5.3]{vzb:stacky}
+The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}. Lemma ~\ref{lem:admissible_inequality} can be thought of as an analog of \cite[Lemma 8.5.3]{vzb:stacky}.  \todo{Peter: In general, I'm not sure how important it is for us to draw all the analogs between your definition and proofs and those of VZB.  As long as we make not in the section's introduction that they are similar, we might leave it out of the remaining transitions and remarks.}
 
 \begin{lem}
 \label{lem:admissible_inequality}
 Condition (Ad-ii) of Definition ~\ref{defn:admissible} implies the
-stronger condition that
+stronger condition \todo{Peter: How is it a stronger condition if it implied by that of (Ad-ii).  If $a\implies b$ then $b$ is by definition a weaker condition right?  I agree that the latter condition is somehow better, but it seems inaccurate to call it stronger.  I may be being over picky here...} that
 
 \begin{align*}
 	-\ord_{Q_i}
@@ -1528,10 +1600,10 @@ if they hold for $J$.
 
 \begin{rem}
 \label{rem:three-cases}
-For the purposes of our induction, carried out in Theorems ~\ref{thm:g-high-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-0-main}, we will often add in a single
+For our inductive arguments in Theorems ~\ref{thm:g-high-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-0-main}, we will often add in a single
 stacky point with stabilizer order $3$. Say $(\sx,\Delta,\halfcan)$ is a log spin
 curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
-\delta)$. We will need to deal with signatures $\sigma$ satisfying one of the following three cases, which we will soon refer to in Lemma ~\ref{lem:raise-stacky-order}:
+\delta)$, and our base cases include signatures $\sigma$ characterized by one of the following: cases, which we will soon refer to in Lemma ~\ref{lem:raise-stacky-order}:
 \begin{enumerate}
 	\item $g = 0, e_1 = \cdots = e_r = 3, \delta = 0$ and $r \geq 5$
 	\item $g = 1, e_1 = \cdots = e_r = 3, \delta = 0,$ and $ r \geq 2$
@@ -1540,7 +1612,7 @@ curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
 \end{rem}
 
 We next come to Lemma ~\ref{lem:raise-stacky-order}, which is an
-analog of ~\cite[Theorem 8.5.7]{vzb:stacky}
+analog of ~\cite[Theorem 8.5.7]{vzb:stacky}.
 
 \begin{lem}
 \label{lem:raise-stacky-order}
@@ -1899,8 +1971,10 @@ The next step is to bound the degrees of the relations of $R_L$. This is done in
 
 \begin{defn}
 \label{defn:lower-ideal}
-Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K+\Delta$. Choose generators $x_1, \ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1, \ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L,d}$ be the $d$th graded piece of $I_L$ and define
-$$J_{L,d} = \sum_{j = 1}^{d- 1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j}.$$
+Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K+\Delta$. Choose generators $x_1, \ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1, \ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L, d}$ be the $d$th graded piece of $I_L$ and define
+\[
+	J_{L,d} = \sum_{j = 1}^{d- 1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j}.
+\]
 \end{defn}
 
 
@@ -2389,7 +2463,7 @@ For $d = 0, 1, 2, \ldots$ we have
 
 \noindent
 so $R'$ must have some generators $x_{3, 1}, x_{5, 1}, x_{7, 1},
-x_{7, 2}$ with $x_{i,j} = H^0(\sx',iK_{\sx'})$.
+x_{7, 2}$ with $x_{i,j} \in H^0(\sx', i K_{\sx'})$.
 
 To show that these generate all of $R'$, we need to show that all
 $H^0 (\sx', d \halfcan')$ are generated by lower degrees for $d = 6$
@@ -2483,8 +2557,8 @@ since $a_1$ and $b_1$ are nonzero.
 
 To demonstrate that these two relations generate all 
 relations, we show that $\dim_k (R')_d = \dim_k
-(k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / in_\prec(I))_d$ for all degrees
-$d \geq 0$. In particular, 
+(k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / in_\prec(I))_d$ for 
+all degrees $d \geq 0$. In particular, 
 
 \begin{align*}
 	\dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / I)_d &=
