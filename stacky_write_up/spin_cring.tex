@@ -377,6 +377,7 @@ tools in Section ~\ref{sec:induction}. In Sections ~\ref{sec:g_high},
 one, and genus zero cases respectively. Finally, in Section
 ~\ref{sec:further-questions}, we pose several questions for future
 research.
+\todo{Add examples section.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -448,11 +449,9 @@ For this paper, we consider \textbf{log spin curves} which are
 triples $(\sx, \Delta, \halfcan)$ where $\Delta$ is a log divisor
 and a divisor $\halfcan$ which satisfies the property that
 $2\halfcan \sim K_\sx + \Delta$. Such a divisor $\halfcan$
-is called a \textbf{spin canonical divisor} on $(\sx, \Delta)$
-and are sometimes referred to as theta-characteristics in other
-literature. We also use $\halfcan_X$ to refer to the spin canonical
-divisor (also known as the half-canonical divisor or semi-canonical
-divisor) associated with the coarse space $X$ of $\sx$, i.e.
+is called a \textbf{log spin canonical divisor} on $(\sx, \Delta)$. We also use $\halfcan_X$ to refer to the spin canonical
+divisor (also known as the half-canonical divisor, semi-canonical
+divisor, or theta-characteristics) associated with the coarse space $X$ of $\sx$, i.e.
 $\halfcan_X$ is a divisor such that $2\halfcan \sim K_X$.
 Furthermore, we use the following analogous notations:
 
@@ -698,6 +697,104 @@ $x_{d_n, n}]$. A \textbf{Gr\"obner basis} for $I$, also known as a
 such that their initial terms form a basis for the initial
 ideal of $I$.
 \end{defn}
+
+\ssec{Admissibility}
+
+In this subsection, we present a definition of admissibility, which is quite similar to that defined in Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky}, but is adapted to the case of spin-canonical divisors.
+
+One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
+%in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
+	we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, L_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $L_X'$, rather than relative to the $\sco_X$.
+
+\begin{defn}
+\label{defn:admissible}
+Let $(\sx', \Delta, L')$ be a log spin
+curve, with coarse space $X$ and stacky points $Q_1, \ldots, Q_r$.  Let $J \subset
+\{1, \ldots, r\}$. Let $e_i := e_i'+ 2 \chi_J (i)$ where
+
+\[
+\chi_J(i) = \begin{cases}
+	1, &\text{ if }i \in J\\
+	0, &\text{ otherwise. } 
+\end{cases}
+\]
+
+Let $R'$ be the canonical ring associated to $\sx'$. Define $(\sx',L',J)$
+to be {\bf admissible} if $R'$ admits a presentation
+\begin{align*}
+	R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i, e_i'}]_{i \in J} \right)/I'
+\end{align*}
+
+\noindent
+with each $y_{i, e_i'}$ viewed in $R'$ through the image of this isomorphism and such that for each $i \in J$ such that the following
+three conditions hold:
+\begin{enumerate}
+	\item[(Ad-i)] First, 
+	\begin{align*}
+	\deg y_{e_i'} &= e_i'  &\text{ and } &&-\ord_{Q_i}^{\halfcan_X'}(y_{i, e_i'})
+		= \frac{e_i'- 1}{2}.
+	\end{align*}
+		\item[(Ad-ii)] Second, every generator $z \in \{x_1, \ldots, x_m\} \cup \{y_{j,e_ij'}: j\in J - \{i\} \}$ satisfies
+		\begin{align*}
+			\frac{-\ord_{Q_i}
+^{\halfcan_X'}(z)}{\deg z} < \subhalf {e_i'}.
+		\end{align*}
+	\item[(Ad-iii)] Third, we have
+		\begin{align*}
+			\deg \lfloor e_i L' \rfloor \geq \max(2g - 1,0) + \max_{d \geq 0} \# S_{\sigma, J}(i, d)
+		\end{align*}
+		where
+		\begin{align*}
+			S_{\sigma, J}(i, d) := \{j \in J : j \neq i \text{ and } e_j'+2d
+			\mid e_i - e_j'\}.
+		\end{align*}
+\end{enumerate}
+\end{defn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Examples %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Examples}
+\label{sec:examples}
+
+
+\begin{example}
+\label{eg:base-1-0}
+In the case $\halfcan' = 0,$ it is immediately clear that $R_{\halfcan'} \cong k[x]$ with $x$ a generator in degree 1.
+\end{example}
+
+\begin{example}
+\label{eg:base-1-33}
+Let $\sx'$ be a stacky curve so that $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show
+$$R_{\halfcan'} \cong k[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$
+and that $(\sx', \halfcan',\{1,2\})$ is admissible.
+
+Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_1$ but not at $P_2$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_2$ but not at $P_1$. Let $y_4 \in H^0(\sx,4\halfcan')$ be an element with a pole of order 1 at both $P_1$ and $P_2$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q + P_1, 3P - 3Q + P_2$ are both one dimensional, while the linear system $3P - 3Q \sim P - Q$ is zero dimensional.
+
+Then, there exist constants $\alpha,\beta,\gamma \in k$ so that 
+$R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zeros and poles. The details are omitted as it is analogous to Example ~\ref{ex:base-377}.
+
+We next check $(\sx', \halfcan',\{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, (Ad-i) holds. We next check (Ad-ii) for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
+$$
+\frac{-\ord_{P_1}(z)}{\ord(z)} = \begin{cases}
+	0 &\text{ if }z \in \{u, y_3\}\\
+	\frac{1}{4} &\text{ if }z = y_4
+\end{cases}.$$
+Since $0 < \frac{1}{4} < \frac{1}{3}$, (Ad-ii) holds.
+Finally, to check (Ad-iii), note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = 2 \cdot 1 - 1 + 0$.
+\end{example}
+
+\begin{example}
+\label{eg:exception-1-5}
+Let $L' = P - Q + \frac{2}{5}P_1$ be a spin canonical divisor on a stacky curve $\sx$. Let $u \in (P_L)_1$ be any nonzero element. We obtain $\di u|_{P_1} = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch, $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_{P_1} = -P_1$. Then, we claim there is some $\alpha \in k$ so that
+$R_L \cong k[u, y_3, y_5]/(y_3^4 - \alpha uy_5^2).$
+
+In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. The verification is analogous to Example ~\ref{ex:base-377} and is omitted.
+
+Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashion analogous to the verification in Example ~\ref{eg:base-1-33}.
+
+Finally, note that this particular case is also exceptional, because there is a relation in degree $12 > 2 \cdot 5$, but once $e' = 5$ is incremented to $e = e'+2 = 7,$ using Lemma ~\ref{lem:raise-stacky-order}, this relation in degree 12 also determines a relation in the canonical ring for $L = P - Q + \frac{3}{7}$, and so the case $L' = P - Q + \frac{3}{7}P_1$ is not exceptional because $12 < 2 \cdot 7$.
+\end{example}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive lemmas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1560,55 +1657,7 @@ $(g;e_1', \ldots, e_k', e_{k+1}' \ldots, e_r';\delta)$ with $e_{k+1}' = \cdots =
 signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta)$. 
 %In order to state Lemma
 %~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in %Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}.
-
-One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
-%in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
-	we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, L_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $L_X'$, rather than relative to the $\sco_X$.
-
-\begin{defn}
-\label{defn:admissible}
-Let $(\sx', \Delta, L')$ be a log spin
-curve, with coarse space $X$ and stacky points $Q_1, \ldots, Q_r$.  Let $J \subset
-\{1, \ldots, r\}$. Let $e_i := e_i'+ 2 \chi_J (i)$ where
-
-\[
-\chi_J(i) = \begin{cases}
-	1, &\text{ if }i \in J\\
-	0, &\text{ otherwise. } 
-\end{cases}
-\]
-
-Let $R'$ be the canonical ring associated to $\sx'$. Define $(\sx',L',J)$
-to be {\bf admissible} if $R'$ admits a presentation
-\begin{align*}
-	R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i, e_i'}]_{i \in J} \right)/I'
-\end{align*}
-
-\noindent
-with each $y_{i, e_i'}$ viewed in $R'$ through the image of this isomorphism and such that for each $i \in J$ such that the following
-three conditions hold:
-\begin{enumerate}
-	\item[(Ad-i)] First, 
-	\begin{align*}
-	\deg y_{e_i'} &= e_i'  &\text{ and } &&-\ord_{Q_i}^{\halfcan_X'}(y_{i, e_i'})
-		= \frac{e_i'- 1}{2}.
-	\end{align*}
-		\item[(Ad-ii)] Second, every generator $z \in \{x_1, \ldots, x_m\} \cup \{y_{j,e_ij'}: j\in J - \{i\} \}$ satisfies
-		\begin{align*}
-			\frac{-\ord_{Q_i}
-^{\halfcan_X'}(z)}{\deg z} < \subhalf {e_i'}.
-		\end{align*}
-	\item[(Ad-iii)] Third, we have
-		\begin{align*}
-			\deg \lfloor e_i L' \rfloor \geq \max(2g - 1,0) + \max_{d \geq 0} \# S_{\sigma, J}(i, d), 0
-		\end{align*}
-		where
-		\begin{align*}
-			S_{\sigma, J}(i, d) := \{j \in J : j \neq i \text{ and } e_j'+2d
-			\mid e_i - e_j'\}
-		\end{align*}
-\end{enumerate}
-\end{defn}
+d
 
 %\begin{rem}
 %Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
@@ -2573,7 +2622,7 @@ to the generator with maximal pole order at $P_2$ and $x_{7, 2}$
 correspond to the generator with maximal pole order at $P_3$. Use
 the presentation given above with $y _{2, e_2'} := x_{7, 1}$ and
 $y_{3, e_3'} :=  x_{7, 2}$. We see that it immediately satisfies
-(Ad-i) of Definition ~\ref{defn:admissible}. We may also choose
+(Ad-i) of Definition ~\ref{defn:admissible}. Next we check (Ad-ii) We may also choose
 pole orders of the generators such that $y_{i, e_i'}$ is the only
 generator lying on the line $-ord_{P_i}(z) = \deg z \frac{3d}{7}$
 in the $(\deg z, -ord_{P_i}(z))$  lattice and with the other
@@ -2593,9 +2642,9 @@ Also note that $e_j' + 2d = 7 + 2d \nmid 2 = e_i - e_j'$ for all
 $i, j \in J = \{2, 3\}$ such that $j \neq i$ and for all $d \geq
 0$. Thus, $s_{\sigma, J}(i, d) = \emptyset$ for each $i \in J$.
 Furthermore, $\deg \lfloor e_i \halfcan \rfloor = \deg \lfloor 9
-\halfcan \rfloor = 2 \lfloor \frac{4 * 9}{9} \rfloor + \lfloor
+\halfcan \rfloor = 2 \lfloor \frac{4 \cdot 9}{9} \rfloor + \lfloor
 \frac{9}{3} \rfloor - 9 = 2$, so (Ad-iii) is satisfied and
-$\sigma, J$ is admissible.
+$(\sigma, \sx', J)$ is admissible.
 
 %Let $(-ord_{P_1}(x_j)$, $-ord_{P_2}(x_j)$, $-ord_{P_3}(x_j))$
 %represent the pole orders of $x_i$ at each point. Then these generators
