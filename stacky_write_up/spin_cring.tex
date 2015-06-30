@@ -216,6 +216,8 @@ Petri's theorem in many \todo{Peter: not clear to me that ``many''
 is a good word to use here.  We mostly generalize in one direction}
 directions. 
 
+\todo{combine below two paragraphs with the corresponding
+near-duplicate part from the background}
 If $X$ is a curve, \todo{why do you start with a curve and then
 move to a stacky curve? shouldn't it be the opposite order?} then
 we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$
@@ -241,7 +243,8 @@ shows that the canonical ring of any $\BQ$-divisor $D =
 $\BP_k^1$ is generated in degrees up
 to $e := \max(\beta_1, \beta_2)$ with relations generated in
 degrees up to $2e$ \cite[Theorem 6]{dorney:canonical}. Furthermore,
-O'Dorney gives a larger bound in terms of least common multiples of the denominators when the support of $D$ is allowed to
+O'Dorney gives a larger bound in terms of least common multiples of
+the denominators when the support of $D$ is allowed to
 have arbitrarily many points.
 Voight and Zureick-Brown also bounded the generator and relation
 degrees of log spin canonical rings of $(\sx, \Delta, \halfcan)$,
@@ -251,7 +254,7 @@ by $3e$ and $6e$ for $e := \max(e_1, \ldots, e_r)$.
 The goal of this paper is to provide a stricter bound on the
 generator and relation degrees of log spin canonical rings
 for all genera. Note that O'Dorney's bounds are asymptotically
-strict for arbitrary $\BQ$-divisors on $\BP^1$, but restricting
+tight for arbitrary $\BQ$-divisors on $\BP^1$, but restricting
 to the log spin curve case allows for lower bounds.
 The main theorem of this paper is the following improved bound on
 the degree of generators and relations of log spin canonical rings:
@@ -352,6 +355,8 @@ Chapter 5]{vzb:stacky}.
 
 \ssec{Stacky Curves and Log Spin Canonical Rings}
 \label{ssec:stacky-background}
+\todo{combine the below chunk with the near-duplicate section
+in the introduction}
 A \textbf{stacky curve} $\sx$ over a field $k$ is a smooth proper
 geometrically-connected Deligne-Mumford stack of dimension $1$ over
 $k$ with a dense open subscheme. A stacky curve is \textbf{tame} if
@@ -363,7 +368,7 @@ objects $\sx$ as a scheme whose associated divisor group allows for
 a finite number of \textbf{stacky points} which may be viewed
 heuristically as ``fractional points''. See Voight and
 Zureick-Brown for more thorough treatment of these definitions
-\cite[Chapter 5]{vzb:stacky}.
+\cite[Chapter 5]{vzb:stacky}. \todo{again, not quite viewing as a scheme}
 
 If $P_1, \ldots, P_r$ are the stacky points of a stacky curve $\sx$,
 then we use $e_1,\ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
@@ -423,6 +428,8 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 When the log spin curve is fixed, we usually use $R$ or $R_L$ to
 represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D)
 := H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim H^0(\sx, \sco(D))$.
+If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^{th}$
+degree component of $R$.
 
 \todo{do this part}
 Part on Kodaira--Spencer \cite{kodaira-spencer:deformations}.
@@ -430,8 +437,6 @@ Part on Kodaira--Spencer \cite{kodaira-spencer:deformations}.
 
 \todo{Note that this result is independence of base field}
 
-If $R$ is a graded ring, then $(R)_d$ refers to the $d^{th}$ degree
-component of $R$.
 
 \begin{defn}
 \label{def:order-sup}
@@ -1517,12 +1522,10 @@ three conditions hold:
 \end{enumerate}
 \end{defn}
 
-\iffalse
-\begin{rem}
-Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
-\end{rem}
-\todo{Peter: I'm not sure how useful this remark is.  After seeing the definition of $S_{\sigma, J}(I,d)$ a reader will probably be a little mystified why it is a useful condition.  The inclusion of the relationship to something defined in VZB that also seems ad hoc and that they probably will not have seen may not be the most helpful use of this space.}
-\fi
+%\begin{rem}
+%Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
+%\end{rem}
+%\todo{Peter: I'm not sure how useful this remark is.  After seeing the definition of $S_{\sigma, J}(I,d)$ a reader will probably be a little mystified why it is a useful condition.  The inclusion of the relationship to something defined in VZB that also seems ad hoc and that they probably will not have seen may not be the most helpful use of this space.}
 
 %\begin{lem}\label{lem:n-3s-admissible}
 %Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ stacky points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
@@ -2546,8 +2549,8 @@ all degrees $d \geq 0$. In particular,
 \begin{align*}
 	\dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / I)_d &=
 	\dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}]	/ in_\prec(I))_d \\
-	&= \dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / \langle x_{5, 1}^2,
-	x_{7, 1}^2 \rangle
+	&= \dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / \langle
+	x_{3, 1} x_{7, 2}, x_{7, 2}^2 \rangle
 \end{align*}
 
 \noindent
