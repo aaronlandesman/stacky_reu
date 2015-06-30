@@ -448,10 +448,11 @@ For this paper, we consider \textbf{log spin curves} which are
 triples $(\sx, \Delta, \halfcan)$ where $\Delta$ is a log divisor
 and a divisor $\halfcan$ which satisfies the property that
 $2\halfcan \sim K_\sx + \Delta$. Such a divisor $\halfcan$
-is called a \textbf{half-canonical divisor} on $(\sx, \Delta)$
+is called a \textbf{spin canonical divisor} on $(\sx, \Delta)$
 and are sometimes referred to as theta-characteristics in other
-literature. We also use $\halfcan_X$ to refer to the half-canonical
-divisor associated with the coarse space $X$ of $\sx$, i.e.
+literature. We also use $\halfcan_X$ to refer to the spin canonical
+divisor (also known as the half-canonical divisor or semi-canonical
+divisor) associated with the coarse space $X$ of $\sx$, i.e.
 $\halfcan_X$ is a divisor such that $2\halfcan \sim K_X$.
 Furthermore, we use the following analogous notations:
 
@@ -713,12 +714,12 @@ inductive steps for the proof of the main theorem: Theorem
 $\halfcan' \in \di
 X \otimes \BQ $ and  $\frac{\alpha}{\beta} \in \BQ$. 
 In
-Subsection ~\ref{ssec:raise-orders}, we prove a inductive lemma allowing us to transfer information about the log half canonical ring of a curve with signature $(g; e_1', 
+Subsection ~\ref{ssec:raise-orders}, we prove a inductive lemma allowing us to transfer information about the log spin canonical ring of a curve with signature $(g; e_1', 
 \ldots, e_\tau'; 0)$ to that of a
 curve with the same log divisor, the same stacky points, and some subset of the $e_ i'$ incremented by $2$. \todo{Peter: I tried to edit this, but I can't figure out how to make this sentence work well.  There are too many clauses...}
 %While Lemma ~\ref{lem:sat-1} may be applied in a fairly general 
 %context, Lemma ~\ref{lem:raise-stacky-order} is more specific to 
-%half-canonical divisors.
+%spin canonical divisors.
 
 %However, before we can answer these general lemmas, it is useful
 %to prove a nice result about minimal generation of ideals of
@@ -828,7 +829,7 @@ curve with the same log divisor, the same stacky points, and some subset of the 
 \ssec{Adding Points}  \todo{Peter: Note to self: replace $H^0(X, \lfloor L\rfloor)$ with $H^0(\sx, L)$.}
 \label{ssec:add-points}
 %In this section, we prove various inductive statements under the following setup:
-%Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
+%Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log spin canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
 \todo{Pervasive change: Make sure all $\initial(I)$ are written as $\initial(I)$. We can even build this in to the macro possibly? }
 Before proving three lemmas that allow us to inductively add points to the support of a divisor, we give a criterion to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m]\to R_D$.  This criterion will be used repeatedly to show that a given homogeneous ideal is in fact the ideal of relations.
 
@@ -1289,7 +1290,7 @@ Hence, by Lemma \ref{lem:relations_from_generators_induction}, part (b) holds.
 
 \begin{lem}
 \label{lem:sat-3}
-Suppose $L'$ is a log half-canonical divisor of $\sx'$ with coarse
+Suppose $L'$ is a log spin canonical divisor of $\sx'$ with coarse
 space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ and $R_
 {\halfcan'} \cong k[x_3, x_4 , x_5, \ldots, x_m]/I'$. Choose $x_3, \ldots, x_m$ such that $-\ord^{L'}_P(x_i)=0$ for all $i,$ which is possible as $X$ has genus $0$. Let $L = L' + \frac
 {1}{3}P$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that
@@ -1503,7 +1504,7 @@ we can argue similarly to Lemma $\ref{lem:sat-1}$ that $S$ and $T$ along with $\
 %Let $\halfcan$ be a stacky log spin canonical divisor of $(X,\Delta)$ with signature $(g;e_1, \ldots, e_n;\delta)$ such that $2\halfcan=K_\sx+\Delta$ with $\delta=\deg(\Delta)> 0$. Then $\halfcan$ is effective so we can inductively apply Lemma ~\ref{lem:deg1_sat_ind}.
 %\end{cor}
 %\begin{proof}
-%Since $\halfcan$ is a half canonical divisor, 
+%Since $\halfcan$ is a spin canonical divisor, 
 %\[
 	%2\halfcan=D+\sum \subhalf{e_i}P_i
 %\] 
@@ -1948,7 +1949,7 @@ Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \hal
 
 \section{High Genus}
 \label{sec:g_high}
-We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the half canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved, while in this section we will be able to appeal to general theory.
+We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the spin canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved, while in this section we will be able to appeal to general theory.
 
 \ssec{Bounds on Generators and Relations in High Genus}
 
@@ -2114,7 +2115,12 @@ So, by the explicit isomorphism given in the proof of the basepoint-free pencil 
 
 \begin{rem}
 \label{rem:relations_generation_ten}
-In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L=P$ is a half canonical divisor on a genus 2 curve, then $R_L$ has a relation in degree 10. Therefore, the bound from Proposition ~\ref{prop:relation_11}, that $I_L$ is generated in degree at most 11 if $\Delta = 0$ and at most $10$ if $\Delta > 0,$ is close to sharp.
+In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L = P$
+ is a spin canonical divisor on a genus 2 curve, then $R_L$ has a
+relation in degree 10. Therefore, the bound from Proposition
+~\ref{prop:relation_11}, that $I_L$ is generated in degree at most
+11 if $\Delta = 0$ and at most $10$ if $\Delta > 0,$ is close to
+sharp.
 \end{rem}
 
 
@@ -2170,7 +2176,7 @@ holds for all log spin curves $(\sx, L, J)$.
 
 In this section, we prove Theorem ~\ref{thm:main} in the case that $g = 1$. Unlike the $g \geq 2$ case, here we obtain explicit generators and relations for any log spin curve $(\sx, \Delta, L)$ with $g = 1$.
 
-The inductive strategy we will adopt to prove Theorem ~\ref{thm:main} is similar to that of the genus $g \geq 2$ case. In the case of a genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for half canonical divisors are $\halfcan' = 0$ or $\halfcan' = P - Q$ where $P,Q$ are distinct points, fixed  under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Lemma ~\ref{lem:raise-stacky-order} and add additional points using Lemma ~\ref{lem:sat-1} and Lemma ~\ref{lem:sat-2}.
+The inductive strategy we will adopt to prove Theorem ~\ref{thm:main} is similar to that of the genus $g \geq 2$ case. In the case of a genus 1 curve, $X$, we know $K_X = 0$, and therefore the only possibilities for spin canonical divisors are $\halfcan' = 0$ or $\halfcan' = P - Q$ where $P,Q$ are distinct points, fixed  under the hyperelliptic involution. We aim to inductively construct presentations by increasing the values of the $e_i$ using Lemma ~\ref{lem:raise-stacky-order} and add additional points using Lemma ~\ref{lem:sat-1} and Lemma ~\ref{lem:sat-2}.
 
 \ssec{Genus One Base Cases}
 \label{ssec:g_1_base}
@@ -2229,7 +2235,7 @@ Finally, to check (Ad-iii), note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Th
 
 \begin{example}
 \label{eg:exception-1-5}
-Let $L' = P - Q + \frac{2}{5}P_1$ be a half canonical divisor on a stacky curve $\sx$. Let $u \in (P_L)_1$ be any nonzero element. We obtain $\di u|_{P_1} = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch, $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_{P_1} = -P_1$. Then, we claim there is some $\alpha \in k$ so that
+Let $L' = P - Q + \frac{2}{5}P_1$ be a spin canonical divisor on a stacky curve $\sx$. Let $u \in (P_L)_1$ be any nonzero element. We obtain $\di u|_{P_1} = 0,$ since $2P -2Q \sim 0$ and by Riemann--Roch, $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_L)_3$ be any nonzero element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0(\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally, let $y_5 \in (R_L)_5$ be an element with $y_5|_{P_1} = -P_1$. Then, we claim there is some $\alpha \in k$ so that
 $R_L \cong k[u, y_3, y_5]/(y_3^4 - \alpha uy_5^2).$
 
 In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. The verification is analogous to Example ~\ref{ex:base-377} and is omitted.
@@ -2915,7 +2921,7 @@ from Table ~\ref{table:g-0-base-cases} and deduce that $R(\sx,
 This paper leaves open many directions for further research.
 
 \begin{enumerate}
-	\item In the case $g \geq 2$, Proposition ~\ref{prop:relation_11} gives a bound on the degree of generators of the relations of a log spin canonical ring $R_L$. Additionally, by Remark ~\ref{rem:relations_generation_ten}, any curve of genus 2 with half canonical divisor $L = P$ has spin canonical ring $R_L$ with relations in degree 10. This raises the question of whether the bound of 11 on the degree of the relations in $R_L$ can be reduced to $10$. In particular, we make the following conjecture.
+	\item In the case $g \geq 2$, Proposition ~\ref{prop:relation_11} gives a bound on the degree of generators of the relations of a log spin canonical ring $R_L$. Additionally, by Remark ~\ref{rem:relations_generation_ten}, any curve of genus 2 with spin canonical divisor $L = P$ has spin canonical ring $R_L$ with relations in degree 10. This raises the question of whether the bound of 11 on the degree of the relations in $R_L$ can be reduced to $10$. In particular, we make the following conjecture.
 \begin{conjecture}
 \label{conj:relations-10}
 If $X$ is a curve of genus $g \geq 2$ and $L \in \di X$ with $2L \sim K,$ the ideal of relations in $R_L$ is generated in degree at most $10$. More precisely, if $x_1,\ldots, x_n$ is a minimal set of generators for $R_L$ and $\phi:k[y_1,\ldots, y_n] \rightarrow R_L, y_i \mapsto x_i,$ then $I_L := \ker \phi$, is generated in degree at most 10. 
@@ -2944,12 +2950,12 @@ If $(\sx,\Delta,L)$ is a log spin curve with signature $\sigma$, does there exis
 \label{ques:algorithm}
 Can one give an algorithm for explicitly computing the generators and relations for an arbitrary genus $g \geq 2$ curve?
 \end{question}
-Suppose the generators and relations of $R_{L_X}$ are known, where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the coarse space of $\sx$, and $L_X \leq L$ is a half canonical divisor of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an algorithm for determining the generators of $L$. This raises the following Petri-like question:
+Suppose the generators and relations of $R_{L_X}$ are known, where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the coarse space of $\sx$, and $L_X \leq L$ is a spin canonical divisor of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an algorithm for determining the generators of $L$. This raises the following Petri-like question:
 \begin{question}
-\label{ques:half-canonical-petri}
-Given a {\rm(}non-stacky {\rm)} curve $X$ and a half canonical divisor $L \in \di X$, can one write down a set of minimal generators and minimal relations for $R_L$? If so, can one give the generic ideal of $R_L$ or the generic initial ideal of $R_L$, as defined in Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky}?
+\label{ques:spin-canonical-petri}
+Given a {\rm(}non-stacky {\rm)} curve $X$ and a spin canonical divisor $L \in \di X$, can one write down a set of minimal generators and minimal relations for $R_L$? If so, can one give the generic ideal of $R_L$ or the generic initial ideal of $R_L$, as defined in Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky}?
 \end{question}
-In particular, if Question ~\ref{ques:half-canonical-petri} were answered affirmatively one would be able to write down explicit generators and relations for $R_L$ on a stacky curve, essentially by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
+In particular, if Question ~\ref{ques:spin-canonical-petri} were answered affirmatively one would be able to write down explicit generators and relations for $R_L$ on a stacky curve, essentially by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
 	\todo{This last one doesn't seem particularly interesting. Should we remove it?}
 	\item While Theorem ~\ref{thm:main} gives a minimal set of generators for the log spin canonical ring $R_L,$ the set of relations is not minimal. In many of the $g = 0$ and $g=1$ cases, it is not too difficult to see that our inductive procedure also yields a minimal set of relations for $R_L$. One might investigate whether the generators and relations given by the inductive proof of Theorem ~\ref{thm:main} are always minimal.
 	\end{enumerate}
