@@ -232,16 +232,16 @@ with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$,
 \[
 	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle 
 	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
-	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X
+	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
 
 Then a {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$
-where $\Delta \in \di X$ is a log divisor and $2\halfcan = K_X +
+where $\Delta \in \di X$ is a log divisor and $2\halfcan \sim K_X +
 \Delta + \sum_{i = 1}^{r} \subhalf{e_i} P_i$. The central object of
 study in this paper is the {\bf log spin canonical ring} of $(\sx,
 \Delta, \halfcan)$ is
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(X, d \halfcan)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(X, d \halfcan).
 \end{align*}
 
 \noindent
@@ -337,13 +337,11 @@ The proofs of the main theorems in the low genus cases not only
 obtain bounds on the degrees of the generators and relations, but
 also yield explicit systems of generators and the initial ideal of
 relations. Furthermore, our proof of the high genus case also
-provides an inductive procedure for determining the generators and
-initial ideal of relations for the half-canonical divisor $\halfcan$
-can be written as $\halfcan = \halfcan' + \Lambda$ with $(\halfcan',
-\Delta, \sx)$ when $\Lambda \in \di \sx$ effective. In fact,
-such a system of generators and relations are known for $\halfcan'$
-in many interesting low genus cases, as detailed in Neves
-~\cite[Section III.4]{neves:halfcan}.
+provides an inductive procedure for explicitly determining the 
+generators and initial ideal of relations for log spin canonical
+rings. Many explicit systems of generators and relations are
+detailed in interesting low genus examples by Neves
+\cite[Section III.4]{neves:halfcan}.
 \end{rem}
 
 The main theorem of this paper provides the following application
@@ -472,7 +470,7 @@ Let $\sx$ be a stacky curve with coarse space $X$.
 If $D \in \di \sx$ is a Weil divisor, then we define
 
 \[
-	H^0(\sx, D) := H^0(X, \lfloor D \rfloor)
+	H^0(\sx, D) := H^0(X, \lfloor D \rfloor).
 \]
 \end{defn}
 
@@ -480,7 +478,7 @@ If $D \in \di \sx$ is a Weil divisor, then we define
 \label{defn:log-spin-canonical-ring}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan).
 \]
 \end{defn}
 
@@ -512,8 +510,8 @@ in $\di \sx$.
 	
 \begin{rem}
 \label{rem:delta-not-1}
-Suppose $(\sx, \Delta, \halfcan)$ is a log spin curve. Note that $\deg \Delta
-$ is even. because $2 \cdot \deg \halfcan = \deg \Delta + \deg \lfloor K
+Suppose $(\sx, \Delta, \halfcan)$ is a log spin curve. Note that $\deg \Delta$
+is even. because $2 \cdot \deg \halfcan = \deg \Delta + \deg \lfloor K
 \rfloor = \deg \Delta + 2(g-1).$ Therefore, $\deg \Delta$ is even.
 In particular, we shall often use $\deg \Delta \neq 1$.
 \end{rem}
@@ -532,7 +530,7 @@ Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
 Let $D$ be a divisor on $\sx$. The \textbf{effective monoid} of $D$
 is the monoid
 \[
-	\Eff(D) = \{d \in \BZ_{\geq 0} : \deg \lfloor dD \rfloor \geq 0 \}
+	\Eff(D) = \{d \in \BZ_{\geq 0} : \deg \lfloor dD \rfloor \geq 0 \}.
 \]
 \end{defn}
 
@@ -570,7 +568,7 @@ ring and let $\alpha := \prod_{i = 1}^{n} x_{d_i, i}^{f_i} \in
 k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a monomial. Then
 we define
 \[
-	\deg \alpha := \sum_{i = 1}^{n} d f_i
+	\deg \alpha := \sum_{i = 1}^{n} d f_i.
 \]
 \end{defn}
  
@@ -594,7 +592,7 @@ degrees:
 \begin{equation}
 \label{eqn:grlex-tie}
 	\deg \alpha = \deg \beta \text{ and }
-	\alpha \succ_{\text{lex}} \beta
+	\alpha \succ_{\text{lex}} \beta.
 \end{equation}
 \end{defn}
 
@@ -618,7 +616,7 @@ degrees:
 \begin{equation}
 \label{eqn:grevlex-tie}
 	\deg \alpha = \deg \beta \text{ and }	f_i - f_i' < 0 \text{ for
-the	largest } i \text{ such that } f_i \neq f_i'
+	the	largest } i \text{ such that } f_i \neq f_i'.
 \end{equation}
 \end{defn}
 
@@ -656,7 +654,7 @@ ordering on $k[y_{d_1', 1}, \ldots, y_{d_m', m}] \otimes k[x_{d_1, 1},
   \begin{enumerate}
 	\item[(i)] $\deg \alpha  > \deg \beta$ or
   \item[(ii)] $\deg \alpha = \deg \beta$ and $\alpha_y \succ_y \beta_y$ or
-	\item[(iii)] $\deg \alpha = \deg \beta$ and $\alpha_y = \beta_y$ and $\alpha_x \succ_x \beta_x$
+	\item[(iii)] $\deg \alpha = \deg \beta$ and $\alpha_y = \beta_y$ and $\alpha_x \succ_x \beta_x$.
   \end{enumerate}
 \end{defn}
 
