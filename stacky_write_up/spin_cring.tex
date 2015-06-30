@@ -1580,9 +1580,9 @@ Lemma 5.4.7.  Peter: What does this mean?}  We see by pole order considerations 
 \begin{align}
 \label{eqn:add_one_generator}
 	\begin{split}
-	S=	&\{ y_3^ax_3^b x_4^\epsilon x_5^{\epsilon'} \mid a \geq 0, b 
+		S=	&\{ y_3^ax_3^b x_4^\epsilon x_5^{\epsilon'} \mid a \geq 0, b 
 		\geq 0,(\epsilon,\epsilon') \in \{(0,0),(0,1),(1,0)\} \} \\
-	\cup \;&\{y_3^ay_4, y_3^by_5 \mid a \geq 0, b \geq 0 \}
+		\cup \;&\{y_3^ay_4, y_3^by_5 \mid a \geq 0, b \geq 0 \}
 	\end{split}
 \end{align}
 
@@ -1811,7 +1811,7 @@ $(g;e_1', \ldots, e_k', e_{k+1}' \ldots, e_r';\delta)$ with $e_{k+1}' = \cdots =
 signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta)$. 
 %In order to state Lemma
 %~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in %Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}.
-d
+
 
 %\begin{rem}
 %Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
@@ -2319,7 +2319,8 @@ So, by the explicit isomorphism given in the proof of the basepoint-free pencil 
 \begin{rem}
 \label{rem:relations_generation_ten}
 In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L = P$
- is a spin canonical divisor on a genus 2 curve, then $R_L$ has a
+\todo{specify that this is a single point}
+is a spin canonical divisor on a genus 2 curve, then $R_L$ has a
 relation in degree 10. Therefore, the bound from Proposition
 ~\ref{prop:relation_11}, that $I_L$ is generated in degree at most
 11 if $\Delta = 0$ and at most $10$ if $\Delta > 0,$ is close to
@@ -2544,22 +2545,25 @@ then $R(\sx , \Delta, L)$ is generated in degree at most $e := \max(
 5, e_1, \ldots, e_r)$ with relations generated in degree at most $2e
 $, so long as $\sigma$ does not lie in the finite list given in Table ~\ref{table:g-0-exceptional}.
 
-There are two main cases: when $\delta \geq 2$ and when $\delta = 0$, where we are implicitly appealing to Remark ~\ref{rem:delta-not-1}. In the first case, $\deg \lfloor \halfcan \rfloor
-\geq 0$ so the result directly follows from Lemma
-~\ref{lem:sat-1}. When $\delta = 0$, the proof is a rather involved induction using Lemma
-~\ref{lem:sat-3} and Lemma ~\ref{lem:raise-stacky-order}.
-The remainder of this section is dedicated to characterizing the
-saturations (Subsection ~\ref{ssec:g_0_saturation}), inductive
-base cases (Subsection ~\ref{ssec:g_0_base}), and exceptional
+There are two main cases: when $\delta \geq 2$ and when $\delta = 0$
+, where we are implicitly appealing to Remark ~\ref{rem:delta-not-1}
+. In the first case, $\deg \lfloor \halfcan \rfloor \geq 0$ so the
+result directly follows from Lemma ~\ref{lem:sat-1}. When $\delta =
+0$, the proof is a rather involved induction using Lemma
+~\ref{lem:sat-3} and Lemma ~\ref{lem:raise-stacky-order}. The
+remainder of this section is dedicated to characterizing the
+saturations ( Subsection ~\ref{ssec:g_0_saturation}), inductive
+base cases ( Subsection ~\ref{ssec:g_0_base}), and exceptional
 cases (Subsection ~\ref{ssec:g-0-exceptional}) when $\delta = 0$
 before proving the main theorem in full for all $\delta$ in
 Subsection ~\ref{ssec:g-0-main}.
-
+ 
 \begin{rem}
-Since all points are linearly equivalent on $\BP^1_k$, we may assume without loss of generality that $L_X = n \infty$ for some $n \in \BN$ and $K_X = -2 \infty.$ We will use this convention throughout this section.
+Since all points are linearly equivalent on $\BP^1_k$, we may
+assume without loss of generality that $L_X = n \infty$ for some $n
+\in \BN$ and $K_X = -2 \infty$. We will use this convention
+throughout this section.
 \end{rem}
-
-
 
 \ssec{Saturation}
 \label{ssec:g_0_saturation}
@@ -2622,12 +2626,13 @@ canonical rings are generated in degree at most $e := \max(5, e_1,
 
 \begin{lem}
 \label{lem:g-0-admissible-cases}
-Let $(\sx', \Delta, \halfcan')$ be a log spin curve so that $\sx$ has signature $\sigma = (0; e_1,
-\ldots, e_r; 0)$. Then, $R' := R(\sx', \Delta, \halfcan')$ has a
-presentation generated as a $k$-algebra by elements of degree at most $e = \max(5
-, e_1, \ldots, e_r)$ with relations in degree at most $2e$ and $(\sx
-', \halfcan', J) =(\sx
-', -\infty + \sum_{i=1}^{r}\subhalf{e_i}P_i, J)$ is admissible for the following cases:
+Let $(\sx', \Delta, \halfcan')$ be a log spin curve so that $\sx$
+has signature $\sigma = (0; e_1, \ldots, e_r; 0)$. Then, $R' := R(
+\sx', \Delta, \halfcan')$ has a presentation generated as a $k$-
+algebra by elements of degree at most $e = \max(5 , e_1, \ldots, e_r
+)$ with relations in degree at most $2e$ and $(\sx ', \halfcan', J)
+= (\sx ', -\infty + \sum_{i = 1}^{r} \subhalf{e_i} P_i, J)$ is
+admissible for the following cases:
 
 \begin{longtable}
 	{| c || c | c | c |}
@@ -2670,15 +2675,12 @@ presentation generated as a $k$-algebra by elements of degree at most $e = \max(
 %\deg z$ for any generator $z$ of $R'$ and if $R' = k[y, x]/I'$
 %(as defined in Lemma ~\ref{lem:raise-stacky-order}(c)) then
 %$\initial(I')$ is minimally generated by products of two monomials.
-
 \end{lem}
 
-Note that Example ~\ref{eg:base-377}, precisely proves case (b) of Lemma ~\ref{lem:g-0-admissible-cases}.
-
-\begin{proof}[Proof of Lemma ~\ref{lem:g-0-admissible-cases}]
-For the remaining cases, we can use a similar method to the one
-used in Example ~\ref{ex:base-377} to find a presentation the
-desired conditions.
+\begin{proof}
+Recall that Case (b) is proven in Example ~\ref{ex:base-377}. For
+the remaining cases, we can use a similar method to find a
+presentation satisfying the desired conditions.
 
 The following table demonstrates that $R(\sx', 0, L')$ is
 generated as a $k$-algebra by elements of degree at most $e$
@@ -2724,8 +2726,9 @@ and any generator $z$ of $R'$.
 
 We can also always find a presentation for these cases such that
 they satisfy (Ad-i) and (Ad-ii) and that $\initial(I')$ is
-generated by products of two monomials. The procedure for
-verifying these are similar to those for the given example.
+generated by products of two monomials. Again, the procedure for
+verifying these are similar to that given in Example
+~\ref{ex:base-377}.
 
 Furthermore, each case always satisfies (Ad-iii) as demonstrated below.
 Notice that the $e_i$ and $\{e_j' : j \neq i\}$ are equivalent
@@ -2927,16 +2930,17 @@ This paper leaves open many directions for further research.
 
 \begin{enumerate}
 	\item In the case $g \geq 2$, Proposition ~\ref{prop:relation_11} gives a bound on the degree of generators of the relations of a log spin canonical ring $R_L$. Additionally, by Remark ~\ref{rem:relations_generation_ten}, any curve of genus 2 with spin canonical divisor $L = P$ has spin canonical ring $R_L$ with relations in degree 10. This raises the question of whether the bound of 11 on the degree of the relations in $R_L$ can be reduced to $10$. In particular, we make the following conjecture.
+\todo{specify that $L = P$ means it is a single point}
 \begin{conjecture}
 \label{conj:relations-10}
 If $X$ is a curve of genus $g \geq 2$ and $L \in \di X$ with $2L \sim K,$ the ideal of relations in $R_L$ is generated in degree at most $10$. More precisely, if $x_1,\ldots, x_n$ is a minimal set of generators for $R_L$ and $\phi:k[y_1,\ldots, y_n] \rightarrow R_L, y_i \mapsto x_i,$ then $I_L := \ker \phi$, is generated in degree at most 10. 
 \end{conjecture}
-Note that in the case $\dim L \geq 2$ and $L$ is basepoint-free, by Neves ~\cite[Proposition III.12]{neves:halfcan}, $I_L$ is generated in degree at most 8. Additionally, if Conjecture ~\ref{conj:relations-10} were true, by Theorem ~\ref{thm:main} we would immediately obtain the following corollary, providing a more concise statement than that of Theorem ~\ref{thm:main}.
+Note that in the case that $\dim L \geq 2$ and $L$ is basepoint-free, the ideal $I_L$ is generated in degree at most 8 by Neves ~\cite[Proposition III.12]{neves:halfcan}. Additionally, if Conjecture ~\ref{conj:relations-10} were true, by Theorem ~\ref{thm:main} we would immediately obtain the following corollary, providing a more concise statement than that of Theorem ~\ref{thm:main}.
 \begin{cor}
 \label{cor:main-refined}
-Let $(\sx,\Delta,L)$ be a log spin curve over a perfect field $k$ with signature $(g;e_1,\ldots, e_r;\delta)$ and let $R_L$ be the log canonical ring. Suppose Conjecture ~\ref{conj:relations-10}. Then, $R_L$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e,$ apart from a finite list of exceptions.
+Let $(\sx,\Delta,L)$ be a log spin curve over a perfect field $k$ with signature $(g;e_1,\ldots, e_r;\delta)$ and let $R_L$ be the log canonical ring. Suppose Conjecture ~\ref{conj:relations-10}. Then, $R_L$ is generated in degree at most $e = \max(5,e_1,\ldots, e_r)$ with relations in degree at most $2e,$ apart from a finite list of exceptions given by Table ~\ref{table:g-1-exceptional} and Table ~\ref{table:g-0-exceptional}
 \end{cor}
-	\item Another direction for further research is to extend the results of this paper to divisors $D \in \di \sx$ on a stacky curve $\sx,$ where $nD \sim K.$ The canonical rings of such divisors would translate to rings of fractional weight modular forms. As defined in Adler and Ramanan, immediately following \cite[Corollary 24.5]{adler:moduli}, a {\bf modular form of fractional weight} $\frac{2a}{n}$ on $X(p)$ is a section of a line bundle $\eta$ so that there exists a line bundle $\gamma$ with $\gamma^{\otimes a} \cong \eta$ and $\gamma^{n} \cong \Omega_{X(p)}^1$. Adler and Ramanan \cite[Appendix 2]{adler:moduli} construct an explicit basis of weight $\frac{4}{5}$ modular forms for $X(11)$. Fractional modular forms also make an apperance in Milnor \cite[$\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3^{e_3} = 0$. 
+	\item Another direction for further research is to extend the results of this paper to divisors $D \in \di \sx$ on a stacky curve $\sx,$ where $nD \sim K.$ The canonical rings of such divisors would translate to rings of fractional weight modular forms. As defined in Adler and Ramanan (in the passage immediately following \cite[Corollary 24.5]{adler:moduli}), a {\bf modular form of fractional weight} $\frac{2a}{n}$ on $X(p)$ is a section of a line bundle $\eta$ so that there exists a line bundle $\gamma$ with $\gamma^{\otimes a} \cong \eta$ and $\gamma^{n} \cong \Omega_{X(p)}^1$. Adler and Ramanan \cite[Appendix 2]{adler:moduli} construct an explicit basis of weight $\frac{4}{5}$ modular forms for $X(11)$. Fractional modular forms also make an apperance in Milnor \cite[$\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3^{e_3} = 0$. 
 
 Having motivated the importance of fractional weight modular forms, we pose the following question:
 
