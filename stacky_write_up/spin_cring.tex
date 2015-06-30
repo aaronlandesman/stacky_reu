@@ -821,7 +821,7 @@ $V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
 \begin{enumerate}
 	\item[(1)] $\sum_{j=1}^i a_j c_j \ge c_{i+1},$\\
 	\item[(2)] there does not exist $(b_1, \ldots b_i)\ne (a_1, \ldots a_i)$ with all $b_j\le a_j$ and $\sum_{j=1}^i b_jc_j\ge c_{i+1},$ \\
-	\item[(3)] there does not exist $h<i$ such that $\sum_{j=1}^h y_j^{a_j}\ge c_{h+1}$
+	\item[(3)] there does not exist $h<i$ such that $\sum_{j=1}^h y_j^{a_j}\ge c_{h+1}$.
 \end{enumerate}
 
 \item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with $I$ generated over $I'$ in degrees at most $\max(2\beta, \beta + \tau)$ (where $\tau = \max(1, \max_{1\le i, m}(\deg(x_i)))$).  \todo{Peter: Part (c) is immediate from (a) and (b), so maybe it shouldn't be its own section.  On the other hand, the other parts already have a lot of information written down (especial part (b)), so its not clear where it should be put.  Maybe in a remark after the lemma? Aaron: I like including it in the lemma. I think it's really the most important point of this, so it's fine to include it here. It's also ok to just include this as a statement after parts a and b, if we don't particularly care about referencing part c.}
@@ -910,22 +910,25 @@ Applying Equation \ref{eqn:c-from-lower-terms}, we see that $S$ contains element
 {\bf Part (b):}
 Define $U_i$ and $V$ as in the lemma's statement and define
 \[
-	T = (\bigcup_{i=1}^{n-1} U_i) \cup V.
+	T = \left(\bigcup_{i=1}^{n-1} U_i \right) \cup V.
 \]
 
-We check that $S$, $T$, and $\prec$ meet the hypothesis of Lemma \ref{lem:relations_from_generators_induction}.  We have already shown $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ giving us condition \ref{lem:relations_from_generators_induction}(1).  Our choice of order for monomials in $k[y_1, \ldots, y_n]$ and block order for those in $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ implies that $T\succ S\succ k[u, x_1, \ldots, x_m]$ giving us condition \ref{lem:relations_from_generators_induction}(2).  
+We check that $S$, $T$, and $\prec$ meet the hypothesis of Lemma \ref{lem:relations_from_generators_induction}.  In part (a), we have shown $S$ \todo{What is $S$. I presume it is the complement, but can you spell it out?} forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ implying condition (1) of Lemma ~\ref{lem:relations_from_generators_induction} holds.  Our choice of order for monomials in $k[y_1, \ldots, y_n]$ and block order for those in $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ implies that $T\succ S\succ k[u, x_1, \ldots, x_m]$, implying that condition (2) of Lemma \ref{lem:relations_from_generators_induction} holds.  
 
-Now, suppose $f\in k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ is a monomial not contained in $k[u, x_1, \ldots, x_m]$, meaning there is some $j$ such that $y_j|f$.  Further suppose $f\not\in \langle V \rangle$, meaning that for each $i\in \{1, \ldots m\}$, $x_iy_j\not |f$ so $x_i\not|f$.  Therefore, $f\in k[u, y_1, \ldots, y_n]$.  We note that $S$ generates $y_j (k[u,y_1, \ldots, y_n])$ as a $k$-algebra.  That is, all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
+It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generators_induction}. To do this, suppose $f\in k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ is a monomial not contained in $k[u, x_1, \ldots, x_m]$, meaning there is some $j$ such that $y_j|f$.  Further suppose $f\not\in \langle V \rangle$, meaning that for each $i\in \{1, \ldots m\}$, $x_iy_j \nmid f$. Since $y_j \mid f$ but $x_iy_j \nmid f$, we obtain $x_i\nmid f$.  Therefore, $f\in k[u, y_1, \ldots, y_n]$.  We note that $S$ generates $y_j \cdot (k[u,y_1, \ldots, y_n])$ as a $k$-algebra.  That is, all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \[
-	k[u, x_1, \ldots, x_m] \cup V \cup \{y_1, \ldots, y_n\} k[u, y_1, \ldots, y_n]. 
+	k[u, x_1, \ldots, x_m] \cup V \cup \left(\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]\right). 
 \]
-\todo{is $\{y_1, \ldots, y_n\} k[u, y_1, \ldots, y_n]$ appropriate notation to mean all possible products between some $y_j\in \{y_1, \ldots, y_n\}$ and some element in $k[u, y_1, \ldots, y_n]$?}
-Thus, we see that if $f\in k[u, y_1, \ldots, y_n]$, then $f=u^b \prod_{j=1}^l {y_j}^{a_j}\in S$ for some $1\le l\le n$, $b\in \mathbb{Z}_{\ge 0}$, and $a_j\in \mathbb{Z}_{\ge 0}$ for all $j$ with $a_l> 0$.  For $j\in \mathbb{N}$ with $l < j\le n$, assign $a_j=0$.  If $i\in \{1, \ldots, n\}$, then $y_i f$ is either in $S$ or there is some $h\in \mathbb{N}$ such that $i\le h\le \max(i,l)$ satisfying $\prod_{j=1}^h y_j^{a_j}\not\in S_{\sum_{j=1}^h c_j a_j}$ \todo{Peter: terrible subscripts...}, and for all $r<h$, we have $\prod_{j=1}^r {y_j}^{a_j}\in S_{\sum_{j=1}^r c_ja_j}$.  We see that this latter case when $y_if\not\in S$ is equivalent to $\prod_{j=1}^h {y_j}^{a_j}\in U_h$.  Thus, since $S$ generates $\{y_1, \ldots, y_n\} k[y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\{y_1, \ldots, y_n\} k[y_1, \ldots, y_n]-S$, we have shown that all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
+Thus, we see that if $f\in k[u, y_1, \ldots, y_n]$, then $f=u^b \prod_{j=1}^l {y_j}^{a_j}\in S$ for some $1\le l\le n$, $b\in \mathbb{Z}_{\ge 0}$, so that $a_l > 0$ and $a_j\in \mathbb{Z}_{\ge 0}$ for $1 \leq j \leq l$. For $j\in \mathbb{N}$ with $l < j\le n$, assign $a_j=0$. \todo{Is there a reason why you don't just take the product up to $n$ and let $l$ be the highest number so that $a_l \neq 0$? This seems simpler to me}
+If $i\in \{1, \ldots, n\}$, then $y_i f$ is either in $S$ or there is some $h\in \mathbb{N}$ such that $i\le h\le \max(i,l)$ satisfying $\prod_{j=1}^h y_j^{a_j}\not\in S_{\sum_{j=1}^h c_j a_j}$ \todo{Peter: terrible subscripts... Aaron: Indeed, why not just omit the subscript?}, 
+and for all $r<h$, we have $\prod_{j=1}^r {y_j}^{a_j}\in S_{\sum_{j=1}^r c_ja_j}$.  We see that this latter case when $y_i f \notin S$ is equivalent to $\prod_{j=1}^h {y_j}^{a_j}\in U_h$. \todo{Aaron: Why to we see this? Presumably this is using conditions 1,2,3 but it would be helpful for you to spell out which. Also, what are the latter and former cases? I don't see the casework anywhere}
+Thus, since $S$ generates $\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\{y_1, \ldots, y_n\} k[y_1, \ldots, y_n]-S$, we have shown that all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \begin{align*}
-				& k[u, x_1, \ldots, x_m] \cup \langle V \rangle \cup S \cup \langle \bigcup_{i=1}^{n-1} U_i \rangle \\
+				& k[u, x_1, \ldots, x_m] \cup \langle V \rangle \cup S \cup \left\langle \bigcup_{i=1}^{n-1} U_i \right\rangle \\
 	\subseteq \; 	& S \cup \langle T\rangle \cup \initial_\prec(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[u, x_1, \ldots, x_m].
 \end{align*}
-This gives us condition \ref{lem:relations_from_generators_induction}(3).  Thus, the conditions of Lemma \ref{lem:relations_from_generators_induction} are met, and by applying its conclusion we prove (b) of this lemma.  \todo{Peter: Checking that all the conditions of Lemma \ref{lem:relations_from_generators_induction}(2) are met takes a lot of space and clutter.  On the other hand, it is somewhat important.  Should it be included?}
+This shows condition (3) of Lemma ~\ref{lem:relations_from_generators_induction} holds.  Thus, the conditions of 
+Lemma ~\ref{lem:relations_from_generators_induction} are met. Finally, Lemma ~\ref{lem:relations_from_generators_induction} implies part (b).  \todo{Peter: Checking that all the conditions of Lemma \ref{lem:relations_from_generators_induction}(2) are met takes a lot of space and clutter.  On the other hand, it is somewhat important.  Should it be included?}
 
 {\bf Part (c):}
 Finally, (c) of this lemma follows immediately by looking at the constructions of parts (a) and (b).  
