@@ -180,18 +180,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup
-of $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
+Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup of
+$PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations. We consider the {\bf ring of modular forms}
-$M(\Gamma) = \bigoplus_k M_k(\Gamma)$. In this paper, we sharply bound the degree of the generators and
-relations for $M(\Gamma)$, for general $\Gamma$ \todo{Peter: Why do you say general gamma?  I think you should either add "general fuchsian groups gamma" or just take out that clause, since you just defined what gamma is.}  \todo{Peter: also, its not clear to me that this should be said right here.  I think we may want to say a bit more about what's already known instead of going directly to what we have done}.  In the special that $\Gamma$ has no odd weight modular forms, Voight and Zureick-Brown
-\cite[Chapters 7-9]{vzb:stacky} give similar bounds, and we extend their work to all Fuchsian groups $\Gamma$. In order to find generators and relations for $M(\Gamma)$, we translate the seemingly analytic question of understanding the ring of modular forms into the algebraic
-category, using a generalization of the GAGA principle. By
-\cite[Proposition 6.1.5]{vzb:stacky}, there is an equivalence of
-categories between orbifold curves and log stacky curves over $\BC$.
-Hence, for the remainder of the paper, we will work in the
-algebraic category. \todo{mention that we will use the language
-of Weil divisors?}
+$M(\Gamma) = \bigoplus_k M_k(\Gamma)$. Often, it is useful to
+bound the degree of the generators and relations for $M(\Gamma)$
+for general Fuchsian groups $\Gamma$. In the special case that $\Gamma$
+has no odd weight modular forms, Voight and Zureick-Brown
+\cite[Chapters 7-9]{vzb:stacky} give nice bounds.
+This work extends their work to all Fuchsian groups $\Gamma$.
+
+We can now consider the orbifold $\Gamma \backslash \BH$ over $\BC$.
+For example, in the case $\Gamma$ acts freely on $\BH$, $\Gamma
+\backslash \BH$ is a Riemann Surface over $\BC$. It may well be
+that $\Gamma \backslash \BH$ is not compact, but we can form a
+space $\Gamma \backslash \BH^*$ which is a compactification of
+$\Gamma \backslash \BH,$ with associated divisor of cusps $\Delta$.
+In order to find generators and relations for $M(\Gamma)$, we
+translate the seemingly analytic question of understanding the ring
+of modular forms into the algebraic category, using a
+generalization of the GAGA principle. By \cite[Proposition 6.1.5]
+{vzb:stacky}, there is an equivalence of categories between orbifold
+curves and log stacky curves over $\BC$. Hence, for the remainder
+of the paper, we will work in the algebraic category.
+\todo{mention that we will use the language of Weil divisors?}
 
 Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is
 well known that the canonical sheaf $\Omega _X,$ with associated canonical divisor $K_X$
@@ -227,8 +239,9 @@ and {\bf stacky points} (also called {\bf{fractional points}}) $P_1,
 \ldots, P_r$ with {\bf stabilizer orders} $e_1,\ldots, e_r \in \BZ_{
 \geq 2}$ if 
 \[
-	\di \sx = \di X \oplus \left(\bigoplus_{i = 1}^r \left\langle 
-	\frac{1}{e_i}P_i \right\rangle \right) \subseteq \BQ \otimes \di X.
+	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle 
+	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
+	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
 \todo{Peter: Would it be better to say $Div(\sx)=(Div(X))[\frac{1}{e_i}P_i]_{1\le i\le r}$ or something like that? Aaron: I agree what is written isn't actually correct, maybe we should say the free direct sum over points not in the $P_i$, together with the fractional points. It's not a localization because we don't want to invert $P_i$.}
 As is done in Voight and Zureick-Brown \cite{vzb:stacky} stacky curves may be formalized as stacks, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of stacky points. \todo{I don't know if this is a good statement to make.  We aren't really viewing $\sx$ as a scheme.  Rather we're are determining information about its canonical rings through knowledge of scheme data.}  A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
@@ -239,49 +252,39 @@ canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \end{align*}
 
 In particular, we would like to bound the degrees in which the
-graded ring and its relations are generated.  O'Dorney
-shows that the canonical ring of any $\BQ$-divisor $D =
-\frac{\alpha_1}{\beta_1}P_1 + \frac{\alpha_2}{\beta_2}P_2$ of
-$\BP_k^1$ is generated in degrees up
-to $e := \max(\beta_1, \beta_2)$ with relations generated in
-degrees up to $2e$ \cite[Theorem 6]{dorney:canonical}. Furthermore,
-O'Dorney gives a larger bound in terms of least common multiples of
-the denominators when the support of $D$ is allowed to
-have arbitrarily many points.
-Voight and Zureick-Brown also bounded the generator and relation
-degrees of log spin canonical rings of $(\sx, \Delta, \halfcan)$,
-in the case that genus is positive and $\halfcan$ is effective,
-by $3e$ and $6e$ for $e := \max(e_1, \ldots, e_r)$.
+log spin canonical ring and its relations are generated. Let
+$\sx$ be a stacky curve with signature $\sigma = (g; e_1, \ldots,
+e_r; \delta)$. The application of O'Dorney's work to log spin
+canonical rings gives a large bound for the genus zero case in
+terms of least common multiples of the $e_i$'s \cite[Chapter 5]
+{dorney:canonical}. Voight and Zureick-Brown bounded the 
+generator degrees by $3e$ and the relation degrees by $6e$ when
+$\halfcan$ is effective \cite[Corollary 10.4.6]{vzb:stacky}.
 
-The goal of this paper is to provide a stricter bound on the
-generator and relation degrees of log spin canonical rings
-for all genera. Note that O'Dorney's bounds are asymptotically
-tight for arbitrary $\BQ$-divisors on $\BP^1$, but restricting
-to the log spin curve case allows for lower bounds.
-The main theorem of this paper is the following improved bound on
-the degree of generators and relations of log spin canonical rings:
+These bounds, particularly those derived from O'Dorney's work
+in the genus zero case, are far from tight and do not collectively
+cover all cases in all genera. The main theorem of this paper
+gives significantly tighter bounds across all cases in all
+genera on the generator and relation degrees of log spin canonical
+rings.
 
 \todo{State for even weight modular forms attributed to VZB.}
 \begin{thm}
 \label{thm:main}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere? No, use separable stacky points} so
-that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
-log spin canonical ring
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
+field $k$, so that $\sx$ has signature $\sigma = (0; e_1, \ldots,
+e_r; \delta)$.
 
-\begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\end{align*}
-
-\noindent
-is generated as a $k$-algebra by elements of degree at most $e =
-\max(5, e_1, \ldots, e_r).$ If the genus $g \geq 2,$ and $\Delta = 0
-$ then $R(\sx,\Delta, \halfcan)$ has relations generated in degrees
-up to $\max(11, 2e_1, \ldots, 2e_r)$. Otherwise, $R(\sx, \Delta,
-\halfcan)$ has relations generated in degrees up to $\max(10, 2e_1,
-\ldots, 2e_r),$ so long as $\sigma$ does not lie in a finite list
-of exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
-for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
-for signatures with $g = 0$.
+Then the log spin canonical ring is generated as a $k$-algebra by 
+elements of degree at most $e = \max(5, e_1, \ldots, e_r).$ If the 
+genus $g \geq 2,$ and $\Delta = 0$ then $R(\sx,\Delta, \halfcan)$
+has relations generated in degrees up to $\max(11, 2e_1, \ldots,
+2e_r)$. Otherwise, $R(\sx, \Delta, \halfcan)$ has relations
+generated in degrees up to $\max(10, 2e_1, \ldots, 2e_r),$ so long
+as $\sigma$ does not lie in a finite list of exceptional cases, as
+listed in Table ~\ref{table:g-1-exceptional} for signatures with $g
+= 1$ and Table ~\ref{table:g-0-exceptional} for signatures with $g =
+0$.
 \end{thm}
 
 \begin{rem}
@@ -398,8 +401,9 @@ genus $g$. Then $X$ is the \textbf{coarse space} associated to $\sx$
 if
 
 \[
-	\di \sx = \di X \oplus \left(\bigoplus_{i
-	= 1}^r \left\langle \frac{1}{e_i}P_i \right\rangle \right) \subseteq \BQ \otimes \di X
+	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle 
+	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
+	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
 \end{defn}
 
@@ -537,7 +541,7 @@ monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
 \succ_{\text{grlex}} \beta$ if either $\alpha$ has larger degree:
 
 \begin{equation}
-	\deg \alpha := \sum_{i = 1}^{n} d f_i  > \sum_{i = 1}^{n} d f_i' =: \deg \beta
+	\deg \alpha := \sum_{i = 1}^{n} d_i f_i  > \sum_{i = 1}^{n} d_i f_i' =: \deg \beta
 \end{equation}
 or $\alpha$ is larger using the lexicographical ordering event of equal
 degrees:
@@ -561,7 +565,7 @@ monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
 \succ_{\text{grevlex}} \beta$ if either $\alpha$ has larger degree:
 
 \begin{equation}
-	\deg \alpha := \sum_{i = 1}^{n} d f_i  > \sum_{i = 1}^{n} d f_i' =: \deg \beta
+	\deg \alpha := \sum_{i = 1}^{n} d_i f_i  > \sum_{i = 1}^{n} d_i f_i' =: \deg \beta
 \end{equation}
 or $\alpha$ has a smaller right-most entry in the event of equal
 degrees:
@@ -588,21 +592,22 @@ by Voight and Zureick-Brown \cite[Section 8.1]{vzb:stacky}.
 
 \begin{defn}
 \label{defn:block-order}
-\todo{Aaron: Doesn't \cite{vzb:stacky} put the $y_i$ before the $x_i$? Shouldn't we match this convention (here and anywhere we use this in the paper later)?}
-Let $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$ and $k[y_{c_1, 1}, \ldots,
-y_{c_m, m}]$ be weighted polynomial rings with existing term
-orders $\prec_x$ and $\prec_y$, respectively. Let $\alpha :=
-\prod_{i = 1}^{n} x_{d_i, i}^{f_i}$ $\prod_{j = 1}^{m} y_{c_j, j}
-^{h_i}$ and $\beta := \prod_{i = 1}^{n} x_{d_i, i}^{f_i'}
-\prod_{j = 1}^{m} y_{c_j, j}^{h_i'}$ be monomials in $k[x_{d_1, 1},
-\ldots, x_{d_n, n}] \otimes$ $k[y_{d_1', 1}, \ldots, y_{d_m', m}]$.
-Let $\alpha_x := \prod_{i = 1}^{n} x_{d_i, i}^{f_i}$ be the
-part of $\alpha$ in $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$ and
-likewise with $\alpha_y$, $\beta_x$, and $\beta_y$.
+
+Let $k[y_{c_1, 1}, \ldots, y_{c_m, m}]$ and $k[x_{d_1, 1}, \ldots,
+x_{d_n, n}]$ be weighted polynomial rings with existing term
+orders $\prec_y$ and $\prec_x$, respectively. Let $\alpha :=
+\prod_{j = 1}^{m} y_{c_j, j}^{h_i}$ $\prod_{i = 1}^{n} x_{d_i, i}
+^{f_i}$ and $\beta := \prod_{j = 1}^{m} y_{c_j, j}^{h_i'}
+\prod_{i = 1}^{n} x_{d_i, i}^{f_i'}$ be monomials in $k[y_{d_1', 1},
+\ldots, y_{d_m', m}] \otimes$ $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$.
+Let $\alpha_y := \prod_{j = 1}^{m} y_{c_j, j}^{h_i}$ be the
+part of $\alpha$ in $k[y_{c_1, 1}, \ldots, y_{c_m, m}]$ and
+likewise with $\alpha_x$, $\beta_y$, and $\beta_x$.
+
 
 In the \textbf{(graded) block} (or \textbf{elimination}) term
-ordering on $k[x_{d_1, 1}, \ldots, x_{d_n, n}] \otimes k[y_{d_1', 1},
-\ldots, y_{d_m', m}]$, we define $\alpha \succ \beta$ if
+ordering on $k[y_{d_1', 1}, \ldots, y_{d_m', m}] \otimes k[x_{d_1, 1},
+\ldots, x_{d_n, n}]$, we define $\alpha \succ \beta$ if
   \begin{enumerate}
 	\item[(i)] $\deg \alpha  > \deg \beta$ or
   \item[(ii)] $\deg \alpha = \deg \beta$ and $\alpha_y \succ_y \beta_y$ or
@@ -610,27 +615,45 @@ ordering on $k[x_{d_1, 1}, \ldots, x_{d_n, n}] \otimes k[y_{d_1', 1},
   \end{enumerate}
 \end{defn}
 
-\todo{write below part}
-For a homogeneous polynomial $f \in k[x]_{\vec{a}}$, we define the \textbf{initial term} $\initial(f)$ to be the monomial in the support of $f$ that is largest with respect to $\prec$, and we define $\initial(0)=0$.  Let $I \subseteq k[x]_{\vec{a}}$ be a homogeneous ideal.  We define the \textbf{initial ideal} $\initial(I)$ to be the ideal generated by $\{\initial(f) : f \in I\}$.  A \textbf{Gr\"obner basis} (also called a \textbf{standard basis}) for $I$ is a set $\{f_1,\dots,f_n\} \subseteq I$ such that 
-+\[ \langle \initial(f_1),\dots,\initial(f_n) \rangle = \initial(I). \]
- 
-\begin{rem}
-A Gr\"obner basis for $I$ \emph{a priori} depends on a choice of basis for the ambient graded polynomial ring.
-\end{rem}
+Now we give brief definitions of initial terms and Gr\"{o}bner
+bases. These will be used in the proofs of the inductive lemmas
+in Section ~\ref{sec:induction} and in the proof of Theorem
+~\ref{thm:main}.
 
-\subsection{Junk}
-\todo{add this back into the intro}
-This is stuff that has been moved out of the introduction to possibly
-be retooled for this section.
+\begin{defn}
+\label{defn:initial-term}
+Let $f \in k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a homogeneous
+polynomial. The \textbf{initial term} $\initial(f)$ of $f$
+is the largest monomial in the support of $f$ with respect to
+the ordering $\prec$. Furthermore, we set $\initial(0) := 0$.
+\end{defn}
 
-We can then consider the
-orbifold $\Gamma \backslash \BH$ over $\BC$. For example, in the
-case $\Gamma$ acts freely on $\BH$, $\Gamma \backslash \BH$ is a
-Riemann Surface over $\BC$. It may well be that $\Gamma \backslash
-\BH$ is not compact. Defining $\Delta$ as the divisor of cusps
-associated to $\Gamma$, we can form a space $\Gamma \backslash
-\BH^*$ which is a compactification of $\Gamma \backslash \BH,$ with
-associated {\bf divisor of cusps} $\Delta$.
+Given a homogeneous ideal $I \subseteq k[x_{d_1, 1}$, $\ldots$,
+$x_{d_n, n}]$, we can now define the \textbf{initial ideal}
+$\initial(I)$ of $I$.
+
+\begin{defn}
+\label{defn:initial-ideal}
+Let $I$ be a homogeneous ideal of $k[x_{d_1, 1}$, $\ldots$,
+$x_{d_n, n}]$. Then the initial ideal $\initial(I)$ of $I$ is
+the ideal generated by the initial terms of homogeneous polynomials
+in $I$:
+\[
+	\initial(I) := \langle \initial(f) \rangle_{f \in I}
+\]
+\end{defn}
+
+Furthermore, we will use Gr\"{o}bner bases, which are bases
+for these initial ideals and have many useful properties.
+
+\begin{defn}
+\label{defn:grobner-basis}
+Let $I$ be a homogeneous ideal of $k[x_{d_1, 1}$, $\ldots$,
+$x_{d_n, n}]$. A \textbf{Gr\"obner basis} for $I$, also known as a
+\textbf{standard basis} for $I$, is a set of elements in $I$
+such that their initial terms form a basis for the initial
+ideal of $I$.
+\end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive lemmas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2539,31 +2562,31 @@ $\sigma, J$ is admissible.
 We can directly see that the relations are given in degrees $10$
 and $14$. In particular, we have relations
 \begin{align*}
-	&a_1 x_{3, 1} x_{7, 2} + a_2 x_{3, 1} x_{7, 1} + a_3 x_{5, 1}^2 = 
+	&a_1 x_{7, 2} x_{3, 1} + a_2 x_{7, 1} x_{3, 1} + a_3 x_{5, 1}^2 = 
 	0 &\text{ in degree $10$} \\
-	&b_1 x_{7, 2}^2 + b_2 x_{7, 1} x_{7, 2} + b_3 x_{7, 1}^2
-	+ b_4 x_{3, 1}^3 x_{5, 1} = 0  &\text{ in degree $14$}
+	&b_1 x_{7, 2}^2 + b_2 x_{7, 2} x_{7, 1} + b_3 x_{7, 1}^2
+	+ b_4 x_{5, 1} x_{3, 1}^3 = 0  &\text{ in degree $14$}
 \end{align*}
 
 \noindent
 and note that $a_1$ and $b_1$ are both nonzero. If $a_1 = 0$, then we
 have that
 \[
-	a_2 x_{3, 1} x_{7, 1} = -a_3 x_{5, 1}^2
+	a_2 x_{7, 1} x_{3, 1} = -a_3 x_{5, 1}^2
 \]
 
 \noindent
-However, $x_{3, 1} x_{7, 1}$ has pole orders $(3, 4, 3)$ and
+However, $x_{7, 1} x_{3, 1}$ has pole orders $(3, 4, 3)$ and
 $x_{5, 1}^2$ has pole orders $(2, 4, 4)$ so their
 coefficients must be zero for this equality to hold. We have a
 similar pole order consideration in forcing $b_1$ to be nonzero.
 
 Let $I$ be the ideal generated by these relations in
-$k[x_{7, 1}, x_{7, 2}, x_{5, 1}, x_{3, 1}]$. Under grlex with
+$k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]$. Under grlex with
 $x_{3,1} \prec x_{5,1} \prec x_{7,1} \prec x_{7,2}$, the initial
 ideal of $I$ is
 \[
-	\initial(I) = \langle x_{3, 1} x_{7, 2}, x_{7, 2}^2 \rangle
+	\initial(I) = \langle x_{7, 2}^2, x_{7, 2} x_{3, 1} \rangle
 \]
 
 \noindent
@@ -2571,25 +2594,26 @@ since $a_1$ and $b_1$ are nonzero.
 
 To demonstrate that these two relations generate all 
 relations, we show that $\dim_k (R')_d = \dim_k
-(k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / \initial(I))_d$ for 
+(k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \initial(I))_d$ for 
 all degrees $d \geq 0$. In particular, 
 
 \begin{align*}
-	\dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / I)_d &=
-	\dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}]	/ in_\prec(I))_d \\
-	&= \dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / \langle
-	x_{3, 1} x_{7, 2}, x_{7, 2}^2 \rangle
+	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I)_d &=
+	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]	/ in_\prec(I))_d \\
+	&= \dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle
+	x_{7, 2}^2, x_{3, 1} x_{7, 2} \rangle
 \end{align*}
 
 \noindent
-for all $d \geq 0$. But the fact $\dim_k (R')_d = \dim_k (k[x_{3, 1},
-x_{5, 1}, x_{7, 1}, x_{7, 2}] / \langle x_{5, 1}^2,	x_{7, 1}^2 \rangle$ can
-be checked by looking at the $k$-basis at each degree $d$.
+for all $d \geq 0$. But the fact $\dim_k (R')_d = \dim_k (k[x_{7, 2},
+x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle x_{7, 2}^2, x_{3, 1} x_{7, 2}
+\rangle$ can be checked by looking at the $k$-basis at each degree
+$d$.
 
 Therefore, the canonical ring $R'$ has presentation $R' =
-k[x_{7, 1}, x_{7, 2}, x_{5, 1}, x_{3, 1}] / I$ with
+k[x_{7, 2}^2, x_{3, 1} x_{7, 2}] / I$ with
 initial ideal $\initial(I)$ generated by quadratics under grlex
-with $x_{7,1} \prec x_{7,2} \prec x_{5,1} \prec x_{3,1}$.
+with $x_{3,1} \prec x_{5,1} \prec x_{7,1} \prec x_{7,2}$.
 %These quadratics must also determine minimal generators for $I$ by
 %Lemma ~\ref{lem:minimal_quadratic}.
 Thus, $R'$ is generated up to degree $e = 7$ with relations up to
@@ -2850,7 +2874,7 @@ from Table ~\ref{table:g-0-base-cases} and deduce that $R(\sx,
 This paper leaves open many directions for further research.
 
 \begin{enumerate}
-	\item In the case $g \geq 2$, Proposition ~\ref{prop:relation_11} gives a bound on the degree of generators of the relations of a log spin canonical ring $R_L$. Additionally, by Remark ~\ref{rem:relations_generation_ten}, any curve of genus 2 with half canonical divisor $L = P$ has spin canonical ring $R_L$ with relations in degree 10. This raises the question of whether the bound of 11 on the degree of the relations in $R_L$ can be reduced to $10$. In particlar, we make the following conjecture.
+	\item In the case $g \geq 2$, Proposition ~\ref{prop:relation_11} gives a bound on the degree of generators of the relations of a log spin canonical ring $R_L$. Additionally, by Remark ~\ref{rem:relations_generation_ten}, any curve of genus 2 with half canonical divisor $L = P$ has spin canonical ring $R_L$ with relations in degree 10. This raises the question of whether the bound of 11 on the degree of the relations in $R_L$ can be reduced to $10$. In particular, we make the following conjecture.
 \begin{conjecture}
 \label{conj:relations-10}
 If $X$ is a curve of genus $g \geq 2$ and $L \in \di X$ with $2L \sim K,$ the ideal of relations in $R_L$ is generated in degree at most $10$. More precisely, if $x_1,\ldots, x_n$ is a minimal set of generators for $R_L$ and $\phi:k[y_1,\ldots, y_n] \rightarrow R_L, y_i \mapsto x_i,$ then $I_L := \ker \phi$, is generated in degree at most 10. 
