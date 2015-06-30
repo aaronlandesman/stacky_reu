@@ -135,7 +135,7 @@
 \newcommand{\se}[1]{\section*{Problem #1}}
 \newcommand{\halfcan}{L}
 \DeclareMathOperator{\Supp}{Supp}
-\DeclareMathOperator{\initial}{in}
+\DeclareMathOperator{\initial}{in_\prec}
 \DeclareMathOperator{\gin}{gin}
 \DeclareMathOperator{\Eff}{Eff}
 \DeclareMathOperator{\sat}{sat}
@@ -188,9 +188,10 @@ relations for $M(\Gamma)$, for general $\Gamma$ \todo{Peter: Why do you say gene
 \cite[Chapters 7-9]{vzb:stacky} give similar bounds, and we extend their work to all Fuchsian groups $\Gamma$. In order to find generators and relations for $M(\Gamma)$, we translate the seemingly analytic question of understanding the ring of modular forms into the algebraic
 category, using a generalization of the GAGA principle. By
 \cite[Proposition 6.1.5]{vzb:stacky}, there is an equivalence of
-categories between orbifold curves and log stacky curves over $\BC$
-. Hence, for the remainder of the paper, we will work in the
-algebraic category.
+categories between orbifold curves and log stacky curves over $\BC$.
+Hence, for the remainder of the paper, we will work in the
+algebraic category. \todo{mention that we will use the language
+of Weil divisors?}
 
 Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is
 well known that the canonical sheaf $\Omega _X,$ with associated canonical divisor $K_X$
@@ -216,6 +217,8 @@ Petri's theorem in many \todo{Peter: not clear to me that ``many''
 is a good word to use here.  We mostly generalize in one direction}
 directions. 
 
+\todo{combine below two paragraphs with the corresponding
+near-duplicate part from the background}
 If $X$ is a curve, \todo{why do you start with a curve and then
 move to a stacky curve? shouldn't it be the opposite order?} then
 we say $\sx$ is a {\bf stacky curve} with {\bf coarse space} $X$
@@ -241,7 +244,8 @@ shows that the canonical ring of any $\BQ$-divisor $D =
 $\BP_k^1$ is generated in degrees up
 to $e := \max(\beta_1, \beta_2)$ with relations generated in
 degrees up to $2e$ \cite[Theorem 6]{dorney:canonical}. Furthermore,
-O'Dorney gives a larger bound in terms of least common multiples of the denominators when the support of $D$ is allowed to
+O'Dorney gives a larger bound in terms of least common multiples of
+the denominators when the support of $D$ is allowed to
 have arbitrarily many points.
 Voight and Zureick-Brown also bounded the generator and relation
 degrees of log spin canonical rings of $(\sx, \Delta, \halfcan)$,
@@ -251,7 +255,7 @@ by $3e$ and $6e$ for $e := \max(e_1, \ldots, e_r)$.
 The goal of this paper is to provide a stricter bound on the
 generator and relation degrees of log spin canonical rings
 for all genera. Note that O'Dorney's bounds are asymptotically
-strict for arbitrary $\BQ$-divisors on $\BP^1$, but restricting
+tight for arbitrary $\BQ$-divisors on $\BP^1$, but restricting
 to the log spin curve case allows for lower bounds.
 The main theorem of this paper is the following improved bound on
 the degree of generators and relations of log spin canonical rings:
@@ -261,7 +265,7 @@ the degree of generators and relations of log spin canonical rings:
 \label{thm:main}
 Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, \todo{Ask David: do we need this perfectness assumption everywhere? No, use seperable stacky points} so
 that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
-canonical ring
+log spin canonical ring
 
 \begin{align*}
 	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
@@ -278,6 +282,12 @@ of exceptional cases, as listed in Table ~\ref{table:g-1-exceptional}
 for signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional}
 for signatures with $g = 0$.
 \end{thm}
+
+\begin{rem}
+In fact, the theorem only needs to assume that the stacky curve
+is separably rooted, i.e. the residue field at each stacky point
+is separable.
+\end{rem}
 
 This theorem is proven in three different genus cases, each of
 which use similar inductive processes. The genus $g \geq 2$ case is
@@ -305,7 +315,9 @@ in many interesting low genus cases, as detailed in Neves
 
 The main theorem of this paper provides the following application
 to modular forms when combined with a result from Voight and
-Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky}.
+Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky} which itself
+follows from the classical work of Kodaira--Spencer
+\cite{kodaira-spencer:deformations}.
 
 \begin{cor}
 \label{cor:main-mod-forms}
@@ -352,18 +364,23 @@ Chapter 5]{vzb:stacky}.
 
 \ssec{Stacky Curves and Log Spin Canonical Rings}
 \label{ssec:stacky-background}
+\todo{combine the below chunk with the near-duplicate section
+in the introduction}
 A \textbf{stacky curve} $\sx$ over a field $k$ is a smooth proper
 geometrically-connected Deligne-Mumford stack of dimension $1$ over
 $k$ with a dense open subscheme. A stacky curve is \textbf{tame} if
 its stabilizers are coprime to char $k$. Throughout this paper,
 stacky curves will be assumed to be tame and $k$ will always be
-algebraically closed. The language of stacks will be omitted in
+algebraically closed. We also assume that the stacky curves are
+separably rooted, i.e. the residue field of each stacky points
+is separable. The language of stacks will be omitted in
 this paper, as it is sufficient to view stacky curves and related
 objects $\sx$ as a scheme whose associated divisor group allows for
 a finite number of \textbf{stacky points} which may be viewed
 heuristically as ``fractional points''. See Voight and
 Zureick-Brown for more thorough treatment of these definitions
-\cite[Chapter 5]{vzb:stacky}.
+\cite[Chapter 5]{vzb:stacky}. \todo{again, not quite viewing as a
+scheme}
 
 If $P_1, \ldots, P_r$ are the stacky points of a stacky curve $\sx$,
 then we use $e_1,\ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
@@ -408,10 +425,11 @@ Now we can define the analogy to canonical rings for
 log spin curves.
 
 \begin{defn}
-If divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
+If Weil divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
 with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
 \rfloor$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
 \lfloor \alpha_i \rfloor P_i$.
+\todo{cite lemma 5.4.7 from VZB maybe?}
 
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
@@ -423,15 +441,11 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 When the log spin curve is fixed, we usually use $R$ or $R_L$ to
 represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D)
 := H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim H^0(\sx, \sco(D))$.
-
-\todo{do this part}
-Part on Kodaira--Spencer \cite{kodaira-spencer:deformations}.
-
+If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^{th}$
+degree component of $R$.
 
 \todo{Note that this result is independence of base field}
 
-If $R$ is a graded ring, then $(R)_d$ refers to the $d^{th}$ degree
-component of $R$.
 
 \begin{defn}
 \label{def:order-sup}
@@ -599,14 +613,15 @@ ordering on $k[x_{d_1, 1}, \ldots, x_{d_n, n}] \otimes k[y_{d_1', 1},
 \end{defn}
 
 \todo{write below part}
-For a homogeneous polynomial $f \in k[x]_{\vec{a}}$, we define the \textbf{initial term} $\initial_{\prec}(f)$ to be the monomial in the support of $f$ that is largest with respect to $\prec$, and we define $\initial_{\prec}(0)=0$.  Let $I \subseteq k[x]_{\vec{a}}$ be a homogeneous ideal.  We define the \textbf{initial ideal} $\initial_{\prec}(I)$ to be the ideal generated by $\{\initial_{\prec}(f) : f \in I\}$.  A \textbf{Gr\"obner basis} (also called a \textbf{standard basis}) for $I$ is a set $\{f_1,\dots,f_n\} \subset I$ such that 
-+\[ \langle \initial_{\prec}(f_1),\dots,\initial_{\prec}(f_n) \rangle = \initial_{\prec}(I). \]
+For a homogeneous polynomial $f \in k[x]_{\vec{a}}$, we define the \textbf{initial term} $\initial(f)$ to be the monomial in the support of $f$ that is largest with respect to $\prec$, and we define $\initial(0)=0$.  Let $I \subseteq k[x]_{\vec{a}}$ be a homogeneous ideal.  We define the \textbf{initial ideal} $\initial(I)$ to be the ideal generated by $\{\initial(f) : f \in I\}$.  A \textbf{Gr\"obner basis} (also called a \textbf{standard basis}) for $I$ is a set $\{f_1,\dots,f_n\} \subset I$ such that 
++\[ \langle \initial(f_1),\dots,\initial(f_n) \rangle = \initial(I). \]
  
 \begin{rem}
 A Gr\"obner basis for $I$ \emph{a priori} depends on a choice of basis for the ambient graded polynomial ring.
 \end{rem}
 
 \subsection{Junk}
+\todo{add this back into the intro}
 This is stuff that has been moved out of the introduction to possibly
 be retooled for this section.
 
@@ -654,7 +669,7 @@ curve with the same log divisor, the same stacky points, and some subset of the 
 %generated in degree 1, is equipped with a monomial ordering $\prec$.
  %Let $\phi:k[x_1, \ldots, x_n] \rightarrow B'$ be a map of graded
 %rings with kernel $I'$, such that $I'$ is generated by elements $f_1,
-%\ldots, f_j$, where $in_\prec(f_i) = x_i x_j,$ and no term of $f_i$
+%\ldots, f_j$, where $\initial(f_i) = x_i x_j,$ and no term of $f_i$
 %is of the form $x_k$. Then, the elements $f_i$ determine minimal
 %generators for $I$.
 %\end{lem}
@@ -705,7 +720,7 @@ curve with the same log divisor, the same stacky points, and some subset of the 
 	%\end{tikzcd}
 %\]
 %Further suppose that $I'$ is generated over $I$ by elements $f_1,
-%\ldots, f_j$ as a $k$-vector space, where $in_\prec(f_i) \in \{y_i x_j, y_i y_j\}$ and no monomial of $f_i$
+%\ldots, f_j$ as a $k$-vector space, where $\initial(f_i) \in \{y_i x_j, y_i y_j\}$ and no monomial of $f_i$
 %is of the form $y_i$. Then, the elements $f_i$ determine minimal
 %generators for $I'$ over $I$.
 %\end{lem}
@@ -750,7 +765,7 @@ curve with the same log divisor, the same stacky points, and some subset of the 
 \label{ssec:add-points}
 %In this section, we prove various inductive statements under the following setup:
 %Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log half-canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d\in\mathbb{N}$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
-\todo{Pervasive change: Make sure all $\initial(I)$ are written as $\initial_\succ(I)$. We can even build this in to the macro possibly? }
+\todo{Pervasive change: Make sure all $\initial(I)$ are written as $\initial(I)$. We can even build this in to the macro possibly? }
 Before proving three lemmas that allow us to inductively add points to the support of a divisor, we give a criterion to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m]\to R_D$.  This criterion will be used repeatedly to show that a given homogeneous ideal is in fact the ideal of relations.
 
 
@@ -764,7 +779,7 @@ Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T
 \item $T\succ S\succ k[x_1, \ldots, x_n]$ {\rm(}meaning all monomials in $T$ are bigger than all monomials in $S,$ which are bigger than all monomials in $k[x_1, \ldots, x_n]${\rm)}
 \item All monomials in $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ lie in 
 \begin{align*}
-	S \; \cup\; \langle T\rangle \; \cup \; \initial_\prec(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[x_1, \ldots, x_m]
+	S \; \cup\; \langle T\rangle \; \cup \; \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[x_1, \ldots, x_m]
 \end{align*}
 \end{enumerate}
 Then,
@@ -794,13 +809,13 @@ Finally, note that
 	\initial(I) \cap k[x_1, \ldots, x_m] = \initial(I').
 \]
 
-By (3), every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ is an element of either $S$, $\langle T\rangle$, or $\initial_\prec(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n].$ Therefore,
+By (3), every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ is an element of either $S$, $\langle T\rangle$, or $\initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n].$ Therefore,
 \begin{align*}
 	\initial(I) & \subseteq \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n] + \langle T \rangle.
 \end{align*}
 \end{proof}
 
-To apply Lemma \ref{lem:relations_from_generators_induction}, we will need an appropriate monomial ordering.  \todo{Reference the lemma, instead of using previous, since things might get moved around. Aaron: Great, thanks!}
+To apply Lemma \ref{lem:relations_from_generators_induction}, we will need an appropriate monomial ordering.
 The following definition provides the necessary ordering for the Lemma \ref{lem:sat-1}.
 \begin{defn}
 \label{defn:graded-p-lex}
@@ -813,12 +828,14 @@ If $f=\prod_{i=1}^m {z_i}^{q_i}$ and $g=\prod_{i=1}^m {z_i}^{r_i}$ with $f \neq 
 \end{enumerate}
 \end{defn}
 
-\todo{Perhaps note that this ordering is independent of whether we take the order relative to a line bundle}
+\begin{rem}\label{rem:graded-P-lex-independent-of-line-bundle}
+Observe that Definition \ref{defn:graded-p-lex} remains the same if we replace $-\ord_P$ with $-\ord_P^{L'}$ for any divisor $L'$ of $X$.
+\end{rem}
+
 \noindent One can easily verify graded $P$-lex is a monomial ordering in the sense defined in Cox--Little--Shea \cite[Chapter 2, $\mathsection$ 2, Definition 1]{cls:ideals-varieties-algorithms}.
 
-We area almost ready to state Lemma ~\ref{lem:sat-1}, which will yield an inductive procedure for determining the generators and relations of $R_D$, where $D \in \di \BP^1$ is an effective divisor. While in O'Dorney \cite[Theorem 8]{dorney:canonical} gives a bound for the degree of generation of arbitrary $D \in \di \BP^1$, we obtain a much tighter bound in the case $D$ is effective. Furthermore, Lemma ~\ref{lem:sat-1} also applies to curves of genus $g > 0$. Before stating Lemma ~\ref{lem:sat-1}, we recall some notation from O'Dorney \cite{dorney:canonical}.
-
-\todo{Peter: This sentence is very ugly.  On the other hand, I feel we need to say something about O'Dorney before the following definition, or else it is completely unmotivated.  How should we state it better?  Also note that in its current form this sentence neglects that we also extend the result to higher genus; it was too difficult to have this in though. Aaron: Do you like it any better now?}
+We area almost ready to state Lemma ~\ref{lem:sat-1}, which will yield an inductive procedure for determining the generators and relations of $R_D$, where $D \in \di \BP^1$ is an effective $
+\mathbb{Q}$-divisor. Whereas O'Dorney considers arbitrary $\mathbb{Q}$ divisors in $Div(\mathbb{P}^1)$ \cite[Theorem 8]{dorney:canonical}, we restrict attention to effective divisors and in Lemma ~\ref{lem:sat-1} we are able to obtain much tighter bounds.  Moreover, Lemma ~\ref{lem:sat-1} also extends to curves of genus $g > 0$. Before stating Lemma ~\ref{lem:sat-1}, we recall some notation from O'Dorney \cite{dorney:canonical}.
 
 \begin{defn}\label{den:lower-approximation}
 If $\frac{\alpha}{\beta}\in \BQ$, then $\frac{c}{d}$ (written in reduced form with $c\in \mathbb{Z}, d\in \mathbb{N}$) is a {\bf{best lower approximation}} to $\frac{\alpha}{\beta}$ if there does not exist any $\frac{c'}{d'}\in \mathbf{Q}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$. 
@@ -830,7 +847,7 @@ Moreover, if $\frac{\alpha}{\beta}\ge 0$, then the non-negative best lower appro
 Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\frac{\alpha}{\beta}=\frac{14}{5}$.
 
 \todo{Peter: Do we want this as an [H] figure; this seems a little non-standard and can create problems with display.  Nonetheless, I copied this format to match the figure in a later section. Aaron: I'm fine with not making it an [H]}
-\begin{figure}[H]\label{fig:s14/5-lattice}
+\begin{figure}\label{fig:s14/5-lattice}
 \includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
 \caption{This figure shows each non-negative best lower approximation of $\frac{14}{5}.$ Each ``$\bullet$'' denotes a best lower approximation and each $\circ$ denotes a lattice point below $5y=14x$ which is not a best lower approximation.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}
 \end{figure}
@@ -846,7 +863,7 @@ for some $\alpha,\beta \in \mathbb{N}$ such that
 \label{eqn:deg1-sat-ind}
 	h^0(X, \lfloor{d\halfcan}\rfloor) &= h^0(X,\lfloor d\halfcan'
 	\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor &&\text{ for all } d \in \mathbb{
-	N} \text{ such that } d \ge \frac{\beta}{\alpha}.
+	N}.
 \end{align}
 Let
 \[
@@ -866,7 +883,7 @@ Equip $k[y_1, \ldots, y_n]$ with graded $P$-lex, as defined in Definition ~\ref{
 If $I'$ and $I$ are the ideals of relations of $k[u, x_1, \ldots, x_m]\to R_{\halfcan'}$ and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]\to R_{\halfcan}$ respectively, then 
 
 \begin{align*}
-	\initial_\prec(I) &= \initial_\prec(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] 
+	\initial(I) &= \initial(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] 
 										 + \langle U_i: 1 \le i \le n-1 \rangle
 										 + \langle V \rangle,\\
 \end{align*}
@@ -874,19 +891,15 @@ where
 $V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
  and $U_i$ is the set of monomials of the form $\prod_{j=1}^{i} y_j^{a_j}$ with $a_j\in \mathbb{Z}_{\ge 0}$ such that
 \begin{enumerate}
-	\item[(1)] $\sum_{j=1}^i a_j c_j \ge c_{i+1},$\\
-	\item[(2)] there does not exist $(b_1, \ldots b_i)\ne (a_1, \ldots a_i)$ with all $b_j\le a_j$ and $\sum_{j=1}^i b_jc_j\ge c_{i+1},$ \\
-	\item[(3)] there does not exist $h<i$ such that $\sum_{j=1}^h y_j^{a_j}\ge c_{h+1}$.
+	\item[(*)] $\sum_{j=1}^i a_j c_j \ge c_{i+1},$\\
+	\item[(**)] there does not exist $(b_1, \ldots b_i)\ne (a_1, \ldots a_i)$ with all $b_j\le a_j$ and $\sum_{j=1}^i b_jc_j\ge c_{i+1},$ \\
+	\item[(***)] there does not exist $r<i$ such that $\sum_{j=1}^r y_j^{a_j}\ge c_{r+1}$.
 \end{enumerate}
 
-\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with $I$ generated over $I'$ in degrees at most $\max(2\beta, \beta + \tau)$ (where $\tau = \max(1, \max_{1\le i, m}(\deg(x_i)))$).  \todo{Peter: Part (c) is immediate from (a) and (b), so maybe it shouldn't be its own section.  On the other hand, the other parts already have a lot of information written down (especial part (b)), so its not clear where it should be put.  Maybe in a remark after the lemma? Aaron: I like including it in the lemma. I think it's really the most important point of this, so it's fine to include it here. It's also ok to just include this as a statement after parts a and b, if we don't particularly care about referencing part c.}
-%\item If $\gin_\prec(I')=\initial_\prec(I')$ then $\gin_\prec(I)=\initial_\prec(I)$.
-%\item[(c)] A Gr\"{o}bner basis with the initial terms $y_i x_j$, $y_i y_j$,
-%	and $(y_{\lfloor \frac{\alpha}{\beta} \rfloor})^{y_{\lfloor
-%	\frac{\alpha}{\beta} \rfloor} + 1}$ (really the subset of these with positive subscripts) as shown above minimally
-%generates $I'$.
+\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with $I$ generated over $I'$ in degrees at most $\max(2\beta, \beta + \tau)$ (where $\tau = \max(1, \max_{1\le i, m}(\deg(x_i)))$).
 \end{enumerate}
 \end{lem}
+
 \begin{proof}
 {\bf Part (a):}
 By
@@ -911,11 +924,11 @@ Let
 
 \noindent
 be the positive best lower approximations of $\frac{
-\alpha}{\beta}$. Note that the elements $t_1,\ldots, t_{\lfloor d_i \frac{\alpha}{\beta}\rfloor}$ in $(R_{\halfcan})_{d_i}$ with $\ord_P^{\halfcan'}(t_i) = i$ are linearly independent over $(R_{\halfcan'})_d$. Hence, by a dimension count, these sections form a $k$-basis for
-$(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.\todo{take out two sentences}
-
+\alpha}{\beta}$. 
+%Note that the elements $t_1,\ldots, t_{\lfloor d_i \frac{\alpha}{\beta}\rfloor}$ in $(R_{\halfcan})_{d_i}$ with $\ord_P^{\halfcan'}(t_i) = i$ are linearly independent over $(R_{\halfcan'})_d$. Hence, by a dimension count, these sections form a $k$-basis for
+%$(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.\todo{take out two sentences}
 %For any $1\le i < j \le n$, we have $\frac{c_i}{d_i} < \frac{c_j}{d_j}$.  
-Choose a positive best lower approximation $\frac{c_i}{d_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = d_i$ and $\deg(z_j)<d_i$ for all $j\in \{1, \ldots r\}$. Observe that $\frac{c_i}{d_i}$ is a best lower approximation for $\frac{\alpha}{\beta}$ and $\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)}< \frac{\alpha}{\beta}$, for each $j$.  Hence, for each $j$, 
+Choose a positive best lower approximation $\frac{c_i}{d_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = d_i$ and $\deg(z_j)<d_i$ for all $j\in \{1, \ldots r\}$. Observe that $\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)}< \frac{\alpha}{\beta}$, for each $j$.  Hence, for each $j$, 
 \[
 	\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)} < \frac{c_i}{d_i},
 \]
@@ -932,17 +945,21 @@ Multiplying through by $d_i$ gives
 Thus, the elements of $(R_{\halfcan})_{d_i}$ with pole order $c_i$ at $P$ are not generated by 
 lower degrees. 
 Choose some $y_i \in(R_{
-\halfcan})_{d_i}$ with $-\ord_{P}^{L'}(y_i)=c_i$.  Note that this choice is generic if $d_i>1$ or $d_i=1$ and $c_i=\lfloor \frac{\alpha}{\beta}\rfloor$. \todo{This sentence on genericness seems like it does not belong in the proof.}
+\halfcan})_{d_i}$ with $-\ord_{P}^{L'}(y_i)=c_i$.
 
-Choose $c,d\in \mathbb{N}$ so that $d\le \beta,$  $\frac{c}{d} < \frac{\alpha}{
+Suppose $c,d\in \mathbb{N}$ so that $d\le \beta,$  $\frac{c}{d} < \frac{\alpha}{
 \beta},$ and $\frac{c}{d}$ is not a best lower approximation of $\frac{\alpha}{\beta}$. Choose a
-best lower approximation $\frac{c_i}{d_i}$ with $c_i$ maximal such that $d_i< d$.  This implies $\frac{c_i}{d_i}\ge \frac{c}{d},$ so \todo{Why does the next equation follow from this inequality?}\todo{Aaron: Is it true that $c_1 \leq \cdots \leq c_n$? I think it is true and that it is implicitly being used here and later. Perhaps this needs to be said, or perhaps it doesn't, I'm not sure.}
+best lower approximation $\frac{c_i}{d_i}$ with $c_i$ maximal such that $d_i< d$.  This implies $\frac{c_i}{d_i}\ge \frac{c}{d},$ so 
 %  The argument goes $c_i d \ge c d_i$
 % implies c_i \frac{d}{d_i} \ge c
 % implies c_i + \frac{d-d_i}{d_i}c_i \ge c
 % \implies c_i (d-d_i) \frac{c_i}{d_i}\ge c
 % so since everything is an integer $c_i +\lfloor (d - d_i) \frac{c_i}{d_i}\rfloor \ge c$
 % \implies the equation below:
+\[
+	\frac{c-c_i}{d-d_i}\le \frac{\alpha}{\beta}
+\]
+which implies
 \begin{equation}\label{eqn:c-from-lower-terms}
 	c_i +\left\lfloor (d-d_i) \frac{\alpha}{\beta} \right\rfloor \ge c.
 \end{equation}
@@ -955,34 +972,45 @@ and for each $i \in \mathbb{N}$, suppose $c_j$ is the maximal element among of $
 \[
 	S_i = y_j S_{i-j}.
 \]
-Observe that this recursive definition ensures that $S_i$ contains only elements $z\in R_\halfcan$ satisfying $-\ord^{\halfcan'}_P(z)=i$. \todo{Perhaps it's worth reminding the reader here that $y_i$ are as in the statement of (a) and have order $-c_i$.}
-Then define 
+Since each $y_j$ has pole order $c_j$, this recursive construction ensures that 
 \[
+	z\in S_i \implies -\ord_P^{\halfcan'}(z)=i.
+\]
+Then define 
+\begin{equation}\label{eqn:sat-1-defining-S}
 	S = \cup_{i=1}^{\infty} S_i.  
-\]\todo{make equation and reference}
+\end{equation}
 Note that $S_0$ is not part of this union and in fact $S\cap S_0 = \emptyset$ by pole order considerations.
 
-Applying Equation \ref{eqn:c-from-lower-terms}, we see that $S$ contains elements in degree $d\in \mathbb{N}$ with each pole order in $\{1 \ldots, \lfloor d\frac{\alpha}{\beta}\rfloor\}$. \todo{Maybe we should make reference these generating the desired lattice, as described in Evan's paper? I think this is basically a rehashing of Evan's 1-point case?} Thus, by dimension counting, $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a) \todo{why follows from 3.1}.
+By equation \label{eqn:deg1-sat-ind} for $d\in \mathbb{N}$,
+\[
+	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X,\lfloor d\halfcan'
+		\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor,
+\] 
+so $S$ contains elements in degree $d\in \mathbb{N}$ with each pole order in $\{1 \ldots, \lfloor d\frac{\alpha}{\beta}\rfloor\}$.  Thus, by dimension counting, $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a).
 
 {\bf Part (b):}
-Define $U_i$ and $V$ as in the lemma's statement and define
+Let $S$ be as above in Equation \ref{eqn:sat-1-defining-S}, define $U_i$ and $V$ as in the lemma's statement, and set
 \[
 	T = \left(\bigcup_{i=1}^{n-1} U_i \right) \cup V.
 \]
 
-We check that $S$, $T$, and $\prec$ meet the hypothesis of Lemma \ref{lem:relations_from_generators_induction}.  In part (a), we have shown $S$ \todo{What is $S$. I presume it is the complement, but can you spell it out?} forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ implying condition (1) of Lemma ~\ref{lem:relations_from_generators_induction} holds.  Our choice of order for monomials in $k[y_1, \ldots, y_n]$ and block order for those in $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ implies that $T\succ S\succ k[u, x_1, \ldots, x_m]$, implying that condition (2) of Lemma \ref{lem:relations_from_generators_induction} holds.  
+We check that $S$, $T$, and $\prec$ meet the hypothesis of Lemma \ref{lem:relations_from_generators_induction}.  In part (a), we showed that $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ giving condition (1) of Lemma ~\ref{lem:relations_from_generators_induction}.  Our choice of monomial order in $k[y_1, \ldots, y_n]$ and block order for $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ implies that $T\succ S\succ k[u, x_1, \ldots, x_m]$, giving condition (2) of Lemma \ref{lem:relations_from_generators_induction}.  
 
 It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generators_induction}. To do this, suppose $f\in k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ is a monomial not contained in $k[u, x_1, \ldots, x_m]$, meaning there is some $j$ such that $y_j|f$.  Further suppose $f\not\in \langle V \rangle$, meaning that for each $i\in \{1, \ldots m\}$, $x_iy_j \nmid f$. Since $y_j \mid f$ but $x_iy_j \nmid f$, we obtain $x_i\nmid f$.  Therefore, $f\in k[u, y_1, \ldots, y_n]$.  We note that $S$ generates $y_j \cdot (k[u,y_1, \ldots, y_n])$ as a $k$-algebra.  That is, all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \[
 	k[u, x_1, \ldots, x_m] \cup V \cup \left(\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]\right). 
 \]
-Thus, we see that if $f\in k[u, y_1, \ldots, y_n]$, then $f=u^b \prod_{j=1}^l {y_j}^{a_j}\in S$ for some $1\le l\le n$, $b\in \mathbb{Z}_{\ge 0}$, so that $a_l > 0$ and $a_j\in \mathbb{Z}_{\ge 0}$ for $1 \leq j \leq l$. For $j\in \mathbb{N}$ with $l < j\le n$, assign $a_j=0$. \todo{Is there a reason why you don't just take the product up to $n$ and let $l$ be the highest number so that $a_l \neq 0$? This seems simpler to me}
-If $i\in \{1, \ldots, n\}$, then $y_i f$ is either in $S$ or there is some $h\in \mathbb{N}$ such that $i\le h\le \max(i,l)$ satisfying $\prod_{j=1}^h y_j^{a_j}\not\in S_{\sum_{j=1}^h c_j a_j}$ \todo{Peter: terrible subscripts... Aaron: Indeed, why not just omit the subscript?}, 
-and for all $r<h$, we have $\prod_{j=1}^r {y_j}^{a_j}\in S_{\sum_{j=1}^r c_ja_j}$.  We see that this latter case when $y_i f \notin S$ is equivalent to $\prod_{j=1}^h {y_j}^{a_j}\in U_h$. \todo{Aaron: Why to we see this? Presumably this is using conditions 1,2,3 but it would be helpful for you to spell out which. Also, what are the latter and former cases? I don't see the casework anywhere}
+Notice that $S$ generates the ideal $\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$; let $l$ be maximal such that $a_l\ne 0$.
+If $i\in \{1, \ldots, n\}$, then $y_i f$ is either in $S$ or there is some $h\in \mathbb{N}$ such that $i\le h\le \max(i,l)$ satisfying $\prod_{j=1}^h y_j^{b_j}\not\in S$, 
+and for all $r<h$ $\prod_{j=1}^r {y_j}^{b_j}\in S$, where $b_j=a_j$ when $j\ne i$ and $b_i=a_i+1$.  Choose $(\gamma_1, \ldots, \gamma_n)$ minimal (that is, so that we cannot decrease any $\gamma_j$ and have the following still satisfied) such that each $\gamma_j\le b_j$ and $\prod_{j=1}^h {y_j}^{\gamma_j}\not\in S$; our recursive definition of $S$ implies that for each $1\le r< h$, we still have $\prod_{j=1}^r {y_j}^{\gamma_j}\in S$.
+
+We now check that $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$, by checking conditions (*), (**), and (***).  Since $\prod_{j=1}^{h-1} y_j^{b_j}\in S$ but $\prod_{j=1}^h y_j^{b_j}\not\in S$, $c_h$ must not be maximal (among pole orders of the $y_i$s) such that $c_h \le \sum_{j=1}^h b_jc_j$ (otherwise, it would be in $S$), which means $c_{h+1}\le \sum_{j=1}^h b_jc_j$, giving us condition (*).  Our choice of $(\gamma_1, \ldots, \gamma_n)$ to be minimal above immediately gives (**).  Since for each $r<h$, $\prod_{j=1}^r y_{j}^{a_j}\in S$, we get condition (***).  Thus $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$.
+
 Thus, since $S$ generates $\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\{y_1, \ldots, y_n\} k[y_1, \ldots, y_n]-S$, we have shown that all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \begin{align*}
 				& k[u, x_1, \ldots, x_m] \cup \langle V \rangle \cup S \cup \left\langle \bigcup_{i=1}^{n-1} U_i \right\rangle \\
-	\subseteq \; 	& S \cup \langle T\rangle \cup \initial_\prec(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[u, x_1, \ldots, x_m].
+	\subseteq \; 	& S \cup \langle T\rangle \cup \initial(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[u, x_1, \ldots, x_m].
 \end{align*}
 This shows condition (3) of Lemma ~\ref{lem:relations_from_generators_induction} holds.  Thus, the conditions of 
 Lemma ~\ref{lem:relations_from_generators_induction} are met. Finally, Lemma ~\ref{lem:relations_from_generators_induction} implies part (b).  \todo{Peter: Checking that all the conditions of Lemma \ref{lem:relations_from_generators_induction}(2) are met takes a lot of space and clutter.  On the other hand, it is somewhat important.  Should it be included?}
@@ -1090,7 +1118,7 @@ Finally, (c) of this lemma follows immediately by looking at the constructions o
 %
 %Let $J$ be the ideal of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$
 %generated by the initial terms described in the previous paragraphs
-%together with $\initial_\prec(I) k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$.
+%together with $\initial(I) k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$.
 %
 %We show that $J$ is in fact all of the initial ideal. Suppose
 %$f$ is a non-constant monomial that does not lie within $J$.
@@ -1154,7 +1182,7 @@ Then, the following statements hold.
 		and equip the ring $k[y_3, y_4, x]$ with the block 
 		order with $y_3, y_4$ preceeding $x_2, \ldots, x_m$. \todo{In here and throughout the section, we should just enforce the convention that the $y_i$ come before the $x_j$, and then we won't have to say which preceed which.} Then,
 		\begin{align*}
-			\initial_\prec(I) &= \initial_\prec(I')k[x, y_3, y_4]+\langle y_4 x_j \mid 2 \leq j \leq m \rangle +\langle y_4^2 \rangle.
+			\initial(I) &= \initial(I')k[x, y_3, y_4]+\langle y_4 x_j \mid 2 \leq j \leq m \rangle +\langle y_4^2 \rangle.
 		\end{align*}
 	%\item[(c)] Any set of minimal generators for $I'$ together with 
 		%any set of relations with leading terms as in (b) minimally 
@@ -1217,7 +1245,7 @@ Then, the following statements hold.
 		y_4 \prec y_5$
 		and equip the ring $k[y_3, y_4, y_5, x_3, \ldots, x_m]$ with the block order so that $y_3, y_4, y_5$ dominate $x_3, \ldots, x_m$ \todo{Aaron: I used the word dominate, is this ok?}.  Then,
 		\begin{align*}
-			\initial_\prec(I) &= \initial_\prec(I) k[y_3, y_4, y_5, x_3, \ldots, x_m] \\
+			\initial(I) &= \initial(I) k[y_3, y_4, y_5, x_3, \ldots, x_m] \\
 			&+ \langle y_i x_j \mid 4 \leq i \leq 5, 3 \leq j \leq m\rangle \\
 			&+ \langle y_i y_k \mid 4 \leq i \leq j \leq 5\rangle.
 		\end{align*}
@@ -1270,8 +1298,8 @@ we can argue similarly to Lemma $\ref{lem:sat-1}$ that $S$ and $T$ along with $\
 %
 %To show part (b), note that the generators in
 %~\ref{eqn:add_one_generator} are precisely a set of monomials which
-%generate $k[x, y]/J$ over $k$. So, to show $J = in_\prec(I)$, it
-%suffices to show that all generators of $J$ lie in $in_\prec(I)$.
+%generate $k[x, y]/J$ over $k$. So, to show $J = \initial(I)$, it
+%suffices to show that all generators of $J$ lie in $\initial(I)$.
 %
 %This follows, since there exist constants $A_{i,j} \in k$ for $4
 %\leq i \leq 5,3 \leq j \leq m,$ elements $B_1,B_2,B_3 \in k$ and
@@ -1312,7 +1340,7 @@ we can argue similarly to Lemma $\ref{lem:sat-1}$ that $S$ and $T$ along with $\
 %x_2, \ldots, x_m]$ with the block order so that $R_\halfcan=k[y_1, y_2, x_2, \ldots, x_m]/I$. 
 %Then
 %\begin{align*}
-			%in_\prec(I) &= in_\prec(I')k[x_2, \ldots, x_m, y_1, y_2] \\
+			%\initial(I) &= \initial(I')k[x_2, \ldots, x_m, y_1, y_2] \\
 			%&+\langle y_2 x_j \mid 2 \leq j \leq m \rangle \\
 			%&+\langle y_2^2\rangle.
 		%\end{align*}
@@ -1338,7 +1366,7 @@ we can argue similarly to Lemma $\ref{lem:sat-1}$ that $S$ and $T$ along with $\
 %form a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$. This completes part (a).
 %
 %To show part (b), we note that the monomials in the basis above generate $k[x, y]/\initial_
-%\prec(I)$. Thus, it is sufficient to show that $J\subseteq \initial_\prec(I)$. For $j\ge 2$, we 
+%\prec(I)$. Thus, it is sufficient to show that $J\subseteq \initial(I)$. For $j\ge 2$, we 
 %can choose $w_j$ in degree $\deg(x_j) + 1$ and $A_j\in k$ such that
 %\[
 	%y_2x_j -A_jy_3w_j
@@ -1369,7 +1397,7 @@ we can argue similarly to Lemma $\ref{lem:sat-1}$ that $S$ and $T$ along with $\
 %x_2, \ldots, x_m]$ with the block order so that $R_\halfcan=k[y_1, y_3, x_2, \ldots, x_m]/I$. 
 %Then
 %\begin{align*}
-			%in_\prec(I) &= in_\prec(I')k[x_2, \ldots, x_m, y_1, y_2] \\
+			%\initial(I) &= \initial(I')k[x_2, \ldots, x_m, y_1, y_2] \\
 			%&+\langle y_3 x_j \mid 2 \leq j \leq m \rangle \\
 			%&+\langle y_3^2
 		%\end{align*}
@@ -1445,7 +1473,7 @@ we can argue similarly to Lemma $\ref{lem:sat-1}$ that $S$ and $T$ along with $\
 %\item If $I$ and $I'$ are the ideal of relations of $R_D$ and $R_{D'}$ respectively, then 
 %
 %\begin{align*}
-	%\initial_\prec(I') &= \initial_\prec(I) k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
+	%\initial(I') &= \initial(I) k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \\
 										 %&+ \langle y_i x_j \rangle \\
 										 %&+ \langle y_3^2, y_3y_2, y_2y_1, y_1^2\rangle \\
 %\end{align*}
@@ -1475,7 +1503,7 @@ One key difference between the notion of admissibility in Definition ~\ref{defn:
 \begin{defn}
 \label{defn:admissible}
 Let $(\sx', \Delta, L'),(\sx, \Delta , L)$ be log spin
-curves, with the same course space $X$ and stacky points $Q_1, \ldots, Q_r$. Let $J \subset
+curves, with the same coarse space $X$ and stacky points $Q_1, \ldots, Q_r$. Let $J \subset
 \{1, \ldots, r\}$. Suppose $e_i'+ 2 \chi_J (i) = e_i$ where
 
 \[
@@ -1517,12 +1545,10 @@ three conditions hold:
 \end{enumerate}
 \end{defn}
 
-\iffalse
-\begin{rem}
-Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
-\end{rem}
-\todo{Peter: I'm not sure how useful this remark is.  After seeing the definition of $S_{\sigma, J}(I,d)$ a reader will probably be a little mystified why it is a useful condition.  The inclusion of the relationship to something defined in VZB that also seems ad hoc and that they probably will not have seen may not be the most helpful use of this space.}
-\fi
+%\begin{rem}
+%Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
+%\end{rem}
+%\todo{Peter: I'm not sure how useful this remark is.  After seeing the definition of $S_{\sigma, J}(I,d)$ a reader will probably be a little mystified why it is a useful condition.  The inclusion of the relationship to something defined in VZB that also seems ad hoc and that they probably will not have seen may not be the most helpful use of this space.}
 
 %\begin{lem}\label{lem:n-3s-admissible}
 %Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ stacky points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
@@ -1631,7 +1657,7 @@ $e_j = e_j'$ for $j \notin J$. Then the following are true:
 		generate $R$ over $R'$.
 	\item[(c)] Endow $k[y] := k[y_{i, e_i}]_{i \in J}$ and $k[x]:=k[x_1,\ldots, x_m]$ with graded monomial orders and give $k[y, x] = k[y] \otimes k[x]$ block order. Let $R = k[y, x]/I.$ Then,
 		\begin{align*}
-			in_\prec(I) = in_\prec(I')k[x, y] + \langle y_{i, e_i}z : z 
+			\initial(I) = \initial(I')k[x, y] + \langle y_{i, e_i}z : z 
 			\neq y_{i, e_i}, y_{i, e_i'} \rangle
 		\end{align*}
 		as $z$ ranges over all generators of $R$.
@@ -2408,7 +2434,7 @@ presentation generated as a $k$-algebra by elements of degree at most $e = \max(
 %{lem:raise-stacky-order}(d), which asserts that for all $i \in J$, $e_i >
 %\deg z$ for any generator $z$ of $R'$ and if $R' = k[y, x]/I'$
 %(as defined in Lemma ~\ref{lem:raise-stacky-order}(c)) then
-%$in_\prec(I')$ is minimally generated by products of two monomials.
+%$\initial(I')$ is minimally generated by products of two monomials.
 
 \end{lem}
 
@@ -2532,7 +2558,7 @@ $k[x_{7, 1}, x_{7, 2}, x_{5, 1}, x_{3, 1}]$. Under grlex with
 $x_{3,1} \prec x_{5,1} \prec x_{7,1} \prec x_{7,2}$, the initial
 ideal of $I$ is
 \[
-	in_\prec(I) = \langle x_{3, 1} x_{7, 2}, x_{7, 2}^2 \rangle
+	\initial(I) = \langle x_{3, 1} x_{7, 2}, x_{7, 2}^2 \rangle
 \]
 
 \noindent
@@ -2540,14 +2566,14 @@ since $a_1$ and $b_1$ are nonzero.
 
 To demonstrate that these two relations generate all 
 relations, we show that $\dim_k (R')_d = \dim_k
-(k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / in_\prec(I))_d$ for 
+(k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / \initial(I))_d$ for 
 all degrees $d \geq 0$. In particular, 
 
 \begin{align*}
 	\dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / I)_d &=
 	\dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}]	/ in_\prec(I))_d \\
-	&= \dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / \langle x_{5, 1}^2,
-	x_{7, 1}^2 \rangle
+	&= \dim_k (k[x_{3, 1}, x_{5, 1}, x_{7, 1}, x_{7, 2}] / \langle
+	x_{3, 1} x_{7, 2}, x_{7, 2}^2 \rangle
 \end{align*}
 
 \noindent
@@ -2557,7 +2583,7 @@ be checked by looking at the $k$-basis at each degree $d$.
 
 Therefore, the canonical ring $R'$ has presentation $R' =
 k[x_{7, 1}, x_{7, 2}, x_{5, 1}, x_{3, 1}] / I$ with
-initial ideal $in_\prec(I)$ generated by quadratics under grlex
+initial ideal $\initial(I)$ generated by quadratics under grlex
 with $x_{7,1} \prec x_{7,2} \prec x_{5,1} \prec x_{3,1}$.
 %These quadratics must also determine minimal generators for $I$ by
 %Lemma ~\ref{lem:minimal_quadratic}.
@@ -2616,7 +2642,7 @@ and any generator $z$ of $R'$.
 \end{longtable}
 
 We can also always find a presentation for these cases such that
-they satisfy (Ad-i) and (Ad-ii) and that $in_\prec(I')$ is
+they satisfy (Ad-i) and (Ad-ii) and that $\initial(I')$ is
 generated by products of two monomials. The procedure for
 verifying these are similar to those for the given example.
 
