@@ -226,7 +226,7 @@ and {\bf stacky points} (also called {\bf{fractional points}}) $P_1,
 	\di \sx = \di X \oplus \left(\bigoplus_{i = 1}^r \left\langle 
 	\frac{1}{e_i}P_i \right\rangle \right) \subset \BQ \otimes \di X.
 \]
-\todo{Peter: Would it be better to say $Div(\sx)=(Div(X))[\frac{1}{e_i}P_i]_{1\le i\le r}$ or something like that?}
+\todo{Peter: Would it be better to say $Div(\sx)=(Div(X))[\frac{1}{e_i}P_i]_{1\le i\le r}$ or something like that? Aaron: I agree what is written isn't actually correct, maybe we should say the free direct sum over points not in the $P_i$, together with the fractional points. It's not a localization because we don't want to invert $P_i$.}
 As is done in Voight and Zureick-Brown \cite{vzb:stacky} stacky curves may be formalized as stacks, but for the purposes of this paper, it suffices to view $\sx$ as a scheme whose associated divisor group allows a finite number of stacky points. \todo{I don't know if this is a good statement to make.  We aren't really viewing $\sx$ as a scheme.  Rather we're are determining information about its canonical rings through knowledge of scheme data.}  A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where $\Delta \in \di X$ is an effective divisor and $2\halfcan = K_X + \Delta + \sum_{i=1}^{r}\subhalf{e_i}P_i.$
 The central object of study in this paper is the {\bf log spin
 canonical ring} of $(\sx, \Delta, \halfcan)$ is
@@ -573,6 +573,7 @@ by Voight and Zureick-Brown \cite[Section 8.1]{vzb:stacky}.
 
 \begin{defn}
 \label{defn:block-order}
+\todo{Aaron: Doesn't \cite{vzb:stacky} put the $y_i$ before the $x_i$? Shouldn't we match this convention (here and anywhere we use this in the paper later?}
 Let $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$ and $k[y_{c_1, 1}, \ldots,
 y_{c_m, m}]$ be weighted polynomial rings with existing term
 orders $\prec_x$ and $\prec_y$, respectively. Let $\alpha :=
@@ -1151,7 +1152,7 @@ Then, the following statements hold.
 	\item[(b)] Equip $k[y_3, y_4]$ with $grevlex$ so that $y_3 \prec 
 		y_4$
 		and equip the ring $k[y_3, y_4, x]$ with the block 
-		order with $y_3, y_4$ preceeding $x_2, \ldots, x_m$. Then,
+		order with $y_3, y_4$ preceeding $x_2, \ldots, x_m$. \todo{In here and throughout the section, we should just enforce the convention that the $y_i$ come before the $x_j$, and then we won't have to say which preceed which.} Then,
 		\begin{align*}
 			\initial_\prec(I) &= \initial_\prec(I')k[x, y_3, y_4]+\langle y_4 x_j \mid 2 \leq j \leq m \rangle +\langle y_4^2 \rangle.
 		\end{align*}
@@ -1628,7 +1629,7 @@ $e_j = e_j'$ for $j \notin J$. Then the following are true:
 0,
 		b > 0$ span $R$ over $R'$ and the elements $y_{i, e_i}$ minimally
 		generate $R$ over $R'$.
-	\item[(c)] Endow $k[y] := k[y_{i, e_i}]_{i \in J}$ and $k[x]:=k[x_1,\ldots, x_m]$ with graded monomial orders and give $k[y, x] = k[y] \otimes k[x]$ block order, as defined in \cite[Definition 8.1.1]{vzb:stacky}. \todo{Possibly reference definition in this paper instead.} Let $R = k[y, x]/I.$ Then,
+	\item[(c)] Endow $k[y] := k[y_{i, e_i}]_{i \in J}$ and $k[x]:=k[x_1,\ldots, x_m]$ with graded monomial orders and give $k[y, x] = k[y] \otimes k[x]$ block order. Let $R = k[y, x]/I.$ Then,
 		\begin{align*}
 			in_\prec(I) = in_\prec(I')k[x, y] + \langle y_{i, e_i}z : z 
 			\neq y_{i, e_i}, y_{i, e_i'} \rangle
