@@ -460,7 +460,7 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \end{defn}
 
 \noindent
-When the log spin curve is fixed, we usually use $R$ or $R_L$ to
+When the log spin curve is fixed, we usually use $R$ or $R_\halfcan$ to
 represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D)
 := H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim H^0(\sx, \sco(D))$.
 If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^\text{th}$
@@ -681,7 +681,7 @@ In this subsection, we present a definition of admissibility, which is quite sim
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
 %in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
-	we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, L_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $L_X'$, rather than relative to the $\sco_X$.
+	we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $L_X'$, rather than relative to the $\sco_X$.
 
 \begin{defn}
 \label{defn:admissible}
@@ -872,15 +872,15 @@ relations, we show that $\dim_k (R')_d = \dim_k
 all degrees $d \geq 0$. In particular, 
 
 \begin{align*}
-	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I)_d &=
-	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]	/ in_\prec(I))_d \\
-	&= \dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle
+	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / I)_d &=
+	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}])	/ in_\prec(I))_d \\
+	&= \dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle
 	x_{7, 2}^2, x_{3, 1} x_{7, 2} \rangle
 \end{align*}
 
 \noindent
 for all $d \geq 0$. But the fact $\dim_k (R')_d = \dim_k (k[x_{7, 2},
-x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle x_{7, 2}^2, x_{3, 1} x_{7, 2}
+x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle x_{7, 2}^2, x_{3, 1} x_{7, 2}
 \rangle$ can be checked by looking at the $k$-basis at each degree
 $d$.
 
@@ -924,16 +924,16 @@ Finally, to check (Ad-iii), note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Th
 Let $(\sx', 0, L')$ be a log spin curve of genus 1 so that $L' = P -
  Q + \frac{2}{5} P_1.$ Let $u \in (P_L)_1$ be any nonzero element.
 We obtain $\di u|_{P_1} = 0,$ since $2P - 2Q \sim 0$ and by Riemann
---Roch, $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_L)_3$ be any nonzero
+--Roch, $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_\halfcan)_3$ be any nonzero
 element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since
 if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0
 (\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally,
-let $y_5 \in (R_L)_5$ be an element with $y_5|_{P_1} = -P_1$. Then,
+let $y_5 \in (R_\halfcan)_5$ be an element with $y_5|_{P_1} = -P_1$. Then,
 we claim there is some $\alpha \in k$ so that
 
-$$R_L \cong k[u, y_3, y_5]/(y_3^4 - \alpha u y_5^2).$$
+$$R_\halfcan \cong k[u, y_3, y_5]/(y_3^4 - \alpha u y_5^2).$$
 
-In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_L$. The verification is analogous to Example ~\ref{eg:base-0-377} and is omitted.
+In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_\halfcan$. The verification is analogous to Example ~\ref{eg:base-0-377} and is omitted.
 
 Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashion analogous to the verification in Example ~\ref{eg:base-1-33}.
 \end{example}
@@ -1467,7 +1467,7 @@ We now restrict our attention to log canonical rings of stacky curves.  Lemma \r
 \begin{lem}
 \label{lem:sat-2}
 Let $(\sx, \Delta, \halfcan_\sx)$ and $(\sx', \Delta, \halfcan_{\sx'})$ \todo{The notation i was using for these throughout the paper was $\halfcan$ and $\halfcan'$ without the $\sx$ subscripts. We should make one of them consistent with the other.} be log spin curves with the same coarse space $X = X'$ having signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$, where $e_r=3$.  Suppose $g > 0,$ and, if $g = 1,$ then $\deg 3\halfcan' \geq 2.$ Then, $\sat(Eff(L'))\le 2$. \todo{Why is it automatic that the saturation is 2? Maybe you can explain this in the proof in a sentence.}
-Furthermore, let $R_{L'} = k[x_2, x_3
+Furthermore, let $R_{\halfcan'} = k[x_2, x_3
 , x_5, \ldots, x_m]/I'$ and let $\halfcan = \halfcan' + \frac{1}{
 3}P$, where $P\in X$ is a base point of $\halfcan'$ (which includes the case when $H^0(X, \lfloor \halfcan'\rfloor) = 0$).
 Suppose for $i \in \{2, 3\}$, $\deg x_i = i$ and $\ord_P^{\halfcan'}(x_i)= 0$ (which is satisfied generically in degree 2 and 3, since base-point freeness follows by Riemann-Roch \todo{Probably include this in a remark below the proof}). Choose an ordering on $k[x_2, \ldots, x_m]$ that satisfies
@@ -1882,7 +1882,7 @@ curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
 \begin{lem}
 \label{lem:raise-stacky-order}
 Suppose $(\sx', \Delta, \halfcan')$ is a log spin curve with coarse
-space $X'$ and signature $\sigma = (g; e_1', \ldots, e_r'; \delta)$.  Define $R':= R_{L'}$.  Further, assume either 
+space $X'$ and signature $\sigma = (g; e_1', \ldots, e_r'; \delta)$.  Define $R':= R_{\halfcan'}$.  Further, assume either 
 \begin{enumerate}
 	\item  $(\sx',\halfcan', J)$ is admissible with generators $x_1,\ldots, x_m \in R'$ and $y_{i, e_i'} \in R' $ for all $i \in J,$ as in Definition ~\ref{defn:admissible} or
 	\item $\sigma$ is one of the signatures described in cases (1), (2) and (3) of Remark ~\ref{rem:three-cases} and $y_{1, 3} = y_{2,3} = \ldots= y_{r,3}$ is a rational section of $\sco(\halfcan_X)$ with $\ord_{P_i}^{\halfcan_X'}(y_{1,3}) = 1$ for $1 \leq  i \leq r$.
@@ -1891,7 +1891,7 @@ Let
 $(\sx, \Delta, \halfcan)$ be another log spin curve
 with coarse space $X$, so that $X \cong X'$ and signature $(g; e_1, \ldots, e_r;
 \delta)$ such that $e_i = e_i' + 2$ for all $i \in J$ and
-$e_j = e_j'$ for $j \notin J$. Define $R := R_L$.  Then the following are true:
+$e_j = e_j'$ for $j \notin J$. Define $R := R_\halfcan$.  Then the following are true:
 \begin{enumerate}
 	\item[(a)] For all $i \in J$, there exists $y_{i, e_i} \in
 		H^0(\sx, e_i(K_\sx))$ so that
@@ -2149,16 +2149,16 @@ We now consider the case when the genus is at least 2. In this case, we are able
 \label{ssec:bounds-high-genus}
 \todo{Make edits that you want to further incorporate Reid's paper}
 
-The main result of this subsection is that for a log spin curve with no stacky points $(X \Delta, L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[Theorem 3.4]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Throughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ so $H^0(X, 2L)$ is basepoint-free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
+The main result of this subsection is that for a log spin curve with no stacky points $(X \Delta, L)$, the spin canonical ring $R_\halfcan$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[Theorem 3.4]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Throughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ so $H^0(X, 2L)$ is basepoint-free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
 
 The proofs of this subsection results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}. However, the statements differ, as we assume $\Delta > 0$ instead of $\Delta = 0$ and do not assume there is a basepoint-free pencil contained in $H^0(X, L).$ 
 
 %\begin{lem}
 %\label{lem:generation-5}
-%Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K +\Delta$. Then, $R_L$ is generated in degree at most $5$.
+%Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K +\Delta$. Then, $R_\halfcan$ is generated in degree at most $5$.
 %\end{lem}
 %
-%The strategy of the proof of Lemma ~\ref{lem:generation-5} is to use Riemann--Roch and the basepoint-free pencil trick to show that $R_L$ is generated in degree at most $6,$ as is done in Lemma ~\ref{lem:semicanonical_generation}. When $g > 3$, it is easy to reduce the bound from 5 to 6. The trickiest case is to show $R_L$ is generated in degree 5 when $g = 2$, which is done in Lemma ~\ref{lem:genus-2-generation-5}. After proving these 2 lemmas, we concisely prove Lemma ~\ref{lem:generation-5}.
+%The strategy of the proof of Lemma ~\ref{lem:generation-5} is to use Riemann--Roch and the basepoint-free pencil trick to show that $R_\halfcan$ is generated in degree at most $6,$ as is done in Lemma ~\ref{lem:semicanonical_generation}. When $g > 3$, it is easy to reduce the bound from 5 to 6. The trickiest case is to show $R_\halfcan$ is generated in degree 5 when $g = 2$, which is done in Lemma ~\ref{lem:genus-2-generation-5}. After proving these 2 lemmas, we concisely prove Lemma ~\ref{lem:generation-5}.
 
 \begin{lem}
 \label{lem:generation-5}
@@ -2169,7 +2169,7 @@ be two independent sections such that the vector subspace $V =
 \begin{align*}
 	V \otimes H^0(nL) \rightarrow H^0((n+2)L)
 \end{align*}
-is surjective if $n \geq 4$. In particular, $R_L$ is generated in degree at most $5.$
+is surjective if $n \geq 4$. In particular, $R_\halfcan$ is generated in degree at most $5.$
 \end{lem}
 
 %\begin{rem}
@@ -2205,10 +2205,10 @@ Ergo, $f$ is surjective.
 %\begin{lem}
 %\label{lem:genus-2-generation-5}
 %Let $X$ be a smooth genus 2 curve with canonical divisor $K$ and let $L \in \di X$ be so that $2L \sim K$. 
-%Then, $R_L$ is generated in degree at most $5$.
+%Then, $R_\halfcan$ is generated in degree at most $5$.
 %\end{lem}
 %\begin{proof}
-%By Lemma ~\ref{lem:semicanonical_generation} it suffices to show $R_L$ has no minimal generators in degree 6.
+%By Lemma ~\ref{lem:semicanonical_generation} it suffices to show $R_\halfcan$ has no minimal generators in degree 6.
 %Let $P_1, \ldots, P_6$ be the six hyperelliptic fixed points of $X$. 
 %Recall that all linear equivalence classes of spin divisors on $X$ have a representative of the form
 %$$L = P_1 + \sum_{i =2}^{6} \epsilon_i (P_1 - P_i),$$ 
@@ -2232,7 +2232,7 @@ Ergo, $f$ is surjective.
 %There are now two cases, depending on whether $H^0(X,L) = 0$.
 %
 %First, we deal with the case that $H^0(X,L) \neq 0$. 
-%Then, since $X \not \cong \BP^1_k,$ and $\deg L = 1$, we must have $H^0(X,L) = 1$. Hence, we know $L$ is effective, so up to linear equivalence, we may assume $L = P$ where $P$ is hyperelliptic fixed. In this case, it is shown in \cite{neves:halfcan}[Theorem III.19] that $R_L$ is generated in degree $\leq 3$.
+%Then, since $X \not \cong \BP^1_k,$ and $\deg L = 1$, we must have $H^0(X,L) = 1$. Hence, we know $L$ is effective, so up to linear equivalence, we may assume $L = P$ where $P$ is hyperelliptic fixed. In this case, it is shown in \cite{neves:halfcan}[Theorem III.19] that $R_\halfcan$ is generated in degree $\leq 3$.
 %
 %Second, suppose $H^0(X,L) = 0$.
 %Note that because $\deg 3L = 3$, we have by Riemann--Roch that $H^0(X,3L) = 2$. 
@@ -2248,10 +2248,10 @@ Ergo, $f$ is surjective.
 %
 %\begin{proof}[Proof of Lemma ~\ref{lem:generation-5}]
 %If $\Delta > 0$, this holds by Lemma ~\ref{lem:semicanonical_generation}. If $g = 2$ and $\Delta = 0,$ then the claim follows from
-%Lemma ~\ref{lem:genus-2-generation-5}. Finally, if $g > 2$ and $\Delta = 0$, using Lemma ~\ref{lem:semicanonical_generation}, there are no minimal generators in degree $\geq 7$. By Voight and Zurieck-Brown \cite[Theorem 3.2.1]{vzb:stacky}, we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective and so there are also no minimal generators in degree 6. Hence, $R_L$ is generated in degree at most 5.
+%Lemma ~\ref{lem:genus-2-generation-5}. Finally, if $g > 2$ and $\Delta = 0$, using Lemma ~\ref{lem:semicanonical_generation}, there are no minimal generators in degree $\geq 7$. By Voight and Zurieck-Brown \cite[Theorem 3.2.1]{vzb:stacky}, we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective and so there are also no minimal generators in degree 6. Hence, $R_\halfcan$ is generated in degree at most 5.
 %\end{proof}
 
-The next step is to bound the degrees of the relations of $R_L$ when $\Delta > 0$. This is done in Proposition ~\ref{prop:relation-10}
+The next step is to bound the degrees of the relations of $R_\halfcan$ when $\Delta > 0$. This is done in Proposition ~\ref{prop:relation-10}
 %The idea of the proof of Proposition ~\ref{prop:relation-10} is to 
 by using the basepoint-free pencil trick to show that if a relation lies in a sufficiently high degree, it lies in the ideal generated by the relations in lower degrees.  In Definition ~\ref{defn:lower-ideal}, we fix notation for the ideal generated by lower degrees relations:
 
@@ -2259,38 +2259,38 @@ by using the basepoint-free pencil trick to show that if a relation lies in a su
 \label{defn:lower-ideal}
 Let $(X, \Delta, L)$ be a log spin curve of signature $(g; -; \delta
 )$ with $g \geq 2$ and $\Delta > 0.$ Choose generators $x_1, \ldots
-, x_n$ of $R_L$ so that we obtain a surjection $\phi: k[x_1, \ldots
-, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L, d}$ be
-the $d^\text{th}$ graded piece of $I_L$ and define
+, x_n$ of $R_\halfcan$ so that we obtain a surjection $\phi: k[x_1, \ldots
+, x_n] \twoheadrightarrow R_\halfcan$ with kernel $I_\halfcan$. Let $I_{\halfcan, d}$ be
+the $d^\text{th}$ graded piece of $I_\halfcan$ and define
 \[
-	J_{L,d} = \sum_{j = 1}^{d- 1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j}.
+	J_{\halfcan,d} = \sum_{j = 1}^{d- 1}k[x_1, \ldots, x_n]_j \cdot I_{\halfcan,d-j}.
 \]
 \end{defn}
 
 
 \begin{lem}
 \label{lem:reducing-degree}
-Let $(X, \Delta, L)$ be a log spin curve of genus $g \geq 2,$ so
-that $\Delta > 0.$ Choose generators $x_1, \ldots, x_n$ of $R_L$ so
+Let $(X, \Delta, \halfcan)$ be a log spin curve of genus $g \geq 2,$ so
+that $\Delta > 0.$ Choose generators $x_1, \ldots, x_n$ of $R_\halfcan$ so
 that we obtain a surjection $\phi: k[x_1, \ldots, x_n]
-\twoheadrightarrow R_L$ with kernel $I_L$. Let $s_1, s_2 \in k[x_1,
+\twoheadrightarrow R_\halfcan$ with kernel $I_L$. Let $s_1, s_2 \in k[x_1,
 \ldots, x_n]_2$ be two elements so that $\newspan(\phi(s_1), \phi(s_2))
-= V \subseteq H^0(X, 2L)$ is basepoint-free. For any $f \in
+= V \subseteq H^0(X, 2\halfcan)$ is basepoint-free. For any $f \in
 k[x_1, \ldots, x_n]$ such that $\deg f \geq 11,$ there exist $g, h \in
-k[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h = f \bmod J_{L, d}.$
+k[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h = f \bmod J_{\halfcan, d}.$
 \end{lem}
 \begin{proof}
 % Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1),\phi(s_2) \in H^0(2L)$ generate a base point free pencil $V = k \phi(s_1) \oplus k \phi(s_2)\subseteq H^0(X,2L)$.
 By Lemma ~\ref{lem:generation-5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Therefore, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in k[x_1, \ldots, x_n]_{d-\deg x_i}$.
-We next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in k[x_1, \ldots, x_n]_{d - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{L,\deg a_i}.$ 
+We next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in k[x_1, \ldots, x_n]_{d - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{\halfcan,\deg a_i}.$ 
 
 By Lemma ~\ref{lem:generation-5},
 \begin{align*}
-	V \otimes H^0((\deg f-\deg x_i -2)L) \rightarrow H^0((\deg f-\deg x_i)L)
+	V \otimes H^0((\deg f-\deg x_i -2)\halfcan) \rightarrow H^0((\deg f-\deg x_i)\halfcan)
 \end{align*}
 is surjective, and $\deg f \geq 11$ implies that
 $\deg a_i =\deg f - \deg x_i -2 \geq 4.$
-In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Choosing $g_i,h_i$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha, \phi(h_i) = \beta$, we have $a_i \equiv s_1 g_i + s_2 h_i \bmod I_{L,\deg a_i}$, as claimed.
+In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Choosing $g_i,h_i\in k[x_1, \ldots, x_n]_{\deg(a_i)-2}$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha, \phi(h_i) = \beta$, we have $a_i \equiv s_1 g_i + s_2 h_i \bmod I_{\halfcan,\deg a_i}$, as claimed.  \todo{Peter: Maybe this paragraph could be made a little easier to read?}
 
 Finally, we may then take $g = \sum_{i}^{}g_i x_i, \: h = \sum_{i}^{}h_i x_i,$ so that 
 \begin{align*}
@@ -2301,15 +2301,15 @@ Finally, we may then take $g = \sum_{i}^{}g_i x_i, \: h = \sum_{i}^{}h_i x_i,$ s
 
 \begin{prop}
 \label{prop:relation-10}
-Let $(X, \Delta, L)$ be a log spin curve of signature $(g; -; \delta)$
- with $g \geq 2$ and $\Delta > 0.$ Then $I_L$ is generated in
+Let $(X, \Delta, \halfcan)$ be a log spin curve of signature $(g; -; \delta)$
+ with $g \geq 2$ and $\Delta > 0.$ Then $I_\halfcan$ is generated in
 degree at most degree at most $10$.
 \end{prop}
 \begin{proof}
-Suppose $f \in I_L$ with $\deg f \geq 11$. To complete the proof,
-it suffices to show $f \in I_{L,d}'$. By Lemma
+Suppose $f \in I_\halfcan$ with $\deg f \geq 11$. To complete the proof,
+it suffices to show $f \in I_{\halfcan,d}'$. By Lemma
 ~\ref{lem:reducing-degree}, it suffices to show $s_1 g + s_2 h \in
-I_{L, d}'$ where $\phi(s_ 1),\phi(s_2) \in H^0(X, 2L)$ are two sections
+I_{\halfcan, d}'$ where $\phi(s_ 1),\phi(s_2) \in H^0(X, 2L)$ are two sections
 so that $\newspan(\phi(s_ 1), \phi(s_2)) = V \subseteq H^0(K)$ is
 basepoint-free. Consider the map
 
@@ -2335,7 +2335,7 @@ I_{k, d - 2}$. Hence,
 
 %\begin{rem}
 %\label{rem:relations_generation_ten}
-%Let $X$ be a curve of genus $g = 2$ and $P$ a closed point of $X$. In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L = P$, then $R_L$ has a
+%Let $X$ be a curve of genus $g = 2$ and $P$ a closed point of $X$. In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L = P$, then $R_\halfcan$ has a
 %relation in degree 10. Therefore, the bound from Proposition
 %~\ref{prop:relation-10}, that $I_L$ is generated in degree at most
 %11 if $\Delta = 0$ and at most $10$ if $\Delta > 0,$ is close to
@@ -2365,7 +2365,7 @@ relations follows from Proposition ~\ref{prop:relation-10}.
 We are ready to prove our main theorem, Theorem ~\ref{thm:main} in the case
 $g \geq 2$. The idea of the proof is to use Lemma
 ~\ref{lem:generation-5} and Proposition ~\ref{prop:relation-10} to 
-complete the base case when $L = L_X$ and then apply Lemma
+complete the base case when $L = \halfcan_X$ and then apply Lemma
 ~\ref{lem:sat-1}, Lemma ~\ref{lem:sat-2}, and Lemma
 ~\ref{lem:raise-stacky-order} to complete the induction step.
 
@@ -2487,19 +2487,19 @@ $L' = P - Q + \frac{1}{5}P_1$ above in Example ~\ref{eg:exception-1-5}. The othe
 
 %\begin{example}
 %\label{eg:exceptional-1-0}
-%In the case $L=P - Q.$ Then, we have $R_{(2k+ 1)L} \cong 0$ while $R_{2kL} \cong k$, with a single generator in degree 2. Therefore, $R_L \cong k[y]$, where $y$ is a generator in degree 2. 
+%In the case $L=P - Q.$ Then, we have $R_{(2k+ 1)L} \cong 0$ while $R_{2kL} \cong k$, with a single generator in degree 2. Therefore, $R_\halfcan \cong k[y]$, where $y$ is a generator in degree 2. 
 %\end{example}
 %
 %\begin{example}
 %\label{eg:exceptional- 1-3}
 %Let $L = P - Q + \frac{1}{3}R$. Since $P \neq Q$, we see $h^0(L) = 0,$ and we know $h^0(2L) = h^0(K) = 1$. For $n > 2$, we have $\deg nL > 0$ and so by Riemann--Roch, we have $h^0(nL) = \deg \lfloor nL/3 \rfloor.$ Next, 
-%We find that $R_L \cong k[u, x,z]/(z^2 - ux^4),$ where $\deg u = 2, \deg x = 3, \deg z = 7$ so that $\di u|_L = -2P + 2Q, \di x|_L = -3P + 3Q - R, \di z|_L = -7P + 7Q - 2R.$\todo{This is unfinished}
+%We find that $R_\halfcan \cong k[u, x,z]/(z^2 - ux^4),$ where $\deg u = 2, \deg x = 3, \deg z = 7$ so that $\di u|_L = -2P + 2Q, \di x|_L = -3P + 3Q - R, \di z|_L = -7P + 7Q - 2R.$\todo{This is unfinished}
 %\end{example}
 %
 %
 %\begin{example}
 %\label{eg:exception-1-e}
-%Let $L = P - Q + \frac{e- 1}{2e}P_1.$ Here, we claim $R_L \cong k[u, y_3, y_5, \ldots, y_e]/I_e,$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Lemma ~\ref{lem:raise-stacky-order} so that $in(I_e) = in(I_{e-2})k[u, y_3, \ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$
+%Let $L = P - Q + \frac{e- 1}{2e}P_1.$ Here, we claim $R_\halfcan \cong k[u, y_3, y_5, \ldots, y_e]/I_e,$ where we define $I_5 = y_3^4 - uy_5^2$ and $I_e$ is inductively defied via Lemma ~\ref{lem:raise-stacky-order} so that $in(I_e) = in(I_{e-2})k[u, y_3, \ldots, y_e] + \langle y_e z \mid z \neq y_e, y_{e-2} \rangle.$
 %Furthermore, $\deg u = 2, \deg y_i = i$.
 %\todo{Note that here there is a quartic generator of $I$ in degree 12, providing exceptions to minimality by quadrics and an exception to the relation bound when $e = 5$.}
 %\end{example}
@@ -2530,7 +2530,7 @@ finite list of exceptional cases, as listed in Table
 \noindent
 {\sf Case 1: $\Delta > 0$}
 
-If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $L_X \in \di X$ satisfy $2L_X \sim K_X + \Delta$. We have $\deg L_X \geq 1$, so, by Riemann--Roch, $h^0(\sx,L) \geq 1.$ Therefore, $L$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $L$ is an effective divisor.
+If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $L_X \in \di X$ satisfy $2L_X \sim K_X + \Delta$. We have $\deg \halfcan_X \geq 1$, so, by Riemann--Roch, $h^0(\sx,L) \geq 1.$ Therefore, $L$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $L$ is an effective divisor.
 
 We first now show the theorem holds for $L_X$ by induction. Since $L$ is effective, we may induct on the degree of the divisor. The base case is easy: the theorem holds for $L' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $L' \in \di X$, with $L'$ effective. We will show it holds for $L' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $L'$.
 
@@ -2544,15 +2544,15 @@ To complete the case that $\Delta > 0$, we only need show the theorem holds for 
 \noindent
 {\sf Case 2: $\Delta = 0$}
 
-Since $\Delta = 0$, we may write $L = L_X + \sum_{i = 1}^{r}\subhalf{e_i}P_i.$ There are now two further subcases, depending on whether $L_X = 0$ or $L_X = P - Q$ for $P$ and $Q$ two distinct hyperelliptic fixed  points.
+Since $\Delta = 0$, we may write $\halfcan = \halfcan_X + \sum_{i = 1}^{r}\subhalf{e_i}P_i.$ There are now two further subcases, depending on whether $\halfcan_X = 0$ or $\halfcan_X = P - Q$ for $P$ and $Q$ two distinct hyperelliptic fixed  points.
 
 \vskip.1in
 \noindent
-{\sf Case 2a: $L_X = P - Q, P \neq Q$}
+{\sf Case 2a: $\halfcan_X = P - Q, P \neq Q$}
 
 Note that we are assuming $L$ is not one of the exceptional cases listed in Table ~\ref{table:g-1-exceptional}, so we may either assume $\sx$ has 1 stacky point with $e_1 > 5$ or at least 2 stacky points.
 
-First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12. Furthermore, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Observe that $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$. However, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, and the relation in degree $12$ coming from $R_{L'}$, lies in a degree less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
+First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12. Furthermore, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Observe that $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$. However, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, and the relation in degree $12$ coming from $R_{\halfcan'}$, lies in a degree less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
 Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then, by Example ~\ref{eg:base-1-33}, it follows that the signature $\sigma = (1;3, 3; \delta)$ satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ Finally, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired.
 
@@ -2991,7 +2991,7 @@ This paper leaves open many directions for further research.
 
 	\item In Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky},
 		the notion of a generic initial ideal is defined, which 
-		encapsulates the idea of whether the relations for $R_L$ are 
+		encapsulates the idea of whether the relations for $R_\halfcan$ are 
 		generically chosen, in a precise sense. The proof of Theorem
 		~\ref{thm:main} decidedly does not yield a generic initial ideal, 
 		as generators and relations are constructed in a highly nongeneric 
@@ -3016,7 +3016,7 @@ This paper leaves open many directions for further research.
 			Can one give an algorithm for explicitly computing the generators 
 			and relations for an arbitrary genus $g \geq 2$ curve?
 		\end{question}
-		Suppose the generators and relations of $R_{L_X}$ are known, 
+		Suppose the generators and relations of $R_{\halfcan_X}$ are known, 
 		where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the 
 		coarse space of $\sx$, and $L_X \leq L$ is a spin canonical divisor 
 		of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an 
@@ -3026,14 +3026,14 @@ This paper leaves open many directions for further research.
 		\label{ques:spin-canonical-petri}
 			Given a {\rm(}non-stacky {\rm)} curve $X$ and a spin canonical 
 			divisor $L \in \di X$, can one write down a set of minimal 
-			generators and minimal relations for $R_L$? If so, can one give the 
-			generic ideal of $R_L$ or the generic initial ideal of $R_L$, as 
+			generators and minimal relations for $R_\halfcan$? If so, can one give the 
+			generic ideal of $R_\halfcan$ or the generic initial ideal of $R_\halfcan$, as 
 			defined in Voight and Zureick Brown \cite[Definition 2.2.7]
 			{vzb:stacky}?
 		\end{question}
 		In particular, if Question ~\ref{ques:spin-canonical-petri} were 
 		answered affirmatively one would be able to write down explicit 
-		generators and relations for $R_L$ on a stacky curve, essentially 
+		generators and relations for $R_\halfcan$ on a stacky curve, essentially 
 		by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
 \todo{Aaron, I tried to edit the following question, but it still seems a bit imprecise, and the question in particular is a bit of a long sentence.}
 	\item In Subsection \ref{ssec:bounds-high-genus}, we reference 
@@ -3066,10 +3066,10 @@ This paper leaves open many directions for further research.
 
 	\todo{This last one doesn't seem particularly interesting. Should we remove it?}
 	\item While Theorem ~\ref{thm:main} gives a minimal set of 
-		generators for the log spin canonical ring $R_L,$ the set of 
+		generators for the log spin canonical ring $R_\halfcan,$ the set of 
 		relations is not minimal. In many of the $g = 0$ and $g=1$ cases, 
 		it is not too difficult to see that our inductive procedure also 
-		yields a minimal set of relations for $R_L$. One might investigate 
+		yields a minimal set of relations for $R_\halfcan$. One might investigate 
 		whether the generators and relations given by the inductive proof 
 		of Theorem ~\ref{thm:main} are always minimal.
 		\end{enumerate}
