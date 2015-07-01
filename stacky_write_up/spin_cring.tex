@@ -165,28 +165,17 @@
 \begin{abstract}
   The study of rings of modular forms arising from finite-area
 	quotients of the upper-half plane by Fuchsian groups may be
-	translated to the study of canonical rings by the classical
-	results of Kodaira--Spencer. In particular, this work describes
+	translated to (log spin) canonical rings by the classical
+	results of Kodaira--Spencer. This work describes
 	generators and relations of spin canonical rings of a stacky
-	curve equipped with an arbitrary log (or effective)	divisor in a
+	curve equipped with an arbitrary log	divisor in a
 	generalization of the classical theorems of Max Noether	and Karl
-	Petri. As an application, these results strongly bound the
+	Petri. As an application, these results tightly bound the
 	generator and relation degrees for the aforementioned rings
-	of modular forms of arbitrary integral weight with some insight
-	into rings of modular forms of fractional weight.
+	of modular forms of arbitrary integral weight.
 \end{abstract}
 
 \maketitle
-
-\todo{Peter ``the study of'' is used twice in the first sentence.  Can we find a way to replace one of them?}
-
-\todo{Peter: I don't like the use of ``In particular, this work..."  Can we say something like ``This paper ..."}
-
-\todo{Peter: I don't understand the purpose of the parenthetical ``(or effective).''  What is it trying to say?}
-
-\todo{Peter: I don't like the use of the word ``strongly'' in the third sentence; these sort of adjectives are ambiguous and subjective, and don't add any real content to the statement}
-
-\todo{Peter: Get rid of comment about fractional weight modular forms.  This does not appear anywhere except in further questions, and does not deserve a spot in the abstract.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -216,9 +205,10 @@ curves and log stacky curves over $\BC$. Hence, for the remainder
 of the paper, we will work in the algebraic category.
 
 Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is
-well known that the canonical sheaf $\Omega _X,$ with associated canonical divisor $K_X$
- determines the {\bf canonical map } $\pi:X \rightarrow \BP_k^{g - 1}$.
-Then, the {\bf canonical ring} is defined to be
+well known that the canonical sheaf $\Omega _X,$ with associated
+canonical divisor $K_X$  determines the {\bf canonical map } $\pi:
+X \rightarrow \BP_k^{g - 1}$. Then, the {\bf canonical ring} is
+defined to be
 \begin{align*}
 	R(X,K_X) = \bigoplus_{d \geq 0} H^0(X, dK_X),
 \end{align*}
@@ -2174,18 +2164,16 @@ We now consider the case when the genus is at least 2. In this case, we are able
 \ssec{Bounds on Generators and Relations in High Genus}\label{ssec:bounds-high-genus}
 \todo{Make edits that you want to further incorporate Reid's paper}
 
-The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed in Reid ~\cite[Theorem 3.4]{reid:infinitesimal}\todo{cite Ried article}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Thoughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ and so $H^0(X, 2L)$ is basepoint free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
+The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[p. 35]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Thoughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ and so $H^0(X, 2L)$ is basepoint free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
 
 The proofs of this subsection results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}. However, the statements are different, as we assume $\Delta > 0$ instead of $\Delta = 0$ and do not assume there is a basepoint free pencil contained in $H^0(X,L).$ 
 
-\iffalse
-\begin{lem}
-\label{lem:generation-5}
-Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K +\Delta$. Then, $R_L$ is generated in degree at most $5$.
-\end{lem}
-
-The strategy of the proof of Lemma ~\ref{lem:generation-5} is to use Riemann--Roch and the basepoint-free pencil trick to show that $R_L$ is generated in degree at most $6,$ as is done in Lemma ~\ref{lem:semicanonical_generation}. When $g > 3$, it is easy to reduce the bound from 5 to 6. The trickiest case is to show $R_L$ is generated in degree 5 when $g = 2$, which is done in Lemma ~\ref{lem:genus-2-generation-5}. After proving these 2 lemmas, we concisely prove Lemma ~\ref{lem:generation-5}.
-\fi
+%\begin{lem}
+%\label{lem:generation-5}
+%Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K +\Delta$. Then, $R_L$ is generated in degree at most $5$.
+%\end{lem}
+%
+%The strategy of the proof of Lemma ~\ref{lem:generation-5} is to use Riemann--Roch and the basepoint-free pencil trick to show that $R_L$ is generated in degree at most $6,$ as is done in Lemma ~\ref{lem:semicanonical_generation}. When $g > 3$, it is easy to reduce the bound from 5 to 6. The trickiest case is to show $R_L$ is generated in degree 5 when $g = 2$, which is done in Lemma ~\ref{lem:genus-2-generation-5}. After proving these 2 lemmas, we concisely prove Lemma ~\ref{lem:generation-5}.
 
 \begin{lem}
 \label{lem:generation-5}
@@ -2196,19 +2184,17 @@ Let $(X, \Delta, L)$ be a log spin curve of signature $(g;-;\delta)$ with $g \ge
 is surjective if $n \geq 4.$ In particular, $R_L$ is generated in degree at most $5.$
 \end{lem}
 
-\iffalse
-\begin{rem}
-\label{rem:neves-omission}
-The following proof of Lemma ~\ref{lem:semicanonical_generation} is shown in Neves \cite[Proposition III.4]{neves:halfcan}. However, Neves states that this proof also proves Lemma ~\ref{lem:generation-5}, while it crucially omits the case of genus 2 curves. We produce the proof here for completeness.
-\end{rem}
-\fi
+%\begin{rem}
+%\label{rem:neves-omission}
+%The following proof of Lemma ~\ref{lem:semicanonical_generation} is shown in Neves \cite[Proposition III.4]{neves:halfcan}. However, Neves states that this proof also proves Lemma ~\ref{lem:generation-5}, while it crucially omits the case of genus 2 curves. We produce the proof here for completeness.
+%\end{rem}
 
-\begin{proof}[Proof of Lemma ~\ref{lem:generation-5}]
+\begin{proof}
 To show there are no new generators in degree at least $6$, it suffices to show that if $n \geq 4$, the map
 \begin{align*}
 	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
 \end{align*}
-is surjective. Indeed, since $V= ks_1 \oplus k s_2 \subseteq H^0(K)$ is basepoint free, by the basepoint-free pencil trick, (see \cite[Lemma 2.6]{saint-donat:proj} for a proof,) we obtain an exact sequence
+is surjective. Indeed, since $V= ks_1 \oplus k s_2 \subseteq H^0(K)$ is basepoint-free, by the basepoint-free pencil trick, (see \cite[Lemma 2.6]{saint-donat:proj} for a proof,) we obtain an exact sequence
 $$\begin{tikzcd}
 0 \ar r & H^0((n-2)L) \ar r & V \otimes H^0(nL) \ar{r}{f} & H^0((n+2)L)
 \end{tikzcd}$$
@@ -2221,58 +2207,54 @@ By rank-nullity, $$\dim_k \im f = 2 \cdot (n- 1)(g - 1) -(n-3)(g - 1) = (n+ 1)(g
 Ergo, $f$ is surjective.
 \end{proof}
 
-\iffalse
-\begin{lem}
-\label{lem:genus-2-generation-5}
-Let $X$ be a smooth genus 2 curve with canonical divisor $K$ and let $L \in \di X$ be so that $2L \sim K$. 
-Then, $R_L$ is generated in degree at most $5$.
-\end{lem}
-\begin{proof}
-By Lemma ~\ref{lem:semicanonical_generation} it suffices to show $R_L$ has no minimal generators in degree 6.
-Let $P_1, \ldots, P_6$ be the six hyperelliptic fixed points of $X$. 
-Recall that all linear equivalence classes of spin divisors on $X$ have a representative of the form
-$$L = P_1 + \sum_{i =2}^{6} \epsilon_i (P_1 - P_i),$$ 
-with $\epsilon_i \in \{0,1\},$ and not all $\epsilon_i = 1$. \todo{cite this somewhere, maybe ask david for a place to cite? We can cite http://www.math.harvard.edu/~ctm/home/text/class/harvard/213b/14/html/home/course/course.pdf, for example, from complex analysis course notes! Don't use coarse notes}
-Note that $H^0(X,K)$ is spanned by rational functions $u, x$ with $\di u|_{2L} = -2L, \di x|_{2L} = -2L + 2P_1,$ where $u,x$ are though of as rational functions. Therefore, the image of the multiplication map 
-\begin{align*}
-	Sym^3 H^0(X,2L) \rightarrow H^0(X,6L)
-\end{align*}
-is 4 dimensional by Riemann--Roch, with image spanned by $u^3,u^2x,ux^2, x^3$, 
-which have 
-\begin{align*}
-	\di u^3|_{2L} &= -2L \\
-	\di u^2x|_{2L} &= -2L + 2P_1 \\
-	\di ux^2|_{2L} &= -2L+4P_1, \\
-	\di x^3|_{2L} &= -2L + 6P_1.
-\end{align*}
+%\begin{lem}
+%\label{lem:genus-2-generation-5}
+%Let $X$ be a smooth genus 2 curve with canonical divisor $K$ and let $L \in \di X$ be so that $2L \sim K$. 
+%Then, $R_L$ is generated in degree at most $5$.
+%\end{lem}
+%\begin{proof}
+%By Lemma ~\ref{lem:semicanonical_generation} it suffices to show $R_L$ has no minimal generators in degree 6.
+%Let $P_1, \ldots, P_6$ be the six hyperelliptic fixed points of $X$. 
+%Recall that all linear equivalence classes of spin divisors on $X$ have a representative of the form
+%$$L = P_1 + \sum_{i =2}^{6} \epsilon_i (P_1 - P_i),$$ 
+%with $\epsilon_i \in \{0,1\},$ and not all $\epsilon_i = 1$. \todo{cite this somewhere, maybe ask david for a place to cite? We can cite http://www.math.harvard.edu/~ctm/home/text/class/harvard/213b/14/html/home/course/course.pdf, for example, from complex analysis course notes! Don't use coarse notes}
+%Note that $H^0(X,K)$ is spanned by rational functions $u, x$ with $\di u|_{2L} = -2L, \di x|_{2L} = -2L + 2P_1,$ where $u,x$ are though of as rational functions. Therefore, the image of the multiplication map 
+%\begin{align*}
+	%Sym^3 H^0(X,2L) \rightarrow H^0(X,6L)
+%\end{align*}
+%is 4 dimensional by Riemann--Roch, with image spanned by $u^3,u^2x,ux^2, x^3$, 
+%which have 
+%\begin{align*}
+	%\di u^3|_{2L} &= -2L \\
+	%\di u^2x|_{2L} &= -2L + 2P_1 \\
+	%\di ux^2|_{2L} &= -2L+4P_1, \\
+	%\di x^3|_{2L} &= -2L + 6P_1.
+%\end{align*}
+%
+%\noindent
+%Since $H^0(X,6L)$ is 5 dimensional by Riemann--Roch,
+%it suffices to produce one more independent function in the image of the multiplication map.
+%There are now two cases, depending on whether $H^0(X,L) = 0$.
+%
+%First, we deal with the case that $H^0(X,L) \neq 0$. 
+%Then, since $X \not \cong \BP^1_k,$ and $\deg L = 1$, we must have $H^0(X,L) = 1$. Hence, we know $L$ is effective, so up to linear equivalence, we may assume $L = P$ where $P$ is hyperelliptic fixed. In this case, it is shown in \cite{neves:halfcan}[Theorem III.19] that $R_L$ is generated in degree $\leq 3$.
+%
+%Second, suppose $H^0(X,L) = 0$.
+%Note that because $\deg 3L = 3$, we have by Riemann--Roch that $H^0(X,3L) = 2$. 
+%Note additionally that $3L \sim K + L \sim 2P_1 + L$. Since $3L$ is base point free, by Riemann--Roch
+%we have that there exists a rational function $f$ with $\di f|_{2P_1 + L} = -2P_1 - L.$ Additionally, there are no functions $g \in H^0(X,L + 2P_1)$ 
+%with $\di g|_{2P_1 + L} = -L,$ since $H^0(X,L) = 0.$ Therefore, there must 
+%exist a function $h \in H^0(X,L+2P_1)$ so that $\di h|_{L + 2P_1} = -L - P_1$.
+%Then, $h \cdot f \in H^0(X,2L + 4P_1) \cong H^0(X,6L)$ has a pole of odd 
+%order at $P_1$, and is therefore independent from the image of $\sym^3 H^0(X,3L)$.
+%\end{proof}
 
-\noindent
-Since $H^0(X,6L)$ is 5 dimensional by Riemann--Roch,
-it suffices to produce one more independent function in the image of the multiplication map.
-There are now two cases, depending on whether $H^0(X,L) = 0$.
-
-First, we deal with the case that $H^0(X,L) \neq 0$. 
-Then, since $X \not \cong \BP^1_k,$ and $\deg L = 1$, we must have $H^0(X,L) = 1$. Hence, we know $L$ is effective, so up to linear equivalence, we may assume $L = P$ where $P$ is hyperelliptic fixed. In this case, it is shown in \cite{neves:halfcan}[Theorem III.19] that $R_L$ is generated in degree $\leq 3$.
-
-Second, suppose $H^0(X,L) = 0$.
-Note that because $\deg 3L = 3$, we have by Riemann--Roch that $H^0(X,3L) = 2$. 
-Note additionally that $3L \sim K + L \sim 2P_1 + L$. Since $3L$ is base point free, by Riemann--Roch
-we have that there exists a rational function $f$ with $\di f|_{2P_1 + L} = -2P_1 - L.$ Additionally, there are no functions $g \in H^0(X,L + 2P_1)$ 
-with $\di g|_{2P_1 + L} = -L,$ since $H^0(X,L) = 0.$ Therefore, there must 
-exist a function $h \in H^0(X,L+2P_1)$ so that $\di h|_{L + 2P_1} = -L - P_1$.
-Then, $h \cdot f \in H^0(X,2L + 4P_1) \cong H^0(X,6L)$ has a pole of odd 
-order at $P_1$, and is therefore independent from the image of $\sym^3 H^0(X,3L)$.
-\end{proof}
-\fi
-
-\iffalse
-We are now equipped to prove Lemma ~\ref{lem:generation-5}, completing the desired bound on the degree of the generators.
-
-\begin{proof}[Proof of Lemma ~\ref{lem:generation-5}]
-If $\Delta > 0$, this holds by Lemma ~\ref{lem:semicanonical_generation}. If $g = 2$ and $\Delta = 0,$ then the claim follows from
-Lemma ~\ref{lem:genus-2-generation-5}. Finally, if $g > 2$ and $\Delta = 0$, using Lemma ~\ref{lem:semicanonical_generation}, there are no minimal generators in degree $\geq 7$. By Voight and Zurieck-Brown \cite[Theorem 3.2.1]{vzb:stacky}, we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective and so there are also no minimal generators in degree 6. Hence, $R_L$ is generated in degree at most 5.
-\end{proof}
-\fi
+%We are now equipped to prove Lemma ~\ref{lem:generation-5}, completing the desired bound on the degree of the generators.
+%
+%\begin{proof}[Proof of Lemma ~\ref{lem:generation-5}]
+%If $\Delta > 0$, this holds by Lemma ~\ref{lem:semicanonical_generation}. If $g = 2$ and $\Delta = 0,$ then the claim follows from
+%Lemma ~\ref{lem:genus-2-generation-5}. Finally, if $g > 2$ and $\Delta = 0$, using Lemma ~\ref{lem:semicanonical_generation}, there are no minimal generators in degree $\geq 7$. By Voight and Zurieck-Brown \cite[Theorem 3.2.1]{vzb:stacky}, we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective and so there are also no minimal generators in degree 6. Hence, $R_L$ is generated in degree at most 5.
+%\end{proof}
 
 The next step is to bound the degrees of the relations of $R_L$ when $\Delta > 0$. This is done in Proposition ~\ref{prop:relation-10}. The idea of the proof of Proposition ~\ref{prop:relation-10} is to use the basepoint-free pencil trick to show that if a relation lies in a sufficiently high degree, it lies in the ideal generated by the relations in lower degrees. We now fix notation for this ideal generated by lower degrees relations.
 
@@ -2316,7 +2298,7 @@ Let $(X, \Delta, L)$ be a log spin curve of signature $(g;-;\delta)$ with $g \ge
 \end{prop}
 \begin{proof}
 Suppose $f \in I_L$ with $\deg f \geq 11$.
-To complete the proof, it suffices to show $f \in I_{L,d}'$. By Lemma ~\ref{lem:reducing-degree}, it suffices to show $s_1g+s_2h \in I_{L,d}'$ where $\phi(s_1),\phi(s_2) \in H^0(X,2L)$ are two sections so that $k\phi(s_1) \oplus k \phi(s_2) = V \subseteq H^0(K)$ is basepoint free. Consider the map
+To complete the proof, it suffices to show $f \in I_{L,d}'$. By Lemma ~\ref{lem:reducing-degree}, it suffices to show $s_1g+s_2h \in I_{L,d}'$ where $\phi(s_1),\phi(s_2) \in H^0(X,2L)$ are two sections so that $k\phi(s_1) \oplus k \phi(s_2) = V \subseteq H^0(K)$ is basepoint-free. Consider the map
 $$\begin{tikzcd}
 V \otimes H^0((\deg f - 2)L) \ar {r}{f} & H^0((\deg f)L),
 \end{tikzcd}$$
@@ -2342,17 +2324,27 @@ We now concisely summarize what we have shown.
 
 \begin{cor}
 \label{cor:g-2-presentation-bound}
-Let $(X, \Delta, L)$ be a log spin curve of signature $(g;-;\delta)$ with $g \geq 2$. Then $X$ has minimal generators in degree at most 5 and minimal relations in degree at most 10.
+Let $(X, \Delta, L)$ be a log spin curve of signature $(g;-;\delta)$
+with $g \geq 2$. Then $X$ has minimal generators in degree at most
+$5$ and minimal relations in degree at most $10$.
 \end{cor}
-\begin{proof}
-If $\Delta =0$, the result is immediate from Reid \todo{cite Reid}. Otherwise, if $\Delta > 0$, the bound on the degrees of minimal generators follows from Lemma ~\ref{lem:generation-5}, while the bound on the degrees of minimal relations follows from Proposition ~\ref{prop:relation-10}.
-\end{proof}
 
+\begin{proof}
+If $\Delta =0$, the result is immediate from Reid. Otherwise, if
+$\Delta > 0$, the bound on the degrees of minimal generators follows
+from Lemma ~\ref{lem:generation-5}, while the bound on the degrees
+of minimal relations follows from Proposition ~\ref{prop:relation-10}.
+\end{proof}
 
 \ssec{Main Theorem for High Genus}
 \label{ssec:g-high-main}
 
-We are ready to prove our main theorem ~\ref{thm:main} in the case $g \geq 2$. The idea of the proof is to use Lemma ~\ref{lem:generation-5} and Proposition ~\ref{prop:relation-10} to complete the base case when $L = L_X$ and then apply Lemmas ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:raise-stacky-order} to complete the induction step.
+We are ready to prove our main theorem ~\ref{thm:main} in the case
+$g \geq 2$. The idea of the proof is to use Lemma
+~\ref{lem:generation-5} and Proposition ~\ref{prop:relation-10} to 
+complete the base case when $L = L_X$ and then apply Lemma
+~\ref{lem:sat-1}, Lemma ~\ref{lem:sat-2}, and Lemma
+~\ref{lem:raise-stacky-order} to complete the induction step.
 
 \begin{thm}
 \label{thm:g-high-main}
@@ -2979,7 +2971,7 @@ Given a {\rm(}non-stacky {\rm)} curve $X$ and a spin canonical divisor $L \in \d
 \end{question}
 In particular, if Question ~\ref{ques:spin-canonical-petri} were answered affirmatively one would be able to write down explicit generators and relations for $R_L$ on a stacky curve, essentially by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
 %
-	\item In Subsection \ref{ssec:bounds-high-genus}, we reference the work of Reid \cite{reid:infinitesimal}.
+	\item In Subsection \ref{ssec:bounds-high-genus}, we reference the work of Reid \cite[p. 35]{reid:infinitesimal}.
 We use his construction of a uniform bound on the generation of the half-canonical ring and its ideal of relations at 5 and 10 in the non-log, non-stacky case when genus is at least 2.  We extend this bound of 5 and 10 to the log case, and then apply our inductive lemmas to add stacky points and get bounds of $\max(5,e)$ and $\max(10, 2e)$.  Reid in fact proves something slightly stronger: that in most cases his bound is actually 3 and 6 with well-characterized exceptions.
 \begin{question}\label{ques:reduce-5,10-to-4,8}
 Can we reduce the bounds in Theorem \ref{thm:main} on generation from $\max(5,e)$ and $\max(10, 2e)$ to $\max(4,e)$ and $\max(8, 2e)$. 
@@ -2990,22 +2982,23 @@ It is unlikely that this can be reduced further, because Lemma \ref{lem:sat-2}, 
 %
 	\todo{This last one doesn't seem particularly interesting. Should we remove it?}
 	\item While Theorem ~\ref{thm:main} gives a minimal set of generators for the log spin canonical ring $R_L,$ the set of relations is not minimal. In many of the $g = 0$ and $g=1$ cases, it is not too difficult to see that our inductive procedure also yields a minimal set of relations for $R_L$. One might investigate whether the generators and relations given by the inductive proof of Theorem ~\ref{thm:main} are always minimal.
-	\end{enumerate}
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Acknowledgments}
 We are grateful to David Zureick-Brown for introducing us to this
 field of study, providing incredibly helpful guidance, and being an
-excellent project mentor. We also thank Ken Ono and the Emory University
-Number Theory REU for arranging our project and providing a great
-environment for mathematical learning and collaboration. We thank
-Jorge Sentieiro Neves help pointing out Reid's bound on the maximal
-degrees of minimal generators and relations of spin canonical rings
-in high genera. Finally, we gratefully acknowledge that our
-research was financially supported by NSF Grant Award Number 1250467
-via the Emory University Number Theory REU. We deeply appreciate
-all of the support that has made our work possible
+excellent project mentor. We also thank Ken Ono and the Emory 
+University Number Theory REU for arranging our project and 
+providing a great environment for mathematical learning and 
+collaboration. We thank Jorge Sentieiro Neves for pointing out the
+bound given by Reid's work on the maximal degrees of minimal
+generators and relations of spin canonical rings in high genera.
+Finally, we gratefully acknowledge that our research was
+financially supported by NSF Grant Award Number 1250467 via the
+Emory University Number Theory REU. We deeply appreciate all of the
+support that has made our work possible.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
