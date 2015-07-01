@@ -273,23 +273,20 @@ canonical rings is given in Subsection
 	%R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(X, d \halfcan)
 %\end{align*}
 
-In particular, we would like to bound the degrees in which the
-log spin canonical ring and its relations are generated. Let
+In particular, we bound the degrees of generators and relations of a
+log spin canonical ring. Let
 $\sx$ be a stacky curve with signature $\sigma = (g; e_1, \ldots,
 e_r; \delta)$. The application of O'Dorney's work to log spin
-canonical rings gives a large bound for the genus zero case in
-terms of least common multiples of the $e_i$'s \cite[Chapter 5]
+canonical rings gives a weak bound in the case $g = 0$, in
+terms of the least common multiples of the $e_i$'s \cite[Chapter 5]
 {dorney:canonical}. In their treatment of log spin canonical
-rings, Voight and Zureick-Brown bounded generator degrees by $3e$
-and relation degrees by $6e$ when $\halfcan$ is effective
+rings, Voight and Zureick-Brown bounded generator degrees by $3 \cdot \max(5, e_1,\ldots, e_r)$
+and relation degrees by $3 \cdot \max(5, e_1,\ldots, e_r)$ when $\halfcan$ is effective
 \cite[Corollary 10.4.6]{vzb:stacky}.
 
-These bounds, particularly those derived from O'Dorney's work
-in the genus zero case, are far from tight and do not collectively
+These bounds are far from tight and do not collectively
 cover all cases in all genera. The main theorem of this paper
-gives significantly tighter bounds across all cases in all
-genera on the generator and relation degrees of log spin canonical
-rings.
+gives significantly tighter bounds for any log spin canonical ring on a log spin curve.
 
 \begin{thm}
 \label{thm:main}
@@ -299,55 +296,56 @@ e_r; \delta)$.
 
 Then the log spin canonical ring is generated as a $k$-algebra by 
 elements of degree at most $e = \max(5, e_1, \ldots, e_r)$ with
-relations generated in degrees up to $2e$
+relations generated in degrees at most $2e$,
 so long as $\sigma$ does not lie in a finite list of exceptional
-cases, as listed in Table ~\ref{table:g-1-exceptional} for
+cases, as given in Table ~\ref{table:g-1-exceptional} for
 signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional} for
 signatures with $g = 0$.
 \end{thm}
 
 \begin{rem}
 \label{rem:main-weaker-assumptions}
-In fact, the theorem only needs to assume that the stacky curve
+In fact, the proof of Theorem ~\ref{thm:main} holds not only for log divisors, which must have distinct points, but also for arbitrary effective divisors
+$\Delta$. Furthermore, one may view stacky curves as stacks, in which case one only need assume that the stacky curve
 is separably rooted, i.e. the residue field at each stacky point
-is separable. Furthermore, the proof works even when letting
-$\Delta$ be any effective divisor rather than just a log divisor.
+is separable.
 \end{rem}
 
-This theorem is proven in three different genus cases, each of
-which use similar inductive processes. The genus $g \geq 2$ case is
+Theorem ~\ref{thm:main} is proven seperately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$, each of
+which uses a similar inductive process. The genus $g \geq 2$ case is
 proven in Theorem ~\ref{thm:g-high-main}. In Theorem
 ~\ref{thm:g-1-main} and Theorem
 ~\ref{thm:g-0-main}, we also give the respective
-genus one and genus zero results after using a similar induction
-process while dealing with more complicated base cases and
+genus one and genus zero results after dealing with more involved base cases and
 exceptional cases.
 
 \begin{rem}
 \label{rem:explicit-generators}
 The proofs of the main theorems in the low genus cases not only
 obtain bounds on the degrees of the generators and relations, but
-also yield explicit systems of generators and the initial ideal of
+also yield explicit systems of generators and an explicit initial ideal of
 relations. Furthermore, our proof of the high genus case also
 provides an inductive procedure for explicitly determining the 
-generators and initial ideal of relations for log spin canonical
+generators and initial ideal of relations of log spin canonical
 rings. Many explicit systems of generators and relations are
 detailed in interesting low genus examples by Neves
 \cite[Section III.4]{neves:halfcan}.
+
+Furthermore, the explicit construction of generators and relations also reveals that the bounds given in Theorem ~\ref{thm:main} are tight. That is, in almost all cases, there is a generator of the log spin canonical ring in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. Furthermore, there are many infinite families of cases which have a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$.
 \end{rem}
 
-The main theorem of this paper provides the following application
-to modular forms when combined with a result from Voight and
-Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky} which itself
-follows from the classical work of Kodaira--Spencer
+The main theorem of this paper, Theorem ~\ref{thm:main}, combined with a result of Voight and
+Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky}, provides the following application
+to modular forms. Note that the result from Voight and
+Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky} follows almost immediately from the classical work of Kodaira--Spencer
 \cite{kodaira-spencer:deformations}.
 
 \begin{cor}
 \label{cor:main-mod-forms}
 Let $\Gamma$ be a Fuchsian group and $\sx$ the stacky curve
 associated to $\Gamma \backslash \BH$ with signature $(g; e_1,
-\ldots, e_r; \delta)$. Then the ring of modular forms
-$M(\Gamma) := \bigoplus_{k = 0}^{\infty} M_k(\Gamma)$ is
+\ldots, e_r; \delta)$. Then, the ring of modular forms
+$M(\Gamma)$ is
 generated as a $\BC$-algebra by elements of degree at most $e = \max
  (5, e_1, \ldots , e_r)$ with relations in degree at most $2e,$ so long
 as $\sigma$ does not lie in a finite list of exceptional cases, as
@@ -358,12 +356,12 @@ listed in Table ~\ref{table:g-1-exceptional} for signatures with $g
 
 The remainder of the paper will be primarily devoted to proving
 Theorem ~\ref{thm:main}. The idea of the
-proof will be to induct on the stabilizer order of and number of stacky points. To this end, we first review important background in
+proof will be to induct on the stabilizer order and number of stacky points. To this end, we first review important background in
 Section ~\ref{sec:background}. Then, we develop various inductive
 tools in Section ~\ref{sec:induction}. In Sections ~\ref{sec:g_high},
 ~\ref{sec:g_1}, and ~\ref{sec:g_0}, we prove Theorem
-~\ref{thm:main} in the high genus, genus
-one, and genus zero cases respectively. Finally, in Section
+~\ref{thm:main} in the genus $ g \geq 2$, genus
+$g = 1$, and genus $g = 0$ cases respectively. Finally, in Section
 ~\ref{sec:further-questions}, we pose several questions for future
 research.
 
@@ -373,7 +371,7 @@ research.
 
 \section{Background}
 \label{sec:background}
-Here we denote various definitions and useful notation that will be
+Here we collect various definitions and useful notation that will be
 used throughout the paper. Many of the conventions come from existing
 literature. For basic references on the statements and definitions
 used below, see Hartshorne \cite[Chapter IV]{hartshorne:ag},
