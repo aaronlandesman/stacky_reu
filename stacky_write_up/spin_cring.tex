@@ -177,6 +177,7 @@
 
 \maketitle
 
+\todo{Make the sentences in the abstract shorter}
 \todo{Make sure we call all divisors spin canonical divisors}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -188,15 +189,14 @@ linear transformations. We consider the {\bf ring of modular forms}
 $M(\Gamma) = \bigoplus_{k=0}^\infty M_k(\Gamma)$. One of the best ways to understand the ring of modular forms is to give a presentation of $M(\Gamma)$
 for general Fuchsian groups $\Gamma.$ In order to do so, it is extermely useful to have a bound on the degrees in which the generators and relations can occur. In the special case that $\Gamma$
 has no odd weight modular forms, Voight and Zureick-Brown
-\cite[Chapters 7-9]{vzb:stacky} give nice bounds.
+\cite[Chapters 7-9]{vzb:stacky} give tight bounds.
 This work extends their work to all Fuchsian groups $\Gamma$.
 
 We can now consider the orbifold $\Gamma \backslash \BH$ over $\BC$.
 For example, in the case $\Gamma$ acts freely on $\BH$, $\Gamma
-\backslash \BH$ is a Riemann Surface over $\BC$. It may well be
+\backslash \BH$ is a Riemann Surface over $\BC$. It may be
 that $\Gamma \backslash \BH$ is not compact, but we can form a
-space $\Gamma \backslash \BH^*$ which is a compactification of
-$\Gamma \backslash \BH,$ with associated divisor of cusps $\Delta$.
+compact Riemann Surface, $\Gamma \backslash \BH^*,$ by adding in cusps, with associated divisor of cusps $\Delta$.
 In order to find generators and relations for $M(\Gamma)$, we
 translate the seemingly analytic question of understanding the ring
 of modular forms into the algebraic category, using a
@@ -205,9 +205,9 @@ generalization of the GAGA principle. By \cite[Proposition 6.1.5]
 curves and log stacky curves over $\BC$. Hence, for the remainder
 of the paper, we will work in the algebraic category.
 
-Let $X$ be a smooth algebraic curve over $k$ of genus $g$. It is
+Let $X$ be a smooth algebraic curve of genus $g$ over a field $k$. It is
 well known that the canonical sheaf $\Omega _X,$ with associated
-canonical divisor $K_X$  determines the {\bf canonical map } $\pi:
+canonical divisor $K_X$, determines the {\bf canonical map } $\pi:
 X \rightarrow \BP_k^{g - 1}$. Then, the {\bf canonical ring} is
 defined to be
 \begin{align*}
@@ -219,18 +219,17 @@ with multiplication structure corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X
 \cong \proj R$. When $g \geq 2$, Petri's theorem gives generators
 and relations for $R(X, K_X)$ showing that in most cases $R(X, K_X)$
-is generated in degree 1 with relations in degree 2
-(demonstrations are given by Saint-Donat \cite[p. 157]
-{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
-\cite[Section 3.3]{acgh:algebraic-curves}). This has the pleasant 
-geometric consequence that all such canonically embedded curves are 
-scheme theoretically cut out by quadratic equations.
+is generated in degree 1 with relations in degree 2, as shown in
+\cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
+\cite[Section 3.3]{acgh:algebraic-curves}. This has the pleasant 
+geometric consequence that all such canonically embedded curves are
+scheme theoretically cut out by degree 2 equations.
 
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize 
 Petri's theorem in the direction of stacky curves equipped with
 log divisors. For a stacky curve $\sx$ with coarse space $X$ and
 stacky points (also called ``fractional points'') $P_1, \ldots, P_r$
-with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$,
+with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$, we define
 
 \[
 	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle 
@@ -242,14 +241,14 @@ Then a {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$
 where $\Delta \in \di X$ is a log divisor and $2\halfcan \sim K_X +
 \Delta + \sum_{i = 1}^{r} \subhalf{e_i} P_i$. The central object of
 study in this paper is the {\bf log spin canonical ring} of $(\sx,
-\Delta, \halfcan)$ is
+\Delta, \halfcan),$ notated as
 \begin{align*}
 	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(X, d \halfcan).
 \end{align*}
 
 \noindent
 A brief overview of stacky curves, log divisors, and log spin
-canonical rings and references are given in Subsection
+canonical rings is given in Subsection
 ~\ref{ssec:stacky-background}.
 
 %If $X$ is a curve, \todo{why do you start with a curve and then
@@ -263,18 +262,6 @@ canonical rings and references are given in Subsection
 	%P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
 	%\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X
 %\]
-
-\begin{rem}
-\label{rem:stack-formalism}
-Stacky curves may be formalized in the language of stacks (e.g. as
-done in the works of Voight and Zureick-Brown \cite{vzb:stacky},
-Abramovich and Vistoli \cite{abramovich-vistoli:compactifying}, and
-Behrend and Noohi \cite{behrend-noohi:uniformization}), but for the
-purposes of this paper, it suffices to treat $\sx$ as a scheme
-whose associated divisor group allows a finite number of stacky
-points. The remainder of the paper will primarily use the language
-of Weil divisors.
-\end{rem}
 
 %A {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$ where
 %$\Delta \in \di X$ is a log divisor and $2\halfcan = K_X +
@@ -401,17 +388,26 @@ geometrically-connected Deligne-Mumford stack of dimension $1$ over
 $k$ with a dense open subscheme. A stacky curve is \textbf{tame} if
 its stabilizers are coprime to char $k$.
 
-Throughout this paper, stacky curves will be assumed to be tame and
+
+
+\begin{rem}
+\label{rem:stack-formalism}
+Stacky curves may be formally defined in the language of stacks, (as
+is done in the works of Voight and Zureick-Brown \cite{vzb:stacky},
+Abramovich and Vistoli \cite{abramovich-vistoli:compactifying}, and
+Behrend and Noohi \cite{behrend-noohi:uniformization},) but for the
+purposes of this paper, it suffices to treat $\sx$ as a scheme
+whose associated divisor group has a finite number of stacky
+points. 
+
+When viewed in the formalism of stacks, all stacky curves will be assumed to be tame and
 $k$ will always be algebraically closed. We also assume that the
 stacky curves are separably rooted, i.e. the residue field of each
-stacky points is separable. As noted in Remark
-~\ref{rem:stack-formalism}, the language of stacks will be omitted
-in this paper, as it is sufficient to treat stacky curves and
-related objects $\sx$ as a scheme whose associated divisor group
-allows for a finite number of \textbf{stacky points} which may be
-viewed heuristically as ``fractional points''. See Voight and
-Zureick-Brown for more thorough treatment of these definitions
-\cite[Chapter 5]{vzb:stacky}.
+of the stacky points is separable.
+
+With the close relation to stacks in mind, for simplicity, the remainder of this paper is primarily phrased using the language
+of Weil divisors.
+\end{rem}
 
 If $P_1, \ldots, P_r$ are the stacky points of a stacky curve $\sx$,
 then we use $e_1, \ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
