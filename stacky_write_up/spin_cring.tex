@@ -287,7 +287,7 @@ signatures with $g = 0$.
 \begin{rem}
 \label{rem:main-weaker-assumptions}
 In fact, the proof of Theorem ~\ref{thm:main} holds not only for log divisors, which must have distinct points, but also for arbitrary effective divisors
-$\Delta$. Furthermore, one may view stacky curves as stacks, in which case one only need assume that the stacky curve
+$\Delta$. Furthermore, one may view stacky curves as stacks, in which case one may relax the assumption that $k$ is perfect. Instead, one only need assume that the stacky curve
 is separably rooted, i.e. the residue field at each stacky point
 is separable.
 \end{rem}
@@ -348,18 +348,19 @@ research.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\todo{Somewhere in the paper, we should probably give an example showing the generators and relations are sharply bounded at degree e, 2e. Robin: Aren't the base cases suitable examples? Aaron: Those don't show it for general e, do they? I don't think we really need an example, just a remark somewhere that one cannot really hope to do better than e, 2e somewhere.}
-
 \section{Background}
 \label{sec:background}
-Here we collect various definitions and useful notation that will be
+Here we collect various definitions and notation that will be
 used throughout the paper. Many of the conventions come from existing
 literature. For basic references on the statements and definitions
 used below, see Hartshorne \cite[Chapter IV]{hartshorne:ag},
-Saint-Donat \cite{saint-donat:proj}, the book of Arbarello--
+Saint-Donat \cite{saint-donat:proj}, Arbarello--
 Cornalba--Griffiths--Harris \cite[Section III.2]
 {acgh:algebraic-curves}, and Voight--Zureick-Brown \cite[Chapter 2,
 Chapter 5]{vzb:stacky}.
+
+For the remainder of this paper, fix an algebraically closed field $k$.
+This is no restriction on generality, as generator and relation degrees are preserved under base change to the algebraic closue.
 
 \ssec{Stacky Curves and Log Spin Canonical Rings}
 \label{ssec:stacky-background}
@@ -367,8 +368,6 @@ A \textbf{stacky curve} $\sx$ over a field $k$ is a smooth proper
 geometrically-connected Deligne-Mumford stack of dimension $1$ over
 $k$ with a dense open subscheme. A stacky curve is \textbf{tame} if
 its stabilizers are coprime to char $k$.
-
-
 
 \begin{rem}
 \label{rem:stack-formalism}
@@ -378,14 +377,14 @@ Abramovich and Vistoli \cite{abramovich-vistoli:compactifying}, and
 Behrend and Noohi \cite{behrend-noohi:uniformization},) but for the
 purposes of this paper, it suffices to treat $\sx$ as a scheme
 whose associated divisor group has a finite number of stacky
-points. 
+points.
 
-When viewed in the formalism of stacks, all stacky curves will be assumed to be tame and
-$k$ will always be algebraically closed. We also assume that the
+In this paper, all stacky curves are assumed to be tame and
+$k$ will is assumed to be algebraically closed. We also assume that the
 stacky curves are separably rooted, i.e. the residue field of each
 of the stacky points is separable.
 
-With the close relation to stacks in mind, for simplicity, the remainder of this paper is primarily phrased using the language
+With this stacks-theoretic description in mind, for simplicity, the remainder of this paper is primarily phrased using the language
 of Weil divisors.
 \end{rem}
 
@@ -394,16 +393,14 @@ then we use $e_1, \ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
 of the stabilizer groups of the points with non-trivial
 stabilizers. We call $e_i$ the \textbf{stabilizer order} of $P_i$.
 In order to study objects associated with stacky curves, it is often
-useful to consider them in the context of ordinary schemes. 
+useful to consider them in the context of schemes (instead of in the context of stacks). 
 
 \begin{defn}
 \label{defn:coarse-space}
-Let $\sx$ be a stacky curve over $k$ with stacky points $P_1, \ldots,
+Let $\sx$ be a stacky curve over $k$ with coarse space $X$ and stacky points $P_1, \ldots,
 P_r$ with stabilizer orders $e_1,\ldots, e_r \in \BZ_{\geq 2}$.
 Let $X$ be a nonsingular projective (algebraic) curve over $k$ of
-genus $g$. Then $X$ is the \textbf{coarse space} associated to $\sx$
-if
-
+genus $g$. Then, we notate
 \[
 	\di \sx = \left(\bigoplus_{P\notin \{P_1,\ldots, P_r\}} \langle 
 	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
@@ -411,27 +408,12 @@ if
 \]
 \end{defn}
 
-We can equip stacky curves with a divisor $\Delta$ that is a 
+We can equip stacky curves with a log divisor $\Delta$ that is a 
 sum of distinct points each with trivial stabilizer. A divisor
 $\Delta$ of this form is called a \textbf{log divisor}. We use
 $\delta := \deg \Delta$ to refer to the degree of the log divisor.
 If $\sx$ has coarse space $X$ of genus $g$, then we say $\sx$ has
 \textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
-
-The pairs $(\sx, \Delta)$ are called \textbf{log stacky curves}
-and the study of their canonical rings is the main focus of
-the work by Voight and Zureick-Brown \cite{vzb:stacky}.
-For this paper, we consider \textbf{log spin curves} which are
-triples $(\sx, \Delta, \halfcan)$ where $\Delta$ is a log divisor
-and a divisor $\halfcan$ which satisfies the property that
-$2\halfcan \sim K_\sx + \Delta$. Such a divisor $\halfcan$
-is called a \textbf{log spin canonical divisor} on $(\sx, \Delta)$. 
-We also use $\halfcan_X$ to refer to the spin canonical divisor
-(also known as the half-canonical divisor, semi-canonical divisor, 
-or a theta characteristic in other literature) associated with the
-coarse space $X$ of $  \sx$, i.e. $\halfcan_X$ is a divisor such
-that $2\halfcan \sim K_X$. Furthermore, we use the following
-analogous notations:
 
 \begin{defn}
 \label{defn:divisor-floor}
@@ -440,6 +422,20 @@ with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
 \rfloor$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
 \lfloor \alpha_i \rfloor P_i$.
 \end{defn}
+
+A pair of a stacky curve and a log divisor $(\sx, \Delta)$ is called a \textbf{log stacky curves}
+and the study of their canonical rings is the main focus of
+the work by Voight and Zureick-Brown \cite{vzb:stacky}.
+For this paper, we consider \textbf{log spin curves} which are
+triples $(\sx, \Delta, \halfcan)$ where $\sx$ is a stacky curve, $\Delta$ is a log divisor, and $\halfcan \in \di \sx$ satisfies
+$2\halfcan \sim K_X + \Delta + \sum_{i=1}^{r}\frac{e_i-1}{e_i}P_i$. Such a divisor $\halfcan$
+is called a \textbf{log spin canonical divisor} on $(\sx, \Delta)$. 
+We use $\halfcan_X := \lfloor L \rfloor $ to refer to the spin canonical divisor
+(also known as the half-canonical divisor, semi-canonical divisor, 
+or theta characteristic) associated to the
+coarse space $X$ of $\sx$, i.e. $\halfcan_X$ is a divisor such
+that $2\halfcan_X \sim K_X + \Delta$. Furthermore, we use the following
+analogous notation:
 
 \begin{defn}
 \label{defn:h0-stacky}
@@ -450,6 +446,10 @@ If $D \in \di \sx$ is a Weil divisor, then we define
 	H^0(\sx, D) := H^0(X, \lfloor D \rfloor).
 \]
 \end{defn}
+
+\begin{rem}
+Although Definition ~\ref{defn:h0-stacky} may seem fairly ad hoc, it is naturally motivated in the context of stacks. See Voight and Zureick-Brown \cite[Lemma 5.4.7]{vzb:stacky} for a proof that Definition ~\ref{defn:h0-stacky} is equivalent to the stack-theoretic description.
+\end{rem}
 
 \begin{defn}
 \label{defn:log-spin-canonical-ring}
@@ -462,11 +462,9 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \noindent
 When the log spin curve is fixed, we usually use $R$ or $R_\halfcan$ to
 represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D)
-:= H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim H^0(\sx, \sco(D))$.
+:= H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim_k H^0(\sx, \sco(D))$.
 If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^\text{th}$
-degree component of $R$.
-
-\todo{Note that this result is independence of base field}
+graded component of $R$.
 
 \begin{rem}
 \label{rem:odd-denom}
@@ -477,30 +475,21 @@ Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that
 
 \noindent
 where $a_i \in \BZ$ and $e_i$ are odd. This is due to the fact
-that $\halfcan \in \di \sx$ by Kodaira--Spencer
-\cite{kodaira-spencer:deformations}. If $e_i$ were even,
-then $\frac{e_i - 1}{2e_i}$ would be in reduced form and
-the denominator would be too large for $\halfcan$ to be
-in $\di \sx$.
-\todo{refine above}
+that $\halfcan \in \di \sx$. If some $e_i$ were even,
+then $\frac{e_i - 1}{2e_i}$ would be in reduced form implying $\halfcan \notin \di \sx$.
 \end{rem}
 	
 \begin{rem}
 \label{rem:delta-not-1}
 Suppose $(\sx, \Delta, \halfcan)$ is a log spin curve. Note that $\deg \Delta$
 is even. because $2 \cdot \deg \halfcan = \deg \Delta + \deg \lfloor K
-\rfloor = \deg \Delta + 2(g-1).$ Therefore, $\deg \Delta$ is even.
+\rfloor = \deg \Delta + 2(g-1).$
 In particular, we shall often use $\deg \Delta \neq 1$.
 \end{rem}
 
-\begin{defn}
-\label{def:order-sup}
-If $z$ is a rational section of $\sco(D)$ denote the order of
-zero of $z$ at $P$ by $\ord_P^D(z)$.
-\end{defn}
-\todo{where to put above?}
+\ssec{Definition of Saturation}
 
-We define the notion of the saturation of a divisor, taken from
+We define the notion of the saturation of a divisor, as defined in
 Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
 
 \begin{defn}
@@ -513,18 +502,13 @@ is the monoid
 
 \begin{defn}
 \label{defn:sat}
-The \textbf{saturation} for a monoid $M \subseteq \BZ_{\geq 0}$,
+The \textbf{saturation} of a monoid $M \subseteq \BZ_{\geq 0}$,
 denoted $\sat(M)$, is the smallest integer $s$ such that $M
 \supseteq \BZ_{\geq s}$, if such an integer exists.
 \end{defn}
 
 \begin{rem}
-For our purposes, it is useful to call the saturation of the
-effective monoid of a divisor $D$ as the saturation $s$ of the
-divisor $D$ on $\sx$. In this case, the saturation $s :=
-\sat(\Eff(D))$ of a divisor $D$ on $\sx$ is the smallest positive
-$s \in \BZ$ such that $\deg \lfloor dD \rfloor \geq 0$ for all $d
-\geq s$.
+For $D \in \di \sx$, we will often call $\sat(\Eff(D))$ the saturation of $D.$
 \end{rem}
 
 \ssec{Monomial Ordering}
@@ -537,7 +521,7 @@ initial ideals, and Gr\"{o}bner bases, see Eisenbud
 
 First, we give a definition of the graded degree of a monomial
 in a graded polynomial ring.
-
+\todo{possibly compactify or refer to relations}
 \begin{defn}
 \label{defn:monomial-degree}
 Let $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a graded polynomial
@@ -682,6 +666,12 @@ In this subsection, we present a definition of admissibility, which is quite sim
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
 %in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
 	we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $L_X'$, rather than relative to the $\sco_X$.
+
+\begin{defn}
+\label{def:order-sup}
+If $z$ is a rational section of $\sco(D)$ denote the order of
+zero of $z$ at $P$ by $\ord_P^D(z)$.
+\end{defn}
 
 \begin{defn}
 \label{defn:admissible}
