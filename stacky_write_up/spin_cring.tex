@@ -21,6 +21,7 @@
 \usepackage{color}
 \usepackage{longtable}
 \usepackage{float}
+\usepackage{caption}
 
 \usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
 \def\listtodoname{List of Todos}
@@ -114,6 +115,7 @@
 \DeclareMathOperator{\Eff}{Eff}
 \DeclareMathOperator{\sat}{sat}
 \DeclareMathOperator{\newspan}{span}
+\captionsetup[table]{belowskip = 4pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2423,12 +2425,7 @@ The inductive strategy we will adopt to prove Theorem ~\ref{thm:main} is similar
 \label{ssec:g_1_base}
 In this subsection we set up the base cases needed for our inductive approach, of proving Theorem ~\ref{thm:main} in the case $g=1$.
 
-\begin{longtable}	{| c || c | c |}
-	\caption{Genus 1 Base Cases}
-	\label{table:g-1-base}
-	
-	\tabularnewline
-	
+\begin{longtable}	{| c || c | c |}	
 	\hline
 	L' & Generator Degrees & Degrees of Minimal Relations \\
 	\hline
@@ -2443,6 +2440,9 @@ In this subsection we set up the base cases needed for our inductive approach, o
 	
 	$P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$ & $\{2, 3, 3, 4\}$ & $\{6,8\}$ \\	\hline
 	
+	\caption{Genus 1 Base Cases}
+	\label{table:g-1-base}
+	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
 \end{longtable}
 
@@ -2455,11 +2455,6 @@ The base cases of $L' = \frac{3}{7}P_1$ and $L' = \frac{1}{3}P_1 +\frac{1}{3}P_2
 Let $\sx$ be a stacky curve, with Let $P,Q$ distinct hyperelliptic fixed points on $X$. The following table provides a list of all cases which are not generated in degrees $e=\max(5,e_1,\ldots, e_r)$ with relations in degrees $2e$, as described in Theorem ~\ref{thm:g-1-main}.
 
 \begin{longtable}	{| c || c | c |}
-	\caption{Genus 1 Exceptional Cases}
-	\label{table:g-1-exceptional}
-	
-	\tabularnewline
-	
 	\hline
 	L' & Generator Degrees & Degrees of Minimal Relations \\
 	\hline
@@ -2476,6 +2471,8 @@ Let $\sx$ be a stacky curve, with Let $P,Q$ distinct hyperelliptic fixed points 
 	
 	$\frac{3}{7}P_1$ & $\{1,5,7\}$ & $\{15\}$ \\	\hline
 	
+	\caption{Genus 1 Exceptional Cases}
+	\label{table:g-1-exceptional}
 	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
 \end{longtable}
@@ -2582,9 +2579,9 @@ then $R(\sx , \Delta, L)$ is generated in degree at most $e := \max(
 5, e_1, \ldots, e_r)$ with relations generated in degree at most $2e
 $, so long as $\sigma$ does not lie in the finite list given in Table ~\ref{table:g-0-exceptional}.
 
-There are two main cases: when $\delta \geq 2$ and when $\delta = 0$
-, where we are implicitly appealing to Remark ~\ref{rem:delta-not-1}
-. In the first case, $\deg \lfloor \halfcan \rfloor \geq 0$ so the
+There are two main cases: when $\delta \geq 2$ and when $\delta = 0$,
+where we are implicitly appealing to Remark ~\ref{rem:delta-not-1}.
+In the first case, $\deg \lfloor \halfcan \rfloor \geq 0$ so the
 result directly follows from Lemma ~\ref{lem:sat-1}. When $\delta =
 0$, the proof is a rather involved induction using Lemma
 ~\ref{lem:sat-3} and Lemma ~\ref{lem:raise-stacky-order}. The
@@ -2614,11 +2611,6 @@ and generic cases follow.
 
 \begin{longtable}
 	{| c | c || c |}
-	\caption{Genus 0 Saturation}
-	\label{table:g-0-sat}
-	
-	\tabularnewline
-	
 	\hline
 	Signature & Condition & Saturation \\
 	\hline
@@ -2646,6 +2638,9 @@ and generic cases follow.
 	$(0; a, b, c; 0)$ & not listed above & $5$ \\	\hline
 	
 	$(0; e_1, \ldots, e_r; 0)$ & not listed above & $3$ \\	\hline
+	
+	\caption{Genus 0 Saturation}
+	\label{table:g-0-sat}
 \end{longtable}
 
 \ssec{Base Cases}
@@ -2673,11 +2668,6 @@ admissible for the following cases:
 
 \begin{longtable}
 	{| c || c | c | c |}
-	\caption{Genus 0 Base Cases}
-	\label{table:g-0-base-cases}
-	
-	\tabularnewline
-	
 	\hline
 	Case & Signature $\sigma$ & $J$ & $e$\\
 	\hline
@@ -2704,6 +2694,9 @@ admissible for the following cases:
 	(j) & (0; 5, 5, 5, 5; 0) & \{1, 2, 3, 4\} & 5\\ \hline
 
 	(k) &	(0; 3, 3, 3, 3, 3; 0) & \{1, 2, 3, 4, 5\} & 5\\ \hline
+	
+	\caption{Genus 0 Base Cases}
+	\label{table:g-0-base-cases}
 \end{longtable}
 
 %\noindent
@@ -2726,11 +2719,6 @@ that in these cases, $e_i = e + 2 > \deg z$ for all $i \in J$
 and any generator $z$ of $R'$.
 \begin{longtable}
 	{| c || c | c | c |}
-	\caption{Genus 0 Non-effective Base Cases Generators/Relations}
-	\label{table:g-0-base-cases-degrees}
-	
-	\tabularnewline
-	
 	\hline
 	Case & Generator Degrees & Degrees of Relations & $e$\\
 	\hline
@@ -2759,6 +2747,9 @@ and any generator $z$ of $R'$.
 	\{8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10\} & 5\\ \hline
 
 	(k) &	\{3, 3, 3, 4,	4, 5\} & \{6, 7, 7, 8, 8, 8, 9, 9, 10\} & 5\\ \hline
+	
+	\caption{Genus 0 Non-effective Base Cases Generators/Relations}
+	\label{table:g-0-base-cases-degrees}
 \end{longtable}
 
 We can also always find a presentation for these cases such that
@@ -2775,11 +2766,6 @@ independent of the choice of $i$.
 
 \begin{longtable}
 	{| c | c | c || c | c |}
-	\caption{Genus 0 Non-Effective Base Cases (Ad-iii)}
-	\label{table:g-0-base-cases-admissibility}
-	
-	\tabularnewline
-	
 	\hline
 	Case & $\sigma$ & $J$ & $\deg \lfloor e_i L \rfloor$ &
 	$\max_{d \geq 0} \#S_{(\sigma, J)}(i)$ \\
@@ -2807,6 +2793,9 @@ independent of the choice of $i$.
 	(j) & $(0; 5, 5, 5, 5; 0)$ & $\{1, 2, 3, 4\}$ & 5 & 0 \\ \hline
 
 	(k) & $(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & 5 & 0 \\ \hline
+	
+	\caption{Genus 0 Non-Effective Base Cases (Ad-iii)}
+	\label{table:g-0-base-cases-admissibility}
 \end{longtable}
 
 Thus, all of the cases are admissible and satisfy the additional
@@ -2853,11 +2842,6 @@ in the case $g = 0$.
 
 \begin{longtable}
 	{| c || c | c | c |}
-	\caption{Genus 0 Exceptional Cases}
-	\label{table:g-0-exceptional}
-	
-	\tabularnewline
-	
 	\hline
 	Signature & Generator Degrees & Degrees of Relations & $e$ \\
 	\hline
@@ -2878,6 +2862,9 @@ in the case $g = 0$.
 	$(0; 5, 5, 5; 0)$ & $\{3, 5, 5\}$ & $\{15\}$ & $5$ \\	\hline
 	
 	$(0; 3, 3, 3, 3; 0)$ & $\{3, 3, 4\}$ & $\{12\}$ & $3$ \\	\hline
+	
+	\caption{Genus 0 Exceptional Cases}
+	\label{table:g-0-exceptional}
 \end{longtable}
 
 \begin{rem}
