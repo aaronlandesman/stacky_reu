@@ -1841,6 +1841,7 @@ signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta)$.
 %\end{proof}
 
 The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}.
+\todo{Peter: be clear what $z$ is}
 
 \begin{lem}
 \label{lem:admissible_inequality}
@@ -2068,11 +2069,14 @@ only if for all $j \in J$ we have
 	-\ord_{Q_j}
 ^{\halfcan_X'}(f) \leq \deg (f) \left( \subhalf {e_j'} \right).
 \end{align}
+\todo{Peter: I understand why this should be true, although its not clear to me that there it easily follows.  Maybe we should explain it a little as to not confuse the reader.}
 
 \noindent
 We now apply Equation ~\eqref{eqn:order-degree} with $f = y_{i, e_i}z$, to check $y_{i,e_i}z \in R'$ in the three cases: 
 %$j \notin \{i \} \cup S(i, 0)$, $j = i,$ and $j \in S(i, 0)$.
 
+
+\todo{Peter: be clear with this that we aren't checking $y_{i,e_i}z\in R'$ for various cases, but rather are checking that equation 4.6 is met in various cases, giving $y_{i,e_i}z\in R'$ for a specific fixed $i$.  }
 \vskip.1in
 \noindent
 {\sf Case 1: $j \notin \{i \} \cup S(i,0).$}
@@ -2138,8 +2142,8 @@ and not just for $d = 0$.
 Suppose $(\sx',L',J')$ is admissible with signature $\sigma' = (e_1',\ldots,e_r')$ or $\sigma$ satisfies one of the conditions of Remark ~\ref{rem:three-cases}. Let $J' = \{t,t+1,\ldots,r\}$ and $e_1' \leq e_2' \leq \cdots \leq e_t' = e_{t+1}' =\cdots = e_r'$,
 so that $(\sx',\Delta, L)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main}. Then, for any spin curve $(\sx,\Delta,L)$ so that $\sx$ and $\sx'$ have the same coarse space $X = X'$ with the same set of stacky points, and $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$ with $e_1 \leq e_2 \leq \cdots e_r$ so that
 \begin{align*}
-	e_i	= e_i' \text{ if }i \notin J \\
-	& e_i \leq e_i' &\text{ if } i \in J
+	& e_i	= e_i' &\text{ if }i \notin J \\
+	& e_i \ge e_i' &\text{ if } i \in J
 \end{align*}
 
 \noindent
@@ -2147,7 +2151,7 @@ then Theorem ~\ref{thm:main} holds for $(\sx,\Delta,L)$.
 \end{cor}
 \begin{proof}
 For $t \leq i \leq r$, let $(\sx_i,\Delta, L_i)$ be the log spin curve with coarse space $X_i$ so that $X_i = X',$ with the same stacky points as $(\sx',\Delta,L),$ and having signature $(g; e_1, \ldots. e_{i-1}, e_i, e_i, \ldots, e_i; \delta).$ Let 
-$J_i = \{i,\ldots, r\}.$ Note that $(\sx_0,L_0,J_0) = (\sx',L',J')$ and $(\sx_r ,L_r ,J_r) = (\sx, L, J)$.
+$J_i = \{i,\ldots, r\}.$ Note that $(\sx_0,L_0,J_0) = (\sx',L',J')$ and $(\sx_r ,L_r ,J_r) = (\sx, L, \{r\})$.
 
 Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main}, and $(\sx_i, \halfcan_i, J_i)$ is admissible.
 
