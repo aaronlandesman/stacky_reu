@@ -310,7 +310,7 @@ e_r; \delta)$.
 
 Then the log spin canonical ring is generated as a $k$-algebra by 
 elements of degree at most $e = \max(5, e_1, \ldots, e_r)$ with
-relations generated in degrees up to $\max(10, 2e_1, \ldots, 2e_r)$
+relations generated in degrees up to $2e$
 so long as $\sigma$ does not lie in a finite list of exceptional
 cases, as listed in Table ~\ref{table:g-1-exceptional} for
 signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional} for
@@ -360,10 +360,7 @@ associated to $\Gamma \backslash \BH$ with signature $(g; e_1,
 \ldots, e_r; \delta)$. Then the ring of modular forms
 $M(\Gamma) := \bigoplus_{k = 0}^{\infty} M_k(\Gamma)$ is
 generated as a $\BC$-algebra by elements of degree at most $e = \max
- (5$, $e_1$, $\ldots$, $e_r).$ If the genus $g \geq 2,$ and $\Delta = 0$
-then $M(\Gamma)$ has relations generated in degrees up to $\max(11,
-2e_1, \ldots, 2e_r)$. Otherwise, $M(\Gamma)$ has relations
-generated in degrees up to $\max(10, 2e_1, \ldots, 2e_r)$, so long
+ (5, e_1, \ldots , e_r)$ with relations in degree at most $2e,$ so long
 as $\sigma$ does not lie in a finite list of exceptional cases, as
 listed in Table ~\ref{table:g-1-exceptional} for signatures with $g
 = 1$ and Table ~\ref{table:g-0-exceptional} for signatures with $g =
@@ -1842,7 +1839,7 @@ The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~
 
 \begin{lem}
 \label{lem:admissible_inequality}
-The inequality (Ad-ii) of Definition ~\ref{defn:admissible} implies the
+For any $z$ as in condition (Ad-ii) of definition ~\ref{defn:admissible} the inequality (Ad-ii) implies the
 tighter inequality that
 
 \begin{align*}
@@ -3030,28 +3027,28 @@ This paper leaves open many directions for further research.
 		answered affirmatively one would be able to write down explicit 
 		generators and relations for $R_L$ on a stacky curve, essentially 
 		by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
-
+\todo{Aaron, I tried to edit the following question, but it still seems a bit imprecise, and the question in particular is a bit of a long sentence.}
 	\item In Subsection \ref{ssec:bounds-high-genus}, we reference 
 		the work of Reid \cite[p. 35]{reid:infinitesimal}. We use his 
-		construction of a uniform bound on the generation of the half-
-		canonical ring and its ideal of relations at 5 and 10 in the non-
-		log, non-stacky case when genus is at least 2.  We extend this 
+		proof of that the 
+		spin canonical ring is generated in degree at most 5 with
+		relations in degree at most 10 in the 			
+		non-log, non-stacky case when genus is at least 2. We extend this 
 		bound of 5 and 10 to the log case, and then apply our inductive 
-		lemmas to add stacky points and get bounds of $\max(5,e)$ and $\max(
-		10, 2e)$.  Reid in fact proves something slightly stronger: that in 
+		lemmas to add stacky points and obtain bounds of $e = \max(5,e_1, \ldots, e_r)$ and $2e$.  Reid in fact proves something slightly stronger: that in 
 		most cases his bound is actually 3 and 6 with well-characterized 
 		exceptions.
 		\begin{question}\label{ques:reduce-5,10-to-4,8}
-			Can we reduce the bounds in Theorem \ref{thm:main} on 
-			generation from $\max(5,e)$ and $\max(10, 2e)$ to $\max(4,e)$ and $
-			\max(8, 2e)$. 
+			In the case that the genus $g \geq 2,$ can we reduce the bounds in Theorem \ref{thm:main} on 
+			the degrees of generation and relations from $e = \max(5,e_1,\ldots, e_r)$ and $\max(10, 2e_1, \ldots, 2e_r)$ to $\max(4,e_1, \ldots, e_r)$ and $
+			\max(8, 2e_1, \ldots, 2e_r),$ apart from a finite list of exceptions?
 		\end{question}
 		\begin{rem}\label{rem:reduce-3,6}
-			It is unlikely that this can be reduced further, because Lemma 
+			It is unlikely that this can be reduced further for the case of stacky curves, because Lemma 
 			\ref{lem:sat-2}, which allows us to add a stacky point in genus $g>0
 			$ saturated at 2, requires a generator in degree 4 and potentially 
 			a relation in degree 8, even when inductively adding on stacky 
-			points of stabilizer order 3.
+			points of stabilizer order 3. However, perhaps in the non-stacky case, one may be able able to generalize the result of Reid \cite[p. 35]{reid:infinitesimal} to show that log spin canonical rings can be generated in degree at most 3 with relations in degree at most 6, apart from a well characterized list of exceptions.
 			\end{rem}
 
 	\todo{This last one doesn't seem particularly interesting. Should we remove it?}
