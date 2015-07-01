@@ -2160,15 +2160,15 @@ Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \hal
 
 \section{High Genus}
 \label{sec:g_high}
-We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees of generators of $R_\halfcan$ and its ideal of relations. In this section, we do not obtain explicit presentations of $R_\halfcan.$  In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved, while in this section we will be able to appeal to general theory.
+We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees of generators of $R_\halfcan$ and its ideal of relations. In this section, we do not obtain explicit presentations of $R_\halfcan.$  This contrasts Sections ~\ref{sec:g_1} and ~\ref{sec:g_0} where we not only obtain bounds, but also obtain inductive presentations. The tradeoff is that in the genus 0 and 1 cases, we have to account for with explicit base cases, whereas in this section we apply general results.
 
 \ssec{Bounds on Generators and Relations in High Genus}
 \label{ssec:bounds-high-genus}
 \todo{Make edits that you want to further incorporate Reid's paper}
 
-The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[Theorem 3.4]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Thoughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ and so $H^0(X, 2L)$ is basepoint free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
+The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[Theorem 3.4]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Thoughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ so $H^0(X, 2L)$ is basepoint free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
 
-The proofs of this subsection results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}. However, the statements are different, as we assume $\Delta > 0$ instead of $\Delta = 0$ and do not assume there is a basepoint free pencil contained in $H^0(X,L).$ 
+The proofs of this subsection results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}. However, the statements differ, as we assume $\Delta > 0$ instead of $\Delta = 0$ and do not assume there is a basepoint free pencil contained in $H^0(X,L).$ 
 
 %\begin{lem}
 %\label{lem:generation-5}
@@ -2203,9 +2203,13 @@ $$\begin{tikzcd}
 
 
 We wish to show $f$ is surjective.
-Note that $\dim_k \ker f = \dim_k H^0((n-2)L) = (n-3)(g - 1)$ using Riemann--Roch and the assumption $n \geq 4.$
-Additionally, $\dim_k V \otimes H^0(nL) = 2 \cdot (n- 1)(g - 1)$, again using Riemann--Roch.
-By rank-nullity, $$\dim_k \im f = 2 \cdot (n- 1)(g - 1) -(n-3)(g - 1) = (n+ 1)(g - 1) = \dim_k H^0((n+2)L).$$
+Note that $\dim_k \ker f = \dim_k H^0((n-2)L) = (n-3)(g - 1+\frac{\delta}{2})$ using Riemann--Roch and the assumption $n \geq 4.$
+Additionally, $\dim_k V \otimes H^0(nL) = 2 \cdot (n- 1)(g - 1+\frac{\delta}{2})$, again using Riemann--Roch.
+Therefore,
+\begin{align*}
+	\dim_k \im f 	& = 2 \cdot (n- 1)(g - 1+\frac{\delta}{2}) -(n-3)(g - 1+\frac{\delta}{2})\\
+				& = (n+ 1)(g - 1+\frac{\delta}{2}) = \dim_k H^0((n+2)L).
+\end{align*}
 Ergo, $f$ is surjective.
 \end{proof}
 
@@ -2258,7 +2262,9 @@ Ergo, $f$ is surjective.
 %Lemma ~\ref{lem:genus-2-generation-5}. Finally, if $g > 2$ and $\Delta = 0$, using Lemma ~\ref{lem:semicanonical_generation}, there are no minimal generators in degree $\geq 7$. By Voight and Zurieck-Brown \cite[Theorem 3.2.1]{vzb:stacky}, we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective and so there are also no minimal generators in degree 6. Hence, $R_L$ is generated in degree at most 5.
 %\end{proof}
 
-The next step is to bound the degrees of the relations of $R_L$ when $\Delta > 0$. This is done in Proposition ~\ref{prop:relation-10}. The idea of the proof of Proposition ~\ref{prop:relation-10} is to use the basepoint-free pencil trick to show that if a relation lies in a sufficiently high degree, it lies in the ideal generated by the relations in lower degrees. We now fix notation for this ideal generated by lower degrees relations.
+The next step is to bound the degrees of the relations of $R_L$ when $\Delta > 0$. This is done in Proposition ~\ref{prop:relation-10}
+%The idea of the proof of Proposition ~\ref{prop:relation-10} is to 
+by using the basepoint-free pencil trick to show that if a relation lies in a sufficiently high degree, it lies in the ideal generated by the relations in lower degrees.  In Definition ~\ref{defn:lower-ideal}, we fix notation for the ideal generated by lower degrees relations:
 
 \begin{defn}
 \label{defn:lower-ideal}
