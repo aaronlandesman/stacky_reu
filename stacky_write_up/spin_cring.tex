@@ -769,8 +769,10 @@ Let $(\sx',0,L')$ be a log stacky curve of genus $g = 1,$ with $\halfcan' = 0$. 
 \label{ex:base-377}
 Let $(\sx,0,\halfcan')$ be a log spin curve with signature $\sigma =
 (0; 3, 7, 7; 0)$ and $\halfcan' \sim -\infty + \frac{1}{3} P_1 +
-\frac{3}{7} P_2 + \frac{3}{7} P_3,$ where $P_1,P_2,$ and $P_3$ are distinct points. In this example, we will exhibit a minimal presentation for $R' = R(\sx,0,\halfcan')$ and show the triple $(\sigma, \halfcan' + \frac{3}{7} P_3, J = \{2, 3\},$) is admissible.
-
+\frac{3}{7} P_2 + \frac{3}{7} P_3,$ where $P_1,P_2,$ and $P_3$ are
+distinct points. In this example, we will exhibit a minimal
+presentation for $R' = R(\sx,0,\halfcan')$ and show the triple
+$(\sigma, \halfcan' + \frac{3}{7} P_3, J = \{2, 3\},$) is admissible.
 Notice that $\deg \lfloor d K_{\sx'} \rfloor= -d + \lfloor \frac{d}{3}
 \rfloor + 2 \lfloor \frac{3d}{7} \rfloor$.
 
@@ -1167,9 +1169,9 @@ Moreover, if $\frac{\alpha}{\beta}\ge 0$, then the non-negative best lower appro
 Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\frac{\alpha}{\beta}=\frac{14}{5}$.
 
 \todo{Peter: Do we want this as an [H] figure; this seems a little non-standard and can create problems with display.  Nonetheless, I copied this format to match the figure in a later section. Aaron: I'm fine with not making it an [H]}
-\begin{figure}\label{fig:s14/5-lattice}
+\begin{figure}
 \includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
-\caption{This figure shows each non-negative best lower approximation of $\frac{14}{5}.$ Each ``$\bullet$'' denotes a best lower approximation and each $\circ$ denotes a lattice point below $5y=14x$ which is not a best lower approximation.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}
+\caption{This figure shows each non-negative best lower approximation of $\frac{14}{5}.$ Each ``$\bullet$'' denotes a best lower approximation and each $\circ$ denotes a lattice point below $5y=14x$ which is not a best lower approximation.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}\label{fig:s14/5-lattice}
 \end{figure}
 
 We can now prove our first lemma for adding points.
@@ -1943,7 +1945,7 @@ $k[y_{i, e_i}]_{i\in J} \otimes k[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$
 \end{lem}
 
 \begin{proof}
-We will only prove this in case (1), since case (2), is completely analogous.  \todo{Peter: Note to self: come back after reading proof to see if I actually buy this statement.}
+We prove this in case (1) and case (2) follows a similar procedure.
 
 {\bf Part (a):} 
 By Definition ~\ref{defn:admissible}, for all $i\in J$
@@ -2158,7 +2160,7 @@ Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \hal
 
 \section{High Genus}
 \label{sec:g_high}
-We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the spin canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved, while in this section we will be able to appeal to general theory.
+We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees of generators of $R_\halfcan$ and its ideal of relations. In this section, we do not obtain explicit presentations of $R_\halfcan.$  In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved, while in this section we will be able to appeal to general theory.
 
 \ssec{Bounds on Generators and Relations in High Genus}
 \label{ssec:bounds-high-genus}
