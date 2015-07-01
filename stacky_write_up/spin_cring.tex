@@ -165,7 +165,7 @@
 \begin{abstract}
   The study of rings of modular forms arising from finite-area
 	quotients of the upper-half plane by Fuchsian groups may be
-	translated to (log spin) canonical rings by the classical
+	translated to log spin canonical rings by the classical
 	results of Kodaira--Spencer. This work describes
 	generators and relations of spin canonical rings of a stacky
 	curve equipped with an arbitrary log	divisor in a
@@ -177,15 +177,16 @@
 
 \maketitle
 
+\todo{Make sure we call all divisors spin canonical divisors}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
 Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup of
 $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations. We consider the {\bf ring of modular forms}
-$M(\Gamma) = \bigoplus_k M_k(\Gamma)$. Often, it is useful to
-bound the degree of the generators and relations for $M(\Gamma)$
-for general Fuchsian groups $\Gamma$. In the special case that $\Gamma$
+$M(\Gamma) = \bigoplus_{k=0}^\infty M_k(\Gamma)$. One of the best ways to understand the ring of modular forms is to give a presentation of $M(\Gamma)$
+for general Fuchsian groups $\Gamma.$ In order to do so, it is extermely useful to have a bound on the degrees in which the generators and relations can occur. In the special case that $\Gamma$
 has no odd weight modular forms, Voight and Zureick-Brown
 \cite[Chapters 7-9]{vzb:stacky} give nice bounds.
 This work extends their work to all Fuchsian groups $\Gamma$.
@@ -1483,7 +1484,7 @@ We now restrict our attention to log canonical rings of stacky curves.  Lemma \r
 Let $(\sx, \Delta, \halfcan_\sx)$ and $(\sx', \Delta, \halfcan_{\sx'})$ \todo{The notation i was using for these throughout the paper was $\halfcan$ and $\halfcan'$ without the $\sx$ subscripts. We should make one of them consistent with the other.} be log spin curves with the same coarse space $X = X'$ having signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$, where $e_r=3$.  Suppose $g > 0,$ and, if $g = 1,$ then $\deg 3\halfcan' \geq 2.$ Then, $\sat(Eff(L'))\le 2$. \todo{Why is it automatic that the saturation is 2? Maybe you can explain this in the proof in a sentence.}
 Furthermore, let $R_{L'} = k[x_2, x_3
 , x_5, \ldots, x_m]/I'$ and let $\halfcan = \halfcan' + \frac{1}{
-3}P$, where $P\in X$ is a base point of $\halfcan'$ (which includes the case when $H^0(X, \lfloor \halfcan'\rfloor) = 0$). \todo{Ask David, is it useful to include this parenthetical? yes}
+3}P$, where $P\in X$ is a base point of $\halfcan'$ (which includes the case when $H^0(X, \lfloor \halfcan'\rfloor) = 0$).
 Suppose for $i \in \{2, 3\}$, $\deg x_i = i$ and $\ord_P^{\halfcan'}(x_i)= 0$ (which is satisfied generically in degree 2 and 3, since base-point freeness follows by Riemann-Roch \todo{Probably include this in a remark below the proof}). Choose an ordering on $k[x_2, \ldots, x_m]$ that satisfies
 \begin{align*}
 	\ord_{x_2}(f) < \ord_{x_2}(h) \implies f \prec h.
@@ -1835,7 +1836,6 @@ signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta)$.
 %\end{proof}
 
 The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}.
-\todo{Peter: be clear what $z$ is, ask David, possibly edit this agin}
 
 \begin{lem}
 \label{lem:admissible_inequality}
