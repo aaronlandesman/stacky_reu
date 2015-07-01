@@ -1468,7 +1468,7 @@ We now restrict our attention to log canonical rings of stacky curves.  Lemma \r
 
 \begin{lem}
 \label{lem:sat-2}
-Let $(\sx, \Delta, \halfcan_\sx)$ and $(\sx', \Delta, \halfcan_{\sx'})$ \todo{The notation i was using for these throughout the paper was $\halfcan$ and $\halfcan'$ without the $\sx$ subscripts. We should make one of them consistent with the other.} be log spin curves with the same coarse space $X = X'$ having signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$, where $e_r=3$.  Suppose $g > 0,$ and, if $g = 1,$ then $\deg 3\halfcan' \geq 2.$ Then, $\sat(Eff(L'))\le 2$. \todo{Why is it automatic that the saturation is 2? Maybe you can explain this in the proof in a sentence.}
+Let $(\sx, \Delta, \halfcan)$ and $(\sx', \Delta, \halfcan')$ \todo{The notation i was using for these throughout the paper was $\halfcan$ and $\halfcan'$ without the $\sx$ subscripts. We should make one of them consistent with the other.} be log spin curves with the same coarse space $X = X'$ having signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$, where $e_r=3$.  Suppose $g > 0,$ and, if $g = 1,$ then $\deg 3\halfcan' \geq 2.$ Then, $\sat(Eff(L'))\le 2$. \todo{Why is it automatic that the saturation is 2? Maybe you can explain this in the proof in a sentence.}
 Furthermore, let $R_{\halfcan'} = k[x_2, x_3
 , x_5, \ldots, x_m]/I'$ and let $\halfcan = \halfcan' + \frac{1}{
 3}P$, where $P\in X$ is a base point of $\halfcan'$ (which includes the case when $H^0(X, \lfloor \halfcan'\rfloor) = 0$).
@@ -2279,7 +2279,7 @@ that we obtain a surjection $\phi: k[x_1, \ldots, x_n]
 \ldots, x_n]_2$ be two elements so that $\newspan(\phi(s_1), \phi(s_2))
 = V \subseteq H^0(X, 2\halfcan)$ is basepoint-free. For any $f \in
 k[x_1, \ldots, x_n]$ such that $\deg f \geq 11,$ there exist $g, h \in
-k[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h = f \bmod J_{\halfcan, d}.$
+k[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h \equiv f \bmod J_{\halfcan, d}.$
 \end{lem}
 \begin{proof}
 % Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1),\phi(s_2) \in H^0(2L)$ generate a base point free pencil $V = k \phi(s_1) \oplus k \phi(s_2)\subseteq H^0(X,2L)$.
@@ -2310,7 +2310,7 @@ degree at most degree at most $10$.
 \begin{proof}
 Suppose $f \in I_\halfcan$ with $\deg f \geq 11$. To complete the proof,
 it suffices to show $f \in I_{\halfcan,d}'$. By Lemma
-~\ref{lem:reducing-degree}, it suffices to show $s_1 g + s_2 h \in
+~\ref{lem:reducing-degree}, this is the same as checking $s_1 g + s_2 h \in
 I_{\halfcan, d}'$ where $\phi(s_ 1),\phi(s_2) \in H^0(X, 2L)$ are two sections
 so that $\newspan(\phi(s_ 1), \phi(s_2)) = V \subseteq H^0(K)$ is
 basepoint-free. Consider the map
@@ -2344,7 +2344,7 @@ I_{k, d - 2}$. Hence,
 %sharp.
 %\end{rem}
 
-We now concisely summarize what we have shown.
+We now summarize what we have shown.
 
 \begin{cor}
 \label{cor:g-2-presentation-bound}
@@ -2365,24 +2365,24 @@ relations follows from Proposition ~\ref{prop:relation-10}.
 \label{ssec:g-high-main}
 
 We are ready to prove our main theorem, Theorem ~\ref{thm:main} in the case
-$g \geq 2$. The idea of the proof is to use Lemma
-~\ref{lem:generation-5} and Proposition ~\ref{prop:relation-10} to 
+$g \geq 2$. The idea of the proof is to use Corollary \ref{cor:g-2-presentation-bound} to 
 complete the base case when $L = \halfcan_X$ and then apply Lemma
 ~\ref{lem:sat-1}, Lemma ~\ref{lem:sat-2}, and Lemma
 ~\ref{lem:raise-stacky-order} to complete the induction step.
 
 \begin{thm}
 \label{thm:g-high-main}
-Let $g \geq 2$ and let $(\sx, \Delta, \halfcan)$ be a log spin curve so
-that $\sx$ has signature $\sigma = (g; e_1, \ldots, e_r; \delta)$. Then the
+Let $g \geq 2$ and let $(\sx, \Delta, \halfcan)$ be a log spin curve 
+%so that $\sx$ has 
+with signature $(g; e_1, \ldots, e_r; \delta)$. Then the
 log spin canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d L \rfloor)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d L )
 \end{align*}
 
 \noindent
-is generated as a $k$-algebra by elements of degree at most $e =
+is generated as a $k$-algebra by elements in degree at most $e =
 \max(5, e_1, \ldots, e_r)$ with minimal relations in degree at most $2e$.
 \end{thm}
 
@@ -2390,24 +2390,24 @@ is generated as a $k$-algebra by elements of degree at most $e =
 %\max(5, e_1, \ldots, e_r)$ with relations in degree up to $2e$.
 %
 %Furthermore, there are even stronger bounds for the following
-%exceptional cases (X, :
+%exceptional cases X, :
 
 \begin{proof}
-As the base case, let $\halfcan_X \in \di X$ satisfy $2\halfcan_X \sim 2 K_X + \Delta$.
-
+As the base case, let $\halfcan=\halfcan_X \in \di X$ satisfy $2\halfcan \sim 2 K_X + \Delta$.
 By Corollary ~\ref{cor:g-2-presentation-bound}, the theorem holds for $(\sx, \Delta,
-\halfcan_X)$. Next, consider a divisor of the form $\halfcan' =
-\halfcan_X + \frac{1}{3} P_i$. Then, the theorem holds for $(\sx',
-\Delta, \halfcan')$ by Lemma ~\ref{lem:sat-2}
- if $P_i$ is a basepoint of $\halfcan'$ or by Lemma
-~\ref{lem:sat-1} if $P_i $ is not a basepoint of $L'$. Note,
-in the case $P$  is a not basepoint of $\halfcan'$, Equation
-~\ref{eqn:deg1-sat-ind} holds by Riemann Roch since $\frac{\beta}{\alpha} = \frac{3}{1}=3$. In this case, we claim the theorem holds for $(\sx',\Delta, L')$. Indeed, the bound on the generators holds by part (a) of Lemmas
+\halfcan_X)$. 
+
+Next, suppose the theorem holds for $\halfcan' = \halfcan_X+ \sum_{i=1}^{r-1} \frac{1}{3}P_i$ and take a divisor of the form $\halfcan = \halfcan_X + \sum_{i=1}^r \frac{1}{3} P_i$, which means that $\halfcan = \halfcan' + \frac{1}{3} P_r$.  If $P_r$ is a basepoint of $L'$, then the theorem holds for $\halfcan$ by Lemma ~\ref{lem:sat-2}.  
+Otherwise, $P_r$ is not a basepoint of $\halfcan'$, meaning that in particular $R_{\halfcan'}$ is saturated in 1.
+Therefore, since $P_r$ is a not basepoint of $\halfcan'$, Equation
+~\ref{eqn:deg1-sat-ind} holds by Riemann Roch
+% since $\frac{\beta}{\alpha} = \frac{3}{1}=3$. 
+In this case, we claim the theorem holds for $L$ by Lemma ~\ref{lem:sat-1}.  In particular, the bound on the generators holds by part (a) of Lemmas
 ~\ref{lem:sat-2} and ~\ref{lem:sat-1},
 and the bound on the relations holds by part (b) of Lemmas
-~\ref{lem:sat-2} and ~\ref{lem:sat-1}.
+~\ref{lem:sat-2} and ~\ref{lem:sat-1}.\todo{Peter: Can we get rid of this last sentence?}
 
-Applying this argument $r-1$ additional times, we obtain that the Theorem holds for $(\sx', \Delta, \halfcan')$ where $\sx'$ has signature $(g;3,\ldots, 3;\delta)$ with $g \geq 2$. Therefore, by Corollary 
+We have thus shown the theorem for all $(\sx, \Delta, \halfcan)$ with $g\ge 2$ and signature $(g;3,\ldots, 3;\delta)$. Therefore, by Corollary 
 ~\ref{cor:raise-stacky-order}, this theorem 
 holds for all log spin curves $(\sx, L, J)$. 
 \end{proof}
