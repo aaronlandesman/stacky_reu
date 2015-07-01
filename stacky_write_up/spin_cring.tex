@@ -117,6 +117,13 @@
 \DeclareMathOperator{\newspan}{span}
 \captionsetup[table]{belowskip = 4pt}
 
+\makeatletter
+\newcommand{\customlabel}[2]{%
+   \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
+   \hypertarget{#1}{#2}
+}
+\makeatother
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Spin canonical divisors of log stacky curves}
@@ -193,7 +200,7 @@ associated canonical divisor $K_X$, determines the {\bf canonical
 map } $\pi: X \rightarrow \BP_k^{g - 1}$. Then, the {\bf canonical
 ring} is defined to be
 \begin{align*}
-	R(X,K_X) = \bigoplus_{d \geq 0} H^0(X, dK_X),
+	R(X, K_X) = \bigoplus_{d \geq 0} H^0(X, dK_X),
 \end{align*}
 
 \noindent
@@ -706,17 +713,17 @@ to be {\bf admissible} if $R'$ admits a presentation
 with each $y_{i, e_i'}$ viewed in $R'$ through the image of this isomorphism and such that for each $i \in J$ such that the following
 three conditions hold:
 \begin{enumerate}
-	\item[(Ad-i)] First, 
+	\item[\customlabel{Ad-i}{(Ad-i)}] First, 
 	\begin{align*}
 	\deg y_{e_i'} &= e_i'  &\text{ and } &&-\ord_{Q_i}^{\halfcan_X'}(y_{i, e_i'})
 		= \frac{e_i'- 1}{2}.
 	\end{align*}
-		\item[(Ad-ii)] Second, every generator $z \in \{x_1, \ldots, x_m\} \cup \{y_{j,e_ij'}: j\in J - \{i\} \}$ satisfies
+		\item[\customlabel{Ad-ii}{(Ad-ii)}] Second, every generator $z \in \{x_1, \ldots, x_m\} \cup \{y_{j,e_ij'}: j\in J - \{i\} \}$ satisfies
 		\begin{align*}
 			\frac{-\ord_{Q_i}
 ^{\halfcan_X'}(z)}{\deg z} < \subhalf {e_i'}.
 		\end{align*}
-	\item[(Ad-iii)] Third, we have
+	\item[\customlabel{Ad-iii}{(Ad-iii)}] Third, we have
 		\begin{align*}
 			\deg \lfloor e_i L' \rfloor \geq \max(2g - 1,0) + \max_{d \geq 0} \# S_{\sigma, J}(i, d)
 		\end{align*}
@@ -804,7 +811,7 @@ to the generator with maximal pole order at $P_2$ and $x_{7, 2}$
 correspond to the generator with maximal pole order at $P_3$. Use
 the presentation given above with $y _{2, e_2'} := x_{7, 1}$ and
 $y_{3, e_3'} :=  x_{7, 2}$. We see that it immediately satisfies
-(Ad-i) of Definition ~\ref{defn:admissible}. Next we check (Ad-ii) We may also choose
+\ref{Ad-i} of Definition ~\ref{defn:admissible}. Next we check \ref{Ad-ii} We may also choose
 pole orders of the generators such that $y_{i, e_i'}$ is the only
 generator lying on the line $-ord_{P_i}(z) = \deg z \frac{3d}{7}$
 in the $(\deg z, -ord_{P_i}(z))$  lattice and with the other
@@ -825,7 +832,7 @@ $i, j \in J = \{2, 3\}$ such that $j \neq i$ and for all $d \geq
 0$. Thus, $s_{\sigma, J}(i, d) = \emptyset$ for each $i \in J$.
 Furthermore, $\deg \lfloor e_i \halfcan \rfloor = \deg \lfloor 9
 \halfcan \rfloor = 2 \lfloor \frac{4 \cdot 9}{9} \rfloor + \lfloor
-\frac{9}{3} \rfloor - 9 = 2$, so (Ad-iii) is satisfied and
+\frac{9}{3} \rfloor - 9 = 2$, so \ref{Ad-iii} is satisfied and
 $(\sigma, \sx', J)$ is admissible.
 
 %Let $(-ord_{P_1}(x_j)$, $-ord_{P_2}(x_j)$, $-ord_{P_3}(x_j))$
@@ -909,14 +916,14 @@ Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\h
 Then, there exist constants $\alpha,\beta,\gamma \in k$ so that 
 $R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zeros and poles. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
 
-We next check $(\sx', \halfcan',\{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, (Ad-i) holds. We next check (Ad-ii) for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
+We next check $(\sx', \halfcan',\{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, \ref{Ad-i} holds. We next check \ref{Ad-ii} for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
 $$
 \frac{-\ord_{P_1}(z)}{\ord(z)} = \begin{cases}
 	0 &\text{ if }z \in \{u, y_3\}\\
 	\frac{1}{4} &\text{ if }z = y_4
 \end{cases}.$$
-Since $0 < \frac{1}{4} < \frac{1}{3}$, (Ad-ii) holds.
-Finally, to check (Ad-iii), note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = 2 \cdot 1 - 1 + 0$.
+Since $0 < \frac{1}{4} < \frac{1}{3}$, \ref{Ad-ii} holds.
+Finally, to check \ref{Ad-iii}, note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = 2 \cdot 1 - 1 + 0$.
 \end{example}
 
 \begin{example}
@@ -1802,7 +1809,7 @@ signature $(g; e_1', \ldots, e_k', e_{k+1}'+2,\ldots, e_r'+2; \delta)$.
 
 
 %\begin{rem}
-%Note that $S_{\sigma,J}(i,d-1)$ as defined in condition (Ad-iii) of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
+%Note that $S_{\sigma,J}(i,d-1)$ as defined in condition \ref{Ad-iii} of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
 %\end{rem}
 %\todo{Peter: I'm not sure how useful this remark is.  After seeing the definition of $S_{\sigma, J}(I,d)$ a reader will probably be a little mystified why it is a useful condition.  The inclusion of the relationship to something defined in VZB that also seems ad hoc and that they probably will not have seen may not be the most helpful use of this space.}
 
@@ -1810,21 +1817,21 @@ signature $(g; e_1', \ldots, e_k', e_{k+1}'+2,\ldots, e_r'+2; \delta)$.
 %Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ stacky points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
 %\end{lem}
 %\begin{proof}
-%To show (Ad-i) and (Ad-ii) look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies (Ad-i). Furthermore, since $s$ is an admissible set of $L'$, in particular, we must have (Ad-ii) satisfied so $\frac{-\ord_{Q_l}
-%^{\halfcan_X'}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how (Ad-ii) follows in genus 0?}
+%To show \ref{Ad-i} and \ref{Ad-ii} look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies \ref{Ad-i}. Furthermore, since $s$ is an admissible set of $L'$, in particular, we must have \ref{Ad-ii} satisfied so $\frac{-\ord_{Q_l}
+%^{\halfcan_X'}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how \ref{Ad-ii} follows in genus 0?}
 %
  %follows immediately from the base-point freeness of $3\halfcan$ which we have for the following reasons in the various genera:
 %\begin{itemize}
 %\item When $g> 0$, $\deg(\lfloor 3 L\rfloor)\ge 3g-3+2\ge 2g$ (the added two comes from the fact that $r\ge 2$).
-%\item When $g= 0$, since $L'$ has a nontrivial admissible subset within $\{e_1, \ldots, e_{r- 1}\}$ satisfying (Ad-i), we know $\deg(\lfloor 3\lfloor)\ge 0$, so it is base-point free.
+%\item When $g= 0$, since $L'$ has a nontrivial admissible subset within $\{e_1, \ldots, e_{r- 1}\}$ satisfying \ref{Ad-i}, we know $\deg(\lfloor 3\lfloor)\ge 0$, so it is base-point free.
 %\end{itemize}
 %\end{proof}
 
-The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}.
+The following Lemma will slightly strengthen condition \ref{Ad-ii} from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}.
 
 \begin{lem}
 \label{lem:admissible_inequality}
-For any $z$ as in condition (Ad-ii) of definition ~\ref{defn:admissible} the inequality (Ad-ii) implies the
+For any $z$ as in condition \ref{Ad-ii} of definition ~\ref{defn:admissible} the inequality \ref{Ad-ii} implies the
 tighter inequality that
 
 \begin{align*}
@@ -1834,7 +1841,7 @@ tighter inequality that
 \end{lem}
 
 \begin{proof}
-We know by (Ad-ii) that
+We know by \ref{Ad-ii} that
 
 \begin{align*}
 	-\ord_{Q_i}
@@ -1862,7 +1869,7 @@ then $(\sx', L', W)$ is also admissible.
 \end{lem}
 
 \begin{proof}
-Each of the conditions (Ad-i), (Ad-ii), and (Ad-iii) hold for $W$
+Each of the conditions \ref{Ad-i}, \ref{Ad-ii}, and \ref{Ad-iii} hold for $W$
 if they hold for $J$.
 \end{proof}
 
@@ -1944,7 +1951,7 @@ Define
 \end{align*}
 
 \noindent
-The assumption (Ad-iii) implies
+The assumption \ref{Ad-iii} implies
 \begin{align*}
 	\deg \left( e_i L' - E_i \right) \geq \max(2g - 1,0),
 \end{align*}
@@ -2072,7 +2079,7 @@ Here, $L|_{Q_j} = L'|_{Q_j},$ so
 \noindent
 {\sf Case 2: $j =i.$}
 
-By part (a), condition (Ad-ii), and Lemma
+By part (a), condition \ref{Ad-ii}, and Lemma
 ~\ref{lem:admissible_inequality} we have
 \begin{align*}
 	-\ord_{Q_j}
@@ -2108,11 +2115,11 @@ completing part (c).
 %~\ref{lem:minimal_quadratic}.
 
 {\bf Part (d):}
-To check (d), we show (Ad-i),(Ad-ii), and (Ad-iii) are satisfied. We know (Ad-i) holds by part (b), taking the $y_{
-i, e_i}$ as the generators in degree $e_i$. Next, (Ad-ii) is
+To check (d), we show \ref{Ad-i},\ref{Ad-ii}, and \ref{Ad-iii} are satisfied. We know \ref{Ad-i} holds by part (b), taking the $y_{
+i, e_i}$ as the generators in degree $e_i$. Next, \ref{Ad-ii} is
 strictly monotonic in the $e_i$ and hence also holds for $(\sx, J)$.
-Finally, if (Ad-iii) holds for $e$ then it holds for $e + 2$ by
-definition. This is where we use that (Ad-iii) holds for $d > 0$
+Finally, if \ref{Ad-iii} holds for $e$ then it holds for $e + 2$ by
+definition. This is where we use that \ref{Ad-iii} holds for $d > 0$
 and not just for $d = 0$.
 \end{proof}
 
@@ -2664,6 +2671,7 @@ algebra by elements of degree at most $e = \max(5 , e_1, \ldots, e_r
 = (\sx ', -\infty + \sum_{i = 1}^{r} \subhalf{e_i} P_i, J)$ is
 admissible for the following cases:
 
+\rm{
 \begin{longtable}
 	{| c || c | c | c |}
 	\hline
@@ -2671,31 +2679,32 @@ admissible for the following cases:
 	\hline
 	\hline
 
-	(a) & (0; 3, 3, 11; 0) & \{3\} & 11\\	\hline
+	(a) & $(0; 3, 3, 11; 0)$ & $\{3\}$ & $11$ \\	\hline
 
-	(b) & (0; 3, 5, 9; 0) & \{3\}	& 9\\ \hline
+	(b) & $(0; 3, 5, 9; 0)$ & $\{3\}$	& $9$ \\ \hline
 
-	(c) & (0; 3, 7, 7; 0) & \{2, 3\}	& 7\\ \hline
-	
-	(d) & (0; 5, 5, 7; 0) & \{3\}	& 7\\ \hline
-	
-	(e) & (0; 5, 7, 7; 0) & \{2, 3\}	& 7\\ \hline
-	
-	(f) & (0; 7, 7, 7; 0) & \{1, 2, 3\}	& 7\\ \hline
+	(c) & $(0; 3, 7, 7; 0)$ & $\{2, 3\}$ & $7$ \\ \hline
 
-	(g) & (0; 3, 3, 3, 5; 0) & \{4\} & 5\\ \hline
+	(d) & $(0; 5, 5, 7; 0)$ & $\{3\}$	& $7$ \\ \hline
 	
-	(h) & (0; 3, 3, 5, 5; 0) & \{3, 4\} & 5\\ \hline
+	(e) & $(0; 5, 7, 7; 0)$ & $\{2, 3\}$ & $7$ \\ \hline
 	
-	(i) & (0; 3, 5, 5, 5; 0) & \{2, 3, 4\} & 5\\ \hline
-	
-	(j) & (0; 5, 5, 5, 5; 0) & \{1, 2, 3, 4\} & 5\\ \hline
+	(f) & $(0; 7, 7, 7; 0)$ & $\{1, 2, 3\}$	& $7$ \\ \hline
 
-	(k) &	(0; 3, 3, 3, 3, 3; 0) & \{1, 2, 3, 4, 5\} & 5\\ \hline
+	(g) & $(0; 3, 3, 3, 5; 0)$ & $\{4\}$ & $5$ \\ \hline
+	
+	(h) & $(0; 3, 3, 5, 5; 0)$ & $\{3, 4\}$ & $5$ \\ \hline
+	
+	(i) & $(0; 3, 5, 5, 5; 0)$ & $\{2, 3, 4\}$ & $5$ \\ \hline
+	
+	(j) & $(0; 5, 5, 5, 5; 0)$ & $\{1, 2, 3, 4\}$ & $5$ \\ \hline
+
+	(k) &	$(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & $5$ \\ \hline
 	
 	\caption{Genus 0 Base Cases}
 	\label{table:g-0-base-cases}
 \end{longtable}
+}
 
 %\noindent
 %Furthermore, $R'$ satisfies the hypothesis of Lemma ~\ref
@@ -2722,41 +2731,41 @@ and any generator $z$ of $R'$.
 	\hline
 	\hline
 
-	(a) & \{3, 7, 9, 11\} & \{14, 18\} & 11\\	\hline
+	(a) & $\{3, 7, 9, 11\}$ & $\{14, 18\}$ & $11$ \\	\hline
 
-	(b) & \{3, 5, 7, 9\} & \{12, 14\}	& 9\\ \hline
+	(b) & $\{3, 5, 7, 9\}$ & $\{12, 14\}$ & $9$ \\ \hline
 
-	(c) & \{3, 5, 7, 7\} & \{10, 14\}	& 7\\ \hline
+	(c) & $\{3, 5, 7, 7\}$ & $\{10, 14\}$ & $7$ \\ \hline
 	
-	(d) & \{3, 5, 5, 7\} & \{10, 12\}	& 7\\ \hline
+	(d) & $\{3, 5, 5, 7\}$ & $\{10, 12\}$	& $7$ \\ \hline
 	
-	(e) & \{3, 5, 5, 7, 7\} & \{10, 10, 12, 12, 14\}	& 7\\ \hline
+	(e) & $\{3, 5, 5, 7, 7\}$ & $\{10, 10, 12, 12, 14\}$	& $7$ \\ \hline
 	
-	(f) & \{3, 5, 5, 7, 7, 7\} & \{10, 10, 10, 12, 12, 12, 14, 14, 14\}	& 7\\ \hline
+	(f) & $\{3, 5, 5, 7, 7, 7\}$ & $\{10, 10, 10, 12, 12, 12, 14, 14, 14\}$	& $7$ \\ \hline
 
-	(g) & \{3, 3, 4, 5\} & \{8, 9\} & 5\\ \hline
+	(g) & $\{3, 3, 4, 5\}$ & $\{8, 9\}$ & $5$ \\ \hline
 	
-	(h) & \{3, 3, 4, 5, 5\} & \{8, 8, 9, 9, 10\} & 5\\ \hline
+	(h) & $\{3, 3, 4, 5, 5\}$ & $\{8, 8, 9, 9, 10\}$ & $5$ \\ \hline
 	
-	(i) & \{3, 3, 4, 5, 5, 5\} &
-	\{8, 8, 8, 9, 9, 9, 10, 10, 10\} & 5\\ \hline
+	(i) & $\{3, 3, 4, 5, 5, 5\}$ &
+	$\{8, 8, 8, 9, 9, 9, 10, 10, 10\}$ & $5$ \\ \hline
 	
-	(j) & \{3, 3, 4, 5, 5, 5, 5\} &
-	\{8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10\} & 5\\ \hline
+	(j) & $\{3, 3, 4, 5, 5, 5, 5\}$ &
+	$\{8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10\}$ & $5$ \\ \hline
 
-	(k) &	\{3, 3, 3, 4,	4, 5\} & \{6, 7, 7, 8, 8, 8, 9, 9, 10\} & 5\\ \hline
+	(k) &	$\{3, 3, 3, 4, 4, 5\}$ & $\{6, 7, 7, 8, 8, 8, 9, 9, 10\}$ & $5$ \\ \hline
 	
 	\caption{Genus 0 Non-effective Base Cases Generators/Relations}
 	\label{table:g-0-base-cases-degrees}
 \end{longtable}
 
 We can also always find a presentation for these cases such that
-they satisfy (Ad-i) and (Ad-ii) and that $\initial(I')$ is
+they satisfy \ref{Ad-i} and \ref{Ad-ii} and that $\initial(I')$ is
 generated by products of two monomials. Again, the procedure for
 verifying these are similar to that given in Example
 ~\ref{eg:base-0-377}.
 
-Furthermore, each case always satisfies (Ad-iii) as demonstrated below.
+Furthermore, each case always satisfies \ref{Ad-iii} as demonstrated below.
 Notice that the $e_i$ and $\{e_j' : j \neq i\}$ are equivalent
 for any choice of $i \in J$ for these cases, so $\deg \lfloor e_i L
 \rfloor$ and $\max_{d \geq 0} \#S_{(\sigma, J)}(i)$ are
@@ -2770,29 +2779,29 @@ independent of the choice of $i$.
 	\hline
 	\hline
 
-	(a) & $(0; 3, 3, 11; 0)$ & $\{3\}$ & 1 & 0 \\	\hline
+	(a) & $(0; 3, 3, 11; 0)$ & $\{3\}$ & $1$ & $0$ \\	\hline
 	
-	(b) & $(0; 3, 5, 9; 0)$ & $\{3\}$ & 1 & 0 \\ \hline
+	(b) & $(0; 3, 5, 9; 0)$ & $\{3\}$ & $1$ & $0$ \\ \hline
 	
-	(c) & $(0; 3, 7, 7; 0)$ & $\{3\}$ & 2 & 0 \\ \hline
+	(c) & $(0; 3, 7, 7; 0)$ & $\{3\}$ & $2$ & $0$ \\ \hline
 	
-	(d) & $(0; 5, 5, 7; 0)$ & $\{3\}$ & 1 & 0 \\ \hline
+	(d) & $(0; 5, 5, 7; 0)$ & $\{3\}$ & $1$ & $0$ \\ \hline
 	
-	(e) & $(0; 5, 7, 7; 0)$ & $\{2, 3\}$ & 2 & 0 \\ \hline
+	(e) & $(0; 5, 7, 7; 0)$ & $\{2, 3\}$ & $2$ & $0$ \\ \hline
 
-	(f) & $(0; 7, 7, 7; 0)$ & $\{1, 2, 3\}$ & 3 & 0 \\ \hline
+	(f) & $(0; 7, 7, 7; 0)$ & $\{1, 2, 3\}$ & $3$ & $0$ \\ \hline
 
-	(g) & $(0; 3, 3, 3, 5; 0)$ & $\{4\}$ & 2 & 0 \\ \hline
+	(g) & $(0; 3, 3, 3, 5; 0)$ & $\{4\}$ & $2$ & $0$ \\ \hline
 	
-	(h) & $(0; 3, 3, 5, 5; 0)$ & $\{3, 4\}$ & 3 & 0 \\ \hline
+	(h) & $(0; 3, 3, 5, 5; 0)$ & $\{3, 4\}$ & $3$ & $0$ \\ \hline
 	
-	(i) & $(0; 3, 5, 5, 5; 0)$ & $\{2, 3, 4\}$ & 4 & 0 \\ \hline
+	(i) & $(0; 3, 5, 5, 5; 0)$ & $\{2, 3, 4\}$ & $4$ & $0$ \\ \hline
 	
-	(j) & $(0; 5, 5, 5, 5; 0)$ & $\{1, 2, 3, 4\}$ & 5 & 0 \\ \hline
+	(j) & $(0; 5, 5, 5, 5; 0)$ & $\{1, 2, 3, 4\}$ & $5$ & $0$ \\ \hline
 
-	(k) & $(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & 5 & 0 \\ \hline
+	(k) & $(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & $5$ & $0$ \\ \hline
 	
-	\caption{Genus 0 Non-Effective Base Cases (Ad-iii)}
+	\caption{Genus 0 Non-Effective Base Cases \ref{Ad-iii}}
 	\label{table:g-0-base-cases-admissibility}
 \end{longtable}
 
