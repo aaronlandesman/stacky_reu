@@ -1835,7 +1835,7 @@ signature $(g; e_1', \ldots, e_k',e_{k+1}'+2,\ldots, e_r'+2; \delta)$.
 %\end{proof}
 
 The following Lemma will slightly strengthen condition (Ad-ii) from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}.
-\todo{Peter: be clear what $z$ is}
+\todo{Peter: be clear what $z$ is, ask David, possibly edit this agin}
 
 \begin{lem}
 \label{lem:admissible_inequality}
@@ -2164,7 +2164,7 @@ We now consider the case when the genus is at least 2. In this case, we are able
 \label{ssec:bounds-high-genus}
 \todo{Make edits that you want to further incorporate Reid's paper}
 
-The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[p. 35]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Thoughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ and so $H^0(X, 2L)$ is basepoint free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
+The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[Theorem 3.4]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Thoughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ and so $H^0(X, 2L)$ is basepoint free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
 
 The proofs of this subsection results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}. However, the statements are different, as we assume $\Delta > 0$ instead of $\Delta = 0$ and do not assume there is a basepoint free pencil contained in $H^0(X,L).$ 
 
@@ -2330,7 +2330,7 @@ $5$ and minimal relations in degree at most $10$.
 \end{cor}
 
 \begin{proof}
-If $\Delta =0$, the result is immediate from Reid. Otherwise, if
+If $\Delta =0$, the result is immediate from Reid \cite[Theorem 3.4]{reid:infinitesimal}. Otherwise, if
 $\Delta > 0$, the bound on the degrees of minimal generators follows
 from Lemma ~\ref{lem:generation-5}, while the bound on the degrees
 of minimal relations follows from Proposition ~\ref{prop:relation-10}.
@@ -3029,13 +3029,13 @@ This paper leaves open many directions for further research.
 		by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
 \todo{Aaron, I tried to edit the following question, but it still seems a bit imprecise, and the question in particular is a bit of a long sentence.}
 	\item In Subsection \ref{ssec:bounds-high-genus}, we reference 
-		the work of Reid \cite[p. 35]{reid:infinitesimal}. We use his 
+		the work of Reid \cite[Theorem 3.4]{reid:infinitesimal}. We use his 
 		proof of that the 
 		spin canonical ring is generated in degree at most 5 with
 		relations in degree at most 10 in the 			
 		non-log, non-stacky case when genus is at least 2. We extend this 
 		bound of 5 and 10 to the log case, and then apply our inductive 
-		lemmas to add stacky points and obtain bounds of $e = \max(5,e_1, \ldots, e_r)$ and $2e$.  Reid in fact proves something slightly stronger: that in 
+		lemmas to add stacky points and obtain bounds of $e = \max(5,e_1, \ldots, e_r)$ and $2e$.  Reid \cite[Theorem 3.4]{reid:infinitesimal} in fact proves something slightly stronger: that in 
 		most cases his bound is actually 3 and 6 with well-characterized 
 		exceptions.
 		\begin{question}\label{ques:reduce-5,10-to-4,8}
@@ -3048,7 +3048,7 @@ This paper leaves open many directions for further research.
 			\ref{lem:sat-2}, which allows us to add a stacky point in genus $g>0
 			$ saturated at 2, requires a generator in degree 4 and potentially 
 			a relation in degree 8, even when inductively adding on stacky 
-			points of stabilizer order 3. However, perhaps in the non-stacky case, one may be able able to generalize the result of Reid \cite[p. 35]{reid:infinitesimal} to show that log spin canonical rings can be generated in degree at most 3 with relations in degree at most 6, apart from a well characterized list of exceptions.
+			points of stabilizer order 3. However, perhaps in the non-stacky case, one may be able able to generalize the result of Reid \cite[Theorem 3.4]{reid:infinitesimal} to show that log spin canonical rings can be generated in degree at most 3 with relations in degree at most 6, apart from a well characterized list of exceptions.
 			\end{rem}
 
 	\todo{This last one doesn't seem particularly interesting. Should we remove it?}
