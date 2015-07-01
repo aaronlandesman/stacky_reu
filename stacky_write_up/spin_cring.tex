@@ -2284,19 +2284,20 @@ that we obtain a surjection $\phi: k[x_1, \ldots, x_n]
 \twoheadrightarrow R_L$ with kernel $I_L$. Let $s_1, s_2 \in k[x_1,
 \ldots, x_n]_2$ be two elements so that $\newspan(\phi(s_1), \phi(s_2))
 = V \subseteq H^0(X, 2L)$ is basepoint-free. For any $f \in
-k[x_1, \ldots, x_n]$ such that $\deg f \leq 11,$ there exist $g, h \in
+k[x_1, \ldots, x_n]$ such that $\deg f \geq 11,$ there exist $g, h \in
 k[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h = f \bmod J_{L, d}.$
 \end{lem}
 \begin{proof}
 % Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1),\phi(s_2) \in H^0(2L)$ generate a base point free pencil $V = k \phi(s_1) \oplus k \phi(s_2)\subseteq H^0(X,2L)$.
-By Lemma ~\ref{lem:generation-5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Then, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in k[x_1, \ldots, x_n]_{d-\deg x_i}$.
-We will next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in k[x_1, \ldots, x_n]_{d - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{L,\deg a_i}.$ 
+By Lemma ~\ref{lem:generation-5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Therefore, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in k[x_1, \ldots, x_n]_{d-\deg x_i}$.
+We next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in k[x_1, \ldots, x_n]_{d - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{L,\deg a_i}.$ 
+
 By Lemma ~\ref{lem:generation-5},
 \begin{align*}
 	V \otimes H^0((\deg f-\deg x_i -2)L) \rightarrow H^0((\deg f-\deg x_i)L)
 \end{align*}
-is surjective, and $\deg f \leq 11$ guarantees
-$\deg f - \deg a_i -2 \geq 4.$
+is surjective, and $\deg f \geq 11$ implies that
+$\deg a_i =\deg f - \deg x_i -2 \geq 4.$
 In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Choosing $g_i,h_i$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha, \phi(h_i) = \beta$, we have $a_i \equiv s_1 g_i + s_2 h_i \bmod I_{L,\deg a_i}$, as claimed.
 
 Finally, we may then take $g = \sum_{i}^{}g_i x_i, \: h = \sum_{i}^{}h_i x_i,$ so that 
