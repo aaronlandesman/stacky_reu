@@ -101,7 +101,7 @@
 \newcommand\fm{{\mathfrak m}}
 \newcommand\so{{\mathscr O}}
 \newcommand\sg{{\mathscr G}}
-\newcommand \sx{\mathscr X}
+\newcommand\sx{\mathscr X}
 
 \newcommand\scm{{\mathscr M}}
 \newcommand\scn{{\mathscr N}}
@@ -115,11 +115,11 @@
 \newcommand{\id}{\mathrm{id}}
 \newcommand\im{\text{im }}
 \newcommand\coker{\text{coker}}
-\newcommand \spec{\text{Spec }}
-\newcommand \proj{\text{Proj }}
-\newcommand \rspec{\textit{Spec }}
-\newcommand \rproj{\textit{Proj }}
-\newcommand{\gal}{\mathrm{Gal}}
+\newcommand\spec{\text{Spec }}
+\newcommand\proj{\text{Proj }}
+\newcommand\rspec{\textit{Spec }}
+\newcommand\rproj{\textit{Proj }}
+\newcommand\gal{\mathrm{Gal}}
 
 \newcommand \trdeg{\text{tr. deg }}
 \newcommand \codim{\text{codim}}
@@ -139,7 +139,7 @@
 \DeclareMathOperator{\gin}{gin}
 \DeclareMathOperator{\Eff}{Eff}
 \DeclareMathOperator{\sat}{sat}
-\DeclareMathOperator{\span}{span}
+\DeclareMathOperator{\newspan}{span}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2190,7 +2190,7 @@ The proofs of this subsection results are similar to those in Neves ~\cite[Propo
 Let $(X, \Delta, L)$ be a log spin curve of signature $(g; -;\delta)$
 with $g \geq 2$ and $\Delta > 0.$ Let $s_1$, $s_2 \in H^0(X, 2L)$
 be two independent sections such that the vector subspace $V =
-\span(s_1, s_2) \subseteq H^0(K)$ is basepoint-free. Then, the map
+\newspan(s_1, s_2) \subseteq H^0(K)$ is basepoint-free. Then, the map
 \begin{align*}
 	V \otimes H^0(nL) \rightarrow H^0((n+2)L)
 \end{align*}
@@ -2208,7 +2208,7 @@ suffices to show that if $n \geq 4$, the map
 \begin{align*}
 	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
 \end{align*}
-is surjective. Indeed, since $V = \span(s_1, s_2) \subseteq
+is surjective. Indeed, since $V = \newspan(s_1, s_2) \subseteq
 H^0(K)$ is basepoint-free, by the basepoint-free pencil trick (see
 \cite[Lemma 2.6]{saint-donat:proj} for a proof), we obtain an exact
 sequence
@@ -2282,7 +2282,7 @@ Let $(X, \Delta, L)$ be a log spin curve of signature $(g; -; \delta
 )$ with $g \geq 2$ and $\Delta > 0.$ Choose generators $x_1, \ldots
 , x_n$ of $R_L$ so that we obtain a surjection $\phi: k[x_1, \ldots
 , x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L, d}$ be
-the $d$^\text{th} graded piece of $I_L$ and define
+the $d^\text{th}$ graded piece of $I_L$ and define
 \[
 	J_{L,d} = \sum_{j = 1}^{d- 1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j}.
 \]
@@ -2295,8 +2295,8 @@ Let $(X, \Delta, L)$ be a log spin curve of genus $g \geq 2,$ so
 that $\Delta > 0.$ Choose generators $x_1, \ldots, x_n$ of $R_L$ so
 that we obtain a surjection $\phi: k[x_1, \ldots, x_n]
 \twoheadrightarrow R_L$ with kernel $I_L$. Let $s_1, s_2 \in k[x_1,
-\ldots, x_n]_2$ be two elements so that $\phi(s_1) k$ $\oplus$
-$\phi(s_2) k = V \subseteq H^0(X, 2L)$ is basepoint-free. For any $f \in
+\ldots, x_n]_2$ be two elements so that $\newspan(\phi(s_1), \phi(s_2))
+= V \subseteq H^0(X, 2L)$ is basepoint-free. For any $f \in
 k[x_1, \ldots, x_n]$ such that $\deg f \leq 11,$ there exist $g, h \in
 k[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h = f \bmod J_{L, d}.$
 \end{lem}
@@ -2330,7 +2330,7 @@ Suppose $f \in I_L$ with $\deg f \geq 11$. To complete the proof,
 it suffices to show $f \in I_{L,d}'$. By Lemma
 ~\ref{lem:reducing-degree}, it suffices to show $s_1 g + s_2 h \in
 I_{L, d}'$ where $\phi(s_ 1),\phi(s_2) \in H^0(X, 2L)$ are two sections
-so that $\span(\phi(s_ 1), \phi(s_2)) = V \subseteq H^0(K)$ is
+so that $\newspan(\phi(s_ 1), \phi(s_2)) = V \subseteq H^0(K)$ is
 basepoint-free. Consider the map
 
 $$\begin{tikzcd}
