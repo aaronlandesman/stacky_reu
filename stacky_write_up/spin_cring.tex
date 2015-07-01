@@ -2161,7 +2161,8 @@ Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \hal
 \label{sec:g_high}
 We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the spin canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved, while in this section we will be able to appeal to general theory.
 
-\ssec{Bounds on Generators and Relations in High Genus}\label{ssec:bounds-high-genus}
+\ssec{Bounds on Generators and Relations in High Genus}
+\label{ssec:bounds-high-genus}
 \todo{Make edits that you want to further incorporate Reid's paper}
 
 The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[p. 35]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Thoughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ and so $H^0(X, 2L)$ is basepoint free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
@@ -2943,46 +2944,123 @@ from Table ~\ref{table:g-0-base-cases} and deduce that $R(\sx,
 This paper leaves open many directions for further research.
 
 \begin{enumerate}
-	\item One direction for further research is to extend the results of this paper to divisors $D \in \di \sx$ on a stacky curve $\sx,$ where $nD \sim K.$ The canonical rings of such divisors would translate to rings of fractional weight modular forms. As defined in Adler and Ramanan (in the passage immediately following \cite[Corollary 24.5]{adler:moduli}), a {\bf modular form of fractional weight} $\frac{2a}{n}$ on $X(p)$ is a section of a line bundle $\eta$ so that there exists a line bundle $\gamma$ with $\gamma^{\otimes a} \cong \eta$ and $\gamma^{n} \cong \Omega_{X(p)}^1$. Adler and Ramanan \cite[Appendix 2]{adler:moduli} construct an explicit basis of weight $\frac{4}{5}$ modular forms for $X(11)$. Fractional modular forms also make an apperance in Milnor \cite[$\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3^{e_3} = 0$. 
+	\item One direction for further research is to 
+		extend the results of this paper to divisors $D \in \di \sx$ on a 
+		stacky curve $\sx,$ where $nD \sim K.$ The canonical rings of such 
+		divisors would translate to rings of fractional weight modular 
+		forms. As defined in Adler and Ramanan (in the passage immediately 
+		following \cite[Corollary 24.5]{adler:moduli}), a {\bf modular form 
+		of fractional weight} $\frac{2a}{n}$ on $X(p)$ is a section of a 
+		line bundle $\eta$ so that there exists a line bundle $\gamma$ with 
+		$\gamma^{\otimes a} \cong \eta$ and $\gamma^{n} \cong \Omega_{X(p)}^
+		1$. Adler and Ramanan \cite[Appendix 2]{adler:moduli} construct an 
+		explicit basis of weight $\frac{4}{5}$ modular forms for $X(11)$. 
+		Fractional modular forms also make an apperance in Milnor \cite[$
+		\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor 
+		shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e
+		_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of 
+		fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3
+		^{e_3} = 0$.
 
-Having motivated the importance of fractional weight modular forms, we pose the following question:
+		Having motivated the importance of fractional weight modular forms, we pose the following question:
 
-\begin{question}
-\label{ques:fractional-weight}
-If $\sx$ is a stacky curve and $D \in \di \sx$ with $nD \sim K,$ where $K$ is the canonical divisor of $\sx$, can one bound the degrees of generators and relations of $R_D$?
-\end{question}
-Note that that the above question is answered affirmatively in the case that $\sx$ has genus $0$ and $D$ is effective, as follows by inductively applying Lemma ~\ref{lem:sat-1}: If $\sx$ has signature $(g;e_1, \ldots, e_r; \delta)$ then $D$ is generated in degree at most $e = \max(e_1, \ldots, e_r)$ with relations in degree at most $2e$. Additionally, it may be possible to modify the proof of Lemma ~\ref{lem:raise-stacky-order} to extend to the setting of fractional weight modular forms. Given suitable generalizations of these lemmas, one may be able to approach the problem of finding generators and relations for fractional weight modular forms using techniques similar to those in this paper.
-%
-	\item In Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky}, the notion of a generic initial ideal is defined, which encapsulates the idea of whether the relations for $R_L$ are generically chosen, in a precise sense. The proof of Theorem ~\ref{thm:main} decidedly does not yield a generic initial ideal, as generators and relations are constructed in a highly nongeneric manner. In particular, Lemma ~\ref{lem:raise-stacky-order} constructs generators with non-maximal pole orders at certain points, making the relations non-generic. 
-\begin{question}
-\label{ques:generic-initial}
-If $(\sx,\Delta,L)$ is a log spin curve with signature $\sigma$, does there exist a function $\sigma \mapsto d(\sigma)$ so that the generic initial ideal {\rm(} with some specified ordering{\rm)} is generated in degree at most $d(\sigma)$? Can one write down the generic initial ideal explicitly?
-\end{question}
-%
-	\item As noted in Remark ~\ref{rem:explicit-generators}, the proof of Theorem ~\ref{thm:main} given in this paper gives an explicit procedure for computing the generators and relations of $R_L$ when the genus of $\sx$ is $0$ or $1$.
-\begin{question}
-\label{ques:algorithm}
-Can one give an algorithm for explicitly computing the generators and relations for an arbitrary genus $g \geq 2$ curve?
-\end{question}
-Suppose the generators and relations of $R_{L_X}$ are known, where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the coarse space of $\sx$, and $L_X \leq L$ is a spin canonical divisor of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an algorithm for determining the generators of $L$. This raises the following Petri-like question:
-\begin{question}
-\label{ques:spin-canonical-petri}
-Given a {\rm(}non-stacky {\rm)} curve $X$ and a spin canonical divisor $L \in \di X$, can one write down a set of minimal generators and minimal relations for $R_L$? If so, can one give the generic ideal of $R_L$ or the generic initial ideal of $R_L$, as defined in Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky}?
-\end{question}
-In particular, if Question ~\ref{ques:spin-canonical-petri} were answered affirmatively one would be able to write down explicit generators and relations for $R_L$ on a stacky curve, essentially by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
-%
-	\item In Subsection \ref{ssec:bounds-high-genus}, we reference the work of Reid \cite[p. 35]{reid:infinitesimal}.
-We use his construction of a uniform bound on the generation of the half-canonical ring and its ideal of relations at 5 and 10 in the non-log, non-stacky case when genus is at least 2.  We extend this bound of 5 and 10 to the log case, and then apply our inductive lemmas to add stacky points and get bounds of $\max(5,e)$ and $\max(10, 2e)$.  Reid in fact proves something slightly stronger: that in most cases his bound is actually 3 and 6 with well-characterized exceptions.
-\begin{question}\label{ques:reduce-5,10-to-4,8}
-Can we reduce the bounds in Theorem \ref{thm:main} on generation from $\max(5,e)$ and $\max(10, 2e)$ to $\max(4,e)$ and $\max(8, 2e)$. 
-\end{question}
-\begin{rem}\label{rem:reduce-3,6}
-It is unlikely that this can be reduced further, because Lemma \ref{lem:sat-2}, which allows us to add a stacky point in genus $g>0$ saturated at 2, requires a generator in degree 4 and potentially a relation in degree 8, even when inductively adding on stacky points of stabilizer order 3.
-\end{rem}
-%
+		\begin{question}
+		\label{ques:fractional-weight}
+			If $\sx$ is a stacky curve and $D \in \di \sx$ with $nD \sim K,$ 
+			where $K$ is the canonical divisor of $\sx$, can one bound the 
+			degrees of generators and relations of $R_D$?
+		\end{question}
+		Note that that the above question is answered affirmatively in the 
+		case that $\sx$ has genus $0$ and $D$ is effective, as follows by 
+		inductively applying Lemma ~\ref{lem:sat-1}: If $\sx$ has signature 
+		$(g;e_1, \ldots, e_r; \delta)$ then $D$ is generated in degree at 
+		most $e = \max(e_1, \ldots, e_r)$ with relations in degree at most
+		$2e$. Additionally, it may be possible to modify the proof of Lemma
+		~\ref{lem:raise-stacky-order} to extend to the setting of fractional 
+		weight modular forms. Given suitable generalizations of these 
+		lemmas, one may be able to approach the problem of finding 
+		generators and relations for fractional weight modular forms using 
+		techniques similar to those in this paper.
+
+	\item In Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky},
+		the notion of a generic initial ideal is defined, which 
+		encapsulates the idea of whether the relations for $R_L$ are 
+		generically chosen, in a precise sense. The proof of Theorem
+		~\ref{thm:main} decidedly does not yield a generic initial ideal, 
+		as generators and relations are constructed in a highly nongeneric 
+		manner. In particular, Lemma ~\ref{lem:raise-stacky-order} 
+		constructs generators with non-maximal pole orders at certain 
+		points, making the relations non-generic. 
+		\begin{question}
+		\label{ques:generic-initial}
+			If $(\sx,\Delta,L)$ is a log spin curve with signature $\sigma$,
+			does there exist a function $\sigma \mapsto d(\sigma)$ so that
+			the generic initial ideal {\rm(} with some specified ordering{\rm)}
+			is generated in degree at most $d(\sigma)$? Can one write down the
+			generic initial ideal explicitly?
+		\end{question}
+
+	\item As noted in Remark ~\ref{rem:explicit-generators}, the 
+		proof of Theorem ~\ref{thm:main} given in this paper gives an 
+		explicit procedure for computing the generators and relations of $R_
+		L$ when the genus of $\sx$ is $0$ or $1$.
+		\begin{question}
+		\label{ques:algorithm}
+			Can one give an algorithm for explicitly computing the generators 
+			and relations for an arbitrary genus $g \geq 2$ curve?
+		\end{question}
+		Suppose the generators and relations of $R_{L_X}$ are known, 
+		where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the 
+		coarse space of $\sx$, and $L_X \leq L$ is a spin canonical divisor 
+		of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an 
+		algorithm for determining the generators of $L$. This raises the 
+		following Petri-like question:
+		\begin{question}
+		\label{ques:spin-canonical-petri}
+			Given a {\rm(}non-stacky {\rm)} curve $X$ and a spin canonical 
+			divisor $L \in \di X$, can one write down a set of minimal 
+			generators and minimal relations for $R_L$? If so, can one give the 
+			generic ideal of $R_L$ or the generic initial ideal of $R_L$, as 
+			defined in Voight and Zureick Brown \cite[Definition 2.2.7]
+			{vzb:stacky}?
+		\end{question}
+		In particular, if Question ~\ref{ques:spin-canonical-petri} were 
+		answered affirmatively one would be able to write down explicit 
+		generators and relations for $R_L$ on a stacky curve, essentially 
+		by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
+
+	\item In Subsection \ref{ssec:bounds-high-genus}, we reference 
+		the work of Reid \cite[p. 35]{reid:infinitesimal}. We use his 
+		construction of a uniform bound on the generation of the half-
+		canonical ring and its ideal of relations at 5 and 10 in the non-
+		log, non-stacky case when genus is at least 2.  We extend this 
+		bound of 5 and 10 to the log case, and then apply our inductive 
+		lemmas to add stacky points and get bounds of $\max(5,e)$ and $\max(
+		10, 2e)$.  Reid in fact proves something slightly stronger: that in 
+		most cases his bound is actually 3 and 6 with well-characterized 
+		exceptions.
+		\begin{question}\label{ques:reduce-5,10-to-4,8}
+			Can we reduce the bounds in Theorem \ref{thm:main} on 
+			generation from $\max(5,e)$ and $\max(10, 2e)$ to $\max(4,e)$ and $
+			\max(8, 2e)$. 
+		\end{question}
+		\begin{rem}\label{rem:reduce-3,6}
+			It is unlikely that this can be reduced further, because Lemma 
+			\ref{lem:sat-2}, which allows us to add a stacky point in genus $g>0
+			$ saturated at 2, requires a generator in degree 4 and potentially 
+			a relation in degree 8, even when inductively adding on stacky 
+			points of stabilizer order 3.
+			\end{rem}
+
 	\todo{This last one doesn't seem particularly interesting. Should we remove it?}
-	\item While Theorem ~\ref{thm:main} gives a minimal set of generators for the log spin canonical ring $R_L,$ the set of relations is not minimal. In many of the $g = 0$ and $g=1$ cases, it is not too difficult to see that our inductive procedure also yields a minimal set of relations for $R_L$. One might investigate whether the generators and relations given by the inductive proof of Theorem ~\ref{thm:main} are always minimal.
-\end{enumerate}
+	\item While Theorem ~\ref{thm:main} gives a minimal set of 
+		generators for the log spin canonical ring $R_L,$ the set of 
+		relations is not minimal. In many of the $g = 0$ and $g=1$ cases, 
+		it is not too difficult to see that our inductive procedure also 
+		yields a minimal set of relations for $R_L$. One might investigate 
+		whether the generators and relations given by the inductive proof 
+		of Theorem ~\ref{thm:main} are always minimal.
+		\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
