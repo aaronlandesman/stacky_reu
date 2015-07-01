@@ -2158,36 +2158,38 @@ Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \hal
 We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees and relations of the spin canonical ring $R_L$. In this section, we do not obtain explicit presentations of $R_L.$ In contrast, in Section ~\ref{sec:g_1} and Section ~\ref{sec:g_0} we will not only obtain bounds on the generators and relations, but also obtain presentations inductively. The tradeoff is that in the cases of genus 0 and 1, we will have to explicitly deal with base cases, making the induction more involved, while in this section we will be able to appeal to general theory.
 
 \ssec{Bounds on Generators and Relations in High Genus}
-The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The generation bound is shown in Lemma ~\ref{lem:generation_5} and the relations bound is shown in Lemma ~\ref{prop:relation_11}. 
+\todo{Make edits that you want to further incorporate Reid's paper}
 
-The proofs of these results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}, although ~\cite[Proposition III.4]{neves:halfcan} has a key ommission, as noted in Remark ~\ref{rem:neves-omission}
+The main result of this subsection is that for a log spin curve with no stacky points $(X,\Delta,L)$, the spin canonical ring $R_L$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed in Reid \todo{cite Ried article}. The generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. We summarize the result in Corollary ~\ref{cor:g-2-presentation-bound}
 
-Reid \cite{reid:infinitesimal}
-\todo{update section to use Reid's paper}
+The proofs of these results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}, but slightly generalized as we assume $\Delta > 0$ instead of $\Delta = 0$ and do not assume there is a basepoint free pencil contained in $H^0(X,L).$ 
 
+\iffalse
 \begin{lem}
-\label{lem:generation_5}
+\label{lem:generation-5}
 Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K +\Delta$. Then, $R_L$ is generated in degree at most $5$.
 \end{lem}
 
-The strategy of the proof of Lemma ~\ref{lem:generation_5} is to use Riemann--Roch and the basepoint-free pencil trick to show that $R_L$ is generated in degree at most $6,$ as is done in Lemma ~\ref{lem:semicanonical_generation}. When $g > 3$, it is easy to reduce the bound from 5 to 6. The trickiest case is to show $R_L$ is generated in degree 5 when $g = 2$, which is done in Lemma ~\ref{lem:genus-2-generation-5}. After proving these 2 lemmas, we concisely prove Lemma ~\ref{lem:generation_5}.
+The strategy of the proof of Lemma ~\ref{lem:generation-5} is to use Riemann--Roch and the basepoint-free pencil trick to show that $R_L$ is generated in degree at most $6,$ as is done in Lemma ~\ref{lem:semicanonical_generation}. When $g > 3$, it is easy to reduce the bound from 5 to 6. The trickiest case is to show $R_L$ is generated in degree 5 when $g = 2$, which is done in Lemma ~\ref{lem:genus-2-generation-5}. After proving these 2 lemmas, we concisely prove Lemma ~\ref{lem:generation-5}.
+\fi
 
 \begin{lem}
-\label{lem:semicanonical_generation}
-Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K + \Delta$. Let $s_1,s_2 \in H^0(X,2L)$ be two independent sections such that the vector subspace $V = ks_1 \oplus k s_2 \subseteq H^0(K)$ is basepoint free. Then, the map
+\label{lem:generation-5}
+Let $(X, \Delta, L)$ be a log spin curve of signature $(g;-;\delta)$ with $g \geq 2$ and $\Delta > 0.$ Let $s_1,s_2 \in H^0(X,2L)$ be two independent sections such that the vector subspace $V = ks_1 \oplus k s_2 \subseteq H^0(K)$ is basepoint free. Then, the map
 \begin{align*}
 	V \otimes H^0(nL) \rightarrow H^0((n+2)L)
 \end{align*}
-is surjective if $n \geq 5$ and if {\rm(}$n = 4$ and $\Delta > 0${\rm)}.
-In particular, $R_L$ is generated in degree at most $6$ if $\Delta = 0$ and in degree at most $5$ if $\Delta > 0$.
+is surjective if $n \geq 5.$ In particular, $R_L$ is generated in degree at most $5.$
 \end{lem}
 
+\iffalse
 \begin{rem}
 \label{rem:neves-omission}
-The following proof of Lemma ~\ref{lem:semicanonical_generation} is shown in Neves \cite[Proposition III.4]{neves:halfcan}. However, Neves states that this proof also proves Lemma ~\ref{lem:generation_5}, while it crucially omits the case of genus 2 curves. We produce the proof here for completeness.
+The following proof of Lemma ~\ref{lem:semicanonical_generation} is shown in Neves \cite[Proposition III.4]{neves:halfcan}. However, Neves states that this proof also proves Lemma ~\ref{lem:generation-5}, while it crucially omits the case of genus 2 curves. We produce the proof here for completeness.
 \end{rem}
+\fi
 
-\begin{proof}[Proof of Lemma ~\ref{lem:semicanonical_generation}]
+\begin{proof}[Proof of Lemma ~\ref{lem:generation-5}]
 To show there are no new generators in degree at least $7$ if $\Delta = 0$ and in degree at least $6$ if $\Delta > 0$, it suffices to show that if $n \geq 5$ or if ($n = 4$ and $\Delta > 0$), the map
 \begin{align*}
 	H^0(nL) \otimes H^0(2L) \rightarrow H^0((n+2)L)
@@ -2205,6 +2207,7 @@ Therefore, $$\dim_k \im f = 2 \cdot (n- 1)(g - 1) -(n-3)(g - 1) = (n+ 1)(g - 1) 
 again using Riemann-Roch. Ergo, $f$ is surjective.
 \end{proof}
 
+\iffalse
 \begin{lem}
 \label{lem:genus-2-generation-5}
 Let $X$ be a smooth genus 2 curve with canonical divisor $K$ and let $L \in \di X$ be so that $2L \sim K$. 
@@ -2246,19 +2249,22 @@ exist a function $h \in H^0(X,L+2P_1)$ so that $\di h|_{L + 2P_1} = -L - P_1$.
 Then, $h \cdot f \in H^0(X,2L + 4P_1) \cong H^0(X,6L)$ has a pole of odd 
 order at $P_1$, and is therefore independent from the image of $\sym^3 H^0(X,3L)$.
 \end{proof}
+\fi
 
-We are now equipped to prove Lemma ~\ref{lem:generation_5}, completing the desired bound on the degree of the generators.
+\iffalse
+We are now equipped to prove Lemma ~\ref{lem:generation-5}, completing the desired bound on the degree of the generators.
 
-\begin{proof}[Proof of Lemma ~\ref{lem:generation_5}]
+\begin{proof}[Proof of Lemma ~\ref{lem:generation-5}]
 If $\Delta > 0$, this holds by Lemma ~\ref{lem:semicanonical_generation}. If $g = 2$ and $\Delta = 0,$ then the claim follows from
 Lemma ~\ref{lem:genus-2-generation-5}. Finally, if $g > 2$ and $\Delta = 0$, using Lemma ~\ref{lem:semicanonical_generation}, there are no minimal generators in degree $\geq 7$. By Voight and Zurieck-Brown \cite[Theorem 3.2.1]{vzb:stacky}, we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective and so there are also no minimal generators in degree 6. Hence, $R_L$ is generated in degree at most 5.
 \end{proof}
+\fi
 
-The next step is to bound the degrees of the relations of $R_L$. This is done in Proposition ~\ref{prop:relation_11}. The idea of the proof of Proposition ~\ref{prop:relation_11} is to use the basepoint-free pencil trick to show that if a relation lies in a sufficiently high degree, it lies in the ideal generated by the relations in lower degrees. We now fix notation for this ideal generated by lower degrees relations.
+The next step is to bound the degrees of the relations of $R_L$. This is done in Proposition ~\ref{prop:relation-10}. The idea of the proof of Proposition ~\ref{prop:relation-10} is to use the basepoint-free pencil trick to show that if a relation lies in a sufficiently high degree, it lies in the ideal generated by the relations in lower degrees. We now fix notation for this ideal generated by lower degrees relations.
 
 \begin{defn}
 \label{defn:lower-ideal}
-Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K+\Delta$. Choose generators $x_1, \ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1, \ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L, d}$ be the $d$th graded piece of $I_L$ and define
+Let $(X, \Delta, L)$ be a log spin curve of signature $(g;-;\delta)$ with $g \geq 2$ and $\Delta > 0.$ Choose generators $x_1, \ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1, \ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $I_{L, d}$ be the $d$th graded piece of $I_L$ and define
 \[
 	J_{L,d} = \sum_{j = 1}^{d- 1}k[x_1, \ldots, x_n]_j \cdot I_{L,d-j}.
 \]
@@ -2267,29 +2273,20 @@ Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \si
 
 \begin{lem}
 \label{lem:reducing-degree}
-Suppose $X$ is a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K+\Delta$. Choose generators $x_1, \ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1, \ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ be two elements so that $k\phi(s_1) \oplus k\phi(s_2) = V \subseteq H^0(X,2L)$ is basepoint free.
-For any $f \in k[x_1, \ldots, x_n]$ such that
-$$
-\deg f \geq \begin{cases}
-	12 &\text{ if }\Delta = 0\\
-	11 &\text{ if }\Delta > 0
-\end{cases}$$
+Let $(X, \Delta, L)$ be a log spin curve of genus $g \geq 2,$ so that $\Delta > 0.$ Choose generators $x_1, \ldots, x_n$ of $R_L$ so that we obtain a surjection $\phi:k[x_1, \ldots, x_n] \twoheadrightarrow R_L$ with kernel $I_L$. Let $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ be two elements so that $k\phi(s_1) \oplus k\phi(s_2) = V \subseteq H^0(X,2L)$ is basepoint free.
+For any $f \in k[x_1, \ldots, x_n]$ such that $\deg f \leq 11,$
 there exist $g,h \in k[x_1, \ldots, x_n]_{d-2}$ so that $s_1g + s_2h = f \bmod J_{L,d}.$
 \end{lem}
 \begin{proof}
 % Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1),\phi(s_2) \in H^0(2L)$ generate a base point free pencil $V = k \phi(s_1) \oplus k \phi(s_2)\subseteq H^0(X,2L)$.
-By Lemma ~\ref{lem:generation_5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Then, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in k[x_1, \ldots, x_n]_{d-\deg x_i}$.
+By Lemma ~\ref{lem:generation-5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Then, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in k[x_1, \ldots, x_n]_{d-\deg x_i}$.
 We will next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in k[x_1, \ldots, x_n]_{d - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{L,\deg a_i}.$ 
-By Lemma ~\ref{lem:semicanonical_generation},
+By Lemma ~\ref{lem:generation-5},
 \begin{align*}
 	V \otimes H^0((\deg f-\deg x_i -2)L) \rightarrow H^0((\deg f-\deg x_i)L)
 \end{align*}
-is surjective, since the restriction on $\deg f$ guarantees
-$$
-\deg f- \deg a_i -2 \geq \begin{cases}
-	5 &\text{ if }\Delta = 0,\\
-	4 &\text{ if }\Delta > 0.
-\end{cases}$$
+is surjective, and $\deg f \leq 11$ guarantees
+$\deg f- \deg a_i -2 \geq 4.$
 In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Choosing $g_i,h_i$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha,\phi(h_i) = \beta$, we have $a_i \equiv s_1 g_i + s_2 h_i \bmod I_{L,\deg a_i}$, as claimed.
 
 Finally, we may then take $g = \sum_{i}^{}g_i x_i,h = \sum_{i}^{}h_i x_i,$ so that 
@@ -2300,16 +2297,11 @@ Finally, we may then take $g = \sum_{i}^{}g_i x_i,h = \sum_{i}^{}h_i x_i,$ so th
 \end{proof}
 
 \begin{prop}
-\label{prop:relation_11}
-Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2L \sim K + \Delta$. Then $I_L$ is generated in degree at most $11$ if $\Delta = 0$ and degree at most $10$ if $\Delta > 0$.
+\label{prop:relation-10}
+Let $(X, \Delta, L)$ be a log spin curve of signature $(g;-;\delta)$ with $g \geq 2$ and $\Delta > 0.$ Then $I_L$ is generated in degree at most degree at most $10.$
 \end{prop}
 \begin{proof}
-Suppose $f \in I_L$ with 
-$$
-\deg f \geq \begin{cases}
-	12 &\text{ if }\Delta = 0\\
-	11 &\text{ if }\Delta > 0.
-\end{cases}$$
+Suppose $f \in I_L$ with $\deg f \geq 11$.
 To complete the proof, it suffices to show $f \in I_{L,d}'$. By Lemma ~\ref{lem:reducing-degree}, it suffices to show $s_1g+s_2h \in I_{L,d}'$ where $\phi(s_1),\phi(s_2) \in H^0(X,2L)$ are two sections so that $k\phi(s_1) \oplus k \phi(s_2) = V \subseteq H^0(K)$ is basepoint free. Consider the map
 $$\begin{tikzcd}
 V \otimes H^0((\deg f - 2)L) \ar {r}{f} & H^0((\deg f)L),
@@ -2321,20 +2313,32 @@ So, by the explicit isomorphism given in the proof of the basepoint-free pencil 
 \end{align*}
 \end{proof}
 
+\iffalse
 \begin{rem}
 \label{rem:relations_generation_ten}
 Let $X$ be a curve of genus $g = 2$ and $P$ a closed point of $X$. In \cite{neves:halfcan}[Theorem III.19], Neves shows that if $L = P$, then $R_L$ has a
 relation in degree 10. Therefore, the bound from Proposition
-~\ref{prop:relation_11}, that $I_L$ is generated in degree at most
+~\ref{prop:relation-10}, that $I_L$ is generated in degree at most
 11 if $\Delta = 0$ and at most $10$ if $\Delta > 0,$ is close to
 sharp.
 \end{rem}
+\fi
+
+We now concisely summarize what we have shown.
+
+\begin{cor}
+\label{cor:g-2-presentation-bound}
+Let $(X, \Delta, L)$ be a log spin curve of signature $(g;-;\delta)$ with $g \geq 2$. Then $X$ has minimal generators in degree at most 5 and minimal relations in degree at most 10.
+\end{cor}
+\begin{proof}
+If $\Delta =0$, the result is immediate from Reid \todo{cite Reid}. Otherwise, if $\Delta > 0$, the bound on the degrees of minimal generators follows from Lemma ~\ref{lem:generation-5}, while the bound on the degrees of minimal relations follows from Proposition ~\ref{prop:relation-10}.
+\end{proof}
 
 
 \ssec{Main Theorem for High Genus}
 \label{ssec:g-high-main}
 
-We are ready to prove our main theorem ~\ref{thm:main} in the case $g \geq 2$. The idea of the proof is to use Lemma ~\ref{lem:generation_5} and Proposition ~\ref{prop:relation_11} to complete the base case when $L = L_X$ and then apply Lemmas ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:raise-stacky-order} to complete the induction step.
+We are ready to prove our main theorem ~\ref{thm:main} in the case $g \geq 2$. The idea of the proof is to use Lemma ~\ref{lem:generation-5} and Proposition ~\ref{prop:relation-10} to complete the base case when $L = L_X$ and then apply Lemmas ~\ref{lem:sat-1}, ~\ref{lem:sat-2}, and ~\ref{lem:raise-stacky-order} to complete the induction step.
 
 \begin{thm}
 \label{thm:g-high-main}
@@ -2348,10 +2352,7 @@ log spin canonical ring
 
 \noindent
 is generated as a $k$-algebra by elements of degree at most $e =
-\max(5, e_1, \ldots, e_r)$. If $\Delta = 0,$ then 
-$R(\sx,\Delta, \halfcan)$ has minimal relations in degree at most $\max(11, 2e_1,
-\ldots, 2e_r).$ Otherwise, $R(\sx, \Delta, \halfcan)$ has minimal relations in degree at most
-$\max(10, 2e_1, \ldots, 2e_r).$
+\max(5, e_1, \ldots, e_r)$ with minimal relations in degree at most $2e$.
 \end{thm}
 
 %is generated as a $k$-algebra by elements of degree at most $e =
@@ -2363,8 +2364,7 @@ $\max(10, 2e_1, \ldots, 2e_r).$
 \begin{proof}
 As the base case, let $\halfcan_X \in \di X$ satisfy $2\halfcan_X \sim 2 K_X + \Delta$.
 
-By Lemma ~\ref{lem:generation_5} and Proposition
-~\ref{prop:relation_11}, the theorem holds for $(\sx, \Delta,
+By Corollary ~\ref{cor:g-2-presentation-bound}, the theorem holds for $(\sx, \Delta,
 \halfcan_X)$. Next, consider a divisor of the form $\halfcan' =
 \halfcan_X + \frac{1}{3} P_i$. Then, the theorem holds for $(\sx',
 \Delta, \halfcan')$ by Lemma ~\ref{lem:sat-2}
