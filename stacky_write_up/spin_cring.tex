@@ -147,16 +147,14 @@
 \begin{document}
 
 \begin{abstract}
-  The study of rings of modular forms arising from finite-area
-	quotients of the upper-half plane by Fuchsian groups may be
-	translated to log spin canonical rings by the classical
-	results of Kodaira--Spencer. This work describes
+ 	We tightly bound the degrees of minimal
 	generators and relations of spin canonical rings of a stacky
-	curve equipped with an arbitrary log divisor in a
-	generalization of the classical theorems of Max Noether	and Karl
-	Petri. As an application, these results tightly bound the
-	generator and relation degrees for the aforementioned rings
-	of modular forms of arbitrary integral weight.
+	curve equipped with an arbitrary log divisor.  Rings of modular forms arising from finite-area
+	quotients of the upper-half plane by Fuchsian groups may be
+	viewed as log spin canonical rings by the classical
+	results of Kodaira--Spencer. As a consequence, 
+	we obtain a tight bound on the degrees of minimal generators and relations  		
+	for rings of modular forms of arbitrary integral weight.
 \end{abstract}
 
 \maketitle
@@ -322,8 +320,10 @@ detailed in interesting low genus examples by Neves
 Furthermore, the explicit construction of generators and relations also reveals that the bounds given in Theorem ~\ref{thm:main} are tight. That is, in almost all cases, there is a generator of the log spin canonical ring in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. Furthermore, there are many infinite families of cases which have a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$.
 \end{rem}
 
+\todo{I changed the following to incorporate the no odd weight case. Is it ok?}
+
 The main theorem of this paper, Theorem ~\ref{thm:main}, combined with a result of Voight and
-Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky}, provides the following application
+Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky}, together with Voight and Zureick-Brown ~\cite[Theorem 9.3.1]{vzb:stacky} and ~\cite[9.3.1]{vzb:stacky} provide the following application
 to modular forms. Note that the result from Voight and
 Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky} follows almost immediately from the classical work of Kodaira--Spencer
 \cite{kodaira-spencer:deformations}.
@@ -332,7 +332,9 @@ Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky} follows almost immediately from t
 \label{cor:main-mod-forms}
 Let $\Gamma$ be a Fuchsian group and $\sx$ the stacky curve
 associated to $\Gamma \backslash \BH$ with signature $(g; e_1,
-\ldots, e_r; \delta)$. Then, the ring of modular forms
+\ldots, e_r; \delta)$. 
+If $M_k(\Gamma) = 0$ for all odd $k$, then $M(\Gamma)$ is generated in degree at most $3 \cdot\max(3,e_1,\ldots, e_r)$ with relations in degree at most $6 \cdot \max(3,e_1,\ldots, e_r)$.
+If there is some odd $k$ for which $M_k(\Gamma) \neq 0,$ then, the ring of modular forms
 $M(\Gamma)$ is
 generated as a $\BC$-algebra by elements of degree at most $e = \max
  (5, e_1, \ldots , e_r)$ with relations in degree at most $2e,$ so long
@@ -526,26 +528,23 @@ initial ideals, and Gr\"{o}bner bases, see Eisenbud
 \cite[Section 15.9]{eisenbud:comm-alg} and Cox--Little--O'Shea
 \cite[Chapter 2]{cls:ideals-varieties-algorithms}.
 
-First, we give a definition of the graded degree of a monomial
-in a graded polynomial ring.
-\todo{possibly compactify or refer to relations}
+\todo{possibly compactify or refer to relations, Aaron: I think we should almost remove these definitions, and that these shouldn't be in environments. I suspect people will be familiar with them, or be able to look them up.}
+
 \begin{defn}
 \label{defn:monomial-degree}
 Let $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a graded polynomial
 ring and let $\alpha := \prod_{i = 1}^{n} x_{d_i, i}^{f_i} \in
 k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a monomial. Then
-we define
+we define the {\bf degree} of $\alpha$ to be
 \[
-	\deg \alpha := \sum_{i = 1}^{n} d f_i.
+	\deg \alpha := \sum_{i = 1}^{n} d_i f_i.
 \]
 \end{defn}
- 
-Now define the (graded) lexicographic order \textbf{grlex}
-$\prec_{\text{grlex}}$ on a polynomial ring $k[x_{d_1, 1}, \ldots,
-x_{d_n, n}]$ to be the monomial ordering such that:
 
 \begin{defn}
 \label{defn:grlex}
+The {\bf graded lexicographic} order, or {\bf grlex} $\prec_{\text{grlex}}$ on a polynomial ring $k[x_{d_1, 1}, \ldots,
+x_{d_n, n}]$ is defined as follows.
 If $\alpha := \prod_{i = 1}^{n} x_{d_i, i}
 ^{f_i}$ and $\beta := \prod_{i = 1}^{n} x_{d_i, i}^{f_i'}$ are
 monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
@@ -554,33 +553,26 @@ monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
 \begin{equation}
 	\deg \alpha := \sum_{i = 1}^{n} d_i f_i  > \sum_{i = 1}^{n} d_i f_i' =: \deg \beta
 \end{equation}
-or $\alpha$ is larger using the lexicographical ordering event of equal
-degrees:
-
+or
 \begin{equation}
 \label{eqn:grlex-tie}
 	\deg \alpha = \deg \beta \text{ and }
-	\alpha \succ_{\text{lex}} \beta.
+	f_i - f_i' > 0 \text{ for the smallest } i \text{ such that } f_i \neq f_i'.
 \end{equation}
 \end{defn}
 
-We can equip the polynomial ring $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$
-with the (weighted graded) reverse lexicographic order
-\textbf{grevlex} $\prec_{\text{grevlex}}$ as follows:
-
 \begin{defn}
 \label{defn:grevlex}
+The {\bf graded reverse lexicographic order}, or {\bf grevlex} $\prec_{\text{grevlex}}$ is defined as follows.
 If $\alpha := \prod_{i = 1}^{n} x_{d_i, i}
 ^{f_i}$ and $\beta := \prod_{i = 1}^{n} x_{d_i, i}^{f_i'}$ are
 monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
-\succ_{\text{grevlex}} \beta$ if either $\alpha$ has larger degree:
+\succ_{\text{grevlex}} \beta$ if either
 
 \begin{equation}
 	\deg \alpha := \sum_{i = 1}^{n} d_i f_i  > \sum_{i = 1}^{n} d_i f_i' =: \deg \beta
 \end{equation}
-or $\alpha$ has a smaller right-most entry in the event of equal
-degrees:
-
+or
 \begin{equation}
 \label{eqn:grevlex-tie}
 	\deg \alpha = \deg \beta \text{ and }	f_i - f_i' < 0 \text{ for
@@ -595,16 +587,15 @@ Equation ~\ref{eqn:grlex-tie} and Equation ~\ref{eqn:grevlex-tie}.
 
 Our inductive arguments in Section ~\ref{sec:induction} will
 usually have an inclusion $R \supseteq R'$ of log spin canonical
-rings such that $R_\halfcan$ is generated by elements $x_{d_i, i}$ and $R$
+rings such that $R_\halfcan$ is generated by elements $x_{d_i, i}$ \todo{They're usually $x_{i,e_i}$ with the degree in the second position, which is a bit strange. Somehow, I think we might want to switch the ordering here, though it still might be confusing.} and $R$
 is generated over $R_{\halfcan'}$ by elements $y_j$. In these cases, it is
 natural to consider term orders which treat these sets of variables
-separately. We now present the \textbf{block term order} introduced
-by Voight and Zureick-Brown \cite[Section 8.1]{vzb:stacky}.
+separately.
 
 \begin{defn}
 \label{defn:block-order}
-
-Let $k[y_{c_1, 1}, \ldots, y_{c_m, m}]$ and $k[x_{d_1, 1}, \ldots,
+Following Voight and Zureick-Brown \cite[Section 8.1]{vzb:stacky}.
+the \textbf{block term order} is defined as follows. Let $k[y_{c_1, 1}, \ldots, y_{c_m, m}]$ and $k[x_{d_1, 1}, \ldots,
 x_{d_n, n}]$ be weighted polynomial rings with existing term
 orders $\prec_y$ and $\prec_x$, respectively. Let $\alpha :=
 \prod_{j = 1}^{m} y_{c_j, j}^{h_i}$ $\prod_{i = 1}^{n} x_{d_i, i}
@@ -633,20 +624,17 @@ in Section ~\ref{sec:induction} and in the proof of Theorem
 
 \begin{defn}
 \label{defn:initial-term}
-Let $f \in k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a homogeneous
+Let $\prec$ be an ordering on $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ and let $f \in k[x_{d_1, 1}, \ldots, x_{d_n, n}]$ be a homogeneous
 polynomial. The \textbf{initial term} $\initial(f)$ of $f$
 is the largest monomial in the support of $f$ with respect to
 the ordering $\prec$. Furthermore, we set $\initial(0) := 0$.
 \end{defn}
 
-Given a homogeneous ideal $I \subseteq k[x_{d_1, 1}$, $\ldots$,
-$x_{d_n, n}]$, we can now define the \textbf{initial ideal}
-$\initial(I)$ of $I$.
 
 \begin{defn}
 \label{defn:initial-ideal}
 Let $I$ be a homogeneous ideal of $k[x_{d_1, 1}$, $\ldots$,
-$x_{d_n, n}]$. Then the initial ideal $\initial(I)$ of $I$ is
+$x_{d_n, n}]$. Then the {\bf initial ideal} $\initial(I)$ of $I$ is
 the ideal generated by the initial terms of homogeneous polynomials
 in $I$:
 \[
@@ -654,15 +642,15 @@ in $I$:
 \]
 \end{defn}
 
-Furthermore, we will use Gr\"{o}bner bases, which are bases
-for these initial ideals and have many useful properties.
+%Furthermore, we will use Gr\"{o}bner bases, which are bases
+%for these initial ideals and have many useful properties.
 
 \begin{defn}
 \label{defn:grobner-basis}
 Let $I$ be a homogeneous ideal of $k[x_{d_1, 1}$, $\ldots$,
 $x_{d_n, n}]$. A \textbf{Gr\"obner basis} for $I$, also known as a
 \textbf{standard basis} for $I$, is a set of elements in $I$
-such that their initial terms form a basis for the initial
+such that their initial terms generate the initial
 ideal of $I$.
 \end{defn}
 
@@ -870,7 +858,7 @@ all degrees $d \geq 0$. In particular,
 
 \begin{align*}
 	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / I)_d &=
-	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}])	/ in_\prec(I))_d \\
+	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}])	/ \initial_\prec(I))_d \\
 	&= \dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle
 	x_{7, 2}^2, x_{3, 1} x_{7, 2} \rangle
 \end{align*}
@@ -1066,7 +1054,6 @@ curve with the same log divisor, the same stacky points, and some subset of the 
 \label{ssec:add-points}
 %In this section, we prove various inductive statements under the following setup:
 %Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log spin canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d \in\BN$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
-\todo{Pervasive change: Make sure all $\initial(I)$ are written as $\initial(I)$. We can even build this in to the macro possibly? }
 Before proving three lemmas that allow us to inductively add points to the support of a divisor, we give a criterion to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m] \to R_D$.  This criterion will be used repeatedly to show that a given homogeneous ideal is in fact the ideal of relations.
 
 
@@ -1121,7 +1108,7 @@ To apply Lemma \ref{lem:relations_from_generators_induction}, we will need an ap
 The following definition provides the necessary ordering for the Lemma \ref{lem:sat-1}.
 \begin{defn}
 \label{defn:graded-p-lex}
-Suppose $\halfcan$ is a divisor of $X$ such that $R_\halfcan$ is generated by $x_1, \ldots x_m$.  Then we have a map $\phi: k[z_1, \ldots z_m] \rightarrow R_\halfcan, z_i\mapsto x_i$. \todo{Do we need to instantiate the $z_i$.  If so, what is the best way to do so.  Saying for indeterminates $z_1, \ldots, z_m$ seems excessive. Aaron: No, what you say is great!}  If $P$ is a point in $X$, then $\phi$ defines a graded $P$ lexicographic order {\bf{graded $P$-lex}} on $k[z_1, \ldots, z_m]$ as follows.
+Suppose $\halfcan$ is a divisor of $X$ such that $R_\halfcan$ is generated by $x_1, \ldots x_m$.  Then we have a map $\phi: k[z_1, \ldots z_m] \rightarrow R_\halfcan, z_i\mapsto x_i$. If $P$ is a point in $X$, then $\phi$ defines a graded $P$ lexicographic order {\bf{graded $P$-lex}} on $k[z_1, \ldots, z_m]$ as follows.
 If $f=\prod_{i=1}^m {z_i}^{q_i}$ and $g=\prod_{i=1}^m {z_i}^{r_i}$ with $f \neq g,$ then $f\prec g$ if one of the following holds:
 \begin{enumerate}
 \item $\deg(f) < \deg(g)$
@@ -1148,7 +1135,6 @@ Moreover, if $\frac{\alpha}{\beta}\ge 0$, then the non-negative best lower appro
 \]
 Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\frac{\alpha}{\beta}=\frac{14}{5}$.
 
-\todo{Peter: Do we want this as an [H] figure; this seems a little non-standard and can create problems with display.  Nonetheless, I copied this format to match the figure in a later section. Aaron: I'm fine with not making it an [H]}
 \begin{figure}
 \includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
 \caption{This figure shows each non-negative best lower approximation of $\frac{14}{5}.$ Each ``$\bullet$'' denotes a best lower approximation and each $\circ$ denotes a lattice point below $5y=14x$ which is not a best lower approximation.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}\label{fig:s14/5-lattice}
@@ -2045,14 +2031,12 @@ only if for all $j \in J$ we have
 	-\ord_{Q_j}
 ^{\halfcan_X'}(f) \leq \deg (f) \left( \subhalf {e_j'} \right).
 \end{align}
-\todo{Peter: I understand why this should be true, although its not clear to me that there it easily follows.  Maybe we should explain it a little as to not confuse the reader.}
+\todo{Peter: I understand why this should be true, although its not clear to me that there it easily follows.  Maybe we should explain it a little as to not confuse the reader. Aaron: Can we ask David, this was clear to me in his paper, and he also didn't include it.}
 
 \noindent
-We now apply Equation ~\eqref{eqn:order-degree} with $f = y_{i, e_i}z$, to check $y_{i,e_i}z \in R'$ in the three cases: 
+Now fix $i \in J$. We check Inequality ~\eqref{eqn:order-degree} holds with $f = y_{i, e_i}z$, implying $y_{i,e_i}z \in R'$ in the three following cases: 
 %$j \notin \{i \} \cup S(i, 0)$, $j = i,$ and $j \in S(i, 0)$.
 
-
-\todo{Peter: be clear with this that we aren't checking $y_{i,e_i}z\in R'$ for various cases, but rather are checking that equation 4.6 is met in various cases, giving $y_{i,e_i}z\in R'$ for a specific fixed $i$.  }
 \vskip.1in
 \noindent
 {\sf Case 1: $j \notin \{i \} \cup S(i,0).$}
@@ -2144,7 +2128,6 @@ We now consider the case when the genus is at least 2. In this case, we are able
 
 \ssec{Bounds on Generators and Relations in High Genus}
 \label{ssec:bounds-high-genus}
-\todo{Make edits that you want to further incorporate Reid's paper}
 
 The main result of this subsection is that for a log spin curve with no stacky points $(X \Delta, L)$, the spin canonical ring $R_\halfcan$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[Theorem 3.4]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Throughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ so $H^0(X, 2L)$ is basepoint-free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
 
@@ -2271,7 +2254,7 @@ Let $(X, \Delta, \halfcan)$ be a log spin curve of genus $g \geq 2,$ so
 that $\Delta > 0.$ Choose generators $x_1, \ldots, x_n$ of $R_\halfcan$ so
 that we obtain a surjection $\phi: k[x_1, \ldots, x_n]
 \twoheadrightarrow R_\halfcan$ with kernel $I_L$. Let $s_1, s_2 \in k[x_1,
-\ldots, x_n]_2$ be two elements so that $\newspan(\phi(s_1), \phi(s_2))
+\ldots, x_n]_2$ be two elements so that $\: \newspan(\phi(s_1), \phi(s_2))
 = V \subseteq H^0(X, 2\halfcan)$ is basepoint-free. For any $f \in
 k[x_1, \ldots, x_n]$ such that $\deg f \geq 11,$ there exist $g, h \in
 k[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h \equiv f \bmod J_{\halfcan, d}.$
@@ -2285,9 +2268,12 @@ By Lemma ~\ref{lem:generation-5},
 \begin{align*}
 	V \otimes H^0((\deg f-\deg x_i -2)\halfcan) \rightarrow H^0((\deg f-\deg x_i)\halfcan)
 \end{align*}
-is surjective, and $\deg f \geq 11$ implies that
-$\deg a_i =\deg f - \deg x_i -2 \geq 4.$
-In particular, we can write $\phi(a_i) = \phi(s_1) \alpha + \phi(s_1) \cdot \beta$. Choosing $g_i,h_i\in k[x_1, \ldots, x_n]_{\deg(a_i)-2}$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha, \phi(h_i) = \beta$, we have $a_i \equiv s_1 g_i + s_2 h_i \bmod I_{\halfcan,\deg a_i}$, as claimed.  \todo{Peter: Maybe this paragraph could be made a little easier to read?}
+is surjective because $\deg f \geq 11$ implies that
+$$\deg a_i =\deg f - \deg x_i -2 \geq 4.$$
+In particular, there exist $\alpha,\beta \in R_L$ so that
+$$\phi(a_i) = \phi(s_1) \cdot \alpha + \phi(s_1) \cdot \beta.$$ 
+Choosing $g_i,h_i\in k[x_1, \ldots, x_n]_{\deg(a_i)-2}$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha, \phi(h_i) = \beta$, we have 
+$$a_i \equiv s_1 g_i + s_2 h_i \bmod I_{\halfcan,\deg a_i},$$ as claimed.
 
 Finally, we may then take $g = \sum_{i}^{}g_i x_i, \: h = \sum_{i}^{}h_i x_i,$ so that 
 \begin{align*}
@@ -2395,12 +2381,9 @@ By Corollary ~\ref{cor:g-2-presentation-bound}, the theorem holds for $(\sx, \De
 Next, suppose the theorem holds for $\halfcan' = \halfcan_X+ \sum_{i=1}^{r-1} \frac{1}{3}P_i$ and take a divisor of the form $\halfcan = \halfcan_X + \sum_{i=1}^r \frac{1}{3} P_i$, which means that $\halfcan = \halfcan' + \frac{1}{3} P_r$.  If $P_r$ is a basepoint of $L'$, then the theorem holds for $\halfcan$ by Lemma ~\ref{lem:sat-2}.  
 Otherwise, $P_r$ is not a basepoint of $\halfcan'$, meaning that in particular $R_{\halfcan'}$ is saturated in 1.
 Therefore, since $P_r$ is a not basepoint of $\halfcan'$, Equation
-~\ref{eqn:deg1-sat-ind} holds by Riemann Roch
+~\ref{eqn:deg1-sat-ind} holds by Riemann Roch.
 % since $\frac{\beta}{\alpha} = \frac{3}{1}=3$. 
-In this case, we claim the theorem holds for $L$ by Lemma ~\ref{lem:sat-1}.  In particular, the bound on the generators holds by part (a) of Lemmas
-~\ref{lem:sat-2} and ~\ref{lem:sat-1},
-and the bound on the relations holds by part (b) of Lemmas
-~\ref{lem:sat-2} and ~\ref{lem:sat-1}.\todo{Peter: Can we get rid of this last sentence?}
+In this case, the theorem holds for $L$ by Lemma ~\ref{lem:sat-1}.
 
 We have thus shown the theorem for all $(\sx, \Delta, \halfcan)$ with $g\ge 2$ and signature $(g;3,\ldots, 3;\delta)$. Therefore, by Corollary 
 ~\ref{cor:raise-stacky-order}, this theorem 
@@ -3062,8 +3045,6 @@ This paper leaves open many directions for further research.
 			generated in degree at most 3 with relations in degree at most 6, 
 			apart from a well characterized list of exceptions.
 			\end{rem}
-
-	\todo{This last one doesn't seem particularly interesting. Should we remove it?}
 	\item While Theorem ~\ref{thm:main} gives a minimal set of 
 		generators for the log spin canonical ring $R_\halfcan,$ the set of 
 		relations is not minimal. In many of the $g = 0$ and $g=1$ cases, 
