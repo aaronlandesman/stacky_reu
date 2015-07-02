@@ -2963,13 +2963,13 @@ $2e$.
 \section{Further Research}
 \label{sec:further-questions}
 
-This paper leaves open many directions for further research.
+This paper leaves open many directions for further research.\todo{Peter: This sentence sounds weird.  It's also kind of not true; as David said, we are kind of closing the topic}
 
 \begin{enumerate}
 	\item One direction for further research is to 
 		extend the results of this paper to divisors $D \in \di \sx$ on a 
 		stacky curve $\sx,$ where $nD \sim K.$ The canonical rings of such 
-		divisors would translate to rings of fractional weight modular 
+		divisors translate to rings of fractional weight ($\frac{2}{n}$) modular 
 		forms. As defined in Adler and Ramanan (in the passage immediately 
 		following \cite[Corollary 24.5]{adler:moduli}), a {\bf modular form 
 		of fractional weight} $\frac{2a}{n}$ on $X(p)$ is a section of a 
@@ -2982,60 +2982,66 @@ This paper leaves open many directions for further research.
 		shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e
 		_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of 
 		fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3
-		^{e_3} = 0$.
+		^{e_3} = 0$.  \todo{Peter: I don't know if it is so worth while giving an explicit definition and precisely defining the work already done.  A general outline might suffice and be easier/shorter to read.}
 
-		Having motivated the importance of fractional weight modular forms, we pose the following question:
+		This motivates the following question:
 
+\todo{Peter: Would this be better as a conjecture?}
 		\begin{question}
 		\label{ques:fractional-weight}
-			If $\sx$ is a stacky curve and $D \in \di \sx$ with $nD \sim K,$ 
+			If $\sx$ is a stacky curve and $D \in \di \sx$ with $nD \sim K$, 
 			where $K$ is the canonical divisor of $\sx$, can one bound the 
 			degrees of generators and relations of $R_D$?
 		\end{question}
-		Note that that the above question is answered affirmatively in the 
-		case that $\sx$ has genus $0$ and $D$ is effective, as follows by 
-		inductively applying Lemma ~\ref{lem:sat-1}: If $\sx$ has signature 
+		When $g=0$ and $D$ is effective, inductively applying Lemma ~\ref{lem:sat-1}  
+		gives an affirmative answer to this question: If $\sx$ has signature 
 		$(g;e_1, \ldots, e_r; \delta)$ then $D$ is generated in degree at 
 		most $e = \max(e_1, \ldots, e_r)$ with relations in degree at most
-		$2e$. Additionally, it may be possible to modify the proof of Lemma
+		$2e$. 
+		It may be possible to modify the proof of Lemma
 		~\ref{lem:raise-stacky-order} to extend to the setting of fractional 
-		weight modular forms. Given suitable generalizations of these 
-		lemmas, one may be able to approach the problem of finding 
-		generators and relations for fractional weight modular forms using 
-		techniques similar to those in this paper.
+		weight modular forms. 
+		Suitable generalizations of the 
+		lemmas of Section ~\ref{sec:induction} might allow one to 
+		follow similar questions to this paper and provide a general 
+		answer to Question ~\ref{ques:fractional-weight}.
 
-	\item In Voight and Zureick Brown \cite[Definition 2.2.7]{vzb:stacky},
-		the notion of a generic initial ideal is defined, which 
+
+	\item Voight and Zureick Brown define
+		the notion of a generic initial ideal \cite[Definition 2.2.7]{vzb:stacky}, which 
 		encapsulates the idea of whether the relations for $R_\halfcan$ are 
-		generically chosen, in a precise sense. The proof of Theorem
-		~\ref{thm:main} decidedly does not yield a generic initial ideal, 
-		as generators and relations are constructed in a highly nongeneric 
-		manner. In particular, Lemma ~\ref{lem:raise-stacky-order} 
+		generically chosen, in a precise sense. 
+		The proof of Theorem
+		~\ref{thm:main} is decidedly non-generic. 
+		In particular, Lemma ~\ref{lem:raise-stacky-order} 
 		constructs generators with non-maximal pole orders at certain 
 		points, making the relations non-generic. 
 		\begin{question}
 		\label{ques:generic-initial}
 			If $(\sx,\Delta,L)$ is a log spin curve with signature $\sigma$,
 			does there exist a function $\sigma \mapsto d(\sigma)$ so that
-			the generic initial ideal {\rm(} with some specified ordering{\rm)}
+			the generic initial ideal {\rm(}with some specified ordering{\rm)}
 			is generated in degree at most $d(\sigma)$? Can one write down the
 			generic initial ideal explicitly?
-		\end{question}
+		\end{question}\todo{Peter: This whole question is kind of confusing.  I don't know what it is trying to say.}
 
 	\item As noted in Remark ~\ref{rem:explicit-generators}, the 
-		proof of Theorem ~\ref{thm:main} given in this paper gives an 
+		proof of Theorem ~\ref{thm:main} 
+		%given in this paper 
+		gives an 
 		explicit procedure for computing the generators and relations of $R_
-		L$ when the genus of $\sx$ is $0$ or $1$.
+		\halfcan$ when the genus of $\sx$ \todo{Peter: Minor note: should we say genus of $\sx$ or genus of $X$; did we actually define that a genus of a stacky curve equals that of its coarse space?} is $0$ or $1$.  \todo{Peter: This question also seems like it might be the most important (as far as modular forms applications go.  Maybe we should put it first?}
 		\begin{question}
 		\label{ques:algorithm}
-			Can one give an algorithm for explicitly computing the generators 
+			Is there an explicit procedure for computing the generators 
 			and relations for an arbitrary genus $g \geq 2$ curve?
 		\end{question}
 		Suppose the generators and relations of $R_{\halfcan_X}$ are known, 
 		where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the 
 		coarse space of $\sx$, and $L_X \leq L$ is a spin canonical divisor 
 		of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an 
-		algorithm for determining the generators of $L$. This raises the 
+		algorithm for inductively determining the generators of $L$. 
+		This reduces Question \ref{ques:algorithm} to the 
 		following Petri-like question:
 		\begin{question}
 		\label{ques:spin-canonical-petri}
@@ -3051,35 +3057,41 @@ This paper leaves open many directions for further research.
 		generators and relations for $R_\halfcan$ on a stacky curve, essentially 
 		by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
 \todo{Aaron, I tried to edit the following question, but it still seems a bit imprecise, and the question in particular is a bit of a long sentence.}
+\todo{Peter @ Aaron: I think the last sentence of the question can be removed; generic isn't relevant in this part of further questions (it was relevant in part (2)).  Also the sentence after the question can be removed.}
 	\item In Subsection \ref{ssec:bounds-high-genus}, we reference 
 		the work of Reid \cite[Theorem 3.4]{reid:infinitesimal}. We use his 
-		proof of that the 
+		proof that the 
 		spin canonical ring is generated in degree at most 5 with
 		relations in degree at most 10 in the 			
 		non-log, non-stacky case when genus is at least 2. We extend this 
 		bound of 5 and 10 to the log case, and then apply our inductive 
-		lemmas to add stacky points and obtain bounds of $e = \max(5,e_1, \ldots, e_r)$ and $2e$.  Reid \cite[Theorem 3.4]{reid:infinitesimal} in fact proves something slightly stronger: that in 
+		lemmas to add stacky points and obtain bounds of $e = \max(5,e_1, \ldots, e_r)$ and $2e$.  However, Reid in fact proves something slightly stronger \cite[Theorem 3.4]{reid:infinitesimal}: that in 
 		most cases his bound is actually 3 and 6 with well-characterized 
 		exceptions.
-		\begin{question}\label{ques:reduce-5,10-to-4,8}
-			In the case that the genus $g \geq 2,$ can we reduce the bounds in Theorem \ref{thm:main} on 
-			the degrees of generation and relations from $e = \max(5,e_1,\ldots, e_r)$ and $\max(10, 2e_1, \ldots, 2e_r)$ to $\max(4,e_1, \ldots, e_r)$ and $
-			\max(8, 2e_1, \ldots, 2e_r),$ apart from a finite list of exceptions?
-		\end{question}
+		Generalizing this slightly stronger bound to the (non-stacky) log case case would allow us to inductively apply the lemmas from Section ~\ref{sec:induction} and improve Theorem ~\ref{thm:main} as follows:
+		\begin{conjecture}\label{ques:reduce-5,10-to-4,8}
+			When $g \geq 2,$ the bounds in Theorem \ref{thm:main} on 
+			the degrees of generation and relations can be reduced from 
+			$e = \max(5,e_1,\ldots, e_r)$ and $\max(10, 2e_1, \ldots, 2e_r)$ to 
+			$e'=\max(4,e_1, \ldots, e_r)$ and $2e'$, 
+			apart from a finite list of exceptions?
+		\end{conjecture}
+		\todo{Peter: I don't like a finite list of exceptions.  The list contains infinitely many non-isomorphic stacky curves.  Finite family might also be imperfect.  Can we say except when $g=2$ (I believe there will be infinitely many counterexamples there) or it lies in a finite list of exception?  Do we believe that to be true?}
 		\begin{rem}\label{rem:reduce-3,6}
-			It is unlikely that this can be reduced further for the case 
-			of stacky curves, because Lemma \ref{lem:sat-2}, which allows 
-			us to add a stacky point in genus $g > 0$ saturated at 2, 
+			It is unlikely that these bounds can be reduced further to 
+			$e''=\max(3, e_1, \ldots, e_r)$ and $2e''$, 
+			because Lemma \ref{lem:sat-2}'s construction always
 			requires a generator in degree 4 and potentially a relation in 
-			degree 8, even when inductively adding on stacky points of 
-			stabilizer order 3. However, perhaps in the non-stacky case, one 
-			may be able able to generalize the result of Reid \cite[Theorem 3.4
-			]{reid:infinitesimal} to show that log spin canonical rings can be 
-			generated in degree at most 3 with relations in degree at most 6, 
-			apart from a well characterized list of exceptions.
+			degree 8, when adding a stacky point with stabilizer order 3. 
+%			Perhaps in the non-stacky case, one 
+%			may be able able to generalize the result of Reid \cite[Theorem 3.4
+%			]{reid:infinitesimal} to show that log spin canonical rings can be 
+%			generated in degree at most 3 with relations in degree at most 6, 
+%			apart from a well characterized list of exceptions.
 			\end{rem}
 	\item While Theorem ~\ref{thm:main} gives a minimal set of 
-		generators for the log spin canonical ring $R_\halfcan,$ the set of 
+		generators \todo{Peter: I believe this is actually not true.  If $R_{\halfcan'}$ is minimally generated by $x_1, \ldots x_m$ and $R_\halfcan$ is generated by $y_1, \ldots, y_n$ over $R_{\halfcan'}$, then $R_{\halfcan}$ is {\emph{generated}} by $x_1, \ldots, x_m, y_1, \ldots y_n$ but not necessarily minimally.  It's possible to have something like $y_1y_3-y_2^2=x_i$.}
+		for the log spin canonical ring $R_\halfcan,$ the set of 
 		relations is not minimal. In many of the $g = 0$ and $g=1$ cases, 
 		it is not too difficult to see that our inductive procedure also 
 		yields a minimal set of relations for $R_\halfcan$. One might investigate 
@@ -3090,17 +3102,16 @@ This paper leaves open many directions for further research.
 %%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Acknowledgments}
-We are grateful to David Zureick-Brown for introducing us to this
-field of study, providing incredibly helpful guidance, and being an
+We are grateful to David Zureick-Brown for introducing us to the study of stacky canonical rings, providing invaluable guidance, and being \todo{Peter: using passive voice (i.e. ``being'') makes this sound kind of generic} an
 excellent project mentor. We also thank Ken Ono and the Emory 
 University Number Theory REU for arranging our project and 
 providing a great environment for mathematical learning and 
-collaboration. We thank Jorge Sentieiro Neves for pointing out the
-bound given by Reid's work on the maximal degrees of minimal
+collaboration. \todo{Peter: Does it make sense to thank the REU? Ken essentially is the REU.} We thank Jorge Sentieiro Neves for pointing out the
+bounds given by Reid's work on the maximal degrees of minimal
 generators and relations of spin canonical rings in high genera.
-Finally, we gratefully acknowledge that our research was
-financially supported by NSF Grant Award Number 1250467 via the
-Emory University Number Theory REU. We deeply appreciate all of the
+Finally, we gratefully acknowledge the financial support given by NSF Grant Award Number 1250467 via the
+Emory University Number Theory REU. 
+We deeply appreciate all of the
 support that has made our work possible.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
