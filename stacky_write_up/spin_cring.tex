@@ -362,8 +362,8 @@ The remainder of the paper will be primarily devoted to proving
 Theorem ~\ref{thm:main}. The idea of the
 proof will be to induct on the stabilizer order and number of stacky points. To this end, we first review important background in
 Section ~\ref{sec:background}. Then, we develop various inductive
-tools in Section ~\ref{sec:induction}. In Sections ~\ref{sec:g_high},
-~\ref{sec:g_1}, and ~\ref{sec:g_0}, we prove Theorem
+tools in Section ~\ref{sec:induction}. In Sections ~\ref{sec:g-high},
+~\ref{sec:g-1}, and ~\ref{sec:g-0}, we prove Theorem
 ~\ref{thm:main} in the genus $ g \geq 2$, genus
 $g = 1$, and genus $g = 0$ cases respectively. Finally, in Section
 ~\ref{sec:further-questions}, we pose several questions for future
@@ -685,17 +685,18 @@ to be {\bf admissible} if $R'$ admits a presentation
 with each $y_{i, e_i'}$ viewed in $R'$ through the image of this isomorphism and such that for each $i \in J$ such that the following
 three conditions hold:
 \begin{enumerate}
-	\item[\customlabel{Ad-i}{(Ad-i)}] First, 
-	\begin{align*}
-	\deg y_{e_i'} &= e_i'  &\text{ and } &&-\ord_{Q_i}^{\halfcan_X'}(y_{i, e_i'})
-		= \frac{e_i'- 1}{2}.
-	\end{align*}
-		\item[\customlabel{Ad-ii}{(Ad-ii)}] Second, every generator $z \in \{x_1, \ldots, x_m\} \cup \{y_{j,e_ij'}: j\in J - \{i\} \}$ satisfies
+	\item[\customlabel{custom:Ad-i}{(Ad-i)}] First, 
 		\begin{align*}
-			\frac{-\ord_{Q_i}
-^{\halfcan_X'}(z)}{\deg z} < \subhalf {e_i'}.
+		\deg y_{e_i'} &= e_i'  &\text{ and } &&-\ord_{Q_i}^{\halfcan_X'}(y_{i, e_i'})
+			= \frac{e_i'- 1}{2}.
 		\end{align*}
-	\item[\customlabel{Ad-iii}{(Ad-iii)}] Third, we have
+	\item[\customlabel{custom:Ad-ii}{(Ad-ii)}] Second, every generator $z 
+		\in \{x_1, \ldots, x_m\} \cup \{y_{j, e_i'}: j\in J - \{i\} \}$ 
+		satisfies
+		\begin{align*}
+			\frac{-\ord_{Q_i}^{\halfcan_X'}(z)}{\deg z} < \subhalf {e_i'}.
+		\end{align*}
+	\item[\customlabel{custom:Ad-iii}{(Ad-iii)}] Third, we have
 		\begin{align*}
 			\deg \lfloor e_i L' \rfloor \geq \max(2g - 1,0) + \max_{d \geq 0} \# S_{\sigma, J}(i, d)
 		\end{align*}
@@ -784,7 +785,7 @@ to the generator with maximal pole order at $P_2$ and $x_{7, 2}$
 correspond to the generator with maximal pole order at $P_3$. Use
 the presentation given above with $y _{2, e_2'} := x_{7, 1}$ and
 $y_{3, e_3'} :=  x_{7, 2}$. We see that it immediately satisfies
-\ref{Ad-i} of Definition ~\ref{defn:admissible}. Next we check \ref{Ad-ii} We may also choose
+\ref{custom:Ad-i} of Definition ~\ref{defn:admissible}. Next we check \ref{custom:Ad-ii} We may also choose
 pole orders of the generators such that $y_{i, e_i'}$ is the only
 generator lying on the line $-ord_{P_i}(z) = \deg z \frac{3d}{7}$
 in the $(\deg z, -ord_{P_i}(z))$  lattice and with the other
@@ -805,7 +806,7 @@ $i, j \in J = \{2, 3\}$ such that $j \neq i$ and for all $d \geq
 0$. Thus, $s_{\sigma, J}(i, d) = \emptyset$ for each $i \in J$.
 Furthermore, $\deg \lfloor e_i \halfcan \rfloor = \deg \lfloor 9
 \halfcan \rfloor = 2 \lfloor \frac{4 \cdot 9}{9} \rfloor + \lfloor
-\frac{9}{3} \rfloor - 9 = 2$, so \ref{Ad-iii} is satisfied and
+\frac{9}{3} \rfloor - 9 = 2$, so \ref{custom:Ad-iii} is satisfied and
 $(\sigma, \sx', J)$ is admissible.
 
 %Let $(-ord_{P_1}(x_j)$, $-ord_{P_2}(x_j)$, $-ord_{P_3}(x_j))$
@@ -889,15 +890,22 @@ Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\h
 Then, there exist constants $\alpha,\beta,\gamma \in k$ so that 
 $R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zeros and poles. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
 
-We next check $(\sx', \halfcan',\{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, \ref{Ad-i} holds. We next check \ref{Ad-ii} for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
+We next check $(\sx', \halfcan',\{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, \ref{custom:Ad-i} holds. We next check \ref{custom:Ad-ii} for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
 $$
 \frac{-\ord_{P_1}(z)}{\ord(z)} = \begin{cases}
 	0 &\text{ if }z \in \{u, y_3\}\\
 	\frac{1}{4} &\text{ if }z = y_4
 \end{cases}.$$
-Since $0 < \frac{1}{4} < \frac{1}{3}$, \ref{Ad-ii} holds.
-Finally, to check \ref{Ad-iii}, note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = 2 \cdot 1 - 1 + 0$.
+Since $0 < \frac{1}{4} < \frac{1}{3}$, \ref{custom:Ad-ii} holds.
+Finally, to check \ref{custom:Ad-iii}, note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = 2 \cdot 1 - 1 + 0$.
 \end{example}
+
+\begin{rem}
+\label{rem:base-0-377}
+Example ~\ref{eg:base-0-377} is one of the inductive base cases
+used in the genus zero case (Section ~\ref{sec:g-0}) as
+listed in Table ~\ref{table:g-0-base-cases}.
+\end{rem}
 
 \begin{example}
 \label{eg:exception-1-5}
@@ -1059,7 +1067,7 @@ $R_{\halfcan'}$.  Let $I'$ and $I$ be the ideals relations of $\phi':k[x_1, \ldo
 Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T\subseteq R_\halfcan-(S\cup R_\halfcan')$, and a monomial ordering $\prec$ such 
 \begin{enumerate}
 \item $S$ forms a $k$-basis for $R_\halfcan$ over $R_\halfcan'$
-\item $T\succ S\succ k[x_1, \ldots, x_n]$ {\rm(}meaning all monomials in $T$ are bigger than all monomials in $S,$ which are bigger than all monomials in $k[x_1, \ldots, x_n]${\rm)}
+\item $T \succ S\succ k[x_1, \ldots, x_n]$ {\rm(}meaning all monomials in $T$ are bigger than all monomials in $S,$ which are bigger than all monomials in $k[x_1, \ldots, x_n]${\rm)}
 \item All monomials in $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ lie in 
 \begin{align*}
 	S \; \cup\; \langle T\rangle \; \cup \; \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[x_1, \ldots, x_m]
@@ -1181,11 +1189,12 @@ Then,
 	the set of monomials of the form $\prod_{j = 1}^{i} y_j^{a_j}$ with
 	$a_j \in \BN_{\ge 0}$ such that
 	\begin{enumerate}
-		\item[(*)] $\sum_{j=1}^i a_j c_j \ge c_{i+1}$, \\
-		\item[(**)] there does not exist $(b_1, \ldots b_i) \ne (a_1,
+		\item[\customlabel{custom:sat-1-*}{(*)}] $\sum_{j = 1}^i a_j c_j \ge c_{i+1}$, \\
+		\item[\customlabel{custom:sat-1-**}{(**)}] there does not exist $(b_1, \ldots b_i) \ne (a_1,
 			\ldots a_i)$ with all $b_j \le a_j$ and $\sum_{j = 1}^i b_j
 			c_j \ge	c_{i + 1}$, \\
-		\item[(***)] there does not exist $r<i$ such that $\sum_{j=1}^r y_j^{a_j}\ge c_{r + 1}$.
+		\item[\customlabel{custom:sat-1-***}{(***)}] there does not
+			exist $r<i$ such that $\sum_{j=1}^r y_j^{a_j}\ge c_{r + 1}$.
 	\end{enumerate}
 
 \item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$
@@ -1312,7 +1321,7 @@ and have the following still satisfied: each $\gamma_j\le b_j$
 and $\prod_{j=1}^h {y_j}^{\gamma_j}\not\in S.$ Our recursive definition of 
 $S$ and the fact that $\prod_{j=1}^r {y_j}^{b_j}\in S$ implies that for each $1\le r< h$, we have $\prod_{j=1}^r {y_j}^{\gamma_j}\in S$.
 
-We now check that $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$, by checking conditions (*), (**), and (***).  Since $\prod_{j=1}^{h-1} y_j^{b_j}\in S$ but $\prod_{j=1}^h y_j^{b_j}\not\in S$, $c_h$ must not be maximal (among pole orders of the $y_i$'s) such that $c_h \le \sum_{j=1}^h b_jc_j$ (otherwise, it would be in $S$), which means $c_{h+1}\le \sum_{j=1}^h b_jc_j$, giving us condition (*).  Our choice of $(\gamma_1, \ldots, \gamma_n)$ to be minimal above implies (**).  Since for each $r<h$, we have $\prod_{j=1}^r y_{j}^{a_j}\in S$, condition (***) holds.  Thus $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$.
+We now check that $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$, by checking conditions \ref{custom:sat-1-*}, \ref{custom:sat-1-**}, and \ref{custom:sat-1-***}.  Since $\prod_{j=1}^{h-1} y_j^{b_j}\in S$ but $\prod_{j=1}^h y_j^{b_j}\not\in S$, $c_h$ must not be maximal (among pole orders of the $y_i$'s) such that $c_h \le \sum_{j=1}^h b_jc_j$ (otherwise, it would be in $S$), which means $c_{h+1}\le \sum_{j=1}^h b_jc_j$, giving us condition \ref{custom:sat-1-*}.  Our choice of $(\gamma_1, \ldots, \gamma_n)$ to be minimal above implies \ref{custom:sat-1-**}.  Since for each $r<h$, we have $\prod_{j=1}^r y_{j}^{a_j}\in S$, condition \ref{custom:sat-1-***} holds.  Thus $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$.
 
 Since the ideal in $k[u, y_1,\ldots, y_n]$ generated by is $S$ is $(y_1, \ldots, y_n) \cdot k[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]-S$, we have shown that all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \begin{align*}
@@ -1794,17 +1803,22 @@ One can prove similar results in cases with different conditions on saturation, 
 
 \ssec{Raising Stabilizer Orders}
 \label{ssec:raise-orders}
-In this subsection, we present Lemma
-~\ref{lem:raise-stacky-order}, whose proof is almost identical to one of Voight and Zureick-Brown \cite[Theorem 8.5.7]{vzb:stacky}.  Lemma ~\ref{lem:raise-stacky-order} implies that if the main result, Theorem 
-~\ref{thm:main}, holds for a curve with signature
-$(g;e_1', \ldots, e_k', e_{k+1}' \ldots, e_r';\delta)$ with $e_{k + 1}' = \cdots = e_r'$ satisfying certain admissibility (cf. Definition ~\ref{defn:admissible}), then Theorem ~\ref{thm:main} also holds for a curve with
-signature $(g; e_1', \ldots, e_k', e_{k+1}'+2,\ldots, e_r'+2; \delta)$. 
+In this subsection, we present Lemma ~\ref{lem:raise-stacky-order},
+whose proof is almost identical to one of Voight and Zureick-Brown
+\cite[Theorem 8.5.7]{vzb:stacky}. Lemma
+~\ref{lem:raise-stacky-order} implies that if the main result,
+Theorem ~\ref{thm:main}, holds for a curve with signature $(g; e_1',
+\ldots, e_k', e_{k+1}' \ldots, e_r';\delta)$ with $e_{k + 1}' =
+\cdots = e_r'$ satisfying certain admissibility (cf. Definition
+~\ref{defn:admissible}), then Theorem ~\ref{thm:main} also holds for
+a curve with signature $(g; e _1', \ldots, e_k', e_{k + 1}' + 2,
+\ldots, e_r' + 2; \delta)$. 
 %In order to state Lemma
 %~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in %Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}.
 
 
 %\begin{rem}
-%Note that $S_{\sigma,J}(i,d-1)$ as defined in condition \ref{Ad-iii} of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
+%Note that $S_{\sigma,J}(i,d-1)$ as defined in condition \ref{custom:Ad-iii} of Definition ~\ref{defn:admissible} can equivalently be defined as $S_{\sigma,J}(i,d-1)= \{j \in J : j \neq i \text{ and }(e_j' + 2d-2)|e_i' + 2d\}.$ Written this way, $\# S_{\sigma,J}(i,d-1)$ is more apparently similar to $\mu(i,d)$ as defined in \cite[Defintion 8.5.1]{vzb:stacky}.
 %\end{rem}
 %\todo{Peter: I'm not sure how useful this remark is.  After seeing the definition of $S_{\sigma, J}(I,d)$ a reader will probably be a little mystified why it is a useful condition.  The inclusion of the relationship to something defined in VZB that also seems ad hoc and that they probably will not have seen may not be the most helpful use of this space.}
 
@@ -1812,21 +1826,21 @@ signature $(g; e_1', \ldots, e_k', e_{k+1}'+2,\ldots, e_r'+2; \delta)$.
 %Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ stacky points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
 %\end{lem}
 %\begin{proof}
-%To show \ref{Ad-i} and \ref{Ad-ii} look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies \ref{Ad-i}. Furthermore, since $s$ is an admissible set of $L'$, in particular, we must have \ref{Ad-ii} satisfied so $\frac{-\ord_{Q_l}
-%^{\halfcan_X'}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how \ref{Ad-ii} follows in genus 0?}
+%To show \ref{custom:Ad-i} and \ref{custom:Ad-ii} look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies \ref{custom:Ad-i}. Furthermore, since $s$ is an admissible set of $L'$, in particular, we must have \ref{custom:Ad-ii} satisfied so $\frac{-\ord_{Q_l}
+%^{\halfcan_X'}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how \ref{custom:Ad-ii} follows in genus 0?}
 %
  %follows immediately from the base-point freeness of $3\halfcan$ which we have for the following reasons in the various genera:
 %\begin{itemize}
 %\item When $g> 0$, $\deg(\lfloor 3 L\rfloor)\ge 3g-3+2\ge 2g$ (the added two comes from the fact that $r\ge 2$).
-%\item When $g= 0$, since $L'$ has a nontrivial admissible subset within $\{e_1, \ldots, e_{r- 1}\}$ satisfying \ref{Ad-i}, we know $\deg(\lfloor 3\lfloor)\ge 0$, so it is base-point free.
+%\item When $g= 0$, since $L'$ has a nontrivial admissible subset within $\{e_1, \ldots, e_{r- 1}\}$ satisfying \ref{custom:Ad-i}, we know $\deg(\lfloor 3\lfloor)\ge 0$, so it is base-point free.
 %\end{itemize}
 %\end{proof}
 
-The following Lemma will slightly strengthen condition \ref{Ad-ii} from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}.
+The following Lemma will slightly strengthen condition \ref{custom:Ad-ii} from Definition ~\ref{defn:admissible} and this improvement is crucially used in the proof of part (c) of Lemma ~\ref{lem:raise-stacky-order}.
 
 \begin{lem}
 \label{lem:admissible_inequality}
-For any $z$ as in condition \ref{Ad-ii} of definition ~\ref{defn:admissible} the inequality \ref{Ad-ii} implies the
+For any $z$ as in condition \ref{custom:Ad-ii} of definition ~\ref{defn:admissible} the inequality \ref{custom:Ad-ii} implies the
 tighter inequality that
 
 \begin{align*}
@@ -1836,7 +1850,7 @@ tighter inequality that
 \end{lem}
 
 \begin{proof}
-We know by \ref{Ad-ii} that
+We know by \ref{custom:Ad-ii} that
 
 \begin{align*}
 	-\ord_{Q_i}
@@ -1864,20 +1878,28 @@ then $(\sx', L', W)$ is also admissible.
 \end{lem}
 
 \begin{proof}
-Each of the conditions \ref{Ad-i}, \ref{Ad-ii}, and \ref{Ad-iii} hold for $W$
+Each of the conditions \ref{custom:Ad-i}, \ref{custom:Ad-ii}, and \ref{custom:Ad-iii} hold for $W$
 if they hold for $J$.
 \end{proof}
 
 \begin{rem}
 \label{rem:three-cases}
-For our inductive arguments in Theorems ~\ref{thm:g-high-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-0-main}, we will often add in a single
-stacky point with stabilizer order $3$. Say $(\sx,\Delta,\halfcan)$ is a log spin
-curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
-\delta)$, and our base cases include signatures $\sigma$ characterized by one of the following: cases, which we will soon refer to in Lemma ~\ref{lem:raise-stacky-order}:
+For our inductive arguments in Theorems ~\ref{thm:g-high-main},
+~\ref{thm:g-1-main}, and ~\ref{thm:g-0-main}, we will often add in a
+single stacky point with stabilizer order $3$. Say $(\sx, \Delta,
+\halfcan)$ is a log spin curve with signature $\sigma = (g; e_1,
+\ldots, e_r,\delta) = (g;3,\ldots, 3, \delta)$, and our base cases
+include signatures $\sigma$ characterized by one of the following:
+cases, which we will soon refer to in Lemma
+~\ref{lem:raise-stacky-order}:
+
 \begin{enumerate}
-	\item $g = 0, e_1 = \cdots = e_r = 3, \delta = 0$ and $r \geq 5$
-	\item $g = 1, e_1 = \cdots = e_r = 3, \delta = 0,$ and $ r \geq 2$
-	\item $g \geq 2, e_1 = \cdots = e_r = 3, \delta$ arbitrary, and $r \geq 1$.
+	\item[\customlabel{custom:three-cases-1}{(1)}] $g = 0, e_1 =
+		\cdots = e_r = 3, \delta = 0$, and $r \geq 5$
+	\item[\customlabel{custom:three-cases-2}{(2)}] $g = 1, e_1 =
+		\cdots = e_r = 3, \delta = 0$, and $ r \geq 2$
+	\item[\customlabel{custom:three-cases-3}{(3)}] $g \geq 2, e_1 =
+		\cdots = e_r = 3, \delta$ arbitrary, and $r \geq 1$.
 \end{enumerate}
 \end{rem}
 
@@ -1886,8 +1908,15 @@ curve with signature $\sigma = (g;e_1,\ldots, e_r,\delta) = (g;3,\ldots, 3,
 Suppose $(\sx', \Delta, \halfcan')$ is a log spin curve with coarse
 space $X'$ and signature $\sigma = (g; e_1', \ldots, e_r'; \delta)$.  Define $R':= R_{\halfcan'}$.  Further, assume either 
 \begin{enumerate}
-	\item  $(\sx',\halfcan', J)$ is admissible with generators $x_1,\ldots, x_m \in R'$ and $y_{i, e_i'} \in R' $ for all $i \in J,$ as in Definition ~\ref{defn:admissible} or
-	\item $\sigma$ is one of the signatures described in cases (1), (2) and (3) of Remark ~\ref{rem:three-cases} and $y_{1, 3} = y_{2,3} = \ldots= y_{r,3}$ is a rational section of $\sco(\halfcan_X)$ with $\ord_{P_i}^{\halfcan_X'}(y_{1,3}) = 1$ for $1 \leq  i \leq r$.
+	\item $(\sx',\halfcan', J)$ is admissible with generators $x_1,
+		\ldots, x_m \in R'$ and $y_{i, e_i'} \in R' $ for all $i \in J$, as 
+		in Definition ~\ref{defn:admissible} or
+	\item $\sigma$ is one of the signatures described in Cases
+		\ref{custom:three-cases-1}, \ref{custom:three-cases-2} and
+		\ref{custom:three-cases-3} of Remark ~\ref{rem:three-cases} and
+		$y_{1, 3} = y_{2,3} = \ldots= y_{r,3}$ is a rational section of
+		$\sco(\halfcan_X)$ with $\ord_{P_i}^{\halfcan_X'}(y_{1,3}) = 1$
+		for $1 \leq  i \leq r$.
 \end{enumerate}
 Let
 $(\sx, \Delta, \halfcan)$ be another log spin curve
@@ -1910,7 +1939,8 @@ $e_j = e_j'$ for $j \notin J$. Define $R := R_\halfcan$.  Then the following are
 		\end{align*}
 		for all $j \in J$ with $j \neq i$.
 	\item[(b)] 
-	%The monomials $y_{i, e_i'}^a \cdot y_{i, e_i}^b$ with $a \geq 
+	
+%The monomials $y_{i, e_i'}^a \cdot y_{i, e_i}^b$ with $a \geq 
 %0,
 %		b > 0$ span $R$ over $R'$ and
 		A choice of elements $y_{1, e_1}, \ldots, y_{r, e_r}$ as in part (a) minimally
@@ -1946,7 +1976,7 @@ Define
 \end{align*}
 
 \noindent
-The assumption \ref{Ad-iii} implies
+The assumption \ref{custom:Ad-iii} implies
 \begin{align*}
 	\deg \left( e_i L' - E_i \right) \geq \max(2g - 1,0),
 \end{align*}
@@ -2073,7 +2103,7 @@ Here, $L|_{Q_j} = L'|_{Q_j},$ so
 \noindent
 {\sf Case 2: $j =i.$}
 
-By part (a), condition \ref{Ad-ii}, and Lemma
+By part (a), condition \ref{custom:Ad-ii}, and Lemma
 ~\ref{lem:admissible_inequality} we have
 \begin{align*}
 	-\ord_{Q_j}
@@ -2109,18 +2139,26 @@ completing part (c).
 %~\ref{lem:minimal_quadratic}.
 
 {\bf Part (d):}
-To check (d), we show \ref{Ad-i},\ref{Ad-ii}, and \ref{Ad-iii} are satisfied. We know \ref{Ad-i} holds by part (b), taking the $y_{
-i, e_i}$ as the generators in degree $e_i$. Next, \ref{Ad-ii} is
+To check (d), we show \ref{custom:Ad-i},\ref{custom:Ad-ii}, and \ref{custom:Ad-iii} are satisfied. We know \ref{custom:Ad-i} holds by part (b), taking the $y_{
+i, e_i}$ as the generators in degree $e_i$. Next, \ref{custom:Ad-ii} is
 strictly monotonic in the $e_i$ and hence also holds for $(\sx, J)$.
-Finally, if \ref{Ad-iii} holds for $e$ then it holds for $e + 2$ by
-definition. This is where we use that \ref{Ad-iii} holds for $d > 0$
+Finally, if \ref{custom:Ad-iii} holds for $e$ then it holds for $e + 2$ by
+definition. This is where we use that \ref{custom:Ad-iii} holds for $d > 0$
 and not just for $d = 0$.
 \end{proof}
 
 \begin{cor}
 \label{cor:raise-stacky-order}
-Suppose $(\sx',L',J')$ is admissible with signature $\sigma' = (e_1',\ldots,e_r')$ or $\sigma$ satisfies one of the conditions of Remark ~\ref{rem:three-cases}. Let $J' = \{t,t+1,\ldots,r\}$ and $e_1' \leq e_2' \leq \cdots \leq e_t' = e_{t+1}' =\cdots = e_r'$,
-so that $(\sx',\Delta, L)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main}. Then, for any spin curve $(\sx,\Delta,L)$ so that $\sx$ and $\sx'$ have the same coarse space $X = X'$ with the same set of stacky points, and $\sx$ has signature $(g;e_1,\ldots, e_r;\delta)$ with $e_1 \leq e_2 \leq \cdots e_r$ so that
+Suppose $(\sx',L',J')$ is admissible with signature $\sigma' = (e_1
+',\ldots,e_r')$ or $\sigma$ satisfies one of the conditions of
+Remark ~\ref{rem:three-cases}. Let $J' = \{t,t+1,\ldots,r\}$ and
+$e_1' \leq e_2' \leq \cdots \leq e_t' = e_{t+1}' =\cdots = e_r'$,
+so that $(\sx',\Delta, L)$ satisfies the conditions of Lemma
+~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main}. Then,
+for any spin curve $(\sx, \Delta, L)$ so that $\sx$ and $\sx'$ have
+the same coarse space $X = X'$ with the same set of stacky points,
+and $  \sx$ has signature $(g;e_1,\ldots, e_r;\delta)$ with $e_1
+\leq e_2 \leq \cdots e_r$ so that
 \begin{align*}
 	& e_i	= e_i' &\text{ if }i \notin J \\
 	& e_i \ge e_i' &\text{ if } i \in J
@@ -2129,22 +2167,29 @@ so that $(\sx',\Delta, L)$ satisfies the conditions of Lemma ~\ref{lem:raise-sta
 \noindent
 then Theorem ~\ref{thm:main} holds for $(\sx,\Delta,L)$.
 \end{cor}
+
 \begin{proof}
 For $t \leq i \leq r$, let $(\sx_i,\Delta, L_i)$ be the log spin curve with coarse space $X_i$ so that $X_i = X',$ with the same stacky points as $(\sx',\Delta,L),$ and having signature $(g; e_1, \ldots. e_{i-1}, e_i, e_i, \ldots, e_i; \delta).$ Let 
 $J_i = \{i,\ldots, r\}.$ Note that $(\sx_0,L_0,J_0) = (\sx',L',J')$ and $(\sx_r ,L_r ,J_r) = (\sx, L, \{r\})$.
 
-Let $(*_i)$ denote the condition that $(\sx_i,\Delta, L_i)$ satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and Theorem ~\ref{thm:main}, and $(\sx_i, \halfcan_i, J_i)$ is admissible.
-
-Since $(*_0)$ holds by assumption, by induction on $i$, it suffices to show that if $(*_i)$ holds then so does $(*_{i+1}).$ 
-Indeed, by applying Lemma ~\ref{lem:admissible_subset}, it follows $(\sx_i, \halfcan_i, J_{i+1})$ is admissible, as $J_{i+1} \subseteq J_i$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e_{i+1}-e_i}{2},$ times, for the fixed set $J_{i+1},$ we see $(*_{i+1})$ holds.
+Let $(*_i)$ denote the condition that $(\sx_i, \Delta, L_i)$
+satisfies the conditions of Lemma ~\ref{lem:raise-stacky-order} and
+Theorem ~\ref{thm:main}, and $(\sx_i, \halfcan_i, J_i)$ is
+admissible. Since $(*_0)$ holds by assumption, it suffices to show
+that if $(*_i)$ holds then so does $(*_{i + 1})$. Indeed, $(\sx_i,
+\halfcan_i, J_{i + 1})$ is admissible by an application of Lemma
+~\ref{lem:admissible_subset} and the fact that $J_{i + 1} \subseteq J
+_i$. Then, applying Lemma ~\ref{lem:raise-stacky-order} with the
+fixed set $J_{i + 1}$ repeatedly ($\frac{e_{i + 1} - e_i}{2}$ many
+times) yields $(*_{i + 1})$.
 \end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% High genus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{High Genus}
-\label{sec:g_high}
-We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees of generators of $R_\halfcan$ and its ideal of relations. In this section, we do not obtain explicit presentations of $R_\halfcan.$  This contrasts Sections ~\ref{sec:g_1} and ~\ref{sec:g_0} where we not only obtain bounds, but also obtain inductive presentations. The tradeoff is that in the genus 0 and 1 cases, we have to account for with explicit base cases, whereas in this section we apply general results.
+\label{sec:g-high}
+We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees of generators of $R_\halfcan$ and its ideal of relations. In this section, we do not obtain explicit presentations of $R_\halfcan.$  This contrasts Sections ~\ref{sec:g-1} and ~\ref{sec:g-0} where we not only obtain bounds, but also obtain inductive presentations. The tradeoff is that in the genus 0 and 1 cases, we have to account for with explicit base cases, whereas in this section we apply general results.
 
 \ssec{Bounds on Generators and Relations in High Genus}
 \label{ssec:bounds-high-genus}
@@ -2349,7 +2394,7 @@ We now summarize what we have shown.
 
 \begin{cor}
 \label{cor:g-2-presentation-bound}
-Let $(X, \Delta, L)$ be a log spin curve of signature $(g;-;\delta)$
+Let $(X, \Delta, L)$ be a log spin curve of signature $(g; -;\delta)$
 with $g \geq 2$. Then $X$ has minimal generators in degree at most
 $5$ and minimal relations in degree at most $10$.
 \end{cor}
@@ -2413,14 +2458,14 @@ holds for all log spin curves $(\sx, L, J)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus one %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Genus One}
-\label{sec:g_1}
+\label{sec:g-1}
 
 In this section, we prove Theorem ~\ref{thm:main} in the case that $g = 1$.  We follow a similar inductive strategy as in the genus $g\geq 2$ case, except unlike in the $g \geq 2$ case we obtain explicit generators and relations here.
 
 In the case of a genus 1 curve, $X$, we know $K_X \sim 0$, and therefore the only possibilities for spin canonical divisors are $\halfcan' \sim 0$ or $\halfcan' \sim P - Q$ where $P,Q$ are distinct points, fixed  under the hyperelliptic involution. We inductively construct presentations by adding points through Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2} and incrementing the values of the $e_i$s using Lemma ~\ref{lem:raise-stacky-order}.
 
 \ssec{Genus One Base Cases}
-\label{ssec:g_1_base}
+\label{ssec:g-1_base}
 In this subsection we set up the base cases needed for our inductive approach, of proving Theorem ~\ref{thm:main} in the case $g = 1$.
 
 \begin{longtable}	{| c || c | c | c |}	
@@ -2574,7 +2619,7 @@ In addition to the bound on the degree of the generators and relations, as detai
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus zero %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Genus Zero}
-\label{sec:g_0}
+\label{sec:g-0}
 We will prove that if $(\sx, \Delta, \halfcan)$ is a log spin
 curve and $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r;
 \delta)$, then $R(\sx, \Delta, L)$ is generated in degree at most
@@ -2590,8 +2635,8 @@ follows immediately by repeatedly applying Lemma ~\ref{lem:sat-1}
 to add the necessary stacky points. On the other hand, the proof
 when $\delta = 0$ is more involved. We dedicate the remainder of
 this section to that case in the following steps: characterizing
-saturations points (Subsection ~\ref{ssec:g_0_saturation}),
-describing base cases (Subsection ~\ref{ssec:g_0_base}), and
+saturations points (Subsection ~\ref{ssec:g-0_saturation}),
+describing base cases (Subsection ~\ref{ssec:g-0_base}), and
 presenting exceptional cases (Subsection ~\ref{ssec:g-0-exceptional}).
 Finally, we apply inductive processes using Lemma ~\ref{lem:sat-3}
 and Lemma ~\ref{lem:raise-stacky-order} to prove the main theorem
@@ -2605,7 +2650,7 @@ throughout this section.
 \end{rem}
 
 \ssec{Saturation}
-\label{ssec:g_0_saturation}
+\label{ssec:g-0_saturation}
 First, we present the saturations, as defined in Definition
 ~\ref{defn:sat}, of the canonical divisor for
 all cases where $g = 0$ and $\delta = 0$. The saturations can be computed using Riemann-Roch.
@@ -2649,7 +2694,7 @@ and generic cases follow.
 \end{longtable}
 
 \ssec{Base Cases}
-\label{ssec:g_0_base}
+\label{ssec:g-0_base}
 In order to apply Lemma ~\ref{lem:sat-3} and Lemma
 ~\ref{lem:raise-stacky-order} when $\delta = 0$,
 we need to determine appropriate base cases that will
@@ -2671,7 +2716,7 @@ the cases in Table ~\ref{table:g-0-base-cases} satisfy the
 conditions of Lemma ~\ref{lem:raise-stacky-order} (i.e. either $(\sx',
 \halfcan', J) = (\sx', -\infty + \sum_{i = 1}^{r} \subhalf{e_i}
 P_i, J)$ is admissible or the stabilizer orders are all $3$ as per
-Case (1) of Remark ~\ref{rem:three-cases}):
+Case ~\ref{custom:three-cases-1} of Remark ~\ref{rem:three-cases}):
  
 \rm{
 \begin{longtable}
@@ -2760,12 +2805,12 @@ for each case as described in the following table.
 \todo{Peter: Can we make a better description for the table above?}
 
 We can also always find a presentation for these cases such that
-they satisfy \ref{Ad-i} and \ref{Ad-ii} and that $\initial(I')$ is
+they satisfy \ref{custom:Ad-i} and \ref{custom:Ad-ii} and that $\initial(I')$ is
 generated by products of two monomials. Again, the procedure to
 verify these is similar to that in Example
 ~\ref{eg:base-0-377}.
 
-Furthermore, each case always satisfies \ref{Ad-iii} as demonstrated below.
+Furthermore, each case always satisfies \ref{custom:Ad-iii} as demonstrated below.
 Notice that the $e_i$ and $\{e_j' : j \neq i\}$ are equivalent
 for any choice of $i \in J$ for these cases, so $\deg \lfloor e_i L
 \rfloor$ and $\max_{d \geq 0} \#S_{(\sigma, J)}(i)$ are
@@ -2801,7 +2846,7 @@ independent of the choice of $i$.
 
 	(k) & $(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & $5$ & $0$ \\ \hline
 	
-	\caption{Genus 0 Non-Effective Base Cases \ref{Ad-iii}}
+	\caption{Genus 0 Non-Effective Base Cases \ref{custom:Ad-iii}}
 	\label{table:g-0-base-cases-admissibility}
 \end{longtable}
 \todo{Peter: In case c, I changed $J=\{3\}$ to $J=\{2, 3\}$.}
@@ -2886,7 +2931,7 @@ these exceptional saturations can be viewed as ``forcing'' generators and relati
 
 \ssec{Main Theorem for Genus Zero}
 \label{ssec:g-0-main}
-Now we can combine the base cases from Subsection \ref{ssec:g_0_base} with the inductive lemmas of Section \ref{sec:induction}.
+Now we can combine the base cases from Subsection \ref{ssec:g-0_base} with the inductive lemmas of Section \ref{sec:induction}.
 
 \begin{thm}
 \label{thm:g-0-main}
