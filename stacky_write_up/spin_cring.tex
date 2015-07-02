@@ -126,7 +126,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Spin canonical divisors of log stacky curves}
+\title{Spin canonical rings of log stacky curves}
 
 \author{Aaron Landesman}
 \address[Aaron Landesman]{Department of Mathematics, Harvard University}
@@ -320,28 +320,35 @@ detailed in interesting low genus examples by Neves
 Furthermore, the explicit construction of generators and relations also reveals that the bounds given in Theorem ~\ref{thm:main} are tight. That is, in almost all cases, there is a generator of the log spin canonical ring in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. Furthermore, there are many infinite families of cases which have a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$.
 \end{rem}
 
-\todo{I changed the following to incorporate the no odd weight case. Is it ok?}
-
-The main theorem of this paper, Theorem ~\ref{thm:main}, combined with a result of Voight and
-Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky}, together with Voight and Zureick-Brown ~\cite[Theorem 9.3.1]{vzb:stacky} and ~\cite[9.3.1]{vzb:stacky} provide the following application
-to modular forms. Note that the result from Voight and
-Zureick-Brown ~\cite[Lemma 10.2.1]{vzb:stacky} follows almost immediately from the classical work of Kodaira--Spencer
+The main theorem of this paper, Theorem ~\ref{thm:main}, combined
+with a lemma of Voight and Zureick-Brown \cite[Lemma 10.2.1]
+{vzb:stacky}, provides a statement on rings of modular forms.
+Together with the main theorem from Voight and Zureick-Brown \cite
+[Theorem 9.3.1]{vzb:stacky}, we have the following application to
+rings of modular forms. Note that the lemma from Voight and Zureick-
+Brown ~\cite[Lemma 10.2.1]{vzb:stacky} follows almost immediately
+from the classical work of Kodaira--Spencer
 \cite{kodaira-spencer:deformations}.
 
 \begin{cor}
 \label{cor:main-mod-forms}
 Let $\Gamma$ be a Fuchsian group and $\sx$ the stacky curve
-associated to $\Gamma \backslash \BH$ with signature $(g; e_1,
-\ldots, e_r; \delta)$. 
-If $M_k(\Gamma) = 0$ for all odd $k$, then $M(\Gamma)$ is generated in degree at most $3 \cdot\max(3,e_1,\ldots, e_r)$ with relations in degree at most $6 \cdot \max(3,e_1,\ldots, e_r)$.
-If there is some odd $k$ for which $M_k(\Gamma) \neq 0,$ then, the ring of modular forms
-$M(\Gamma)$ is
-generated as a $\BC$-algebra by elements of degree at most $e = \max
- (5, e_1, \ldots , e_r)$ with relations in degree at most $2e,$ so long
-as $\sigma$ does not lie in a finite list of exceptional cases, as
-listed in Table ~\ref{table:g-1-exceptional} for signatures with $g
-= 1$ and Table ~\ref{table:g-0-exceptional} for signatures with $g =
-0$.
+associated to $\Gamma \backslash \BH$ with signature $\sigma
+= (g; e_1, \ldots, e_r; \delta)$. 
+
+If $M_k(\Gamma) = 0$ for all odd $k$, then the ring of modular
+forms $M(\Gamma)$ is generated as a $\BC$-algebra by elements of
+degree at most $3 \cdot \max(3, e_1, \ldots, e_r)$ with relations
+generated in degrees at most $6 \cdot \max(3, e_1,\ldots, e_r)$.
+
+If there is some odd $k$ for which $M_k(\Gamma) \neq 0$, then the
+ring of modular forms $M(\Gamma)$ is generated as a $\BC$-algebra
+by elements of degree at most $\max(5, e_1, \ldots, e_r)$ with
+relations generated in degree at most $2 \cdot \max(5, e_1, \ldots, 
+e_r)$ so long as $\sigma$ does not lie in a finite list of
+exceptional cases which are listed and described in Table
+~\ref{table:g-1-exceptional} for signatures with $g = 1$ and in
+Table ~\ref{table:g-0-exceptional} for signatures with $g = 0$.
 \end{cor}
 
 The remainder of the paper will be primarily devoted to proving
@@ -426,25 +433,27 @@ If $\sx$ has coarse space $X$ of genus $g$, then we say $\sx$ has
 
 \begin{defn}
 \label{defn:divisor-floor}
-If Weil divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
+If divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
 with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
 \rfloor$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
 \lfloor \alpha_i \rfloor P_i$.
 \end{defn}
 
-A pair of a stacky curve and a log divisor $(\sx, \Delta)$ is called a \textbf{log stacky curves}
-and the study of their canonical rings is the main focus of
-the work by Voight and Zureick-Brown \cite{vzb:stacky}.
-For this paper, we consider \textbf{log spin curves} which are
-triples $(\sx, \Delta, \halfcan)$ where $\sx$ is a stacky curve, $\Delta$ is a log divisor, and $\halfcan \in \di \sx$ satisfies
-$2\halfcan \sim K_X + \Delta + \sum_{i=1}^{r}\frac{e_i-1}{e_i}P_i$. Such a divisor $\halfcan$
-is called a \textbf{log spin canonical divisor} on $(\sx, \Delta)$. 
-We use $\halfcan_X := \lfloor L \rfloor $ to refer to the spin canonical divisor
-(also known as the half-canonical divisor, semi-canonical divisor, 
-or theta characteristic) associated to the
-coarse space $X$ of $\sx$, i.e. $\halfcan_X$ is a divisor such
-that $2\halfcan_X \sim K_X + \Delta$. Furthermore, we use the following
-analogous notation:
+A pair of a stacky curve and a log divisor $(\sx, \Delta)$ is
+called a \textbf{log stacky curves} and the study of their
+canonical rings is the main focus of the work by Voight and Zureick-
+Brown \cite{vzb:stacky}. For this paper, we consider \textbf{log
+spin curves} which are triples $(\sx, \Delta, \halfcan)$ where $\sx$
+is a stacky curve, $\Delta$ is a log divisor, and $\halfcan \in \di
+\sx$ satisfies $2 \halfcan \sim K_X + \Delta + \sum_{i = 1}^{r}
+\frac{e_i - 1}{e_i} P_i$. Such a divisor $\halfcan$ is called a
+\textbf{log spin canonical divisor} on $(\sx, \Delta)$. We use
+$\halfcan_X := \lfloor L \rfloor $ to refer to the \textbf{spin
+canonical divisor} (also known as the half-canonical divisor, semi-
+canonical divisor, or theta characteristic) associated to the
+coarse space $X$ of $\sx$  (i.e. $\halfcan_X$ is a divisor such
+that $2\halfcan_X \sim K_X + \Delta$). Furthermore, we use the
+following analogous notation:
 
 \begin{defn}
 \label{defn:h0-stacky}
@@ -532,9 +541,9 @@ initial ideals, and Gr\"{o}bner bases, see Eisenbud
 
 \begin{defn}
 \label{defn:monomial-degree}
-Let $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a graded polynomial
-ring and let $\alpha := \prod_{i = 1}^{n} x_{d_i, i}^{f_i} \in
-k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ be a monomial. Then
+Let $k[x_1$, $\ldots$, $x_n]$ be a graded polynomial
+ring with $\deg x_i = d_i$ and let $\alpha := \prod_{i = 1}^{n} x_{i}^{f_i} \in
+k[x_{1}$, $\ldots$, $x_{n}]$ be a monomial. Then
 we define the {\bf degree} of $\alpha$ to be
 \[
 	\deg \alpha := \sum_{i = 1}^{n} d_i f_i.
@@ -542,31 +551,11 @@ we define the {\bf degree} of $\alpha$ to be
 \end{defn}
 
 \begin{defn}
-\label{defn:grlex}
-The {\bf graded lexicographic} order, or {\bf grlex} $\prec_{\text{grlex}}$ on a polynomial ring $k[x_{d_1, 1}, \ldots,
-x_{d_n, n}]$ is defined as follows.
-If $\alpha := \prod_{i = 1}^{n} x_{d_i, i}
-^{f_i}$ and $\beta := \prod_{i = 1}^{n} x_{d_i, i}^{f_i'}$ are
-monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
-\succ_{\text{grlex}} \beta$ if either $\alpha$ has larger degree:
-
-\begin{equation}
-	\deg \alpha := \sum_{i = 1}^{n} d_i f_i  > \sum_{i = 1}^{n} d_i f_i' =: \deg \beta
-\end{equation}
-or
-\begin{equation}
-\label{eqn:grlex-tie}
-	\deg \alpha = \deg \beta \text{ and }
-	f_i - f_i' > 0 \text{ for the smallest } i \text{ such that } f_i \neq f_i'.
-\end{equation}
-\end{defn}
-
-\begin{defn}
 \label{defn:grevlex}
 The {\bf graded reverse lexicographic order}, or {\bf grevlex} $\prec_{\text{grevlex}}$ is defined as follows.
-If $\alpha := \prod_{i = 1}^{n} x_{d_i, i}
-^{f_i}$ and $\beta := \prod_{i = 1}^{n} x_{d_i, i}^{f_i'}$ are
-monomials in $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$, then $\alpha
+If $\alpha := \prod_{i = 1}^{n} x_{i}
+^{f_i}$ and $\beta := \prod_{i = 1}^{n} x_{i}^{f_i'}$ are
+monomials in $k[x_{1}$, $\ldots$, $x_{n}]$, then $\alpha
 \succ_{\text{grevlex}} \beta$ if either
 
 \begin{equation}
@@ -581,31 +570,29 @@ or
 \end{defn}
 
 \begin{rem}
-Note that the ordering of the variables matters in both
-Equation ~\ref{eqn:grlex-tie} and Equation ~\ref{eqn:grevlex-tie}.
+Note that the ordering of the variables matters in Equation
+~\ref{eqn:grevlex-tie}.
 \end{rem}
 
 Our inductive arguments in Section ~\ref{sec:induction} will
 usually have an inclusion $R \supseteq R'$ of log spin canonical
-rings such that $R_\halfcan$ is generated by elements $x_{d_i, i}$ \todo{They're usually $x_{i,e_i}$ with the degree in the second position, which is a bit strange. Somehow, I think we might want to switch the ordering here, though it still might be confusing.} and $R$
+rings such that $R_\halfcan$ is generated by elements $x_{i}$ and $R$
 is generated over $R_{\halfcan'}$ by elements $y_j$. In these cases, it is
 natural to consider term orders which treat these sets of variables
 separately.
 
 \begin{defn}
 \label{defn:block-order}
-Following Voight and Zureick-Brown \cite[Section 8.1]{vzb:stacky}.
-the \textbf{block term order} is defined as follows. Let $k[y_{c_1, 1}, \ldots, y_{c_m, m}]$ and $k[x_{d_1, 1}, \ldots,
-x_{d_n, n}]$ be weighted polynomial rings with existing term
-orders $\prec_y$ and $\prec_x$, respectively. Let $\alpha :=
-\prod_{j = 1}^{m} y_{c_j, j}^{h_i}$ $\prod_{i = 1}^{n} x_{d_i, i}
-^{f_i}$ and $\beta := \prod_{j = 1}^{m} y_{c_j, j}^{h_i'}
-\prod_{i = 1}^{n} x_{d_i, i}^{f_i'}$ be monomials in $k[y_{d_1', 1},
-\ldots, y_{d_m', m}] \otimes$ $k[x_{d_1, 1}, \ldots, x_{d_n, n}]$.
-Let $\alpha_y := \prod_{j = 1}^{m} y_{c_j, j}^{h_i}$ be the
-part of $\alpha$ in $k[y_{c_1, 1}, \ldots, y_{c_m, m}]$ and
+The \textbf{block term order} is defined as follows. Let $k[y_{1}, \ldots, y_{m}]$ and $k[x_{1}, \ldots,
+x_{n}]$ be weighted polynomial rings with $\deg y_i = c_i,\: \deg x_i = d_i.$ Further assume we are given existing term
+orders $\prec_y$ and $\prec_x$. Let $\alpha :=
+\prod_{j = 1}^{m} y_{j}^{h_i}$ $\prod_{i = 1}^{n} x_{i}
+^{f_i}$ and $\beta := \prod_{j = 1}^{m} y_{j}^{h_i'}
+\prod_{i = 1}^{n} x_{i}^{f_i'}$ be monomials in $k[y_{1},
+\ldots, y_{m}] \otimes$ $k[x_{1}, \ldots, x_{n}]$.
+Let $\alpha_y := \prod_{j = 1}^{m} y_{j}^{h_i}$ be the
+part of $\alpha$ in $k[y_{1}, \ldots, y_{m}]$ and
 likewise with $\alpha_x$, $\beta_y$, and $\beta_x$.
-
 
 In the \textbf{(graded) block} (or \textbf{elimination}) term
 ordering on $k[y_{d_1', 1}, \ldots, y_{d_m', m}] \otimes k[x_{d_1, 1},
@@ -624,7 +611,7 @@ in Section ~\ref{sec:induction} and in the proof of Theorem
 
 \begin{defn}
 \label{defn:initial-term}
-Let $\prec$ be an ordering on $k[x_{d_1, 1}$, $\ldots$, $x_{d_n, n}]$ and let $f \in k[x_{d_1, 1}, \ldots, x_{d_n, n}]$ be a homogeneous
+Let $\prec$ be an ordering on $k[x_{1}$, $\ldots$, $x_{n}],$ with $\deg x_i = d_i$ and let $f \in k[x_{1}, \ldots, x_{n}]$ be a homogeneous
 polynomial. The \textbf{initial term} $\initial(f)$ of $f$
 is the largest monomial in the support of $f$ with respect to
 the ordering $\prec$. Furthermore, we set $\initial(0) := 0$.
@@ -633,8 +620,8 @@ the ordering $\prec$. Furthermore, we set $\initial(0) := 0$.
 
 \begin{defn}
 \label{defn:initial-ideal}
-Let $I$ be a homogeneous ideal of $k[x_{d_1, 1}$, $\ldots$,
-$x_{d_n, n}]$. Then the {\bf initial ideal} $\initial(I)$ of $I$ is
+Let $I$ be a homogeneous ideal of $k[x_{1}$, $\ldots$,
+$x_{n}]$. Then the {\bf initial ideal} $\initial(I)$ of $I$ is
 the ideal generated by the initial terms of homogeneous polynomials
 in $I$:
 \[
@@ -647,8 +634,8 @@ in $I$:
 
 \begin{defn}
 \label{defn:grobner-basis}
-Let $I$ be a homogeneous ideal of $k[x_{d_1, 1}$, $\ldots$,
-$x_{d_n, n}]$. A \textbf{Gr\"obner basis} for $I$, also known as a
+Let $I$ be a homogeneous ideal of $k[x_{1}$, $\ldots$,
+$x_{n}]$. A \textbf{Gr\"obner basis} for $I$, also known as a
 \textbf{standard basis} for $I$, is a set of elements in $I$
 such that their initial terms generate the initial
 ideal of $I$.
@@ -748,9 +735,10 @@ and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
 
 \noindent
 is surjective whenever $\deg (\lfloor (d - 21) K_{\sx'} \rfloor)
-\geq 0$. It is fairly easy to see using Riemann--Roch that $\sat(\Eff(\sigma)) = 5.$
-Then the map in ~\eqref{eqn:noether-377} is surjective
-when $d \geq 21 + s = 26$ (i.e. $R'$ is generated up to degree 25).
+\geq 0$. It is fairly easy to see, by use of Riemann--Roch, that
+$s := \sat(\Eff(\sigma)) = 5$. Then the map in
+~\eqref{eqn:noether-377} is surjective when $d \geq 21 + s = 26$
+(i.e. $R'$ is generated up to degree 25).
 
 For $d = 0, 1, 2, \ldots$ we have
 \[
@@ -773,7 +761,7 @@ and $7 < d \leq 25$. Note that we can again use Max Noether's theorem
 	&H^0 (\sx', \lfloor 7 \halfcan' \rfloor) \otimes H^0 (\sx', \lfloor
 	(d - 7) \halfcan' \rfloor) \twoheadrightarrow H^0 (\sx', \lfloor
 	d \halfcan' \rfloor) \text{ if } d \geq 6, d \not\equiv 0, 5
-	\text{ (mod } 7)
+	\bmod 7
 \end{align*}
 
 \noindent
@@ -821,7 +809,7 @@ $(\sigma, \sx', J)$ is admissible.
 We can directly see that the relations are given in degrees $10$
 and $14$. In particular, we have relations
 \begin{align*}
-	&a_1 x_{7, 2} x_{3, 1} + a_2 x_{7, 1} x_{3, 1} + a_3 x_{5, 1}^2 = 
+	&a_1 x_{5, 1}^2 + a_2 x_{7, 2} x_{3, 1} + a_3 x_{7, 1} x_{3, 1} = 
 	0 &\text{ in degree $10$} \\
 	&b_1 x_{7, 2}^2 + b_2 x_{7, 2} x_{7, 1} + b_3 x_{7, 1}^2
 	+ b_4 x_{5, 1} x_{3, 1}^3 = 0  &\text{ in degree $14$}
@@ -831,21 +819,21 @@ and $14$. In particular, we have relations
 and note that $a_1$ and $b_1$ are both nonzero. If $a_1 = 0$, then we
 have that
 \[
-	a_2 x_{7, 1} x_{3, 1} = -a_3 x_{5, 1}^2
+	a_2 x_{7, 2} x_{3, 1} = -a_3 x_{7, 1} x_{3, 1}
 \]
 
 \noindent
-However, $x_{7, 1} x_{3, 1}$ has pole orders $(3, 4, 3)$ and
-$x_{5, 1}^2$ has pole orders $(2, 4, 4)$ so their
+However, $x_{7, 2} x_{3, 1}$ has pole orders $(3, 3, 4)$ and
+$x_{7, 1} x_{3, 1}$ has pole orders $(3, 4, 3)$ so their
 coefficients must be zero for this equality to hold. We have a
 similar pole order consideration in forcing $b_1$ to be nonzero.
 
 Let $I$ be the ideal generated by these relations in
-$k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]$. Under grlex with
+$k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]$. Under grevlex with
 $x_{3,1} \prec x_{5,1} \prec x_{7,1} \prec x_{7,2}$, the initial
 ideal of $I$ is
 \[
-	\initial(I) = \langle x_{7, 2}^2, x_{7, 2} x_{3, 1} \rangle
+	\initial(I) = \langle x_{7, 2}^2, x_{5, 1}^2 \rangle
 \]
 
 \noindent
@@ -860,17 +848,17 @@ all degrees $d \geq 0$. In particular,
 	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / I)_d &=
 	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}])	/ \initial_\prec(I))_d \\
 	&= \dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle
-	x_{7, 2}^2, x_{3, 1} x_{7, 2} \rangle
+	x_{7, 2}^2, x_{5, 1}^2 \rangle
 \end{align*}
 
 \noindent
 for all $d \geq 0$. But the fact $\dim_k (R')_d = \dim_k (k[x_{7, 2},
-x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle x_{7, 2}^2, x_{3, 1} x_{7, 2}
+x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle x_{7, 2}^2, x_{5, 1}^2
 \rangle$ can be checked by looking at the $k$-basis at each degree
 $d$.
 
 Therefore, the canonical ring $R'$ has presentation $R' =
-k[x_{7, 2}^2, x_{3, 1} x_{7, 2}] / I$ with
+k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I$ with
 initial ideal $\initial(I)$ generated by quadratics under grlex
 with $x_{3,1} \prec x_{5,1} \prec x_{7,1} \prec x_{7,2}$.
 %These quadratics must also determine minimal generators for $I$ by
@@ -1258,7 +1246,7 @@ Using Equation ~\ref{eqn:c-from-lower-terms}, we recursively define a $k$-basis 
 \]
 and for each $i \in \BN$, suppose $c_j$ is the maximal element among of $c_1, \ldots c_n$ such that $c_j \le i.$ Note that such a $c_j$ exists because $1=c_1\le i.$ Define
 \[
-	S_i = y_j S_{i-j}.
+	S_i = y_j \cdot S_{i-j}.
 \]
 Since each $y_j$ has pole order $c_j$, this recursive construction ensures that 
 \[
@@ -1278,7 +1266,7 @@ By equation \ref{eqn:deg1-sat-ind} for $d \in \BN$,
 so $S$ contains elements in degree $d \in \BN$ with each pole order in $\{1 \ldots, \lfloor d\frac{\alpha}{\beta}\rfloor\}$.  Thus, by dimension counting, $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a).
 
 {\bf Part (b):}
-Let $S$ be as above in Equation \ref{eqn:sat-1-defining-S}, define $U_i$ and $V$ as in the lemma's statement, and set
+Let $S$ be as defined in Equation \ref{eqn:sat-1-defining-S}, define $U_i$ and $V$ as in the lemma's statement, and set
 \[
 	T = \left(\bigcup_{i=1}^{n-1} U_i \right) \cup V.
 \]
@@ -1289,13 +1277,26 @@ It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generat
 \[
 	k[u, x_1, \ldots, x_m] \cup V \cup \left(\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]\right). 
 \]
-Notice that $S$ generates the ideal $\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$; let $l$ be maximal such that $a_l\ne 0$.
-If $i\in \{1, \ldots, n\}$, then $y_i f$ is either in $S$ or there is some $h \in \BN$ such that $i\le h\le \max(i,l)$ satisfying $\prod_{j=1}^h y_j^{b_j}\not\in S$, 
-and for all $r<h$ $\prod_{j=1}^r {y_j}^{b_j}\in S$, where $b_j=a_j$ when $j\ne i$ and $b_i=a_i+1$.  Choose $(\gamma_1, \ldots, \gamma_n)$ minimal (that is, so that we cannot decrease any $\gamma_j$ and have the following still satisfied) such that each $\gamma_j\le b_j$ and $\prod_{j=1}^h {y_j}^{\gamma_j}\not\in S$; our recursive definition of $S$ implies that for each $1\le r< h$, we still have $\prod_{j=1}^r {y_j}^{\gamma_j}\in S$.
+Notice that $S$ generates the ideal $(y_1, \ldots, y_n)$ considered as an ideal of the subring $k[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$. Let $l$ be maximal such that $a_l\ne 0$.
+Fix $i \in \{1, \ldots, n\}$. If $y_i \cdot f \notin S$, define
+$$
+b_j = \begin{cases}
+	a_j &\text{ if } j \neq i\\
+	a_j + 1 &\text{ if } j=i.
+\end{cases}$$
 
-We now check that $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$, by checking conditions (*), (**), and (***).  Since $\prod_{j=1}^{h-1} y_j^{b_j}\in S$ but $\prod_{j=1}^h y_j^{b_j}\not\in S$, $c_h$ must not be maximal (among pole orders of the $y_i$s) such that $c_h \le \sum_{j=1}^h b_jc_j$ (otherwise, it would be in $S$), which means $c_{h+1}\le \sum_{j=1}^h b_jc_j$, giving us condition (*).  Our choice of $(\gamma_1, \ldots, \gamma_n)$ to be minimal above immediately gives (**).  Since for each $r<h$, $\prod_{j=1}^r y_{j}^{a_j}\in S$, we get condition (***).  Thus $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$.
+\noindent
+Then, there is some $h \in \BN$ such that $i\le h\le \max(i,l)$ satisfying $\prod_{j=1}^h y_j^{b_j}\not\in S$, 
+and for all $r<h$ we have $\prod_{j=1}^r {y_j}^{b_j}\in S$.  
+Choose some tuple $(\gamma_1, \ldots, \gamma_n)$ which is minimal, in the sense that we cannot decrease any $\gamma_j$ 
+and have the following still satisfied: each $\gamma_j\le b_j$ 
+and $\prod_{j=1}^h {y_j}^{\gamma_j}\not\in S.$ Our recursive definition of 
+$S$ and the fact that $\prod_{j=1}^r {y_j}^{b_j}\in S$ implies that for each $1\le r< h$, we have $\prod_{j=1}^r {y_j}^{\gamma_j}\in S$.
 
-Since $S$ generates $\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\{y_1, \ldots, y_n\} k[y_1, \ldots, y_n]-S$, we have shown that all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
+We now check that $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$, by checking conditions (*), (**), and (***).  Since $\prod_{j=1}^{h-1} y_j^{b_j}\in S$ but $\prod_{j=1}^h y_j^{b_j}\not\in S$, $c_h$ must not be maximal (among pole orders of the $y_i$'s) such that $c_h \le \sum_{j=1}^h b_jc_j$ (otherwise, it would be in $S$), which means $c_{h+1}\le \sum_{j=1}^h b_jc_j$, giving us condition (*).  Our choice of $(\gamma_1, \ldots, \gamma_n)$ to be minimal above implies (**).  Since for each $r<h$, we have $\prod_{j=1}^r y_{j}^{a_j}\in S$, condition (***) holds.  Thus $\prod_{j=1}^h y_j^{\gamma_j}\in U_{\sum_{j=1}^h b_j c_j}$.
+
+
+\todo{how to avoid polynomials hangining over lines like this, ask david} Since the ideal in $k[u, y_1,\ldots, y_n]$ generated by is $S$ is $(y_1, \ldots, y_n) \cdot k[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]-S$, we have shown that all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \begin{align*}
 				& k[u, x_1, \ldots, x_m] \cup \langle V \rangle \cup S \cup \left\langle \bigcup_{i=1}^{n-1} U_i \right\rangle \\
 	\subseteq \; 	& S \cup \langle T\rangle \cup \initial(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[u, x_1, \ldots, x_m].
@@ -2401,22 +2402,22 @@ In the case of a genus 1 curve, $X$, we know $K_X \sim 0$, and therefore the onl
 
 \ssec{Genus One Base Cases}
 \label{ssec:g_1_base}
-In this subsection we set up the base cases needed for our inductive approach, of proving Theorem ~\ref{thm:main} in the case $g=1$.
+In this subsection we set up the base cases needed for our inductive approach, of proving Theorem ~\ref{thm:main} in the case $g = 1$.
 
-\begin{longtable}	{| c || c | c |}	
+\begin{longtable}	{| c || c | c | c |}	
 	\hline
-	L' & Generator Degrees & Degrees of Minimal Relations \\
+	L' & Generator Degrees & Degrees of Minimal Relations & $e$ \\
 	\hline
 	\hline
-	$0$ & $\{1\}$ & $\emptyset$ \\	\hline
+	$0$ & $\{1\}$ & $\emptyset$ & $1$ \\	\hline
 
-	$\frac{3}{7}P_1$ & $\{1,5,7\}$ & $\{15\}$ \\	\hline
+	$\frac{3}{7} P_1$ & $\{1,5,7\}$ & $\{15\}$ & $7$ \\	\hline
 	
-	$\frac{1}{3}P_1 + \frac{1}{3}P_2$ & $\{1, 3, 3\}$ & $\{6\}$ \\	\hline
+	$\frac{1}{3} P_1 + \frac{1}{3} P_2$ & $\{1, 3, 3\}$ & $\{6\}$ & $5$ \\	\hline
 	
-	$P - Q + \frac{2}{5}P_1$ & $\{2,3,5\}$ & $\{12\}$ \\	\hline
+	$P - Q + \frac{2}{5} P_1$ & $\{2, 3, 5\}$ & $\{12\}$ & $5$ \\	\hline
 	
-	$P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$ & $\{2, 3, 3, 4\}$ & $\{6,8\}$ \\	\hline
+	$P - Q + \frac{1}{3} P_1 + \frac{1}{3}P_2$ & $\{2, 3, 3, 4\}$ & $\{6,8\}$ & $5$ \\	\hline
 	
 	\caption{Genus 1 Base Cases}
 	\label{table:g-1-base}
@@ -2430,24 +2431,28 @@ The base cases of $L' = \frac{3}{7}P_1$ and $L' = \frac{1}{3}P_1 +\frac{1}{3}P_2
 
 \ssec{Genus One Exceptional Cases}
 \label{ssec:g-1-exceptional}
-Let $\sx$ be a stacky curve, with Let $P,Q$ distinct hyperelliptic fixed points on $X$. The following table provides a list of all cases which are not generated in degrees $e=\max(5,e_1,\ldots, e_r)$ with relations in degrees $2e$, as described in Theorem ~\ref{thm:g-1-main}.
+Let $\sx$ be a stacky curve, with $P, Q$ distinct hyperelliptic
+fixed points on $X$. The following table provides a list of all
+cases which are not generated in degrees $e := \max(5, e_1, \ldots,
+e_r)$ with relations in degrees $2e$, as described in Theorem
+~\ref{thm:g-1-main}.
 
-\begin{longtable}	{| c || c | c |}
+\begin{longtable}	{| c || c | c | c |}
 	\hline
-	L' & Generator Degrees & Degrees of Minimal Relations \\
+	L' & Generator Degrees & Degrees of Minimal Relations & $e$ \\
 	\hline
 	\hline
-	$P - Q$ & $\{2\}$ & $\emptyset$ \\	\hline
+	$P - Q$ & $\{2\}$ & $\emptyset$ & $1$\\	\hline
 
-	$P - Q + \frac{1}{3}P_1$ & $\{2,3,7\}$ & $\{14\}$ \\	\hline
+	$P - Q + \frac{1}{3} P_1$ & $\{2, 3, 7\}$ & $\{14\}$ & $5$ \\	\hline
 
-	$P - Q + \frac{2}{5}P_1$ & $\{2,3,5\}$ & $\{12\}$ \\	\hline
+	$P - Q + \frac{2}{5} P_1$ & $\{2, 3, 5\}$ & $\{12\}$ & $5$\\	\hline
 	
-	$\frac{1}{3}P_1$ & $\{1,6,9\}$ & $\{18\}$ \\	\hline
+	$\frac{1}{3} P_1$ & $\{1, 6, 9\}$ & $\{18\}$ & $5$ \\	\hline
 
-	$\frac{2}{5}P_1$ & $\{1,5,8\}$ & $\{16\}$ \\	\hline
+	$\frac{2}{5} P_1$ & $\{1, 5, 8\}$ & $\{16\}$ & $5$ \\	\hline
 	
-	$\frac{3}{7}P_1$ & $\{1,5,7\}$ & $\{15\}$ \\	\hline
+	$\frac{3}{7} P_1$ & $\{1, 5, 7\}$ & $\{15\}$ & $7$ \\	\hline
 	
 	\caption{Genus 1 Exceptional Cases}
 	\label{table:g-1-exceptional}
@@ -2564,7 +2569,7 @@ On the other hand, the proof when $\delta =
 0$ is a more involved, and we dedicate the remainder of this section to proving it through the following steps: 
 characterizing saturations points (Subsection ~\ref{ssec:g_0_saturation}), describing
 base cases (Subsection ~\ref{ssec:g_0_base}), presenting exceptional
-cases (Subsection ~\ref{ssec:g-0-exceptional}), and applying inductive Lemmas ~\ref{lem:sat-3} and ~\ref{lem:raise-stacky-order} to prove\todo{synonym for prove, so its not repeated twice in this sentence?} Theorem \ref{thm:main} when $\delta = 0$ (Subsection ~\ref{ssec:g-0-main}.\todo{Peter: I made some changes to this last paragraph (gramatical and stylistic-not mathematical).  See if you like them.}
+cases (Subsection ~\ref{ssec:g-0-exceptional}), and applying inductive Lemmas ~\ref{lem:sat-3} and ~\ref{lem:raise-stacky-order} to prove \todo{synonym for prove, so its not repeated twice in this sentence?} Theorem \ref{thm:main} when $\delta = 0$ (Subsection ~\ref{ssec:g-0-main}.\todo{Peter: I made some changes to this last paragraph (gramatical and stylistic-not mathematical).  See if you like them.}
 %before proving the main theorem in full for all $\delta$ in
 %Subsection ~\ref{ssec:g-0-main}.
  
@@ -2588,7 +2593,7 @@ and generic cases follow.
 \begin{longtable}
 	{| c | c || c |}
 	\hline
-	Signature & Condition & Saturation \\
+	Signature $\sigma$ & Condition & Saturation \\
 	\hline
 	\hline
 
@@ -2743,7 +2748,7 @@ independent of the choice of $i$.
 \begin{longtable}
 	{| c | c | c || c | c |}
 	\hline
-	Case & $\sigma$ & $J$ & $\deg \lfloor e_i L \rfloor$ &
+	Case & Signature $\sigma$ & $J$ & $\deg \lfloor e_i L \rfloor$ &
 	$\max_{d \geq 0} \#S_{(\sigma, J)}(i)$ \\
 	\hline
 	\hline
@@ -2820,7 +2825,7 @@ in the case $g = 0$.  \todo{This paragraph is kind of repetitive, and awkward.}
 \begin{longtable}
 	{| c || c | c | c |}
 	\hline
-	Signature & Generator Degrees & Degrees of Relations & $e$ \\
+	Signature $\sigma$ & Generator Degrees & Degrees of Relations & $e$ \\
 	\hline
 	\hline
 
