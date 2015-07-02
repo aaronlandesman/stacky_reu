@@ -2576,22 +2576,27 @@ In addition to the bound on the degree of the generators and relations, as detai
 
 \section{Genus Zero}
 \label{sec:g_0}
-We will prove that if $(\sx , \Delta, \halfcan)$ is a log spin curve and
-$\sx$ has signature $\sigma = (0; e_1, \ldots , e_r; \delta)$,
-then $R(\sx , \Delta, L)$ is generated in degree at most $e := \max(
-5, e_1, \ldots, e_r)$ with relations generated in degree at most $2e
-$, so long as $\sigma$ does not lie in the finite list given in Table ~\ref{table:g-0-exceptional}.
+We will prove that if $(\sx, \Delta, \halfcan)$ is a log spin
+curve and $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r;
+\delta)$, then $R(\sx, \Delta, L)$ is generated in degree at most
+$e := \max(5, e_1, \ldots, e_r)$ with relations generated in degree
+at most $2e$, so long as $\sigma$ does not lie in the finite list
+given in Table ~\ref{table:g-0-exceptional}.
 
-As noted in Remark ~\ref{rem:delta-not-1}, $\delta$ is even, so we can reduce to two cases: $\delta \geq 2$ and $\delta = 0$.
-In the former case, $\halfcan$ is linearly equivalent to an effective divisor, so the
-result of Theorem \ref{thm:main} follows immediately by repeatedly applying Lemma ~\ref{lem:sat-1} to add the necessary fractional points.
-On the other hand, the proof when $\delta =
-0$ is a more involved, and we dedicate the remainder of this section to proving it through the following steps: 
-characterizing saturations points (Subsection ~\ref{ssec:g_0_saturation}), describing
-base cases (Subsection ~\ref{ssec:g_0_base}), presenting exceptional
-cases (Subsection ~\ref{ssec:g-0-exceptional}), and applying inductive Lemmas ~\ref{lem:sat-3} and ~\ref{lem:raise-stacky-order} to prove \todo{synonym for prove, so its not repeated twice in this sentence?} Theorem \ref{thm:main} when $\delta = 0$ (Subsection ~\ref{ssec:g-0-main}.\todo{Peter: I made some changes to this last paragraph (gramatical and stylistic-not mathematical).  See if you like them.}
-%before proving the main theorem in full for all $\delta$ in
-%Subsection ~\ref{ssec:g-0-main}.
+As noted in Remark ~\ref{rem:delta-not-1}, $\delta$ is even. Thus,
+we can reduce the problem into two cases: $\delta \geq 2$ and
+$\delta = 0$. In the former case, $\halfcan$ is linearly equivalent
+to an effective divisor, so the result of Theorem \ref{thm:main}
+follows immediately by repeatedly applying Lemma ~\ref{lem:sat-1}
+to add the necessary stacky points. On the other hand, the proof
+when $\delta = 0$ is more involved. We dedicate the remainder of
+this section to that case in the following steps: characterizing
+saturations points (Subsection ~\ref{ssec:g_0_saturation}),
+describing base cases (Subsection ~\ref{ssec:g_0_base}), and
+presenting exceptional cases (Subsection ~\ref{ssec:g-0-exceptional}).
+Finally, we apply inductive processes using Lemma ~\ref{lem:sat-3}
+and Lemma ~\ref{lem:raise-stacky-order} to prove the main theorem
+in the full genus zero case (Subsection ~\ref{ssec:g-0-main}).
  
 \begin{rem}
 Since all points are linearly equivalent on $\BP^1_k$, we may
