@@ -1149,30 +1149,43 @@ be the positive best lower approximations of $\frac{\alpha}{\beta}$.
 Then,
 
 \begin{enumerate}
-\item[(a)] $R_{\halfcan}$ is generated over $R_{\halfcan'}$ by elements $y_1, \ldots, y_n$ such that $\deg(y_i)=d_i$ and $-\ord_P^{L'}(y_i)=c_i$.
+\item[(a)] $R_{\halfcan}$ is generated over $R_{\halfcan'}$ by 
+	elements $y_1, \ldots, y_n$ such that $\deg(y_i) = d_i$ and $-\ord_P
+	^{L'}(y_i) = c_i$.
 
 \item[(b)] Choose an ordering $\prec$ on $k[u, x_1, \ldots, x_m]$ such that
-\[
-	\ord_u(f) < \ord_u(h) \implies f\prec h.
-\]
-Equip $k[y_1, \ldots, y_n]$ with graded $P$-lex, as defined in Definition ~\ref{defn:graded-p-lex} and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ with the block order giving the order giving $y_1, \ldots, y_n$ precedence over $u, x_1, \ldots, x_m$.  
-If $I'$ and $I$ are the ideals of relations of $k[u, x_1, \ldots, x_m]\to R_{\halfcan'}$ and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]\to R_{\halfcan}$ respectively, then 
+	\[
+		\ord_u(f) < \ord_u(h) \implies f\prec h.
+	\]
+	Equip $k[y_1, \ldots, y_n]$ with graded $P$-lex, as defined in
+	Definition ~\ref{defn:graded-p-lex} and $k[u, x_1, \ldots, x_m, y_1,
+	\ldots, y_n]$ with the block order giving the order giving $y_1, 
+	\ldots, y_n$ precedence over $u, x_1, \ldots, x_m$.
 
-\begin{align*}
-	\initial(I) &= \initial(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] 
-										 + \langle U_i: 1 \le i \le n-1 \rangle
-										 + \langle V \rangle,\\
-\end{align*}
-where 
-$V=\{x_i y_j: 1\le i\le m, 1\le j\le n\}$
- and $U_i$ is the set of monomials of the form $\prod_{j=1}^{i} y_j^{a_j}$ with $a_j \in \BN_{\ge 0}$ such that
-\begin{enumerate}
-	\item[(*)] $\sum_{j=1}^i a_j c_j \ge c_{i+1},$\\
-	\item[(**)] there does not exist $(b_1, \ldots b_i)\ne (a_1, \ldots a_i)$ with all $b_j\le a_j$ and $\sum_{j=1}^i b_jc_j\ge c_{i+1},$ \\
-	\item[(***)] there does not exist $r<i$ such that $\sum_{j=1}^r y_j^{a_j}\ge c_{r+1}$.
-\end{enumerate}
+	If $I'$ and $I$ are the ideals of relations of $k[u, x_1, \ldots, x_m]
+	\to R_{\halfcan'}$ and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]
+	\to R_{\halfcan}$ respectively, then
 
-\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$ in degrees at most $\beta$ with $I$ generated over $I'$ in degrees at most $\max(2\beta, \beta + \tau)$ (where $\tau = \max(1, \max_{1\le i, m}(\deg(x_i)))$).
+	\begin{align*}
+		\initial(I) &= \initial(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] 
+											 + \langle U_i: 1 \le i \le n-1 \rangle
+											 + \langle V \rangle,\\
+	\end{align*}
+	where $V = \{x_i y_j: 1 \le i \le m, 1 \le j \le n\}$ and $U_i$ is
+	the set of monomials of the form $\prod_{j = 1}^{i} y_j^{a_j}$ with
+	$a_j \in \BN_{\ge 0}$ such that
+	\begin{enumerate}
+		\item[(*)] $\sum_{j=1}^i a_j c_j \ge c_{i+1}$, \\
+		\item[(**)] there does not exist $(b_1, \ldots b_i) \ne (a_1,
+			\ldots a_i)$ with all $b_j \le a_j$ and $\sum_{j = 1}^i b_j
+			c_j \ge	c_{i + 1}$, \\
+		\item[(***)] there does not exist $r<i$ such that $\sum_{j=1}^r y_j^{a_j}\ge c_{r + 1}$.
+	\end{enumerate}
+
+\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$
+	in degrees at most $\beta$ with $I$ generated over $I'$ in
+	degrees at most $\max(2 \beta, \beta + \tau)$ (where $\tau = \max(1,
+	\max_{1 \leq i \leq m}(\deg(x_i)))$).
 \end{enumerate}
 \end{lem}
 
