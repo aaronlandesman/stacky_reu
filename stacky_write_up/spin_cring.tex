@@ -162,7 +162,7 @@
 \maketitle
 
 \todo{Make sure we call all divisors spin canonical divisors}
-
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
@@ -2075,15 +2075,13 @@ This completes part (b).
 
 {\bf Part (c):}
 To show (c), we wish to show that $y_{i, e_i}z \in R'$ for all generators $z$ of $R'$
-with $z \neq y_{i, e_i} \text{ and } z \neq y_{i, e_i'}$. Note that $f \in R$ further satisfies $f \in R'$ if and
+with $z \neq y_{i, e_i} \text{ and } z \neq y_{i, e_i'}$. By definition of $H^0(\sx,\halfcan')$, note that $f \in R$ further satisfies $f \in R'$ if and
 only if for all $j \in J$ we have
 \begin{align}
 \label{eqn:order-degree}
 	-\ord_{Q_j}
 ^{\halfcan_X'}(f) \leq \deg (f) \left( \subhalf {e_j'} \right).
 \end{align}
-
-\todo{Peter: I understand why this should be true, although its not clear to me that there it easily follows.  Maybe we should explain it a little as to not confuse the reader. Aaron: Can we ask David, this was clear to me in his paper, and he also didn't include it. Say by the definition}
 
 \noindent
 Now fix $i \in J$. We check Inequality ~\eqref{eqn:order-degree} holds with $f = y_{i, e_i}z$, implying $y_{i,e_i}z \in R'$ in the three following cases: 
@@ -2583,14 +2581,18 @@ finite list of exceptional cases, as listed in Table
 
 If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $L_X \in \di X$ satisfy $2L_X \sim K_X + \Delta$. We have $\deg \halfcan_X \geq 1$, so, by Riemann--Roch, $h^0(\sx, \halfcan) \geq 1.$ Therefore, $L$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $L$ is an effective divisor.
 
-We first now show the theorem holds for $L_X$ by induction. Since $L$ is effective, we may induct on the degree of the divisor. The base case is easy: the theorem holds for $L' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $L' \in \di X$, with $L'$ effective. We will show it holds for $L' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $L'$.
+We first now show the theorem holds for $L_X$ by induction. Since $L_X$ is effective, we may induct on the degree of the divisor. The base case is easy: the theorem holds for $L_X' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $L_X' \in \di X$, with $L_X'$ effective. We will show it holds for $L_X' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $L_X'$.
 
-First, if $P$ is not a basepoint of $\halfcan',$ then the hypotheses of Lemma ~\ref{lem:sat-1} are satisfied. In particular, we may take $u \in h^0(\sx,L)$ with $u \neq 0$ and $\ord_P(u) = \lfloor \halfcan|_P \rfloor $,
-as $P$ is not a basepoint of $L'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg \halfcan' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $\halfcan= \halfcan'+P$.  \todo{Peter: I don't find this paragraph (after the first sentence) very useful.  1: I'm not sure if we even need to go through the check that it satisfies the conditions for lemma 4.5.  2: I don't find the check clear or illuminating as written.  Either we should reword it or remove it (feel free to disagree, of course)}
+First, if $P$ is not a basepoint of $\halfcan',$ then the hypotheses of Lemma ~\ref{lem:sat-1} are satisfied.
+\iffalse
+In particular, we may take $u \in h^0(\sx,L)$ with $u \neq 0$ and $\ord_P(u) = \lfloor \halfcan|_P \rfloor $,
+as $P$ is not a basepoint of $L_X'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg \halfcan' \geq 1.$   \todo{Peter: I don't find this paragraph (after the first sentence) very useful.  1: I'm not sure if we even need to go through the check that it satisfies the conditions for lemma 4.5.  2: I don't find the check clear or illuminating as written.  Either we should reword it or remove it (feel free to disagree, of course)}
+\fi
+Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $\halfcan= \halfcan'+P$.
 
-Otherwise, $P$ is a basepoint of $L'$, so the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(L'+P) \geq 2$ as $\deg L' + P \geq 1$\todo{Peter: I don't follow why we have a $+P$ here.  lemma 4.8 requires that $L'$ satisfy $\deg(3L')\ge 2$,not $\deg(3L)\ge 2$.  This isn't a problem though since $\Delta> 0$} Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $L = L'+P$.  The previous argument shows the theorem holds for $L_X$.
+Otherwise, $P$ is a basepoint of $L_X'$, so the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(L_X') \geq 2$ as $\deg L_X' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $L_X = L_X'+P$. By induction, the theorem holds for $L_X$.
 
-To complete the case that $\Delta > 0$, we now need show the theorem holds for a \emph{stacky} log spin divisor $L$.  It suffices to show that if the theorem holds for a divisor $L'$ with $\deg \lfloor L' \rfloor > 0$, then it holds for $L' + \subhalf {e_i}P_i$ with $e_i$ odd.  As above, if $P$ is not a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-1}; on the other hand, if $P$ is a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-2}.
+To complete the case that $\Delta > 0$, we now need show the theorem holds for a \emph{stacky} log spin divisor $L$.  It suffices to show that if the theorem holds for a divisor $L'$ with $\deg \lfloor L' \rfloor > 0$, then it holds for $L' + \subhalf {e_i}P_i$ with $e_i$ odd.  As above, if $P$ is not a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-1}. On the other hand, if $P$ is a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-2}.
 
 \vskip.1in
 \noindent
@@ -2606,13 +2608,21 @@ Note that we are assuming $L$ is not one of the exceptional cases listed in Tabl
 
 First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12. Furthermore, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Observe that $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$. However, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, and the relation in degree $12$ coming from $R_{\halfcan'}$, lies in a degree less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
-Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx', \delta, \halfcan')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then as found in Example ~\ref{eg:base-1-33}, the signature $\sigma = (1;3, 3; \delta)$ satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}\todo{Peter: Is it better for us to say the signature satisfies the hypothesis rather than the triple?}. Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx', \delta', \halfcan')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ Finally, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. \todo{Peter: Why is it immediate that $n$ threes satisfies the condition for admissibility?  We got rid of that proof from earlier.  In fact, didn't we find it to be false?}
+Second, we deal with the case that $\sx$ has at least two stacky points. 
+If $(\sx', \delta, \halfcan')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then as found in 
+Example ~\ref{eg:base-1-33}, the triple $(\sx', 0, P-Q + \frac{1}{3}P_1+\frac{1}{3}P_2)$
+satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}.
+Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx', \delta', \halfcan')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ 
+Finally, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds 
+for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. \todo{Peter: Why is it immediate that $n$ threes satisfies the condition for admissibility?  We got rid of that proof from earlier.  In fact, didn't we find it to be false? Aaron: I don't think so, see Remark ~\ref{rem:three-cases}.}
 
 \vskip.1in
 \noindent
 {\sf Case 2b: $L_X = 0$}
 
-This case is analogous to 2a. \todo{Peter: Maybe you should mention something about how the exceptional cases differ, and how this affects the argument?}
+This case is analogous to 2a: If there is only one stacky point, we start at $L = \frac{3}{7}P_1,$ and inductively increment the stabilizer order. Note that by Table ~\ref{table:g-1-base}, $L = \frac{3}{7}P_1,$ will have a relation in degree $15.$ However, once $e_1 \geq 9$, we have $2 \cdot e_1 > 15$, so the theorem holds for such stacky curves. Once the divisor as at least two stacky points, the argument proceeds as in Case 2a.
+
+\todo{Peter: Maybe you should mention something about how the exceptional cases differ, and how this affects the argument? Ok, I did it imprecisely. Is this better?}
 \end{proof}
 
 \begin{rem}
@@ -3015,10 +3025,40 @@ $2e$.
 \section{Further Research}
 \label{sec:further-questions}
 
-This paper leaves open many directions for further research.\todo{Peter: This sentence sounds weird.  It's also kind of not true; as David said, we are kind of closing the topic}
+In this section, we present several directions for further research.
 
 \begin{enumerate}
-	\item One direction for further research is to 
+
+	\item As noted in Remark ~\ref{rem:explicit-generators}, the 
+		proof of Theorem ~\ref{thm:main} 
+		%given in this paper 
+		gives an 
+		explicit procedure for computing the generators and relations of $R_
+		\halfcan$ when the genus of $X$ is $0$ or $1$.
+		\begin{question}
+		\label{ques:algorithm}
+			Is there an explicit procedure for computing the generators 
+			and relations for an arbitrary genus $g \geq 2$ curve?
+		\end{question}
+		Suppose the generators and relations of $R_{\halfcan_X}$ are known, 
+		where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the 
+		coarse space of $\sx$, and $L_X \leq L$ is a spin canonical divisor 
+		of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an 
+		algorithm for inductively determining the generators of $L$. 
+		This reduces Question \ref{ques:algorithm} to the 
+		following Petri-like question:
+		\begin{question}
+		\label{ques:spin-canonical-petri}
+			Given a {\rm(}non-stacky {\rm)} curve $X$ and a spin canonical 
+			divisor $L \in \di X$, can one write down a set of minimal 
+			generators and minimal relations for $R_\halfcan$? If so, can one give the 
+			generic ideal of $R_\halfcan$ or the generic initial ideal of $R_\halfcan$, as 
+			defined in Voight and Zureick Brown \cite[Definition 2.2.7]
+			{vzb:stacky}?
+		\end{question}
+\todo{Aaron: Peter, you said you wanted to take out the question on generic ideals, but I think it might be interesting to think about. Why do you want to remove it?}	
+
+\item One direction for further research is to 
 		extend the results of this paper to divisors $D \in \di \sx$ on a 
 		stacky curve $\sx,$ where $nD \sim K.$ The canonical rings of such 
 		divisors translate to rings of fractional weight ($\frac{2}{n}$) modular 
@@ -3034,11 +3074,11 @@ This paper leaves open many directions for further research.\todo{Peter: This se
 		shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e
 		_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of 
 		fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3
-		^{e_3} = 0$.  \todo{Peter: I don't know if it is so worth while giving an explicit definition and precisely defining the work already done.  A general outline might suffice and be easier/shorter to read.}
+		^{e_3} = 0$.  \todo{Peter: I don't know if it is so worth while giving an explicit definition and precisely defining the work already done.  A general outline might suffice and be easier/shorter to read. Aaron: I have a feeling we should define it, but I'm ok with removing the last two sentences.}
 
 		This motivates the following question:
 
-\todo{Peter: Would this be better as a conjecture?}
+\todo{Peter: Would this be better as a conjecture? Aaron: I don't have an actual conjecture. I'm not sure what the bounds would be.}
 		\begin{question}
 		\label{ques:fractional-weight}
 			If $\sx$ is a stacky curve and $D \in \di \sx$ with $nD \sim K$, 
@@ -3077,39 +3117,6 @@ This paper leaves open many directions for further research.\todo{Peter: This se
 			generic initial ideal explicitly?
 		\end{question}\todo{Peter: This whole question is kind of confusing.  I don't know what it is trying to say.}
 
-	\item As noted in Remark ~\ref{rem:explicit-generators}, the 
-		proof of Theorem ~\ref{thm:main} 
-		%given in this paper 
-		gives an 
-		explicit procedure for computing the generators and relations of $R_
-		\halfcan$ when the genus of $\sx$ \todo{Peter: Minor note: should we say genus of $\sx$ or genus of $X$; did we actually define that a genus of a stacky curve equals that of its coarse space?} is $0$ or $1$.  \todo{Peter: This question also seems like it might be the most important (as far as modular forms applications go.  Maybe we should put it first?}
-		\begin{question}
-		\label{ques:algorithm}
-			Is there an explicit procedure for computing the generators 
-			and relations for an arbitrary genus $g \geq 2$ curve?
-		\end{question}
-		Suppose the generators and relations of $R_{\halfcan_X}$ are known, 
-		where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the 
-		coarse space of $\sx$, and $L_X \leq L$ is a spin canonical divisor 
-		of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an 
-		algorithm for inductively determining the generators of $L$. 
-		This reduces Question \ref{ques:algorithm} to the 
-		following Petri-like question:
-		\begin{question}
-		\label{ques:spin-canonical-petri}
-			Given a {\rm(}non-stacky {\rm)} curve $X$ and a spin canonical 
-			divisor $L \in \di X$, can one write down a set of minimal 
-			generators and minimal relations for $R_\halfcan$? If so, can one give the 
-			generic ideal of $R_\halfcan$ or the generic initial ideal of $R_\halfcan$, as 
-			defined in Voight and Zureick Brown \cite[Definition 2.2.7]
-			{vzb:stacky}?
-		\end{question}
-		In particular, if Question ~\ref{ques:spin-canonical-petri} were 
-		answered affirmatively one would be able to write down explicit 
-		generators and relations for $R_\halfcan$ on a stacky curve, essentially 
-		by inductively applying Lemma ~\ref{lem:raise-stacky-order}.
-\todo{Aaron, I tried to edit the following question, but it still seems a bit imprecise, and the question in particular is a bit of a long sentence.}
-\todo{Peter @ Aaron: I think the last sentence of the question can be removed; generic isn't relevant in this part of further questions (it was relevant in part (2)).  Also the sentence after the question can be removed.}
 	\item In Subsection \ref{ssec:bounds-high-genus}, we reference 
 		the work of Reid \cite[Theorem 3.4]{reid:infinitesimal}. We use his 
 		proof that the 
@@ -3121,14 +3128,14 @@ This paper leaves open many directions for further research.\todo{Peter: This se
 		most cases his bound is actually 3 and 6 with well-characterized 
 		exceptions.
 		Generalizing this slightly stronger bound to the (non-stacky) log case case would allow us to inductively apply the lemmas from Section ~\ref{sec:induction} and improve Theorem ~\ref{thm:main} as follows:
-		\begin{conjecture}\label{ques:reduce-5,10-to-4,8}
-			When $g \geq 2,$ the bounds in Theorem \ref{thm:main} on 
+		\begin{question}\label{ques:reduce-5,10-to-4,8}
+			When $g \geq 2,$ can the bounds in Theorem \ref{thm:main} on 
 			the degrees of generation and relations can be reduced from 
 			$e = \max(5,e_1, \ldots, e_r)$ and $\max(10, 2e_1, \ldots, 2e_r)$ to 
 			$e'=\max(4,e_1, \ldots, e_r)$ and $2e'$, 
-			apart from a finite list of exceptions?
-		\end{conjecture}
-		\todo{Peter: I don't like a finite list of exceptions.  The list contains infinitely many non-isomorphic stacky curves.  Finite family might also be imperfect.  Can we say except when $g=2$ (I believe there will be infinitely many counterexamples there) or it lies in a finite list of exception?  Do we believe that to be true?}
+			apart from well a characterized list of exceptions?
+		\end{question}
+		\todo{Peter: I don't like a finite list of exceptions.  The list contains infinitely many non-isomorphic stacky curves.  Finite family might also be imperfect.  Can we say except when $g=2$ (I believe there will be infinitely many counterexamples there) or it lies in a finite list of exception?  Do we believe that to be true? Aaron: Since we haven't really thought about this conjecture, I'm not comfortable making it a conjecture. I switched it back to a question. Is that ok?}
 		\begin{rem}\label{rem:reduce-3,6}
 			It is unlikely that these bounds can be reduced further to 
 			$e''=\max(3, e_1, \ldots, e_r)$ and $2e''$, 
@@ -3141,10 +3148,10 @@ This paper leaves open many directions for further research.\todo{Peter: This se
 %			generated in degree at most 3 with relations in degree at most 6, 
 %			apart from a well characterized list of exceptions.
 			\end{rem}
-	\item While Theorem ~\ref{thm:main} gives a minimal set of 
-		generators \todo{Peter: I believe this is actually not true.  If $R_{\halfcan'}$ is minimally generated by $x_1, \ldots x_m$ and $R_\halfcan$ is generated by $y_1, \ldots, y_n$ over $R_{\halfcan'}$, then $R_{\halfcan}$ is {\emph{generated}} by $x_1, \ldots, x_m, y_1, \ldots y_n$ but not necessarily minimally.  It's possible to have something like $y_1y_3-y_2^2=x_i$.}
-		for the log spin canonical ring $R_\halfcan,$ the set of 
-		relations is not minimal. In many of the $g = 0$ and $g=1$ cases, 
+	\item While Theorem ~\ref{thm:main} gives a set of 
+		generators and relations
+		for the log spin canonical ring $R_\halfcan,$ these sets are not necessarily minimal
+		In many of the $g = 0$ and $g=1$ cases, 
 		it is not too difficult to see that our inductive procedure also 
 		yields a minimal set of relations for $R_\halfcan$. One might investigate 
 		whether the generators and relations given by the inductive proof 
