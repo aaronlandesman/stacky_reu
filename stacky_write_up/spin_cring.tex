@@ -171,7 +171,7 @@ linear transformations. We consider the {\bf ring of modular forms}
 $M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best
 ways to understand the ring of modular forms is to give a
 presentation of $M(\Gamma)$ for general Fuchsian groups $\Gamma$. 
-In order to do so, it is extermely useful to have a bound on the
+In order to do so, it is extremely useful to have a bound on the
 degrees in which the generators and relations can occur. In the
 special case that $\Gamma$ has no odd weight modular forms, Voight
 and Zureick-Brown \cite[Chapters 7-9]{vzb:stacky} give tight bounds.
@@ -297,7 +297,7 @@ is separably rooted, i.e. the residue field at each stacky point
 is separable.
 \end{rem}
 
-Theorem ~\ref{thm:main} is proven seperately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$, each of
+Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$, each of
 which uses a similar inductive process. The genus $g \geq 2$ case is
 proven in Theorem ~\ref{thm:g-high-main}. In Theorem
 ~\ref{thm:g-1-main} and Theorem
@@ -369,7 +369,7 @@ Cornalba--Griffiths--Harris \cite[Section III.2]
 Chapter 5]{vzb:stacky}.
 
 For the remainder of this paper, fix an algebraically closed field $k$.
-This is no restriction on generality, as generator and relation degrees are preserved under base change to the algebraic closue.
+This is no restriction on generality, as generator and relation degrees are preserved under base change to the algebraic closure.
 
 \ssec{Stacky Curves and Log Spin Canonical Rings}
 \label{ssec:stacky-background}
@@ -718,7 +718,7 @@ three conditions hold:
 \section{Examples}
 \label{sec:examples}
 
-In this section, we compute several examples of computing presentations for spin canonical rings. In several cases, we also check certain triples are admissible, as defined in Definition ~\ref{defn:admissible}. In addition to demonstrating the algorithmic procedure for computing presetations, these examples will also serve as useful base cases for our inductive proof of Theorem ~\ref{thm:main}.
+In this section, we compute several examples of computing presentations for spin canonical rings. In several cases, we also check certain triples are admissible, as defined in Definition ~\ref{defn:admissible}. In addition to demonstrating the algorithmic procedure for computing presentations, these examples will also serve as useful base cases for our inductive proof of Theorem ~\ref{thm:main}.
 
 \begin{example}
 \label{eg:base-1-0}
@@ -1468,7 +1468,7 @@ Then, the following statements hold.
 	\item[(b)] Equip $k[y_3, y_4]$ with $grevlex$ so that $y_3 \prec 
 		y_4$
 		and equip the ring $k[y_3, y_4, x]$ with the block 
-		order with $y_3, y_4$ preceeding $x_2, \ldots, x_m$. \todo{In here and throughout the section, we should just enforce the convention that the $y_i$ come before the $x_j$, and then we won't have to say which preceed which.} Then,
+		order with $y_3, y_4$ preceding $x_2, \ldots, x_m$. \todo{In here and throughout the section, we should just enforce the convention that the $y_i$ come before the $x_j$, and then we won't have to say which precede which.} Then,
 		\begin{align*}
 			\initial(I) &= \initial(I')k[x, y_3, y_4]+\langle y_4 x_j \mid 2 \leq j \leq m \rangle +\langle y_4^2 \rangle.
 		\end{align*}
@@ -2228,7 +2228,7 @@ Ergo, $f$ is surjective.
 %
 %\begin{proof}[Proof of Lemma ~\ref{lem:generation-5}]
 %If $\Delta > 0$, this holds by Lemma ~\ref{lem:semicanonical_generation}. If $g = 2$ and $\Delta = 0,$ then the claim follows from
-%Lemma ~\ref{lem:genus-2-generation-5}. Finally, if $g > 2$ and $\Delta = 0$, using Lemma ~\ref{lem:semicanonical_generation}, there are no minimal generators in degree $\geq 7$. By Voight and Zurieck-Brown \cite[Theorem 3.2.1]{vzb:stacky}, we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective and so there are also no minimal generators in degree 6. Hence, $R_\halfcan$ is generated in degree at most 5.
+%Lemma ~\ref{lem:genus-2-generation-5}. Finally, if $g > 2$ and $\Delta = 0$, using Lemma ~\ref{lem:semicanonical_generation}, there are no minimal generators in degree $\geq 7$. By Voight and Zureick-Brown \cite[Theorem 3.2.1]{vzb:stacky}, we obtain the map $\sym^3 H^0(2L) \rightarrow \sym^3 H^0(6L)$ is surjective and so there are also no minimal generators in degree 6. Hence, $R_\halfcan$ is generated in degree at most 5.
 %\end{proof}
 
 The next step is to bound the degrees of the relations of $R_\halfcan$ when $\Delta > 0$. This is done in Proposition ~\ref{prop:relation-10}
@@ -2534,7 +2534,7 @@ Note that we are assuming $L$ is not one of the exceptional cases listed in Tabl
 
 First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12. Furthermore, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Observe that $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$. However, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, and the relation in degree $12$ coming from $R_{\halfcan'}$, lies in a degree less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
-Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then as found in Example ~\ref{eg:base-1-33}, the signature $\sigma = (1;3, 3; \delta)$ satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}\todo{Peter: Is it better for us to say the signature satisfies the hypothesis rather than the tripple?}. Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ Finally, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. \todo{Peter: Why is it immediate that $n$ threes satisfies the condition for admissibility?  We got rid of that proof from earlier.  In fact, didn't we find it to be false?}
+Second, we deal with the case that $\sx$ has at least two stacky points. If $(\sx',\Delta,L')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then as found in Example ~\ref{eg:base-1-33}, the signature $\sigma = (1;3, 3; \delta)$ satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}\todo{Peter: Is it better for us to say the signature satisfies the hypothesis rather than the triple?}. Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx',\Delta',L')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ Finally, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. \todo{Peter: Why is it immediate that $n$ threes satisfies the condition for admissibility?  We got rid of that proof from earlier.  In fact, didn't we find it to be false?}
 
 \vskip.1in
 \noindent
@@ -2944,7 +2944,7 @@ This paper leaves open many directions for further research.
 		$\gamma^{\otimes a} \cong \eta$ and $\gamma^{n} \cong \Omega_{X(p)}^
 		1$. Adler and Ramanan \cite[Appendix 2]{adler:moduli} construct an 
 		explicit basis of weight $\frac{4}{5}$ modular forms for $X(11)$. 
-		Fractional modular forms also make an apperance in Milnor \cite[$
+		Fractional modular forms also make an appearance in Milnor \cite[$
 		\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor 
 		shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e
 		_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of 
