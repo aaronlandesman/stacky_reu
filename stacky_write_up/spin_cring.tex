@@ -161,8 +161,6 @@
 
 \maketitle
 
-\todo{Make sure we want to have linear equivalence $\sim$ of divisors instead of $=$ in most places}
-\todo{It's a bit strange how many tables are split across pages. Can we we make sure they each lie on a single page. Robin: do this at the end, not yet. Aaron: I changed our long tables to tables. Why did we use longtables at all? Our tables are all pretty short.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
@@ -170,7 +168,7 @@ Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup of
 $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations, such that $\Gamma \backslash \BH$ has finite area.
 We consider the graded {\bf ring of modular forms}
-$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$ \todo{Peter: Is $k$ bad to use here, since we will implicitly later use $k$ as the base field? Robin: Perhaps, although modular forms are traditionally referred to as having weight $k$. Not sure on this one. Aaron: I do not think this will confuse anyone.}. One of the best
+$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best
 ways to understand the ring of modular forms is to give a
 presentation as a quotient of a polynomial ring.
 %of $M(\Gamma)$ for general Fuchsian groups $\Gamma$. 
@@ -186,7 +184,7 @@ For example, in the case $\Gamma$ acts freely on $\BH$, $\Gamma
 \backslash \BH$ is a Riemann Surface over $\BC$. 
 $\Gamma \backslash \BH$ may be non-compact, but in such cases we can form a
 compact Riemann Surface, $\Gamma \backslash \BH^*,$ by adding in
-cusps, with associated divisor of cusps $\Delta$.\todo{Peter: It is weird to have our first discussion of divisors be about the divisors of cusps.  Shouldn't canonical or half canonical divisors be introduced first? Robin: But this is where the log divisor comes from!}
+cusps, with associated divisor of cusps $\Delta$.
 
 In order to find generators and relations for $M(\Gamma)$, we
 translate the seemingly analytic question of understanding the ring
@@ -195,9 +193,6 @@ generalization of the GAGA principle. By \cite[Proposition 6.1.5]
 {vzb:stacky}, there is an equivalence of categories between orbifold
 curves and log stacky curves over $\BC$. Hence, for the remainder
 of the paper, we will work in the algebraic category.
-\todo{Robin: I changed this back because the new version seemed a bit
-long and the period is perfectly acceptable here. the new version
-seemed oddly worded to me}
 
 Let $X$ be a smooth algebraic curve of genus $g$ over a field $k$.
 It is well known that the canonical sheaf $\Omega _X,$ with
@@ -298,10 +293,8 @@ signatures with $g = 0$.
 
 \begin{rem}
 \label{rem:main-weaker-assumptions}
-In fact, the proof of Theorem ~\ref{thm:main} holds not only for log spin canonical divisors, which must have distinct points, but also for arbitrary effective divisors
-$\Delta$. 
-\todo{Peter: $\Delta$ seems weird as the name of the divisor, since its typically reserved for log divisors.  Also, how is this true?  This only follows given sufficient base point freeness conditions.  It is true when $g=0$ if that's what you meant to say. Robin: Throughout VZB, for example, $\Delta$ is used to represent any effective divisor. Where does an assumption that $\Delta$ has coefficient $1$ come into play?  Peter: All I meant with the first comment was that $D$ might make more sense then $\Delta$, because this divisor does not arise in a natural way purely from the log divisor.  On the other hand, it doesn't really matter.}
-\todo{Peter: As for the second comment I made above, when $g>0$, we don't have the necessary base point freeness condition to apply this lemma on arbitrary divisors.} Furthermore, one may relax the assumption that $k$ is perfect. Instead, one only need assume that the stacky curve
+In fact, the proof of Theorem ~\ref{thm:main} holds with $\Delta$ replaced by an arbitrary effective divisor of the coarse space.
+ Furthermore, one may relax the assumption that $k$ is perfect. Instead, one only need assume that the stacky curve
 is separably rooted, as described further in Remark ~\ref{rem:stack-formalism}.
 \end{rem}
 
@@ -1472,7 +1465,7 @@ We now restrict our attention to log canonical rings of stacky curves.  Lemma \r
 
 \begin{lem}
 \label{lem:sat-2}
-Let $(\sx, \Delta, \halfcan)$ and $(\sx', \Delta, \halfcan')$ \todo{The notation i was using for these throughout the paper was $\halfcan$ and $\halfcan'$ without the $\sx$ subscripts. We should make one of them consistent with the other.} be log spin curves with the same coarse space $X = X'$ having signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$, where $e_r=3$.  Suppose $g > 0,$ and, if $g = 1,$ then $\deg 3\halfcan' \geq 2.$ Then, by Riemann-Roch $\sat(Eff(L'))\le 2$. \todo{Why is it automatic that the saturation is 2? Maybe you can explain this in the proof in a sentence.}
+Let $(\sx, \Delta, \halfcan)$ and $(\sx', \Delta, \halfcan')$ be log spin curves with the same coarse space $X = X'$ having signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$, where $e_r=3$.  Suppose $g > 0,$ and, if $g = 1,$ then $\deg 3\halfcan' \geq 2.$ Then, by Riemann-Roch $\sat(Eff(L'))\le 2$.
 Furthermore, let $R_{\halfcan'} = k[x_2, x_3
 , x_5, \ldots, x_m]/I'$ and let $\halfcan = \halfcan' + \frac{1}{
 3}P$, where $P\in X$ is a base point of $\halfcan'$ (which includes the case when $H^0(X, \lfloor \halfcan'\rfloor) = 0$).
@@ -1502,7 +1495,8 @@ Then, the following statements hold.
 \end{lem}
 
 \begin{proof}
-First, note that when genus is at least we shall show the assumptions on $g$ imply $H^0(\sx, 3 \halfcan), H^0(\sx, 4 \halfcan)$ are both basepoint-free: If $g \geq 2$ then $\deg 3 \halfcan > 2g - 1$ \todo{If $g = 2$ then we in fact have $\deg 3L = 3g - 3 = 2g - 1.$ Is this a big problem? It's almost basepoint-free, except if the point you take out yields the canonical divisor, after removing it.  Peter:  Note that this is $L$ not $L'$ whose base point freeness we are talking about.  In particular $\deg(\lfloor 3L \rfloor)=\deg(\lfloor 3L'\rfloor)+1\ge 2g> 2g-1$.} and $\deg 4 \halfcan > 2g - 1$, so $H^0(\sx, 3 \halfcan)$ and $H^0(\sx, 4 \halfcan)$ are base point free. If $g = 1$, we assume $\deg 3 \halfcan \geq 2 > 2g - 1$, so we also have $\deg 4 \halfcan \geq 2 > 2g - 1,$ so again $H^0(\sx, 3 \halfcan)$ and $H^0(\sx, 4 \halfcan)$ are base point free. 
+First, note that when genus is at least we shall show the assumptions on $g$ imply $H^0(\sx, 3 \halfcan), H^0(\sx, 4 \halfcan)$ are both basepoint-free: If $g \geq 2$ then $\deg 3 \halfcan > 2g - 1$ 
+and $\deg 4 \halfcan > 2g - 1$, so $H^0(\sx, 3 \halfcan)$ and $H^0(\sx, 4 \halfcan)$ are base point free. If $g = 1$, we assume $\deg 3 \halfcan \geq 2 > 2g - 1$, so we also have $\deg 4 \halfcan \geq 2 > 2g - 1,$ so again $H^0(\sx, 3 \halfcan)$ and $H^0(\sx, 4 \halfcan)$ are base point free. 
 
 Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord_P^{\halfcan'}(y_i) = 1$ by Riemann-Roch, proving part (a).
 
@@ -2612,15 +2606,12 @@ satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}.
 Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx', \delta', \halfcan')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ 
 Finally, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds 
 for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. 
-\todo{Peter: Why is it immediate that $n$ threes satisfies the condition for admissibility?  We got rid of that proof from earlier.  In fact, didn't we find it to be false? Aaron: I don't think so, see Remark ~\ref{rem:three-cases}.}
 
 \vskip.1in
 \noindent
 {\sf Case 2b: $\halfcan_X = 0$}
 
 This case is analogous to 2a: If there is only one stacky point, we start at $L = \frac{3}{7}P_1,$ and inductively increment the stabilizer order. Note that by Table ~\ref{table:g-1-base}, $L = \frac{3}{7}P_1,$ will have a relation in degree $15.$ However, once $e_1 \geq 9$, we have $2 \cdot e_1 > 15$, so the theorem holds for such stacky curves. Once the log spin canonical divisor has at least two stacky points, the argument proceeds as in Case 2a.
-
-\todo{Peter: Maybe you should mention something about how the exceptional cases differ, and how this affects the argument? Aaron: Ok, I did it imprecisely. Is this better?}
 \end{proof}
 
 \begin{rem}
@@ -2813,10 +2804,9 @@ for each case as described in the Table ~\ref{table:g-0-base-cases-degrees}.
 
 	(k) &	$\{3, 3, 3, 4, 4, 5\}$ & $\{6, 7, 7, 8, 8, 8, 9, 9, 10\}$ & $5$ \\ \hline
 	\end{tabular}
-	\caption{Generators and Relations for Genus 0 Non-effective Base Cases}
+	\caption{Generators and Relations for Genus 0 Base Cases}
 	\label{table:g-0-base-cases-degrees}
 \end{table}
-\todo{Peter: Can we make a better description for the table above? Robin: Think of one then.}
 
 We can also always find a presentation for these cases such that
 they satisfy \ref{custom:Ad-i} and \ref{custom:Ad-ii} and that $\initial(I')$ is
@@ -2861,7 +2851,7 @@ independent of the choice of $i$.
 
 	(k) & $(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & $5$ & $0$ \\ \hline
 \end{tabular}	
-	\caption{Checking \ref{custom:Ad-iii} for Genus 0 Non-Effective Base Cases}
+	\caption{Checking \ref{custom:Ad-iii} for Genus 0 Base Cases}
 	\label{table:g-0-base-cases-admissibility}
 \end{table}
 
@@ -3056,36 +3046,23 @@ In this section, we present several directions for further research.
 		\label{ques:spin-canonical-petri}
 			Given a {\rm(}non-stacky {\rm)} curve $X$ and a spin canonical 
 			divisor $L \in \di X$, can one write down a set of minimal 
-			generators and minimal relations for $R_\halfcan$? If so, can one give the 
-			generic ideal of $R_\halfcan$ or the generic initial ideal of $R_\halfcan$, as 
-			defined in Voight and Zureick Brown \cite[Definition 2.2.7]
-			{vzb:stacky}?
+			generators and minimal relations for $R_\halfcan$?
 		\end{question}
-\todo{Aaron: Peter, you said you wanted to take out the question on generic ideals, but I think it might be interesting to think about. Why do you want to remove it?}	
-
+		
 \item One direction for further research is to 
 		extend the results of this paper to divisors $D \in \di \sx$ on a 
 		stacky curve $\sx,$ where $nD \sim K.$ The canonical rings of such 
-		divisors translate to rings of fractional weight ($\frac{2}{n}$) modular 
-		forms. As defined in Adler and Ramanan (in the passage immediately 
-		following \cite[Corollary 24.5]{adler:moduli}), a {\bf modular form 
+		divisors translate to rings of fractional weight $\frac{2}{n}$ modular 
+		forms. A {\bf modular form 
 		of fractional weight} $\frac{2a}{n}$ on $X(p)$ is a section of a 
 		line bundle $\eta$ so that there exists a line bundle $\gamma$ with 
-		$\gamma^{\otimes a} \cong \eta$ and $\gamma^{n} \cong \Omega_{X(p)}^
-		1$. Adler and Ramanan \cite[Appendix 2]{adler:moduli} construct an 
-		explicit basis of weight $\frac{4}{5}$ modular forms for $X(11)$. 
-		Fractional modular forms also make an appearance in Milnor \cite
-		[$\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor 
-		shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e
-		_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of 
-		fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3
-		^{e_3} = 0$.  
-\todo{Peter: I don't know if it is so worth while giving an explicit definition and precisely defining the work already done.  A general outline might suffice and be easier/shorter to read. Aaron: I have a feeling we should define it, but I'm ok with removing the last two sentences.}
+$\gamma^{\otimes a} \cong \eta$
+ and 
+ $\gamma^{n} \cong \Omega_{X(p)}^1$.
+		For more details on fractional weight modular forms, see Adler and Ramanan \cite[p. 96]{adler:moduli}) and Milnor \cite
+		[$\mathsection$ 6]{milnor:fractional-weight}.
 
-		This motivates the following question:
-
-\todo{Peter: Would this be better as a conjecture? Aaron: I don't have an actual conjecture. I'm not sure what the bounds would be.}
-		\begin{question}
+\begin{question}
 		\label{ques:fractional-weight}
 			If $\sx$ is a stacky curve and $D \in \di \sx$ with $nD \sim K$, 
 			where $K$ is the canonical divisor of $\sx$, can one bound the 
@@ -3137,7 +3114,6 @@ In this section, we present several directions for further research.
 			$e'=\max(4,e_1, \ldots, e_r)$ and $2e'$, 
 			apart from well a characterized list of exceptions?
 		\end{question}
-\todo{Peter: I don't like a finite list of exceptions.  The list contains infinitely many non-isomorphic stacky curves.  Finite family might also be imperfect.  Can we say except when $g=2$ (I believe there will be infinitely many counterexamples there) or it lies in a finite list of exception?  Do we believe that to be true? Aaron: Since we haven't really thought about this conjecture, I'm not comfortable making it a conjecture. I switched it back to a question. Is that ok? Robin: Perhaps give reference to Reid's characterizations?}
 		\begin{rem}\label{rem:reduce-3,6}
 			It is unlikely that these bounds can be reduced further to 
 			$e''=\max(3, e_1, \ldots, e_r)$ and $2e''$, 
