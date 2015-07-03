@@ -162,16 +162,15 @@
 \maketitle
 
 \todo{Make sure we want to have linear equivalence $\sim$ of divisors instead of $=$ in most places}
-\todo{Write all block orders as tensors so we don't need to say the $y_i$ precede the $x_i$.}
-\todo{It's a bit strange how many tables are split across pages. Can we we make sure they each lie on a single page. Robin: do this at the end, not yet}
+\todo{It's a bit strange how many tables are split across pages. Can we we make sure they each lie on a single page. Robin: do this at the end, not yet. Aaron: I changed our long tables to tables. Why did we use longtables at all? Our tables are all pretty short.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
 Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup of
 $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
-linear transformations. \todo{Peter: In the abstract we say finite area.  Don't we want that here as well?}  
+linear transformations, such that $\Gamma \backslash \BH$ has finite area.
 We consider the graded {\bf ring of modular forms}
-$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$ \todo{Peter: Is $k$ bad to use here, since we will implicitly later use $k$ as the base field? Robin: Perhaps, although modular forms are traditionally referred to as having weight $k$. Not sure on this one.}. One of the best
+$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$ \todo{Peter: Is $k$ bad to use here, since we will implicitly later use $k$ as the base field? Robin: Perhaps, although modular forms are traditionally referred to as having weight $k$. Not sure on this one. Aaron: I do not think this will confuse anyone.}. One of the best
 ways to understand the ring of modular forms is to give a
 presentation as a quotient of a polynomial ring.
 %of $M(\Gamma)$ for general Fuchsian groups $\Gamma$. 
@@ -212,7 +211,7 @@ ring} is defined to be
 \noindent
 with multiplication structure corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X
-\cong \proj R$ \todo{Peter: I'm confused.  Why is this only true when $g\geq 2$? Robin: see statement of Petri's theorem (which actually usually assumes $g \geq 4$)...}. When $g \geq 2$, Petri's theorem gives generators
+\cong \proj R$ \todo{Peter: I'm confused.  Why is this only true when $g\geq 2$? Robin: see statement of Petri's theorem (which actually usually assumes $g \geq 4$)... Aaron: You need genus at least 2 for $\Omega_X$ to be ample. There are mild generalizations of Petri's theorem, for example those in vzb, which also compute generators and relations for hyperelliptic curves, and curves of genus 3.}. When $g \geq 2$, Petri's theorem gives generators
 and relations for $R(X, K_X)$ showing that in most cases $R(X, K_X)$
 is generated in degree 1 with relations in degree 2, as shown in
 \cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
@@ -274,9 +273,10 @@ e_r; \delta)$. The application of O'Dorney's work to log spin
 canonical rings gives a weak bound in the case $g = 0$ in
 terms of the least common multiples of the $e_i$'s \cite[Chapter 5]
 {dorney:canonical}. In their treatment of log spin canonical
-rings, Voight and Zureick-Brown bounded generator degrees by $3 \cdot \max(e_1, \ldots, e_r)$
-and relation degrees by $6 \cdot \max(e_1, \ldots, e_r)$ when $\halfcan$ is effective
-\cite[Corollary 10.4.6]{vzb:stacky}. \todo{Peter: Seems a bit misleading by misrepresenting VZB's work; in reality they found fairly tight bounds in the case they worked in. Robin: How? This solely talks about their work for the log spin canonical rings which is clearly NOT tight. They give a larger bound than us for a subset of the cases we check...}
+rings, Voight and Zureick-Brown bounded generator degrees by $6 \cdot \max(e_1, \ldots, e_r)$
+and relation degrees by $12 \cdot \max(e_1, \ldots, e_r)$ when $\halfcan$ is effective
+\cite[Corollary 10.4.6]{vzb:stacky}. Note that the bounds we write here differ from those stated in Voight and Zureick-Brown \cite[Corollary 10.4.6]{vzb:stacky} by a factor of 2 because their grading convention differs from ours by a factor of 2.
+\todo{Peter: Seems a bit misleading by misrepresenting VZB's work; in reality they found fairly tight bounds in the case they worked in. Robin: How? This solely talks about their work for the log spin canonical rings which is clearly NOT tight. They give a larger bound than us for a subset of the cases we check... Aaron: I think the point is that if they put in some more work, they could have reduced the bounds. However, I agree with Robin for two reasons: First, they didn't put in the work to get the tighter bounds. Second, even with a small amount of work, they would have only gotten bounds which are twice ours, as their grading is off from ours by a factor of two.}
 
 These bounds are far from tight and do not collectively
 cover all cases in all genera. The main theorem of this paper
@@ -301,36 +301,30 @@ signatures with $g = 0$.
 \label{rem:main-weaker-assumptions}
 In fact, the proof of Theorem ~\ref{thm:main} holds not only for log spin canonical divisors, which must have distinct points, but also for arbitrary effective divisors
 $\Delta$. \todo{Peter: $\Delta$ seems weird as the name of the divisor, since its typically reserved for log divisors.  Also, how is this true?  This only follows given sufficient base point freeness conditions.  It is true when $g=0$ if that's what you meant to say. Robin: Throughout VZB, for example, $\Delta$ is used to represent any effective divisor. Where does an assumption that $\Delta$ has coefficient $1$ come into play?} Furthermore, one may relax the assumption that $k$ is perfect. Instead, one only need assume that the stacky curve
-is separably rooted, i.e. the residue field at each stacky point
-is separable.
+is separably rooted, as described further in Remark ~\ref{rem:stack-formalism}.
 \end{rem}
-\todo{Peter: This remark seems to say two very separate things.  Why are they in the same remark? Robin: This remark describes how the weaker conditions for which the theorem also holds.}
 
-Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$ in Theorems ~\ref{thm:g-0-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-high-main}, respectively.  In each of these proofs, we follow a similar inductive process utilizing the lemmas of Section ~\ref{sec:induction}; however, in the first two we have to explicitly construct specific base cases and present a finite list of exceptional cases, while in the high genus case we deduce base cases from more general arguments.
+Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$ in Theorems ~\ref{thm:g-0-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-high-main}, respectively.  In each of these proofs, we follow a similar inductive process utilizing the lemmas of Section ~\ref{sec:induction}; however, in the first two we have to explicitly construct specific base cases and present a finite list of exceptional cases, while in the genus $g \geq 2$ case we deduce base cases from more general arguments.
 \begin{rem}
 \label{rem:explicit-generators}
 The proofs of the main theorems in the low genus cases not only
 obtain bounds on the degrees of the generators and relations, but
 also yield explicit systems of generators and an explicit initial ideal of
-relations. Furthermore, our proof of the high genus case also
+relations. Furthermore, our proof of the genus $g \geq 2$ case also
 provides an inductive procedure for explicitly determining the 
 generators and initial ideal of relations of log spin canonical
-rings. Many explicit systems of generators and relations are
-detailed in interesting low genus examples by Neves
-\cite[Section III.4]{neves:halfcan}.  \todo{Peter: The statement about the high genus case seems a bit unclear/misleading Robin: how so}
-
-Furthermore, explicit constructions also reveals that the bounds given in Theorem ~\ref{thm:main} are tight.
+rings. Many explicit systems of generators and relations for curves of genus $2 \leq g \leq 15$ are
+detailed in interesting examples by Neves
+\cite[Section III.4]{neves:halfcan}. 
+\end{rem}
+\begin{rem}
+The explicit construction described in Remark ~\ref{rem:explicit-generators} also reveals that the bounds given in Theorem ~\ref{thm:main} are tight.
 Specifically, in almost all cases, the log spin canonical ring requires a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. 
 Furthermore, there are many infinite families of cases which require a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$.
-\end{rem}  \todo{Peter: Again, why are these two sections of the remark grouped together? Robin: Isn't this remark describing whether the theorem gives explicit constructions and tight bounds? Those seem pretty related...}
+\end{rem}
 
-%The main theorem of this paper, Theorem ~\ref{thm:main}, combined
-%with a lemma of Voight and Zureick-Brown \cite[Lemma 10.2.1]
-%{vzb:stacky}, provides a statement on all rings of modular forms.
-Together with a theorem from Voight and Zureick-Brown \cite
-[Theorem 9.3.1]{vzb:stacky} 
-%and \cite[Theorem 9.3.1]{vzb:stacky}, 
-\todo{Peter: The paragraph used to be confusingly redundant.  I think I fixed it but read through the commented out stuff to make sure it says the correct thing. Robin: Why are you ignoring Lemma 10.2.1 as well as its connection to Kodaira--Spencer? These are necessary.}
+Combining the main theorem of this paper, Theorem ~\ref{thm:main} with the main theorem from Voight and Zureick-Brown ~\cite
+[Theorem 1.4]{vzb:stacky} and a minor Lemma \cite[Lemma 10.2.1]{vzb:stacky}
 we have the following application to
 rings of modular forms. 
 %Note that the lemma from Voight and Zureick-
@@ -346,8 +340,8 @@ associated to $\Gamma \backslash \BH$ with signature $\sigma
 
 If $M_k(\Gamma) = 0$ for all odd $k$, then the ring of modular
 forms $M(\Gamma)$ is generated as a $\BC$-algebra by elements of
-degree at most $3 \cdot \max(3, e_1, \ldots, e_r)$ with relations
-generated in degrees at most $6 \cdot \max(3, e_1, \ldots, e_r)$.\todo{Peter: Are you sure it shouldn't be $6e$ and $12e$, because he showed the {\emph canonical ring} has the bounds $3e$ and $6e$, which would mean the {\emph half-canonical} ring should have bounds $6e$ and $12e$ right? Robin: I think you are correct, although don't use $e$ since it is max(3, ...) instead of max(5, ...)}
+degree at most $6 \cdot \max(3, e_1, \ldots, e_r)$ with relations
+generated in degrees at most $12 \cdot \max(3, e_1, \ldots, e_r)$.
 
 If there is some odd $k$ for which $M_k(\Gamma) \neq 0$, then the
 ring of modular forms $M(\Gamma)$ is generated as a $\BC$-algebra
@@ -360,9 +354,10 @@ Table ~\ref{table:g-0-exceptional} for signatures with $g = 0$.
 \end{cor}
 
 \begin{rem}
-In the case that $M_k(\Gamma) = 0$ for all odd $k$, the generation bound of $3 \cdot \max(3, e_1, \ldots, e_r)$ and relation
-bound of $6 \cdot \max(3, e_1, \ldots, e_r)$ can be reduced to $\max(3,e_1, \ldots, e_r)$ and $2 \cdot \max(3,e_1, \ldots, e_r)$, apart from several small families of cases. See 
-~\cite[Theorem 9.3.1]{vzb:stacky} and ~\cite[Theorem 9.3.1]{vzb:stacky} for a more precise statement of these bounds.
+\label{rem:factor-two}
+In the case that $M_k(\Gamma) = 0$ for all odd $k$, the generation bound of $6 \cdot \max(3, e_1, \ldots, e_r)$ and relation
+bound of $12 \cdot \max(3, e_1, \ldots, e_r)$ can be reduced to $2\cdot \max(3,e_1, \ldots, e_r)$ and $4 \cdot \max(3,e_1, \ldots, e_r)$, apart from several small families of cases. See 
+~\cite[Theorem 9.3.1]{vzb:stacky} and ~\cite[Theorem 8.7.1]{vzb:stacky} for a more precise statement of these bounds in the cases that $g = 0$ and $g > 0$ respectively. Note that we multiply all bounds given in Voight and Zureick-Brown \cite{vzb:stacky} by a factor of two, because our grading convention on $\bigoplus_k M_k(\Gamma)$ differs from that of Voight and Zureick-Brown by a factor of 2.
 \end{rem}
 
 The remainder of the paper will be primarily devoted to proving
@@ -393,43 +388,33 @@ This is no restriction on generality, as generator and relation degrees are pres
 
 \ssec{Stacky Curves and Log Spin Canonical Rings}
 \label{ssec:stacky-background}
-A \textbf{stacky curve} $\sx$ over a field $k$ is a smooth proper
-geometrically-connected Deligne-Mumford stack of dimension $1$ over
-$k$ with a dense open subscheme. A stacky curve is \textbf{tame} if
-its stabilizers are coprime to char $k$.
+We begin by setting up the notation for stacky curves and canonical rings. Wherever possible, we opt for a more elementary scheme-theoretic approach, instead of a stack-theoretic one. See Remark ~\ref{rem:stack-formalism} for more details.
+
+\begin{defn}
+\label{defn:stacky-curve}
+A \textbf{stacky curve} $\sx$ over an algebraically closed field $k$ is the datum of a smooth proper connected scheme $X$ of dimension $1$, together with a finite number of closed points of $X$, $P_1, \ldots, P_r$, called {\bf stacky points}, with {\bf stabilizer orders} $e_1, \ldots, e_r \in \BZ_{\geq 2}.$ The scheme $X$ associated to a stacky curve $\sx$ is called the {\bf coarse space} of $\sx$.
+
+\end{defn}
 
 \begin{rem}
 \label{rem:stack-formalism}
-Stacky curves may be formally defined in the language of stacks, (as
+Stacky curves may be formally defined in the language of stacks, as
 is done in the works of Voight and Zureick-Brown \cite{vzb:stacky},
 Abramovich and Vistoli \cite{abramovich-vistoli:compactifying}, and
-Behrend and Noohi \cite{behrend-noohi:uniformization},) but for the
-purposes of this paper, it suffices to treat $\sx$ as a scheme
-whose associated divisor group has a finite number of stacky
-points.
+Behrend and Noohi \cite{behrend-noohi:uniformization}.
 
-In this paper, all stacky curves are assumed to be tame and
-$k$ will is assumed to be algebraically closed. We also assume that the
-stacky curves are separably rooted, i.e. the residue field of each
-of the stacky points is separable.  \todo{Peter: We should clarify this last statement.  If we are assuming $k$ is algebraically closed, aren't the points automatically separably-rooted?  Really aren't we saying if perfect, then restrict to algebraically closed, and if not, everything works similarly as long as separably rooted? Robin: Yes I guess $k$ being algebraically closed implies perfectness... we can use a similar statement to Remark 5.5.7 from VZB}
+The results of this paper can be easily couched in terms of the language of stacks. If one works over an arbitrary field $k$ (which need not be algebraically closed) one can extend Theorem ~\ref{thm:main} to hold in the case that the stacky curve $\sx$ is tame and separably rooted, i.e. the residue field of each
+of the stacky points is separable.
 
-With this stacks-theoretic description in mind, the remainder of this paper is primarily phrased using the language
-of Weil divisors.
+With this stack-theoretic description in mind, the remainder of this paper is primarily phrased using the language
+of schemes.
 \end{rem}
 
-If $P_1, \ldots, P_r$ are the stacky points of a stacky curve $\sx$,
-then we use $e_1, \ldots, e_r \in \BZ_{\geq 2}$ to denote the orders
-of the stabilizer groups of the points with non-trivial
-stabilizers. We call $e_i$ the \textbf{stabilizer order} of $P_i$.
-In order to study objects associated with stacky curves, it is often
-useful to consider them in the context of schemes (instead of in the context of stacks). 
-
 \begin{defn}
-\label{defn:coarse-space}
-Let $\sx$ be a stacky curve over $k$ with coarse space $X$ \todo{We haven't defined a course space yet.  Confusingly, this definition is labeled ``defn:course-space'' which made me think it was supposed to.} and stacky points $P_1, \ldots,
+\label{defn:div-ex}
+Let $\sx$ be a stacky curve over $k$ with coarse space $X$ of genus $g$ and stacky points $P_1, \ldots,
 P_r$ with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$.
-Let $X$ be a nonsingular projective (algebraic) curve over $k$ of
-genus $g$. Then, we notate
+Then, we notate
 \[
 	\di \sx = \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
 	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
@@ -438,7 +423,9 @@ genus $g$. Then, we notate
 \end{defn}
 
 We can equip stacky curves with a log divisor $\Delta$ that is a 
-sum of distinct points each with trivial stabilizer. \todo{Peter: It isn't necessary in the proof that these log points be non-stacky, even though only such log divisors arise from modular forms.  Need we say that?  If so, then we should explicitly note that these are the only cases that arise.} A divisor
+sum of distinct points each with trivial stabilizer. 
+\todo{Peter: It isn't necessary in the proof that these log points be non-stacky, even though only such log divisors arise from modular forms.  Need we say that?  If so, then we should explicitly note that these are the only cases that arise. Aaron: I don't think we need to say it, the application to modular forms still goes through whether or not we want to assume they are distinct. I like keeping log divisors like this so that we parallel \cite{vzb:stacky}} 
+A divisor
 $\Delta$ of this form is called a \textbf{log divisor}. We use
 $\delta := \deg \Delta$ to refer to the degree of the log divisor.
 If $\sx$ has coarse space $X$ of genus $g$, then we say $\sx$ has
@@ -460,11 +447,11 @@ spin curves} which are triples $(\sx, \Delta, \halfcan)$ where $\sx$
 is a stacky curve, $\Delta$ is a log divisor, and $\halfcan \in \di
 \sx$ satisfies $2 \halfcan \sim K_X + \Delta + \sum_{i = 1}^{r}
 \frac{e_i - 1}{e_i} P_i$. Such a divisor $\halfcan$ is called a
-\textbf{log spin canonical divisor} on $(\sx, \Delta)$. We use
-$\halfcan_X := \lfloor L \rfloor $ to refer to the \textbf{spin
-canonical divisor} (also known as the half-canonical divisor, semi-
-canonical divisor, or theta characteristic) \todo{Peter: I think we mismatched the parenthetical.  Also, why did we define the spin canonical divisor of $\halfcan_X$ especially.  Isn't it really just a special case of the definition before. Robin: How? the parenthetical encompasses all alternate names! Yes it's a special case, but we never give it a name otherwise. You could define it as the log spin canonical divisor with zero log divisor but that somehow doesn't seem to give the right picture.} associated to the
-coarse space $X$ of $\sx$  (i.e. $\halfcan_X$ is a divisor such
+\textbf{log spin canonical divisor} on $(\sx, \Delta)$. Throughout the paper, we use
+the notation $\halfcan_X := \lfloor L \rfloor.$ to refer to the log spin
+canonical divisor (also known as the half-canonical divisor, 
+semi-canonical divisor, or theta characteristic) associated to the
+coarse space $X$ of $\sx.$  (i.e. $\halfcan_X$ is a divisor such
 that $2\halfcan_X \sim K_X + \Delta$). 
 We define $H^0$ of a stacky divisor as follows:
 
@@ -550,8 +537,6 @@ that we use. For further reference on monomial orderings,
 initial ideals, and Gr\"{o}bner bases, see Eisenbud
 \cite[Section 15.9]{eisenbud:comm-alg} and Cox--Little--O'Shea
 \cite[Chapter 2]{cls:ideals-varieties-algorithms}.
-
-\todo{possibly compactify or refer to relations, Aaron: I think we should almost remove these definitions, and that these shouldn't be in environments. I suspect people will be familiar with them, or be able to look them up.}
 
 \begin{defn}
 \label{defn:monomial-degree}
@@ -733,11 +718,11 @@ Counting dimensions, we see $h^0(\sx, dL')=1$ for all $d\in \mathbb{Z}_{\ge 0}$ 
 
 \begin{example}
 \label{eg:base-0-377}
-Let $(\sx,0, \halfcan')$ be a log spin curve with signature $\sigma =
+Let $(\sx',0, \halfcan')$ be a log spin curve with signature $\sigma =
 (0; 3, 7, 7; 0)$ and $\halfcan' \sim -\infty + \frac{1}{3} P_1 +
 \frac{3}{7} P_2 + \frac{3}{7} P_3,$ where $P_1,P_2,$ and $P_3$ are
 distinct points. In this example, we will exhibit a minimal
-presentation for $R' = R(\sx,0, \halfcan')$ and show the triple
+presentation for $R' = R(\sx',0, \halfcan')$ and show the triple
 $(\sigma, \halfcan' + \frac{3}{7} P_3, J = \{2, 3\},$) is admissible.
 Notice that $\deg \lfloor d K_{\sx'} \rfloor= -d + \lfloor \frac{d}{3}
 \rfloor + 2 \lfloor \frac{3d}{7} \rfloor$.
@@ -789,7 +774,7 @@ Checking the remaining cases via pole degrees shows that
 these degrees are also generated in lower degrees,
 so $R'$ is generated in degrees $\{3, 5, 7, 7\}$.
 
-Now, we check the admissibility of $J= \{2, 3\}$ (corresponding to the $e_2,e_3=7$). \todo{Robin: I don't understand your edit, Peter. Admissibility is not a property of $J$.} By relabelling the
+Now, we check the admissibility of $(\sx', L' ,J),$ where $J = \{2, 3\}$. By relabelling the
 variables if necessary, we can assume that $x_{7, 1}$ corresponds
 to the generator with maximal pole order at $P_2$ and $x_{7, 2}$
 correspond to the generator with maximal pole order at $P_3$. Use
@@ -863,15 +848,14 @@ relations, we show that $\dim_k (R')_d = \dim_k
 all degrees $d \geq 0$. In particular, 
 
 \begin{align*}
-	\dim_k \left((k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / I\right)_d &=
-	\dim_k \left((k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}])	/ \initial(I)\right)_d \\
-	&= \dim_k \left((k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle
+	\dim_k \left(k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I\right)_d &=
+	\dim_k \left(k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]	/ \initial(I)\right)_d \\
+	&= \dim_k \left(k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle
 	x_{7, 2}^2, x_{5, 1}^2 \rangle \right)_d
-\end{align*}\todo{Peter: I think you need additional degree subscripts added to the polynomial ring or something, so this isn't infinite. Robin: Aren't there already existing degree subscripts?}
-
+\end{align*}
 \noindent
-for all $d \geq 0$. But the fact $\dim_k (R')_d = \dim_k \left((k[x_{7, 2},
-x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle x_{7, 2}^2, x_{5, 1}^2
+for all $d \geq 0$. But the fact $\dim_k (R')_d = \dim_k \left(k[x_{7, 2},
+x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle x_{7, 2}^2, x_{5, 1}^2
 \rangle\right)_d$ can be checked by looking at the $k$-basis at each degree
 $d$.
 
@@ -918,16 +902,16 @@ Examples ~\ref{eg:base-0-377} and \ref{eg:base-1-33} are used as inductive base 
 \begin{example}
 \label{eg:exception-1-5}
 Let $(\sx', 0, L')$ be a log spin curve of genus 1 so that $L' = P -
- Q + \frac{2}{5} P_1.$ Let $u \in (R_L)_1$ be any nonzero element \todo{Peter: I'm very confused.  There are no elements in degree 1...  Oh, I see, I think you mean $L'=\frac{2}{5}P_1$ (without the $P-Q$) maybe?}.
-We obtain $\di u|_{P_1} = 0,$ since $2P - 2Q \sim 0$ and by Riemann
---Roch, $\dim_k (P_L)_1 = 1.$ Let $y_3 \in (R_\halfcan)_3$ be any nonzero
+ Q + \frac{2}{5} P_1.$ Let $x_2 \in (R_L)_2$ be any nonzero element.
+We obtain $\di x_2|_{P_1} = 0,$ since $2P - 2Q \sim 0$ and by Riemann
+--Roch, $\dim_k (P_L)_2 = 1.$ Let $y_3 \in (R_\halfcan)_3$ be any nonzero
 element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since
 if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0
 (\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally,
 let $y_5 \in (R_\halfcan)_5$ be an element with $y_5|_{P_1} = -P_1$. Then,
 we claim there is some $\alpha \in k$ so that
 
-$$R_\halfcan \cong k[u, y_3, y_5]/(y_3^4 - \alpha u y_5^2).$$
+$$R_\halfcan \cong k[x_2 , y_3, y_5]/(y_3^4 - \alpha x_2 y_5^2).$$
 
 In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_\halfcan$. The verification is analogous to Example ~\ref{eg:base-0-377} and is omitted.
 
@@ -1060,7 +1044,7 @@ orders incremented by $2$ and fixed log divisor and stacky points.
 %With this result, we will be able to show that the sets of generators of the ideal of relations in many of the following inductive arguments are minimal.
 
 
-\ssec{Adding Points}  \todo{Peter: Note to self: replace $H^0(X, \lfloor L\rfloor)$ with $H^0(\sx, L)$.}
+\ssec{Adding Points}
 \label{ssec:add-points}
 %In this section, we prove various inductive statements under the following setup:
 %Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log spin canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d \in\BN$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
@@ -1180,10 +1164,7 @@ Then,
 		\ord_u(f) < \ord_u(h) \implies f\prec h.
 	\]
 	Equip $k[y_1, \ldots, y_n]$ with graded $P$-lex, as defined in
-	Definition ~\ref{defn:graded-p-lex} and $k[u, x_1, \ldots, x_m, y_1,
-	\ldots, y_n]$ with the block order giving the order giving $y_1, 
-	\ldots, y_n$ precedence over $u, x_1, \ldots, x_m$.
-
+	Definition ~\ref{defn:graded-p-lex} and $k[y_1, \ldots, y_n] \otimes k[u, x_1, \ldots, x_m]$ with block order.
 	If $I'$ and $I$ are the ideals of relations of $k[u, x_1, \ldots, x_m]
 	\to R_{\halfcan'}$ and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]
 	\to R_{\halfcan}$ respectively, then
@@ -1307,7 +1288,7 @@ Let $S$ be as defined in Equation \ref{eqn:sat-1-defining-S}, define $U_i$ and $
 	T = \left(\bigcup_{i=1}^{n-1} U_i \right) \cup V.
 \]
 
-We check that $S$, $T$, and $\prec$ meet the hypothesis of Lemma \ref{lem:relations_from_generators_induction}.  In part (a), we showed that $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ giving condition (1) of Lemma ~\ref{lem:relations_from_generators_induction}.  Our choice of monomial order in $k[y_1, \ldots, y_n]$ and block order for $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ implies that $T\succ S\succ k[u, x_1, \ldots, x_m]$, giving condition (2) of Lemma \ref{lem:relations_from_generators_induction}.  
+We check that $S$, $T$, and $\prec$ meet the hypothesis of Lemma \ref{lem:relations_from_generators_induction}.  In part (a), we showed that $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ giving condition (1) of Lemma ~\ref{lem:relations_from_generators_induction}.  Our choice of monomial order in $k[y_1, \ldots, y_n]$ and block order for $k[y_1, \ldots, y_n]\otimes k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ implies that $T\succ S\succ k[u, x_1, \ldots, x_m]$, giving condition (2) of Lemma \ref{lem:relations_from_generators_induction}.  
 
 It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generators_induction}. To do this, suppose $f\in k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ is a monomial not contained in $k[u, x_1, \ldots, x_m]$, meaning there is some $j$ such that $y_j|f$.  Further suppose $f\not\in \langle V \rangle$, meaning that for each $i\in \{1, \ldots m\}$, $x_iy_j \nmid f$. Since $y_j \mid f$ but $x_iy_j \nmid f$, we obtain $x_i\nmid f$.  Therefore, $f\in k[u, y_1, \ldots, y_n]$.  We note that $S$ generates $y_j \cdot (k[u,y_1, \ldots, y_n])$ as a $k$-algebra.  That is, all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \[
@@ -1338,7 +1319,7 @@ Since the ideal in $k[u, y_1, \ldots, y_n]$ generated by is $S$ is $(y_1, \ldots
 	\subseteq \; 	& S \cup \langle T\rangle \cup \initial(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[u, x_1, \ldots, x_m].
 \end{align*}
 This shows condition (3) of Lemma ~\ref{lem:relations_from_generators_induction} holds.  Thus, the conditions of 
-Lemma ~\ref{lem:relations_from_generators_induction} are met. Finally, Lemma ~\ref{lem:relations_from_generators_induction} implies part (b).  \todo{Peter: Checking that all the conditions of Lemma \ref{lem:relations_from_generators_induction}(2) are met takes a lot of space and clutter.  On the other hand, it is somewhat important.  Should it be included?}
+Lemma ~\ref{lem:relations_from_generators_induction} are met. Finally, Lemma ~\ref{lem:relations_from_generators_induction} implies part (b).
 
 {\bf Part (c):}
 Finally, (c) of this lemma follows immediately by looking at the constructions of parts (a) and (b).  
@@ -1504,8 +1485,8 @@ Then, the following statements hold.
 		$y_3, y_4,$ minimally generate $R_\halfcan$ over $R_{\halfcan'}$.
 	\item[(b)] Equip $k[y_3, y_4]$ with $grevlex$ so that $y_3 \prec 
 		y_4$
-		and equip the ring $k[y_3, y_4, x]$ with the block 
-		order with $y_3, y_4$ preceding $x_2, \ldots, x_m$. \todo{In here and throughout the section, we should just enforce the convention that the $y_i$ come before the $x_j$, and then we won't have to say which precede which.} Then,
+		and equip the ring $k[y_3, y_4] \otimes k[x_2, \ldots, x_m]$ with block 
+		order. Then,
 		\begin{align*}
 			\initial(I) &= \initial(I')k[x, y_3, y_4]+\langle y_4 x_j \mid 2 \leq j \leq m \rangle +\langle y_4^2 \rangle.
 		\end{align*}
@@ -1568,7 +1549,7 @@ Then, the following statements hold.
 		_3, y_4,$ and $y_5$ minimally generate $R_\halfcan$ over $R_{\halfcan'}$.
 	\item[(b)] Equip $k[y_3, y_4, y_5]$ with grevlex so that $y_3 \prec 
 		y_4 \prec y_5$
-		and equip the ring $k[y_3, y_4, y_5, x_3, \ldots, x_m]$ with the block order so that $y_3, y_4, y_5$ dominate $x_3, \ldots, x_m$ \todo{Aaron: I used the word dominate, is this ok?}.  Then,
+		and equip the ring $k[y_3, y_4, y_5] \otimes k[x_3, \ldots, x_m]$ with the block order.  Then,
 		\begin{align*}
 			\initial(I) &= \initial(I) k[y_3, y_4, y_5, x_3, \ldots, x_m] \\
 			&+ \langle y_i x_j \mid 4 \leq i \leq 5, 3 \leq j \leq m\rangle \\
@@ -2192,13 +2173,13 @@ times) yields $(*_{i + 1})$.
 \end{proof}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% High genus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus $\geq 2$ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{High Genus}
+\section{Genus $\geq 2$}
 \label{sec:g-high}
 We now consider the case when the genus is at least 2. In this case, we are able to bound the degrees of generators of $R_\halfcan$ and its ideal of relations. In this section, we do not obtain explicit presentations of $R_\halfcan.$  This contrasts Sections ~\ref{sec:g-1} and ~\ref{sec:g-0} where we not only obtain bounds, but also obtain inductive presentations. The tradeoff is that in the genus 0 and 1 cases, we have to account for with explicit base cases, whereas in this section we apply general results.
 
-\ssec{Bounds on Generators and Relations in High Genus}
+\ssec{Bounds on Generators and Relations in Genus $\geq 2$}
 \label{ssec:bounds-high-genus}
 
 The main result of this subsection is that for a log spin curve with no stacky points $(X \Delta, L)$, the spin canonical ring $R_\halfcan$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[Theorem 3.4]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Throughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ so $H^0(X, 2L)$ is basepoint-free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
@@ -2414,7 +2395,7 @@ degrees of minimal generators follows from Lemma
 relations follows from Proposition ~\ref{prop:relation-10}.
 \end{proof}
 
-\ssec{Main Theorem for High Genus}
+\ssec{Main Theorem for Genus $\geq 2$}
 \label{ssec:g-high-main}
 
 We are ready to prove our main theorem, Theorem ~\ref{thm:main} in the case
@@ -2450,7 +2431,7 @@ As the base case, let $\halfcan=\halfcan_X \in \di X$ satisfy $2\halfcan \sim 2 
 By Corollary ~\ref{cor:g-2-presentation-bound}, the theorem holds for $(\sx, \Delta,
 \halfcan_X)$. 
 
-Next, suppose the theorem holds for $\halfcan' = \halfcan_X + \sum_{i=1}^{r-1} \frac{1}{3}P_i$. Take a log spin canonical divisor of the form $\halfcan = \halfcan_X + \sum_{i=1}^r \frac{1}{3} P_i$, which means that $\halfcan = \halfcan' + \frac{1}{3} P_r$.  If $P_r$ is a basepoint of $\halfcan'$, then the theorem holds for $\halfcan$ by Lemma ~\ref{lem:sat-2}. \todo{equals or $\sim$?}
+Next, suppose the theorem holds for $\halfcan' = \halfcan_X + \sum_{i=1}^{r-1} \frac{1}{3}P_i$. Take a log spin canonical divisor of the form $\halfcan = \halfcan_X + \sum_{i=1}^r \frac{1}{3} P_i$, which means that $\halfcan = \halfcan' + \frac{1}{3} P_r$.  If $P_r$ is a basepoint of $\halfcan'$, then the theorem holds for $\halfcan$ by Lemma ~\ref{lem:sat-2}.
 Otherwise, $P_r$ is not a basepoint of $\halfcan'$, meaning that in particular $R_{\halfcan'}$ is saturated in 1.
 Therefore, since $P_r$ is a not basepoint of $\halfcan'$, Equation
 ~\ref{eqn:deg1-sat-ind} holds by Riemann Roch.
@@ -2469,13 +2450,15 @@ holds for all log spin curves $(\sx, L, J)$.
 
 In this section, we prove Theorem ~\ref{thm:main} in the case that $g = 1$.  We follow a similar inductive strategy as in the genus $g\geq 2$ case, except unlike in the $g \geq 2$ case we obtain explicit generators and relations here.
 
-In the case of a genus 1 curve, $X$, we know $K_X \sim 0$, and therefore the only possibilities for \todo{``log''?} spin canonical divisors are $\halfcan' \sim 0$ or $\halfcan' \sim P - Q$ where $P, Q$ are distinct points, fixed  under the hyperelliptic involution. We inductively construct presentations by adding points through Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2} and incrementing the values of the $e_i$'s using Lemma ~\ref{lem:raise-stacky-order}.
+In the case of a genus 1 curve, $X$ with no stacky points, we know $K_X \sim 0$, and therefore the only possibilities for log spin canonical divisors are $\halfcan' \sim 0$ or $\halfcan' \sim P - Q$ where $P, Q$ are distinct points, fixed  under the hyperelliptic involution. We inductively construct presentations by adding points through Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2} and incrementing the values of the $e_i$'s using Lemma ~\ref{lem:raise-stacky-order}.
 
 \ssec{Genus One Base Cases}
 \label{ssec:g-1_base}
 In this subsection we set up the base cases needed for our inductive approach, of proving Theorem ~\ref{thm:main} in the case $g = 1$.
 
-\begin{longtable}	{| c || c | c | c |}	
+\begin{table}	
+\begin{tabular}
+{| c || c | c | c |}	
 	\hline
 	L' & Generator Degrees & Degrees of Minimal Relations & $e$ \\
 	\hline
@@ -2489,12 +2472,12 @@ In this subsection we set up the base cases needed for our inductive approach, o
 	$P - Q + \frac{2}{5} P_1$ & $\{2, 3, 5\}$ & $\{12\}$ & $5$ \\	\hline
 	
 	$P - Q + \frac{1}{3} P_1 + \frac{1}{3}P_2$ & $\{2, 3, 3, 4\}$ & $\{6,8\}$ & $5$ \\	\hline
-	
+\end{tabular}	
 	\caption{Genus 1 Base Cases}
 	\label{table:g-1-base}
 	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
-\end{longtable}
+\end{table}
 
 The cases that $L' = 0, \: L' = P-Q +\frac{1}{3}P_1 + \frac{1}{3}P_2,$ and $L' = P-Q + \frac{2}{5}P_1$ were checked in Examples ~\ref{eg:base-1-0}, \ref{eg:base-1-33}, and \ref{eg:exception-1-5} respectively.
 
@@ -2508,7 +2491,9 @@ cases which are not generated in degrees $e := \max(5, e_1, \ldots,
 e_r)$ with relations in degrees $2e$, as described in Theorem
 ~\ref{thm:g-1-main}.
 
-\begin{longtable}	{| c || c | c | c |}
+\begin{table}	
+\begin{tabular}
+{| c || c | c | c |}
 	\hline
 	L' & Generator Degrees & Degrees of Minimal Relations & $e$ \\
 	\hline
@@ -2524,12 +2509,12 @@ e_r)$ with relations in degrees $2e$, as described in Theorem
 	$\frac{2}{5} P_1$ & $\{1, 5, 8\}$ & $\{16\}$ & $5$ \\	\hline
 	
 	$\frac{3}{7} P_1$ & $\{1, 5, 7\}$ & $\{15\}$ & $7$ \\	\hline
-	
+	\end{tabular}
 	\caption{Genus 1 Exceptional Cases}
 	\label{table:g-1-exceptional}
 	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
-\end{longtable}
+\end{table}
 
 %\begin{rem}
 %\label{rem:g-1-exceptional-e}
@@ -2571,7 +2556,7 @@ We now have all the tools necessary to prove our main theorem, ~\ref{thm:main} i
 Let $(\sx, \Delta, \halfcan)$ log spin curve so that $\sx$ has signature $\sigma = (1; e_1, \ldots, e_r; \delta)$.
 If $g = 1$, then the log spin canonical ring
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \lfloor d L \rfloor)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, d L)
 \end{align*}
 
 \noindent
@@ -2621,7 +2606,8 @@ Example ~\ref{eg:base-1-33}, the triple $(\sx', 0, P-Q + \frac{1}{3}P_1+\frac{1}
 satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}.
 Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx', \delta', \halfcan')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ 
 Finally, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds 
-for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. \todo{Peter: Why is it immediate that $n$ threes satisfies the condition for admissibility?  We got rid of that proof from earlier.  In fact, didn't we find it to be false? Aaron: I don't think so, see Remark ~\ref{rem:three-cases}.}
+for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. 
+\todo{Peter: Why is it immediate that $n$ threes satisfies the condition for admissibility?  We got rid of that proof from earlier.  In fact, didn't we find it to be false? Aaron: I don't think so, see Remark ~\ref{rem:three-cases}.}
 
 \vskip.1in
 \noindent
@@ -2679,7 +2665,8 @@ the base cases on which we can apply inductive lemmas from
 Section ~\ref{sec:induction}. Exceptional cases are listed first
 and generic cases follow.
 
-\begin{longtable}
+\begin{table}
+\begin{tabular}
 	{| c | c || c |}
 	\hline
 	Signature $\sigma$ & Condition & Saturation \\
@@ -2708,10 +2695,10 @@ and generic cases follow.
 	$(0; a, b, c; 0)$ & not listed above & $5$ \\	\hline
 	
 	$(0; e_1, \ldots, e_r; 0)$ & not listed above & $3$ \\	\hline
-	
+	\end{tabular}
 	\caption{Genus 0 Saturation}
 	\label{table:g-0-sat}
-\end{longtable}
+\end{table}
 
 \ssec{Base Cases}
 \label{ssec:g-0_base}
@@ -2739,7 +2726,8 @@ P_i, J)$ is admissible or the stabilizer orders are all $3$ as per
 Case ~\ref{custom:three-cases-1} of Remark ~\ref{rem:three-cases}):
  
 \rm{
-\begin{longtable}
+\begin{table}
+\begin{tabular}
 	{| c || c | c | c |}
 	\hline
 	Case & Signature $\sigma$ & $J$ & $e$\\
@@ -2767,10 +2755,10 @@ Case ~\ref{custom:three-cases-1} of Remark ~\ref{rem:three-cases}):
 	(j) & $(0; 5, 5, 5, 5; 0)$ & $\{1, 2, 3, 4\}$ & $5$ \\ \hline
 
 	(k) &	$(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & $5$ \\ \hline
-	
+	\end{tabular}
 	\caption{Genus 0 Base Cases}
 	\label{table:g-0-base-cases}
-\end{longtable}
+\end{table}
 }
 
 %\noindent
@@ -2787,8 +2775,9 @@ the remaining cases, we follow a similar method to find a
 presentation satisfying the desired conditions. The log spin
 canonical ring $R(\sx', 0, L')$ is generated as a $k$-algebra by
 elements of degree at most $e$ with relations in degree at most $2e$
-for each case as described in the following table.
-\begin{longtable}
+for each case as described in the Table ~\ref{table:g-0-base-cases-degrees}.
+\begin{table}
+\begin{tabular}
 	{| c || c | c | c |}
 	\hline
 	Case & Generator Degrees & Degrees of Relations & $e$\\
@@ -2818,10 +2807,10 @@ for each case as described in the following table.
 	$\{8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10\}$ & $5$ \\ \hline
 
 	(k) &	$\{3, 3, 3, 4, 4, 5\}$ & $\{6, 7, 7, 8, 8, 8, 9, 9, 10\}$ & $5$ \\ \hline
-	
-	\caption{Genus 0 Non-effective Base Cases Generators/Relations}
+	\end{tabular}
+	\caption{Generators and Relations for Genus 0 Non-effective Base Cases}
 	\label{table:g-0-base-cases-degrees}
-\end{longtable}
+\end{table}
 \todo{Peter: Can we make a better description for the table above? Robin: Think of one then.}
 
 We can also always find a presentation for these cases such that
@@ -2830,13 +2819,14 @@ generated by products of two monomials. Again, the procedure to
 verify these is similar to that in Example
 ~\ref{eg:base-0-377}.
 
-Furthermore, each case always satisfies \ref{custom:Ad-iii} as demonstrated below.
+Furthermore, each case always satisfies \ref{custom:Ad-iii} as demonstrated in table ~\ref{table:g-0-base-cases-admissibility}.
 Notice that the $e_i$ and $\{e_j' : j \neq i\}$ are equivalent
 for any choice of $i \in J$ for these cases, so $\deg \lfloor e_i L
 \rfloor$ and $\max_{d \geq 0} \#S_{(\sigma, J)}(i)$ are
 independent of the choice of $i$.
 
-\begin{longtable}
+\begin{table}
+\begin{tabular}
 	{| c | c | c || c | c |}
 	\hline
 	Case & Signature $\sigma$ & $J$ & $\deg \lfloor e_i L \rfloor$ &
@@ -2865,10 +2855,10 @@ independent of the choice of $i$.
 	(j) & $(0; 5, 5, 5, 5; 0)$ & $\{1, 2, 3, 4\}$ & $5$ & $0$ \\ \hline
 
 	(k) & $(0; 3, 3, 3, 3, 3; 0)$ & $\{1, 2, 3, 4, 5\}$ & $5$ & $0$ \\ \hline
-	
-	\caption{Genus 0 Non-Effective Base Cases \ref{custom:Ad-iii}}
+\end{tabular}	
+	\caption{Checking \ref{custom:Ad-iii} for Genus 0 Non-Effective Base Cases}
 	\label{table:g-0-base-cases-admissibility}
-\end{longtable}
+\end{table}
 
 Thus, all of the cases are admissible and satisfy the additional
 desired conditions.
@@ -2899,8 +2889,8 @@ desired conditions.
 
 \ssec{Exceptional Cases}
 \label{ssec:g-0-exceptional}
-In this subsection, we describe the cases that would not be covered by induction.
-We present the explicit generators and relations for the remaining
+In this subsection, we describe the cases that are not covered by induction, which are also the only exceptions to Theorem ~\ref{thm:main} in the case $g = 0$.
+In table ~\ref{table:g-0-exceptional} We present the explicit generators and relations for the remaining
 cases given by signatures in the finite set
 
 \begin{align*}
@@ -2908,11 +2898,9 @@ cases given by signatures in the finite set
 		&\cup \{(0; 3, 5, 5; 0) ,(0; 3, 5, 7; 0), (0; 5, 5, 5; 0), (0; 3, 3, 3, 3; 0)\}
 \end{align*}
 
-\noindent
-and in particular describe the only exceptions to Theorem ~\ref{thm:main}
-in the case $g = 0$.  \todo{This paragraph is kind of repetitive, and awkward.}
 
-\begin{longtable}
+\begin{table}
+\begin{tabular}
 	{| c || c | c | c |}
 	\hline
 	Signature $\sigma$ & Generator Degrees & Degrees of Relations & $e$ \\
@@ -2934,10 +2922,10 @@ in the case $g = 0$.  \todo{This paragraph is kind of repetitive, and awkward.}
 	$(0; 5, 5, 5; 0)$ & $\{3, 5, 5\}$ & $\{15\}$ & $5$ \\	\hline
 	
 	$(0; 3, 3, 3, 3; 0)$ & $\{3, 3, 4\}$ & $\{12\}$ & $5$ \\	\hline
-	
+\end{tabular}
 	\caption{Genus 0 Exceptional Cases}
 	\label{table:g-0-exceptional}
-\end{longtable}
+\end{table}
 
 \begin{rem}
 These cases give all of the exceptions to the $e$ and $2e$ bounds
@@ -2959,20 +2947,17 @@ so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
 Then, the log spin canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, \lfloor d L \rfloor)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, L)
 \end{align*}
 
 \noindent
 is generated as a $k$-algebra by elements of degree at most $e =
 \max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e$,
 so long as $\sigma$ does not lie in the finite list of exceptional
-cases listed in Table ~\ref{table:g-0-exceptional}.
+cases in Table ~\ref{table:g-0-exceptional}.
 \end{thm}
 
 \begin{proof}
-\todo{Robin: I changed much of this back to the old wording. Also
-please don't randomly change three of the $\halfcan$'s to $\halfcan_X$'s
-when the latter is not used anywhere else in the section...}
 If $\sx$ has no stacky points, then we can assume that $\halfcan \sim
 n \cdot \infty$ with $n \in \BZ_{\geq -1}$. This is a classical
 case which is done by Voight and Zureick-Brown \cite[Section 4.2]
@@ -3089,7 +3074,8 @@ In this section, we present several directions for further research.
 		shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e
 		_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of 
 		fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3
-		^{e_3} = 0$.  \todo{Peter: I don't know if it is so worth while giving an explicit definition and precisely defining the work already done.  A general outline might suffice and be easier/shorter to read. Aaron: I have a feeling we should define it, but I'm ok with removing the last two sentences.}
+		^{e_3} = 0$.  
+\todo{Peter: I don't know if it is so worth while giving an explicit definition and precisely defining the work already done.  A general outline might suffice and be easier/shorter to read. Aaron: I have a feeling we should define it, but I'm ok with removing the last two sentences.}
 
 		This motivates the following question:
 
@@ -3125,13 +3111,9 @@ In this section, we present several directions for further research.
 		points, making the relations non-generic. 
 		\begin{question}
 		\label{ques:generic-initial}
-			If $(\sx, \Delta, \halfcan)$ is a log spin curve with signature $\sigma$,
-			does there exist a function $\sigma \mapsto d(\sigma)$ so that
-			the generic initial ideal {\rm(}with some specified ordering{\rm)}
-			is generated in degree at most $d(\sigma)$? Can one write down the
+			If $(\sx, \Delta, \halfcan)$ is a log spin curve, can one write down the
 			generic initial ideal explicitly?
-		\end{question}\todo{Peter: This whole question is kind of confusing.  I don't know what it is trying to say. Robin: Maybe preface the question with saying something like ``not just the initial ideal''}
-
+		\end{question}
 	\item In Subsection \ref{ssec:bounds-high-genus}, we reference 
 		the work of Reid \cite[Theorem 3.4]{reid:infinitesimal}. We use his 
 		proof that the 
@@ -3150,7 +3132,7 @@ In this section, we present several directions for further research.
 			$e'=\max(4,e_1, \ldots, e_r)$ and $2e'$, 
 			apart from well a characterized list of exceptions?
 		\end{question}
-		\todo{Peter: I don't like a finite list of exceptions.  The list contains infinitely many non-isomorphic stacky curves.  Finite family might also be imperfect.  Can we say except when $g=2$ (I believe there will be infinitely many counterexamples there) or it lies in a finite list of exception?  Do we believe that to be true? Aaron: Since we haven't really thought about this conjecture, I'm not comfortable making it a conjecture. I switched it back to a question. Is that ok? Robin: Perhaps give reference to Reid's characterizations?}
+\todo{Peter: I don't like a finite list of exceptions.  The list contains infinitely many non-isomorphic stacky curves.  Finite family might also be imperfect.  Can we say except when $g=2$ (I believe there will be infinitely many counterexamples there) or it lies in a finite list of exception?  Do we believe that to be true? Aaron: Since we haven't really thought about this conjecture, I'm not comfortable making it a conjecture. I switched it back to a question. Is that ok? Robin: Perhaps give reference to Reid's characterizations?}
 		\begin{rem}\label{rem:reduce-3,6}
 			It is unlikely that these bounds can be reduced further to 
 			$e''=\max(3, e_1, \ldots, e_r)$ and $2e''$, 
