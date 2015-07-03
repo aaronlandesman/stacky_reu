@@ -163,25 +163,22 @@
 
 \begin{frame}
 \frametitle{Background: Introduction}
-Let $R$ be.
+Consider rings of modular forms of Fuchsian groups.
 
 \pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
+\begin{defn}
+$\Gamma$ is a {\bf Fuchsian} group if it is a discrete subgroup of
+$PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
+linear transformations, such that $\Gamma \backslash \BH$ has finite area.
+\end{defn}
 
 \pause
+\begin{defn}
+The graded {\bf ring of modular forms} of $\Gamma$ is
 \[
-   M(\Gamma)
+   M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)
 \]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\end{defn}
 
 \end{frame}
 
@@ -265,30 +262,26 @@ The \textbf{log spin canonical ring} of a stacky curve is
 
 \begin{frame}
 \frametitle{Main Result}
+\begin{alertblock}{Log Spin Canonical Ring Definition}
+The \textbf{log spin canonical ring} of a stacky curve is
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+\end{alertblock}
+
 Our main result gives the following bound
 
 \pause
 \begin{thm}
 \label{thm:main}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect field $k$, so
-that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$. Then the
-log spin canonical ring
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
+field $k$, so that $\sx$ has signature $\sigma = (g; e_1, \ldots,
+e_r; \delta)$.
 
-\begin{align*}
-	R := R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\end{align*}
-
-\noindent
-is generated as a $k$-algebra by elements of degree at most $e =
-\max(5, e_1, \ldots, e_r)$. Furthermore, $R$ has relations generated
-in degrees up to
-$\begin{cases}
-	\max(11, 2e_1, \ldots, 2e_r) & g \geq 2 \\
-	\max(10, 2e_1, \ldots, 2e_r) & g < 2
-\end{cases}$
-
-\noindent
-so long as $\sigma$ is not in a finite list of exceptional
+Then the log spin canonical ring is generated as a $k$-algebra by 
+elements of degree at most $e = \max(5, e_1, \ldots, e_r)$ with
+relations generated in degrees at most $2e$,
+so long as $\sigma$ does not lie in a finite list of exceptional
 cases.
 \end{thm}
 
