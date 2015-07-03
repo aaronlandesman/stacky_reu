@@ -162,8 +162,9 @@
 \maketitle
 
 \todo{Make sure we call all divisors spin canonical divisors}
-\todo{Write all block orders as tensors so we don't need to say the $y_i$ preceede the $x_i$.}
-\todo{It's a bit strange how many tables are split across pages. Can we we make sure they each lie on a single page.}
+\todo{Make sure we want to have linear equivalence $\sim$ of divisors instead of $=$ in most places}
+\todo{Write all block orders as tensors so we don't need to say the $y_i$ precede the $x_i$.}
+\todo{It's a bit strange how many tables are split across pages. Can we we make sure they each lie on a single page. Robin: do this at the end, not yet}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
@@ -171,7 +172,7 @@ Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup of
 $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations. \todo{Peter: In the abstract we say finite area.  Don't we want that here as well?}  
 We consider the graded {\bf ring of modular forms}
-$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$ \todo{Peter: Is $k$ bad to use here, since we will implicitly later use $k$ as the base field?}. One of the best
+$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$ \todo{Peter: Is $k$ bad to use here, since we will implicitly later use $k$ as the base field? Robin: Perhaps, although modular forms are traditionally referred to as having weight $k$. Not sure on this one.}. One of the best
 ways to understand the ring of modular forms is to give a
 presentation as a quotient of a polynomial ring.
 %of $M(\Gamma)$ for general Fuchsian groups $\Gamma$. 
@@ -179,21 +180,26 @@ To do so, it is useful to have a bound on the
 degrees in which the generators and relations can occur. In the
 special case that $\Gamma$ has no odd weight modular forms, Voight
 and Zureick-Brown give tight bounds \cite[Chapters 7-9]{vzb:stacky}.
- This paper \todo{Peter: I changed ``work to paper.'' Either way, it is a little awkward, because this could refer to VZB, or the one we are writing (of course I know it is the latter, but the reader won't)} extends their work to all Fuchsian groups $\Gamma$.
+We extend their result to all Fuchsian groups $\Gamma$ in the main
+theorem of this work.
 
 We can now consider the orbifold $\Gamma \backslash \BH$ over $\BC$.
 For example, in the case $\Gamma$ acts freely on $\BH$, $\Gamma
-\backslash \BH$ is a Riemann Surface over $\BC$.  $\Gamma \backslash \BH$ may be non-compact, but in such cases we can form a
+\backslash \BH$ is a Riemann Surface over $\BC$. 
+$\Gamma \backslash \BH$ may be non-compact, but in such cases we can form a
 compact Riemann Surface, $\Gamma \backslash \BH^*,$ by adding in
-cusps, with associated divisor of cusps $\Delta$.\todo{Peter: It is weird to have our first discussion of divisors be about the divisors of cusps.  Shouldn't canonical or half canonical divisors be introduced first?}
+cusps, with associated divisor of cusps $\Delta$.\todo{Peter: It is weird to have our first discussion of divisors be about the divisors of cusps.  Shouldn't canonical or half canonical divisors be introduced first? Robin: But this is where the log divisor comes from!}
 
 In order to find generators and relations for $M(\Gamma)$, we
 translate the seemingly analytic question of understanding the ring
 of modular forms into the algebraic category, using a
-generalization of the GAGA principle: there is an equivalence of categories between orbifold
-curves and log stacky curves over $\BC$ \cite[Proposition 6.1.5]
-{vzb:stacky}. Hence, for the remainder
+generalization of the GAGA principle. By \cite[Proposition 6.1.5]
+{vzb:stacky}, there is an equivalence of categories between orbifold
+curves and log stacky curves over $\BC$. Hence, for the remainder
 of the paper, we will work in the algebraic category.
+\todo{Robin: I changed this back because the new version seemed a bit
+long and the period is perfectly acceptable here. the new version
+seemed oddly worded to me}
 
 Let $X$ be a smooth algebraic curve of genus $g$ over a field $k$.
 It is well known that the canonical sheaf $\Omega _X,$ with
@@ -207,7 +213,7 @@ ring} is defined to be
 \noindent
 with multiplication structure corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X
-\cong \proj R$ \todo{Peter: I'm confused.  Why is this only true when $g\geq 2$?}. When $g \geq 2$, Petri's theorem gives generators
+\cong \proj R$ \todo{Peter: I'm confused.  Why is this only true when $g\geq 2$? Robin: see statement of Petri's theorem...}. When $g \geq 2$, Petri's theorem gives generators
 and relations for $R(X, K_X)$ showing that in most cases $R(X, K_X)$
 is generated in degree 1 with relations in degree 2, as shown in
 \cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
@@ -271,7 +277,7 @@ terms of the least common multiples of the $e_i$'s \cite[Chapter 5]
 {dorney:canonical}. In their treatment of log spin canonical
 rings, Voight and Zureick-Brown bounded generator degrees by $3 \cdot \max(5, e_1, \ldots, e_r)$
 and relation degrees by $3 \cdot \max(5, e_1, \ldots, e_r)$ when $\halfcan$ is effective
-\cite[Corollary 10.4.6]{vzb:stacky}. \todo{Peter: Seems a bit misleading by misrepresenting VZB's work; in reality they found fairly tight bounds in the case they worked in.}
+\cite[Corollary 10.4.6]{vzb:stacky}. \todo{Peter: Seems a bit misleading by misrepresenting VZB's work; in reality they found fairly tight bounds in the case they worked in. Robin: How? This solely talks about their work for the log spin canonical rings which is clearly NOT tight. They give a larger bound than us for a subset of the cases we check...}
 
 These bounds are far from tight and do not collectively
 cover all cases in all genera. The main theorem of this paper
@@ -295,11 +301,11 @@ signatures with $g = 0$.
 \begin{rem}
 \label{rem:main-weaker-assumptions}
 In fact, the proof of Theorem ~\ref{thm:main} holds not only for log spin canonical divisors, which must have distinct points, but also for arbitrary effective divisors
-$\Delta$. \todo{Peter: $\Delta$ seems weird as the name of the divisor, since its typically reserved for log divisors.  Also, how is this true?  This only follows given sufficient base point freeness conditions.  It is true when $g=0$ if that's what you meant to say.} Furthermore, one may relax the assumption that $k$ is perfect. Instead, one only need assume that the stacky curve
+$\Delta$. \todo{Peter: $\Delta$ seems weird as the name of the divisor, since its typically reserved for log divisors.  Also, how is this true?  This only follows given sufficient base point freeness conditions.  It is true when $g=0$ if that's what you meant to say. Robin: Throughout VZB, for example, $\Delta$ is used to represent any effective divisor. Where does an assumption that $\Delta$ has coefficient $1$ come into play?} Furthermore, one may relax the assumption that $k$ is perfect. Instead, one only need assume that the stacky curve
 is separably rooted, i.e. the residue field at each stacky point
 is separable.
 \end{rem}
-\todo{Peter: This remark seems to say two very separate things.  Why are they in the same remark?}
+\todo{Peter: This remark seems to say two very separate things.  Why are they in the same remark? Robin: This remark describes how the weaker conditions for which the theorem also holds.}
 
 Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$ in Theorems ~\ref{thm:g-0-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-high-main}, respectively.  In each of these proofs, we follow a similar inductive process utilizing the lemmas of Section ~\ref{sec:induction}; however, in the first two we have to explicitly construct specific base cases and present a finite list of exceptional cases, while in the high genus case we deduce base cases from more general arguments.
 \begin{rem}
@@ -312,12 +318,12 @@ provides an inductive procedure for explicitly determining the
 generators and initial ideal of relations of log spin canonical
 rings. Many explicit systems of generators and relations are
 detailed in interesting low genus examples by Neves
-\cite[Section III.4]{neves:halfcan}.  \todo{Peter: The statement about the high genus case seems a bit unclear/misleading}
+\cite[Section III.4]{neves:halfcan}.  \todo{Peter: The statement about the high genus case seems a bit unclear/misleading Robin: how so}
 
 Furthermore, explicit constructions also reveals that the bounds given in Theorem ~\ref{thm:main} are tight.
 Specifically, in almost all cases, the log spin canonical ring requires a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. 
 Furthermore, there are many infinite families of cases which require a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$.
-\end{rem}  \todo{Peter: Again, why are these two sections of the remark grouped together?}
+\end{rem}  \todo{Peter: Again, why are these two sections of the remark grouped together? Robin:Isn't this remark describing whether the theorem gives explicit constructions and tight bounds? Those seem pretty related...}
 
 %The main theorem of this paper, Theorem ~\ref{thm:main}, combined
 %with a lemma of Voight and Zureick-Brown \cite[Lemma 10.2.1]
@@ -325,7 +331,7 @@ Furthermore, there are many infinite families of cases which require a generator
 Together with a theorem from Voight and Zureick-Brown \cite
 [Theorem 9.3.1]{vzb:stacky} 
 %and \cite[Theorem 9.3.1]{vzb:stacky}, 
-\todo{Peter: The paragraph used to be confusingly redundant.  I think I fixed it but read through the commented out stuff to make sure it says the correct thing.}
+\todo{Peter: The paragraph used to be confusingly redundant.  I think I fixed it but read through the commented out stuff to make sure it says the correct thing. Robin: Why are you ignoring Lemma 10.2.1 as well as its connection to Kodaira--Spencer?}
 we have the following application to
 rings of modular forms. 
 %Note that the lemma from Voight and Zureick-
@@ -342,7 +348,7 @@ associated to $\Gamma \backslash \BH$ with signature $\sigma
 If $M_k(\Gamma) = 0$ for all odd $k$, then the ring of modular
 forms $M(\Gamma)$ is generated as a $\BC$-algebra by elements of
 degree at most $3 \cdot \max(3, e_1, \ldots, e_r)$ with relations
-generated in degrees at most $6 \cdot \max(3, e_1, \ldots, e_r)$.\todo{Peter: Are you sure it shouldn't be $6e$ and $12e$, because he showed the {\emph canonical ring} has the bounds $3e$ and $6e$, which would mean the {\emph half-canonical} ring should have bounds $6e$ and $12e$ right?}
+generated in degrees at most $6 \cdot \max(3, e_1, \ldots, e_r)$.\todo{Peter: Are you sure it shouldn't be $6e$ and $12e$, because he showed the {\emph canonical ring} has the bounds $3e$ and $6e$, which would mean the {\emph half-canonical} ring should have bounds $6e$ and $12e$ right? Robin: I think you are correct, although don't use $e$ since it is max(3, ...) instead of max(5, ...)}
 
 If there is some odd $k$ for which $M_k(\Gamma) \neq 0$, then the
 ring of modular forms $M(\Gamma)$ is generated as a $\BC$-algebra
@@ -406,7 +412,7 @@ points.
 In this paper, all stacky curves are assumed to be tame and
 $k$ will is assumed to be algebraically closed. We also assume that the
 stacky curves are separably rooted, i.e. the residue field of each
-of the stacky points is separable.  \todo{Peter: We should clarify this last statement.  If we are assuming $k$ is algebraically closed, aren't the points automatically seperably-rooted?  Really aren't we saying if perfect, then restrict to algebraically closed, and if not, everything works similarly as long as separably rooted?}
+of the stacky points is separable.  \todo{Peter: We should clarify this last statement.  If we are assuming $k$ is algebraically closed, aren't the points automatically separably-rooted?  Really aren't we saying if perfect, then restrict to algebraically closed, and if not, everything works similarly as long as separably rooted? Robin: Yes I guess $k$ being algebraically closed implies perfectness... we can use a similar statement to Remark 5.5.7 from VZB}
 
 With this stacks-theoretic description in mind, the remainder of this paper is primarily phrased using the language
 of Weil divisors.
@@ -458,7 +464,7 @@ is a stacky curve, $\Delta$ is a log divisor, and $\halfcan \in \di
 \textbf{log spin canonical divisor} on $(\sx, \Delta)$. We use
 $\halfcan_X := \lfloor L \rfloor $ to refer to the \textbf{spin
 canonical divisor} (also known as the half-canonical divisor, semi-
-canonical divisor, or theta characteristic) \todo{Peter: I think we mismatched the parenthetical.  Also, why did we define the spin canonical rdivisor of $\halfcan_X$ especially.  Isn't it really just a special case of the definition before.} associated to the
+canonical divisor, or theta characteristic) \todo{Peter: I think we mismatched the parenthetical.  Also, why did we define the spin canonical divisor of $\halfcan_X$ especially.  Isn't it really just a special case of the definition before. Robin: How? the parenthetical encompasses all alternate names! Yes it's a special case, but we never give it a name otherwise. You could define it as the log spin canonical divisor with zero log divisor but that somehow doesn't seem to give the right picture.} associated to the
 coarse space $X$ of $\sx$  (i.e. $\halfcan_X$ is a divisor such
 that $2\halfcan_X \sim K_X + \Delta$). 
 We define $H^0$ of a stacky divisor as follows:
@@ -784,7 +790,7 @@ Checking the remaining cases via pole degrees shows that
 these degrees are also generated in lower degrees,
 so $R'$ is generated in degrees $\{3, 5, 7, 7\}$.
 
-Now, we check the admissibility of $J= \{2, 3\}$ (corresponding to the $e_2,e_3=7$). By relabelling the
+Now, we check the admissibility of $J= \{2, 3\}$ (corresponding to the $e_2,e_3=7$). \todo{Robin: I don't understand your edit, Peter. Admissibility is not a property of $J$.} By relabelling the
 variables if necessary, we can assume that $x_{7, 1}$ corresponds
 to the generator with maximal pole order at $P_2$ and $x_{7, 2}$
 correspond to the generator with maximal pole order at $P_3$. Use
@@ -862,7 +868,7 @@ all degrees $d \geq 0$. In particular,
 	\dim_k \left((k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}])	/ \initial(I)\right)_d \\
 	&= \dim_k \left((k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle
 	x_{7, 2}^2, x_{5, 1}^2 \rangle \right)_d
-\end{align*}\todo{Peter: I think you need additional degree subscripts added to the polynomial ring or something, so this isn't infinite.}
+\end{align*}\todo{Peter: I think you need additional degree subscripts added to the polynomial ring or something, so this isn't infinite. Robin: Aren't there already existing degree subscripts?}
 
 \noindent
 for all $d \geq 0$. But the fact $\dim_k (R')_d = \dim_k \left((k[x_{7, 2},
@@ -2586,10 +2592,10 @@ If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}.
 We first now show the theorem holds for $L_X$ by induction. Since $L_X$ is effective, we may induct on the degree of the divisor. The base case is easy: the theorem holds for $L_X' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $L_X' \in \di X$, with $L_X'$ effective. We will show it holds for $L_X' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $L_X'$.
 
 First, if $P$ is not a basepoint of $\halfcan',$ then the hypotheses of Lemma ~\ref{lem:sat-1} are satisfied.
-\iffalse
-In particular, we may take $u \in h^0(\sx,L)$ with $u \neq 0$ and $\ord_P(u) = \lfloor \halfcan|_P \rfloor $,
-as $P$ is not a basepoint of $L_X'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg \halfcan' \geq 1.$   \todo{Peter: I don't find this paragraph (after the first sentence) very useful.  1: I'm not sure if we even need to go through the check that it satisfies the conditions for lemma 4.5.  2: I don't find the check clear or illuminating as written.  Either we should reword it or remove it (feel free to disagree, of course)}
-\fi
+
+%In particular, we may take $u \in h^0(\sx,L)$ with $u \neq 0$ and $\ord_P(u) = \lfloor \halfcan|_P \rfloor $,
+%as $P$ is not a basepoint of $L_X'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg \halfcan' \geq 1.$   \todo{Peter: I don't find this paragraph (after the first sentence) very useful.  1: I'm not sure if we even need to go through the check that it satisfies the conditions for lemma 4.5.  2: I don't find the check clear or illuminating as written.  Either we should reword it or remove it (feel free to disagree, of course)}
+
 Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $\halfcan= \halfcan'+P$.
 
 Otherwise, $P$ is a basepoint of $L_X'$, so the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(L_X') \geq 2$ as $\deg L_X' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $L_X = L_X'+P$. By induction, the theorem holds for $L_X$.
@@ -2620,11 +2626,11 @@ for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. \todo{Peter: W
 
 \vskip.1in
 \noindent
-{\sf Case 2b: $L_X = 0$}
+{\sf Case 2b: $\halfcan_X = 0$}
 
 This case is analogous to 2a: If there is only one stacky point, we start at $L = \frac{3}{7}P_1,$ and inductively increment the stabilizer order. Note that by Table ~\ref{table:g-1-base}, $L = \frac{3}{7}P_1,$ will have a relation in degree $15.$ However, once $e_1 \geq 9$, we have $2 \cdot e_1 > 15$, so the theorem holds for such stacky curves. Once the divisor as at least two stacky points, the argument proceeds as in Case 2a.
 
-\todo{Peter: Maybe you should mention something about how the exceptional cases differ, and how this affects the argument? Ok, I did it imprecisely. Is this better?}
+\todo{Peter: Maybe you should mention something about how the exceptional cases differ, and how this affects the argument? Aaron: Ok, I did it imprecisely. Is this better?}
 \end{proof}
 
 \begin{rem}
@@ -2817,7 +2823,7 @@ for each case as described in the following table.
 	\caption{Genus 0 Non-effective Base Cases Generators/Relations}
 	\label{table:g-0-base-cases-degrees}
 \end{longtable}
-\todo{Peter: Can we make a better description for the table above?}
+\todo{Peter: Can we make a better description for the table above? Robin: Think of one.}
 
 We can also always find a presentation for these cases such that
 they satisfy \ref{custom:Ad-i} and \ref{custom:Ad-ii} and that $\initial(I')$ is
@@ -2864,21 +2870,20 @@ independent of the choice of $i$.
 	\caption{Genus 0 Non-Effective Base Cases \ref{custom:Ad-iii}}
 	\label{table:g-0-base-cases-admissibility}
 \end{longtable}
-\todo{Peter: In case c, I changed $J=\{3\}$ to $J=\{2, 3\}$.}
-\todo{Peter: I don't particularly like split tables.  Might we consider not using [h], so its not split}
 
 Thus, all of the cases are admissible and satisfy the additional
 desired conditions.
 \end{proof}
 
-Now we can use Lemma ~\ref{lem:sat-3}, Lemma
-~\ref{lem:raise-stacky-order}, and Corollary
-~\ref{cor:raise-stacky-order} to induct from the cases of Table
-~\ref{table:g-0-base-cases} and obtain the desired bounds on the
-generator and relation degrees for log spin canonical rings of
-genus 0 curves. This process will be carried out in Subsection
-~\ref{ssec:g-0-main}.
-\todo{Peter: I don't think this paragraph should be here.  It seems like its kind of redundant given section 7.4.  Maybe, we could just, say something like ``these provide the base cases, from which we will induct in section 7.4.''}
+%Now we can use Lemma ~\ref{lem:sat-3}, Lemma
+%~\ref{lem:raise-stacky-order}, and Corollary
+%~\ref{cor:raise-stacky-order} to induct from the cases of Table
+%~\ref{table:g-0-base-cases} and obtain the desired bounds on the
+%generator and relation degrees for log spin canonical rings of
+%genus 0 curves. This process will be carried out in Subsection
+%~\ref{ssec:g-0-main}.
+%\todo{Peter: I don't think this paragraph should be here.  It seems like its kind of redundant given section 7.4.  Maybe, we could just, say something like ``these provide the base cases, from which we will induct in section 7.4.''}
+
 %Through the application of two inductively adding 
 %points via Lemma ~\ref{lem:sat-3} and inductively raising
 %stabilizer orders via Lemma ~\ref{lem:raise-stacky-order},
@@ -2915,7 +2920,7 @@ in the case $g = 0$.  \todo{This paragraph is kind of repetitive, and awkward.}
 	\hline
 	\hline
 
-	$(0; 3, 3, 3; 0)$ & $\{3\}$ & $\emptyset$ & $3$ \\	\hline
+	$(0; 3, 3, 3; 0)$ & $\{3\}$ & $\emptyset$ & $5$ \\	\hline
 
 	$(0; 3, 3, 5; 0)$ & $\{3, 10, 15\}$ & $\{30\}$ & $5$ \\	\hline
 	
@@ -2929,19 +2934,19 @@ in the case $g = 0$.  \todo{This paragraph is kind of repetitive, and awkward.}
 	
 	$(0; 5, 5, 5; 0)$ & $\{3, 5, 5\}$ & $\{15\}$ & $5$ \\	\hline
 	
-	$(0; 3, 3, 3, 3; 0)$ & $\{3, 3, 4\}$ & $\{12\}$ & $3$ \\	\hline
+	$(0; 3, 3, 3, 3; 0)$ & $\{3, 3, 4\}$ & $\{12\}$ & $5$ \\	\hline
 	
 	\caption{Genus 0 Exceptional Cases}
 	\label{table:g-0-exceptional}
 \end{longtable}
-\todo{Peter: Technically, shouldn't the first and last $e$ be 5 instead of 3, since $e=\max(5, e_i)$?}
 
 \begin{rem}
-These cases give all of the exceptions to the $e$ and $2e$ bounds on
-the generator and relation degree. Notice that each of these
-exceptional cases, apart from $(0; 3, 5, 7; 0)$, has saturation not in $\{3, 5, 9\}$ as seen in Table ~\ref{table:g-0-sat}.
-Heuristically, \todo{Peter: Is heuristically the right word here?  I interpret heuristically to mean ``providing a technique or method to solve a problem,'' whereas I think you mean something more along the lines of intuitively.}
-these exceptional saturations can be viewed as ``forcing'' generators and relations in higher degrees than expected.
+These cases give all of the exceptions to the $e$ and $2e$ bounds
+on the generator and relation degree. Notice that each of these
+exceptional cases, apart from $(0; 3, 5, 7; 0)$, also has
+exceptional saturation as seen in Table ~\ref{table:g-0-sat}.
+Intuitively, these exceptional saturations can be viewed as ``
+forcing'' generators and relations in higher degrees than expected.
 \end{rem}
 
 \ssec{Main Theorem for Genus Zero}
@@ -2967,32 +2972,39 @@ cases listed in Table ~\ref{table:g-0-exceptional}.
 
 \begin{proof}
 If $\sx$ has no stacky points, then we can assume that $L \sim
-n \cdot \infty$ with $n \in \BZ$.  When $n=-1$, then $R_\halfcan=k$.  When $n=0$, then $R_\halfcan = k[x]$.  When $n>0$, inductively applying Lemma \ref{lem:sat-1} tells us that $R_\halfcan$ is generated in degree 1 with relations generated in degree 2.  All three of these cases meet the conclusion of Theorem \ref{thm:g-0-main}.
+n \cdot \infty$ with $n \in \BZ_{\geq -1}$. This is a classical
+case which is done by Voight and Zureick-Brown \cite[Section 4.2]
+{vzb:stacky}. When $n = -1$, then $R_\halfcan = k$.  When $n = 0$,
+then $R_\halfcan = k[x]$.  When $n > 0$, inductively applying Lemma
+\ref{lem:sat-1} tells us that $R_\halfcan$ is generated in degree 1
+with relations generated in degree 2.
 
-First, consider the case when $\delta \geq 2$. \todo{Peter: it feels a tiny bit redundant here, as we kind of said this in the introduction to the section.}
- In any such cases,
-$\halfcan_X$ is an effective divisor so we can inductively apply
-the Lemma ~\ref{lem:sat-1} from the classical non-stacky case
-to deduce that $R(\sx, \Delta, \halfcan)$ is generated up to degree $e$
-with relations generated up to degree $2e$.
+First, let us consider the case when $\delta \geq 2$. In any such
+case, $\lfloor \halfcan \rfloor$ is an effective divisor and the
+conditions of Lemma ~\ref{lem:sat-1} are satisfied. Thus, we can
+apply the Lemma ~\ref{lem:sat-1} inductively from the classical
+case with no stacky points to get that $R(\sx, \Delta, \halfcan)$
+is generated up to degree $e$.
 
-By Remark ~\ref{rem:delta-not-1}, it only remains to deal with the case $\delta = 0$, so $\halfcan_X$ is not effective.
-Let $\sigma = (0; e_1, \ldots, e_r; 0)$ not be one of the exceptional cases in Table
-~\ref{table:g-0-exceptional}.  We get the following three cases, depending on the value of $r$:
+By Remark ~\ref{rem:delta-not-1}, it only remains to deal with the
+case $\delta = 0$, so $\halfcan$ is not necessarily effective. Let
+the signature $\sigma$ be such that it is not one of the
+exceptional cases contained in Table ~\ref{table:g-0-exceptional}. 
+We get the following three cases, depending on the value of $r$:
 
 \vskip.1in
 \noindent
-{\sf Case 1: $r<3$}
+{\sf Case 1: $r < 3$}
 
 If $r < 3$, then $\deg 
-\lfloor d \halfcan \rfloor < 0$ for all $d \geq 0$ so we get the
-trivial ring $R(\sx, \Delta, \halfcan) = k$.
+\lfloor d \halfcan \rfloor < 0$ for all $d \geq 0$ so we have the
+trivial case where $R(\sx, \Delta, \halfcan) = k$.
 
 \vskip.1in
 \noindent
-{\sf Case 2: $3\le r \le 5$}
+{\sf Case 2: $3 \le r \le 5$}
 
-If $3\le r \leq 5$ and $\sigma$ is not one of the exceptional cases,
+If $3 \le r \leq 5$ and $\sigma$ is not one of the exceptional cases,
 then we may apply Lemma ~\ref{lem:g-0-admissible-cases} and
 Corollary ~\ref{cor:raise-stacky-order} to an appropriate base case
 from Table ~\ref{table:g-0-base-cases} and deduce that $R(\sx,
@@ -3006,8 +3018,8 @@ from Table ~\ref{table:g-0-base-cases} and deduce that $R(\sx,
 If $r > 5$, then we can use Lemma
 ~\ref{lem:sat-3} to add stacky points with
 stabilizer order $3$ to case (k) of Table
-~\ref{table:g-0-base-cases}, which corresponds to $\sigma
-= (0; 3, 3, 3, 3, 3; 0), J = \{1, 2, 3, 4, 5\}$. This case
+~\ref{table:g-0-base-cases}, which corresponds to $(\sigma
+= (0; 3, 3, 3, 3, 3; 0), J = \{1, 2, 3, 4, 5\})$. This case
 satisfies the conditions of Lemma
 ~\ref{lem:sat-3} (recall from Table ~\ref
 {table:g-0-sat} that $\sat(\Eff(\sigma)) = 3$), and the
@@ -3022,7 +3034,7 @@ apply Corollary ~\ref{cor:raise-stacky-order} to deduce that
 $R(\sx, \delta, \halfcan)$ is generated up to degree $e :=
 \max(5, e_1, \ldots, e_r)$ with relations generated up to degree
 $2e$.
- \end{proof}
+\end{proof}
 
 \section{Further Research}
 \label{sec:further-questions}
