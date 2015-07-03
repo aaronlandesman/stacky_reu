@@ -161,7 +161,6 @@
 
 \maketitle
 
-\todo{Make sure we call all divisors spin canonical divisors}
 \todo{Make sure we want to have linear equivalence $\sim$ of divisors instead of $=$ in most places}
 \todo{Write all block orders as tensors so we don't need to say the $y_i$ precede the $x_i$.}
 \todo{It's a bit strange how many tables are split across pages. Can we we make sure they each lie on a single page. Robin: do this at the end, not yet}
@@ -664,7 +663,7 @@ In this subsection, we present a definition of admissibility, which is quite sim
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
 %in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
-	we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $L_X'$, rather than relative to the $\sco_X$.
+	we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $\halfcan_X'$, rather than relative to the $\sco_X$.
 
 \begin{defn}
 \label{def:order-sup}
@@ -1065,7 +1064,7 @@ orders incremented by $2$ and fixed log divisor and stacky points.
 \label{ssec:add-points}
 %In this section, we prove various inductive statements under the following setup:
 %Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log spin canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d \in\BN$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
-Before proving three lemmas that allow us to inductively add points to the support of a divisor, we give a criterion to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m] \to R_D$.  This criterion will be used repeatedly to show that a given homogeneous ideal is in fact the ideal of relations.
+Before proving three lemmas that allow us to inductively add points to the support of a log spin canonical divisor, we give a criterion to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m] \to R_D$.  This criterion will be used repeatedly to show that a given homogeneous ideal is in fact the ideal of relations.
 
 
 \begin{lem}
@@ -1129,12 +1128,12 @@ If $f=\prod_{i=1}^m {z_i}^{q_i}$ and $g=\prod_{i=1}^m {z_i}^{r_i}$ with $f \neq 
 \end{defn}
 
 \begin{rem}\label{rem:graded-P-lex-independent-of-line-bundle}
-Observe that Definition \ref{defn:graded-p-lex} remains the same if we replace $-\ord_P$ with $-\ord_P^{L'}$ for any divisor $L'$ of $X$.
+Observe that Definition \ref{defn:graded-p-lex} remains the same if we replace $-\ord_P$ with $-\ord_P^{L'}$ for any divisor $\halfcan'$ of $X$.
 \end{rem}
 
 \noindent One can easily verify graded $P$-lex is a monomial ordering in the sense defined in Cox--Little--O'Shea \cite[Chapter 2, $\mathsection$ 2, Definition 1]{cls:ideals-varieties-algorithms}.
 
-We area almost ready to state Lemma ~\ref{lem:sat-1}, which will yield an inductive procedure for determining the generators and relations of $R_D$, where $D \in \di \BP^1$ is an effective $
+We are almost ready to state Lemma ~\ref{lem:sat-1}, which will yield an inductive procedure for determining the generators and relations of $R_D$, where $D \in \di \BP^1$ is an effective $
 \BQ$-divisor. Whereas O'Dorney considers arbitrary $\BQ$-divisors in $Div(\mathbb{P}^1)$ \cite[Theorem 8]{dorney:canonical}, we restrict attention to effective divisors and in Lemma ~\ref{lem:sat-1} we are able to obtain much tighter bounds.  Moreover, Lemma ~\ref{lem:sat-1} also extends to curves of genus $g > 0$. Before stating Lemma ~\ref{lem:sat-1}, we recall some notation from O'Dorney \cite{dorney:canonical}.
 
 \begin{defn}\label{den:lower-approximation}
@@ -1314,7 +1313,7 @@ It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generat
 \[
 	k[u, x_1, \ldots, x_m] \cup V \cup \left(\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]\right). 
 \]
-Notice that $S$ generates the ideal $(y_1, \ldots, y_n)$ considered as an ideal of the subring $k[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$. Let $l$ be maximal such that $a_l\ne 0$.
+Notice that $S$ generates the ideal $(y_1, \ldots, y_n)$ considered as an ideal of the subring $k[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$. Let $\halfcan$ be maximal such that $a_l\ne 0$.
 Fix $i \in \{1, \ldots, n\}$. If $y_i \cdot f \notin S$, define
 $$
 b_j = \begin{cases}
@@ -1376,7 +1375,7 @@ Finally, (c) of this lemma follows immediately by looking at the constructions o
 %Similarly, suppose $y_i, y_j\in \{y_1, \ldots , y_{n - 1}\}$ with $1
 %< d_i$ and $j \ge i$ (that is, so $y_i y_j$ does not appear as a
 %basis element of the form described above: $y_n^0 y_j y_i u^0$). 
-%Choose the maximal $l$ such that $c_h \le c_i + c_j$; since $1 < d_i
+%Choose the maximal $\halfcan$ such that $c_h \le c_i + c_j$; since $1 < d_i
 %\le d_j$, $(c_i + c_j) - c_j>\lfloor \frac{\alpha}{\beta}\rfloor$
 %so $c_{j + 1} < c_i + c_j$ meaning $c_h \ge c_{j + 1} > c_j$.
 %Furthermore, $c_i + c_j - c_h < \lfloor \frac{\alpha}{\beta} \rfloor
@@ -1517,7 +1516,7 @@ Then, the following statements hold.
 \end{lem}
 
 \begin{proof}
-First, we shall show the assumptions on $g$ imply $H^0(\sx, 3L), H^0(\sx, 4L)$ are both base point free: If $g \geq 2$ then $\deg 3L > 2g - 1$ \todo{If $g = 2$ then we in fact have $\deg 3L = 3g-3 = 2g - 1.$ Is this a big problem? It's almost base point free, except if the point you take out yields the canonical divisor, after removing it.} and $\deg 4L > 2g - 1$, so $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. If $g = 1$, we assume $\deg 3L \geq 2 > 2g - 1$, so we also have $\deg 4L \geq 2 > 2g - 1,$ so again $H^0(\sx, 3L)$ and $H^0(\sx, 4L)$ are base point free. 
+First, we shall show the assumptions on $g$ imply $H^0(\sx, 3 \halfcan), H^0(\sx, 4 \halfcan)$ are both basepoint-free: If $g \geq 2$ then $\deg 3 \halfcan > 2g - 1$ \todo{If $g = 2$ then we in fact have $\deg 3L = 3g - 3 = 2g - 1.$ Is this a big problem? It's almost basepoint-free, except if the point you take out yields the canonical divisor, after removing it.} and $\deg 4 \halfcan > 2g - 1$, so $H^0(\sx, 3 \halfcan)$ and $H^0(\sx, 4 \halfcan)$ are base point free. If $g = 1$, we assume $\deg 3 \halfcan \geq 2 > 2g - 1$, so we also have $\deg 4 \halfcan \geq 2 > 2g - 1,$ so again $H^0(\sx, 3 \halfcan)$ and $H^0(\sx, 4 \halfcan)$ are base point free. 
 
 Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord_P^{\halfcan'}(y_i) = 1$ by Riemann-Roch, proving part (a).
 
@@ -1551,7 +1550,7 @@ Hence, by Lemma \ref{lem:relations_from_generators_induction}, part (b) holds.
 
 \begin{lem}
 \label{lem:sat-3}
-Suppose $L'$ is a log spin canonical divisor of $\sx'$ with coarse
+Suppose $\halfcan'$ is a log spin canonical divisor of $\sx'$ with coarse
 space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ and $R_
 {\halfcan'} \cong k[x_3, x_4 , x_5, \ldots, x_m]/I'$. Choose $x_3, \ldots, x_m$ such that $-\ord^{L'}_P(x_i)=0$ for all $i,$ which is possible as $X$ has genus $0$. Let $L = L' + \frac
 {1}{3}P$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that
@@ -1675,7 +1674,7 @@ we can argue similarly to Lemma \ref{lem:sat-1} that $S$ and $T$ along with $\pr
 %\end{lem}
 %
 %\begin{proof}
-%Since adding $P$ to $L'$, reduces saturation from 2 to 1, $h^0(X, \lfloor L \rfloor)= 1$. 
+%Since adding $P$ to $\halfcan'$, reduces saturation from 2 to 1, $h^0(X, \lfloor L \rfloor)= 1$. 
 %Choose any $y_1\in H^0(X, \lfloor L\rfloor)$; we know by saturation arguments that $-
 %\ord_P(y_1)= 1$. Furthermore, since $\delta> 0$, we use Riemann-Roch to deduce that for 
 %all $d> 1$ $h^0(X, \lfloor dL\rfloor)=h^0(dL') +d$, so $(R_\halfcan)_d$ is a $d$ dimension $k
@@ -1833,16 +1832,16 @@ a curve with signature $(g; e _1', \ldots, e_k', e_{k + 1}' + 2,
 %\todo{Peter: I'm not sure how useful this remark is.  After seeing the definition of $S_{\sigma, J}(I,d)$ a reader will probably be a little mystified why it is a useful condition.  The inclusion of the relationship to something defined in VZB that also seems ad hoc and that they probably will not have seen may not be the most helpful use of this space.}
 
 %\begin{lem}\label{lem:n-3s-admissible}
-%Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ stacky points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $L'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $L$.
+%Fix a genus $g$, a log divisor $\Delta$, and a coarse space $X$. Suppose $3\le r\in \BN$ so that all stacky curves $\sx'$ with $r- 1$ stacky points of degree 3 over the coarse space $X$ have all subsets $J'$ of $\{e_1, \ldots, e_{r- 1}\}$ admissible in $\halfcan'$. Then if $\sx$ has coarse space $X$, any subset of $J$ of $\{e_1, \ldots, e_r\}$ (with all $e_i =3$) is admissible viewed in $\halfcan$.
 %\end{lem}
 %\begin{proof}
-%To show \ref{custom:Ad-i} and \ref{custom:Ad-ii} look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies \ref{custom:Ad-i}. Furthermore, since $s$ is an admissible set of $L'$, in particular, we must have \ref{custom:Ad-ii} satisfied so $\frac{-\ord_{Q_l}
+%To show \ref{custom:Ad-i} and \ref{custom:Ad-ii} look at some $\sx'$ with $r- 1$ stacky points $'s=\{Q_1, \ldots, Q_{j - 1}, Q_{j + 1}, \ldots Q_r\}$ including a chosen $Q_i$ (and excluding some $Q_j\ne Q_i$). Then select $y_{e_r'}$ from the choice that makes the set $J'=\{i\}$ an admissible set in $\sx'$; this naturally can be seen inside of $R_{\sx}$ and satisfies \ref{custom:Ad-i}. Furthermore, since $s$ is an admissible set of $\halfcan'$, in particular, we must have \ref{custom:Ad-ii} satisfied so $\frac{-\ord_{Q_l}
 %^{\halfcan_X'}(y_i)}{\deg (y_i)} = 0$ for\todo{I'm confused how \ref{custom:Ad-ii} follows in genus 0?}
 %
  %follows immediately from the base-point freeness of $3\halfcan$ which we have for the following reasons in the various genera:
 %\begin{itemize}
 %\item When $g> 0$, $\deg(\lfloor 3 L\rfloor)\ge 3g-3+2\ge 2g$ (the added two comes from the fact that $r\ge 2$).
-%\item When $g= 0$, since $L'$ has a nontrivial admissible subset within $\{e_1, \ldots, e_{r- 1}\}$ satisfying \ref{custom:Ad-i}, we know $\deg(\lfloor 3\lfloor)\ge 0$, so it is base-point free.
+%\item When $g= 0$, since $\halfcan'$ has a nontrivial admissible subset within $\{e_1, \ldots, e_{r- 1}\}$ satisfying \ref{custom:Ad-i}, we know $\deg(\lfloor 3\lfloor)\ge 0$, so it is base-point free.
 %\end{itemize}
 %\end{proof}
 
@@ -2208,7 +2207,7 @@ The proofs of this subsection results are similar to those in Neves ~\cite[Propo
 
 %\begin{lem}
 %\label{lem:generation-5}
-%Let $X$ be a curve of genus $g \geq 2$ and let $L$ be a divisor with $2 L \sim K +\Delta$. Then, $R_\halfcan$ is generated in degree at most $5$.
+%Let $X$ be a curve of genus $g \geq 2$ and let $\halfcan$ be a divisor with $2 L \sim K +\Delta$. Then, $R_\halfcan$ is generated in degree at most $5$.
 %\end{lem}
 %
 %The strategy of the proof of Lemma ~\ref{lem:generation-5} is to use Riemann--Roch and the basepoint-free pencil trick to show that $R_\halfcan$ is generated in degree at most $6,$ as is done in Lemma ~\ref{lem:semicanonical_generation}. When $g > 3$, it is easy to reduce the bound from 5 to 6. The trickiest case is to show $R_\halfcan$ is generated in degree 5 when $g = 2$, which is done in Lemma ~\ref{lem:genus-2-generation-5}. After proving these 2 lemmas, we concisely prove Lemma ~\ref{lem:generation-5}.
@@ -2285,7 +2284,7 @@ Ergo, $f$ is surjective.
 %There are now two cases, depending on whether $H^0(X, \halfcan) = 0$.
 %
 %First, we deal with the case that $H^0(X, \halfcan) \neq 0$. 
-%Then, since $X \not \cong \BP^1_k,$ and $\deg L = 1$, we must have $H^0(X, \halfcan) = 1$. Hence, we know $L$ is effective, so up to linear equivalence, we may assume $L = P$ where $P$ is hyperelliptic fixed. In this case, it is shown in \cite{neves:halfcan}[Theorem III.19] that $R_\halfcan$ is generated in degree $\leq 3$.
+%Then, since $X \not \cong \BP^1_k,$ and $\deg L = 1$, we must have $H^0(X, \halfcan) = 1$. Hence, we know $\halfcan$ is effective, so up to linear equivalence, we may assume $L = P$ where $P$ is hyperelliptic fixed. In this case, it is shown in \cite{neves:halfcan}[Theorem III.19] that $R_\halfcan$ is generated in degree $\leq 3$.
 %
 %Second, suppose $H^0(X, \halfcan) = 0$.
 %Note that because $\deg 3L = 3$, we have by Riemann--Roch that $H^0(X,3L) = 2$. 
@@ -2451,12 +2450,12 @@ As the base case, let $\halfcan=\halfcan_X \in \di X$ satisfy $2\halfcan \sim 2 
 By Corollary ~\ref{cor:g-2-presentation-bound}, the theorem holds for $(\sx, \Delta,
 \halfcan_X)$. 
 
-Next, suppose the theorem holds for $\halfcan' = \halfcan_X+ \sum_{i=1}^{r-1} \frac{1}{3}P_i$ and take a divisor of the form $\halfcan = \halfcan_X + \sum_{i=1}^r \frac{1}{3} P_i$, which means that $\halfcan = \halfcan' + \frac{1}{3} P_r$.  If $P_r$ is a basepoint of $L'$, then the theorem holds for $\halfcan$ by Lemma ~\ref{lem:sat-2}.  
+Next, suppose the theorem holds for $\halfcan' = \halfcan_X + \sum_{i=1}^{r-1} \frac{1}{3}P_i$. Take a log spin canonical divisor of the form $\halfcan = \halfcan_X + \sum_{i=1}^r \frac{1}{3} P_i$, which means that $\halfcan = \halfcan' + \frac{1}{3} P_r$.  If $P_r$ is a basepoint of $\halfcan'$, then the theorem holds for $\halfcan$ by Lemma ~\ref{lem:sat-2}. \todo{equals or $\sim$?}
 Otherwise, $P_r$ is not a basepoint of $\halfcan'$, meaning that in particular $R_{\halfcan'}$ is saturated in 1.
 Therefore, since $P_r$ is a not basepoint of $\halfcan'$, Equation
 ~\ref{eqn:deg1-sat-ind} holds by Riemann Roch.
 % since $\frac{\beta}{\alpha} = \frac{3}{1}=3$. 
-In this case, the theorem holds for $L$ by Lemma ~\ref{lem:sat-1}.
+In this case, the theorem holds for $\halfcan$ by Lemma ~\ref{lem:sat-1}.
 
 We have thus shown the theorem for all $(\sx, \Delta, \halfcan)$ with $g\ge 2$ and signature $(g;3, \ldots, 3;\delta)$. Therefore, by Corollary 
 ~\ref{cor:raise-stacky-order}, this theorem 
@@ -2470,7 +2469,7 @@ holds for all log spin curves $(\sx, L, J)$.
 
 In this section, we prove Theorem ~\ref{thm:main} in the case that $g = 1$.  We follow a similar inductive strategy as in the genus $g\geq 2$ case, except unlike in the $g \geq 2$ case we obtain explicit generators and relations here.
 
-In the case of a genus 1 curve, $X$, we know $K_X \sim 0$, and therefore the only possibilities for spin canonical divisors are $\halfcan' \sim 0$ or $\halfcan' \sim P - Q$ where $P,Q$ are distinct points, fixed  under the hyperelliptic involution. We inductively construct presentations by adding points through Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2} and incrementing the values of the $e_i$s using Lemma ~\ref{lem:raise-stacky-order}.
+In the case of a genus 1 curve, $X$, we know $K_X \sim 0$, and therefore the only possibilities for \todo{``log''?} spin canonical divisors are $\halfcan' \sim 0$ or $\halfcan' \sim P - Q$ where $P, Q$ are distinct points, fixed  under the hyperelliptic involution. We inductively construct presentations by adding points through Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2} and incrementing the values of the $e_i$'s using Lemma ~\ref{lem:raise-stacky-order}.
 
 \ssec{Genus One Base Cases}
 \label{ssec:g-1_base}
@@ -2587,20 +2586,20 @@ finite list of exceptional cases, as listed in Table
 \noindent
 {\sf Case 1: $\Delta > 0$}
 
-If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $L_X \in \di X$ satisfy $2L_X \sim K_X + \Delta$. We have $\deg \halfcan_X \geq 1$, so, by Riemann--Roch, $h^0(\sx, \halfcan) \geq 1.$ Therefore, $L$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $L$ is an effective divisor.
+If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $\halfcan_X \in \di X$ satisfy $2 \halfcan_X \sim K_X + \Delta$. We have $\deg \halfcan_X \geq 1$, so, by Riemann--Roch, $h^0(\sx, \halfcan) \geq 1.$ Therefore, $\halfcan$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $\halfcan$ is an effective divisor.
 
-We first now show the theorem holds for $L_X$ by induction. Since $L_X$ is effective, we may induct on the degree of the divisor. The base case is easy: the theorem holds for $L_X' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $L_X' \in \di X$, with $L_X'$ effective. We will show it holds for $L_X' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $L_X'$.
+We first now show the theorem holds for $\halfcan_X$ by induction. Since $\halfcan_X$ is effective, we may induct on the degree of the log spin canonical divisor. The base case is easy: the theorem holds for $\halfcan_X' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $\halfcan_X' \in \di X$, with $\halfcan_X'$ effective. We will show it holds for $L_X' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $\halfcan_X'$.
 
 First, if $P$ is not a basepoint of $\halfcan',$ then the hypotheses of Lemma ~\ref{lem:sat-1} are satisfied.
 
 %In particular, we may take $u \in h^0(\sx,L)$ with $u \neq 0$ and $\ord_P(u) = \lfloor \halfcan|_P \rfloor $,
-%as $P$ is not a basepoint of $L_X'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg \halfcan' \geq 1.$   \todo{Peter: I don't find this paragraph (after the first sentence) very useful.  1: I'm not sure if we even need to go through the check that it satisfies the conditions for lemma 4.5.  2: I don't find the check clear or illuminating as written.  Either we should reword it or remove it (feel free to disagree, of course)}
+%as $P$ is not a basepoint of $\halfcan_X'$. Furthermore, Equation ~\ref{eqn:deg1-sat-ind} is satisfied by Riemann Roch, since $\deg \halfcan' \geq 1.$   \todo{Peter: I don't find this paragraph (after the first sentence) very useful.  1: I'm not sure if we even need to go through the check that it satisfies the conditions for lemma 4.5.  2: I don't find the check clear or illuminating as written.  Either we should reword it or remove it (feel free to disagree, of course)}
 
 Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $\halfcan= \halfcan'+P$.
 
-Otherwise, $P$ is a basepoint of $L_X'$, so the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(L_X') \geq 2$ as $\deg L_X' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $L_X = L_X'+P$. By induction, the theorem holds for $L_X$.
+Otherwise, $P$ is a basepoint of $\halfcan_X'$, so the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(L_X') \geq 2$ as $\deg L_X' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $L_X = L_X'+P$. By induction, the theorem holds for $\halfcan_X$.
 
-To complete the case that $\Delta > 0$, we now need show the theorem holds for a \emph{stacky} log spin divisor $L$.  It suffices to show that if the theorem holds for a divisor $L'$ with $\deg \lfloor L' \rfloor > 0$, then it holds for $L' + \subhalf {e_i}P_i$ with $e_i$ odd.  As above, if $P$ is not a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-1}. On the other hand, if $P$ is a basepoint of $L'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-2}.
+To complete the case that $\Delta > 0$, we now need show the theorem holds for a \emph{stacky} log spin canonical divisor $\halfcan$.  It suffices to show that if the theorem holds for a log spin canonical divisor $\halfcan'$ with $\deg \lfloor L' \rfloor > 0$, then it holds for $L' + \subhalf {e_i}P_i$ with $e_i$ odd.  As above, if $P$ is not a basepoint of $\halfcan'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-1}. On the other hand, if $P$ is a basepoint of $\halfcan'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-2}.
 
 \vskip.1in
 \noindent
@@ -2612,9 +2611,9 @@ Since $\Delta = 0$, we may write $\halfcan = \halfcan_X + \sum_{i = 1}^{r}\subha
 \noindent
 {\sf Case 2a: $\halfcan_X = P - Q, P \neq Q$}
 
-Note that we are assuming $L$ is not one of the exceptional cases listed in Table ~\ref{table:g-1-exceptional}, so we may either assume $\sx$ has 1 stacky point with $e_1 > 5$ or at least 2 stacky points.
+Note that we are assuming $\halfcan$ is not one of the exceptional cases listed in Table ~\ref{table:g-1-exceptional}, so we may either assume $\sx$ has 1 stacky point with $e_1 > 5$ or at least 2 stacky points.
 
-First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12. Furthermore, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Observe that $L'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$. However, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, and the relation in degree $12$ coming from $R_{\halfcan'}$, lies in a degree less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
+First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12. Furthermore, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Observe that $\halfcan'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$. However, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, and the relation in degree $12$ coming from $R_{\halfcan'}$, lies in a degree less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
 Second, we deal with the case that $\sx$ has at least two stacky points. 
 If $(\sx', \delta, \halfcan')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then as found in 
@@ -2628,7 +2627,7 @@ for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. \todo{Peter: W
 \noindent
 {\sf Case 2b: $\halfcan_X = 0$}
 
-This case is analogous to 2a: If there is only one stacky point, we start at $L = \frac{3}{7}P_1,$ and inductively increment the stabilizer order. Note that by Table ~\ref{table:g-1-base}, $L = \frac{3}{7}P_1,$ will have a relation in degree $15.$ However, once $e_1 \geq 9$, we have $2 \cdot e_1 > 15$, so the theorem holds for such stacky curves. Once the divisor as at least two stacky points, the argument proceeds as in Case 2a.
+This case is analogous to 2a: If there is only one stacky point, we start at $L = \frac{3}{7}P_1,$ and inductively increment the stabilizer order. Note that by Table ~\ref{table:g-1-base}, $L = \frac{3}{7}P_1,$ will have a relation in degree $15.$ However, once $e_1 \geq 9$, we have $2 \cdot e_1 > 15$, so the theorem holds for such stacky curves. Once the log spin canonical divisor has at least two stacky points, the argument proceeds as in Case 2a.
 
 \todo{Peter: Maybe you should mention something about how the exceptional cases differ, and how this affects the argument? Aaron: Ok, I did it imprecisely. Is this better?}
 \end{proof}
@@ -2673,7 +2672,7 @@ throughout this section.
 \ssec{Saturation}
 \label{ssec:g-0_saturation}
 First, we present the saturations, as defined in Definition
-~\ref{defn:sat}, of the canonical divisor for
+~\ref{defn:sat}, of the log spin canonical divisor for
 all cases where $g = 0$ and $\delta = 0$. The saturations can be computed using Riemann-Roch.
 By classifying the saturations of all signatures, we can determine
 the base cases on which we can apply inductive lemmas from
@@ -3060,7 +3059,7 @@ In this section, we present several directions for further research.
 		where $(\sx, \Delta, L)$ is a spin canonical ring, $X$ is the 
 		coarse space of $\sx$, and $L_X \leq L$ is a spin canonical divisor 
 		of $X$. In this case our proof of Theorem ~\ref{thm:main} yields an 
-		algorithm for inductively determining the generators of $L$. 
+		algorithm for inductively determining the generators of $\halfcan$. 
 		This reduces Question \ref{ques:algorithm} to the 
 		following Petri-like question:
 		\begin{question}
