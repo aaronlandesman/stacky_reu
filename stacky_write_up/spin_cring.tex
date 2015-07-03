@@ -169,29 +169,30 @@
 \section{Introduction}
 Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup of
 $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
-linear transformations. We consider the {\bf ring of modular forms}
-$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best
+linear transformations. \todo{Peter: In the abstract we say finite area.  Don't we want that here as well?}  
+We consider the graded {\bf ring of modular forms}
+$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$ \todo{Peter: Is $k$ bad to use here, since we will implicitly later use $k$ as the base field?}. One of the best
 ways to understand the ring of modular forms is to give a
-presentation of $M(\Gamma)$ for general Fuchsian groups $\Gamma$. 
-In order to do so, it is extremely useful to have a bound on the
+presentation as a quotient of a polynomial ring.
+%of $M(\Gamma)$ for general Fuchsian groups $\Gamma$. 
+To do so, it is useful to have a bound on the
 degrees in which the generators and relations can occur. In the
 special case that $\Gamma$ has no odd weight modular forms, Voight
-and Zureick-Brown \cite[Chapters 7-9]{vzb:stacky} give tight bounds.
- This work extends their work to all Fuchsian groups $\Gamma$.
+and Zureick-Brown give tight bounds \cite[Chapters 7-9]{vzb:stacky}.
+ This paper \todo{Peter: I changed ``work to paper.'' Either way, it is a little awkward, because this could refer to VZB, or the one we are writing (of course I know it is the latter, but the reader won't)} extends their work to all Fuchsian groups $\Gamma$.
 
 We can now consider the orbifold $\Gamma \backslash \BH$ over $\BC$.
 For example, in the case $\Gamma$ acts freely on $\BH$, $\Gamma
-\backslash \BH$ is a Riemann Surface over $\BC$. It may be
-that $\Gamma \backslash \BH$ is not compact, but we can form a
+\backslash \BH$ is a Riemann Surface over $\BC$.  $\Gamma \backslash \BH$ may be non-compact, but in such cases we can form a
 compact Riemann Surface, $\Gamma \backslash \BH^*,$ by adding in
-cusps, with associated divisor of cusps $\Delta$.
+cusps, with associated divisor of cusps $\Delta$.\todo{Peter: It is weird to have our first discussion of divisors be about the divisors of cusps.  Shouldn't canonical or half canonical divisors be introduced first?}
 
 In order to find generators and relations for $M(\Gamma)$, we
 translate the seemingly analytic question of understanding the ring
 of modular forms into the algebraic category, using a
-generalization of the GAGA principle. By \cite[Proposition 6.1.5]
-{vzb:stacky}, there is an equivalence of categories between orbifold
-curves and log stacky curves over $\BC$. Hence, for the remainder
+generalization of the GAGA principle: there is an equivalence of categories between orbifold
+curves and log stacky curves over $\BC$ \cite[Proposition 6.1.5]
+{vzb:stacky}. Hence, for the remainder
 of the paper, we will work in the algebraic category.
 
 Let $X$ be a smooth algebraic curve of genus $g$ over a field $k$.
@@ -206,7 +207,7 @@ ring} is defined to be
 \noindent
 with multiplication structure corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X
-\cong \proj R$. When $g \geq 2$, Petri's theorem gives generators
+\cong \proj R$ \todo{Peter: I'm confused.  Why is this only true when $g\geq 2$?}. When $g \geq 2$, Petri's theorem gives generators
 and relations for $R(X, K_X)$ showing that in most cases $R(X, K_X)$
 is generated in degree 1 with relations in degree 2, as shown in
 \cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
@@ -232,7 +233,7 @@ where $\Delta \in \di X$ is a log divisor and $2\halfcan \sim K_X +
 study in this paper is the {\bf log spin canonical ring} of $(\sx,
 \Delta, \halfcan),$ notated as
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(X, d \halfcan).
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(X, \lfloor d \halfcan \rfloor).
 \end{align*}
 
 \noindent
@@ -265,12 +266,12 @@ In particular, we bound the degrees of generators and relations of a
 log spin canonical ring. Let
 $\sx$ be a stacky curve with signature $\sigma = (g; e_1, \ldots,
 e_r; \delta)$. The application of O'Dorney's work to log spin
-canonical rings gives a weak bound in the case $g = 0$, in
+canonical rings gives a weak bound in the case $g = 0$ in
 terms of the least common multiples of the $e_i$'s \cite[Chapter 5]
 {dorney:canonical}. In their treatment of log spin canonical
 rings, Voight and Zureick-Brown bounded generator degrees by $3 \cdot \max(5, e_1, \ldots, e_r)$
 and relation degrees by $3 \cdot \max(5, e_1, \ldots, e_r)$ when $\halfcan$ is effective
-\cite[Corollary 10.4.6]{vzb:stacky}.
+\cite[Corollary 10.4.6]{vzb:stacky}. \todo{Peter: Seems a bit misleading by misrepresenting VZB's work; in reality they found fairly tight bounds in the case they worked in.}
 
 These bounds are far from tight and do not collectively
 cover all cases in all genera. The main theorem of this paper
@@ -293,20 +294,14 @@ signatures with $g = 0$.
 
 \begin{rem}
 \label{rem:main-weaker-assumptions}
-In fact, the proof of Theorem ~\ref{thm:main} holds not only for log divisors, which must have distinct points, but also for arbitrary effective divisors
-$\Delta$. Furthermore, one may view stacky curves as stacks, in which case one may relax the assumption that $k$ is perfect. Instead, one only need assume that the stacky curve
+In fact, the proof of Theorem ~\ref{thm:main} holds not only for log spin canonical divisors, which must have distinct points, but also for arbitrary effective divisors
+$\Delta$. \todo{Peter: $\Delta$ seems weird as the name of the divisor, since its typically reserved for log divisors.  Also, how is this true?  This only follows given sufficient base point freeness conditions.  It is true when $g=0$ if that's what you meant to say.} Furthermore, one may relax the assumption that $k$ is perfect. Instead, one only need assume that the stacky curve
 is separably rooted, i.e. the residue field at each stacky point
 is separable.
 \end{rem}
+\todo{Peter: This remark seems to say two very separate things.  Why are they in the same remark?}
 
-Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$, each of
-which uses a similar inductive process. The genus $g \geq 2$ case is
-proven in Theorem ~\ref{thm:g-high-main}. In Theorem
-~\ref{thm:g-1-main} and Theorem
-~\ref{thm:g-0-main}, we also give the respective
-genus one and genus zero results after dealing with more involved base cases and
-exceptional cases.
-
+Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$ in Theorems ~\ref{thm:g-0-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-high-main}, respectively.  In each of these proofs, we follow a similar inductive process utilizing the lemmas of Section ~\ref{sec:induction}; however, in the first two we have to explicitly construct specific base cases and present a finite list of exceptional cases, while in the high genus case we deduce base cases from more general arguments.
 \begin{rem}
 \label{rem:explicit-generators}
 The proofs of the main theorems in the low genus cases not only
@@ -317,21 +312,26 @@ provides an inductive procedure for explicitly determining the
 generators and initial ideal of relations of log spin canonical
 rings. Many explicit systems of generators and relations are
 detailed in interesting low genus examples by Neves
-\cite[Section III.4]{neves:halfcan}.
+\cite[Section III.4]{neves:halfcan}.  \todo{Peter: The statement about the high genus case seems a bit unclear/misleading}
 
-Furthermore, the explicit construction of generators and relations also reveals that the bounds given in Theorem ~\ref{thm:main} are tight. That is, in almost all cases, there is a generator of the log spin canonical ring in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. Furthermore, there are many infinite families of cases which have a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$.
-\end{rem}
+Furthermore, explicit constructions also reveals that the bounds given in Theorem ~\ref{thm:main} are tight.
+Specifically, in almost all cases, the log spin canonical ring requires a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. 
+Furthermore, there are many infinite families of cases which require a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$.
+\end{rem}  \todo{Peter: Again, why are these two sections of the remark grouped together?}
 
-The main theorem of this paper, Theorem ~\ref{thm:main}, combined
-with a lemma of Voight and Zureick-Brown \cite[Lemma 10.2.1]
-{vzb:stacky}, provides a statement on rings of modular forms.
-Together with the main theorems from Voight and Zureick-Brown \cite
-[Theorem 9.3.1]{vzb:stacky} and \cite
-[Theorem 9.3.1]{vzb:stacky}, we have the following application to
-rings of modular forms. Note that the lemma from Voight and Zureick-
-Brown ~\cite[Lemma 10.2.1]{vzb:stacky} follows almost immediately
-from the classical work of Kodaira--Spencer
-\cite{kodaira-spencer:deformations}.
+%The main theorem of this paper, Theorem ~\ref{thm:main}, combined
+%with a lemma of Voight and Zureick-Brown \cite[Lemma 10.2.1]
+%{vzb:stacky}, provides a statement on all rings of modular forms.
+Together with a theorem from Voight and Zureick-Brown \cite
+[Theorem 9.3.1]{vzb:stacky} 
+%and \cite[Theorem 9.3.1]{vzb:stacky}, 
+\todo{Peter: The paragraph used to be confusingly redundant.  I think I fixed it but read through the commented out stuff to make sure it says the correct thing.}
+we have the following application to
+rings of modular forms. 
+%Note that the lemma from Voight and Zureick-
+%Brown ~\cite[Lemma 10.2.1]{vzb:stacky} follows almost immediately
+%from the classical work of Kodaira--Spencer
+%\cite{kodaira-spencer:deformations}.
 
 \begin{cor}
 \label{cor:main-mod-forms}
@@ -342,7 +342,7 @@ associated to $\Gamma \backslash \BH$ with signature $\sigma
 If $M_k(\Gamma) = 0$ for all odd $k$, then the ring of modular
 forms $M(\Gamma)$ is generated as a $\BC$-algebra by elements of
 degree at most $3 \cdot \max(3, e_1, \ldots, e_r)$ with relations
-generated in degrees at most $6 \cdot \max(3, e_1, \ldots, e_r)$.
+generated in degrees at most $6 \cdot \max(3, e_1, \ldots, e_r)$.\todo{Peter: Are you sure it shouldn't be $6e$ and $12e$, because he showed the {\emph canonical ring} has the bounds $3e$ and $6e$, which would mean the {\emph half-canonical} ring should have bounds $6e$ and $12e$ right?}
 
 If there is some odd $k$ for which $M_k(\Gamma) \neq 0$, then the
 ring of modular forms $M(\Gamma)$ is generated as a $\BC$-algebra
@@ -362,12 +362,11 @@ bound of $6 \cdot \max(3, e_1, \ldots, e_r)$ can be reduced to $\max(3,e_1, \ldo
 
 The remainder of the paper will be primarily devoted to proving
 Theorem ~\ref{thm:main}. The idea of the
-proof will be to induct on the stabilizer order and number of stacky points. To this end, we first review important background in
-Section ~\ref{sec:background}. Then, we develop various inductive
-tools in Section ~\ref{sec:induction}. In Sections ~\ref{sec:g-high},
-~\ref{sec:g-1}, and ~\ref{sec:g-0}, we prove Theorem
-~\ref{thm:main} in the genus $ g \geq 2$, genus
-$g = 1$, and genus $g = 0$ cases respectively. Finally, in Section
+proof will be to induct first on the number of stacky points and then on the stabilizer order of those points.  To this end, we first review important background in
+Section ~\ref{sec:background}; providing essential examples in Section \ref{sec:examples}; develop various inductive
+tools in Section ~\ref{sec:induction}; and prove Theorem ~\ref{thm:main} in genus $g\ge 2$, genus $g=1$, and genus $g=0$ in Sections ~\ref{sec:g-high},
+~\ref{sec:g-1}, and ~\ref{sec:g-0} respectively.  
+Finally, in Section
 ~\ref{sec:further-questions}, we pose several questions for future
 research.
 
@@ -379,8 +378,8 @@ Here we collect various definitions and notation that will be
 used throughout the paper. Many of the conventions come from existing
 literature. For basic references on the statements and definitions
 used below, see Hartshorne \cite[Chapter IV]{hartshorne:ag},
-Saint-Donat \cite{saint-donat:proj}, Arbarello--
-Cornalba--Griffiths--Harris \cite[Section III.2]
+Saint-Donat \cite{saint-donat:proj}, Arbarello--Cornalba--Griffiths--Harris 
+\cite[Section III.2]
 {acgh:algebraic-curves}, and Voight--Zureick-Brown \cite[Chapter 2,
 Chapter 5]{vzb:stacky}.
 
@@ -407,9 +406,9 @@ points.
 In this paper, all stacky curves are assumed to be tame and
 $k$ will is assumed to be algebraically closed. We also assume that the
 stacky curves are separably rooted, i.e. the residue field of each
-of the stacky points is separable.
+of the stacky points is separable.  \todo{Peter: We should clarify this last statement.  If we are assuming $k$ is algebraically closed, aren't the points automatically seperably-rooted?  Really aren't we saying if perfect, then restrict to algebraically closed, and if not, everything works similarly as long as separably rooted?}
 
-With this stacks-theoretic description in mind, for simplicity, the remainder of this paper is primarily phrased using the language
+With this stacks-theoretic description in mind, the remainder of this paper is primarily phrased using the language
 of Weil divisors.
 \end{rem}
 
@@ -856,7 +855,7 @@ all degrees $d \geq 0$. In particular,
 
 \begin{align*}
 	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / I)_d &=
-	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}])	/ \initial_\prec(I))_d \\
+	\dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}])	/ \initial_\prec(I)_d \\
 	&= \dim_k (k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]) / \langle
 	x_{7, 2}^2, x_{5, 1}^2 \rangle
 \end{align*}
