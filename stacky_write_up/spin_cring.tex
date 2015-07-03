@@ -213,7 +213,7 @@ ring} is defined to be
 \noindent
 with multiplication structure corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X
-\cong \proj R$ \todo{Peter: I'm confused.  Why is this only true when $g\geq 2$? Robin: see statement of Petri's theorem...}. When $g \geq 2$, Petri's theorem gives generators
+\cong \proj R$ \todo{Peter: I'm confused.  Why is this only true when $g\geq 2$? Robin: see statement of Petri's theorem (which actually usually assumes $g \geq 4$)...}. When $g \geq 2$, Petri's theorem gives generators
 and relations for $R(X, K_X)$ showing that in most cases $R(X, K_X)$
 is generated in degree 1 with relations in degree 2, as shown in
 \cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
@@ -323,7 +323,7 @@ detailed in interesting low genus examples by Neves
 Furthermore, explicit constructions also reveals that the bounds given in Theorem ~\ref{thm:main} are tight.
 Specifically, in almost all cases, the log spin canonical ring requires a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. 
 Furthermore, there are many infinite families of cases which require a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$.
-\end{rem}  \todo{Peter: Again, why are these two sections of the remark grouped together? Robin:Isn't this remark describing whether the theorem gives explicit constructions and tight bounds? Those seem pretty related...}
+\end{rem}  \todo{Peter: Again, why are these two sections of the remark grouped together? Robin: Isn't this remark describing whether the theorem gives explicit constructions and tight bounds? Those seem pretty related...}
 
 %The main theorem of this paper, Theorem ~\ref{thm:main}, combined
 %with a lemma of Voight and Zureick-Brown \cite[Lemma 10.2.1]
@@ -2823,7 +2823,7 @@ for each case as described in the following table.
 	\caption{Genus 0 Non-effective Base Cases Generators/Relations}
 	\label{table:g-0-base-cases-degrees}
 \end{longtable}
-\todo{Peter: Can we make a better description for the table above? Robin: Think of one.}
+\todo{Peter: Can we make a better description for the table above? Robin: Think of one then.}
 
 We can also always find a presentation for these cases such that
 they satisfy \ref{custom:Ad-i} and \ref{custom:Ad-ii} and that $\initial(I')$ is
@@ -2971,7 +2971,10 @@ cases listed in Table ~\ref{table:g-0-exceptional}.
 \end{thm}
 
 \begin{proof}
-If $\sx$ has no stacky points, then we can assume that $L \sim
+\todo{Robin: I changed much of this back to the old wording. Also
+please don't randomly change three of the $\halfcan$'s to $\halfcan_X$'s
+when the latter is not used anywhere else in the section...}
+If $\sx$ has no stacky points, then we can assume that $\halfcan \sim
 n \cdot \infty$ with $n \in \BZ_{\geq -1}$. This is a classical
 case which is done by Voight and Zureick-Brown \cite[Section 4.2]
 {vzb:stacky}. When $n = -1$, then $R_\halfcan = k$.  When $n = 0$,
@@ -3042,7 +3045,6 @@ $2e$.
 In this section, we present several directions for further research.
 
 \begin{enumerate}
-
 	\item As noted in Remark ~\ref{rem:explicit-generators}, the 
 		proof of Theorem ~\ref{thm:main} 
 		%given in this paper 
@@ -3083,8 +3085,8 @@ In this section, we present several directions for further research.
 		$\gamma^{\otimes a} \cong \eta$ and $\gamma^{n} \cong \Omega_{X(p)}^
 		1$. Adler and Ramanan \cite[Appendix 2]{adler:moduli} construct an 
 		explicit basis of weight $\frac{4}{5}$ modular forms for $X(11)$. 
-		Fractional modular forms also make an appearance in Milnor \cite[$
-		\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor 
+		Fractional modular forms also make an appearance in Milnor \cite
+		[$\mathsection$ 6]{milnor:fractional-weight}. In this work, Milnor 
 		shows that for a triangle group $\Gamma$ of signature $(0; e_1,e_2,e
 		_3; 0)$ there exist generators $f_1,f_2,f_3$ of a certain ring of 
 		fractional weight modular forms, satisfying $f_1^{e_1}+f_2^{e_2}+f_3
@@ -3129,7 +3131,7 @@ In this section, we present several directions for further research.
 			the generic initial ideal {\rm(}with some specified ordering{\rm)}
 			is generated in degree at most $d(\sigma)$? Can one write down the
 			generic initial ideal explicitly?
-		\end{question}\todo{Peter: This whole question is kind of confusing.  I don't know what it is trying to say.}
+		\end{question}\todo{Peter: This whole question is kind of confusing.  I don't know what it is trying to say. Robin: Maybe preface the question with saying something like ``not just the initial ideal''}
 
 	\item In Subsection \ref{ssec:bounds-high-genus}, we reference 
 		the work of Reid \cite[Theorem 3.4]{reid:infinitesimal}. We use his 
@@ -3149,7 +3151,7 @@ In this section, we present several directions for further research.
 			$e'=\max(4,e_1, \ldots, e_r)$ and $2e'$, 
 			apart from well a characterized list of exceptions?
 		\end{question}
-		\todo{Peter: I don't like a finite list of exceptions.  The list contains infinitely many non-isomorphic stacky curves.  Finite family might also be imperfect.  Can we say except when $g=2$ (I believe there will be infinitely many counterexamples there) or it lies in a finite list of exception?  Do we believe that to be true? Aaron: Since we haven't really thought about this conjecture, I'm not comfortable making it a conjecture. I switched it back to a question. Is that ok?}
+		\todo{Peter: I don't like a finite list of exceptions.  The list contains infinitely many non-isomorphic stacky curves.  Finite family might also be imperfect.  Can we say except when $g=2$ (I believe there will be infinitely many counterexamples there) or it lies in a finite list of exception?  Do we believe that to be true? Aaron: Since we haven't really thought about this conjecture, I'm not comfortable making it a conjecture. I switched it back to a question. Is that ok? Robin: Perhaps give reference to Reid's characterizations?}
 		\begin{rem}\label{rem:reduce-3,6}
 			It is unlikely that these bounds can be reduced further to 
 			$e''=\max(3, e_1, \ldots, e_r)$ and $2e''$, 
