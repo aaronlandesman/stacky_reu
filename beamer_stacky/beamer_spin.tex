@@ -159,43 +159,63 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%   Background Section   %%%%%%%%%%%%%%%%%%%
-\section{Background} 
+\section{Introduction} 
 
 \begin{frame}
-\frametitle{Background: Introduction}
-Consider rings of modular forms of Fuchsian groups.
+\frametitle{Fuchsian Group}
+%Consider rings of modular forms of Fuchsian groups.
+%\pause
 
-\pause
 \begin{defn}
 $\Gamma$ is a {\bf Fuchsian} group if it is a discrete subgroup of
 $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
-linear transformations, such that $\Gamma \backslash \BH$ has finite area.
+linear transformations.
 \end{defn}
-
 \pause
+\begin{itemize}
+\item Suppose $\Gamma \backslash \BH$ has finite area. \\
+\pause
+\item Then $\Gamma \backslash \mathbb{H}$ can be given the structure of on {\bf{Orbifold}} by completing it with cusps.  
+\end{itemize}
+%In presentation describe orbifold as a generalization to reimann surfaces that allow fractional points.
+
+\end{frame}
+
+
+\begin{frame}
 \begin{defn}
 The graded {\bf ring of modular forms} of $\Gamma$ is
 \[
    M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)
 \]
 \end{defn}
+\pause 
+\begin{itemize}
+\item GAGA lets us view this in the algebraic category of {\bf stacky curves} over $\mathbb{C}$.
+\end{itemize}
 
 \end{frame}
 
-
 \begin{frame}
 \frametitle{Background: Stacky Curves}
-Let $R$ be.
+\begin{defn}
+A \textbf{stacky curve} $\sx$ over an algebraically closed field $k$ is the datum of 
+\begin{itemize}
+\item smooth proper connected scheme $X$ of dimension $1$ \\ 
+\item together with a finite number of closed points of $X$, $P_1, \ldots, P_r$, called {\bf stacky points}, with {\bf stabilizer orders} $e_1, \ldots, e_r \in \BZ_{\geq 2}.$ \\ 
+\item The scheme $X$ associated to a stacky curve $\sx$ is called the {\bf coarse space} of $\sx$.
+\end{itemize}
+\end{defn}
 
 \pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
 
-\pause
+Then, we describe divisors on $\sx$ by
 \[
-   M(\Gamma)
+	\di \sx = \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
+	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
+	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
+
 
 \pause
 \begin{alertblock}{Log Spin Canonical Ring Definition}
