@@ -1,0 +1,261 @@
+
+\usepackage{array}
+\setlength{\extrarowheight}{0.3cm}
+ \usepackage{amssymb}
+ \usepackage{stmaryrd}
+ \usepackage{amscd}   	% for commutative diagrams
+ \usepackage[all]{xy} 		% for complicated commutative diagrams
+ \usepackage{comment} 	% for \begin{comment} ... \end{comment}
+ \usepackage{mathrsfs}      % for \mathscr
+% % Note: if you have problems with the Sha in cyrillic font,
+% % change the following ``paragraph'' to \newcommand{\Sha}{{\operatorname{Sha}}}
+
+% % \DeclareFontEncoding{OT2}{}{} % to enable usage of cyrillic fonts
+% % \newcommand{\textcyr}[1]{%
+% %  {\fontencoding{OT2}\fontfamily{wncyr}\fontseries{m}\fontshape{n}\selectfont #1}}
+% % \newcommand{\Sha}{{\mbox{\textcyr{Sh}}}}
+% % % note: cmr might work in place of wncyr
+\usepackage{color}
+
+% \usepackage{tikz}
+%\usepackage{picinpar} % for pictures in paragraphs
+% \usetikzlibrary{decorations.pathmorphing}
+
+\usepackage{tikz}
+%\usepackage{picinpar} % for pictures in paragraphs
+\usetikzlibrary{decorations.pathmorphing}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% for cartesian diagrams
+ \newcommand{\pb}{\rule{.4pt}{5.4pt}\rule[5pt]{5pt}{.4pt}\llap{$\cdot$\hspace{1pt}}}
+
+
+\newcommand{\defi}[1]{\textsf{#1}} 				% for defined terms
+
+\newcommand{\known}{{\operatorname{known}}}
+\newcommand{\Abar}{{\overline{A}}}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\nichts}{\ensuremath{\left.\right.}}
+\newcommand{\ssigma}{{\! \nichts^\sigma \!}}
+\newcommand{\GQ}{{{\mathcal G}_\Q}}
+\newcommand{\GQp}{{{\mathcal G}_{\Q_p}}}
+\newcommand{\Gk}{{{\mathcal G}_k}}
+\newcommand{\GK}{{{\mathcal G}_K}}
+%\newcommand{\YY}{{\mathcal Y}}
+\newcommand{\prim}{{\operatorname{prim}}}
+\newcommand{\fake}{{\operatorname{fake}}}
+\newcommand{\conts}{{\operatorname{conts}}}
+\newcommand{\wedgeisom}{{\;\stackrel{\wedge}\isom}\;}
+\newcommand{\xbar}{{\bar{x}}}
+\newcommand{\ybar}{{\bar{y}}}
+\newcommand{\zbar}{{\bar{z}}}
+\newcommand{\Xtilde}{{\tilde{X}}}
+\newcommand{\pitilde}{{\tilde{\pi}}}
+\newcommand{\subs}{{\operatorname{subset}}}
+\newcommand{\umtp}[1]{#1^\times\!/(#1^\times)^3}
+
+
+\newcommand{\XX}{{\mathscr X}}
+
+% Characters
+\newcommand{\Aff}{{\mathbb A}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\bbH}{{\mathbb H}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Qbar}{{\overline{\Q}}}
+\newcommand{\Zhat}{{\hat{\Z}}}
+\newcommand{\Zbar}{{\overline{\Z}}}
+\newcommand{\kbar}{{\overline{k}}}
+\newcommand{\Kbar}{{\overline{K}}}
+\newcommand{\ksep}{{k^{\operatorname{sep}}}}
+\newcommand{\Fbar}{{\overline{\F}}}
+
+\newcommand{\Adeles}{{\mathbf A}}
+\newcommand{\kk}{{\mathbf k}}
+
+\newcommand{\pp}{{\mathfrak p}}
+\newcommand{\frakq}{{\mathfrak q}}
+\newcommand{\qq}{{\mathfrak q}}
+\newcommand{\mm}{{\mathfrak m}}
+
+
+
+% mathcal characters
+\newcommand{\calA}{{\mathcal A}}
+\newcommand{\calB}{{\mathcal B}}
+\newcommand{\calC}{{\mathcal C}}
+\newcommand{\calD}{{\mathcal D}}
+\newcommand{\calE}{{\mathcal E}}
+\newcommand{\calF}{{\mathcal F}}
+\newcommand{\calG}{{\mathcal G}}
+\newcommand{\calH}{{\mathcal H}}
+\newcommand{\calI}{{\mathcal I}}
+\newcommand{\calJ}{{\mathcal J}}
+\newcommand{\calK}{{\mathcal K}}
+\newcommand{\calL}{{\mathcal L}}
+\newcommand{\calM}{{\mathcal M}}
+\newcommand{\calN}{{\mathcal N}}
+\newcommand{\calO}{{\mathcal O}}
+\newcommand{\calP}{{\mathcal P}}
+\newcommand{\calQ}{{\mathcal Q}}
+\newcommand{\calR}{{\mathcal R}}
+\newcommand{\calS}{{\mathcal S}}
+\newcommand{\calT}{{\mathcal T}}
+\newcommand{\calU}{{\mathcal U}}
+\newcommand{\calV}{{\mathcal V}}
+\newcommand{\calW}{{\mathcal W}}
+\newcommand{\calX}{{\mathcal X}}
+\newcommand{\calY}{{\mathcal Y}}
+\newcommand{\calZ}{{\mathcal Z}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\GG}{{\mathcal G}}
+\newcommand{\II}{{\mathcal I}}
+\newcommand{\JJ}{{\mathcal J}}
+\newcommand{\LL}{{\mathcal L}}
+\newcommand{\OO}{{\mathcal O}}
+
+% mathscr characters
+\newcommand{\scrA}{{\mathscr A}}
+\newcommand{\scrB}{{\mathscr B}}
+\newcommand{\scrC}{{\mathscr C}}
+\newcommand{\scrD}{{\mathscr D}}
+\newcommand{\scrE}{{\mathscr E}}
+\newcommand{\scrF}{{\mathscr F}}
+\newcommand{\scrG}{{\mathscr G}}
+\newcommand{\scrH}{{\mathscr H}}
+\newcommand{\scrI}{{\mathscr I}}
+\newcommand{\scrJ}{{\mathscr J}}
+\newcommand{\scrK}{{\mathscr K}}
+\newcommand{\scrL}{{\mathscr L}}
+\newcommand{\scrM}{{\mathscr M}}
+\newcommand{\scrN}{{\mathscr N}}
+\newcommand{\scrO}{{\mathscr O}}
+\newcommand{\scrP}{{\mathscr P}}
+\newcommand{\scrQ}{{\mathscr Q}}
+\newcommand{\scrR}{{\mathscr R}}
+\newcommand{\scrS}{{\mathscr S}}
+\newcommand{\scrT}{{\mathscr T}}
+\newcommand{\scrU}{{\mathscr U}}
+\newcommand{\scrV}{{\mathscr V}}
+\newcommand{\scrW}{{\mathscr W}}
+\newcommand{\scrX}{{\mathscr X}}
+\newcommand{\scrY}{{\mathscr Y}}
+\newcommand{\scrZ}{{\mathscr Z}}
+
+\def\Q{\mathbb{Q}}
+\def\C{\mathbb{C}}
+\def\R{\mathbb{R}}
+\def\P{\mathbb{P}}
+\def\A{\mathbb{A}}
+\def\Z{\mathbb{Z}}
+
+\def\Qb{\bar{\mathbb{Q}}}
+\def\kb{\bar{k}}
+
+\def\hb{\hat{h}}
+
+
+% Math operators
+\DeclareMathOperator{\tr}{tr} \DeclareMathOperator{\trdeg}{tr deg}
+\DeclareMathOperator{\coker}{coker} \DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\Char}{char} \DeclareMathOperator{\inv}{inv}
+\DeclareMathOperator{\nil}{Nil} \DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\re}{Re} \DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Jac}{Jac} \DeclareMathOperator{\END}{\bf End}
+\DeclareMathOperator{\Lie}{Lie} \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\HOM}{\bf Hom} \DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Gal}{Gal} \DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Cor}{Cor} \DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Norm}{Norm} \DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Gr}{Gr} \DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\scd}{scd} \DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\Cl}{Cl} \DeclareMathOperator{\divv}{div}
+\DeclareMathOperator{\ord}{ord} \DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Div}{Div} \DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Num}{Num} \DeclareMathOperator{\PIC}{\bf Pic}
+\DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\SPEC}{\bf
+Spec} \DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Frac}{Frac} \DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\CaCl}{CaCl}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Open}{Open}
+\DeclareMathOperator{\Coh}{Coh}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\eq}{eq}
+
+
+% Categories
+\newcommand{\Schemes}{\operatorname{\bf Schemes}}
+\newcommand{\Sch}{\operatorname{\bf Sch}}
+\newcommand{\Sets}{\operatorname{\bf Sets}}
+%\newcommand{\Ab}{\operatorname{\bf Ab}}
+\newcommand{\Ab}{\operatorname{Ab}}
+\newcommand{\Groups}{\operatorname{\bf Groups}}
+
+% Text subscripts, superscripts
+\newcommand{\perf}{{\operatorname{perf}}}
+\newcommand{\op}{{\operatorname{op}}}
+\newcommand{\an}{{\operatorname{an}}}
+\newcommand{\ab}{{\operatorname{ab}}}
+\newcommand{\smooth}{{\operatorname{smooth}}}
+\newcommand{\sing}{{\operatorname{sing}}}
+\newcommand{\CS}{\operatorname{\bf CS}}
+\newcommand{\Zar}{{\operatorname{Zar}}}
+\newcommand{\fl}{{\operatorname{f\textcompwordmark l}}}
+\newcommand{\et}{{\operatorname{et}}}
+\newcommand{\Az}{{\operatorname{Az}}}
+\newcommand{\ET}{{\operatorname{\bf \acute{E}t}}}
+\newcommand{\tors}{{\operatorname{tors}}}
+%\newcommand{\red}{{\operatorname{red}}}
+\newcommand{\unr}{{\operatorname{unr}}}
+\newcommand{\tH}{{\operatorname{th}}}
+
+
+\newcommand{\GalQ}{{\Gal}(\Qbar/\Q)}
+\newcommand{\Cech}{\v{C}ech\xspace}
+\newcommand{\HH}{{\operatorname{H}}}
+\newcommand{\HHcech}{{\check{\HH}}}
+\newcommand{\HHat}{{\hat{\HH}}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\isom}{\simeq}
+\newcommand{\notdiv}{\nmid}
+\newcommand{\del}{\partial}
+\newcommand{\Intersection}{\bigcap}
+\newcommand{\intersect}{\cap}
+\newcommand{\Union}{\bigcup}
+\newcommand{\union}{\cup}
+\newcommand{\tensor}{\otimes}
+\newcommand{\directsum}{\oplus}
+\newcommand{\Directsum}{\bigoplus}
+
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\isomfrom}{\overset{\sim}{\leftarrow}}
+\newcommand{\leftexp}[2]{{\vphantom{#2}}^{#1}{#2}}
+\newcommand{\sigmaiota}{{\leftexp{\sigma}{\iota}}}
+\newcommand{\sigmaphi}{{\leftexp{\sigma}{\phi}}}
+\newcommand{\tauphi}{{\leftexp{\tau}{\phi}}}
+\newcommand{\sigmatauphi}{{\leftexp{\sigma\tau}{\phi}}}
+
+%\pagestyle {empty}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "ZBVoight-UNC-canonical-stacky"
+%%% End: 

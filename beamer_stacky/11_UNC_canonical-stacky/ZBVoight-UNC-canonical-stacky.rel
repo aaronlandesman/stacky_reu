@@ -1,0 +1,112 @@
+;; RefTeX parse info file
+;; File: /Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/ZBVoight-UNC-canonical-stacky.tex
+;; User: davidzureick-brown (David Zureick-Brown)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi t)
+
+(bibview-cache)
+
+(master-dir . "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/")
+
+(label-numbers)
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/ZBVoight-UNC-canonical-stacky.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/bigHeader.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/bigHeader.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/extraHeader.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/extraHeader.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/theoremStyle.tex")
+
+("#1" "s" "\\thesubsection.} % %% Ending here. % % %%% Uncomment these to number equations by section % % \\numbe" "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/theoremStyle.tex" t)
+
+("#1" "s" "\\theequation.} % % %% Ending here. % %%% Uncomment these to have unnumbered equations % %\\newtheorem" "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/theoremStyle.tex" t)
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/theoremStyle.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/Title.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/Title.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00100.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00100.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00101.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00101.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00110.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00110.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00120.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00120.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00130.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00130.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00140.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00140.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00200.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00200.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00210.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00210.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00220.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00220.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00230.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00230.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00240.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00240.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00300.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00300.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00310.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00310.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00320.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00320.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00330.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00330.tex")
+
+(bof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00340.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides/slide00340.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/slides.tex")
+
+(eof "/Users/davidzureick-brown/Documents/Dropbox/academic-other/slides/2014/11_UNC_canonical-stacky/ZBVoight-UNC-canonical-stacky.tex")
+))
+
