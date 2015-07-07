@@ -117,6 +117,11 @@
 \DeclareMathOperator{\newspan}{span}
 \captionsetup[table]{belowskip = 4pt}
 
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+
 \renewcommand{\arraystretch}{1.2}
 
 \makeatletter
@@ -167,7 +172,7 @@
 
 \section{Introduction}
 Let $\Gamma$ be a {\bf Fuchsian} group, i.e.,~ a discrete subgroup of
-$PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
+$\PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations, such that $\Gamma \backslash \BH$ has finite area.
 We consider the graded {\bf ring of modular forms}
 $M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best
@@ -710,6 +715,7 @@ Let $(\sx',0, \halfcan')$ be a log stacky curve of genus $g = 1,$ with $\halfcan
 Counting dimensions, we see $h^0(\sx, dL')=1$ for all $d\in \mathbb{Z}_{\ge 0}$ so it is immediately clear that $R_{\halfcan'} \cong k[x]$ with $x$ a generator in degree 1.
 \end{example}
 
+
 \begin{example}
 \label{eg:}
 In this example, we shall compute the log canonical ring of $(\sx, 3 \cdot \infty, L),$ where $\sx$ has coarse space $X$, signature $(0;3;3),$ and under the identification $X \cong \BP^1$ the closed point $\infty$ in $X$ is the point in the complement of one of the affine coordinate charts. Let the single stacky point of $\sx$ be $P \neq \infty$. 
@@ -738,7 +744,7 @@ $(\sigma, \halfcan' + \frac{3}{7} P_3, J = \{2, 3\},$) is admissible.
 Notice that $\deg \lfloor d K_{\sx'} \rfloor= -d + \lfloor \frac{d}{3}
 \rfloor + 2 \lfloor \frac{3d}{7} \rfloor$.
 
-By the Generalized Max Noether Theorem for genus 0 curves, (see Voight
+By the Generalized Max Noether Theorem for genus 0 curves (see Voight
 and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
 \begin{align}
 \label{eqn:noether-377}
@@ -781,9 +787,9 @@ and $7 < d \leq 25$. Note that we can again use Max Noether's theorem
 \noindent
 are surjective. This reduces the problem to checking generation
 in the degrees of the exceptions $d \in \{8, 12, 21\}$.
-Checking the remaining cases via pole degrees shows that
-these degrees are also generated in lower degrees,
-so $R'$ is generated in degrees $\{3, 5, 7, 7\}$.
+Checking these remaining cases via pole degree considerations shows
+that these degrees are also generated in lower degrees. Thus, $R'$
+is generated in degrees $\{3, 5, 7, 7\}$.
 
 Now, we check the admissibility of $(\sx', L' ,J),$ where $J = \{2, 3\}$. By relabelling the
 variables if necessary, we can assume that $x_{7, 1}$ corresponds
@@ -883,7 +889,6 @@ degree $2e = 14$, as desired.
 %since $e_i = 9 > e$ for all $i \in J$.
 \end{example}
 
-
 \begin{example}
 \label{eg:base-1-33}
 Let $(\sx',0 , \halfcan')$ be a log spin curve of genus $1$ with $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show
@@ -896,15 +901,15 @@ Then, there exist constants $\alpha, \beta, \gamma \in k$ so that
 $R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zero and pole order. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
 
 We next check $(\sx', \halfcan', \{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, \ref{custom:Ad-i} holds. We next check \ref{custom:Ad-ii} for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
-$$
+\[
 \frac{-\ord_{P_1}(z)}{\ord(z)} = \begin{cases}
 	0 &\text{ if }z \in \{u, y_3\}\\
 	\frac{1}{4} &\text{ if }z = y_4
-\end{cases}.$$
+\end{cases}.
+\]
 Since $0, \frac{1}{4} < \frac{1}{3}$, \ref{custom:Ad-ii} holds.
 Finally, to check \ref{custom:Ad-iii}, note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = (2 g - 1) + 0$.
 \end{example}
-
 
 \begin{example}
 \label{eg:exception-1-5}
@@ -930,6 +935,7 @@ Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashi
 Examples ~\ref{eg:base-0-377}, \ref{eg:base-1-33}, and \ref{eg:exception-1-5} are used as inductive base cases in the genus 0, genus 1, and genus 1 sections respectively (see Tables ~\ref{table:g-0-base-cases} and ~\ref{table:g-1-base}).
 \end{rem}
 \todo{Some examples to add: possibly move one of the later examples up, possibly discuss adding one stacky point to a log divisor on $\BP^1$ without}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive lemmas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

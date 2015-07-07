@@ -55,6 +55,7 @@
 \newcommand\BH{{\mathbb H}}
 \newcommand\bO{{\mathbf O}}
 \newcommand\CC{{\mathcal C}}
+\newcommand\CH{{\mathcal H}}
 \newcommand\BN{{\mathbb N}}
 \newcommand\BC{{\mathbb C}}
 \newcommand\BF{{\mathbb F}}
@@ -113,6 +114,11 @@
 \DeclareMathOperator{\Eff}{Eff}
 \DeclareMathOperator{\sat}{sat}
 
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+
 
 \newcommand\Wider[2][3em]{%
 \makebox[\linewidth][c]{%
@@ -142,10 +148,10 @@
 \institute[] % (optional)
 {
   \inst{1}
-	Harvard University
+	Harvard University,
 	,
   \inst{2}
-	Stanford University
+	Stanford University,
   ,
   \inst{3}
 	Stanford University
@@ -158,53 +164,63 @@
 	\titlepage
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%   Background Section   %%%%%%%%%%%%%%%%%%%
-\section{Introduction} 
+%%%%%%%%%%%%%%%%%%%%   Modular Forms Section   %%%%%%%%%%%%%%%%%%%
+\section{Introduction: Modular Forms} 
 
-\begin{frame}
-\frametitle{Fuchsian Group}
+\begin{frame}{Fuchsian Group}
 %Consider rings of modular forms of Fuchsian groups.
 %\pause
 
 \begin{defn}
 $\Gamma$ is a {\bf Fuchsian} group if it is a discrete subgroup of
-$PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
+$\PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations.
 \end{defn}
 \pause
 \begin{itemize}
 \item Suppose $\Gamma \backslash \BH$ has finite area. \\
 \pause
-\item Then $\Gamma \backslash \mathbb{H}$ can be given the structure of on {\bf{Orbifold}} by completing it with cusps.  
+\item Then $\Gamma \backslash \mathbb{H}$ can be given the structure of an {\bf{orbifold}} by completing it with cusps.  
 \end{itemize}
 %In presentation describe orbifold as a generalization to reimann surfaces that allow fractional points.
 
 \end{frame}
 
+\begin{frame}{Modular Forms}
+Let $\Gamma$  be a Fuchsian group (e.g.~$\Gamma = \Gamma_0(N) \subset \SL_2(\BZ)$).
 
-\begin{frame}
+\begin{definition}
+A \textbf{modular form} for $\Gamma$ of weight $k \in \BZ_{\geq 0}$ is a holomorphic function $f \colon \CH \to \BC$ such that
+
+\begin{align*}
+	&f(\gamma z) = (cz+d)^k f(z) &\text{ for all } \gamma \in \Gamma 
+\end{align*}
+%there was a \quad here?
+
+\noindent
+and such that the limit $\lim_{z \to *} f(z)$ exists for all cusps $*$.
+\end{definition}
+
 \begin{defn}
-The graded {\bf ring of modular forms} of $\Gamma$ is
-\[
-   M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)
-\]
+  Let $M_k(\Gamma)$ be the $\BC$-vector space of modular forms for $\Gamma$ of weight $k$.    
 \end{defn}
-\pause 
-\begin{itemize}
-\item GAGA lets us view this in the algebraic category of {\bf stacky curves} over $\mathbb{C}$.
-\end{itemize}
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Background: Stacky Curves}
+%%%%%%%%%%%%%%%%%%%%   Stacky Curves Section   %%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Background: Stacky Curves}
 \begin{defn}
-A \textbf{stacky curve} $\sx$ over an algebraically closed field $k$ is the datum of 
-\begin{itemize}
-\item smooth proper connected scheme $X$ of dimension $1$ \\ 
-\item together with a finite number of closed points of $X$, $P_1, \ldots, P_r$, called {\bf stacky points}, with {\bf stabilizer orders} $e_1, \ldots, e_r \in \BZ_{\geq 2}.$ \\ 
-\item The scheme $X$ associated to a stacky curve $\sx$ is called the {\bf coarse space} of $\sx$.
-\end{itemize}
+A \textbf{stacky curve} $\sx$ over an algebraically closed field $k$
+is the data of
+	\begin{itemize}
+		\item smooth proper connected scheme $X$ of dimension $1$ \\ 
+		\item together with a finite number of closed points of $X$, $P_
+			1, \ldots, P_r$, called {\bf stacky points}, with {\bf stabilizer 
+			orders} $e_1, \ldots, e_r \in \BZ_{\geq 2}.$ \\ 
+		\item The scheme $X$ associated to a stacky curve $\sx$ is 
+			called the {\bf coarse space} of $\sx$.
+	\end{itemize}
 \end{defn}
 
 \pause
@@ -216,72 +232,75 @@ Then, we describe divisors on $\sx$ by
 	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
 
+\end{frame}
+
+
+\begin{frame}{Background: Divisors}
+We can equip stacky curves with a log divisor $\Delta$.
+
+\begin{defn}
+Divisor $\Delta$ is a \textbf{log divisor} if it is a sum of distinct
+points each with trivial stabilizer.
+
+Let $\delta := \deg \Delta$ refer to its degree.
+\end{defn}
 
 \pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\begin{defn}
+If $\sx$ has coarse space $X$ of genus $g$, then we say $\sx$ has
+\textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
+\end{defn}
+
+\pause
+\begin{defn}
+$\halfcan \in \di
+\sx$ satisfies $2 \halfcan \sim K_X + \Delta + \sum_{i = 1}^{r}
+\frac{e_i - 1}{e_i} P_i$. Such a divisor $\halfcan$ is called a
+\textbf{log spin canonical divisor} on $(\sx, \Delta)$.
+\end{defn}
 
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Background: Monomial Ordering}
-Let $R$ be.
+\begin{frame}{Background: Log Spin Canonical Rings}
+
+\begin{defn}
+If divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
+with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
+\rfloor$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
+\lfloor \alpha_i \rfloor P_i$.
+\end{defn}
 
 \pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
+\begin{defn}
+Let $\sx$ be a stacky curve with coarse space $X$.
+If $D \in \di \sx$ is a divisor, then we define
 
-\pause
 \[
-   M(\Gamma)
+	H^0(\sx, D) := H^0(X, \lfloor D \rfloor).
 \]
+\end{defn}
 
 \pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
+\begin{defn}
+The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan).
 \]
-\end{alertblock}
+\end{defn}
 
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Previous Work}
+\begin{frame}{Previous Work}
 Let $R$ be.
-
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%   Main Result Section   %%%%%%%%%%%%%%%%%%%
 \section{Main Result}
 
-\begin{frame}
-\frametitle{Main Result}
+\begin{frame}{Main Result}
 \begin{alertblock}{Log Spin Canonical Ring Definition}
 The \textbf{log spin canonical ring} of a stacky curve is
 \[
@@ -307,235 +326,61 @@ cases.
 
 \end{frame} 
 
-\begin{frame}
-\frametitle{Main Idea}
-Let $R$ be.
+\begin{frame}{Main Idea}
+Induction on adding points.
 
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+Induction on raising stabilizer order.
 
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Adding Points}
-Let $R$ be.
-
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\begin{frame}{Adding Points}
+Adding points.
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Raising Stabilizer Order}
-Let $R$ be.
-
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\begin{frame}{Raising Stabilizer Order}
+Raising stabilizer order.
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%   Inductive Section   %%%%%%%%%%%%%%%%%%%
 \section{Inductive Lemmas} 
 
-\begin{frame}
-\frametitle{Inductive Lemmas}
-Let $R$ be.
-
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\begin{frame}{Inductive Lemmas}
+Lemmas?
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%   High Genus Section   %%%%%%%%%%%%%%%%%%%
 \section{High Genus} 
 
-\begin{frame}
-\frametitle{High Genus}
-Let $R$ be.
-
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\begin{frame}{High Genus}
+Not sure this is necessary.
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%   Genus One Section   %%%%%%%%%%%%%%%%%%%
 \section{Genus One} 
 
-\begin{frame}
-\frametitle{Genus One}
-Let $R$ be.
-
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\begin{frame}{Genus One}
+This too.
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%   Genus Zero Section   %%%%%%%%%%%%%%%%%%%
 \section{Genus Zero} 
 
-\begin{frame}
-\frametitle{Genus Zero}
-Let $R$ be.
-
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Genus Zero Cases}
-Let $R$ be.
-
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\begin{frame}{Genus Zero}
+Maybe a short description.
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%   Further Research Section   %%%%%%%%%%%%%%%%%%%
 \section{Further Research} 
 
-\begin{frame}
-\frametitle{Further Research}
-Let $R$ be.
-
-\pause
-\begin{exampleblock}{Example of blah}
-Example
-\end{exampleblock}
-
-\pause
-\[
-   M(\Gamma)
-\]
-
-\pause
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
+\begin{frame}{Further Research}
+Some questions.
 
 \end{frame}
 
