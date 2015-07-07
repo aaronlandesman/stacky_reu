@@ -117,6 +117,11 @@
 \DeclareMathOperator{\newspan}{span}
 \captionsetup[table]{belowskip = 4pt}
 
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+
 \renewcommand{\arraystretch}{1.2}
 
 \makeatletter
@@ -167,7 +172,7 @@
 
 \section{Introduction}
 Let $\Gamma$ be a {\bf Fuchsian} group, i.e.,~ a discrete subgroup of
-$PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
+$\PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations, such that $\Gamma \backslash \BH$ has finite area.
 We consider the graded {\bf ring of modular forms}
 $M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best
@@ -712,30 +717,6 @@ Counting dimensions, we see $h^0(\sx, dL')=1$ for all $d\in \mathbb{Z}_{\ge 0}$ 
 
 
 \begin{example}
-\label{eg:base-1-33}
-Let $(\sx',0 , \halfcan')$ be a log spin curve of genus $1$ with $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show
-$$R_{\halfcan'} \cong k[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$
-and that $(\sx', \halfcan', \{1,2\})$ is admissible.
-
-Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_1$ but not at $P_2$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_2$ but not at $P_1$. Let $y_4 \in H^0(\sx,4\halfcan')$ be an element with a pole of order 1 at both $P_1$ and $P_2$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q \sim P - Q$, $3P - 3Q + P_1$, and $3P - 3Q + P_1 + P_2$ are 0, 1, and 2 dimensional respectively.
-
-Then, there exist constants $\alpha, \beta, \gamma \in k$ so that 
-$R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zero and pole order. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
-\todo{fill in details here.
-Use Generalized Max Noether Theorem for genus 1 curves (see Voight and Zureick-Brown \cite[Lemma 3.1.3]{vzb:stacky}.}
-
-We next check $(\sx', \halfcan', \{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, \ref{custom:Ad-i} holds. We next check \ref{custom:Ad-ii} for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
-\[
-\frac{-\ord_{P_1}(z)}{\ord(z)} = \begin{cases}
-	0 &\text{ if }z \in \{u, y_3\}\\
-	\frac{1}{4} &\text{ if }z = y_4
-\end{cases}.
-\]
-Since $0, \frac{1}{4} < \frac{1}{3}$, \ref{custom:Ad-ii} holds.
-Finally, to check \ref{custom:Ad-iii}, note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = (2 g - 1) + 0$.
-\end{example}
-
-\begin{example}
 \label{eg:base-0-377}
 Let $(\sx',0, \halfcan')$ be a log spin curve with signature $\sigma =
 (0; 3, 7, 7; 0)$ and $\halfcan' \sim -\infty + \frac{1}{3} P_1 +
@@ -892,6 +873,28 @@ degree $2e = 14$, as desired.
 \end{example}
 
 \begin{example}
+\label{eg:base-1-33}
+Let $(\sx',0 , \halfcan')$ be a log spin curve of genus $1$ with $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show
+$$R_{\halfcan'} \cong k[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$
+and that $(\sx', \halfcan', \{1,2\})$ is admissible.
+
+Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_1$ but not at $P_2$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_2$ but not at $P_1$. Let $y_4 \in H^0(\sx,4\halfcan')$ be an element with a pole of order 1 at both $P_1$ and $P_2$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q \sim P - Q$, $3P - 3Q + P_1$, and $3P - 3Q + P_1 + P_2$ are 0, 1, and 2 dimensional respectively.
+
+Then, there exist constants $\alpha, \beta, \gamma \in k$ so that 
+$R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zero and pole order. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
+
+We next check $(\sx', \halfcan', \{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, \ref{custom:Ad-i} holds. We next check \ref{custom:Ad-ii} for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
+\[
+\frac{-\ord_{P_1}(z)}{\ord(z)} = \begin{cases}
+	0 &\text{ if }z \in \{u, y_3\}\\
+	\frac{1}{4} &\text{ if }z = y_4
+\end{cases}.
+\]
+Since $0, \frac{1}{4} < \frac{1}{3}$, \ref{custom:Ad-ii} holds.
+Finally, to check \ref{custom:Ad-iii}, note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = (2 g - 1) + 0$.
+\end{example}
+
+\begin{example}
 \label{eg:exception-1-5}
 Let $(\sx', 0, L')$ be a log spin curve of genus 1 with $L' = P -
  Q + \frac{2}{5} P_1.$ Let $x_2 \in (R_L)_2$ be any nonzero element.
@@ -915,6 +918,7 @@ Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashi
 Examples ~\ref{eg:base-0-377}, \ref{eg:base-1-33}, and \ref{eg:exception-1-5} are used as inductive base cases in the genus 0, genus 1, and genus 1 sections respectively (see Tables ~\ref{table:g-0-base-cases} and ~\ref{table:g-1-base}).
 \end{rem}
 \todo{Some examples to add: possibly move one of the later examples up, possibly discuss adding one stacky point to a log divisor on $\BP^1$ without}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inductive lemmas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
