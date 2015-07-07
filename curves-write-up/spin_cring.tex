@@ -717,24 +717,30 @@ Counting dimensions, we see $h^0(\sx, dL')=1$ for all $d\in \mathbb{Z}_{\ge 0}$ 
 
 
 \begin{example}
-\label{eg:}
-In this example, we shall compute the log canonical ring of $(\sx, 3 \cdot \infty, L),$ where $\sx$ has coarse space $X$, signature $(0;3;3),$ and under the identification $X \cong \BP^1$ the closed point $\infty$ in $X$ is the point in the complement of one of the affine coordinate charts. Let the single stacky point of $\sx$ be $P \neq \infty$. 
+\label{eg:adding-point}
+In this example, we shall compute the log canonical ring of $(\sx, 3 \infty, L),$ where $\sx$ has coarse space $X$, $\sx$ has signature $(0;3;3),$ and $\infty$ is a fixed closed point of $X,$ different from the stacky point $P_1$ with stabilizer order 3.
 
-Following the technique which will later be introduced in Lemma ~\ref{lem:sat-1}, we deduce the structure of $R_L$ from the structure of the canonical ring of $R_{L_X},$ the canonical ring associated to the log spin curve of the coarse space, $(X, 3 \cdot \infty, L_X).$ Note that $R_{L_X} \cong k[x_1,x_2]$ where $\deg x_1 = \deg x_2 = 1.$ To see this, observe that by Riemann--Roch $h^0(X, L_X) = 2,$ so we will need two generators in degree 2. From the Generalized Max Noether Theorem for genus 0 curves, (see Voight
-and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky},) the multiplication maps are surjective, implying that $R_{L_X}$ is generated in degree 1. There cannot be any relations because $\proj k[x_1,x_2] \cong \proj R_{L_X} \cong X$ and $X$ is 1 dimensional. Any relation would necessarily imply that $\proj R_{L_X}$ is at most $0$ dimensional, contradicting the fact that $L_X$ is very ample, so $\proj R_{L_X} \cong X$ is $1$ dimensional.
+Following the technique which will later be introduced in Lemma ~\ref{lem:sat-1}, we deduce the structure of $R_L$ from the structure of the canonical ring of $R_{L_X} := R(X,3 \infty, L_X).$
 
-Next, we construct the canonical ring of $R_L$ from $R_{L_X}$. By Riemann Roch, we see there is some element $y_{1,3} \in (R_L)_3$ with $\ord_{P_1}(y_{1,3}) = -1.$ We claim that there exist $a_1, a_2 \in k$ and a degree 4 polynomial $f(x_1, x_2) \in k[x_1,x_2]$ such that
+Note that $R_{L_X} \cong k[x_1,x_2]$ where $\deg x_1 = \deg x_2 = 1.$ To see this, observe that by Riemann--Roch $h^0(X, L_X) = 2,$ so we will need two generators in degree $1$. Because $L_X$ is very ample, $R_{L_X}$ is generated in degree 1. To conclude, note that, $R_{L_X}$ does not have any relations. If there were some relation, then $\dim \proj R_{L_X} < 1$, contradictig the fact that $L_X$ is very ample, so $\proj R_{L_X} \cong X,$ which has dimension 1.
+
+Next, we construct generators and relations for $R_L,$ using those of $R_{L_X}$. Note that we have a natural inclusion $\iota:R_{L_X} \hookrightarrow R_L$ induced by the inclusions $H^0(\sx,L_X) \hookrightarrow H^0(\sx,L).$ By Riemann Roch, we see there is some element $y_{1,3} \in (R_L)_3$ with $\ord_{P_1}(y_{1,3}) = -1,$ not in the image of the inclusion $\iota$. We claim that there exist $a_1, a_2 \in k$ and a degree 4 polynomial $f(x_1, x_2) \in k[x_1,x_2]$ such that
 \begin{align*}
 	R_L \cong k[x_1,x_2,y_{1,3}]/(a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2))
 \end{align*}
-First, note that $x_1,x_2,y_{1,3}$ generate all of $R_L$ from the Generalized Max Noether Theorem for genus 0 curves, as described in Voight
+First, note that $x_1,x_2,y_{1,3}$ generate all of $R_L$ from the Generalized Max Noether Theorem from Voight
 and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}. That is, the maps
 \begin{align*}
-	H^0(\sx,L) \otimes H^0(\sx,nL) \rightarrow H^0(\sx, (n+1)L)
+	H^0(\sx,3L) \otimes H^0(\sx,(n-3)L) \rightarrow H^0(\sx, nL)
 \end{align*}
-are surjective. Next, note that a relation of the form $a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2)$ must exist, because by Riemann--Roch, $h^0(\sx,4L ) - h^0(\sx,4L_X) = 1,$ but $x_1 y_{1,3},x_2 y_{1,3}$ define two linearly independent elements of $h^0(\sx,4L ) \setminus h^0(\sx,4L_X).$ To complete the example, it suffices to show there are no additional relations. First, note that $a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2)$ is necessarily irreducible because there are no relations among $x_1, x_2$ and $y_{1,3}$ in lower degrees. Hence, it follows that $k[x_1,x_2,y_{1,3}]/(a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2)) \rightarrow R_L$ is a surjection. Furthermore,
-$\proj k[x_1,x_2,y_{1,3}]/(a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2))$ is 1 dimensional and integral, while $\proj R_L$ is also 1 dimensional. Therefore, the surjection must be an isomorphism, as claimed.
-
+are surjective for $n \geq 4$. A relation of the form $a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2)=0$ must exist because $h^0(\sx,4L ) - h^0(\sx,4L_X) = 1,$ but $x_1 y_{1,3}$ and $x_2 y_{1,3}$ define two 
+linearly independent elements with nontrivial image in the 1-dimensional vector space $H^0(\sx,4L )/ H^0(\sx,4L_X).$ So, we obtain a surjection
+\begin{align}
+\label{align:surjection}
+k[x_1,x_2,y_{1,3}]/(a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2)) \rightarrow R_L.
+\end{align}
+To complete the example, it suffices to show there are no additional relations. First, note that $a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2)$ is irreducible because there are no relations among $x_1, x_2$ and $y_{1,3}$ in lower degrees.
+Hence,  $k[x_1,x_2,y_{1,3}]/(a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2))$ is integral and is 2 dimensional. Thus, the map \eqref{align:surjection} defines a surjection from an integral 2 dimensional ring to a 2 dimensional ring. Therefore, it is an isomorphism.
 
 \end{example}
 
