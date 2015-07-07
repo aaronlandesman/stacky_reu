@@ -721,7 +721,8 @@ Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\h
 
 Then, there exist constants $\alpha, \beta, \gamma \in k$ so that 
 $R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zero and pole order. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
-\todo{fill in details here}
+\todo{fill in details here.
+Use Generalized Max Noether Theorem for genus 1 curves (see Voight and Zureick-Brown \cite[Lemma 3.1.3]{vzb:stacky}.}
 
 We next check $(\sx', \halfcan', \{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, \ref{custom:Ad-i} holds. We next check \ref{custom:Ad-ii} for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
 \[
@@ -745,7 +746,7 @@ $(\sigma, \halfcan' + \frac{3}{7} P_3, J = \{2, 3\},$) is admissible.
 Notice that $\deg \lfloor d K_{\sx'} \rfloor= -d + \lfloor \frac{d}{3}
 \rfloor + 2 \lfloor \frac{3d}{7} \rfloor$.
 
-By the Generalized Max Noether Theorem for genus 0 curves, (see Voight
+By the Generalized Max Noether Theorem for genus 0 curves (see Voight
 and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
 \begin{align}
 \label{eqn:noether-377}
@@ -788,9 +789,9 @@ and $7 < d \leq 25$. Note that we can again use Max Noether's theorem
 \noindent
 are surjective. This reduces the problem to checking generation
 in the degrees of the exceptions $d \in \{8, 12, 21\}$.
-Checking the remaining cases via pole degrees shows that
-these degrees are also generated in lower degrees,
-so $R'$ is generated in degrees $\{3, 5, 7, 7\}$.
+Checking these remaining cases via pole degree considerations shows
+that these degrees are also generated in lower degrees. Thus, $R'$
+is generated in degrees $\{3, 5, 7, 7\}$.
 
 Now, we check the admissibility of $(\sx', L' ,J),$ where $J = \{2, 3\}$. By relabelling the
 variables if necessary, we can assume that $x_{7, 1}$ corresponds
