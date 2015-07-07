@@ -711,6 +711,23 @@ Counting dimensions, we see $h^0(\sx, dL')=1$ for all $d\in \mathbb{Z}_{\ge 0}$ 
 \end{example}
 
 \begin{example}
+\label{eg:}
+In this example, we shall compute the log canonical ring of $(\sx, 3 \cdot \infty, L),$ where $\sx$ has coarse space $X$, signature $(0;3;3),$ and under the identification $X \cong \BP^1$ the closed point $\infty$ in $X$ is the point in the complement of one of the affine coordinate charts. Let the single stacky point of $\sx$ be $P \neq \infty$. 
+
+Following the technique which will later be introduced in Lemma ~\ref{lem:sat-1}, we deduce the structure of $R_L$ from the structure of the canonical ring of $R_{L_X},$ the canonical ring associated to the log spin curve of the coarse space, $(X, 3 \cdot \infty, L_X).$ Note that $R_{L_X} \cong k[x_1,x_2]$ where $\deg x_1 = \deg x_2 = 1.$ To see this, observe that by Riemann--Roch $h^0(X, L_X) = 2,$ so we will need two generators in degree 2. From the Generalized Max Noether Theorem for genus 0 curves, (see Voight
+and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky},) the multiplication maps are surjective, implying that $R_{L_X}$ is generated in degree 1. There cannot be any relations because $\proj k[x_1,x_2] \cong \proj R_{L_X} \cong X$ and $X$ is 1 dimensional. Any relation would necessarily imply that $\proj R_{L_X}$ is at most $0$ dimensional, contradicting the fact that $L_X$ is very ample, so $\proj R_{L_X} \cong X$ is $1$ dimensional.
+
+Next, we construct the canonical ring of $R_L$ from $R_{L_X}$. By Riemann Roch, we see there is some element $y_{1,3} \in (R_L)_3$ with $\ord_{P_1}(y_{1,3}) = -1.$ We claim that there exist $a_1, a_2 \in k$ and a degree 4 polynomial $f(x_1, x_2) \in k[x_1,x_2]$ such that
+\begin{align*}
+	R_L \cong k[x_1,x_2,y_{1,3}]/(a_1 x_1 y_{1,3} +a_2 x_2 y_{1,3} + f(x_1,x_2))
+\end{align*}
+Indeed, such a relation must exist, because by Riemann--Roch, $h^0(\sx,4L)$
+
+\end{example}
+
+
+
+\begin{example}
 \label{eg:base-0-377}
 Let $(\sx',0, \halfcan')$ be a log spin curve with signature $\sigma =
 (0; 3, 7, 7; 0)$ and $\halfcan' \sim -\infty + \frac{1}{3} P_1 +
@@ -3064,7 +3081,7 @@ In this section, we present several directions for further research.
 		line bundle $\eta$ so that there exists a line bundle $\gamma$ with
 $\gamma^{\otimes a} \cong \eta$
  and 
- $\gamma^{n} \cong \Omega_{X(p)}^1$.
+ $\gamma^{\otimes n} \cong \Omega_{X(p)}^1 \otimes \sco_{X(p)}(\Delta)$.
 		For more details on fractional weight modular forms, see Adler and Ramanan \cite[p. 96]{adler:moduli}) and Milnor \cite
 		[$\mathsection$ 6]{milnor:fractional-weight}.
 
