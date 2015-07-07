@@ -1,0 +1,240 @@
+%%%%%%%%%%%%%%%%%%%%%
+%   AMS packages    %
+%%%%%%%%%%%%%%%%%%%%%
+\documentclass{amsart}
+
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage{subfiles}
+%\usepackage{mathpazo} not a huge fan
+\usepackage{euler}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{caption}
+
+\usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
+\def\listtodoname{List of Todos}
+\def\listoftodos{\@starttoc{tdo}\listtodoname}
+
+%\addtolength{\oddsidemargin}{-.5 in}
+	%\addtolength{\evensidemargin}{-.4 in}
+	%\addtolength{\textwidth}{1 in}
+%
+	%\addtolength{\topmargin}{0 in}
+	%\addtolength{\textheight}{0 in}
+
+\RequirePackage{color}
+\definecolor{myred}{rgb}{0.75,0,0}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{myblue}{rgb}{0,0,0.65}
+
+%\usepackage{hyperref}
+  %\hypersetup{colorlinks=true,citecolor=blue}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+%%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%
+%%%%%%%%%%%%%%%
+
+\theoremstyle{plain}
+  \newtheorem{thm}{Theorem}[section]
+  \newtheorem{prop}[thm]{Proposition}
+  \newtheorem{lem}[thm]{Lemma}
+  \newtheorem{cor}[thm]{Corollary}
+	\newtheorem{claim}[thm]{Claim}
+	\newtheorem{question}[thm]{Question}
+	
+\theoremstyle{definition}
+  \newtheorem{defn}[thm]{Definition}
+  \newtheorem{example}[thm]{Example}
+  \newtheorem{exer}[thm]{Exercise}
+  \newtheorem{ctexample}[thm]{Counterexample}
+  \newtheorem{convention}[thm]{Convention}
+	\newtheorem{conjecture}[thm]{Conjecture}
+	
+\theoremstyle{remark}
+	\newtheorem{rem}[thm]{Remark}
+  \newtheorem{note}[thm]{Notation}
+  \newtheorem*{note*}{Notation}
+  \newtheorem{case}{Case}
+	
+\numberwithin{equation}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\nc{\newcommand}
+\nc\on{\operatorname}
+\nc\renc{\renewcommand}
+\newcommand\ssec{\subsection}
+\newcommand\sssec{\subsubsection}
+\newcommand\bh{{\mathbb H}}
+\newcommand\bn{{\mathbb N}}
+\newcommand\bc{{\mathbb C}}
+\newcommand\bbf{{\mathbb F}}
+\newcommand\br{{\mathbb R}}
+\newcommand\bq{{\mathbb Q}}
+\newcommand\bp{{\mathbb P}}
+\newcommand\bz{{\mathbb Z}}
+\newcommand\ba{{\mathbb A}}
+
+\newcommand\sco{{\mathscr O}}
+
+\newcommand{\id}{\mathrm{id}}
+\newcommand\im{\text{im }}
+\newcommand\coker{\text{coker}}
+\newcommand\gal{\mathrm{Gal}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\sym}{Sym}
+
+%%%%%%%%%%%%%%%%%%%%% cring custom commands %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator\di{Div}
+\newcommand\sx{\mathscr X}
+\newcommand \subhalf[1]{\frac{{#1} - 1}{2{#1}}}
+\newcommand{\se}[1]{\section*{Problem #1}}
+\newcommand{\halfcan}{L}
+\DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\initial}{in_\prec}
+\DeclareMathOperator{\gin}{gin}
+\DeclareMathOperator{\Eff}{Eff}
+\DeclareMathOperator{\sat}{sat}
+\DeclareMathOperator{\newspan}{span}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\spec}{Spec}
+\captionsetup[table]{belowskip = 4pt}
+
+\makeatletter
+\newcommand{\customlabel}[2]{%
+   \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
+   \hypertarget{#1}{#2}
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Spin canonical rings of log stacky curves}
+
+\author{Aaron Landesman}
+\address[Aaron Landesman]{Department of Mathematics, Harvard University}
+\email{aaronlandesman@college.harvard.edu}
+
+\author{Peter Ruhm}
+\address[Peter Ruhm]{Department of Mathematics, Stanford University}
+\email{pruhm@stanford.edu}
+
+\author{Robin Zhang}
+\address[Robin Zhang]{Department of Mathematics, Stanford University}
+\email{robinz16@stanford.edu}
+
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{abstract}
+ 	Consider modular forms arising from finite-area
+	quotients of the upper-half plane by Fuchsian groups.  
+	By the classical results of Kodaira--Spencer, 
+	this space of modular forms may be
+	viewed as log spin canonical ring of a stacky curve.
+	In this paper, we tightly bound the degrees of minimal
+	generators and relations of log spin canonical rings and,
+	as a consequence, 
+	obtain a tight bound on the degrees of minimal generators and relations  		
+	for rings of modular forms of arbitrary integral weight.
+\end{abstract}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+\section{Background}
+
+\ssec{Notation}
+
+Write
+\begin{align*}
+	D = \sum_{i=1}^{n}\alpha_i D_i.
+\end{align*}
+where $\alpha_i \in \bq.$
+
+
+\section{Canonical Rings on Projective Space}
+In this section, we bound the degrees of generators and relations for divisors on $\bp^m$, for all $m \geq 1$. The $n = 1$ case was covered in \cite{dorney:canonical}.
+
+\ssec{Preliminaries on Projective Space}
+
+For the remainder of this section, we shall fix $m \geq 1$ and choose an isomorphism $\bp^m \cong \proj V$ so that $x_0,\ldots, x_m$ form a basis for $V$. Through the rest of this section, we will think of $x_i$ as a rational section of $H^0(\bp^m, \sco_{\bp^m})$ of degree 1.
+
+
+Write
+\begin{align*}
+	D = \sum_{i=0}^{n}\alpha_i D_i.
+\end{align*}
+where $\alpha_i \in \bq$ and $\deg D_i = d_i$. Let $f_i$ be cartier divisors such that $D_i = V(f_i)$. We shall further assume that among there exist functions $f_0,\ldots, f_{m+1}$ form a basis for degree one rational functions on $\bp^m$.
+
+\begin{prop}
+\label{prop:pm-span-and-basis}
+The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ so that 
+\begin{align}
+\label{align:pm-span}
+\sum_{i=0}^{n} c_i \cdot d_i \cdot f_i = 0 & \text{ and } &c_i \geq \lfloor \alpha_i d\rfloor	
+\end{align}
+form a spanning set for $H^0(\bp^m, dD)$ over $k$. Furthermore, functions 
+of the form $u^d \cdot \prod_{i=1}^n f_i^{c_i} $ such that
+\begin{align}
+\label{align:pm-basis}
+c_i = -\lfloor d\alpha_i \rfloor & \text{ for } & i > m
+\end{align}
+form a basis for $H^0(\bp^m, dD)$ over $k$.
+\end{prop}
+\begin{proof}
+By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
+~\eqref{align:pm-span} lie in $H^0(\bp^m,dD)$. To complete the proof, it suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$ functions satisfying condition ~\eqref{align:pm-basis}. However we know $h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show that those functions satisfying condition ~\eqref{align:pm-basis} are independent. This follows from the assumption that $f_0,\ldots, f_n$ form a basis of degree 1 rational functions, and so degree $\lfloor d \deg D \rfloor $ monomials in $f_0,\ldots, f_n$ form a basis of degree $\lfloor d \deg D \rfloor $ rational functions.
+\end{proof}
+
+\ssec{One point on Projective Space}
+
+
+
+\ssec{Bounds for Arbitrary Divisors on Projective Space}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Acknowledgments}
+
+We are grateful to David Zureick-Brown for introducing us to the
+study of stacky canonical rings, for providing invaluable guidance,
+and for his mentorship. We also thank Ken Ono and the
+Emory University Number Theory REU for arranging our project and
+providing a great environment for mathematical learning and
+collaboration.
+Finally, we gratefully acknowledge the financial support given by
+NSF Grant Award Number 1250467 via the Emory University Number
+Theory REU. We deeply appreciate all of the support that has made
+our work possible.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nocite{*}
+\bibliography{bibliography-stacky-surface}{}
+\bibliographystyle{plain}
+
+\end{document}
