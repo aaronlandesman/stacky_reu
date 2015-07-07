@@ -164,7 +164,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-Let $\Gamma$ be a {\bf Fuchsian} group, i.e. a discrete subgroup of
+Let $\Gamma$ be a {\bf Fuchsian} group, i.e. \todo{tilde?}a discrete subgroup of
 $PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations, such that $\Gamma \backslash \BH$ has finite area.
 We consider the graded {\bf ring of modular forms}
@@ -268,9 +268,8 @@ e_r; \delta)$. The application of O'Dorney's work to log spin
 canonical rings gives a weak bound in the case $g = 0$ in
 terms of the least common multiples of the $e_i$'s \cite[Chapter 5]
 {dorney:canonical}. In their treatment of log spin canonical
-rings, Voight and Zureick-Brown bounded generator degrees by $6 \cdot \max(e_1, \ldots, e_r)$
-and relation degrees by $12 \cdot \max(e_1, \ldots, e_r)$ when $\halfcan$ is effective
-\cite[Corollary 10.4.6]{vzb:stacky}. Note that the bounds we write here differ from those stated in Voight and Zureick-Brown \cite[Corollary 10.4.6]{vzb:stacky} by a factor of 2 because their grading convention differs from ours by a factor of 2.
+rings, Voight and Zureick-Brown \cite[Corollary 10.4.6]{vzb:stacky} bounded generator degrees by $6 \cdot \max(e_1, \ldots, e_r)$
+and relation degrees by $12 \cdot \max(e_1, \ldots, e_r)$ when $\halfcan$ is effective. Note that the bounds we write here differ from those stated in Voight and Zureick-Brown \cite[Corollary 10.4.6]{vzb:stacky} by a factor of 2 because their grading convention differs from ours by a factor of 2.
 
 These bounds are far from tight and do not collectively
 cover all cases in all genera. The main theorem of this paper
@@ -301,14 +300,15 @@ is separably rooted, as described further in Remark ~\ref{rem:stack-formalism}.
 Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$ in Theorems ~\ref{thm:g-0-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-high-main}, respectively.  In each of these proofs, we follow a similar inductive process utilizing the lemmas of Section ~\ref{sec:induction}; however, in the first two we have to explicitly construct specific base cases and present a finite list of exceptional cases, while in the genus $g \geq 2$ case we deduce base cases from more general arguments.
 \begin{rem}
 \label{rem:explicit-generators}
-The proofs of the main theorems in the low genus cases not only
-obtain bounds on the degrees of the generators and relations, but
-also yield explicit systems of generators and an explicit initial ideal of
-relations. Furthermore, our proof of the genus $g \geq 2$ case also
-provides an inductive procedure for explicitly determining the 
-generators and initial ideal of relations of log spin canonical
-rings. Many explicit systems of generators and relations for curves of genus $2 \leq g \leq 15$ are
-detailed in interesting examples by Neves
+The main theorem obtains bounds on the degrees of the generators
+and relations of log spin canonical rings. However, the proof
+of the genus one and genus zero cases also yield explicit systems
+of generators and an explicit initial ideal of relations.
+Furthermore, our proof of the genus $g \geq 2$ case also provides
+an inductive procedure for explicitly determining the generators
+and initial ideal of relations of log spin canonical rings. Many
+explicit systems of generators and relations for curves of genus $2
+\leq g \leq 15$ are detailed in interesting examples by Neves
 \cite[Section III.4]{neves:halfcan}. 
 \end{rem}
 \begin{rem}
@@ -446,7 +446,7 @@ canonical divisor (also known as the half-canonical divisor,
 semi-canonical divisor, or theta characteristic) associated to the
 coarse space $X$ of $\sx.$  (i.e. $\halfcan_X$ is a divisor such
 that $2\halfcan_X \sim K_X + \Delta$). 
-We define $H^0$ of a stacky divisor as follows:
+We define $H^0$ of a stacky divisor as follows.
 
 \begin{defn}
 \label{defn:h0-stacky}
@@ -499,7 +499,7 @@ is even. because $2 \cdot \deg \halfcan = \deg \Delta + \deg \lfloor K
 In particular, we shall often use $\deg \Delta \neq 1$.
 \end{rem}
 
-\ssec{Definition of Saturation}
+\ssec{Saturation}
 
 We define the notion of the saturation of a divisor, as can be found in
 Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
@@ -637,11 +637,11 @@ ideal of $I$.
 
 \ssec{Admissibility}
 
-In this subsection, we present a definition of admissibility, which is quite similar to that defined in Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky}, but is adapted to the case of spin canonical divisors.
+Here, we define a notion of admissibility that is quite similar to the admissibility defined by Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky}. Our notion is an adaptation the case of log spin canonical divisors.
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that 
 %in \cite{vzb:stacky}, Voight and Zureick-Brown may assume that $\{P_i\} \cap \Supp(K_X) = \emptyset.$ 
-	we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $\halfcan_X'$, rather than relative to the $\sco_X$.
+we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $\halfcan_X'$, rather than relative to the $\sco_X$.
 
 \begin{defn}
 \label{def:order-sup}
@@ -662,7 +662,7 @@ curve, with coarse space $X$ and stacky points $Q_1, \ldots, Q_r$.  Let $J \subs
 \end{cases}
 \]
 
-Let $R'$ be the canonical ring associated to $\sx'$. Define $(\sx', \halfcan',J)$
+Let $R'$ be the canonical ring associated to $\sx'$. Define $(\sx', \halfcan', J)$
 to be {\bf admissible} if $R'$ admits a presentation
 \begin{align*}
 	R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i, e_i'}]_{i \in J} \right)/I'
@@ -732,9 +732,9 @@ and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
 \noindent
 is surjective whenever $\deg (\lfloor (d - 21) K_{\sx'} \rfloor)
 \geq 0$. It is fairly easy to see, by use of Riemann--Roch, that
-$s := \sat(\Eff(\sigma)) = 5$. Then the map in
-~\eqref{eqn:noether-377} is surjective when $d \geq 21 + s = 26$
-(i.e. $R'$ is generated up to degree 25).
+the saturation of $\halfcan'$ is $5$ (see Definition ~\ref{defn:sat}.
+Then the map in ~\eqref{eqn:noether-377} is surjective when $d \geq
+21 + s = 26$ (i.e. $R'$ is generated up to degree 25).
 
 For $d = 0, 1, 2, \ldots$ we have
 \[
@@ -868,7 +868,7 @@ degree $2e = 14$, as desired.
 
 \begin{example}
 \label{eg:base-1-33}
-Let $(\sx',0 , \halfcan')$ be a log spin curve of genus $1$ so that $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show
+Let $(\sx',0 , \halfcan')$ be a log spin curve of genus $1$ with $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show
 $$R_{\halfcan'} \cong k[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$
 and that $(\sx', \halfcan', \{1,2\})$ is admissible.
 
@@ -907,6 +907,7 @@ we claim there is some $\alpha \in k$ so that
 $$R_\halfcan \cong k[x_2 , y_3, y_5]/(y_3^4 - \alpha x_2 y_5^2).$$
 
 In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring whose $k$th graded piece has the same dimension of $R_\halfcan$. The verification is analogous to Example ~\ref{eg:base-0-377} and is omitted.
+\todo{alt: proj}
 
 Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashion analogous to the verification in Example ~\ref{eg:base-1-33}.
 \end{example}
@@ -918,7 +919,7 @@ Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashi
 \section{Inductive Lemmas}
 \label{sec:induction}
 First we present several lemmas which provide the inductive steps
-for the proof of the main theorem: Theorem ~\ref{thm:main}. In
+for the proof of the main theorem (Theorem ~\ref{thm:main}). In
 Subsection ~\ref{ssec:add-points} we prove three lemmas which
 determine the generators and relations of $R_\halfcan = R_{\halfcan'
 + \frac{\alpha }{\beta}P}$ from those of $R_{\halfcan'}$, where
@@ -1041,7 +1042,8 @@ orders incremented by $2$ and fixed log divisor and stacky points.
 \label{ssec:add-points}
 %In this section, we prove various inductive statements under the following setup:
 %Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log spin canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d \in\BN$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
-Before proving three lemmas that allow us to inductively add points to the support of a log spin canonical divisor, we give a criterion to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m] \to R_D$.  This criterion will be used repeatedly to show that a given homogeneous ideal is in fact the ideal of relations.
+%Before proving three lemmas that allow us to inductively add points to the support of a log spin canonical divisor
+First, we give a criterion to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m] \to R_D$.  This criterion will be used repeatedly to show that a given homogeneous ideal is in fact the ideal of relations.
 
 
 \begin{lem}
@@ -1052,7 +1054,7 @@ $R_{\halfcan'}$.  Let $I'$ and $I$ be the ideals relations of $\phi':k[x_1, \ldo
 Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T\subseteq R_\halfcan-(S\cup R_\halfcan')$, and a monomial ordering $\prec$ such 
 \begin{enumerate}
 \item $S$ forms a $k$-basis for $R_\halfcan$ over $R_\halfcan'$
-\item $T \succ S\succ k[x_1, \ldots, x_n]$ {\rm(}meaning all monomials in $T$ are bigger than all monomials in $S,$ which are bigger than all monomials in $k[x_1, \ldots, x_n]${\rm)}
+\item $T \succ S\succ k[x_1, \ldots, x_n]$ {\rm(}meaning all monomials in $T$ are bigger than all monomials in $S$ which are bigger than all monomials in $k[x_1, \ldots, x_n]${\rm)}
 \item All monomials in $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ lie in 
 \begin{align*}
 	S \; \cup\; \langle T\rangle \; \cup \; \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[x_1, \ldots, x_m]

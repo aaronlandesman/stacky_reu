@@ -115,7 +115,7 @@
 \DeclareMathOperator{\newspan}{span}
 \DeclareMathOperator{\proj}{Proj}
 \DeclareMathOperator{\spec}{Spec}
-\captionsetup[table]{belowskip = 4pt}
+%\captionsetup[table]{belowskip = 4pt}
 
 \makeatletter
 \newcommand{\customlabel}[2]{%
@@ -147,16 +147,8 @@
 \begin{document}
 
 \begin{abstract}
- 	Consider modular forms arising from finite-area
-	quotients of the upper-half plane by Fuchsian groups.  
-	By the classical results of Kodaira--Spencer, 
-	this space of modular forms may be
-	viewed as log spin canonical ring of a stacky curve.
-	In this paper, we tightly bound the degrees of minimal
-	generators and relations of log spin canonical rings and,
-	as a consequence, 
-	obtain a tight bound on the degrees of minimal generators and relations  		
-	for rings of modular forms of arbitrary integral weight.
+ 	Bonding generator and relation degrees of general $\bq$-divisors
+	of surfaces.
 \end{abstract}
 
 \maketitle
@@ -215,6 +207,22 @@ By definition of $H^0(\bp^m,dD)$, functions satisfying conditions
 
 
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
+
+
+
+\begin{rem}
+When $\langle f_1, \ldots, f_r \rangle = \langle x_0, \ldots, x_n \rangle$ (the irrelevant ideal), we may directly use the hypersurface method by considering $x_0, \ldots, x_n$ instead of the $f_i$'s. However, when $\sqrt{\langle f_1, \ldots, f_r \rangle} = \langle x_0, \ldots, x_n \rangle$ (or the saturation), we cannot obtain the same result from our modification of O'Dorney's method as seen in Example ~\ref{eg:radical}. Instead we must use ghost points and hypersurfaces.
+\end{rem}
+
+\begin{example}
+\label{eg:radical}
+As an example for why we need to add in ghost points for $\bp^2$, consider $\frac{-1}{5}V(x_0^2) + \frac{1}{7}V(x_1^2) + \frac{1}{17}V(x_2^2)$. In degree $595 = 5* 7 * 17$, this has dimension $6$, but we cannot possibly use the lattice approach, as all lower degrees only have dimension 1. In fact, we may construct similar examples using any $x_i^m$ for $f_i$ with appropriate coefficients.
+\end{example}
+\todo{construct class of additional examples}
+
+
+\section{Canonical Rings on \texorpdfstring{$\bp^1 \times \bp^1$}{}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
