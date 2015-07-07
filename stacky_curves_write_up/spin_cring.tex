@@ -117,6 +117,8 @@
 \DeclareMathOperator{\newspan}{span}
 \captionsetup[table]{belowskip = 4pt}
 
+\renewcommand{\arraystretch}{1.2}
+
 \makeatletter
 \newcommand{\customlabel}[2]{%
    \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
@@ -2459,7 +2461,7 @@ In this subsection we set up the base cases needed for our inductive approach, o
 \begin{tabular}
 {| c || c | c | c |}	
 	\hline
-	$\halfcan'$ & Generator Degrees & Degrees of Minimal Relations & $e$ \\ [2pt]
+	$\halfcan'$ & Generator Degrees & Degrees of Minimal Relations & $e$ \\
 	\hline
 	\hline
 	$0$ & $\{1\}$ & $\emptyset$ & $1$ \\	\hline
@@ -2478,8 +2480,6 @@ In this subsection we set up the base cases needed for our inductive approach, o
 	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
 \end{table}
-
-\todo{make tables slightly taller}
 
 The cases that $L' = 0, \: L' = P-Q +\frac{1}{3}P_1 + \frac{1}{3}P_2,$ and $L' = P-Q + \frac{2}{5}P_1$ were checked in Examples ~\ref{eg:base-1-0}, \ref{eg:base-1-33}, and \ref{eg:exception-1-5} respectively.
 
@@ -2518,9 +2518,6 @@ e_r)$ with relations in degrees $2e$, as described in Theorem
 	
 %	$(1; e; 0)$ & $\{2, 3, 5, 7, 9, \ldots, e\}$ & $\{12\} \cup \{9,10, \ldots, e+2, e+3, e+5, e+7, \ldots, 2e-4\}$ \\	\hline
 \end{table}
-\todo{make tables slightly taller}
-\todo{L apostrophe vs L dash}
-
 %\begin{rem}
 %\label{rem:g-1-exceptional-e}
 %Note that for $e > 5$ generators and relations for $L = P - Q + \frac{e- 1}{2e}R$, which has signature $(1;e;0)$, can be computed inductively $L' = P - Q + \frac{(e-2) - 1}{2(e - 2)}R$ using 
@@ -2701,7 +2698,6 @@ and generic cases follow.
 \caption{Genus 0 Saturation}
 \label{table:g-0-sat}
 \end{table}
-\todo{make tables slightly taller}
 
 \ssec{Base Cases}
 \label{ssec:g-0_base}
@@ -2764,7 +2760,6 @@ Case ~\ref{custom:three-cases-1} of Remark ~\ref{rem:three-cases}):
 \label{table:g-0-base-cases}
 \end{table}
 }
-\todo{make tables slightly taller}
 
 %\noindent
 %Furthermore, $R'$ satisfies the hypothesis of Lemma ~\ref
@@ -2817,7 +2812,6 @@ for each case as described in the Table ~\ref{table:g-0-base-cases-degrees}.
 \caption{Generators and Relations for Genus 0 Base Cases}
 \label{table:g-0-base-cases-degrees}
 \end{table}
-\todo{make tables slightly taller}
 
 We can also always find a presentation for these cases such that
 they satisfy \ref{custom:Ad-i} and \ref{custom:Ad-ii} and that $\initial(I')$ is
@@ -2866,7 +2860,6 @@ independent of the choice of $i$.
 \caption{Checking \ref{custom:Ad-iii} for Genus 0 Base Cases}
 \label{table:g-0-base-cases-admissibility}
 \end{table}
-\todo{make tables slightly taller}
 
 Thus, all of the cases are admissible and satisfy the additional
 desired conditions.
@@ -2935,7 +2928,6 @@ cases given by signatures in the finite set
 \caption{Genus 0 Exceptional Cases}
 \label{table:g-0-exceptional}
 \end{table}
-\todo{make tables slightly taller}
 
 \begin{rem}
 These cases give all of the exceptions to the $e$ and $2e$ bounds
@@ -3127,8 +3119,7 @@ $\gamma^{\otimes a} \cong \eta$
 			the degrees of generation and relations can be reduced from 
 			$e = \max(5,e_1, \ldots, e_r)$ and $\max(10, 2e_1, \ldots, 2e_r)$ to 
 			$e'=\max(4,e_1, \ldots, e_r)$ and $2e'$, 
-			apart from well a characterized list of exceptions?
-			\todo{list of families}
+			apart from well a characterized list of families?
 		\end{question}
 		\begin{rem}\label{rem:reduce-3,6}
 			It is unlikely that these bounds can be reduced further to 
