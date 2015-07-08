@@ -316,9 +316,9 @@ Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0,
 In addition to providing bounds on the degrees of generators and relations of log spin canonical rings, the proof
 of the genus one and genus zero cases of our main theorem also yield explicit systems
 of generators and initial ideals of relations, as described in Remarks ~\ref{rem:genus-1-explicit-bound} and ~\ref{rem:genus-0-explicit-bound}.
-Although our proof of the genus $g \geq 2$ case provides
+Furthermore, our proof of the genus $g \geq 2$ case provides
 an inductive procedure for explicitly determining the generators
-and initial ideal of relations of a log spin canonical ring given generators and relations of the corresponding ring on the coarse space, actually computing such generators and relations of log spin canonical on the coarse space can be difficult.  Many
+and initial ideal of relations of a log spin canonical ring given a presentation of the corresponding ring on the coarse space, but actually computing such a presentation of log spin canonical on the coarse space can be difficult.  Many
 explicit systems of generators and relations for curves of genus $2
 \leq g \leq 15$ are detailed in interesting examples by Neves
 \cite[Section III.4]{neves:halfcan}. 
@@ -361,21 +361,18 @@ Table ~\ref{table:g-0-exceptional} for signatures with $g = 0$.
 
 \begin{rem}
 \label{rem:gen-at-most-three}
-If $M(\Gamma)$ has some odd weight modular form, then it has an odd weight modular form in weight $3$. When $g \geq 2$, we see that this is true because $\dim_k H^0(\sx, 3\halfcan) > 0$ by Riemann--Roch and the fact that $\deg \lfloor 3\halfcan \rfloor > 2g - 1$. When the genus is zero or one, we see that there is a generator in weight $1$ or weight $3$ in the base cases given in Table ~\ref{table:g-1-base} and Table ~\ref{table:g-0-base-cases} so there is an odd weight modular form in weight $3$ in general. A consequence of this observation is that the bound on the degree of generators and relations when $M(\Gamma)$ has some odd weight modular form, as given in Corollary ~\ref{cor:main-mod-forms}, is closely related to the degree of the minimal odd weight modular form.
+If $M(\Gamma)$ has some odd weight modular form, then it has an odd weight modular form in weight $3$. When $g \geq 2$, we see that this is true because $\dim_k H^0(\sx, 3\halfcan) > 0$ by Riemann--Roch and the fact that $\deg \lfloor 3\halfcan \rfloor > 2g - 1$. When the genus is zero or one, we see that there is a generator in weight $1$ or weight $3$ in the base cases given in Table ~\ref{table:g-1-base} and Table ~\ref{table:g-0-base-cases}. Hence, there is an odd weight modular form in weight $3$ in general. A consequence of this observation is that the bound on the degree of generators and relations when $M(\Gamma)$ has some odd weight modular form, as given in Corollary ~\ref{cor:main-mod-forms}, is closely related to the degree of the minimal odd weight modular form.
 \end{rem}
 
 \begin{example}
 \label{eg:congruence-bounds}
-Suppose $\Gamma \subset SL_2(\BZ)$ is a congruence subgroup. Then, since 
-the action  of $SL_2(\BZ)$ has points with stabilizer order 2 and 3, the 
-action of $\Gamma$ can only have points with stabilizer order 2 and 3. 
+Suppose $\Gamma \subset SL_2(\BZ)$ is any congruence subgroup. Then, since
+the action  of $SL_2(\BZ)$ on $\BH$ only has points with stabilizer order 1, 2 and 3, and has a cusp, the 
+action of $\Gamma$ can only have points with stabilizer order 1, 2 and 3, and has at least one cusp.
 Furthermore, if $\Gamma$ has some odd weight modular form, then it must 
 have no points with stabilizer order 2 (see Remark ~\ref{rem:odd-denom}). 
 Therefore, by Corollary ~\ref{cor:main-mod-forms}, $M(\Gamma)$ is 
-generated in degree at most $5$ with relations in degree at most $12$. 
-Furthermore, if the coarse space associated $\Gamma$ does not have, 
-$(0;3,3,3,3;0),$ there are relations in degree at most $10$, as follows 
-from the list of exceptional cases in Tables ~\ref{table:genus-0-exceptional-cases} and ~\ref{table:genus-0-exceptional}.
+generated in degree at most $5$ with relations in degree at most $10$. In fact, it is not difficult to reduce generation in weight at most 5 to generation in weight at most 4, as noted in Remark ~\ref{rem:cusp-generation-4}. Note that the exceptional cases in Tables ~\ref{table:g-1-exceptional} and ~\ref{table:g-0-exceptional} do not occur because there is a cusp, so $\delta > 0$.
 \end{example}
 
 
@@ -442,7 +439,7 @@ Let $\sx$ be a stacky curve over $\Bk$ with coarse space $X$ of genus $g$ and st
 P_r$ with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$.
 Then, we notate
 \[
-	\di \sx = \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
+	\di \sx := \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
 	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
 	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
@@ -483,7 +480,7 @@ We define $H^0$ of a stacky divisor as follows.
 \begin{defn}
 \label{defn:h0-stacky}
 Recall the standard notation 
-$$\sco(D) = \{f \in \Bk(X)^\times : \di f + D \geq 0 \}.$$
+$$\sco(D) := \{f \in \Bk(X)^\times : \di f + D \geq 0 \}.$$
 Let $\sx$ be a stacky curve with coarse space $X$.
 If $D \in \di \sx$ is a Weil divisor, then we define
 \begin{align*}
@@ -504,7 +501,7 @@ Although Definition ~\ref{defn:h0-stacky} may seem fairly ad hoc, it is naturall
 \label{defn:log-spin-canonical-ring}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(\sx, k \halfcan).
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(\sx, k \halfcan).
 \]
 \end{defn}
 
@@ -514,7 +511,7 @@ represent $R(\sx, \Delta, \halfcan)$.
 
 \begin{rem}
 \label{rem:odd-denom}
-Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that
+Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that $\halfcan$ is of the form
 \[
 	\halfcan = \sum_{i = 1}^{r} \subhalf{e_i} P_i + \sum_{i = 1}^{s} a_i Q_i
 \]
@@ -535,27 +532,31 @@ In particular, we shall often use $\deg \Delta \neq 1$.
 \end{rem}
 
 \ssec{Saturation}
-
-We define the notion of the saturation of a divisor, as can be found in
-Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
+We define the notion of the saturation of a divisor, as can be
+found in Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
+The classification of the saturations of log spin canonical
+divisors are used in the proof of the main theorem and the various
+lemmas in Section ~\ref{sec:induction}.
 
 \begin{defn}
 Let $D$ be a divisor on $\sx$. The \textbf{effective monoid} of $D$
 is the monoid
 \[
-	\Eff(D) = \{k \in \BZ_{\geq 0} : \deg \lfloor kD \rfloor \geq 0 \}.
+	\Eff(D) := \{k \in \BZ_{\geq 0} : \deg \lfloor kD \rfloor \geq 0 \}.
 \]
 \end{defn}
 
 \begin{defn}
 \label{defn:sat}
-The \textbf{saturation} of a monoid $M \subseteq \BZ_{\geq 0}$,
+The \textbf{saturation of a monoid} $M \subseteq \BZ_{\geq 0}$,
 denoted $\sat(M)$, is the smallest integer $s$ such that $M
 \supseteq \BZ_{\geq s}$, if such an integer exists.
 \end{defn}
 
 \begin{rem}
-For $D \in \di \sx$, we will often call $\sat(\Eff(D))$ the saturation of $D.$
+For $D \in \di \sx$, we will often call $\sat(\Eff(D))$ the
+\textbf{saturation of a divisor} $D$. For examples,
+see Subsection ~\ref{ssec:g-0-saturation}.
 \end{rem}
 
 \ssec{Monomial Ordering}
@@ -2544,7 +2545,13 @@ holds for all log spin curves $(\sx, \Delta, \halfcan)$.
 
 \begin{rem}
 \label{rem:genus-2-explicit-bound}
-Using the terminology from the proof of Theorem ~\ref{thm:g-high-main}, if $e = \max(e_1,\ldots, e_r) \geq 5$, we see that $R_L,$ has a generator in precisely $e$. This follows from the inductive application of Lemmas ~\ref{lem:sat-1} and \ref{lem:sat-2}, which, at the last step, add a minimal generator of $R_L$ over $R_L'$ in degree $e$. Similarly, this inductive application shows that our given presentation has a relation in degree $2e-4$.
+For this remark, we retain the terminology from the proof of Theorem ~\ref{thm:g-high-main}.
+Suppose $e :=  \max(e_1,\ldots, e_r).$ Then, $R_L$ has a generator in degree $e$ when $e \geq 5$ and a relation in degree at least $2e-4$ when $e \geq 7$. Since the proof of Theorem ~\ref{thm:g-1-main} is given by inductively 
+applying Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2}, we obtain that $R_L$ is minimally generated over $R_{L'}$ by an element in degree $e,$ assuming $e \geq 5$. Furthermore, if $e \geq 7$ and $e_i = e,$ 
+then there must be a relation with leading term $y_{i,e_i} \cdot y_{i,e_i-4}.$ Hence, there is a relation in degree at least $2e - 4$. 
+Further, by examining the statements of Lemma ~\ref{lem:sat-1} and \ref{lem:sat-2} in the case that there are $1 \leq i < j \leq r$ with $e_i = e_j = e$, then, there is necessarily a relation with leading term $y_{i, e_i} \cdot y_{j, e_j}$ in degree $2e$.
+
+This analysis also applies to the cases that $g = 0$ and $g = 1$.
 \end{rem}
 
 
@@ -2723,7 +2730,7 @@ This case is analogous to 2a: If there is only one stacky point, we start at $L 
 
 \begin{rem}
 \label{rem:genus-1-explicit-bound}
-In addition to the bound on the degree of the generators and relations, as detailed in Theorem ~\ref{thm:g-1-main}, proof of Theorem ~\ref{thm:g-1-main} yields an explicit procedure for computing those minimal generators and relations. That, is one can start with the generators and relations found in the base cases, and inductively add in generators and relations as one adds and then increments stacky points. Since the proof of Theorem ~\ref{thm:g-1-main} is given by inductively applying Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2}, when $e = \max(5,e_1,\ldots, e_r) \geq 5$ we obtain that $R_L$ has a generator in degree $e$ and a relation in degree at least $2e - 4$. Further, by examining the statements of Lemma ~\ref{lem:sat-1} and \ref{lem:sat-2} in the case that there $1 \leq i < j \leq r$ with $e_i = e_j = e$, then, at least in our construction, there is a relation in degree $2e$.
+In addition to the bound on the degree of the generators and relations, as detailed in Theorem ~\ref{thm:g-1-main}, the proof of Theorem ~\ref{thm:g-1-main} yields an explicit procedure for computing those minimal generators and relations. That, is one can start with the generators and relations found in the base cases and inductively add in generators and relations as one adds and then increments stacky points. As described in Remark ~\ref{rem:genus-2-explicit-bound}, when $e: = \max(e_1,\ldots, e_r) \geq 7$, there is necessarily a generator in degree $e$ and a relation in degree $2e$.
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus zero %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2745,11 +2752,11 @@ follows immediately by repeatedly applying Lemma ~\ref{lem:sat-1}
 to add the necessary stacky points. On the other hand, the proof
 when $\delta = 0$ is more involved. We dedicate the remainder of
 this section to that case in the following steps: characterizing
-saturations points (Subsection ~\ref{ssec:g-0_saturation}),
-describing base cases (Subsection ~\ref{ssec:g-0_base}), and
+saturations (Subsection ~\ref{ssec:g-0-saturation}),
+describing base cases (Subsection ~\ref{ssec:g-0-base}), and
 presenting exceptional cases (Subsection ~\ref{ssec:g-0-exceptional})
 \footnote{Several computations used to generate the tables in
-Subsection ~\ref{ssec:g-0_base} and Subsection
+Subsection ~\ref{ssec:g-0-base} and Subsection
 ~\ref{ssec:g-0-exceptional} were done using a modified version of
 the MAGMA code given in the work of O'Dorney \cite{dorney:canonical}.}
 Finally, we apply inductive processes using Lemma ~\ref{lem:sat-3}
@@ -2764,14 +2771,16 @@ throughout this section.
 \end{rem}
 
 \ssec{Saturation}
-\label{ssec:g-0_saturation}
-First, we present the saturations, as defined in Definition
-~\ref{defn:sat}, of the log spin canonical divisor for
-all cases where $g = 0$ and $\delta = 0$. The saturations can be computed using Riemann-Roch.
-By classifying the saturations of all signatures, we can determine
-the base cases on which we can apply inductive lemmas from
-Section ~\ref{sec:induction}. Exceptional cases are listed first
-and generic cases follow.
+\label{ssec:g-0-saturation}
+First, we present the saturations of the log spin canonical divisor
+for all cases where $g = 0$ and $\delta = 0$ (recall Definition
+~\ref{defn:sat} in Table ~\ref{table:g-0-sat}. The saturations can
+be computed using Riemann-Roch. By classifying the saturations of
+all signatures, we can determine the base cases on which we can
+apply inductive lemmas from Section ~\ref{sec:induction}. Note that
+the saturations of log spin canonical divisors only depend on the
+signature here. In Table ~\ref{table:g-0-sat}, exceptional cases
+are listed first and generic cases follow.
 
 \begin{table}
 \begin{tabular}
@@ -2810,7 +2819,7 @@ and generic cases follow.
 \end{table}
 
 \ssec{Base Cases}
-\label{ssec:g-0_base}
+\label{ssec:g-0-base}
 In order to apply Lemma ~\ref{lem:sat-3} and Lemma
 ~\ref{lem:raise-stacky-order} when $\delta = 0$,
 we need to determine appropriate base cases that will
@@ -2818,14 +2827,15 @@ cover all but finitely many signatures by induction.
 Here we provide such base cases and demonstrate that
 they satisfy all of the necessary conditions of
 Lemma ~\ref{lem:sat-3} and Lemma ~\ref{lem:raise-stacky-order}
-(e.g. admissibility as defined in Definition \ref{defn:admissible}). We also show that that the associated spin
+(e.g. admissibility as defined in Definition \ref{defn:admissible}).
+We also show that that the associated log spin
 canonical rings are generated in degree at most $e := \max(5, e_1,
 \ldots, e_r)$ with relations generated in degree at most $2e$.
 
 \begin{lem}
 \label{lem:g-0-admissible-cases}
 Let $(\sx', \Delta, \halfcan')$ be a log spin curve with signature
-$\sigma = (0; e_1, \ldots, e_r; 0)$. Then, $R' := R_{\halfcan'}$ is
+$\sigma := (0; e_1, \ldots, e_r; 0)$. Then, $R' := R_{\halfcan'}$ is
 generated by elements of degree at most $e = \max(5 , e_1, \ldots,
 e_r)$ with relations in degree at most $2e$. Furthermore, each of
 the cases in Table ~\ref{table:g-0-base-cases} satisfy the
@@ -3044,13 +3054,13 @@ These cases give all of the exceptions to the $e$ and $2e$ bounds
 on the generator and relation degree. Notice that each of these
 exceptional cases, apart from $(0; 3, 5, 7; 0)$, also has
 exceptional saturation as seen in Table ~\ref{table:g-0-sat}.
-Intuitively, these exceptional saturations can be viewed as ``
-forcing'' generators and relations in higher degrees than expected.
+Intuitively, these exceptional saturations can be viewed as
+``forcing'' generators and relations in higher degrees than expected.
 \end{rem}
 
 \ssec{Main Theorem for Genus Zero}
 \label{ssec:g-0-main}
-Now we can combine the base cases from Subsection \ref{ssec:g-0_base} with the inductive lemmas of Section \ref{sec:induction}.
+Now we can combine the base cases from Subsection \ref{ssec:g-0-base} with the inductive lemmas of Section \ref{sec:induction}.
 
 \begin{thm}
 \label{thm:g-0-main}
@@ -3072,7 +3082,7 @@ cases in Table ~\ref{table:g-0-exceptional}.
 \begin{proof}
 If $\sx$ has no stacky points, then we can assume that $\halfcan \sim
 n \cdot \infty$ with $n \in \BZ_{\geq -1}$. This is a classical
-case which is done by Voight and Zureick-Brown \cite[Section 4.2]
+case done by Voight and Zureick-Brown \cite[Section 4.2]
 {vzb:stacky}. When $n = -1$, then $R_\halfcan = \Bk$.  When $n = 0$,
 then $R_\halfcan = \Bk[x]$.  When $n > 0$, inductively applying Lemma
 \ref{lem:sat-1} tells us that $R_\halfcan$ is generated in degree 1
@@ -3137,8 +3147,15 @@ $2e$.
 
 \begin{rem}
 \label{rem:genus-0-explicit-bound}
-Just like the case of genus 1, as described in Remark ~\ref{rem:genus-1-explicit-bound}, the proof of Theorem ~\ref{thm:g-0-main} gives an explicit construction of the generators and relations for the log spin canonical ring $R_L$. Furthermore, similarly to the description given in Remarks in ~\ref{rem:genus-2-explicit-bound} and Remark ~\ref{rem:genus-0-explicit-bound}, when $e = \max(e_1, \ldots, e_r) \geq 5,$ there is a generator in degree $e$ and a relation in degree at most $2e$. This can be seen from the inductive application of Lemmas ~\ref{lem:sat-1}, \ref{lem:sat-2}, and \ref{lem:sat-3}. Additionally, as in the case of genus 1, if there are $1 \leq i < j \leq r$ with $e = e_i = e_j$ then there is a relation in degree $2e$. 
+Similarly to the case of genus 1, as described in Remark ~\ref{rem:genus-1-explicit-bound}, the proof of Theorem ~\ref{thm:g-0-main} gives an explicit construction of the generators and relations for the log spin canonical ring $R_L$. Furthermore, as described in Remark ~\ref{rem:genus-2-explicit-bound}, when $e := \max(e_1, \ldots, e_r)$ is at least $7$, there is a generator in degree $e$ and a relation in degree at least $2e-4$. This can be seen from the inductive application of Lemmas ~\ref{lem:sat-1}, \ref{lem:sat-2}, and \ref{lem:sat-3}.
 \end{rem}
+
+\begin{rem}
+\label{rem:cusp-generation-4}
+Here, we describe how to obtain a slightly better bound for our application to modular forms from example ~\ref{eg:congruence-bounds}. A careful scrutiny of Theorem ~\ref{thm:g-0-main} reveals that, if $\Delta > 0$ and $\sx$ has signature $(0;3, \ldots, 3; \delta)$, then $R_L$ is generated in degree at most 4. This is $\delta > 0$, so $L_X$ is effective. Addtionally, $R_{L_X}$ is generated in degree 1, and inductively applying Lemma ~\ref{lem:sat-1} only adds generators in degree 3 and 4. Therefore, $R_L$ is generated in degree at most 4. Note that a similar analysis of the proof of Theorem ~\ref{thm:g-1-main} yields that when $g = 1$, congruence subgroups are generated in degree at most 4.
+\end{rem}
+
+
 
 
 
