@@ -3195,17 +3195,14 @@ In this section, we present several directions for further research.
 		Generalizing this slightly stronger bound to the (non-stacky) log case case would allow us to inductively apply the lemmas from Section ~\ref{sec:induction} and improve Theorem ~\ref{thm:main} as follows:
 		\begin{question}\label{ques:reduce-5,10-to-4,8}
 			When $g \geq 2,$ can the bounds in Theorem \ref{thm:main} on 
-			the degrees of generation and relations can be reduced from 
-			$e = \max(5,e_1, \ldots, e_r)$ and $\max(10, 2e_1, \ldots, 2e_r)$ to 
-			$e'=\max(4,e_1, \ldots, e_r)$ and $2e'$, 
+			the degrees of generation and relations be reduced from 
+			$e := \max(5, e_1, \ldots, e_r)$ and $\max(10, 2e_1, \ldots, 2e_r)$ to 
+			$e' := \max(4, e_1, \ldots, e_r)$ and $2e'$, 
 			apart from well a characterized list of families?
 		\end{question}
 		\begin{rem}\label{rem:reduce-3,6}
-			It is unlikely that these bounds can be reduced further to 
-			$e''=\max(3, e_1, \ldots, e_r)$ and $2e''$, 
-			because Lemma \ref{lem:sat-2}'s construction always
-			requires a generator in degree 4 and potentially a relation in 
-			degree 8, when adding a stacky point with stabilizer order 3. 
+			Note that when $L$ is not effective and $\sx$ has a stacky point, $R_L$ must have a generator in degree 4 with maximal pole order at one of the stacky points.  Therefore, these bounds cannot in general be reduced further to 
+			$e'' := \max(3, e_1, \ldots, e_r)$ and $2e''$.
 %			Perhaps in the non-stacky case, one 
 %			may be able able to generalize the result of Reid \cite[Theorem 3.4
 %			]{reid:infinitesimal} to show that log spin canonical rings can be 
