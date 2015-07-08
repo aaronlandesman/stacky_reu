@@ -209,7 +209,7 @@ associated canonical divisor $K_X$, determines the {\bf canonical
 map } $\pi: X \rightarrow \BP_\Bk^{g - 1}$. Then, the {\bf canonical
 ring} is defined to be
 \begin{align*}
-	R(X, K_X) = \bigoplus_{d \geq 0} H^0(X, dK_X),
+	R(X, K_X) = \bigoplus_{k \geq 0} H^0(X, kK_X),
 \end{align*}
 
 \noindent
@@ -240,7 +240,7 @@ where $\Delta \in \di X$ is a log divisor and $L \in \di \sx$ satisfies $2\halfc
 study in this paper is the {\bf log spin canonical ring} of $(\sx,
 \Delta, \halfcan),$ notated as
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(X, \lfloor d \halfcan \rfloor).
+	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor).
 \end{align*}
 
 \noindent
@@ -486,7 +486,7 @@ If $D \in \di \sx$ is a Weil divisor, then we define
 	H^0(\sx, \sco(D)) &:= H^0(\sx, D)\\
 	h^0(\sx, \sco(D)) &:= \dim_\Bk H^0(\sx, \sco(D))
 \end{align*}
-If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^\text{th}$
+If $R$ is a graded ring, then we let $(R)_k$ refer to the $k^\text{th}$
 graded component of $R$.
 
 \end{defn}
@@ -499,7 +499,7 @@ Although Definition ~\ref{defn:h0-stacky} may seem fairly ad hoc, it is naturall
 \label{defn:log-spin-canonical-ring}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan).
+	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(\sx, k \halfcan).
 \]
 \end{defn}
 
@@ -538,7 +538,7 @@ Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
 Let $D$ be a divisor on $\sx$. The \textbf{effective monoid} of $D$
 is the monoid
 \[
-	\Eff(D) = \{d \in \BZ_{\geq 0} : \deg \lfloor dD \rfloor \geq 0 \}.
+	\Eff(D) = \{k \in \BZ_{\geq 0} : \deg \lfloor kD \rfloor \geq 0 \}.
 \]
 \end{defn}
 
@@ -564,11 +564,11 @@ initial ideals, and Gr\"{o}bner bases, see Eisenbud
 \begin{defn}
 \label{defn:monomial-degree}
 Let $\Bk[x_1$, $\ldots$, $x_n]$ be a graded polynomial
-ring with $\deg x_i = d_i$ and let $\alpha := \prod_{i = 1}^{n} x_{i}^{f_i} \in
+ring with $\deg x_i = k_i$ and let $\alpha := \prod_{i = 1}^{n} x_{i}^{f_i} \in
 \Bk[x_{1}$, $\ldots$, $x_{n}]$ be a monomial. Then
 we define the {\bf degree} of $\alpha$ to be
 \[
-	\deg \alpha := \sum_{i = 1}^{n} d_i f_i.
+	\deg \alpha := \sum_{i = 1}^{n} k_i f_i.
 \]
 \end{defn}
 
@@ -581,7 +581,7 @@ monomials in $\Bk[x_{1}$, $\ldots$, $x_{n}]$, then $\alpha
 \succ_{\text{grevlex}} \beta$ if either
 
 \begin{equation}
-	\deg \alpha = \sum_{i = 1}^{n} d_i f_i  > \sum_{i = 1}^{n} d_i f_i' = \deg \beta
+	\deg \alpha = \sum_{i = 1}^{n} k_i f_i  > \sum_{i = 1}^{n} k_i f_i' = \deg \beta
 \end{equation}
 or
 \begin{equation}
@@ -606,7 +606,7 @@ separately.
 \begin{defn}
 \label{defn:block-order}
 The \textbf{block term order} is defined as follows. Let $\Bk[y_{1}, \ldots, y_{m}]$ and $\Bk[x_{1}, \ldots,
-x_{n}]$ be weighted polynomial rings with $\deg y_i = c_i, \: \deg x_i = d_i.$ Further assume we are given existing term
+x_{n}]$ be weighted polynomial rings with $\deg y_i = c_i, \: \deg x_i = k_i.$ Further assume we are given existing term
 orders $\prec_y$ and $\prec_x$. Let $\alpha :=
 \prod_{j = 1}^{m} y_{j}^{h_i}$ $\prod_{i = 1}^{n} x_{i}
 ^{f_i}$ and $\beta := \prod_{j = 1}^{m} y_{j}^{h_i'}
@@ -617,8 +617,8 @@ part of $\alpha$ in $\Bk[y_{1}, \ldots, y_{m}]$ and
 likewise with $\alpha_x$, $\beta_y$, and $\beta_x$.
 
 In the \textbf{(graded) block} (or \textbf{elimination}) term
-ordering on $\Bk[y_{d_1', 1}, \ldots, y_{d_m', m}] \otimes \Bk[x_{d_1, 1},
-\ldots, x_{d_n, n}]$, we define $\alpha \succ \beta$ if
+ordering on $\Bk[y_{k_1', 1}, \ldots, y_{k_m', m}] \otimes \Bk[x_{k_1, 1},
+\ldots, x_{k_n, n}]$, we define $\alpha \succ \beta$ if
   \begin{enumerate}
 	\item[(i)] $\deg \alpha  > \deg \beta$ or
   \item[(ii)] $\deg \alpha = \deg \beta$ and $\alpha_y \succ_y \beta_y$ or
@@ -634,7 +634,7 @@ in Section ~\ref{sec:induction} as well as in the proof of Theorem
 \begin{defn}
 \label{defn:initial-term}
 Let $\prec$ be an ordering on $\Bk[x_{1}$, $\ldots$, $x_{n}]$, 
-with $\deg x_i = d_i$,
+with $\deg x_i = k_i$,
 and let $f \in \Bk[x_{1}, \ldots, x_{n}]$ be a homogeneous
 polynomial. The \textbf{initial term} $\initial(f)$ of $f$
 is the largest monomial in the support of $f$ with respect to
@@ -715,11 +715,11 @@ three conditions hold:
 		\end{align*}
 	\item[\customlabel{custom:Ad-iii}{(Ad-iii)}] Third, we have
 		\begin{align*}
-			\deg \lfloor e_i L' \rfloor \geq \max(2g - 1,0) + \max_{d \geq 0} \# S_{\sigma, J}(i, d)
+			\deg \lfloor e_i L' \rfloor \geq \max(2g - 1,0) + \max_{k \geq 0} \# S_{\sigma, J}(i, k)
 		\end{align*}
 		where
 		\begin{align*}
-			S_{\sigma, J}(i, d) := \{j \in J : j \neq i \text{ and } e_j'+2d
+			S_{\sigma, J}(i, k) := \{j \in J : j \neq i \text{ and } e_j'+2k
 			\mid e_i - e_j'\}.
 		\end{align*}
 \end{enumerate}
@@ -735,7 +735,7 @@ In this section, we work out several examples of computing presentations for spi
 \begin{example}
 \label{eg:base-1-0}
 Let $(\sx',0, \halfcan')$ be a log stacky curve of genus $g = 1,$ with $\halfcan' = 0$.
-Counting dimensions, we see $h^0(\sx, dL')=1$ for all $d\in \mathbb{Z}_{\ge 0}$ so it is immediately clear that $R_{\halfcan'} \cong \Bk[x]$ with $x$ a generator in degree 1.
+Counting dimensions, we see $h^0(\sx, k\halfcan')=1$ for all $k \in \mathbb{Z}_{\ge 0}$ so it is immediately clear that $R_{\halfcan'} \cong \Bk[x]$ with $x$ a generator in degree 1.
 \end{example}
 
 
@@ -761,8 +761,8 @@ contradict the fact that $L_X$ is very ample. Thus, $\proj R_{L_X}
 
 Next, we construct generators and relations for $R_L$ using those
 of $R_{L_X}$. Note that we have a natural inclusion $\iota: R_{L_X}
-\hookrightarrow R_L$ induced by the inclusions $H^0(\sx, dL_X)
-\hookrightarrow H^0(\sx, dL)$ for each $d \geq 0$. By Riemann Roch,
+\hookrightarrow R_L$ induced by the inclusions $H^0(\sx, k\halfcan_X)
+\hookrightarrow H^0(\sx, k\halfcan)$ for each $k \geq 0$. By Riemann Roch,
 we see there is some element $y_{1, 3} \in (R_L)_3$ with $\ord_{P_1}
 (y_{1, 3}) = -1$, not in the image of the inclusion $\iota$. We
 claim that there exist $a_1, a_2 \in \Bk$ and a degree $4$ polynomial
@@ -776,11 +776,11 @@ First, note that $x_1, x_2, y_{1, 3}$ generate all of $R_L$ from the
 Generalized Max Noether Theorem for genus zero curves from Voight
 and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}. That is, the maps
 \begin{align*}
-	H^0(\sx, 3L) \otimes H^0(\sx, (d - 3)L) \rightarrow H^0(\sx, dL)
+	H^0(\sx, 3L) \otimes H^0(\sx, (k - 3)L) \rightarrow H^0(\sx, k\halfcan)
 \end{align*}
 
 \noindent
-are surjective for $d \geq 4$. A relation of the form $a_1 x_1 y_{1,
+are surjective for $k \geq 4$. A relation of the form $a_1 x_1 y_{1,
 3} + a_2 x_2 y_{1, 3} + f(x_1, x_2) = 0$ must exist because $h^0(\sx,
 4L) - h^0(\sx, 4L_X) = 1,$ but $x_1 y_{1, 3}$ and $x_2 y_{1, 3}$
 define two linearly independent elements with nontrivial image in
@@ -806,58 +806,58 @@ isomorphism.
 
 \begin{example}
 \label{eg:base-0-377}
-Let $(\sx',0, \halfcan')$ be a log spin curve with signature $\sigma =
+Let $(\sx', 0, \halfcan')$ be a log spin curve with signature $\sigma =
 (0; 3, 7, 7; 0)$ and $\halfcan' \sim -\infty + \frac{1}{3} P_1 +
-\frac{3}{7} P_2 + \frac{3}{7} P_3,$ where $P_1,P_2,$ and $P_3$ are
+\frac{3}{7} P_2 + \frac{3}{7} P_3,$ where $P_1, P_2,$ and $P_3$ are
 distinct points. In this example, we will exhibit a minimal
-presentation for $R' = R(\sx',0, \halfcan')$ and show the triple
+presentation for $R' = R(\sx', 0, \halfcan')$ and show the triple
 $(\sigma, \halfcan' + \frac{3}{7} P_3, J = \{2, 3\},$) is admissible.
-Notice that $\deg \lfloor d K_{\sx'} \rfloor= -d + \lfloor \frac{d}{3}
-\rfloor + 2 \lfloor \frac{3d}{7} \rfloor$.
+Notice that $\deg \lfloor k K_{\sx'} \rfloor= -k + \lfloor \frac{k}{3}
+\rfloor + 2 \lfloor \frac{3k}{7} \rfloor$.
 
 By the Generalized Max Noether Theorem for genus 0 curves (see Voight
 and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
 \begin{align}
 \label{eqn:noether-377}
 	H^0 (\sx', \lfloor 21 \cdot \halfcan' \rfloor) \otimes H^0 (\sx', \lfloor
-	(d - 21) \halfcan' \rfloor) \twoheadrightarrow H^0 (\sx', \lfloor
-	d \halfcan' \rfloor)
+	(k - 21) \halfcan' \rfloor) \twoheadrightarrow H^0 (\sx', \lfloor
+	k \halfcan' \rfloor)
 \end{align}
 
 \noindent
-is surjective whenever $\deg (\lfloor (d - 21) K_{\sx'} \rfloor)
+is surjective whenever $\deg (\lfloor (k - 21) \halfcan' \rfloor)
 \geq 0$. It is fairly easy to see, by use of Riemann--Roch, that
 the saturation of $\halfcan'$ is $5$ (see Definition ~\ref{defn:sat}.
-Then the map in ~\eqref{eqn:noether-377} is surjective when $d \geq
+Then the map in ~\eqref{eqn:noether-377} is surjective when $k \geq
 21 + s = 26$ (i.e.,~ $R'$ is generated up to degree 25).
 
-For $d = 0, 1, 2, \ldots$ we have
+For $k = 0, 1, 2, \ldots$ we have
 \[
-	\dim_\Bk H^0 (\sx', d K_{\sx'}) = 1, 0, 0, 1, 0, 1, 1, 2, 1, 1, 2, 1, 3, 2, 3, \ldots
+	\dim_\Bk H^0 (\sx', k \halfcan') = 1, 0, 0, 1, 0, 1, 1, 2, 1, 1, 2, 1, 3, 2, 3, \ldots
 \]
 
 \noindent
 so $R'$ must have some generators $x_{3, 1}, x_{5, 1}, x_{7, 1},
-x_{7, 2}$ with $x_{i, j} \in H^0(\sx', i K_{\sx'})$.
+x_{7, 2}$ with $x_{i, j} \in H^0(\sx', i \halfcan')$.
 
 To show that these generate all of $R'$, we need to show that all
-$H^0 (\sx', d \halfcan')$ are generated by lower degrees for $d = 6$
-and $7 < d \leq 25$. Note that we can again use Max Noether's theorem
+$H^0 (\sx', k \halfcan')$ are generated by lower degrees for $k = 6$
+and $7 < k \leq 25$. Note that we can again use Max Noether's theorem
 (taking saturation into account) to see that
 
 \begin{align*}
 	&H^0 (\sx', \lfloor 3 \halfcan' \rfloor) \otimes H^0 (\sx', \lfloor
-	(d - 3) \halfcan' \rfloor) \rightarrow H^0 (\sx', \lfloor
-	d \halfcan' \rfloor) \text{ if } d \geq 12 \text{ and } 3 \nmid d \\
+	(k - 3) \halfcan' \rfloor) \rightarrow H^0 (\sx', \lfloor
+	k \halfcan' \rfloor) \text{ if } k \geq 12 \text{ and } 3 \nmid k \\
 	&H^0 (\sx', \lfloor 7 \halfcan' \rfloor) \otimes H^0 (\sx', \lfloor
-	(d - 7) \halfcan' \rfloor) \rightarrow H^0 (\sx', \lfloor
-	d \halfcan' \rfloor) \text{ if } d \geq 6, d \not\equiv 0, 5
+	(k - 7) \halfcan' \rfloor) \rightarrow H^0 (\sx', \lfloor
+	k \halfcan' \rfloor) \text{ if } k \geq 6, k \not\equiv 0, 5
 	\bmod 7
 \end{align*}
 
 \noindent
 are surjective. This reduces the problem to checking generation
-in the degrees of the exceptions $d \in \{8, 12, 21\}$.
+in the degrees of the exceptions $k \in \{8, 12, 21\}$.
 Checking these remaining cases via pole degree considerations shows
 that these degrees are also generated in lower degrees. Thus, $R'$
 is generated in degrees $\{3, 5, 7, 7\}$.
@@ -870,7 +870,7 @@ the presentation given above with $y _{2, e_2'} := x_{7, 1}$ and
 $y_{3, e_3'} :=  x_{7, 2}$. We see that it immediately satisfies
 \ref{custom:Ad-i} of Definition ~\ref{defn:admissible}. Next we check \ref{custom:Ad-ii} We may also choose
 pole orders of the generators such that $y_{i, e_i'}$ is the only
-generator lying on the line $-ord_{P_i}(z) = \deg z \frac{3d}{7}$
+generator lying on the line $-ord_{P_i}(z) = \deg z \frac{3k}{7}$
 in the $(\deg z, -ord_{P_i}(z))$  lattice and with the other
 generators lying below the line as seen in Figure ~\ref{fig:377}
 (e.g. the pole orders $(-ord_{P_1}(z)$, $-ord_{P_2}(z)$, $-ord_{P_3}
@@ -884,9 +884,9 @@ $x_{7, 2}$ respectively).
 \label{fig:377}
 \end{figure}
 
-Also note that $e_j' + 2d = 7 + 2d \nmid 2 = e_i - e_j'$ for all
-$i, j \in J = \{2, 3\}$ such that $j \neq i$ and for all $d \geq
-0$. Thus, $s_{\sigma, J}(i, d) = \emptyset$ for each $i \in J$.
+Also note that $e_j' + 2k = 7 + 2k \nmid 2 = e_i - e_j'$ for all
+$i, j \in J = \{2, 3\}$ such that $j \neq i$ and for all $k \geq
+0$. Thus, $s_{\sigma, J}(i, k) = \emptyset$ for each $i \in J$.
 Furthermore, $\deg \lfloor e_i \halfcan \rfloor = \deg \lfloor 9
 \halfcan \rfloor = 2 \lfloor \frac{4 \cdot 9}{9} \rfloor + \lfloor
 \frac{9}{3} \rfloor - 9 = 2$, so \ref{custom:Ad-iii} is satisfied and
@@ -931,21 +931,21 @@ ideal of $I$ is
 since $a_1$ and $b_1$ are nonzero.
 
 To demonstrate that these two relations generate all 
-relations, we show that $\dim_\Bk (R')_d = \dim_\Bk
-(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \initial(I))_d$ for 
-all degrees $d \geq 0$. In particular, 
+relations, we show that $\dim_\Bk (R')_k = \dim_\Bk
+(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \initial(I))_k$ for 
+all degrees $k \geq 0$. In particular, 
 
 \begin{align*}
-	\dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I\right)_d &=
-	\dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]	/ \initial(I)\right)_d \\
+	\dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I\right)_k &=
+	\dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]	/ \initial(I)\right)_k \\
 	&= \dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle
-	x_{7, 2}^2, x_{5, 1}^2 \rangle \right)_d
+	x_{7, 2}^2, x_{5, 1}^2 \rangle \right)_k
 \end{align*}
 \noindent
-for all $d \geq 0$. But the fact $\dim_\Bk (R')_d = \dim_\Bk \left(\Bk[x_{7, 2},
+for all $k \geq 0$. But the fact $\dim_\Bk (R')_k = \dim_\Bk \left(\Bk[x_{7, 2},
 x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle x_{7, 2}^2, x_{5, 1}^2
-\rangle\right)_d$ can be checked by looking at the $\Bk$-basis at each degree
-$d$.
+\rangle\right)_k$ can be checked by looking at the $\Bk$-basis at each degree
+$k$.
 
 Therefore, the canonical ring $R'$ has presentation $R' =
 \Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I$ with
@@ -979,7 +979,7 @@ We next check $(\sx', \halfcan', \{1,2\})$ is admissible. We have two generators
 \end{cases}.
 \]
 Since $0, \frac{1}{4} < \frac{1}{3}$, \ref{custom:Ad-ii} holds.
-Finally, to check \ref{custom:Ad-iii}, note that $\max_{d \geq 0}S_{\sigma,J}(i,d) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = (2 g - 1) + 0$.
+Finally, to check \ref{custom:Ad-iii}, note that $\max_{k \geq 0}S_{\sigma,J}(i,k) = 0.$ Therefore, $\deg \lfloor 5L \rfloor  = 2 > 1 = (2 g - 1) + 0$.
 \end{example}
 
 \begin{example}
@@ -1227,12 +1227,12 @@ We next prove the first of three lemmas used to inductively add points.
 \begin{lem}
 \label{lem:sat-1}
 Let $X$ be a genus $g$ curve and $\halfcan' \in \BQ \otimes \di X$
-satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $d\halfcan'$ for all $d \in \BN$, meaning we can choose generators $u, x_1, \ldots, x_m$ of $R_{\halfcan'}$ in degree at most $\tau$ for some $\tau\in \BN$, with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
+satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $k\halfcan'$ for all $k \in \BN$, meaning we can choose generators $u, x_1, \ldots, x_m$ of $R_{\halfcan'}$ in degree at most $\tau$ for some $\tau\in \BN$, with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
 for some $\alpha, \beta \in \BN$ such that
 \begin{align}
 \label{eqn:deg1-sat-ind}
-	h^0(X, \lfloor{d\halfcan}\rfloor) &= h^0(X, \lfloor d\halfcan'
-	\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor &&\text{ for all } d \in \mathbb{
+	h^0(X, \lfloor k \halfcan \rfloor) &= h^0(X, \lfloor k \halfcan'
+	\rfloor) + \left\lfloor k \frac{\alpha} {\beta} \right \rfloor &&\text{ for all } k \in \mathbb{
 	N}.
 \end{align}
 Let
@@ -1244,7 +1244,7 @@ Then,
 
 \begin{enumerate}
 \item[(a)] $R_{\halfcan}$ is generated over $R_{\halfcan'}$ by 
-	elements $y_1, \ldots, y_n$ such that $\deg(y_i) = d_i$ and $-\ord_P
+	elements $y_1, \ldots, y_n$ such that $\deg(y_i) = k_i$ and $-\ord_P
 	^{L'}(y_i) = c_i$.
 
 \item[(b)] Choose an ordering $\prec$ on $\Bk[u, x_1, \ldots, x_m]$ such that
@@ -1288,11 +1288,11 @@ Equation ~\ref{eqn:deg1-sat-ind}, for any $d
 \in \BN$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
-	h^0 (X, d \halfcan ) = h^0(X, d\halfcan') + \lfloor d\frac{\alpha}{\beta}\rfloor.
+	h^0 (X, d \halfcan ) = h^0(X, d \halfcan') + \lfloor d \frac{\alpha}{\beta}\rfloor.
 \]
 
 \noindent
-Thus, there exist rational sections $t_i$ of $\sco(\lfloor d\halfcan \rfloor)$ with $\ord_P^{L'}(t_i) = i$
+Thus, there exist rational sections $t_i$ of $\sco(\lfloor k \halfcan \rfloor)$ with $\ord_P^{L'}(t_i) = i$
 for any $i \in \{0, \ldots, \lfloor d \frac{\alpha}{
 \beta} \rfloor \}$. We will the use positive best lower approximations to
 construct the generators $y_1, \ldots, y_n$ as described in the lemma's statement.
@@ -1328,7 +1328,7 @@ lower degrees.
 Choose some $y_i \in(R_{
 \halfcan})_{d_i}$ with $-\ord_{P}^{L'}(y_i)=c_i$.
 
-Suppose $c,d \in \BN$ so that $d\le \beta,$  $\frac{c}{d} < \frac{\alpha}{
+Suppose $c,d \in \BN$ so that $k \le \beta$,  $\frac{c}{d} < \frac{\alpha}{
 \beta},$ and $\frac{c}{d}$ is not a best lower approximation of $\frac{\alpha}{\beta}$. Choose a
 best lower approximation $\frac{c_i}{d_i}$ with $c_i$ maximal such that $d_i< d$.  This implies $\frac{c_i}{d_i}\ge \frac{c}{d},$ so 
 %  The argument goes $c_i d \ge c d_i$
@@ -1359,13 +1359,13 @@ Since each $y_j$ has pole order $c_j$, this recursive construction ensures that
 \]
 Then define 
 \begin{equation}\label{eqn:sat-1-defining-S}
-	S = \cup_{i=1}^{\infty} S_i.  
+	S = \bigcup_{i=1}^{\infty} S_i.  
 \end{equation}
 Note that $S_0$ is not part of this union and in fact $S\cap S_0 = \emptyset$ by pole order considerations.
 
 By equation \ref{eqn:deg1-sat-ind} for $d \in \BN$,
 \[
-	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X, \lfloor d\halfcan'
+	h^0(X, \lfloor d \halfcan \rfloor) = h^0(X, \lfloor d \halfcan'
 		\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor,
 \] 
 so $S$ contains elements in degree $d \in \BN$ with each pole order in $\{1 \ldots, \lfloor d\frac{\alpha}{\beta}\rfloor\}$.  Thus, by dimension counting, $S$ forms a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a).
@@ -1380,7 +1380,7 @@ We check that $S$, $T$, and $\prec$ meet the hypothesis of Lemma \ref{lem:relati
 
 It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generators_induction}. To do this, suppose $f\in \Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ is a monomial not contained in $\Bk[u, x_1, \ldots, x_m]$, meaning there is some $j$ such that $y_j|f$.  Further suppose $f\not\in \langle V \rangle$, meaning that for each $i\in \{1, \ldots m\}$, $x_iy_j \nmid f$. Since $y_j \mid f$ but $x_iy_j \nmid f$, we obtain $x_i\nmid f$.  Therefore, $f\in \Bk[u, y_1, \ldots, y_n]$.  We note that $S$ generates $y_j \cdot (\Bk[u,y_1, \ldots, y_n])$ as a $\Bk$-algebra.  That is, all monomials of $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \[
-	\Bk[u, x_1, \ldots, x_m] \cup V \cup \left(\cup_{i=1}^n y_i \cdot \Bk[u, y_1, \ldots, y_n]\right). 
+	\Bk[u, x_1, \ldots, x_m] \cup V \cup \left(\bigcup_{i=1}^n y_i \cdot \Bk[u, y_1, \ldots, y_n]\right). 
 \]
 Notice that $S$ generates the ideal $(y_1, \ldots, y_n)$ considered as an ideal of the subring $\Bk[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$. Let $\halfcan$ be maximal such that $a_l\ne 0$.
 Fix $i \in \{1, \ldots, n\}$. If $y_i \cdot f \notin S$, define
@@ -1406,7 +1406,7 @@ Next, suppose we choose $\omega_1, \ldots, \omega_h$ such that $\omega_j\le \gam
 Since for each $r<h$, we have $\prod_{j=1}^r y_{j}^{\gamma_j}\in S$ meaning that $\sum_{j=1}^r \gamma_j c_j < c_{r+1}$, condition \ref{custom:sat-1-***} holds for $\prod_{j=1}^h y_j^{\gamma_j}$.  
 Thus $\prod_{j=1}^h y_j^{\gamma_j}\in U_{h}$.
 
-Since the ideal in $\Bk[u, y_1, \ldots, y_n]$ generated by is $S$ is $(y_1, \ldots, y_n) \cdot \Bk[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\cup_{i=1}^n y_i \cdot \Bk[u, y_1, \ldots, y_n]-S$, we have shown that all monomials of $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
+Since the ideal in $\Bk[u, y_1, \ldots, y_n]$ generated by is $S$ is $(y_1, \ldots, y_n) \cdot \Bk[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\bigcup_{i=1}^n y_i \cdot \Bk[u, y_1, \ldots, y_n]-S$, we have shown that all monomials of $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \begin{align*}
 				& \Bk[u, x_1, \ldots, x_m] \cup \langle V \rangle \cup S \cup \left\langle \bigcup_{i=1}^{n-1} U_i \right\rangle \\
 	\subseteq \; 	& S \cup \langle T\rangle \cup \initial(I') \Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; \Bk[u, x_1, \ldots, x_m].
@@ -1751,7 +1751,7 @@ we can argue similarly to Lemma \ref{lem:sat-1} that $S$ and $T$ along with $\pr
 %Since adding $P$ to $\halfcan'$, reduces saturation from 2 to 1, $h^0(X, \lfloor L \rfloor)= 1$. 
 %Choose any $y_1\in H^0(X, \lfloor L\rfloor)$; we know by saturation arguments that $-
 %\ord_P(y_1)= 1$. Furthermore, since $\delta> 0$, we use Riemann-Roch to deduce that for 
-%all $d> 1$ $h^0(X, \lfloor dL\rfloor)=h^0(dL') +d$, so $(R_\halfcan)_d$ is a $d$ dimension $k
+%all $d> 1$ $h^0(X, \lfloor k\halfcan\rfloor)=h^0(k\halfcan') +d$, so $(R_\halfcan)_d$ is a $d$ dimension $k
 %$-vector space over $(R_{\halfcan'})_d$. In particular, this means we can generically 
 %choose an element $y_2\in H^0(X, \lfloor 2L\rfloor)$ linearly independent from $y_1^2$. By 
 %dimension counting, we see that 
@@ -2129,7 +2129,7 @@ $$R_i = \begin{cases}
 
 \noindent
 To prove (b), it suffices to show that elements of the form $y_{i, e_
-i'}^ay_{i, e_i}^b$ with $a \geq 0, b > 0$ form a $\Bk$-basis for $R_{i}$ over $R_{i-1}$. These elements do not lie in $R_{i - 1}$ because the pole order of $y_{i, e_i'}^ay_{i,e_i}^b$ at $Q_i$ is larger than that of any element in the $d^{th}$ component of $R_{i - 1}$. 
+i'}^ay_{i, e_i}^b$ with $a \geq 0, b > 0$ form a $\Bk$-basis for $R_{i}$ over $R_{i-1}$. These elements do not lie in $R_{i - 1}$ because the pole order of $y_{i, e_i'}^ay_{i,e_i}^b$ at $Q_i$ is larger than that of any element in the $k^{th}$ component of $R_{i - 1}$. 
 Additionally, these elements are linearly independent amongst themselves because of
 injectivity of the linear map
 
@@ -2224,8 +2224,8 @@ To check (d), we show \ref{custom:Ad-i}, \ref{custom:Ad-ii}, and \ref{custom:Ad-
 i, e_i}$ as the generators in degree $e_i$. Next, \ref{custom:Ad-ii} is
 strictly monotonic in the $e_i$ and hence also holds for $(\sx, J)$.
 Finally, if \ref{custom:Ad-iii} holds for $e$ then it holds for $e + 2$ by
-definition. This is where we use that \ref{custom:Ad-iii} holds for $d > 0$
-and not just for $d = 0$.
+definition. This is where we use that \ref{custom:Ad-iii} holds for $k > 0$
+and not just for $k = 0$.
 \end{proof}
 
 \begin{cor}
@@ -2386,10 +2386,10 @@ by using the basepoint-free pencil trick to show that if a relation lies in a su
 Let $(X, \Delta, L)$ be a log spin curve of signature $(g; -; \delta
 )$ with $g \geq 2$ and $\Delta > 0.$ Choose generators $x_1, \ldots
 , x_n$ of $R_\halfcan$ so that we obtain a surjection $\phi: \Bk[x_1, \ldots
-, x_n] \twoheadrightarrow R_\halfcan$ with kernel $I_\halfcan$. Let $I_{\halfcan, d}$ be
-the $d^\text{th}$ graded piece of $I_\halfcan$ and define
+, x_n] \twoheadrightarrow R_\halfcan$ with kernel $I_\halfcan$. Let $I_{\halfcan, k}$ be
+the $k^\text{th}$ graded piece of $I_\halfcan$ and define
 \[
-	J_{\halfcan,d} = \sum_{j = 1}^{d- 1}\Bk[x_1, \ldots, x_n]_j \cdot I_{\halfcan,d-j}.
+	J_{\halfcan,k} = \sum_{j = 1}^{k - 1}\Bk[x_1, \ldots, x_n]_j \cdot I_{\halfcan,k-j}.
 \]
 \end{defn}
 
@@ -2403,12 +2403,12 @@ that we obtain a surjection $\phi: \Bk[x_1, \ldots, x_n]
 \ldots, x_n]_2$ be two elements so that $\: \newspan(\phi(s_1), \phi(s_2))
 = V \subseteq H^0(X, 2\halfcan)$ is basepoint-free. For any $f \in
 \Bk[x_1, \ldots, x_n]$ such that $\deg f \geq 11,$ there exist $g, h \in
-\Bk[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h \equiv f \bmod J_{\halfcan, d}.$
+\Bk[x_1, \ldots, x_n]_{k - 2}$ so that $s_1 g + s_2 h \equiv f \bmod J_{\halfcan, k}.$
 \end{lem}
 \begin{proof}
 % Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1), \phi(s_2) \in H^0(2L)$ generate a base point free pencil $V = k \phi(s_1) \oplus k \phi(s_2)\subseteq H^0(X,2L)$.
-By Lemma ~\ref{lem:generation-5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Therefore, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in \Bk[x_1, \ldots, x_n]_{d-\deg x_i}$.
-We next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in \Bk[x_1, \ldots, x_n]_{d - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{\halfcan, \deg a_i}.$ 
+By Lemma ~\ref{lem:generation-5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Therefore, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in \Bk[x_1, \ldots, x_n]_{k-\deg x_i}$.
+We next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in \Bk[x_1, \ldots, x_n]_{k - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{\halfcan, \deg a_i}.$ 
 
 By Lemma ~\ref{lem:generation-5},
 \begin{align*}
@@ -2424,7 +2424,7 @@ $$a_i \equiv s_1 g_i + s_2 h_i \bmod I_{\halfcan, \deg a_i},$$ as claimed.
 Finally, we may then take $g = \sum_{i}^{}g_i x_i, \: h = \sum_{i}^{}h_i x_i,$ so that 
 \begin{align*}
 	f &\equiv \sum_{i}^{}a_i x_i \equiv \sum_{i}^{}(s_1g_i + s_2h_i)x_i \equiv s_1 \left( \sum_{i}^{}g_i x_i \right) + s_2 \left( \sum_{i}^{}h_i x_i \right) \\
-	&\equiv s_1 g + s_2 h \bmod J_{L,d}.
+	&\equiv s_1 g + s_2 h \bmod J_{L,k}.
 \end{align*}
 \end{proof}
 
@@ -2436,9 +2436,9 @@ degree at most degree at most $10$.
 \end{prop}
 \begin{proof}
 Suppose $f \in I_\halfcan$ with $\deg f \geq 11$. To complete the proof,
-it suffices to show $f \in I_{\halfcan,d}'$. By Lemma
+it suffices to show $f \in I_{\halfcan,k}'$. By Lemma
 ~\ref{lem:reducing-degree}, this is the same as checking $s_1 g + s_2 h \in
-I_{\halfcan, d}'$ where $\phi(s_ 1), \phi(s_2) \in H^0(X, 2L)$ are two sections
+I_{\halfcan, k}'$ where $\phi(s_ 1), \phi(s_2) \in H^0(X, 2L)$ are two sections
 so that $\newspan(\phi(s_ 1), \phi(s_2)) = V \subseteq H^0(K)$ is
 basepoint-free. Consider the map
 
@@ -2454,11 +2454,11 @@ free pencil trick, as shown in the proof of \cite[Lemma 2.6]
 so that $\phi(\rho) \in H^0((\deg f - 4)L)$ satisfies $\phi(g) =
 \phi(s_2) \phi(\rho)$ and $\phi(h) = -\phi(s_1)\phi(\rho)$. 
 Therefore,
-$g \equiv s_2 \rho \bmod I_{\halfcan, d-2}$ and $h \equiv - s_1 \rho \bmod
-I_{\halfcan, d - 2}$. Hence,
+$g \equiv s_2 \rho \bmod I_{\halfcan, k-2}$ and $h \equiv - s_1 \rho \bmod
+I_{\halfcan, k - 2}$. Hence,
 \begin{align*}
 	s_1g + s_2h \equiv s_1(s_2\rho) + s_2(-s_1 \rho) \equiv 0 \bmod J_
-{L,d}.
+{L,k}.
 \end{align*}
 \end{proof}
 
@@ -2505,7 +2505,7 @@ with signature $(g; e_1, \ldots, e_r; \delta)$. Then the
 log spin canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d L )
+	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(\sx, k L )
 \end{align*}
 
 \noindent
@@ -2650,7 +2650,7 @@ We now have all the tools necessary to prove our main theorem, ~\ref{thm:main} i
 Let $(\sx, \Delta, \halfcan)$ log spin curve so that $\sx$ has signature $\sigma = (1; e_1, \ldots, e_r; \delta)$.
 If $g = 1$, then the log spin canonical ring
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, d L)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{k = 0}^\infty H^0(\sx, k L)
 \end{align*}
 
 \noindent
@@ -2918,7 +2918,7 @@ verify these is similar to that in Example
 Furthermore, each case always satisfies \ref{custom:Ad-iii} as demonstrated in table ~\ref{table:g-0-base-cases-admissibility}.
 Notice that the $e_i$ and $\{e_j' : j \neq i\}$ are equivalent
 for any choice of $i \in J$ for these cases, so $\deg \lfloor e_i \halfcan
-\rfloor$ and $\max_{d \geq 0} \#S_{(\sigma, J)}(i)$ are
+\rfloor$ and $\max_{k \geq 0} \#S_{(\sigma, J)}(i)$ are
 independent of the choice of $i$.
 
 \begin{table}
@@ -2926,7 +2926,7 @@ independent of the choice of $i$.
 	{| c | c | c || c | c |}
 	\hline
 	Case & Signature $\sigma$ & $J$ & $\deg \lfloor e_i L \rfloor$ &
-	$\max_{d \geq 0} \#S_{(\sigma, J)}(i)$ \\
+	$\max_{k \geq 0} \#S_{(\sigma, J)}(i)$ \\
 	\hline
 	\hline
 
@@ -3045,7 +3045,7 @@ so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
 Then, the log spin canonical ring
 
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d = 0}^\infty H^0(\sx, L)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{k = 0}^\infty H^0(\sx, L)
 \end{align*}
 
 \noindent
@@ -3082,7 +3082,7 @@ We get the following three cases, depending on the value of $r$:
 {\sf Case 1: $r < 3$}
 
 If $r < 3$, then $\deg 
-\lfloor d \halfcan \rfloor < 0$ for all $d \geq 0$ so we have the
+\lfloor k \halfcan \rfloor < 0$ for all $k \geq 0$ so we have the
 trivial case where $R(\sx, \Delta, \halfcan) = \Bk$.
 
 \vskip.1in
