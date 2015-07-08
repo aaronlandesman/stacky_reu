@@ -438,7 +438,7 @@ Let $\sx$ be a stacky curve over $\Bk$ with coarse space $X$ of genus $g$ and st
 P_r$ with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$.
 Then, we notate
 \[
-	\di \sx = \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
+	\di \sx := \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
 	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
 	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
@@ -479,7 +479,7 @@ We define $H^0$ of a stacky divisor as follows.
 \begin{defn}
 \label{defn:h0-stacky}
 Recall the standard notation 
-$$\sco(D) = \{f \in \Bk(X)^\times : \di f + D \geq 0 \}.$$
+$$\sco(D) := \{f \in \Bk(X)^\times : \di f + D \geq 0 \}.$$
 Let $\sx$ be a stacky curve with coarse space $X$.
 If $D \in \di \sx$ is a Weil divisor, then we define
 \begin{align*}
@@ -500,7 +500,7 @@ Although Definition ~\ref{defn:h0-stacky} may seem fairly ad hoc, it is naturall
 \label{defn:log-spin-canonical-ring}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(\sx, k \halfcan).
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(\sx, k \halfcan).
 \]
 \end{defn}
 
@@ -510,7 +510,7 @@ represent $R(\sx, \Delta, \halfcan)$.
 
 \begin{rem}
 \label{rem:odd-denom}
-Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that
+Suppose $(\sx, \Delta, L)$ is a log spin curve. Note that $\halfcan$ is of the form
 \[
 	\halfcan = \sum_{i = 1}^{r} \subhalf{e_i} P_i + \sum_{i = 1}^{s} a_i Q_i
 \]
@@ -531,27 +531,31 @@ In particular, we shall often use $\deg \Delta \neq 1$.
 \end{rem}
 
 \ssec{Saturation}
-
-We define the notion of the saturation of a divisor, as can be found in
-Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
+We define the notion of the saturation of a divisor, as can be
+found in Voight and Zureick-Brown ~\cite[Section 7.2]{vzb:stacky}.
+The classification of the saturations of log spin canonical
+divisors are used in the proof of the main theorem and the various
+lemmas in Section ~\ref{sec:induction}.
 
 \begin{defn}
 Let $D$ be a divisor on $\sx$. The \textbf{effective monoid} of $D$
 is the monoid
 \[
-	\Eff(D) = \{k \in \BZ_{\geq 0} : \deg \lfloor kD \rfloor \geq 0 \}.
+	\Eff(D) := \{k \in \BZ_{\geq 0} : \deg \lfloor kD \rfloor \geq 0 \}.
 \]
 \end{defn}
 
 \begin{defn}
 \label{defn:sat}
-The \textbf{saturation} of a monoid $M \subseteq \BZ_{\geq 0}$,
+The \textbf{saturation of a monoid} $M \subseteq \BZ_{\geq 0}$,
 denoted $\sat(M)$, is the smallest integer $s$ such that $M
 \supseteq \BZ_{\geq s}$, if such an integer exists.
 \end{defn}
 
 \begin{rem}
-For $D \in \di \sx$, we will often call $\sat(\Eff(D))$ the saturation of $D.$
+For $D \in \di \sx$, we will often call $\sat(\Eff(D))$ the
+\textbf{saturation of a divisor} $D$. For examples,
+see Subsection ~\ref{ssec:g-0-saturation}.
 \end{rem}
 
 \ssec{Monomial Ordering}
@@ -2747,11 +2751,11 @@ follows immediately by repeatedly applying Lemma ~\ref{lem:sat-1}
 to add the necessary stacky points. On the other hand, the proof
 when $\delta = 0$ is more involved. We dedicate the remainder of
 this section to that case in the following steps: characterizing
-saturations points (Subsection ~\ref{ssec:g-0_saturation}),
-describing base cases (Subsection ~\ref{ssec:g-0_base}), and
+saturations (Subsection ~\ref{ssec:g-0-saturation}),
+describing base cases (Subsection ~\ref{ssec:g-0-base}), and
 presenting exceptional cases (Subsection ~\ref{ssec:g-0-exceptional})
 \footnote{Several computations used to generate the tables in
-Subsection ~\ref{ssec:g-0_base} and Subsection
+Subsection ~\ref{ssec:g-0-base} and Subsection
 ~\ref{ssec:g-0-exceptional} were done using a modified version of
 the MAGMA code given in the work of O'Dorney \cite{dorney:canonical}.}
 Finally, we apply inductive processes using Lemma ~\ref{lem:sat-3}
@@ -2766,14 +2770,16 @@ throughout this section.
 \end{rem}
 
 \ssec{Saturation}
-\label{ssec:g-0_saturation}
-First, we present the saturations, as defined in Definition
-~\ref{defn:sat}, of the log spin canonical divisor for
-all cases where $g = 0$ and $\delta = 0$. The saturations can be computed using Riemann-Roch.
-By classifying the saturations of all signatures, we can determine
-the base cases on which we can apply inductive lemmas from
-Section ~\ref{sec:induction}. Exceptional cases are listed first
-and generic cases follow.
+\label{ssec:g-0-saturation}
+First, we present the saturations of the log spin canonical divisor
+for all cases where $g = 0$ and $\delta = 0$ (recall Definition
+~\ref{defn:sat} in Table ~\ref{table:g-0-sat}. The saturations can
+be computed using Riemann-Roch. By classifying the saturations of
+all signatures, we can determine the base cases on which we can
+apply inductive lemmas from Section ~\ref{sec:induction}. Note that
+the saturations of log spin canonical divisors only depend on the
+signature here. In Table ~\ref{table:g-0-sat}, exceptional cases
+are listed first and generic cases follow.
 
 \begin{table}
 \begin{tabular}
@@ -2812,7 +2818,7 @@ and generic cases follow.
 \end{table}
 
 \ssec{Base Cases}
-\label{ssec:g-0_base}
+\label{ssec:g-0-base}
 In order to apply Lemma ~\ref{lem:sat-3} and Lemma
 ~\ref{lem:raise-stacky-order} when $\delta = 0$,
 we need to determine appropriate base cases that will
@@ -2820,14 +2826,15 @@ cover all but finitely many signatures by induction.
 Here we provide such base cases and demonstrate that
 they satisfy all of the necessary conditions of
 Lemma ~\ref{lem:sat-3} and Lemma ~\ref{lem:raise-stacky-order}
-(e.g. admissibility as defined in Definition \ref{defn:admissible}). We also show that that the associated spin
+(e.g. admissibility as defined in Definition \ref{defn:admissible}).
+We also show that that the associated log spin
 canonical rings are generated in degree at most $e := \max(5, e_1,
 \ldots, e_r)$ with relations generated in degree at most $2e$.
 
 \begin{lem}
 \label{lem:g-0-admissible-cases}
 Let $(\sx', \Delta, \halfcan')$ be a log spin curve with signature
-$\sigma = (0; e_1, \ldots, e_r; 0)$. Then, $R' := R_{\halfcan'}$ is
+$\sigma := (0; e_1, \ldots, e_r; 0)$. Then, $R' := R_{\halfcan'}$ is
 generated by elements of degree at most $e = \max(5 , e_1, \ldots,
 e_r)$ with relations in degree at most $2e$. Furthermore, each of
 the cases in Table ~\ref{table:g-0-base-cases} satisfy the
@@ -3046,13 +3053,13 @@ These cases give all of the exceptions to the $e$ and $2e$ bounds
 on the generator and relation degree. Notice that each of these
 exceptional cases, apart from $(0; 3, 5, 7; 0)$, also has
 exceptional saturation as seen in Table ~\ref{table:g-0-sat}.
-Intuitively, these exceptional saturations can be viewed as ``
-forcing'' generators and relations in higher degrees than expected.
+Intuitively, these exceptional saturations can be viewed as
+``forcing'' generators and relations in higher degrees than expected.
 \end{rem}
 
 \ssec{Main Theorem for Genus Zero}
 \label{ssec:g-0-main}
-Now we can combine the base cases from Subsection \ref{ssec:g-0_base} with the inductive lemmas of Section \ref{sec:induction}.
+Now we can combine the base cases from Subsection \ref{ssec:g-0-base} with the inductive lemmas of Section \ref{sec:induction}.
 
 \begin{thm}
 \label{thm:g-0-main}
@@ -3160,12 +3167,11 @@ In this section, we present several directions for further research.
 		proof of Theorem ~\ref{thm:main} 
 		gives an 
 		explicit procedure for computing the generators and relations of $R_
-		\halfcan$ when the genus of $\sx$ is $0$ or $1$.  When $\sx$ has genus at least 2, Lemmas ~\ref{lem:sat-1} and $\ref{lem:sat-2}$ allow us to explicitly construct a presentation from a presentation of its coarse space $X$.  However, computing a presentation of a general curve $X$ requires nontrivial computation.  This suggests the following Petri-like question:
+		\halfcan$ when the genus of $\sx$ is $0$ or $1$.  When $\sx$ has genus at least 2, Lemmas ~\ref{lem:sat-1} and $\ref{lem:sat-2}$ allow us to explicitly construct a presentation of $R_\halfcan$ from a presentation of $R_{L_X}$ where $X$ is the coarse space $X$.  However, obtaining a presentation for $X$ requires nontrivial computation.  This suggests the following Petri-like question:
 		\begin{question}
 		\label{ques:spin-canonical-petri}
-			Is there a general structure theorem for of a set minimal 
-			generators and minimal relations for $R_\halfcan$, a {\rm(}non-stacky {\rm)} curve $X$ and a spin canonical 
-			divisor $L \in \di X$?
+			Is there a general structure theorem describing a set of minimal 
+			generators and relations of $R_{\halfcan}$ where $(X, \Delta, L))$ is a log spin curve with no stacky points?
 		\end{question}
 		
 \item One direction for further research is to 
