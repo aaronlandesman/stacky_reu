@@ -168,6 +168,9 @@
 
 \maketitle
 
+\todo{Think about John's comment to regrade the ring.}
+\todo{Brian: Don't write out author's name every time.}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
@@ -177,7 +180,7 @@ linear transformations, such that $\Gamma \backslash \BH$ has finite area.
 We consider the graded {\bf ring of modular forms}
 $M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best
 ways to understand the ring of modular forms is to give a
-presentation as a quotient of a polynomial ring.
+presentation as a quotient of a polynomial ring. \todo{Brian: Also, sentence 3 of paragraph 1 of the Introduction is debatable (depends on what is meant by “understand”…); e.g., how do you propose to find generators for $M_1(\Gamma)$ when not known to be 0?}
 %of $M(\Gamma)$ for general Fuchsian groups $\Gamma$. 
 To do so, it is useful to have a bound on the
 degrees in which the generators and relations can occur. In the
@@ -196,7 +199,9 @@ cusps, with associated divisor of cusps $\Delta$.
 In order to find generators and relations for $M(\Gamma)$, we
 translate the seemingly analytic question of understanding the ring
 of modular forms into the algebraic category, using a
-generalization of the GAGA principle. By \cite[Proposition 6.1.5]
+generalization of the GAGA principle.
+\todo{brain: The appeal to stacky GAGA on page 1 sweeps a bit under the rug.  I suppose you noticed (as I just did upon glancing at [14] on the arxiv) that the proof of Prop. 6.1.5 in [14] seems to pass in silence over the removal of the properness hypothesis (which, in the scheme case — no stacks — requires using something like the little Picard theorem or some other device to deal with avoidance of essential singularities).  That is moot for you since only the proper case is relevant for your motivation.  More importantly, since the entire discussion is about spaces of sections of coherent sheaves, one should address stacky GAGA at the level of such $H^0$’s, which is not part of Prop. 6.1.5 in [14], to have adequately treated the motivation.  On line -1 of last paragraph on page 1, should say X is proper and geometrically connected over k.  Note that the proof of Lemma 10.2.1 in [14] gives a thoroughly analytic construction of the line bundle (no ad hoc stuff with divisors), so to link it back to the algebraic case one is using an honest GAGA comparison at the level of categories of coherent sheaves too (with refinement for line bundles).}
+ By \cite[Proposition 6.1.5]
 {vzb:stacky}, there is an equivalence of categories between orbifold
 curves and log stacky curves over $\BC$. Hence, for the remainder
 of the paper, we will work in the algebraic category.
@@ -232,9 +237,9 @@ with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$, we define
 	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
 	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
-
+\todo{Check this takes care of brian's comment 0.}
 Then a {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$
-where $\Delta \in \di X$ is a log divisor and $2\halfcan \sim K_X +
+where $\Delta \in \di X$ is a log divisor and $L \in \di \sx$ satisfies $2\halfcan \sim K_X +
 \Delta + \sum_{i = 1}^{r} \subhalf{e_i} P_i$. The central object of
 study in this paper is the {\bf log spin canonical ring} of $(\sx,
 \Delta, \halfcan),$ notated as
@@ -326,7 +331,7 @@ explicit systems of generators and relations for curves of genus $2
 \begin{rem}
 The explicit construction described in Remark ~\ref{rem:explicit-generators} also reveals that the bounds given in Theorem ~\ref{thm:main} are tight.
 Specifically, in almost all cases, the log spin canonical ring requires a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. 
-Furthermore, there are many infinite families of cases which require a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$.
+Furthermore, there are many infinite families of cases which require a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$. \todo{Explain this in more detail later, as asked by Brian}
 \end{rem}
 
 Combining the main theorem of this paper, Theorem ~\ref{thm:main} with the main theorem from Voight and Zureick-Brown ~\cite
@@ -358,13 +363,15 @@ exceptional cases which are listed and described in Table
 ~\ref{table:g-1-exceptional} for signatures with $g = 1$ and in
 Table ~\ref{table:g-0-exceptional} for signatures with $g = 0$.
 \end{cor}
-
+\todo{Add somewhere that if there is an odd $k$ with nonzero weight, it will generally have to occur in weight 3, according to brian 2.}
 \begin{rem}
 \label{rem:factor-two}
 In the case that $M_k(\Gamma) = 0$ for all odd $k$, the generation bound of $6 \cdot \max(3, e_1, \ldots, e_r)$ and relation
 bound of $12 \cdot \max(3, e_1, \ldots, e_r)$ can be reduced to $2\cdot \max(3,e_1, \ldots, e_r)$ and $4 \cdot \max(3,e_1, \ldots, e_r)$, apart from several small families of cases. See 
 ~\cite[Theorem 9.3.1]{vzb:stacky} and ~\cite[Theorem 8.7.1]{vzb:stacky} for a more precise statement of these bounds in the cases that $g = 0$ and $g > 0$ respectively. Note that we multiply all bounds given in Voight and Zureick-Brown \cite{vzb:stacky} by a factor of two, because our grading convention on $\bigoplus_k M_k(\Gamma)$ differs from that of Voight and Zureick-Brown by a factor of 2.
 \end{rem}
+
+\todo{Add example saying all congruence subgroups with a form of odd weight are generated in weight at most 5 with relations in weight at most 12, (which can be reduced to 10 if the signature is not (0;3,3,3,3;0). Further, if $L_X$ is effective, then generation will be in weight at most 3.}
 
 The remainder of the paper will be primarily devoted to proving
 Theorem ~\ref{thm:main}. The idea of the
@@ -415,7 +422,7 @@ of the stacky points is separable.
 With this stack-theoretic description in mind, the remainder of this paper is primarily phrased using the language
 of schemes.
 \end{rem}
-
+\todo{brain: Although Def. 2.3 makes sense for any $e_i > 1$, is this the “right” notion when char(k) divides some $e_i$?  (The “corresponding” stack would not be tame, for example, so I’d be hesitant to think that various notions building on Def. 2.3 are really appropriate if char(k) divides some $e_i$; of course, the main motivation comes from char. 0….).}
 \begin{defn}
 \label{defn:div-ex}
 Let $\sx$ be a stacky curve over $k$ with coarse space $X$ of genus $g$ and stacky points $P_1, \ldots,
@@ -446,8 +453,8 @@ with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
 
 A pair of a stacky curve and a log divisor $(\sx, \Delta)$ is
 called a \textbf{log stacky curve} and the study of their
-canonical rings is the main focus of the work by Voight and Zureick-
-Brown \cite{vzb:stacky}. For this paper, we consider \textbf{log
+canonical rings is the main focus of the work by Voight and 
+Zureick-Brown \cite{vzb:stacky}. For this paper, we consider \textbf{log
 spin curves} which are triples $(\sx, \Delta, \halfcan)$ where $\sx$
 is a stacky curve, $\Delta$ is a log divisor, and $\halfcan \in \di
 \sx$ satisfies $2 \halfcan \sim K_X + \Delta + \sum_{i = 1}^{r}
@@ -484,8 +491,9 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 
 \noindent
 When the log spin curve is fixed, we usually use $R$ or $R_\halfcan$ to
-represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, D)
-:= H^0(\sx, \sco(D))$ and $h^0(\sx, \sco(D)) := \dim_k H^0(\sx, \sco(D))$.
+represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, \sco(D))
+:= H^0(\sx, D)$ and $h^0(\sx, \sco(D)) := \dim_k H^0(\sx, \sco(D)),$ where $\sco(D) = \{f \in k(X)^\times : \di f + D \geq 0 \}.$
+\todo{Check the above answers brian's objection 4. Also, can $X$ be non-integral, then there might be a problem with the above definition.}
 If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^\text{th}$
 graded component of $R$.
 
@@ -657,7 +665,7 @@ we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, \halfca
 
 \begin{defn}
 \label{def:order-sup}
-If $z$ is a rational section of $\sco(D)$ denote the order of
+Let $D \in \di \sx.$ If $z$ is a rational section of $\sco(D)$ denote the order of
 zero of $z$ at $P$ by $\ord_P^D(z)$.
 \end{defn}
 
@@ -3141,7 +3149,7 @@ In this section, we present several directions for further research.
 		forms. A {\bf modular form 
 		of fractional weight} $\frac{2a}{n}$ on $X(p)$ is a section of a 
 		line bundle $\eta$ so that there exists a line bundle $\gamma$ with
-$\gamma^{\otimes a} \cong \eta$
+$\gamma^{\otimes a} \cong \eta$ \todo{In item 2 of section 8, I see no reason to specifically focus on X(p).  (I am also skeptical that the definition given there is appropriate; for weight k/2 with odd k it seems not the right definition.  I’ve never looked at [2] or [9].)}
  and 
  $\gamma^{\otimes n} \cong \Omega_{X(p)}^1 \otimes \sco_{X(p)}(\Delta)$.
 		For more details on fractional weight modular forms, see Adler and Ramanan \cite[p. 96]{adler:moduli}) and Milnor \cite
