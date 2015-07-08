@@ -466,12 +466,18 @@ We define $H^0$ of a stacky divisor as follows.
 
 \begin{defn}
 \label{defn:h0-stacky}
+Recall the standard notation 
+$$\sco(D) = \{f \in k(X)^\times : \di f + D \geq 0 \}.$$
 Let $\sx$ be a stacky curve with coarse space $X$.
 If $D \in \di \sx$ is a Weil divisor, then we define
+\begin{align*}
+	H^0(\sx, D) &:= H^0(X, \lfloor D \rfloor)\\
+	H^0(\sx, \sco(D)) &:= H^0(\sx, D)\\
+	h^0(\sx, \sco(D)) &:= \dim_k H^0(\sx, \sco(D))
+\end{align*}
+If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^\text{th}$
+graded component of $R$.
 
-\[
-	H^0(\sx, D) := H^0(X, \lfloor D \rfloor).
-\]
 \end{defn}
 
 \begin{rem}
@@ -488,10 +494,7 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 
 \noindent
 When the log spin curve is fixed, we usually use $R$ or $R_\halfcan$ to
-represent $R(\sx, \Delta, \halfcan)$. We also often use $H^0(\sx, \sco(D))
-:= H^0(\sx, D)$ and $h^0(\sx, \sco(D)) := \dim_k H^0(\sx, \sco(D)),$ where $\sco(D) = \{f \in k(X)^\times : \di f + D \geq 0 \}.$
-If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^\text{th}$
-graded component of $R$.
+represent $R(\sx, \Delta, \halfcan)$.
 
 \begin{rem}
 \label{rem:odd-denom}
