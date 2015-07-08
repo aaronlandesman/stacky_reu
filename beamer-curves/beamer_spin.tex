@@ -143,18 +143,33 @@
 
 %%%%%%%%%%%%   Title slide info  %%%%%%%%%%%%%
 \title{Log Spin Canonical Rings}
-\author{Aaron Landesman\inst{1}, Peter Ruhm\inst{2}, Robin Zhang\inst{3}}
- 
-\institute[] % (optional)
-{
-  \inst{1}
-	Harvard University
-	,
-  \inst{2}
-	Stanford University
-  ,
-  \inst{3}
-	Stanford University
+
+%\author[A. Landesman, P. Ruhm, and R. Zhang]{Aaron Landesman\inst{1}, Peter Ruhm\inst{2}, Robin Zhang\inst{3}}
+ %
+%\institute[] % (optional)
+%{
+  %\inst{1}
+	%Harvard University
+	%,
+  %\inst{2}
+	%Stanford University
+  %,
+  %\inst{3}
+	%Stanford University
+%}
+
+\author[A. Landesman, P. Ruhm, and R. Zhang]{
+Aaron Landesman (Harvard University) \\
+Peter Ruhm (Stanford University) \\
+Robin Zhang (Stanford University)
+}
+
+\date[July 17, 2015]{
+Emory University Number Theory REU, Atlanta, GA\\
+\mbox{}\\
+July 17, 2015\\
+\mbox{}\\
+% \tiny{Slides available at \url{http://www.mathcs.emory.edu/~dzb/slides/} }
 }
 
 \begin{document}
@@ -285,7 +300,45 @@ Then, we describe divisors on $\sx$ by
 
 %% frame
 
-\begin{frame}{Divisors}
+\begin{frame}{Fractional Divisors}
+
+%\begin{figure}
+\begin{equation} \label{pic:M-curve} \notag
+% \begin{center}
+  \begin{tikzpicture}
+    \draw[thick] (-3,0) -- (3,0);
+    % \draw plot[only marks,mark=*] coordinates{(0,0)};
+    % \draw plot[only marks,mark=*] coordinates{(-1.5,0)};
+    \filldraw[draw=black,fill=black] (-1.5,0) node [below=2pt]
+    {$\mu_{a_1}$} circle (1.5pt); \filldraw[draw=black,fill=black] (0,0)
+    node [below=2pt] {$\mu_{a_1}$} circle (1.5pt);
+    \filldraw[draw=black,fill=black] (1.5,0) node [below=2pt] {$\mu_{a_1}$}
+    circle (1.5pt);
+    % \filldraw[draw=white,fill=white] (0,-1) node {$\mu_3$} circle
+    % (8pt); don't do this
+  \end{tikzpicture}
+%\end{center}
+\end{equation}
+
+\begin{rem}
+  \begin{enumerate}
+  \item Divisors are now \textbf{fractional}.
+  \item $D = D_0 + \frac{n_{1}}{a_1}P_1 + \frac{n_{2}}{a_2}P_2 + \frac{n_{3}}{a_3}P_{3}$
+  \end{enumerate}
+
+\end{rem}
+
+\begin{block}{Fact}
+\[
+	K_{\sx} = K_X + \sum \frac{e_P-1}{e_P} P
+\]
+\end{block}
+
+\end{frame}
+
+%% frame
+
+\begin{frame}{Log Spin Canonical Divisors}
 We can equip stacky curves with a log divisor $\Delta$.
 
 \begin{defn}
@@ -336,7 +389,7 @@ If $D \in \di \sx$ is a divisor, then we define
 \begin{defn}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan).
+	R(\sx, \Delta, \halfcan) := \bigoplus_{d \geq 0} H^0(\sx, d \halfcan).
 \]
 \end{defn}
 
@@ -345,26 +398,53 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 %%%%%%%%%%%%%%%%%%%%   Main Result Section   %%%%%%%%%%%%%%%%%%%
 \section{Main Result}
 
-\begin{frame}{Previous Work}
-In particular, we bound the degrees of generators and relations of
-a log spin canonical ring. Let $\sx$ be a stacky curve with
-signature $\sigma = (g; e_1, \ldots, e_r; \delta)$. The application
-of O'Dorney's work \cite[Chapter 5]{dorney:canonical} to log spin
-canonical rings gives a weak bound in the case $g = 0$ in terms of
-the least common multiples of the $e_i$'s. In their treatment of
-log spin canonical rings, Voight and Zureick-Brown
-\cite[Corollary 10.4.6]{vzb:stacky} bounded generator degrees by $6
-\cdot \max(e_1, \ldots, e_r)$ and relation degrees by $12 \cdot \max
-(e_1, \ldots, e_ r)$ when $\halfcan$ is effective. Note that the
-bounds we write here differ from those stated in Voight and Zureick-
-Brown \cite[Corollary 10.4.6]{vzb:stacky} by a factor of 2 because
-their grading convention differs from ours by a factor of 2.
+\begin{frame}{Main Problem}
 
-These bounds are far from tight and do not collectively
-cover all cases in all genera. The main theorem of this paper
-gives significantly tighter bounds for the log spin canonical ring
-of any log spin curve.
+\begin{block}{Goal}
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve.
+Bound the degrees of generators and relations of log spin
+canonical rings
+
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan).
+\]
+\end{block}
+
+\begin{example}
+Some example here
+\end{example}
+
 \end{frame}
+
+%% frame
+
+\begin{frame}{Previous Work}
+
+\begin{block}{Setup}
+Let $\sx$ be a stacky curve with
+signature $\sigma = (g; e_1, \ldots, e_r; \delta)$.
+\end{block}
+
+\begin{block}{Theorem (O'Dorney)}
+Put O'Dorney's general theorem in here.
+\end{block}
+
+\begin{block}{Application of O'Dorney's Work}
+The application
+of O'Dorney's work to log spin
+canonical rings gives a weak bound in the case $g = 0$ in terms of
+the least common multiples of the $e_i$'s.
+\end{block}
+
+\begin{block}{Theorem (Voight and Zureick-Brown)}
+Bounded generator degrees by $6
+\cdot \max(e_1, \ldots, e_r)$ and relation degrees by $12 \cdot \max
+(e_1, \ldots, e_ r)$ when $\halfcan$ is effective.
+\end{block}
+
+\end{frame}
+
+%%frame
 
 \begin{frame}{Main Result}
 \begin{alertblock}{Log Spin Canonical Ring Definition}
@@ -401,52 +481,6 @@ Induction on raising stabilizer order.
 
 \end{frame}
 
-%% frame
-
-\begin{frame}{Adding Points}
-Adding points.
-
-\end{frame}
-
-%% frame
-
-\begin{frame}{Raising Stabilizer Order}
-Raising stabilizer order.
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%   Inductive Section   %%%%%%%%%%%%%%%%%%%
-\section{Inductive Lemmas} 
-
-\begin{frame}{Inductive Lemmas}
-Lemmas?
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%   High Genus Section   %%%%%%%%%%%%%%%%%%%
-\section{High Genus} 
-
-\begin{frame}{High Genus}
-Not sure this is necessary.
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%   Genus One Section   %%%%%%%%%%%%%%%%%%%
-\section{Genus One} 
-
-\begin{frame}{Genus One}
-This too.
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%   Genus Zero Section   %%%%%%%%%%%%%%%%%%%
-\section{Genus Zero} 
-
-\begin{frame}{Genus Zero}
-Maybe a short description.
-
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%   Further Research Section   %%%%%%%%%%%%%%%%%%%
 \section{Further Research} 
 
@@ -455,13 +489,23 @@ Some questions.
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%   Acknowledgments Section   %%%%%%%%%%%%%%%%%%%
 
+%frame probably unnecessary
 \begin{frame}
 \frametitle{Acknowledgments}
-Ken Ono!
-David Zureick-Brown!
-Great math atmosphere!
-
+\begin{itemize}
+	\item David Zureick-Brown
+	\item Ken Ono
+	\item Others who offered helpful insight
+	\begin{itemize}
+		\item John Voight
+		\item Nadim Rustom
+		\item Brian Conrad
+		\item Ravi Vakil
+		\item Jorge Sentieiro Neves
+	\end{itemize}
+\end{itemize}
 \end{frame}
 
 \end{document}
