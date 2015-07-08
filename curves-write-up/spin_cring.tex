@@ -89,6 +89,7 @@
 \newcommand\BP{{\mathbb P}}
 \newcommand\BZ{{\mathbb Z}}
 \newcommand\BA{{\mathbb A}}
+\newcommand\Bk{{\Bbbk}}
 
 \newcommand\sco{{\mathscr O}}
 
@@ -202,10 +203,10 @@ generalization of the GAGA principle.
 curves and log stacky curves over $\BC$. Hence, for the remainder
 of the paper, we will work in the algebraic category.
 
-Let $X$ be a smooth proper geometrically-integral algebraic curve of genus $g$ over a field $k$.
+Let $X$ be a smooth proper geometrically-integral algebraic curve of genus $g$ over a field $\Bk$.
 It is well known that the canonical sheaf $\Omega _X,$ with
 associated canonical divisor $K_X$, determines the {\bf canonical
-map } $\pi: X \rightarrow \BP_k^{g - 1}$. Then, the {\bf canonical
+map } $\pi: X \rightarrow \BP_\Bk^{g - 1}$. Then, the {\bf canonical
 ring} is defined to be
 \begin{align*}
 	R(X, K_X) = \bigoplus_{d \geq 0} H^0(X, dK_X),
@@ -290,10 +291,10 @@ of any log spin curve.
 \begin{thm}
 \label{thm:main}
 Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
-field $k$, so that $\sx$ has signature $\sigma = (g; e_1, \ldots,
+field $\Bk$, so that $\sx$ has signature $\sigma = (g; e_1, \ldots,
 e_r; \delta)$.
 
-Then the log spin canonical ring is generated as a $k$-algebra by 
+Then the log spin canonical ring is generated as a $\Bk$-algebra by 
 elements of degree at most $e = \max(5, e_1, \ldots, e_r)$ with
 relations generated in degrees at most $2e$,
 so long as $\sigma$ does not lie in a finite list of exceptional
@@ -305,7 +306,7 @@ signatures with $g = 0$.
 \begin{rem}
 \label{rem:main-weaker-assumptions}
 In fact, the proof of Theorem ~\ref{thm:main} holds with $\Delta$ replaced by an arbitrary effective divisor of the coarse space.
- Furthermore, one may relax the assumption that $k$ is perfect. Instead, one only need assume that the stacky curve
+ Furthermore, one may relax the assumption that $\Bk$ is perfect. Instead, one only need assume that the stacky curve
 is separably rooted, as described further in Remark ~\ref{rem:stack-formalism}.
 \end{rem}
 
@@ -404,7 +405,7 @@ Saint-Donat \cite{saint-donat:proj}, Arbarello--Cornalba--Griffiths--Harris
 {acgh:algebraic-curves}, and Voight--Zureick-Brown \cite[Chapter 2,
 Chapter 5]{vzb:stacky}.
 
-For the remainder of this paper, fix an algebraically closed field $k$.
+For the remainder of this paper, fix an algebraically closed field $\Bk$.
 This is no restriction on generality, as generator and relation degrees are preserved under base change to the algebraic closure.
 
 \ssec{Stacky Curves and Log Spin Canonical Rings}
@@ -413,8 +414,7 @@ We begin by setting up the notation for stacky curves and canonical rings. Where
 
 \begin{defn}
 \label{defn:stacky-curve}
-A \textbf{stacky curve} $\sx$ over an algebraically closed field $k$ is the datum of a smooth proper integral scheme $X$ of dimension $1$, together with a finite number of closed points of $X$, $P_1, \ldots, P_r$, called {\bf stacky points}, with {\bf stabilizer orders} $e_1, \ldots, e_r \in \BZ_{\geq 2}.$ The scheme $X$ associated to a stacky curve $\sx$ is called the {\bf coarse space} of $\sx$.
-
+A \textbf{stacky curve} $\sx$ over an algebraically closed field $\Bk$ is the datum of a smooth proper integral scheme $X$ of dimension $1$, together with a finite number of closed points of $X$, $P_1, \ldots, P_r$, called {\bf stacky points}, with {\bf stabilizer orders} $e_1, \ldots, e_r \in \BZ_{\geq 2}.$ The scheme $X$ associated to a stacky curve $\sx$ is called the {\bf coarse space} of $\sx$.
 \end{defn}
 
 \begin{rem}
@@ -424,7 +424,7 @@ is done in the works of Voight and Zureick-Brown \cite{vzb:stacky},
 Abramovich and Vistoli \cite{abramovich-vistoli:compactifying}, and
 Behrend and Noohi \cite{behrend-noohi:uniformization}.
 
-The results of this paper can be easily couched in terms of the language of stacks. If one works over an arbitrary field $k$ (which need not be algebraically closed) one can extend Theorem ~\ref{thm:main} to hold in the case that the stacky curve $\sx$ is tame and separably rooted, i.e.,~ the residue field of each
+The results of this paper can be easily couched in terms of the language of stacks. If one works over an arbitrary field $\Bk$ (which need not be algebraically closed) one can extend Theorem ~\ref{thm:main} to hold in the case that the stacky curve $\sx$ is tame and separably rooted, i.e.,~ the residue field of each
 of the stacky points is separable.
 
 With this stack-theoretic description in mind, the remainder of this paper is primarily phrased using the language
@@ -433,7 +433,7 @@ of schemes.
 
 \begin{defn}
 \label{defn:div-ex}
-Let $\sx$ be a stacky curve over $k$ with coarse space $X$ of genus $g$ and stacky points $P_1, \ldots,
+Let $\sx$ be a stacky curve over $\Bk$ with coarse space $X$ of genus $g$ and stacky points $P_1, \ldots,
 P_r$ with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$.
 Then, we notate
 \[
@@ -478,13 +478,13 @@ We define $H^0$ of a stacky divisor as follows.
 \begin{defn}
 \label{defn:h0-stacky}
 Recall the standard notation 
-$$\sco(D) = \{f \in k(X)^\times : \di f + D \geq 0 \}.$$
+$$\sco(D) = \{f \in \Bk(X)^\times : \di f + D \geq 0 \}.$$
 Let $\sx$ be a stacky curve with coarse space $X$.
 If $D \in \di \sx$ is a Weil divisor, then we define
 \begin{align*}
 	H^0(\sx, D) &:= H^0(X, \lfloor D \rfloor)\\
 	H^0(\sx, \sco(D)) &:= H^0(\sx, D)\\
-	h^0(\sx, \sco(D)) &:= \dim_k H^0(\sx, \sco(D))
+	h^0(\sx, \sco(D)) &:= \dim_\Bk H^0(\sx, \sco(D))
 \end{align*}
 If $R$ is a graded ring, then we let $(R)_d$ refer to the $d^\text{th}$
 graded component of $R$.
@@ -563,9 +563,9 @@ initial ideals, and Gr\"{o}bner bases, see Eisenbud
 
 \begin{defn}
 \label{defn:monomial-degree}
-Let $k[x_1$, $\ldots$, $x_n]$ be a graded polynomial
+Let $\Bk[x_1$, $\ldots$, $x_n]$ be a graded polynomial
 ring with $\deg x_i = d_i$ and let $\alpha := \prod_{i = 1}^{n} x_{i}^{f_i} \in
-k[x_{1}$, $\ldots$, $x_{n}]$ be a monomial. Then
+\Bk[x_{1}$, $\ldots$, $x_{n}]$ be a monomial. Then
 we define the {\bf degree} of $\alpha$ to be
 \[
 	\deg \alpha := \sum_{i = 1}^{n} d_i f_i.
@@ -577,7 +577,7 @@ we define the {\bf degree} of $\alpha$ to be
 The {\bf graded reverse lexicographic order}, or {\bf grevlex} $\prec_{\text{grevlex}}$ is defined as follows.
 If $\alpha := \prod_{i = 1}^{n} x_{i}
 ^{f_i}$ and $\beta := \prod_{i = 1}^{n} x_{i}^{f_i'}$ are
-monomials in $k[x_{1}$, $\ldots$, $x_{n}]$, then $\alpha
+monomials in $\Bk[x_{1}$, $\ldots$, $x_{n}]$, then $\alpha
 \succ_{\text{grevlex}} \beta$ if either
 
 \begin{equation}
@@ -605,19 +605,19 @@ separately.
 
 \begin{defn}
 \label{defn:block-order}
-The \textbf{block term order} is defined as follows. Let $k[y_{1}, \ldots, y_{m}]$ and $k[x_{1}, \ldots,
+The \textbf{block term order} is defined as follows. Let $\Bk[y_{1}, \ldots, y_{m}]$ and $\Bk[x_{1}, \ldots,
 x_{n}]$ be weighted polynomial rings with $\deg y_i = c_i, \: \deg x_i = d_i.$ Further assume we are given existing term
 orders $\prec_y$ and $\prec_x$. Let $\alpha :=
 \prod_{j = 1}^{m} y_{j}^{h_i}$ $\prod_{i = 1}^{n} x_{i}
 ^{f_i}$ and $\beta := \prod_{j = 1}^{m} y_{j}^{h_i'}
-\prod_{i = 1}^{n} x_{i}^{f_i'}$ be monomials in $k[y_{1},
-\ldots, y_{m}] \otimes$ $k[x_{1}, \ldots, x_{n}]$.
+\prod_{i = 1}^{n} x_{i}^{f_i'}$ be monomials in $\Bk[y_{1},
+\ldots, y_{m}] \otimes$ $\Bk[x_{1}, \ldots, x_{n}]$.
 Let $\alpha_y := \prod_{j = 1}^{m} y_{j}^{h_i}$ be the
-part of $\alpha$ in $k[y_{1}, \ldots, y_{m}]$ and
+part of $\alpha$ in $\Bk[y_{1}, \ldots, y_{m}]$ and
 likewise with $\alpha_x$, $\beta_y$, and $\beta_x$.
 
 In the \textbf{(graded) block} (or \textbf{elimination}) term
-ordering on $k[y_{d_1', 1}, \ldots, y_{d_m', m}] \otimes k[x_{d_1, 1},
+ordering on $\Bk[y_{d_1', 1}, \ldots, y_{d_m', m}] \otimes \Bk[x_{d_1, 1},
 \ldots, x_{d_n, n}]$, we define $\alpha \succ \beta$ if
   \begin{enumerate}
 	\item[(i)] $\deg \alpha  > \deg \beta$ or
@@ -633,9 +633,9 @@ in Section ~\ref{sec:induction} as well as in the proof of Theorem
 
 \begin{defn}
 \label{defn:initial-term}
-Let $\prec$ be an ordering on $k[x_{1}$, $\ldots$, $x_{n}]$, 
+Let $\prec$ be an ordering on $\Bk[x_{1}$, $\ldots$, $x_{n}]$, 
 with $\deg x_i = d_i$,
-and let $f \in k[x_{1}, \ldots, x_{n}]$ be a homogeneous
+and let $f \in \Bk[x_{1}, \ldots, x_{n}]$ be a homogeneous
 polynomial. The \textbf{initial term} $\initial(f)$ of $f$
 is the largest monomial in the support of $f$ with respect to
 the ordering $\prec$. Furthermore, we set $\initial(0) := 0$.
@@ -644,7 +644,7 @@ the ordering $\prec$. Furthermore, we set $\initial(0) := 0$.
 
 \begin{defn}
 \label{defn:initial-ideal}
-Let $I$ be a homogeneous ideal of $k[x_{1}$, $\ldots$,
+Let $I$ be a homogeneous ideal of $\Bk[x_{1}$, $\ldots$,
 $x_{n}]$. Then the {\bf initial ideal} $\initial(I)$ of $I$ is
 the ideal generated by the initial terms of homogeneous polynomials
 in $I$:
@@ -658,7 +658,7 @@ in $I$:
 
 \begin{defn}
 \label{defn:grobner-basis}
-Let $I$ be a homogeneous ideal of $k[x_{1}$, $\ldots$,
+Let $I$ be a homogeneous ideal of $\Bk[x_{1}$, $\ldots$,
 $x_{n}]$. A \textbf{Gr\"obner basis} for $I$, also known as a
 \textbf{standard basis} for $I$, is a set of elements in $I$
 such that their initial terms generate the initial
@@ -695,7 +695,7 @@ curve, with coarse space $X$ and stacky points $Q_1, \ldots, Q_r$.  Let $J \subs
 Let $R'$ be the canonical ring associated to $\sx'$. Define $(\sx', \halfcan', J)$
 to be {\bf admissible} if $R'$ admits a presentation
 \begin{align*}
-	R' \cong \left( k[x_1, \ldots, x_m] \otimes k[y_{i, e_i'}]_{i \in J} \right)/I'
+	R' \cong \left( \Bk[x_1, \ldots, x_m] \otimes \Bk[y_{i, e_i'}]_{i \in J} \right)/I'
 \end{align*}
 
 \noindent
@@ -735,7 +735,7 @@ In this section, we work out several examples of computing presentations for spi
 \begin{example}
 \label{eg:base-1-0}
 Let $(\sx',0, \halfcan')$ be a log stacky curve of genus $g = 1,$ with $\halfcan' = 0$.
-Counting dimensions, we see $h^0(\sx, dL')=1$ for all $d\in \mathbb{Z}_{\ge 0}$ so it is immediately clear that $R_{\halfcan'} \cong k[x]$ with $x$ a generator in degree 1.
+Counting dimensions, we see $h^0(\sx, dL')=1$ for all $d\in \mathbb{Z}_{\ge 0}$ so it is immediately clear that $R_{\halfcan'} \cong \Bk[x]$ with $x$ a generator in degree 1.
 \end{example}
 
 
@@ -750,7 +750,7 @@ We will deduce the structure of the log spin canonical ring $R_L$
 from the structure of the spin canonical ring $R_{L_X} := R(X, 3
 \cdot \infty, L_X)$. This technique will later be generalized in Lemma ~\ref{lem:sat-1}.
 
-Note that $R_{L_X} \cong k[x_1, x_2]$ where $\deg x_1 = \deg x_2 = 1.
+Note that $R_{L_X} \cong \Bk[x_1, x_2]$ where $\deg x_1 = \deg x_2 = 1.
 $ To see this, observe that we will need two generators in degree $1$
 because $h^0(X, L_X) = 2$ by Riemann--Roch. Because $L_X$ is very 
 ample, we have that $R_{L_X}$ is generated in degree 1. To
@@ -765,10 +765,10 @@ of $R_{L_X}$. Note that we have a natural inclusion $\iota: R_{L_X}
 \hookrightarrow H^0(\sx, dL)$ for each $d \geq 0$. By Riemann Roch,
 we see there is some element $y_{1, 3} \in (R_L)_3$ with $\ord_{P_1}
 (y_{1, 3}) = -1$, not in the image of the inclusion $\iota$. We
-claim that there exist $a_1, a_2 \in k$ and a degree $4$ polynomial
-$f(x_1, x_2) \in k[x_1, x_2]$ such that
+claim that there exist $a_1, a_2 \in \Bk$ and a degree $4$ polynomial
+$f(x_1, x_2) \in \Bk[x_1, x_2]$ such that
 \begin{align*}
-	R_L \cong k[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3}
+	R_L \cong \Bk[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3}
 	+ f(x_1,x_2))
 \end{align*}
 
@@ -788,7 +788,7 @@ the 1-dimensional vector space $H^0(\sx, 4L) / H^0(\sx, 4L_X).$ So,
 we obtain a surjection
 \begin{align}
 \label{align:surjection}
-	k[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3} + f(x_1, x_2)) 
+	\Bk[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3} + f(x_1, x_2)) 
 	\rightarrow R_L.
 \end{align}
 
@@ -796,7 +796,7 @@ To complete the example, it suffices to show there are no
 additional relations. First, note that $a_1 x_1 y_{1, 3} + a_2 x_2
 y_{1, 3} + f(x_1, x_2)$ is irreducible because there are no
 relations among $x_1, x_2$ and $y_{1, 3}$ in lower degrees. Hence,
-$k[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3} +
+$\Bk[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3} +
 f(x_1, x_2))$ is integral and is 2-dimensional. Thus, the map
 \eqref{align:surjection} defines a surjection from an integral
 2-dimensional ring to a 2-dimensional ring. Therefore, it is an 
@@ -833,7 +833,7 @@ Then the map in ~\eqref{eqn:noether-377} is surjective when $d \geq
 
 For $d = 0, 1, 2, \ldots$ we have
 \[
-	\dim_k H^0 (\sx', d K_{\sx'}) = 1, 0, 0, 1, 0, 1, 1, 2, 1, 1, 2, 1, 3, 2, 3, \ldots
+	\dim_\Bk H^0 (\sx', d K_{\sx'}) = 1, 0, 0, 1, 0, 1, 1, 2, 1, 1, 2, 1, 3, 2, 3, \ldots
 \]
 
 \noindent
@@ -920,7 +920,7 @@ coefficients must be zero for this equality to hold. We have a
 similar pole order consideration in forcing $b_1$ to be nonzero.
 
 Let $I$ be the ideal generated by these relations in
-$k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]$. Under grevlex with
+$\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]$. Under grevlex with
 $x_{3,1} \prec x_{5,1} \prec x_{7,1} \prec x_{7,2}$, the initial
 ideal of $I$ is
 \[
@@ -931,24 +931,24 @@ ideal of $I$ is
 since $a_1$ and $b_1$ are nonzero.
 
 To demonstrate that these two relations generate all 
-relations, we show that $\dim_k (R')_d = \dim_k
-(k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \initial(I))_d$ for 
+relations, we show that $\dim_\Bk (R')_d = \dim_\Bk
+(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \initial(I))_d$ for 
 all degrees $d \geq 0$. In particular, 
 
 \begin{align*}
-	\dim_k \left(k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I\right)_d &=
-	\dim_k \left(k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]	/ \initial(I)\right)_d \\
-	&= \dim_k \left(k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle
+	\dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I\right)_d &=
+	\dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]	/ \initial(I)\right)_d \\
+	&= \dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle
 	x_{7, 2}^2, x_{5, 1}^2 \rangle \right)_d
 \end{align*}
 \noindent
-for all $d \geq 0$. But the fact $\dim_k (R')_d = \dim_k \left(k[x_{7, 2},
+for all $d \geq 0$. But the fact $\dim_\Bk (R')_d = \dim_\Bk \left(\Bk[x_{7, 2},
 x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle x_{7, 2}^2, x_{5, 1}^2
-\rangle\right)_d$ can be checked by looking at the $k$-basis at each degree
+\rangle\right)_d$ can be checked by looking at the $\Bk$-basis at each degree
 $d$.
 
 Therefore, the canonical ring $R'$ has presentation $R' =
-k[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I$ with
+\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I$ with
 initial ideal $\initial(I)$ generated by quadratics under grevlex
 with $x_{3,1} \prec x_{5,1} \prec x_{7,1} \prec x_{7,2}$.
 %These quadratics must also determine minimal generators for $I$ by
@@ -963,13 +963,13 @@ degree $2e = 14$, as desired.
 \begin{example}
 \label{eg:base-1-33}
 Let $(\sx',0 , \halfcan')$ be a log spin curve of genus $1$ with $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show
-$$R_{\halfcan'} \cong k[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$
+$$R_{\halfcan'} \cong \Bk[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$
 and that $(\sx', \halfcan', \{1,2\})$ is admissible.
 
 Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_1$ but not at $P_2$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_2$ but not at $P_1$. Let $y_4 \in H^0(\sx,4\halfcan')$ be an element with a pole of order 1 at both $P_1$ and $P_2$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q \sim P - Q$, $3P - 3Q + P_1$, and $3P - 3Q + P_1 + P_2$ are 0, 1, and 2 dimensional respectively.
 
-Then, there exist constants $\alpha, \beta, \gamma \in k$ so that 
-$R_{\halfcan'} \cong k[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $k$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zero and pole order. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
+Then, there exist constants $\alpha, \beta, \gamma \in \Bk$ so that 
+$R_{\halfcan'} \cong \Bk[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $\Bk$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zero and pole order. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
 
 We next check $(\sx', \halfcan', \{1,2\})$ is admissible. We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, \ref{custom:Ad-i} holds. We next check \ref{custom:Ad-ii} for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
 \[
@@ -987,16 +987,16 @@ Finally, to check \ref{custom:Ad-iii}, note that $\max_{d \geq 0}S_{\sigma,J}(i,
 Let $(\sx', 0, L')$ be a log spin curve of genus 1 with $L' = P -
  Q + \frac{2}{5} P_1.$ Let $x_2 \in (R_L)_2$ be any nonzero element.
 We obtain $\di x_2|_{P_1} = 0,$ since $2P - 2Q \sim 0$ and by Riemann
---Roch, $\dim_k (P_L)_2 = 1.$ Let $y_3 \in (R_\halfcan)_3$ be any nonzero
+--Roch, $\dim_\Bk (P_L)_2 = 1.$ Let $y_3 \in (R_\halfcan)_3$ be any nonzero
 element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since
 if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0
 (\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally,
 let $y_5 \in (R_\halfcan)_5$ be an element with $y_5|_{P_1} = -P_1$. Then,
-we claim there is some $\alpha \in k$ so that
+we claim there is some $\alpha \in \Bk$ so that
 
-$$R_\halfcan \cong k[x_2 , y_3, y_5]/(y_3^4 - \alpha x_2 y_5^2).$$
+$$R_\halfcan \cong \Bk[x_2 , y_3, y_5]/(y_3^4 - \alpha x_2 y_5^2).$$
 
-In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring $R$ so that for all $j \in \BZ,$ the $j$th graded component $(R)_j$ satisfies $\dim_k (R)_j = \dim_k R_\halfcan.$ Hence, $R \cong R_\halfcan$. The verification is analogous to Example ~\ref{eg:base-0-377} and is omitted.
+In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring $R$ so that for all $j \in \BZ,$ the $j$th graded component $(R)_j$ satisfies $\dim_\Bk (R)_j = \dim_\Bk R_\halfcan.$ Hence, $R \cong R_\halfcan$. The verification is analogous to Example ~\ref{eg:base-0-377} and is omitted.
 
 Note that $(\sx', \halfcan', \{1\})$ is admissible, as can be checked in a fashion analogous to the verification in Example ~\ref{eg:base-1-33}.
 \end{example}
@@ -1136,53 +1136,53 @@ orders incremented by $2$ and fixed log divisor and stacky points.
 %In this section, we prove various inductive statements under the following setup:
 %Let $\halfcan' \in \di \BQ \otimes X$ be $\BQ$-divisor of $X$ (and often a log spin canonical divisor of some $\sx'$), satisfying certain conditions about $\deg(\lfloor d \halfcan'\rfloor)$ for various values of $d \in\BN$ and certain saturation conditions. Let $\halfcan=\halfcan'+P$ for some $P$ possibly in the support of $\halfcan$.  Then we will explicitly describe elements that generate $R_\halfcan$ over $\halfcan$' and initial terms of relations that generate $\initial(I')$ over $\initial(I)$ (allowing the construction of a corresponding Gr\"{o}bner Basis). \todo{Aaron: What new ideas does this description add that wasn't already described in the previous paragraph? Also, in general it's a good idea to be specific about what the most important lemmas are in the section, although I also added this to the general description of section 3.}
 %Before proving three lemmas that allow us to inductively add points to the support of a log spin canonical divisor
-First, we give a criterion to determine if a set of monomials generates the initial ideal of relations of $k[x_1, \ldots, x_m] \to R_D$.  This criterion will be used repeatedly to show that a given homogeneous ideal is in fact the ideal of relations.
+First, we give a criterion to determine if a set of monomials generates the initial ideal of relations of $\Bk[x_1, \ldots, x_m] \to R_D$.  This criterion will be used repeatedly to show that a given homogeneous ideal is in fact the ideal of relations.
 
 
 \begin{lem}
 \label{lem:relations_from_generators_induction} 
 Suppose $\halfcan$, $\halfcan' \in \BQ$ $\otimes$ $\di X$ with $\halfcan=\halfcan'+\frac{\alpha}{\beta}P$, such that $R_{\halfcan'}$ generated by $x_1, \ldots, x_m$
 and $R_{\halfcan}$ is minimally generated by $y_1, \ldots, y_n$ over 
-$R_{\halfcan'}$.  Let $I'$ and $I$ be the ideals relations of $\phi':k[x_1, \ldots, x_m]\to R_{\halfcan'}$ and $\phi:k[x_1, \ldots, x_m, y_1, \ldots y_n]\to R_{\halfcan}$ respectively.
+$R_{\halfcan'}$.  Let $I'$ and $I$ be the ideals relations of $\phi':\Bk[x_1, \ldots, x_m]\to R_{\halfcan'}$ and $\phi:\Bk[x_1, \ldots, x_m, y_1, \ldots y_n]\to R_{\halfcan}$ respectively.
 Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T\subseteq R_\halfcan-(S\cup R_\halfcan')$, and a monomial ordering $\prec$ such 
 \begin{enumerate}
-\item $S$ forms a $k$-basis for $R_\halfcan$ over $R_\halfcan'$
-\item $T \succ S\succ k[x_1, \ldots, x_n]$ {\rm(}meaning all monomials in $T$ are bigger than all monomials in $S$ which are bigger than all monomials in $k[x_1, \ldots, x_n]${\rm)}
-\item All monomials in $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ lie in 
+\item $S$ forms a $\Bk$-basis for $R_\halfcan$ over $R_\halfcan'$
+\item $T \succ S\succ \Bk[x_1, \ldots, x_n]$ {\rm(}meaning all monomials in $T$ are bigger than all monomials in $S$ which are bigger than all monomials in $\Bk[x_1, \ldots, x_n]${\rm)}
+\item All monomials in $\Bk[x_1, \ldots, x_m, y_1, \ldots, y_n]$ lie in 
 \begin{align*}
-	S \; \cup\; \langle T\rangle \; \cup \; \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[x_1, \ldots, x_m]
+	S \; \cup\; \langle T\rangle \; \cup \; \initial(I') \Bk[x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; \Bk[x_1, \ldots, x_m]
 \end{align*}
 \end{enumerate}
 Then,
 \begin{align*}
-	\initial(I) & = \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n]
+	\initial(I) & = \initial(I') \Bk[x_1, \ldots, x_m, y_1, \ldots, y_n]
 	+ \langle T \rangle.
 \end{align*}
 \end{lem}
 \begin{proof}
 First, notice that $I'\subseteq I$ so 
 \[
-	\initial(I)\supseteq \initial(I')k[x_1, \ldots, x_m, y_1, \ldots, y_n].
+	\initial(I)\supseteq \initial(I')\Bk[x_1, \ldots, x_m, y_1, \ldots, y_n].
 \]
 
-Now, let $f\in T$.  Since $S$ forms a $k$-basis of $R_{\halfcan}$ over $R_{\halfcan'}$ by (1), we can write a relation $f - (\sum_{g\in S'} C_g g)-r=0$ for some finite subset $S'\subseteq S_{\deg(f)}$, $C_g\in k$ for all $g\in S'$, and $r\in R_{\halfcan'}$.  This demonstrates that $\initial(I) \supseteq T$, and hence
+Now, let $f\in T$.  Since $S$ forms a $\Bk$-basis of $R_{\halfcan}$ over $R_{\halfcan'}$ by (1), we can write a relation $f - (\sum_{g\in S'} C_g g)-r=0$ for some finite subset $S'\subseteq S_{\deg(f)}$, $C_g\in \Bk$ for all $g\in S'$, and $r\in R_{\halfcan'}$.  This demonstrates that $\initial(I) \supseteq T$, and hence
 \[
-	\initial(I)\supseteq \initial(I')k[x_1, \ldots, x_m, y_1, \ldots, y_n].
+	\initial(I)\supseteq \initial(I')\Bk[x_1, \ldots, x_m, y_1, \ldots, y_n].
 \]
 
-To complete the proof, it suffices to show the reverse inclusion holds. By (2), any polynomial $G\in k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ with $\initial(\phi(G)) \in S$ cannot have a term in $T$.  Furthermore, since $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ by (1), and $\initial(\phi(G)) \in S,$ we obtain $\phi(G) \notin R_{\halfcan'} \subseteq R_\halfcan.$ Thus, $G=0$ is not a relation, so $f\not\in \initial(I)$.  Therefore, 
+To complete the proof, it suffices to show the reverse inclusion holds. By (2), any polynomial $G\in \Bk[x_1, \ldots, x_m, y_1, \ldots, y_n]$ with $\initial(\phi(G)) \in S$ cannot have a term in $T$.  Furthermore, since $S$ forms a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$ by (1), and $\initial(\phi(G)) \in S,$ we obtain $\phi(G) \notin R_{\halfcan'} \subseteq R_\halfcan.$ Thus, $G=0$ is not a relation, so $f\not\in \initial(I)$.  Therefore, 
 \[
 	\initial(I)\subseteq R_\halfcan-S.
 \]
 In particular, there are no monomials in $I$ with initial terms in $S$.
 Finally, note that
 \[
-	\initial(I) \cap k[x_1, \ldots, x_m] = \initial(I').
+	\initial(I) \cap \Bk[x_1, \ldots, x_m] = \initial(I').
 \]
 
-By (3), every monomial of $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ is an element of either $S$, $\langle T\rangle$, or $\initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n].$ Therefore,
+By (3), every monomial of $\Bk[x_1, \ldots, x_m, y_1, \ldots, y_n]$ is an element of either $S$, $\langle T\rangle$, or $\initial(I') \Bk[x_1, \ldots, x_m, y_1, \ldots, y_n].$ Therefore,
 \begin{align*}
-	\initial(I) & \subseteq \initial(I') k[x_1, \ldots, x_m, y_1, \ldots, y_n] + \langle T \rangle.
+	\initial(I) & \subseteq \initial(I') \Bk[x_1, \ldots, x_m, y_1, \ldots, y_n] + \langle T \rangle.
 \end{align*}
 \end{proof}
 
@@ -1190,7 +1190,7 @@ To apply Lemma \ref{lem:relations_from_generators_induction}, we will need an ap
 The following definition provides the necessary ordering for the Lemma \ref{lem:sat-1}.
 \begin{defn}
 \label{defn:graded-p-lex}
-Suppose $\halfcan$ is a divisor of $X$ such that $R_\halfcan$ is generated by $x_1, \ldots x_m$.  Then we have a map $\phi: k[z_1, \ldots z_m] \rightarrow R_\halfcan, z_i\mapsto x_i$. If $P$ is a point in $X$, then $\phi$ defines a graded-$P$-lexicographic order (shortened to {\bf{graded $P$-lex}}) on $k[z_1, \ldots, z_m]$ as follows.
+Suppose $\halfcan$ is a divisor of $X$ such that $R_\halfcan$ is generated by $x_1, \ldots x_m$.  Then we have a map $\phi: \Bk[z_1, \ldots z_m] \rightarrow R_\halfcan, z_i\mapsto x_i$. If $P$ is a point in $X$, then $\phi$ defines a graded-$P$-lexicographic order (shortened to {\bf{graded $P$-lex}}) on $\Bk[z_1, \ldots, z_m]$ as follows.
 If $f=\prod_{i=1}^m {z_i}^{q_i}$ and $g=\prod_{i=1}^m {z_i}^{r_i}$ with $f \neq g,$ then $f\prec g$ if one of the following holds:
 \begin{enumerate}
 \item $\deg(f) < \deg(g)$
@@ -1247,18 +1247,18 @@ Then,
 	elements $y_1, \ldots, y_n$ such that $\deg(y_i) = d_i$ and $-\ord_P
 	^{L'}(y_i) = c_i$.
 
-\item[(b)] Choose an ordering $\prec$ on $k[u, x_1, \ldots, x_m]$ such that
+\item[(b)] Choose an ordering $\prec$ on $\Bk[u, x_1, \ldots, x_m]$ such that
 	\[
 		\ord_u(f) < \ord_u(h) \implies f\prec h.
 	\]
-	Equip $k[y_1, \ldots, y_n]$ with graded $P$-lex, as defined in
-	Definition ~\ref{defn:graded-p-lex} and $k[y_1, \ldots, y_n] \otimes k[u, x_1, \ldots, x_m]$ with block order.
-	If $I'$ and $I$ are the ideals of relations of $k[u, x_1, \ldots, x_m]
-	\to R_{\halfcan'}$ and $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]
+	Equip $\Bk[y_1, \ldots, y_n]$ with graded $P$-lex, as defined in
+	Definition ~\ref{defn:graded-p-lex} and $\Bk[y_1, \ldots, y_n] \otimes \Bk[u, x_1, \ldots, x_m]$ with block order.
+	If $I'$ and $I$ are the ideals of relations of $\Bk[u, x_1, \ldots, x_m]
+	\to R_{\halfcan'}$ and $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]
 	\to R_{\halfcan}$ respectively, then
 
 	\begin{align*}
-		\initial(I) &= \initial(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] 
+		\initial(I) &= \initial(I') \Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n] 
 											 + \langle U_i: 1 \le i \le n-1 \rangle
 											 + \langle V \rangle, \\
 	\end{align*}
@@ -1345,7 +1345,7 @@ which implies
 	c_i +\left\lfloor (d-d_i) \frac{\alpha}{\beta} \right\rfloor \ge c.
 \end{equation}
 
-Using Equation ~\ref{eqn:c-from-lower-terms}, we recursively define a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$. Define 
+Using Equation ~\ref{eqn:c-from-lower-terms}, we recursively define a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$. Define 
 \[
 	S_0 = \{u^l : l \in \BN_{\ge 0}\}
 \]
@@ -1368,7 +1368,7 @@ By equation \ref{eqn:deg1-sat-ind} for $d \in \BN$,
 	h^0(X, \lfloor{d\halfcan}\rfloor) = h^0(X, \lfloor d\halfcan'
 		\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor,
 \] 
-so $S$ contains elements in degree $d \in \BN$ with each pole order in $\{1 \ldots, \lfloor d\frac{\alpha}{\beta}\rfloor\}$.  Thus, by dimension counting, $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a).
+so $S$ contains elements in degree $d \in \BN$ with each pole order in $\{1 \ldots, \lfloor d\frac{\alpha}{\beta}\rfloor\}$.  Thus, by dimension counting, $S$ forms a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a).
 
 {\bf Part (b):}
 Let $S$ be as defined in Equation \ref{eqn:sat-1-defining-S}, define $U_i$ and $V$ as in the lemma's statement, and set
@@ -1376,13 +1376,13 @@ Let $S$ be as defined in Equation \ref{eqn:sat-1-defining-S}, define $U_i$ and $
 	T = \left(\bigcup_{i=1}^{n-1} U_i \right) \cup V.
 \]
 
-We check that $S$, $T$, and $\prec$ meet the hypothesis of Lemma \ref{lem:relations_from_generators_induction}.  In part (a), we showed that $S$ forms a $k$-basis for $R_\halfcan$ over $R_{\halfcan'}$ giving condition (1) of Lemma ~\ref{lem:relations_from_generators_induction}.  Our choice of monomial order in $k[y_1, \ldots, y_n]$ and block order for $k[y_1, \ldots, y_n]\otimes k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ implies that $T\succ S\succ k[u, x_1, \ldots, x_m]$, giving condition (2) of Lemma \ref{lem:relations_from_generators_induction}.  
+We check that $S$, $T$, and $\prec$ meet the hypothesis of Lemma \ref{lem:relations_from_generators_induction}.  In part (a), we showed that $S$ forms a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$ giving condition (1) of Lemma ~\ref{lem:relations_from_generators_induction}.  Our choice of monomial order in $\Bk[y_1, \ldots, y_n]$ and block order for $\Bk[y_1, \ldots, y_n]\otimes \Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ implies that $T\succ S\succ \Bk[u, x_1, \ldots, x_m]$, giving condition (2) of Lemma \ref{lem:relations_from_generators_induction}.  
 
-It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generators_induction}. To do this, suppose $f\in k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ is a monomial not contained in $k[u, x_1, \ldots, x_m]$, meaning there is some $j$ such that $y_j|f$.  Further suppose $f\not\in \langle V \rangle$, meaning that for each $i\in \{1, \ldots m\}$, $x_iy_j \nmid f$. Since $y_j \mid f$ but $x_iy_j \nmid f$, we obtain $x_i\nmid f$.  Therefore, $f\in k[u, y_1, \ldots, y_n]$.  We note that $S$ generates $y_j \cdot (k[u,y_1, \ldots, y_n])$ as a $k$-algebra.  That is, all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
+It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generators_induction}. To do this, suppose $f\in \Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ is a monomial not contained in $\Bk[u, x_1, \ldots, x_m]$, meaning there is some $j$ such that $y_j|f$.  Further suppose $f\not\in \langle V \rangle$, meaning that for each $i\in \{1, \ldots m\}$, $x_iy_j \nmid f$. Since $y_j \mid f$ but $x_iy_j \nmid f$, we obtain $x_i\nmid f$.  Therefore, $f\in \Bk[u, y_1, \ldots, y_n]$.  We note that $S$ generates $y_j \cdot (\Bk[u,y_1, \ldots, y_n])$ as a $\Bk$-algebra.  That is, all monomials of $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \[
-	k[u, x_1, \ldots, x_m] \cup V \cup \left(\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]\right). 
+	\Bk[u, x_1, \ldots, x_m] \cup V \cup \left(\cup_{i=1}^n y_i \cdot \Bk[u, y_1, \ldots, y_n]\right). 
 \]
-Notice that $S$ generates the ideal $(y_1, \ldots, y_n)$ considered as an ideal of the subring $k[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$. Let $\halfcan$ be maximal such that $a_l\ne 0$.
+Notice that $S$ generates the ideal $(y_1, \ldots, y_n)$ considered as an ideal of the subring $\Bk[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$. Let $\halfcan$ be maximal such that $a_l\ne 0$.
 Fix $i \in \{1, \ldots, n\}$. If $y_i \cdot f \notin S$, define
 $$
 b_j = \begin{cases}
@@ -1406,10 +1406,10 @@ Next, suppose we choose $\omega_1, \ldots, \omega_h$ such that $\omega_j\le \gam
 Since for each $r<h$, we have $\prod_{j=1}^r y_{j}^{\gamma_j}\in S$ meaning that $\sum_{j=1}^r \gamma_j c_j < c_{r+1}$, condition \ref{custom:sat-1-***} holds for $\prod_{j=1}^h y_j^{\gamma_j}$.  
 Thus $\prod_{j=1}^h y_j^{\gamma_j}\in U_{h}$.
 
-Since the ideal in $k[u, y_1, \ldots, y_n]$ generated by is $S$ is $(y_1, \ldots, y_n) \cdot k[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\cup_{i=1}^n y_i \cdot k[u, y_1, \ldots, y_n]-S$, we have shown that all monomials of $k[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
+Since the ideal in $\Bk[u, y_1, \ldots, y_n]$ generated by is $S$ is $(y_1, \ldots, y_n) \cdot \Bk[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\cup_{i=1}^n y_i \cdot \Bk[u, y_1, \ldots, y_n]-S$, we have shown that all monomials of $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \begin{align*}
-				& k[u, x_1, \ldots, x_m] \cup \langle V \rangle \cup S \cup \left\langle \bigcup_{i=1}^{n-1} U_i \right\rangle \\
-	\subseteq \; 	& S \cup \langle T\rangle \cup \initial(I') k[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; k[u, x_1, \ldots, x_m].
+				& \Bk[u, x_1, \ldots, x_m] \cup \langle V \rangle \cup S \cup \left\langle \bigcup_{i=1}^{n-1} U_i \right\rangle \\
+	\subseteq \; 	& S \cup \langle T\rangle \cup \initial(I') \Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; \Bk[u, x_1, \ldots, x_m].
 \end{align*}
 This shows condition (3) of Lemma ~\ref{lem:relations_from_generators_induction} holds.  Thus, the conditions of 
 Lemma ~\ref{lem:relations_from_generators_induction} are met. Finally, Lemma ~\ref{lem:relations_from_generators_induction} implies part (b).
@@ -1561,10 +1561,10 @@ We now restrict our attention to log canonical rings of stacky curves.  Lemma \r
 \begin{lem}
 \label{lem:sat-2}
 Let $(\sx, \Delta, \halfcan)$ and $(\sx', \Delta, \halfcan')$ be log spin curves with the same coarse space $X = X'$ having signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$, where $e_r=3$.  Suppose $g > 0,$ and, if $g = 1,$ then $\deg 3\halfcan' \geq 2.$ Then, by Riemann-Roch $\sat(Eff(L'))\le 2$.
-Furthermore, let $R_{\halfcan'} = k[x_2, x_3
+Furthermore, let $R_{\halfcan'} = \Bk[x_2, x_3
 , x_5, \ldots, x_m]/I'$ and let $\halfcan = \halfcan' + \frac{1}{
 3}P$, where $P\in X$ is a base point of $\halfcan'$ (which includes the case when $H^0(X, \lfloor \halfcan'\rfloor) = 0$).
-Suppose for $i \in \{2, 3\}$, we generically choose $x_i$ satisfying $\deg x_i = i$ and $\ord_P^{\halfcan'}(x_i)= 0$. Choose an ordering on $k[x_2, \ldots, x_m]$ that satisfies
+Suppose for $i \in \{2, 3\}$, we generically choose $x_i$ satisfying $\deg x_i = i$ and $\ord_P^{\halfcan'}(x_i)= 0$. Choose an ordering on $\Bk[x_2, \ldots, x_m]$ that satisfies
 \begin{align*}
 	\ord_{x_2}(f) < \ord_{x_2}(h) \implies f \prec h.
 \end{align*}
@@ -1576,12 +1576,12 @@ Then, the following statements hold.
 	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in
 		\{3, 4\}$ satisfy $-\ord_P^{\halfcan'}(y_i) = 1$ and any such choice of elements
 		$y_3, y_4,$ minimally generate $R_\halfcan$ over $R_{\halfcan'}$.
-	\item[(b)] Equip $k[y_3, y_4]$ with $grevlex$ so that $y_3 \prec 
+	\item[(b)] Equip $\Bk[y_3, y_4]$ with $grevlex$ so that $y_3 \prec 
 		y_4$
-		and equip the ring $k[y_3, y_4] \otimes k[x_2, \ldots, x_m]$ with block 
+		and equip the ring $\Bk[y_3, y_4] \otimes \Bk[x_2, \ldots, x_m]$ with block 
 		order. Then,
 		\begin{align*}
-			\initial(I) &= \initial(I')k[x, y_3, y_4]+\langle y_4 x_j \mid 2 \leq j \leq m \rangle +\langle y_4^2 \rangle.
+			\initial(I) &= \initial(I')\Bk[x, y_3, y_4]+\langle y_4 x_j \mid 2 \leq j \leq m \rangle +\langle y_4^2 \rangle.
 		\end{align*}
 	%\item[(c)] Any set of minimal generators for $I'$ together with 
 		%any set of relations with leading terms as in (b) minimally 
@@ -1596,7 +1596,7 @@ and $\deg 4 \halfcan > 2g - 1$, so $H^0(\sx, 3 \halfcan)$ and $H^0(\sx, 4 \halfc
 Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord_P^{\halfcan'}(y_i) = 1$ by Riemann-Roch, proving part (a).
 
 A quick computation checks that
-the following set $S$ is a $k$ basis for $R_\halfcan$ over $R_{\halfcan'}$:
+the following set $S$ is a $\Bk$ basis for $R_\halfcan$ over $R_{\halfcan'}$:
 
 \begin{align*}
 	S =	& \; \{ y_3^ax_2^b x_3^\epsilon \mid a \geq 0, b 
@@ -1626,9 +1626,9 @@ Hence, by Lemma \ref{lem:relations_from_generators_induction}, part (b) holds.
 \label{lem:sat-3}
 Suppose $\halfcan'$ is a log spin canonical divisor of $\sx'$ with coarse
 space $X$ of genus 0 such that $\sat(\Eff(\halfcan')) = 3$ and $R_
-{\halfcan'} \cong k[x_3, x_4 , x_5, \ldots, x_m]/I'$. Choose $x_3, \ldots, x_m$ such that $-\ord^{L'}_P(x_i)=0$ for all $i,$ which is possible as $X$ has genus $0$. Let $L = L' + \frac
+{\halfcan'} \cong \Bk[x_3, x_4 , x_5, \ldots, x_m]/I'$. Choose $x_3, \ldots, x_m$ such that $-\ord^{L'}_P(x_i)=0$ for all $i,$ which is possible as $X$ has genus $0$. Let $L = L' + \frac
 {1}{3}P$. Suppose $\deg x_i = i$ for $i \in \{3, 4, 5\}$ and that
-the ordering on $k[x_3, \ldots, x_m]$ satisfies
+the ordering on $\Bk[x_3, \ldots, x_m]$ satisfies
 \begin{align*}
 	\ord_{x_3}(f) < \ord_{x_3}(h) \implies f \prec h.
 \end{align*}
@@ -1640,11 +1640,11 @@ Then, the following statements hold.
 	\item[(a)] General elements  $y_i \in H^0(\sx, iL)$ for $i \in \{3,
 		4,5\}$ satisfy $-\ord_P^{\halfcan'}(y_i) = 1$ and any such choice of elements $y
 		_3, y_4,$ and $y_5$ minimally generate $R_\halfcan$ over $R_{\halfcan'}$.
-	\item[(b)] Equip $k[y_3, y_4, y_5]$ with grevlex so that $y_3 \prec 
+	\item[(b)] Equip $\Bk[y_3, y_4, y_5]$ with grevlex so that $y_3 \prec 
 		y_4 \prec y_5$
-		and equip the ring $k[y_3, y_4, y_5] \otimes k[x_3, \ldots, x_m]$ with the block order.  Then,
+		and equip the ring $\Bk[y_3, y_4, y_5] \otimes \Bk[x_3, \ldots, x_m]$ with the block order.  Then,
 		\begin{align*}
-			\initial(I) &= \initial(I) k[y_3, y_4, y_5, x_3, \ldots, x_m] \\
+			\initial(I) &= \initial(I) \Bk[y_3, y_4, y_5, x_3, \ldots, x_m] \\
 			&+ \langle y_i x_j \mid 4 \leq i \leq 5, 3 \leq j \leq m\rangle \\
 			&+ \langle y_i y_k \mid 4 \leq i \leq j \leq 5\rangle.
 		\end{align*}
@@ -1668,7 +1668,7 @@ elements $y_3, y_4,$ and $y_5$ in weights 3, 4, and 5 respectively satisfy $-\or
 	\end{split}
 \end{align}
 
-\noindent forms a $k$ basis for $R_\halfcan$ over $R_{\halfcan'}$, which concludes part (a) of the proof.
+\noindent forms a $\Bk$ basis for $R_\halfcan$ over $R_{\halfcan'}$, which concludes part (a) of the proof.
 
 Setting
 \[
@@ -1891,10 +1891,10 @@ whose proof is almost identical to one of Voight and Zureick-Brown
 \cite[Theorem 8.5.7]{vzb:stacky}. Lemma
 ~\ref{lem:raise-stacky-order} implies that if the main result,
 Theorem ~\ref{thm:main}, holds for a curve with signature $(g; e_1',
-\ldots, e_k', e_{k+1}' \ldots, e_r';\delta)$ with $e_{k + 1}' =
+\ldots, e_\ell', e_{\ell + 1}' \ldots, e_r';\delta)$ with $e_{\ell + 1}' =
 \cdots = e_r'$ satisfying certain admissibility (cf. Definition
 ~\ref{defn:admissible}), then Theorem ~\ref{thm:main} also holds for
-a curve with signature $(g; e _1', \ldots, e_k', e_{k + 1}' + 2,
+a curve with signature $(g; e_1', \ldots, e_\ell', e_{\ell + 1}' + 2,
 \ldots, e_r' + 2; \delta)$. 
 %In order to state Lemma
 %~\ref{lem:raise-stacky-order}, we will need to define a certain notion of admissibility in %Definition ~\ref{defn:admissible}, which is quite similar to \cite[Definition 8.5.1]{vzb:stacky}.
@@ -2028,12 +2028,12 @@ $e_j = e_j'$ for $j \notin J$. Define $R := R_\halfcan$.  Then the following are
 %		b > 0$ span $R$ over $R'$ and
 		A choice of elements $y_{1, e_1}, \ldots, y_{r, e_r}$ as in part (a) minimally
 		generate $R$ over $R'$.
-	\item[(c)] Endow $k[y_{i, e_i}]_{i\in J}$ and $ k[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$ with graded monomial orders and give 
-$k[y_{i, e_i}]_{i\in J} \otimes k[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$
- block order.  Let $I$ be the kernel of $k[x_1, \ldots, x_m, y_{i, e_i'}, y_{i, e_i}]_{i\in J} \to R$.
+	\item[(c)] Endow $\Bk[y_{i, e_i}]_{i\in J}$ and $ \Bk[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$ with graded monomial orders and give 
+$\Bk[y_{i, e_i}]_{i\in J} \otimes \Bk[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$
+ block order.  Let $I$ be the kernel of $\Bk[x_1, \ldots, x_m, y_{i, e_i'}, y_{i, e_i}]_{i\in J} \to R$.
   Then,
 		\begin{align*}
-			\initial(I) \;	&= \; \initial(I')k[x, y] \\
+			\initial(I) \;	&= \; \initial(I')\Bk[x, y] \\
 					&+ \; \langle y_{j, e_j}x_i  : 1\le i \le m, j\in J\rangle \\
 					&+ \; \langle y_{j, e_j}y_{i, e_i'}: i,j\in J, i\ne j\rangle \\
 					&+ \; \langle y_{j,e_j}y_{i,e_i}: i,j\in J, i\ne j\rangle.
@@ -2129,7 +2129,7 @@ $$R_i = \begin{cases}
 
 \noindent
 To prove (b), it suffices to show that elements of the form $y_{i, e_
-i'}^ay_{i, e_i}^b$ with $a \geq 0, b > 0$ form a $k$-basis for $R_{i}$ over $R_{i-1}$. These elements do not lie in $R_{i - 1}$ because the pole order of $y_{i, e_i'}^ay_{i,e_i}^b$ at $Q_i$ is larger than that of any element in the $d^{th}$ component of $R_{i - 1}$. 
+i'}^ay_{i, e_i}^b$ with $a \geq 0, b > 0$ form a $\Bk$-basis for $R_{i}$ over $R_{i-1}$. These elements do not lie in $R_{i - 1}$ because the pole order of $y_{i, e_i'}^ay_{i,e_i}^b$ at $Q_i$ is larger than that of any element in the $d^{th}$ component of $R_{i - 1}$. 
 Additionally, these elements are linearly independent amongst themselves because of
 injectivity of the linear map
 
@@ -2165,7 +2165,7 @@ only if for all $j \in J$ we have
 \end{align}
 
 \noindent
-Now fix $i \in J$. We check Inequality ~\eqref{eqn:order-degree} holds with $f = y_{i, e_i}z$, implying $y_{i,e_i}z \in R'$ in the three following cases: 
+Now fix $i \in J$. We check that Inequality ~\eqref{eqn:order-degree} holds with $f = y_{i, e_i}z$, implying $y_{i,e_i}z \in R'$ in the three following cases: 
 %$j \notin \{i \} \cup S(i, 0)$, $j = i,$ and $j \in S(i, 0)$.
 
 \vskip.1in
@@ -2318,12 +2318,12 @@ $$\begin{tikzcd}
 \end{tikzcd}$$
 
 We wish to show $f$ is surjective.
-Note that $\dim_k \ker f = \dim_k H^0((n - 2)L) = (n - 3)(g - 1+\frac{\delta}{2})$ using Riemann--Roch and the assumption $n \geq 4.$
-Additionally, $\dim_k V \otimes H^0(nL) = 2 \cdot (n - 1)(g - 1+\frac{\delta}{2})$, again using Riemann--Roch.
+Note that $\dim_\Bk \ker f = \dim_\Bk H^0((n - 2)L) = (n - 3)(g - 1+\frac{\delta}{2})$ using Riemann--Roch and the assumption $n \geq 4.$
+Additionally, $\dim_\Bk V \otimes H^0(nL) = 2 \cdot (n - 1)(g - 1+\frac{\delta}{2})$, again using Riemann--Roch.
 Therefore,
 \begin{align*}
-	\dim_k \im f 	& = 2 \cdot (n - 1)(g - 1+ \frac{\delta}{2}) - (n - 3)(g - 1 + \frac{\delta}{2})\\
-				& = (n + 1)(g - 1 + \frac{\delta}{2}) = \dim_k H^0((n + 2)L).
+	\dim_\Bk \im f 	& = 2 \cdot (n - 1)(g - 1+ \frac{\delta}{2}) - (n - 3)(g - 1 + \frac{\delta}{2})\\
+				& = (n + 1)(g - 1 + \frac{\delta}{2}) = \dim_\Bk H^0((n + 2)L).
 \end{align*}
 Ergo, $f$ is surjective.
 \end{proof}
@@ -2385,11 +2385,11 @@ by using the basepoint-free pencil trick to show that if a relation lies in a su
 \label{defn:lower-ideal}
 Let $(X, \Delta, L)$ be a log spin curve of signature $(g; -; \delta
 )$ with $g \geq 2$ and $\Delta > 0.$ Choose generators $x_1, \ldots
-, x_n$ of $R_\halfcan$ so that we obtain a surjection $\phi: k[x_1, \ldots
+, x_n$ of $R_\halfcan$ so that we obtain a surjection $\phi: \Bk[x_1, \ldots
 , x_n] \twoheadrightarrow R_\halfcan$ with kernel $I_\halfcan$. Let $I_{\halfcan, d}$ be
 the $d^\text{th}$ graded piece of $I_\halfcan$ and define
 \[
-	J_{\halfcan,d} = \sum_{j = 1}^{d- 1}k[x_1, \ldots, x_n]_j \cdot I_{\halfcan,d-j}.
+	J_{\halfcan,d} = \sum_{j = 1}^{d- 1}\Bk[x_1, \ldots, x_n]_j \cdot I_{\halfcan,d-j}.
 \]
 \end{defn}
 
@@ -2398,17 +2398,17 @@ the $d^\text{th}$ graded piece of $I_\halfcan$ and define
 \label{lem:reducing-degree}
 Let $(X, \Delta, \halfcan)$ be a log spin curve of genus $g \geq 2,$ so
 that $\Delta > 0.$ Choose generators $x_1, \ldots, x_n$ of $R_\halfcan$ so
-that we obtain a surjection $\phi: k[x_1, \ldots, x_n]
-\twoheadrightarrow R_\halfcan$ with kernel $I_L$. Let $s_1, s_2 \in k[x_1,
+that we obtain a surjection $\phi: \Bk[x_1, \ldots, x_n]
+\twoheadrightarrow R_\halfcan$ with kernel $I_L$. Let $s_1, s_2 \in \Bk[x_1,
 \ldots, x_n]_2$ be two elements so that $\: \newspan(\phi(s_1), \phi(s_2))
 = V \subseteq H^0(X, 2\halfcan)$ is basepoint-free. For any $f \in
-k[x_1, \ldots, x_n]$ such that $\deg f \geq 11,$ there exist $g, h \in
-k[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h \equiv f \bmod J_{\halfcan, d}.$
+\Bk[x_1, \ldots, x_n]$ such that $\deg f \geq 11,$ there exist $g, h \in
+\Bk[x_1, \ldots, x_n]_{d - 2}$ so that $s_1 g + s_2 h \equiv f \bmod J_{\halfcan, d}.$
 \end{lem}
 \begin{proof}
 % Choose $s_1,s_2 \in k[x_1, \ldots, x_n]_2$ so that $\phi(s_1), \phi(s_2) \in H^0(2L)$ generate a base point free pencil $V = k \phi(s_1) \oplus k \phi(s_2)\subseteq H^0(X,2L)$.
-By Lemma ~\ref{lem:generation-5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Therefore, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in k[x_1, \ldots, x_n]_{d-\deg x_i}$.
-We next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in k[x_1, \ldots, x_n]_{d - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{\halfcan, \deg a_i}.$ 
+By Lemma ~\ref{lem:generation-5}, $\deg x_i \leq 5$ for $1 \leq i \leq n$. Therefore, we may write $f = \sum_{i = 1}^{n}a_i x_i$ with $a_i \in \Bk[x_1, \ldots, x_n]_{d-\deg x_i}$.
+We next show that for all $1 \leq i \leq n$ there exist $g_i, h_i \in \Bk[x_1, \ldots, x_n]_{d - \deg x_i - 2}$ so that $a_i = s_1g_i + s_2h_i \bmod I_{\halfcan, \deg a_i}.$ 
 
 By Lemma ~\ref{lem:generation-5},
 \begin{align*}
@@ -2418,7 +2418,7 @@ is surjective because $\deg f \geq 11$ implies that
 $$\deg a_i =\deg f - \deg x_i -2 \geq 4.$$
 In particular, there exist $\alpha, \beta \in R_L$ so that
 $$\phi(a_i) = \phi(s_1) \cdot \alpha + \phi(s_1) \cdot \beta.$$ 
-Choosing $g_i,h_i\in k[x_1, \ldots, x_n]_{\deg(a_i)-2}$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha, \phi(h_i) = \beta$, we have 
+Choosing $g_i,h_i\in \Bk[x_1, \ldots, x_n]_{\deg(a_i)-2}$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha, \phi(h_i) = \beta$, we have 
 $$a_i \equiv s_1 g_i + s_2 h_i \bmod I_{\halfcan, \deg a_i},$$ as claimed.
 
 Finally, we may then take $g = \sum_{i}^{}g_i x_i, \: h = \sum_{i}^{}h_i x_i,$ so that 
@@ -2450,12 +2450,12 @@ V \otimes H^0((\deg f - 2)L) \ar {r}{f} & H^0((\deg f)L),
 we know that $\phi(s_1)\phi(g) + \phi(s_2) \phi(h) \mapsto 0$.
 So by the explicit isomorphism given in the proof of the basepoint-
 free pencil trick, as shown in the proof of \cite[Lemma 2.6]
-{saint-donat:proj}, there exists some $\rho \in k[x_1, \ldots, x_n]$
+{saint-donat:proj}, there exists some $\rho \in \Bk[x_1, \ldots, x_n]$
 so that $\phi(\rho) \in H^0((\deg f - 4)L)$ satisfies $\phi(g) =
 \phi(s_2) \phi(\rho)$ and $\phi(h) = -\phi(s_1)\phi(\rho)$. 
 Therefore,
-$g \equiv s_2 \rho \bmod I_{k,d-2}$ and $h \equiv - s_1 \rho \bmod
-I_{k, d - 2}$. Hence,
+$g \equiv s_2 \rho \bmod I_{\halfcan, d-2}$ and $h \equiv - s_1 \rho \bmod
+I_{\halfcan, d - 2}$. Hence,
 \begin{align*}
 	s_1g + s_2h \equiv s_1(s_2\rho) + s_2(-s_1 \rho) \equiv 0 \bmod J_
 {L,d}.
@@ -2509,7 +2509,7 @@ log spin canonical ring
 \end{align*}
 
 \noindent
-is generated as a $k$-algebra by elements in degree at most $e =
+is generated as a $\Bk$-algebra by elements in degree at most $e =
 \max(5, e_1, \ldots, e_r)$ with minimal relations in degree at most $2e$.
 \end{thm}
 
@@ -2654,7 +2654,7 @@ If $g = 1$, then the log spin canonical ring
 \end{align*}
 
 \noindent
-is generated as a $k$-algebra by elements of degree at most $\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e,$ so long as $\sigma$ does not lie in a
+is generated as a $\Bk$-algebra by elements of degree at most $\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e,$ so long as $\sigma$ does not lie in a
 finite list of exceptional cases, as listed in Table
 ~\ref{table:g-1-exceptional}.
 \end{thm}
@@ -2743,8 +2743,8 @@ and Lemma ~\ref{lem:raise-stacky-order} to prove the main theorem
 in the full genus zero case (Subsection ~\ref{ssec:g-0-main}).
  
 \begin{rem}
-Since all points are linearly equivalent on $\BP^1_k$, we may
-assume without loss of generality that $L_X = n \infty$ for some $n
+Since all points are linearly equivalent on $\BP^1_\Bk$, we may
+assume without loss of generality that $\halfcan_X = n \infty$ for some $n
 \in \BN$ and $K_X = -2 \infty$. We will use this convention
 throughout this section.
 \end{rem}
@@ -2784,7 +2784,7 @@ and generic cases follow.
 	\hline
 	\hline
 	
-	$(0; 3, 3, k; 0)$ & $k > 9$ & $9$ \\	\hline
+	$(0; 3, 3, \ell; 0)$ & $\ell > 9$ & $9$ \\	\hline
 	
 	$(0; a, b, c; 0)$ & not listed above & $5$ \\	\hline
 	
@@ -2869,7 +2869,7 @@ Case ~\ref{custom:three-cases-1} of Remark ~\ref{rem:three-cases}):
 Recall that Case (b) is proven in Example ~\ref{eg:base-0-377}. For
 the remaining cases, we follow a similar method to find a
 presentation satisfying the desired conditions. The log spin
-canonical ring $R(\sx', 0, L')$ is generated as a $k$-algebra by
+canonical ring $R(\sx', 0, L')$ is generated as a $\Bk$-algebra by
 elements of degree at most $e$ with relations in degree at most $2e$
 for each case as described in the Table ~\ref{table:g-0-base-cases-degrees}.
 \begin{table}
@@ -2917,7 +2917,7 @@ verify these is similar to that in Example
 
 Furthermore, each case always satisfies \ref{custom:Ad-iii} as demonstrated in table ~\ref{table:g-0-base-cases-admissibility}.
 Notice that the $e_i$ and $\{e_j' : j \neq i\}$ are equivalent
-for any choice of $i \in J$ for these cases, so $\deg \lfloor e_i L
+for any choice of $i \in J$ for these cases, so $\deg \lfloor e_i \halfcan
 \rfloor$ and $\max_{d \geq 0} \#S_{(\sigma, J)}(i)$ are
 independent of the choice of $i$.
 
@@ -2991,7 +2991,7 @@ In table ~\ref{table:g-0-exceptional} We present the explicit generators and rel
 cases given by signatures in the finite set
 
 \begin{align*}
-	S &:= \{(0; 3, 3, k; 0) : 3 \leq k \leq 9 \text{ odd}\} \\
+	S &:= \{(0; 3, 3, \ell; 0) : 3 \leq \ell \leq 9 \text{ odd}\} \\
 		&\cup \{(0; 3, 5, 5; 0) ,(0; 3, 5, 7; 0), (0; 5, 5, 5; 0), (0; 3, 3, 3, 3; 0)\}
 \end{align*}
 
@@ -3049,7 +3049,7 @@ Then, the log spin canonical ring
 \end{align*}
 
 \noindent
-is generated as a $k$-algebra by elements of degree at most $e =
+is generated as a $\Bk$-algebra by elements of degree at most $e =
 \max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e$,
 so long as $\sigma$ does not lie in the finite list of exceptional
 cases in Table ~\ref{table:g-0-exceptional}.
@@ -3059,8 +3059,8 @@ cases in Table ~\ref{table:g-0-exceptional}.
 If $\sx$ has no stacky points, then we can assume that $\halfcan \sim
 n \cdot \infty$ with $n \in \BZ_{\geq -1}$. This is a classical
 case which is done by Voight and Zureick-Brown \cite[Section 4.2]
-{vzb:stacky}. When $n = -1$, then $R_\halfcan = k$.  When $n = 0$,
-then $R_\halfcan = k[x]$.  When $n > 0$, inductively applying Lemma
+{vzb:stacky}. When $n = -1$, then $R_\halfcan = \Bk$.  When $n = 0$,
+then $R_\halfcan = \Bk[x]$.  When $n > 0$, inductively applying Lemma
 \ref{lem:sat-1} tells us that $R_\halfcan$ is generated in degree 1
 with relations generated in degree 2.
 
@@ -3083,7 +3083,7 @@ We get the following three cases, depending on the value of $r$:
 
 If $r < 3$, then $\deg 
 \lfloor d \halfcan \rfloor < 0$ for all $d \geq 0$ so we have the
-trivial case where $R(\sx, \Delta, \halfcan) = k$.
+trivial case where $R(\sx, \Delta, \halfcan) = \Bk$.
 
 \vskip.1in
 \noindent
@@ -3179,7 +3179,7 @@ In this section, we present several directions for further research.
 		answer to Question ~\ref{ques:fractional-weight}.
 
 
-	\item Voight and Zureick Brown define
+	\item Voight and Zureick-Brown define
 		the notion of a generic initial ideal \cite[Definition 2.2.7]{vzb:stacky}, which 
 		encapsulates the idea of whether the relations for $R_\halfcan$ are 
 		generically chosen, in a precise sense. 
@@ -3206,17 +3206,14 @@ In this section, we present several directions for further research.
 		Generalizing this slightly stronger bound to the (non-stacky) log case case would allow us to inductively apply the lemmas from Section ~\ref{sec:induction} and improve Theorem ~\ref{thm:main} as follows:
 		\begin{question}\label{ques:reduce-5,10-to-4,8}
 			When $g \geq 2,$ can the bounds in Theorem \ref{thm:main} on 
-			the degrees of generation and relations can be reduced from 
-			$e = \max(5,e_1, \ldots, e_r)$ and $\max(10, 2e_1, \ldots, 2e_r)$ to 
-			$e'=\max(4,e_1, \ldots, e_r)$ and $2e'$, 
+			the degrees of generation and relations be reduced from 
+			$e := \max(5, e_1, \ldots, e_r)$ and $\max(10, 2e_1, \ldots, 2e_r)$ to 
+			$e' := \max(4, e_1, \ldots, e_r)$ and $2e'$, 
 			apart from well a characterized list of families?
 		\end{question}
 		\begin{rem}\label{rem:reduce-3,6}
-			It is unlikely that these bounds can be reduced further to 
-			$e''=\max(3, e_1, \ldots, e_r)$ and $2e''$, 
-			because Lemma \ref{lem:sat-2}'s construction always
-			requires a generator in degree 4 and potentially a relation in 
-			degree 8, when adding a stacky point with stabilizer order 3. 
+			Note that when $L$ is not effective and $\sx$ has a stacky point, $R_L$ must have a generator in degree 4 with maximal pole order at one of the stacky points.  Therefore, these bounds cannot in general be reduced further to 
+			$e'' := \max(3, e_1, \ldots, e_r)$ and $2e''$.
 %			Perhaps in the non-stacky case, one 
 %			may be able able to generalize the result of Reid \cite[Theorem 3.4
 %			]{reid:infinitesimal} to show that log spin canonical rings can be 
