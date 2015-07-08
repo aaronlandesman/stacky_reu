@@ -134,7 +134,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Spin canonical rings of log stacky curves}
+\title{Canonical rings of log spin stacky curves}
 
 \author{Aaron Landesman}
 \address[Aaron Landesman]{Department of Mathematics, Harvard University}
@@ -172,11 +172,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-Let $\Gamma$ be a {\bf Fuchsian} group, i.e.,~ a discrete subgroup of
+Let $\Gamma$ be a {\bf Fuchsian group}, i.e.,~ a discrete subgroup of
 $\PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations, such that $\Gamma \backslash \BH$ has finite area.
 We consider the graded {\bf ring of modular forms}
-$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best ways to desribe the ring $M(\Gamma),$ is to write down a presentation.
+$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best ways to describe the ring $M(\Gamma),$ is to write down a presentation.
 %of $M(\Gamma)$ for general Fuchsian groups $\Gamma$. 
 To do so, it is useful to have a bound on the
 degrees in which the generators and relations can occur. In the
@@ -360,7 +360,7 @@ Table ~\ref{table:g-0-exceptional} for signatures with $g = 0$.
 
 \begin{rem}
 \label{rem:gen-at-most-three}
-In the case that $M(\Gamma)$ has some odd weight modular form, it in fact has an odd weight modular form in weight $3$. This holds in the case that the genus $g \geq 2$ because $\deg \lfloor 3L \rfloor > 2g-1,$ so by Riemann--Roch, $\dim_k H^0(\sx,3L) > 0,$ implying there must be some generator in weight $1$ or $3$. The case that $M(\Gamma)$ has a generator in degree 1 or 3 when $g(X) = 0$ or $1$ follows from the fact that it has such a generator in the base cases given in Tables ~\ref{table:g-0-base-cases} and ~\ref{table:g-1-base}. Hence, the bound on the degree of generators and relations in the case that $M(\Gamma)$ has some odd weight modular form, given in Corollary ~\ref{cor:main-mod-forms}, is closely related to the degree of the minimal odd weight modular form.
+If $M(\Gamma)$ has some odd weight modular form, then it has an odd weight modular form in weight $3$. When $g \geq 2$, we see that this is true because $\dim_k H^0(\sx, 3\halfcan) > 0$ by Riemann--Roch and the fact that $\deg \lfloor 3\halfcan \rfloor > 2g - 1$. When the genus is zero or one, we see that there is a generator in weight $1$ or weight $3$ in the base cases given in Table ~\ref{table:g-1-base} and Table ~\ref{table:g-0-base-cases} so there is an odd weight modular form in weight $3$ in general. A consequence of this observation is that the bound on the degree of generators and relations when $M(\Gamma)$ has some odd weight modular form, as given in Corollary ~\ref{cor:main-mod-forms}, is closely related to the degree of the minimal odd weight modular form.
 \end{rem}
 
 \begin{example}
@@ -378,13 +378,11 @@ from the list of exceptional cases in Tables ~\ref{table:genus-0-exceptional-cas
 \end{example}
 
 
-
-
 \begin{rem}
 \label{rem:factor-two}
 In the case that $M_k(\Gamma) = 0$ for all odd $k$, the generation bound of $6 \cdot \max(3, e_1, \ldots, e_r)$ and relation
 bound of $12 \cdot \max(3, e_1, \ldots, e_r)$ can be reduced to $2\cdot \max(3,e_1, \ldots, e_r)$ and $4 \cdot \max(3,e_1, \ldots, e_r)$, apart from several small families of cases. See 
-~\cite[Theorem 9.3.1]{vzb:stacky} and ~\cite[Theorem 8.7.1]{vzb:stacky} for a more precise statement of these bounds in the cases that $g = 0$ and $g > 0$ respectively. Note that we multiply all bounds given in Voight and Zureick-Brown \cite{vzb:stacky} by a factor of two, because our grading convention on $\bigoplus_k M_k(\Gamma)$ differs from that of Voight and Zureick-Brown by a factor of 2.
+~\cite[Theorem 9.3.1]{vzb:stacky} and ~\cite[Theorem 8.7.1]{vzb:stacky} for a more precise statement of these bounds in the cases that $g = 0$ and $g > 0$ respectively. Note that we multiply all bounds given in Voight and Zureick-Brown \cite{vzb:stacky} by a factor of two. Our grading convention for log spin canonical rings uses weight $k$ for the degree whereas Voight and Zureick-Brown $d = 2k$ for degree.
 \end{rem}
 
 
@@ -825,9 +823,9 @@ By the Generalized Max Noether Theorem for genus 0 curves (see Voight
 and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
 \begin{align}
 \label{eqn:noether-377}
-	H^0 (\sx', \lfloor 21 \cdot \halfcan' \rfloor) \otimes H^0 (\sx', \lfloor
-	(k - 21) \halfcan' \rfloor) \twoheadrightarrow H^0 (\sx', \lfloor
-	k \halfcan' \rfloor)
+	H^0 (\sx', 21 \cdot \halfcan') \otimes H^0 (\sx',
+	(k - 21) \halfcan') \rightarrow H^0 (\sx',
+	k \halfcan')
 \end{align}
 
 \noindent
@@ -852,12 +850,12 @@ and $7 < k \leq 25$. Note that we can again use Max Noether's theorem
 (taking saturation into account) to see that
 
 \begin{align*}
-	&H^0 (\sx', \lfloor 3 \halfcan' \rfloor) \otimes H^0 (\sx', \lfloor
-	(k - 3) \halfcan' \rfloor) \rightarrow H^0 (\sx', \lfloor
-	k \halfcan' \rfloor) \text{ if } k \geq 12 \text{ and } 3 \nmid k \\
-	&H^0 (\sx', \lfloor 7 \halfcan' \rfloor) \otimes H^0 (\sx', \lfloor
-	(k - 7) \halfcan' \rfloor) \rightarrow H^0 (\sx', \lfloor
-	k \halfcan' \rfloor) \text{ if } k \geq 6, k \not\equiv 0, 5
+	&H^0 (\sx', 3 \halfcan') \otimes H^0 (\sx',
+	(k - 3) \halfcan') \rightarrow H^0 (\sx',
+	k \halfcan') \text{ if } k \geq 12 \text{ and } 3 \nmid k \\
+	&H^0 (\sx', 7 \halfcan') \otimes H^0 (\sx',
+	(k - 7) \halfcan') \rightarrow H^0 (\sx',
+	k \halfcan') \text{ if } k \geq 6, k \not\equiv 0, 5
 	\bmod 7
 \end{align*}
 
@@ -1215,11 +1213,11 @@ We are almost ready to state Lemma ~\ref{lem:sat-1}, which will yield an inducti
 \BQ$-divisor. Whereas O'Dorney considers arbitrary $\BQ$-divisors in $Div(\mathbb{P}^1)$ \cite[Theorem 8]{dorney:canonical}, we restrict attention to effective divisors and in Lemma ~\ref{lem:sat-1} we are able to obtain much tighter bounds.  Moreover, Lemma ~\ref{lem:sat-1} also extends to curves of genus $g > 0$. Before stating Lemma ~\ref{lem:sat-1}, we recall some notation from O'Dorney \cite{dorney:canonical}.
 
 \begin{defn}\label{den:lower-approximation}
-If $\frac{\alpha}{\beta}\in \BQ$, then $\frac{c}{d}$ (written in reduced form with $c \in \BN, d \in \BN$) is a {\bf{best lower approximation}} to $\frac{\alpha}{\beta}$ if there does not exist any $\frac{c'}{d'}\in \mathbf{Q}$ with $0<d'<d$ and $\frac{c}{d}\le \frac{c'}{d'}$. 
+If $\frac{\alpha}{\beta}\in \BQ$, then $\frac{c}{k}$ (written in reduced form with $c \in \BN, k \in \BN$) is a {\bf{best lower approximation}} to $\frac{\alpha}{\beta}$ if there does not exist any $\frac{c'}{k'}\in \mathbf{Q}$ with $0<k'<k$ and $\frac{c}{k}\le \frac{c'}{k'}$. 
 \end{defn}
 Moreover, if $\frac{\alpha}{\beta}\ge 0$, then the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a finite sequence
 \[
-	0=\frac{c_0}{d_0} < \frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{\alpha}{\beta}.
+	0=\frac{c_0}{k_0} < \frac{c_1}{k_1} < \ldots < \frac{c_r}{k_r} = \frac{\alpha}{\beta}.
 \]
 Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\frac{\alpha}{\beta}=\frac{14}{5}$.
 
@@ -1243,7 +1241,7 @@ for some $\alpha, \beta \in \BN$ such that
 \end{align}
 Let
 \[
-	0 < \frac{c_1}{d_1} < \ldots < \frac{c_n}{d_n} = \frac{\alpha}{\beta}
+	0 < \frac{c_1}{k_1} < \ldots < \frac{c_n}{k_n} = \frac{\alpha}{\beta}
 \]
 be the positive best lower approximations of $\frac{\alpha}{\beta}$.
 Then,
@@ -1290,11 +1288,11 @@ Then,
 \begin{proof}
 {\bf Part (a):}
 By
-Equation ~\ref{eqn:deg1-sat-ind}, for any $d
-\in \BN$ such that $\lfloor d \frac{ \alpha}{\beta} \rfloor > 0$,
+Equation ~\ref{eqn:deg1-sat-ind}, for any $k
+\in \BN$ such that $\lfloor k \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
-	h^0 (X, d \halfcan ) = h^0(X, d \halfcan') + \lfloor d \frac{\alpha}{\beta}\rfloor.
+	h^0 (X, k \halfcan ) = h^0(X, k \halfcan') + \lfloor k \frac{\alpha}{\beta}\rfloor.
 \]
 
 \noindent
@@ -1315,40 +1313,40 @@ be the positive best lower approximations of $\frac{
 %Note that the elements $t_1, \ldots, t_{\lfloor d_i \frac{\alpha}{\beta}\rfloor}$ in $(R_{\halfcan})_{d_i}$ with $\ord_P^{\halfcan'}(t_i) = i$ are linearly independent over $(R_{\halfcan'})_d$. Hence, by a dimension count, these sections form a $k$-basis for
 %$(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.\todo{take out two sentences}
 %For any $1\le i < j \le n$, we have $\frac{c_i}{d_i} < \frac{c_j}{d_j}$.  
-Choose a positive best lower approximation $\frac{c_i}{d_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = d_i$ and $\deg(z_j)<d_i$ for all $j\in \{1, \ldots r\}$. Observe that $\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)}< \frac{\alpha}{\beta}$, for each $j$.  Hence, for each $j$, 
+Choose a positive best lower approximation $\frac{c_i}{k_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = k_i$ and $\deg(z_j)<k_i$ for all $j\in \{1, \ldots r\}$. Observe that $\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)}< \frac{\alpha}{\beta}$, for each $j$.  Hence, for each $j$, 
 \[
-	\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)} < \frac{c_i}{d_i},
+	\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)} < \frac{c_i}{k_i},
 \]
 so the mediant inequality tells us
 \[
-	\frac{\sum_{j=1}^n -\ord^{\halfcan'}_P(z_j)}{\sum_{j=1}^n z_j } < \frac{c_i}{d_i}.
+	\frac{\sum_{j=1}^n -\ord^{\halfcan'}_P(z_j)}{\sum_{j=1}^n z_j } < \frac{c_i}{k_i}.
 \]
-Multiplying through by $d_i$ gives
+Multiplying through by $k_i$ gives
 \[
 	-\ord^{\halfcan'}_P \left(\prod_{j=1}^n z_j \right) = \sum_{j=1}^n -\ord^{\halfcan'}_P(z_j) < c_i .
 \]
 
 \noindent
-Thus, the elements of $(R_{\halfcan})_{d_i}$ with pole order $c_i$ at $P$ are not generated by 
+Thus, the elements of $(R_{\halfcan})_{k_i}$ with pole order $c_i$ at $P$ are not generated by 
 lower degrees. 
 Choose some $y_i \in(R_{
-\halfcan})_{d_i}$ with $-\ord_{P}^{L'}(y_i)=c_i$.
+\halfcan})_{k_i}$ with $-\ord_{P}^{L'}(y_i)=c_i$.
 
-Suppose $c,d \in \BN$ so that $k \le \beta$,  $\frac{c}{d} < \frac{\alpha}{
-\beta},$ and $\frac{c}{d}$ is not a best lower approximation of $\frac{\alpha}{\beta}$. Choose a
-best lower approximation $\frac{c_i}{d_i}$ with $c_i$ maximal such that $d_i< d$.  This implies $\frac{c_i}{d_i}\ge \frac{c}{d},$ so 
-%  The argument goes $c_i d \ge c d_i$
-% implies c_i \frac{d}{d_i} \ge c
-% implies c_i + \frac{d-d_i}{d_i}c_i \ge c
-% \implies c_i (d-d_i) \frac{c_i}{d_i}\ge c
-% so since everything is an integer $c_i +\lfloor (d - d_i) \frac{c_i}{d_i}\rfloor \ge c$
+Suppose $c,k \in \BN$ so that $k \le \beta$,  $\frac{c}{k} < \frac{\alpha}{
+\beta},$ and $\frac{c}{k}$ is not a best lower approximation of $\frac{\alpha}{\beta}$. Choose a
+best lower approximation $\frac{c_i}{k_i}$ with $c_i$ maximal such that $k_i< k$.  This implies $\frac{c_i}{k_i}\ge \frac{c}{k},$ so 
+%  The argument goes $c_i d \ge c k_i$
+% implies c_i \frac{k}{k_i} \ge c
+% implies c_i + \frac{k-k_i}{k_i}c_i \ge c
+% \implies c_i (k-k_i) \frac{c_i}{k_i}\ge c
+% so since everything is an integer $c_i +\lfloor (k - k_i) \frac{c_i}{k_i}\rfloor \ge c$
 % \implies the equation below:
 \[
-	\frac{c-c_i}{d-d_i}\le \frac{\alpha}{\beta}
+	\frac{c-c_i}{k-k_i}\le \frac{\alpha}{\beta}
 \]
 which implies
 \begin{equation}\label{eqn:c-from-lower-terms}
-	c_i +\left\lfloor (d-d_i) \frac{\alpha}{\beta} \right\rfloor \ge c.
+	c_i +\left\lfloor (k-k_i) \frac{\alpha}{\beta} \right\rfloor \ge c.
 \end{equation}
 
 Using Equation ~\ref{eqn:c-from-lower-terms}, we recursively define a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$. Define 
@@ -1369,12 +1367,12 @@ Then define
 \end{equation}
 Note that $S_0$ is not part of this union and in fact $S\cap S_0 = \emptyset$ by pole order considerations.
 
-By equation \ref{eqn:deg1-sat-ind} for $d \in \BN$,
+By equation \ref{eqn:deg1-sat-ind} for $k \in \BN$,
 \[
-	h^0(X, \lfloor d \halfcan \rfloor) = h^0(X, \lfloor d \halfcan'
-		\rfloor) + \left\lfloor d\frac{\alpha} {\beta} \right \rfloor,
+	h^0(X, \lfloor k \halfcan \rfloor) = h^0(X, \lfloor k \halfcan'
+		\rfloor) + \left\lfloor k \frac{\alpha} {\beta} \right \rfloor,
 \] 
-so $S$ contains elements in degree $d \in \BN$ with each pole order in $\{1 \ldots, \lfloor d\frac{\alpha}{\beta}\rfloor\}$.  Thus, by dimension counting, $S$ forms a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a).
+so $S$ contains elements in degree $k \in \BN$ with each pole order in $\{1 \ldots, \lfloor k\frac{\alpha}{\beta}\rfloor\}$.  Thus, by dimension counting, $S$ forms a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$, and we have proven part (a).
 
 {\bf Part (b):}
 Let $S$ be as defined in Equation \ref{eqn:sat-1-defining-S}, define $U_i$ and $V$ as in the lemma's statement, and set
@@ -1390,11 +1388,12 @@ It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generat
 \]
 Notice that $S$ generates the ideal $(y_1, \ldots, y_n)$ considered as an ideal of the subring $\Bk[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$. Let $\halfcan$ be maximal such that $a_l\ne 0$.
 Fix $i \in \{1, \ldots, n\}$. If $y_i \cdot f \notin S$, define
-$$
+\[
 b_j = \begin{cases}
 	a_j &\text{ if } j \neq i\\
 	a_j + 1 &\text{ if } j=i.
-\end{cases}$$
+\end{cases}
+\]
 
 \noindent
 Then, there is some $h \in \BN$ such that $i \le h \le \max(i, l)$ satisfying $\prod_{j = 1}^h y_j^{b_j}\not\in S$, 
@@ -1559,7 +1558,7 @@ If $\frac{\alpha}{\beta}=\frac{e_i-1}{2 e_i}$ for some odd $e_i \in \BN_{\geq 3}
 
 
 \begin{rem}\label{rem:sat-1-gen-lem-generic}
-The generators in Lemma \ref{lem:sat-1} are generic if $\frac{\alpha}{\beta}\le 1$ (since there is at most one positive best lower approximation $\frac{c_i}{d_i}$ with $d_i=1$).  When $\frac{\alpha}{\beta}>1$, the choice of generators in degrees great than 1 is generic; furthermore, we can make the choice in degree 1 generic by choosing $\lfloor \frac{\alpha}{\beta}\rfloor$ linearly independent elements in degree 1 with pole at $P$ of order $\lfloor \frac{\alpha}{\beta}\rfloor$ rather than elements with poles of order $1, \ldots, \lfloor \frac{\alpha}{\beta}\rfloor$; this requires minor complications in the construction of generators of the ideal of relations.
+The generators in Lemma \ref{lem:sat-1} are generic if $\frac{\alpha}{\beta}\le 1$ (since there is at most one positive best lower approximation $\frac{c_i}{k_i}$ with $k_i=1$).  When $\frac{\alpha}{\beta}>1$, the choice of generators in degrees great than 1 is generic; furthermore, we can make the choice in degree 1 generic by choosing $\lfloor \frac{\alpha}{\beta}\rfloor$ linearly independent elements in degree 1 with pole at $P$ of order $\lfloor \frac{\alpha}{\beta}\rfloor$ rather than elements with poles of order $1, \ldots, \lfloor \frac{\alpha}{\beta}\rfloor$; this requires minor complications in the construction of generators of the ideal of relations.
 \end{rem}
 
 We now restrict our attention to log canonical rings of stacky curves.  Lemma \ref{lem:sat-1} accounts for many of the induction cases when the spin canonical ring is saturated in degree 1, as defined in Definition ~\ref{defn:sat}.  We complement Lemma ~\ref{lem:sat-1} with the following two lemmas that allow us to inductively add points, under certain conditions when the spin canonical ring is saturated in degree two or three.
