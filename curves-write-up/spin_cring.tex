@@ -306,6 +306,7 @@ is separably rooted, as described further in Remark ~\ref{rem:stack-formalism}.
 \end{rem}
 
 Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$ in Theorems ~\ref{thm:g-0-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-high-main}, respectively.  In each of these proofs, we follow a similar inductive process utilizing the lemmas of Section ~\ref{sec:induction}; however, in the first two cases we explicitly construct specific base cases and present a finite list of exceptional cases, whereas in the genus $g \geq 2$ case we deduce base cases from more general arguments.
+
 \begin{rem}
 \label{rem:explicit-generators}
 %The main theorem obtains bounds on the degrees of the generators
@@ -320,9 +321,10 @@ explicit systems of generators and relations for curves of genus $2
 \leq g \leq 15$ are detailed in interesting examples by Neves
 \cite[Section III.4]{neves:halfcan}. 
 \end{rem}
+
 \begin{rem}
 The explicit construction described in Remark ~\ref{rem:explicit-generators} also reveals that the bounds given in Theorem ~\ref{thm:main} are tight.
-Specifically, in almost all cases, the log spin canonical ring requires a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. 
+In almost all cases, the log spin canonical ring requires a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. 
 Furthermore, there are many infinite families of cases which require a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$. For further detail, see Remarks ~\ref{rem:genus-0-explicit-bound}, ~\ref{rem:genus-1-explicit-bound}, and ~\ref{rem:genus-2-explicit-bound} in the cases that the genus is $0,1,$ or $\geq 2$ respectively.
 \end{rem}
 
@@ -372,15 +374,12 @@ Therefore, by Corollary ~\ref{cor:main-mod-forms}, $M(\Gamma)$ is
 generated in degree at most $5$ with relations in degree at most $10$. In fact, it is not difficult to reduce generation in weight at most 5 to generation in weight at most 4 with relations in weight at most 8, as noted in Remark ~\ref{rem:cusp-generation-4}. Note that the exceptional cases in Tables ~\ref{table:g-1-exceptional} and ~\ref{table:g-0-exceptional} do not occur because there is a cusp, so $\delta > 0$.
 \end{example}
 
-
-
 \begin{rem}
 \label{rem:factor-two}
 In the case that $M_k(\Gamma) = 0$ for all odd $k$, the generation bound of $6 \cdot \max(3, e_1, \ldots, e_r)$ and relation
 bound of $12 \cdot \max(3, e_1, \ldots, e_r)$ can be reduced to $2\cdot \max(3,e_1, \ldots, e_r)$ and $4 \cdot \max(3,e_1, \ldots, e_r)$, apart from several small families of cases. See 
 ~\cite[Theorem 9.3.1]{vzb:stacky} and ~\cite[Theorem 8.7.1]{vzb:stacky} for a more precise statement of these bounds in the cases that $g = 0$ and $g > 0$ respectively. Note that we multiply all bounds given in Voight and Zureick-Brown \cite{vzb:stacky} by a factor of two. Our grading convention for log spin canonical rings uses weight $k$ for the degree whereas Voight and Zureick-Brown $d = 2k$ for degree.
 \end{rem}
-
 
 The remainder of the paper will be primarily devoted to proving
 Theorem ~\ref{thm:main}. The idea of the
@@ -2547,9 +2546,7 @@ For this remark, we retain the terminology from the proof of Theorem ~\ref{thm:g
 Suppose $e :=  \max(e_1,\ldots, e_r).$ Then, $R_L$ has a generator in degree $e$ when $e \geq 5$ and a relation in degree at least $2e-4$ when $e \geq 7$. Since the proof of Theorem ~\ref{thm:g-1-main} is given by inductively 
 applying Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2}, we obtain that $R_L$ is minimally generated over $R_{L'}$ by an element in degree $e,$ assuming $e \geq 5$. Furthermore, if $e \geq 7$ and $e_i = e,$ 
 then there must be a relation with leading term $y_{i,e_i} \cdot y_{i,e_i-4}.$ Hence, there is a relation in degree at least $2e - 4$. 
-Further, by examining the statements of Lemma ~\ref{lem:sat-1} and \ref{lem:sat-2} in the case that there are $1 \leq i < j \leq r$ with $e_i = e_j = e$, then, there is necessarily a relation with leading term $y_{i, e_i} \cdot y_{j, e_j}$ in degree $2e$.
-
-This analysis also applies to the cases that $g = 0$ and $g = 1$.
+Further, by examining the statements of Lemma ~\ref{lem:sat-1} and \ref{lem:sat-2} in the case that there are $1 \leq i < j \leq r$ with $e_i = e_j = e$, then, there is necessarily a relation with leading term $y_{i, e_i} \cdot y_{j, e_j}$ in degree $2e$. This analysis also applies to the cases that $g = 0$ and $g = 1$.
 \end{rem}
 
 
