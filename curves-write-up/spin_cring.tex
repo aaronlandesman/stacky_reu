@@ -361,7 +361,7 @@ Table ~\ref{table:g-0-exceptional} for signatures with $g = 0$.
 
 \begin{rem}
 \label{rem:gen-at-most-three}
-If $M(\Gamma)$ has some odd weight modular form, then it has an odd weight modular form in weight $3$. When $g \geq 2$, we see that this is true because $\dim_k H^0(\sx, 3\halfcan) > 0$ by Riemann--Roch and the fact that $\deg \lfloor 3\halfcan \rfloor > 2g - 1$. When the genus is zero or one, we see that there is a generator in weight $1$ or weight $3$ in the base cases given in Table ~\ref{table:g-1-base} and Table ~\ref{table:g-0-base-cases}. Hence, there is an odd weight modular form in weight $3$ in general. A consequence of this observation is that the bound on the degree of generators and relations when $M(\Gamma)$ has some odd weight modular form, as given in Corollary ~\ref{cor:main-mod-forms}, is closely related to the degree of the minimal odd weight modular form.
+If $M(\Gamma)$ has some odd weight modular form, then it has an odd weight modular form in weight $3$. When $g \geq 2$, we see that this is true because $\dim_\Bk H^0(\sx, 3\halfcan) > 0$ by Riemann--Roch and the fact that $\deg \lfloor 3\halfcan \rfloor > 2g - 1$. When the genus is zero or one, we see that there is a generator in weight $1$ or weight $3$ in the base cases given in Table ~\ref{table:g-1-base} and Table ~\ref{table:g-0-base-cases}. Hence, there is an odd weight modular form in weight $3$ in general. A consequence of this observation is that the bound on the degree of generators and relations when $M(\Gamma)$ has some odd weight modular form, as given in Corollary ~\ref{cor:main-mod-forms}, is closely related to the degree of the minimal odd weight modular form.
 \end{rem}
 
 \begin{example}
@@ -1300,13 +1300,13 @@ Equation ~\ref{eqn:deg1-sat-ind}, for any $k
 
 \noindent
 Thus, there exist rational sections $t_i$ of $\sco(\lfloor k \halfcan \rfloor)$ with $\ord_P^{L'}(t_i) = i$
-for any $i \in \{0, \ldots, \lfloor d \frac{\alpha}{
+for any $i \in \{0, \ldots, \lfloor k \frac{\alpha}{
 \beta} \rfloor \}$. We will the use positive best lower approximations to
 construct the generators $y_1, \ldots, y_n$ as described in the lemma's statement.
 
 Let 
 \[
-	0 < \frac{c_1}{d_1} < \ldots < \frac{c_n}{d_n} = \frac{\alpha}{
+	0 < \frac{c_1}{k_1} < \ldots < \frac{c_n}{k_n} = \frac{\alpha}{
 	\beta}
 \]
 
@@ -3162,12 +3162,12 @@ application of Lemmas ~\ref{lem:sat-1}, \ref{lem:sat-2}, and \ref
 \begin{rem}
 \label{rem:cusp-generation-4}
 Here, we describe how to obtain a slightly better bound for our
-application to modular forms from example ~\ref{eg:congruence-bounds}.
+application to modular forms from Example ~\ref{eg:congruence-bounds}.
 A careful scrutiny of Theorem ~\ref{thm:g-0-main} reveals that,
-if $\Delta > 0$ and $\sx$ has signature $(0; 3, \ldots, 3; \delta)$
-, then $R_L$ is generated in weight at most 4. Since $\delta > 0$,
-$L_X$ is effective. Additionally, $R_{L_X}$ is generated in weight 1
-, and inductive applications of Lemma ~\ref{lem:sat-1} only add
+if $\Delta > 0$ and $\sx$ has signature $(0; 3, \ldots, 3; \delta)$,
+then $R_L$ is generated in weight at most 4. Since $\delta > 0$,
+$L_X$ is effective. Additionally, $R_{L_X}$ is generated in weight 1,
+and inductive applications of Lemma ~\ref{lem:sat-1} only add
 generators in weights 3 and 4 and relations in weight at most 8.
 Therefore, $R_L$ is generated in weight at most 4 with relations in
 weight at most 8. Note that a similar analysis of the proof of
