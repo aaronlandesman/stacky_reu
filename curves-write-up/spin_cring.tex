@@ -155,14 +155,14 @@
 \begin{document}
 
 \begin{abstract}
- 	Consider modular forms arising from finite-area
-	quotients of the upper-half plane by Fuchsian groups.  
+ 	Consider modular forms arising from a finite-area
+	quotient of the upper-half plane by a Fuchsian group.  
 	By the classical results of Kodaira--Spencer, 
 	this space of modular forms may be
-	viewed as log spin canonical ring of a stacky curve.
+	viewed as a log spin canonical ring of a stacky curve.
 	In this paper, we tightly bound the degrees of minimal
-	generators and relations of log spin canonical rings and,
-	as a consequence, 
+	generators and relations of log spin canonical rings.  
+	As a consequence, we
 	obtain a tight bound on the degrees of minimal generators and relations  		
 	for rings of modular forms of arbitrary integral weight.
 \end{abstract}
@@ -176,7 +176,7 @@ Let $\Gamma$ be a {\bf Fuchsian group}, i.e.,~ a discrete subgroup of
 $\PSL_2(\BR)$ acting on the upper half plane $\BH$ by fractional
 linear transformations, such that $\Gamma \backslash \BH$ has finite area.
 We consider the graded {\bf ring of modular forms}
-$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best ways to describe the ring $M(\Gamma),$ is to write down a presentation.
+$M(\Gamma) = \bigoplus_{k = 0}^\infty M_k(\Gamma)$. One of the best ways to describe the ring $M(\Gamma)$ is to write down a presentation.
 %of $M(\Gamma)$ for general Fuchsian groups $\Gamma$. 
 To do so, it is useful to have a bound on the
 degrees in which the generators and relations can occur. In the
@@ -207,19 +207,19 @@ associated canonical divisor $K_X$, determines the {\bf canonical
 map } $\pi: X \rightarrow \BP_\Bk^{g - 1}$. Then, the {\bf canonical
 ring} is defined to be
 \begin{align*}
-	R(X, K_X) = \bigoplus_{k \geq 0} H^0(X, kK_X),
+	R(X, K_X) = \bigoplus_{d \geq 0} H^0(X, dK_X),
 \end{align*}
 
 \noindent
 with multiplication structure corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample, so $X
-\cong \proj R$. When $g \geq 2$, Petri's theorem gives generators
-and relations for $R(X, K_X)$ showing that in most cases $R(X, K_X)$
-is generated in degree 1 with relations in degree 2, as shown in
-\cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
-\cite[Section 3.3]{acgh:algebraic-curves}. This has the pleasant 
+\cong \proj R$. When $g \geq 2$, Petri's theorem 
+shows that, in most cases, $R(X, K_X)$
+is generated in degree 1 with relations in degree 2 (see
+Saint-Donat \cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
+\cite[Section 3.3]{acgh:algebraic-curves}). This has the pleasant 
 geometric consequence that all such canonically embedded curves are
-scheme theoretically cut out by degree 2 equations.
+scheme-theoretically cut out by degree 2 equations.
 
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize 
 Petri's theorem in the direction of stacky curves equipped with
@@ -236,9 +236,9 @@ Then a {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$
 where $\Delta \in \di X$ is a log divisor and $L \in \di \sx$ satisfies $2\halfcan \sim K_X +
 \Delta + \sum_{i = 1}^{r} \subhalf{e_i} P_i$. The central object of
 study in this paper is the {\bf log spin canonical ring} of $(\sx,
-\Delta, \halfcan),$ notated as
+\Delta, \halfcan),$ defined as
 \begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor).
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor).
 \end{align*}
 
 \noindent
@@ -293,7 +293,7 @@ field $\Bk$, so that $\sx$ has signature $\sigma = (g; e_1, \ldots,
 e_r; \delta)$.
 
 Then the log spin canonical ring is generated as a $\Bk$-algebra by 
-elements of degree at most $e = \max(5, e_1, \ldots, e_r)$ with
+elements of degree at most $e := \max(5, e_1, \ldots, e_r)$ with
 relations generated in degrees at most $2e$,
 so long as $\sigma$ does not lie in a finite list of exceptional
 cases, as given in Table ~\ref{table:g-1-exceptional} for
@@ -308,16 +308,17 @@ In fact, the proof of Theorem ~\ref{thm:main} holds with $\Delta$ replaced by an
 is separably rooted, as described further in Remark ~\ref{rem:stack-formalism}.
 \end{rem}
 
-Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$ in Theorems ~\ref{thm:g-0-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-high-main}, respectively.  In each of these proofs, we follow a similar inductive process utilizing the lemmas of Section ~\ref{sec:induction}; however, in the first two we have to explicitly construct specific base cases and present a finite list of exceptional cases, while in the genus $g \geq 2$ case we deduce base cases from more general arguments.
+Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0, g = 1,$ and $g \geq 2$ in Theorems ~\ref{thm:g-0-main}, ~\ref{thm:g-1-main}, and ~\ref{thm:g-high-main}, respectively.  In each of these proofs, we follow a similar inductive process utilizing the lemmas of Section ~\ref{sec:induction}; however, in the first two cases we explicitly construct specific base cases and present a finite list of exceptional cases, whereas in the genus $g \geq 2$ case we deduce base cases from more general arguments.
 \begin{rem}
 \label{rem:explicit-generators}
-The main theorem obtains bounds on the degrees of the generators
-and relations of log spin canonical rings. However, the proof
-of the genus one and genus zero cases also yield explicit systems
-of generators and an explicit initial ideal of relations, as described in Remarks ~\ref{rem:genus-1-explicit-bound} and ~\ref{rem:genus-0-explicit-bound}.
-Furthermore, our proof of the genus $g \geq 2$ case also provides
+%The main theorem obtains bounds on the degrees of the generators
+%and relations of log spin canonical rings. 
+In addition to providing bounds on the degrees of generators and relations of log spin canonical rings, the proof
+of the genus one and genus zero cases of our main theorem also yield explicit systems
+of generators and initial ideals of relations, as described in Remarks ~\ref{rem:genus-1-explicit-bound} and ~\ref{rem:genus-0-explicit-bound}.
+Although our proof of the genus $g \geq 2$ case provides
 an inductive procedure for explicitly determining the generators
-and initial ideal of relations of log spin canonical rings. Many
+and initial ideal of relations of a log spin canonical ring given generators and relations of the corresponding ring on the coarse space, actually computing such generators and relations of log spin canonical on the coarse space can be difficult.  Many
 explicit systems of generators and relations for curves of genus $2
 \leq g \leq 15$ are detailed in interesting examples by Neves
 \cite[Section III.4]{neves:halfcan}. 
