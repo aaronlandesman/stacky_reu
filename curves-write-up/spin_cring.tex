@@ -169,8 +169,6 @@
 
 \maketitle
 
-\todo{Think about John's comment to regrade the ring.}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
@@ -316,7 +314,7 @@ Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0,
 The main theorem obtains bounds on the degrees of the generators
 and relations of log spin canonical rings. However, the proof
 of the genus one and genus zero cases also yield explicit systems
-of generators and an explicit initial ideal of relations.
+of generators and an explicit initial ideal of relations, as described in Remarks ~\ref{rem:genus-1-explicit-bound} and ~\ref{rem:genus-0-explicit-bound}.
 Furthermore, our proof of the genus $g \geq 2$ case also provides
 an inductive procedure for explicitly determining the generators
 and initial ideal of relations of log spin canonical rings. Many
@@ -327,7 +325,7 @@ explicit systems of generators and relations for curves of genus $2
 \begin{rem}
 The explicit construction described in Remark ~\ref{rem:explicit-generators} also reveals that the bounds given in Theorem ~\ref{thm:main} are tight.
 Specifically, in almost all cases, the log spin canonical ring requires a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree at least $2e-4$. 
-Furthermore, there are many infinite families of cases which require a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$. \todo{Explain this in more detail later, as asked by Brian}
+Furthermore, there are many infinite families of cases which require a generator in degree $e = \max(5, e_1, \ldots, e_r)$ and a relation in degree exactly $2e$. For further detail, see Remarks ~\ref{rem:genus-0-explicit-bound}, ~\ref{rem:genus-1-explicit-bound}, and ~\ref{rem:genus-2-explicit-bound} in the cases that the genus is $0,1,$ or $\geq 2$ respectively.
 \end{rem}
 
 Combining the main theorem of this paper, Theorem ~\ref{thm:main} with the main theorem from Voight and Zureick-Brown ~\cite
@@ -2051,7 +2049,7 @@ $\Bk[y_{i, e_i}]_{i\in J} \otimes \Bk[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$
 \end{lem}
 
 \begin{proof}
-We prove this in case (1) and case (2) follows a similar procedure.
+We prove this in case (1). Case (2) follows a similar procedure.
 
 {\bf Part (a):} 
 By Definition ~\ref{defn:admissible}, for all $i\in J$
@@ -2544,6 +2542,13 @@ We have thus shown the theorem for all $(\sx, \Delta, \halfcan)$ with $g \ge 2$ 
 holds for all log spin curves $(\sx, \Delta, \halfcan)$. 
 \end{proof}
 
+\begin{rem}
+\label{rem:genus-2-explicit-bound}
+Using the terminology from the proof of Theorem ~\ref{thm:g-high-main}, if $e = \max(e_1,\ldots, e_r) \geq 5$, we see that $R_L,$ has a generator in precisely $e$. This follows from the inductive application of Lemmas ~\ref{lem:sat-1} and \ref{lem:sat-2}, which, at the last step, add a minimal generator of $R_L$ over $R_L'$ in degree $e$. Similarly, this inductive application shows that our given presentation has a relation in degree $2e-4$.
+\end{rem}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus one %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Genus One}
@@ -2717,7 +2722,8 @@ This case is analogous to 2a: If there is only one stacky point, we start at $L 
 \end{proof}
 
 \begin{rem}
-In addition to the bound on the degree of the generators and relations, as detailed in Theorem ~\ref{thm:g-1-main}, proof of Theorem ~\ref{thm:g-1-main} yields an explicit procedure for computing those minimal generators and relations. That, is one can start with the generators and relations found in the base cases, and inductively add in generators and relations as one adds and then increments stacky points.
+\label{rem:genus-1-explicit-bound}
+In addition to the bound on the degree of the generators and relations, as detailed in Theorem ~\ref{thm:g-1-main}, proof of Theorem ~\ref{thm:g-1-main} yields an explicit procedure for computing those minimal generators and relations. That, is one can start with the generators and relations found in the base cases, and inductively add in generators and relations as one adds and then increments stacky points. Since the proof of Theorem ~\ref{thm:g-1-main} is given by inductively applying Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2}, when $e = \max(5,e_1,\ldots, e_r) \geq 5$ we obtain that $R_L$ has a generator in degree $e$ and a relation in degree at least $2e - 4$. Further, by examining the statements of Lemma ~\ref{lem:sat-1} and \ref{lem:sat-2} in the case that there $1 \leq i < j \leq r$ with $e_i = e_j = e$, then, at least in our construction, there is a relation in degree $2e$.
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Genus zero %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3128,6 +3134,13 @@ $R(\sx, \delta, \halfcan)$ is generated up to degree $e :=
 \max(5, e_1, \ldots, e_r)$ with relations generated up to degree
 $2e$.
 \end{proof}
+
+\begin{rem}
+\label{rem:genus-0-explicit-bound}
+Just like the case of genus 1, as described in Remark ~\ref{rem:genus-1-explicit-bound}, the proof of Theorem ~\ref{thm:g-0-main} gives an explicit construction of the generators and relations for the log spin canonical ring $R_L$. Furthermore, similarly to the description given in Remarks in ~\ref{rem:genus-2-explicit-bound} and Remark ~\ref{rem:genus-0-explicit-bound}, when $e = \max(e_1, \ldots, e_r) \geq 5,$ there is a generator in degree $e$ and a relation in degree at most $2e$. This can be seen from the inductive application of Lemmas ~\ref{lem:sat-1}, \ref{lem:sat-2}, and \ref{lem:sat-3}. Additionally, as in the case of genus 1, if there are $1 \leq i < j \leq r$ with $e = e_i = e_j$ then there is a relation in degree $2e$. 
+\end{rem}
+
+
 
 \section{Further Research}
 \label{sec:further-questions}
