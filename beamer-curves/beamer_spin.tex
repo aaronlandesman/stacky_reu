@@ -310,11 +310,15 @@ Then, we describe divisors on $\sx$ by
     \draw[thick] (-3,0) -- (3,0);
     % \draw plot[only marks,mark=*] coordinates{(0,0)};
     % \draw plot[only marks,mark=*] coordinates{(-1.5,0)};
-    \filldraw[draw=black,fill=black] (-1.5,0) node [below=2pt]
-    {$\mu_{a_1}$} circle (1.5pt); \filldraw[draw=black,fill=black] (0,0)
-    node [below=2pt] {$\mu_{a_1}$} circle (1.5pt);
-    \filldraw[draw=black,fill=black] (1.5,0) node [below=2pt] {$\mu_{a_1}$}
-    circle (1.5pt);
+		
+    %\filldraw[draw=black,fill=black] (-1.5,0) node [below=2pt]{$\mu_{a_1}$} circle (1.5pt);
+		%\filldraw[draw=black,fill=black] (0,0) node [below=2pt] {$\mu_{a_1}$} circle (1.5pt);
+    %\filldraw[draw=black,fill=black] (1.5,0) node [below=2pt] {$\mu_{a_1}$} circle (1.5pt);
+		
+		\filldraw[draw=black,fill=black] (-1.5,0) node [below=2pt]{$P_1$} circle (1.5pt);
+		\filldraw[draw=black,fill=black] (0,0) node [below=2pt] {$P_2$} circle (1.5pt);
+    \filldraw[draw=black,fill=black] (1.5,0) node [below=2pt] {$P_3$} circle (1.5pt);
+		
     % \filldraw[draw=white,fill=white] (0,-1) node {$\mu_3$} circle
     % (8pt); don't do this
   \end{tikzpicture}
