@@ -33,6 +33,7 @@
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{eg}[thm]{Example}
+%\newtheorem{fact}[thm]{Fact}
 
 %\newtheorem{counterexample}[thm]{Counterexample}
 \newtheorem{defn}[thm]{Definition}
@@ -208,7 +209,7 @@ $\PSL_2(\BR)$ acting on the upper half plane $\BH$ by linear fractional transfor
 \begin{frame}{Modular Forms}
 Let $\Gamma$  be a Fuchsian group (e.g.~$\Gamma = \Gamma_0(N) \subset \SL_2(\BZ)$).
 
-\begin{definition}
+\begin{defn}
 A \textbf{modular form} for $\Gamma$ of weight $k \in \BZ_{\geq 0}$ is a holomorphic function $f \colon \BH \to \BC$ such that
 
 \begin{align*}
@@ -217,7 +218,7 @@ A \textbf{modular form} for $\Gamma$ of weight $k \in \BZ_{\geq 0}$ is a holomor
 
 \noindent
 and such that the limit $\lim_{z \to *} f(z)$ exists for all cusps $*$.
-\end{definition}
+\end{defn}
 
 
 \begin{defn}
@@ -230,18 +231,22 @@ and such that the limit $\lim_{z \to *} f(z)$ exists for all cusps $*$.
 
 \begin{frame}{Ring of Modular Forms}
 
-\begin{definition}[Ring of Modular Forms]
+\begin{defn}
+  Let $M_k(\Gamma)$ be the $\BC$-vector space of modular forms for $\Gamma$ of weight $k$.    
+\end{defn}
+
+\begin{defn}[Ring of Modular Forms]
 \[
 	M(\Gamma) := \bigoplus_{k \in \BZ_{\geq 0}} M_k(\Gamma)
 \]
-\end{definition}
+\end{defn}
 
 
-\begin{example}
+\begin{block}{Example}
 \[
 	M(\SL_2(\BZ)) \cong \BC[E_4,E_6]
 \]
-\end{example}
+\end{block}
 
 \end{frame}
 
@@ -255,17 +260,17 @@ and such that the limit $\lim_{z \to *} f(z)$ exists for all cusps $*$.
 \end{enumerate}
 \end{block}
 
-\begin{block}{\textbf{Kodaira--Spencer}}
+\begin{block}{Kodaira--Spencer}
 \begin{align*}
   M_k(\Gamma) &\cong H^0(X, \Omega^1(\Delta)^{\otimes \frac{k}{2}}) \\
 	f(z) &\mapsto f(z)\, dz^{\otimes \frac{k}{2}}
 \end{align*}
 \end{block}
 
-\begin{block}{\textbf{Log Spin Canonical Ring}}
+\begin{block}{Log Spin Canonical Ring}
 Voight and Zureick-Brown showed the following corollary:
 \begin{align*}
-  M(\Gamma) &\cong R_{X,\Delta} := \bigoplus_k H^0(X, \Omega^1(\Delta)^{\otimes \frac{k}{2}}) \\
+  M(\Gamma) &\cong R_{X,\Delta} := \bigoplus_{k \geq 0} H^0(X, \Omega^1(\Delta)^{\otimes \frac{k}{2}}) \\
 \end{align*}
 \end{block}
 
@@ -288,21 +293,16 @@ is the data of
 	\end{itemize}
 \end{defn}
 
-
-
-Then, we describe divisors on $\sx$ by
+\begin{fact}
 \[
-	\di \sx = \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
-	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
-	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
+	K_{\sx} = K_X + \sum \frac{e_P-1}{e_P} P
 \]
-
+\end{fact}
 \end{frame}
 
 %% frame
 
 \begin{frame}{Fractional Divisors}
-
 %\begin{figure}
 \begin{equation} \label{pic:M-curve} \notag
 % \begin{center}
@@ -326,30 +326,30 @@ Then, we describe divisors on $\sx$ by
 \end{equation}
 
 \begin{rem}
-  \begin{enumerate}
+  \begin{itemize}
   \item Divisors are now \textbf{fractional}.
   \item $D = D_0 + \frac{n_{1}}{a_1}P_1 + \frac{n_{2}}{a_2}P_2 + \frac{n_{3}}{a_3}P_{3}$
-  \end{enumerate}
-
+  \end{itemize}
 \end{rem}
 
-\begin{block}{Fact}
+\begin{block}{General Description of ``Stacky'' Divisors}
 \[
-	K_{\sx} = K_X + \sum \frac{e_P-1}{e_P} P
+	\di \sx = \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
+	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
+	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
 \]
 \end{block}
-
 \end{frame}
 
 %% frame
 
 \begin{frame}{Log Spin Canonical Divisors}
-We can equip stacky curves with a log divisor $\Delta$.
+We can equip stacky curves with an effective divisor $\Delta$.
 
 \begin{defn}
 Divisor $\Delta$ is a \textbf{log divisor} if it is a sum of distinct
 points each with trivial stabilizer. Let $\delta := \deg \Delta$
-refer to its degree.
+denote its degree.
 \end{defn}
 
 
@@ -391,7 +391,7 @@ If $D \in \di \sx$ is a divisor, then we define
 \begin{defn}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, \halfcan) := \bigoplus_{d \geq 0} H^0(\sx, d \halfcan).
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(\sx, k \halfcan).
 \]
 \end{defn}
 
@@ -420,7 +420,7 @@ Bound the degrees of generators and relations of log spin
 canonical rings
 
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan).
+	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(\sx, k \halfcan).
 \]
 \end{block}
 \end{frame}
@@ -476,7 +476,7 @@ e_r; \delta)$. Let $e := \max(5, e_1, \ldots, e_r)$.
 
 The log spin canonical ring 
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(\sx, k \halfcan)
 \]
 
 \noindent
