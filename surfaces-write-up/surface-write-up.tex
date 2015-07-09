@@ -238,6 +238,60 @@ As an example for why we need to add in ghost points for $\bp^2$, consider $\fra
 \todo{The example above needs to be changed because $x_0^2$ can be replaced by $2x_0$}
 
 \section{Canonical Rings on \texorpdfstring{$\bp^1 \times \bp^1$}{}}
+\begin{lem}
+If $D=\sum_{i=1}^m \alpha_i C_i$ for some curve $C_i\in \mathbb{P}^1\times \mathbb{P}^1$, such that $C_1, \ldots, C_4$ are independent hyperplanes.  Then each $C_i$ corresponds to a bi-homogeneous polynomial $f_i$ where $f_1$ and $f_2$ are independent linear polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent linear polynomials in $y_0$ and $y_1$.  Then $D$ is generated in degree at most \todo{add} with relations in degree at most \todo{add}.
+\end{lem}
+\begin{proof}
+Let $(d_i, d_i')$ be the bi-degrees of $f_i$. 
+
+Notice that if $\gamma \in (R_D)_d$, then 
+\[
+	g = \sum_{i=1}^m {f_i}^{a_i}
+\]
+where each $a_i \ge - \alpha_i d_i$, $\sum_{i=1}^m a_i d_i = 0$, and $\sum_{i=1}^m a_i d_i' = 0$.  Then we can view $g$ inside of the lattice
+$S\subseteq \mathbb{R}^{n+1}$ given by ordered elements of the form $(d, a_1, \ldots, a_n)$ satisfying $a_i \ge - d \alpha_i$ for all $i$, $\sum_{i=1}^m a_i d_i = 0$, and $\sum_{i=1}^m a_i d_i' = 0$. 
+From here, determining a spanning set for $(R_D)_d$ reduces to finding the extremal rays of $S$ \todo{cite previous lemma}.  
+
+To do this, we extend the method of O'Dorney \todo{cite}.  We first view the cone $T\subseteq \mathbb{R}^{n+1}$ given by elements of the form $(d, a_1, \ldots, a_n)$ satisfying $a_i \ge -\alpha_i d$ for all $i$ and $\sum_{i=1}^n a_i (d_i + d_i') =0$.  By O'Dorney, this has extremal rays given by 
+\[
+	e_i = (1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i} \alpha_j(d_j+ d_j')}{d_i + d_i'}, -\alpha_{i+1}, \ldots, - \alpha_m).
+\]
+Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_m$.  We can then intersect the hyperplane $H$ given $\sum_{i=1}^m  d_i X_i = 0$.  The extremal rays of $S$ are given by the set of $e_i$ contained in $H$ together with the points of intersection $e_{i,j}$ of $H$ and the line segment connecting $e_i, e_j \not \in H$.
+
+ We can calculate the following elements of $R_D$ whose corresponding lattice points lie on these extremal rays:
+
+For $i \in \{1, \ldots, m\}$ satisfying 
+\begin{equation}\label{eqn:condition-for-e_i}
+	d_i \sum_{l=1}^m d_l' \alpha_l = d_i' \sum_{l=1}^m d_l \alpha_l,
+\end{equation}
+define
+\[
+	\epsilon_i := (\prod_{l=1}^m f_l^{-\alpha l_i d_i}) (f_i^{\ell_i \sum_{l=1}^m \alpha_l d_l}) \in H^0(\ell_i d_i D).
+\]
+\todo{Peter: This equation above is very asymmetric in $d_i$ and $d_i'$.  Can we replace this with something in degree $\gcd(d_i, d_i')$? Otherwise, maybe its wrong and no such element actually exists in that degree (I think it exists, but will check again later to be sure)?}
+For $i, j \in \{1, \ldots, m\}$ satisfying
+\begin{equation}\label{eqn:condition-e_i,j-i}
+	d_i \sum_{l=1}^m \alpha_l d_l' > d_i' \sum_{l=1}^m \alpha_i d_l
+\end{equation}
+and
+\begin{equation}\label{eqn:condition-e_i,j-j}
+	d_j \sum_{l=1}^m \alpha_l d_l' < d_j' \sum_{l=1}^m \alpha_j d_l
+\end{equation}
+then define
+\[
+	\epsilon_{i, j} = (\prod_{l=1}^m f_l^{-\alpha \ell_{i,j} (d_i d_j' - d_j d_i')}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(l_{i,j}(d_i d_j' - d_j d_i')\ell_{i,j}D)
+\]
+where
+\[
+	s_1 = d_j' \sum_{l \ne i,j} \alpha_l d_l - d_j \sum_{l\ne i, j} \alpha_l d_l'
+\]
+and
+\[
+	s_2 = d_i' \sum_{l \ne i,j} \alpha_l d_l - d_i \sum_{l\ne i, j} \alpha_l d_l'.
+\]
+Let $E$ be the set of $\epsilon_i$ and $\epsilon_{i,j}$ given above, satisfying the respective conditions.
+$E$ satisfies the conditions of proposition \todo{cite earlier proposition}, so by applying that proposition $R_D$ is generated in degree at most \todo{insert number}.
+\end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
