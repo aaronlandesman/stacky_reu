@@ -109,7 +109,7 @@
 \newcommand{\se}[1]{\section*{Problem #1}}
 \newcommand{\halfcan}{L}
 \DeclareMathOperator{\Supp}{Supp}
-\DeclareMathOperator{\initial}{in}
+\DeclareMathOperator{\initial}{in_\prec}
 \DeclareMathOperator{\gin}{gin}
 \DeclareMathOperator{\Eff}{Eff}
 \DeclareMathOperator{\sat}{sat}
@@ -118,6 +118,8 @@
 \newcommand{\SL}{\operatorname{SL}}
 \newcommand{\PGL}{\operatorname{PGL}}
 \newcommand{\PSL}{\operatorname{PSL}}
+
+\newcommand\Bk{{\Bbbk}}
 
 
 \newcommand\Wider[2][3em]{%
@@ -142,7 +144,7 @@
 \usecolortheme{beaver}
 
 %%%%%%%%%%%%   Title slide info  %%%%%%%%%%%%%
-\title{Log Spin Canonical Rings}
+\title{Spin Canonical Rings of Log Stacky Curves}
 
 %\author[A. Landesman, P. Ruhm, and R. Zhang]{Aaron Landesman\inst{1}, Peter Ruhm\inst{2}, Robin Zhang\inst{3}}
  %
@@ -275,7 +277,7 @@ and such that the limit $\lim_{z \to *} f(z)$ exists for all cusps $*$.
 
 \begin{frame}{Stacky Curves}
 \begin{defn}
-A \textbf{stacky curve} $\sx$ over an algebraically closed field $k$
+A \textbf{stacky curve} $\sx$ over an algebraically closed field $\Bk$
 is the data of
 	\begin{itemize}
 		\item smooth proper connected scheme $X$ of dimension $1$ \\ 
@@ -343,9 +345,8 @@ We can equip stacky curves with a log divisor $\Delta$.
 
 \begin{defn}
 Divisor $\Delta$ is a \textbf{log divisor} if it is a sum of distinct
-points each with trivial stabilizer.
-
-Let $\delta := \deg \Delta$ refer to its degree.
+points each with trivial stabilizer. Let $\delta := \deg \Delta$
+refer to its degree.
 \end{defn}
 
 
@@ -375,7 +376,6 @@ with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
 \lfloor \alpha_i \rfloor P_i$.
 \end{defn}
 
-
 \begin{defn}
 Let $\sx$ be a stacky curve with coarse space $X$.
 If $D \in \di \sx$ is a divisor, then we define
@@ -384,7 +384,6 @@ If $D \in \di \sx$ is a divisor, then we define
 	H^0(\sx, D) := H^0(X, \lfloor D \rfloor).
 \]
 \end{defn}
-
 
 \begin{defn}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
@@ -399,6 +398,18 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \section{Main Result}
 
 \begin{frame}{Main Problem}
+\begin{block}{Setup}
+Let $\sx$ be a stacky curve with
+signature $\sigma = (g; e_1, \ldots, e_r; \delta)$.
+Log divisor $\Delta \in \di X$ is a sum of distinct points.
+Recall $2 \halfcan \sim K_X + \Delta + \sum_{i = 1}^{r}
+\frac{e_i - 1}{e_i} P_i$.
+\end{block}
+
+\begin{block}{Remark}
+Notice that $\halfcan \sim \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i
++ \sum_{j = 1}^{\ell} P_\ell$.
+\end{block}
 
 \begin{block}{Goal}
 Let $(\sx, \Delta, \halfcan)$ be a log spin curve.
@@ -409,27 +420,33 @@ canonical rings
 	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, d \halfcan).
 \]
 \end{block}
+\end{frame}
 
-\begin{example}
-When $\Gamma \subseteq \SL_2(\BZ)$ is a congruence subgroup such that $\Gamma$ has an odd weight modular form, then we will prove that $M(\Gamma)$ is generated in degree at most 5 with relations generated in degree at most 10.
-\end{example}
+\begin{frame}{Example of Log Spin Canonical Ring}
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve with signature $\sigma =
+(0; 3, 7, 7; 0)$ and $\halfcan \sim -\infty + \frac{1}{3} P_1 +
+\frac{3}{7} P_2 + \frac{3}{7} P_3,$ where $P_1, P_2,$ and $P_3$ are
+distinct points.
+
+\vspace*{-0.5cm}
+\begin{align*}
+	&R(\sx, \Delta, \halfcan) = \Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle f, g \rangle \\
+	&f = a_1 x_{5, 1}^2 + a_2 x_{7, 2} x_{3, 1} + a_3 x_{7, 1} x_{3, 1} 
+	&\text{ in degree $10$} \\
+	&g = b_1 x_{7, 2}^2 + b_2 x_{7, 2} x_{7, 1} + b_3 x_{7, 1}^2
+	+ b_4 x_{5, 1} x_{3, 1}^3  &\text{ in degree $14$}
+\end{align*}
+
+\begin{figure}
+\includegraphics{pics/spin-377-pic-pics.pdf} \\
+\caption{Generators in the $(\deg z, -ord_{P_i}(z))$ lattice}
+\end{figure}
 
 \end{frame}
 
 %% frame
 
 \begin{frame}{Previous Work}
-
-\begin{block}{Setup}
-Let $\sx$ be a stacky curve with
-signature $\sigma = (g; e_1, \ldots, e_r; \delta)$.
-\end{block}
-
-%\begin{block}{Theorem (O'Dorney)}
-%Put O'Dorney's general theorem in here.
-%\end{block}
-% Peter: I don't think we need to actually state O'dorney's theorem (we don't even state it in the paper.  I think we should just have its application to our case as below
-
 \begin{block}{Application of O'Dorney's Work}
 Weakly bounds generator and relations degrees in terms of
 the least common multiples of the $e_i$'s when $g = 0$.
@@ -446,39 +463,79 @@ Bounds generator degrees by $6
 %%frame
 
 \begin{frame}{Main Result}
-\begin{alertblock}{Log Spin Canonical Ring Definition}
-The \textbf{log spin canonical ring} of a stacky curve is
-\[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
-\]
-\end{alertblock}
-
 Our main result gives the following bound
-
 
 \begin{thm}
 \label{thm:main}
 Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
-field $k$, so that $\sx$ has signature $\sigma = (g; e_1, \ldots,
-e_r; \delta)$.
+field $k$, so that $\sx$ has signature $\sigma := (g; e_1, \ldots,
+e_r; \delta)$. Let $e := \max(5, e_1, \ldots, e_r)$.
 
-Then the log spin canonical ring is generated as a $k$-algebra by 
-elements of degree at most $e = \max(5, e_1, \ldots, e_r)$ with
-relations generated in degrees at most $2e$,
-so long as $\sigma$ does not lie in a finite list of exceptional
-cases.
+The log spin canonical ring 
+\[
+	R(\sx, \Delta, \halfcan) = \bigoplus_{d \geq 0} H^0(\sx, \lfloor d \halfcan \rfloor)
+\]
+
+\noindent
+is generated as a $\Bk$-algebra by elements of degree at most $e$ with
+relations generated in degrees up to $2e$ with a finite list of exceptional
+signatures $\sigma$.
 \end{thm}
-
 \end{frame}
 
 %% frame
 
 \begin{frame}{Main Idea}
+\begin{block}{Setup}
+Let $(\sx', \Delta, \halfcan')$ be a log spin curve over a perfect
+field $k$, so that $\sx$ has signature $\sigma := (g; e_1, \ldots,
+e_r; \delta)$. Recall $\halfcan \sim \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i
++ \sum_{j = 1}^{\ell} P_\ell$.
+\end{block}
+
+\begin{block}{Inductive Step}
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve with the same
+signature, except with an additional point or higher stabilizer
+orders.
+
+Describe how $R(\sx, \Delta, \halfcan)$ is generated over
+$R(\sx', \Delta, \halfcan')$.
+\end{block}
+
 \begin{itemize}
 \item Induction on adding points. \\
 \item Induction on raising stabilizer order. \\
 \end{itemize}
+\end{frame}
 
+\begin{frame}{Applications}
+\begin{block}{Main Corollary}
+Let $\Gamma$ be a Fuchsian group and $\sx$ the stacky curve
+associated to $\Gamma \backslash \BH$ with signature $\sigma
+:= (g; e_1, \ldots, e_r; \delta)$. Let $e_\ell := \max(\ell, e_1, \ldots, e_r)$
+
+The ring of modular forms $M(\Gamma)$ is generated as a $\BC$-algebra
+
+\begin{itemize}
+\item if $M_k(\Gamma) = 0$ for all odd $k$:
+by elements of
+degree at most $6 e_3$ with relations
+generated in degrees at most $12 e_3$ \\
+\end{itemize}
+
+\begin{itemize}
+\item otherwise: by elements of degree at most $e_5$ with
+relations generated in degrees at most $2 e_5$ with a
+finite list of exceptional signatures $\sigma$.
+\end{itemize}
+\end{block}
+
+\begin{block}{Corollary}
+When $\Gamma \subseteq \SL_2(\BZ)$ is a congruence subgroup such
+that $\Gamma$ has an odd weight modular form, then $M(\Gamma)$ is
+generated in degrees up to $5$ with relations generated in degrees
+at most $10$.
+\end{block}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%   Further Research Section   %%%%%%%%%%%%%%%%%%%
