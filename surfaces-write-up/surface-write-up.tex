@@ -254,20 +254,12 @@ canonical ring
 
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
-{{m + i} \choose {i}}$ generators $\frac{u^d x_{\vec{v}}}{x_k^{c_i}}$
+{{m + i} \choose {i}}$ generators $\frac{u^{d_i} x^{\vec{v}}}{x_k^{c_i}}$
 where $\vec{v} \in \bz_{\geq 0}^{m + 1}$ such that $\sum_{j = 0}^{m}
-v_j = c_i$ and $z$ relations of the form
-\[
-	x_{\vec{u}} x_{\vec{v}} = x_{\vec{w}} x_{\vec{z}}
-\]
-
-\noindent
-when $\sum_{i = 0}^{m + 1} u_i + v_i = \sum_{i = 0}^{m + 1} w_i + z_i$
-\todo{fix this condition to make it right}
-or of the form 
+v_j = c_i$ and $z$ \todo{how many?} relations of the form
 
 \[
-	x_{\vec{u}} x_{\vec{v}} = x_{\vec{w}} x_{\vec{z}}
+	x^{\vec{u}} x^{\vec{v}} = x^{\vec{w}} x^{\vec{z}}
 \]
 
 \noindent
@@ -275,7 +267,8 @@ when $\vec{u} + \vec{v} = \vec{w} + \vec{z}$.
 \end{thm}
 
 \begin{proof}
-
+We know $u$ is a minimal generator in degree $1$. If $x^{\vec{v}}$
+were not minimal for $\deg \vec{v} = c_i > 0$ for some $i > 0$, then
 \end{proof}
 
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
