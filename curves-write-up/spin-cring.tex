@@ -253,8 +253,6 @@ Theorem ~\ref{thm:main} is proven separately in the cases that the genus $g = 0,
 
 \begin{rem}
 \label{rem:explicit-generators}
-%The main theorem obtains bounds on the degrees of the generators
-%and relations of log spin canonical rings. 
 In addition to providing bounds on the degrees of generators and relations of log spin canonical rings, the proof
 of the genus one and genus zero cases of our main theorem also yield explicit systems
 of generators and initial ideals of relations, as described in Remarks ~\ref{rem:genus-1-explicit-bound} and ~\ref{rem:genus-0-explicit-bound}.
@@ -1123,9 +1121,6 @@ Let
 \noindent
 be the positive best lower approximations of $\frac{
 \alpha}{\beta}$. 
-%Note that the elements $t_1, \ldots, t_{\lfloor d_i \frac{\alpha}{\beta}\rfloor}$ in $(R_{\halfcan})_{d_i}$ with $\ord_P^{\halfcan'}(t_i) = i$ are linearly independent over $(R_{\halfcan'})_d$. Hence, by a dimension count, these sections form a $k$-basis for
-%$(R_{\halfcan})_d$ over $(R_{\halfcan'})_d$.\todo{take out two sentences}
-%For any $1\le i < j \le n$, we have $\frac{c_i}{d_i} < \frac{c_j}{d_j}$.  
 Choose a positive best lower approximation $\frac{c_i}{k_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = k_i$ and $\deg(z_j)<k_i$ for all $j\in \{1, \ldots r\}$. Observe that $\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)}< \frac{\alpha}{\beta}$, for each $j$.  Hence, for each $j$, 
 \[
 	\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)} < \frac{c_i}{k_i},
@@ -1147,16 +1142,12 @@ Choose some $y_i \in(R_{
 
 Suppose $c,k \in \BN$ so that $k \le \beta$,  $\frac{c}{k} < \frac{\alpha}{
 \beta},$ and $\frac{c}{k}$ is not a best lower approximation of $\frac{\alpha}{\beta}$. Choose a
-best lower approximation $\frac{c_i}{k_i}$ with $c_i$ maximal such that $k_i< k$.  This implies $\frac{c_i}{k_i}\ge \frac{c}{k},$ so 
-%  The argument goes $c_i d \ge c k_i$
-% implies c_i \frac{k}{k_i} \ge c
-% implies c_i + \frac{k-k_i}{k_i}c_i \ge c
-% \implies c_i (k-k_i) \frac{c_i}{k_i}\ge c
-% so since everything is an integer $c_i +\lfloor (k - k_i) \frac{c_i}{k_i}\rfloor \ge c$
-% \implies the equation below:
+best lower approximation $\frac{c_i}{k_i}$ with $c_i$ maximal such that $k_i< k$.  This implies $\frac{c_i}{k_i}\ge \frac{c}{k},$ so
 \[
 	\frac{c-c_i}{k-k_i}\le \frac{\alpha}{\beta}
 \]
+
+\noindent
 which implies
 \begin{equation}\label{eqn:c-from-lower-terms}
 	c_i +\left\lfloor (k-k_i) \frac{\alpha}{\beta} \right\rfloor \ge c.
