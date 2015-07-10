@@ -262,32 +262,32 @@ Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_m$.  We can then 
 
 For $i \in \{1, \ldots, m\}$ satisfying 
 \begin{equation}\label{eqn:condition-for-e_i}
-	d_i \sum_{l=1}^m d_l' \alpha_l = d_i' \sum_{l=1}^m d_l \alpha_l,
+	d_i \sum_{k=1}^m d_k' \alpha_k = d_i' \sum_{k=1}^m d_k \alpha_k,
 \end{equation}
 define
 \[
-	\epsilon_i := (\prod_{l \ne i} f_l^{-\alpha l_i \gcd(d_i, d_i')}) (f_i^{\ell_i \frac{\gcd(d_i, d_i')}{d_i + d_i'}\sum_{l \ne i} \alpha_l (d_l + d_l')}) \in H^0(\ell_i \gcd(d_i, d_i') D).
+	\epsilon_i := (\prod_{k \ne i} f_k^{-\alpha \ell_i \gcd(d_i, d_i')}) (f_i^{\ell_i \frac{\gcd(d_i, d_i')}{d_i + d_i'}\sum_{k \ne i} \alpha_k (d_k + d_k')}) \in H^0(\ell_i \gcd(d_i, d_i') D).
 \]
 \todo{Peter: This equation above is very asymmetric in $d_i$ and $d_i'$.  Can we replace this with something in degree $\gcd(d_i, d_i')$? Otherwise, maybe its wrong and no such element actually exists in that degree (I think it exists, but will check again later to be sure)?}
 For $i, j \in \{1, \ldots, m\}$ satisfying
 \begin{equation}\label{eqn:condition-e_i,j-i}
-	d_i \sum_{l=1}^m \alpha_l d_l' > d_i' \sum_{l=1}^m \alpha_i d_l
+	d_i \sum_{k=1}^m \alpha_k d_k' > d_i' \sum_{k=1}^m \alpha_k d_k
 \end{equation}
 and
 \begin{equation}\label{eqn:condition-e_i,j-j}
-	d_j \sum_{l=1}^m \alpha_l d_l' < d_j' \sum_{l=1}^m \alpha_j d_l
+	d_j \sum_{k=1}^m \alpha_k d_k' < d_j' \sum_{k=1}^m \alpha_k d_k
 \end{equation}
 then define
 \[
-	\epsilon_{i, j} = (\prod_{l=1}^m f_l^{-\alpha \ell_{i,j} (d_i d_j' - d_j d_i')}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i,j}(d_i d_j' - d_j d_i')D)
+	\epsilon_{i, j} = (\prod_{k = 1}^m f_k^{-\alpha \ell_{i,j} (d_i d_j' - d_j d_i')}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i,j}(d_i d_j' - d_j d_i')D)
 \]
 where
 \[
-	s_1 = d_j' \sum_{l \ne i,j} \alpha_l d_l - d_j \sum_{l\ne i, j} \alpha_l d_l'
+	s_1 = d_j' \sum_{k \ne i,j} \alpha_k d_k - d_j \sum_{k\ne i, j} \alpha_k d_k'
 \]
 and
 \[
-	s_2 = d_i' \sum_{l \ne i,j} \alpha_l d_l - d_i \sum_{l\ne i, j} \alpha_l d_l'.
+	s_2 = d_i' \sum_{k \ne i,j} \alpha_k d_k - d_i \sum_{k \ne i, j} \alpha_k d_k'.
 \]
 Let $E$ be the set of $\epsilon_i$ and $\epsilon_{i,j}$ given above, satisfying the respective conditions.
 $E$ satisfies the conditions of proposition \todo{cite earlier proposition}, so by applying that proposition $R_D$ is generated in degree at most \todo{insert number}.
