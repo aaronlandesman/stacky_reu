@@ -1730,9 +1730,10 @@ is surjective. Indeed, since $V = \newspan(s_1, s_2) \subseteq
 H^0(K)$ is basepoint-free, by the basepoint-free pencil trick (see
 \cite[Lemma 2.6]{saint-donat:proj} for a proof), we obtain an exact
 sequence
-$$\begin{tikzcd}
-0 \ar r & H^0((n-2)L) \ar r & V \otimes H^0(nL) \ar{r}{f} & H^0((n+2)L)
-\end{tikzcd}$$
+\begin{align*}
+0 \longrightarrow H^0((n - 2)\halfcan) \longrightarrow V \otimes
+H^0(n \halfcan) \overset{f}{\longrightarrow} H^0((n + 2)\halfcan)
+\end{align*}
 
 We wish to show $f$ is surjective.
 Note that $\dim_\Bk \ker f = \dim_\Bk H^0((n - 2)L) = (n - 3)(g - 1+\frac{\delta}{2})$ using Riemann--Roch and the assumption $n \geq 4.$
