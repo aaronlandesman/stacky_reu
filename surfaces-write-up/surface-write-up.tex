@@ -293,9 +293,27 @@ As an example for why we need to add in ghost points for $\bp^2$, consider $\fra
 \todo{construct class of additional examples}
 \todo{The example above needs to be changed because $x_0^2$ can be replaced by $2x_0$}
 
-\section{Canonical Rings on \texorpdfstring{$\bp^1 \times \bp^1$}{}}
+\section{Canonical Rings on \texorpdfstring{$F_k$}{}}
+\begin{defn}
+Suppose $D = \sum_{i=1}^m \alpha_i C_i \in \mathbb{Q} \otimes \di(F_k)$.  Then define 
+\begin{equation}\label{eqn:define-T=(D)}
+	T_=(D) = \left\{i \in \{1, \ldots, m\}: d_i \sum_{k=1}^m d_k' \alpha_k = d_i' \sum_{k=1}^m d_k \alpha_k \right\},
+\end{equation}
+\begin{equation}\label{eqn:define-T+(D)}
+	T_+(D) = \left\{ i \in \{1, \ldots, m\}:  \vphantom{\sum_{k=1}^m} d_i \sum_{k=1}^m \alpha_k d_k' > d_i' \sum_{k=1}^m \alpha_k d_k \right\},
+\end{equation}
+and
+\begin{equation}\label{eqn:define-T-(D)}
+	T_-(D) = \left\{ j \in \{1, \ldots, m\}: d_j \sum_{k=1}^m \alpha_k d_k' < d_j' \sum_{k=1}^m \alpha_k d_k s \right\}.
+\end{equation}
+\end{defn}
+
 \begin{lem}
-If $D=\sum_{i=1}^m \alpha_i C_i$ for some curve $C_i\in \mathbb{P}^1\times \mathbb{P}^1$, such that $C_1, \ldots, C_4$ are independent hyperplanes.  Then each $C_i$ corresponds to a bi-homogeneous polynomial $f_i$ where $f_1$ and $f_2$ are independent linear polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent linear polynomials in $y_0$ and $y_1$.  Then $D$ is generated in degree at most \todo{add} with relations in degree at most \todo{add}.
+If $D=\sum_{i=1}^m \alpha_i C_i$ for some curve $C_i\in F_k$, such that $C_1, \ldots, C_4$ are independent curves with bi-degrees (1,0), (1,0), (0,1), and (0,1) respectively.  Then each $C_i$ corresponds to a polynomial $f_i$ where $f_1$ and $f_2$ are independent linear polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent linear polynomials in $y_0$ and $y_1$.  Then $D$ is generated in degree at most
+\[
+	\sum_{i\in T_=(D)} \gcd(d_i, d_i')\ell_i + \sum_{i\in T_+(D) \atop j\in T_-(D)} (d_i d_j'- d_j d_i')\ell_{i,j}
+\]
+ with relations in degree at most \todo{add}.
 \end{lem}
 \begin{proof}
 Let $(d_i, d_i')$ be the bi-degrees of $f_i$. 
@@ -316,24 +334,12 @@ Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_m$.  We can then 
 
  We can calculate the following elements of $R_D$ whose corresponding lattice points lie on these extremal rays:
 
-For $i \in \{1, \ldots, m\}$ satisfying 
-\begin{equation}\label{eqn:condition-for-e_i}
-	d_i \sum_{k=1}^m d_k' \alpha_k = d_i' \sum_{k=1}^m d_k \alpha_k,
-\end{equation}
+For $i \in T_=(D)$
 define
 \[
 	\epsilon_i := (\prod_{k \ne i} f_k^{-\alpha \ell_i \gcd(d_i, d_i')}) (f_i^{\ell_i \frac{\gcd(d_i, d_i')}{d_i + d_i'}\sum_{k \ne i} \alpha_k (d_k + d_k')}) \in H^0(\ell_i \gcd(d_i, d_i') D).
 \]
-\todo{Peter: This equation above is very asymmetric in $d_i$ and $d_i'$.  Can we replace this with something in degree $\gcd(d_i, d_i')$? Otherwise, maybe its wrong and no such element actually exists in that degree (I think it exists, but will check again later to be sure)?}
-For $i, j \in \{1, \ldots, m\}$ satisfying
-\begin{equation}\label{eqn:condition-e_i,j-i}
-	d_i \sum_{k=1}^m \alpha_k d_k' > d_i' \sum_{k=1}^m \alpha_k d_k
-\end{equation}
-and
-\begin{equation}\label{eqn:condition-e_i,j-j}
-	d_j \sum_{k=1}^m \alpha_k d_k' < d_j' \sum_{k=1}^m \alpha_k d_k
-\end{equation}
-then define
+For $i \in T_+(D)$ and $j \in T_-(D)$, define
 \[
 	\epsilon_{i, j} = (\prod_{k = 1}^m f_k^{-\alpha \ell_{i,j} (d_i d_j' - d_j d_i')}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i,j}(d_i d_j' - d_j d_i')D)
 \]
@@ -346,7 +352,11 @@ and
 	s_2 = d_i' \sum_{k \ne i,j} \alpha_k d_k - d_i \sum_{k \ne i, j} \alpha_k d_k'.
 \]
 Let $E$ be the set of $\epsilon_i$ and $\epsilon_{i,j}$ given above, satisfying the respective conditions.
-$E$ satisfies the conditions of proposition \todo{cite earlier proposition}, so by applying that proposition $R_D$ is generated in degree at most \todo{insert number}.
+$E$ satisfies the conditions of proposition \todo{cite earlier proposition}, so by applying that proposition $R_D$ is generated in degree at most
+\[
+	\sum_{i\in T_=(D)} \gcd(d_i, d_i')\ell_i + \sum_{i\in T_+(D) \atop j\in T_-(D)} (d_i d_j'- d_j d_i')\ell_{i,j}.
+\]
+
 \end{proof}
 
 
