@@ -248,7 +248,7 @@ Notice that if $\gamma \in (R_D)_d$, then
 \[
 	g = \sum_{i=1}^m {f_i}^{a_i}
 \]
-where each $a_i \ge - \alpha_i d_i$, $\sum_{i=1}^m a_i d_i = 0$, and $\sum_{i=1}^m a_i d_i' = 0$.  Then we can view $g$ inside of the lattice
+where each $a_i \ge - \alpha_i d_i$, $\sum_{i=1}^m a_i d = 0$, and $\sum_{i=1}^m a_i d_i' = 0$.  Then we can view $g$ inside of the lattice
 $S\subseteq \mathbb{R}^{n+1}$ given by ordered elements of the form $(d, a_1, \ldots, a_n)$ satisfying $a_i \ge - d \alpha_i$ for all $i$, $\sum_{i=1}^m a_i d_i = 0$, and $\sum_{i=1}^m a_i d_i' = 0$. 
 From here, determining a spanning set for $(R_D)_d$ reduces to finding the extremal rays of $S$ \todo{cite previous lemma}.  
 
@@ -266,7 +266,7 @@ For $i \in \{1, \ldots, m\}$ satisfying
 \end{equation}
 define
 \[
-	\epsilon_i := (\prod_{l=1}^m f_l^{-\alpha l_i d_i}) (f_i^{\ell_i \sum_{l=1}^m \alpha_l d_l}) \in H^0(\ell_i d_i D).
+	\epsilon_i := (\prod_{l \ne i} f_l^{-\alpha l_i \gcd(d_i, d_i')}) (f_i^{\ell_i \frac{\gcd(d_i, d_i')}{d_i + d_i'}\sum_{l \ne i} \alpha_l (d_l + d_l')}) \in H^0(\ell_i \gcd(d_i, d_i') D).
 \]
 \todo{Peter: This equation above is very asymmetric in $d_i$ and $d_i'$.  Can we replace this with something in degree $\gcd(d_i, d_i')$? Otherwise, maybe its wrong and no such element actually exists in that degree (I think it exists, but will check again later to be sure)?}
 For $i, j \in \{1, \ldots, m\}$ satisfying
@@ -279,7 +279,7 @@ and
 \end{equation}
 then define
 \[
-	\epsilon_{i, j} = (\prod_{l=1}^m f_l^{-\alpha \ell_{i,j} (d_i d_j' - d_j d_i')}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(l_{i,j}(d_i d_j' - d_j d_i')\ell_{i,j}D)
+	\epsilon_{i, j} = (\prod_{l=1}^m f_l^{-\alpha \ell_{i,j} (d_i d_j' - d_j d_i')}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i,j}(d_i d_j' - d_j d_i')D)
 \]
 where
 \[
