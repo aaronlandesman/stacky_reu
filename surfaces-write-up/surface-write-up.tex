@@ -160,12 +160,21 @@
 \section{Background}
 
 \ssec{Notation}
-
+\begin{convention}
 Write
 \begin{align*}
 	D = \sum_{i=1}^{n}\alpha_i D_i.
 \end{align*}
-where $\alpha_i \in \bq.$
+where $\alpha_i \in \bq$.
+\end{convention}
+
+\begin{convention}
+Let $\{x_0, \ldots, x_m\}$ be coordinates for $\bp^m$. Let
+$\vec{v} = (v_0, \ldots, v_m) \in \br^{m + 1}$. Then write
+\[
+	x_{\vec{v}} := \prod_{i = 0}^{m} x_i^{v_i}
+\]
+\end{convention}
 
 \section{Lemmas for Generation and Relations}
 
@@ -196,7 +205,7 @@ Write
 \begin{align*}
 	D = \sum_{i=0}^{n}\alpha_i D_i.
 \end{align*}
-where $\alpha_i \in \bq$ and $\deg D_i = d_i$. Let $f_i$ be cartier divisors such that $D_i = V(f_i)$. We shall further assume that among there exist functions $f_0,\ldots, f_{m+1}$ form a basis for degree one rational functions on $\bp^m$.
+where $\alpha_i \in \bq$ and $\deg D_i = d_i$. Let $f_i$ be Cartier divisors such that $D_i = V(f_i)$. We shall further assume that among there exist functions $f_0,\ldots, f_{m+1}$ form a basis for degree one rational functions on $\bp^m$.
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
@@ -218,9 +227,56 @@ By definition of $H^0(\bp^m,dD)$, functions satisfying conditions
 ~\eqref{align:pm-span} lie in $H^0(\bp^m,dD)$. To complete the proof, it suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$ functions satisfying condition ~\eqref{align:pm-basis}. However we know $h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show that those functions satisfying condition ~\eqref{align:pm-basis} are independent. This follows from the assumption that $f_0,\ldots, f_n$ form a basis of degree 1 rational functions, and so degree $\lfloor d \deg D \rfloor $ monomials in $f_0,\ldots, f_n$ form a basis of degree $\lfloor d \deg D \rfloor $ rational functions.
 \end{proof}
 
+\begin{rem}
+Remark about how we can assume divisor only consists of hyperplanes
+by taking the Veronese embedding.
+\end{rem}
+
 \ssec{One point on Projective Space}
+\label{ssec:proj-one-point}
 
+\begin{thm}
+\label{thm:proj-one-point}
+Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
+$\bp^m$. Let $D = \frac{a}{b} H$, with $a, b \in \bz$ and $H =
+V(x_k)$ a hyperplane of $\bp^m$, be a divisor on $\bp^m$. Let
+\[
+	\left\lfloor \frac{a}{b} \right\rfloor = \frac{c_0}{d_0} < \frac{c_1}{d_1} <
+	\ldots < \frac{c_r}{d_r} = \frac{a}{b}
+\]
 
+\noindent
+be the best lower approximations of $\frac{a}{b}$. Then the
+canonical ring
+\[
+	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)
+\]
+
+\noindent
+has a minimal presentation consisting of the $\sum_{i = 0}^{r}
+{{m + i} \choose {i}}$ generators $\frac{u^d x_{\vec{v}}}{x_k^{c_i}}$
+where $\vec{v} \in \bz_{\geq 0}^{m + 1}$ such that $\sum_{j = 0}^{m}
+v_j = c_i$ and $z$ relations of the form
+\[
+	x_{\vec{u}} x_{\vec{v}} = x_{\vec{w}} x_{\vec{z}}
+\]
+
+\noindent
+when $\sum_{i = 0}^{m + 1} u_i + v_i = \sum_{i = 0}^{m + 1} w_i + z_i$
+\todo{fix this condition to make it right}
+or of the form 
+
+\[
+	x_{\vec{u}} x_{\vec{v}} = x_{\vec{w}} x_{\vec{z}}
+\]
+
+\noindent
+when $\vec{u} + \vec{v} = \vec{w} + \vec{z}$.
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
 
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
 
