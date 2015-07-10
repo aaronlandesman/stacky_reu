@@ -181,11 +181,11 @@ is generated in degree 1 with relations in degree 2 (see
 Saint-Donat \cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
 \cite[Section 3.3]{acgh:algebraic-curves}). This has the pleasant 
 geometric consequence that all such canonically embedded curves are
-scheme-theoretically cut out by degree 2 equations.
+scheme-theoretically cut out by degree 2 equations. \todo{reword ``all such''}
 
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize 
 Petri's theorem in the direction of stacky curves equipped with
-log divisors. For a stacky curve $\sx$ with coarse space $X$ and
+log divisors \todo{reword}. For a stacky curve $\sx$ with coarse space $X$ and
 stacky points (also called ``fractional points'') $P_1, \ldots, P_r$
 with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$, we define
 
@@ -208,7 +208,7 @@ A brief overview of stacky curves, log divisors, and log spin
 canonical rings is given in Subsection
 ~\ref{ssec:stacky-background}.
 
-In particular, we bound the degrees of generators and relations of
+Our main theorem is to bound the degrees of generators and relations of
 a log spin canonical ring. Let $\sx$ be a stacky curve with
 signature $\sigma = (g; e_1, \ldots, e_r; \delta)$. The application
 of O'Dorney's work \cite[Chapter 5]{dorney:canonical} to log spin
@@ -218,7 +218,7 @@ log spin canonical rings, Voight and Zureick-Brown
 \cite[Corollary 10.4.6]{vzb:stacky} bounded generator degrees by $6
 \cdot \max(e_1, \ldots, e_r)$ and relation degrees by $12 \cdot \max
 (e_1, \ldots, e_ r)$ when $\halfcan$ is effective. Note that the
-bounds we write here differ from those stated in Voight and Zureick-
+bounds we deduce differ from those stated in Voight and Zureick-
 Brown \cite[Corollary 10.4.6]{vzb:stacky} by a factor of 2 because
 their grading convention differs from ours by a factor of 2.
 
@@ -306,7 +306,8 @@ If $M(\Gamma)$ has some odd weight modular form, then it has an odd weight modul
 \begin{example}
 \label{eg:congruence-bounds}
 Suppose $\Gamma \subset SL_2(\BZ)$ is any congruence subgroup. Then, since
-the action  of $SL_2(\BZ)$ on $\BH$ only has points with stabilizer order 1, 2 and 3, and has a cusp, the 
+the action  of $SL_2(\BZ)$ on $\BH$ only has points with stabilizer
+order 1, 2 and 3, and has at least one cusp, the
 action of $\Gamma$ can only have points with stabilizer order 1, 2 and 3, and has at least one cusp.
 Furthermore, if $\Gamma$ has some odd weight modular form, then it must 
 have no points with stabilizer order 2 (see Remark ~\ref{rem:odd-denom}). 
@@ -2476,7 +2477,7 @@ In this section, we present several directions for further research.
 		\begin{question}
 		\label{ques:spin-canonical-petri}
 			Is there a general structure theorem describing a set of minimal 
-			generators and relations of $R_{\halfcan}$ where $(X, \Delta, L))$ is a log spin curve with no stacky points?
+			generators and relations of $R_{\halfcan}$ where $(X, \Delta, L)$ is a log spin curve with no stacky points?
 		\end{question}
 		
 \item One direction for further research is to extend the results
@@ -2505,9 +2506,9 @@ In this section, we present several directions for further research.
 		lemmas of Section ~\ref{sec:induction} might allow one to 
 		follow similar questions to this paper and provide a general 
 		answer to Question ~\ref{ques:fractional-weight}.
+		\\
 
-
-	\item Voight and Zureick-Brown define
+	\item Voight and Zureick-Brown define \todo{reword}
 		the notion of a generic initial ideal \cite[Definition 2.2.7]{vzb:stacky}, which 
 		encapsulates the idea of whether the relations for $R_\halfcan$ are 
 		generically chosen, in a precise sense. 
@@ -2521,6 +2522,7 @@ In this section, we present several directions for further research.
 			If $(\sx, \Delta, \halfcan)$ is a log spin curve, can one write down the
 			generic initial ideal explicitly?
 		\end{question}
+		
 	\item In Subsection \ref{ssec:bounds-high-genus}, we reference 
 		the work of Reid \cite[Theorem 3.4]{reid:infinitesimal}. We use his 
 		proof that the 
