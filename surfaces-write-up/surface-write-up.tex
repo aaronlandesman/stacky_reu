@@ -230,6 +230,7 @@ By definition of $H^0(\bp^m,dD)$, functions satisfying conditions
 \begin{rem}
 Remark about how we can assume divisor only consists of hyperplanes
 by taking the Veronese embedding.
+\todo{do this}
 \end{rem}
 
 \ssec{One point on Projective Space}
@@ -254,20 +255,12 @@ canonical ring
 
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
-{{m + i} \choose {i}}$ generators $\frac{u^d x_{\vec{v}}}{x_k^{c_i}}$
-where $\vec{v} \in \bz_{\geq 0}^{m + 1}$ such that $\sum_{j = 0}^{m}
-v_j = c_i$ and $z$ relations of the form
+{{m + i} \choose {i}}$ generators $f_{\vec{v}} := \frac{u^{d_i}
+x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
+such that $\sum_{j = 0}^{m} v_j = c_i$ and $z$ \todo{how many?}
+relations of the form
 \[
-	x_{\vec{u}} x_{\vec{v}} = x_{\vec{w}} x_{\vec{z}}
-\]
-
-\noindent
-when $\sum_{i = 0}^{m + 1} u_i + v_i = \sum_{i = 0}^{m + 1} w_i + z_i$
-\todo{fix this condition to make it right}
-or of the form 
-
-\[
-	x_{\vec{u}} x_{\vec{v}} = x_{\vec{w}} x_{\vec{z}}
+	x^{\vec{u}} x^{\vec{v}} = x^{\vec{w}} x^{\vec{z}}
 \]
 
 \noindent
@@ -275,12 +268,15 @@ when $\vec{u} + \vec{v} = \vec{w} + \vec{z}$.
 \end{thm}
 
 \begin{proof}
-
+We know $f_0$ is a minimal generator in degree $1$. If $x^{\vec{v}}$
+were not minimal for $\deg \vec{v} = c_i > 0$ for some $i > 0$, then
+$f_{\vec{v}} = f_{\vec{w}} f_{\vec{z}}$ for some $f_{\vec{w}},
+f_{\vec{z}} \in R_D$ with $\deg \vec{w}, \deg \vec{z} < \deg \vec{v}$.
 \end{proof}
 
+
+
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
-
-
 
 \begin{rem}
 When $\langle f_1, \ldots, f_r \rangle = \langle x_0, \ldots, x_n \rangle$ (the irrelevant ideal), we may directly use the hypersurface method by considering $x_0, \ldots, x_n$ instead of the $f_i$'s. However, when $\sqrt{\langle f_1, \ldots, f_r \rangle} = \langle x_0, \ldots, x_n \rangle$ (or the saturation), we cannot obtain the same result from our modification of O'Dorney's method as seen in Example ~\ref{eg:radical}. Instead we must use ghost points and hypersurfaces.
