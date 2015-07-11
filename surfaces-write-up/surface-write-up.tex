@@ -423,11 +423,11 @@ where each $c_i \ge - \alpha_i c_i$, $\sum_{i=1}^m c_i a_i = 0$, and $\sum_{i=1}
 $S\subseteq \mathbb{R}^{n+1}$ given by ordered elements of the form $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge - d \alpha_i$ for all $i$, $\sum_{i=1}^m c_i a_i = 0$, and $\sum_{i=1}^m c_i b_i = 0$. 
 From here, determining a spanning set for $(R_D)_d$ reduces to finding the extremal rays of $S$ \todo{cite previous lemma}.  
 
-To do this, we extend the method of O'Dorney \todo{cite}.  We first view the cone $T\subseteq \mathbb{R}^{n+1}$ given by elements of the form $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge -\alpha_i d$ for all $i$ and $\sum_{i=1}^n c_i (a_i + b_i) =0$.  By O'Dorney, this has extremal rays given by 
+To do this, we extend the method of O'Dorney \todo{cite}.  We first view the cone inside of $\mathbb{R}^{n+1}$ given by elements of the form $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge -\alpha_i d$ for all $i$ and $\sum_{i=1}^n c_i (a_i + b_i) =0$.  By O'Dorney, this has extremal rays given by 
 \[
 	e_i = (1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i} \alpha_j(a_j+ b_j)}{a_i + b_i}, -\alpha_{i+1}, \ldots, - \alpha_m).
 \]
-Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_m$.  We can then intersect the hyperplane $H$ given $\sum_{i=1}^m  a_i X_i = 0$.  The extremal rays of $S$ are given by the set of $e_i$ contained in $H$ together with the points of intersection $e_{i,j}$ of $H$ and the line segment connecting $e_i, e_j \not \in H$.
+Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_m$.  We can then intersect the hyperplane $H$ given $\sum_{i=1}^m  a_i X_i = 0$ to get a subspace $S$.  The extremal rays of $S$ are given by the set of $e_i$ contained in $H$ together with the points of intersection $e_{i,j}$ of $H$ and the line segment connecting $e_i, e_j \not \in H$.
 
  We can calculate the following elements of $R_D$ whose corresponding lattice points lie on these extremal rays:
 
@@ -461,11 +461,13 @@ $\ker(\psi)$ is generated in degree at most \todo{insert number}.
 \end{lem}
 \begin{proof}
 We first claim that $\psi$ has a relation of the form
-\[
+\begin{equation}\label{eqn:relations-psi}
 	(y_j - \beta_j)\prod_{i=1}^m {y_i}^{c_{i}}
-\]
-whenever $d\in \mathbb{N}$, $c_i \ge -\alpha_i d$, and $\beta_j \in k[y_1, \ldots, y_4]$ satisfies $\psi(\beta_j)\in \mathscr{O}(a_j, b_j)$.
-To find such a $\beta$, we simply write $\epsilon_j$ as a polynomial in $\epsilon_1, \ldots \epsilon _4$.  
+\end{equation}
+for some $d\in \mathbb{N}$, $c_i \ge -\alpha_i d$, $a_j + \sum_{i=1}^m a_i c_i = 0$, $b_j + \sum_{i=1}^m b_i c_i = 0$, and $\beta_j \in k[y_1, \ldots, y_4]$ satisfies $\psi(\beta_j)\in \mathscr{O}(a_j, b_j)$.
+To find such a $\beta$, we simply write $\epsilon_j$ as a polynomial in $\epsilon_1, \ldots \epsilon _4$.  Furthermore, these generate all relations, since they allow us to reduce any $\prod_{i=1}^n \epsilon_i^{r_i}$ to a canonical form. \todo{add reference to earlier description of canonical form.}
+
+Note that we can view the relations from Equation \ref{eqn:relations-psi} as an element of $\mathbb{R}^{n+1}$ given by $(d, c_1, \ldots, c_n)$.  Let $S'\subseteq \mathbb{R}^+$ be the set of $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge -\alpha_i d$, $a_j + \sum_{i=1}^m a_i c_i = 0$, and $b_j + \sum_{i=1}^m b_i c_i = 0$.  Note that $S'$ is a translation of $S$ by 
 
 
 \end{proof}
