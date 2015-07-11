@@ -205,14 +205,14 @@ Write
 \begin{align*}
 	D = \sum_{i=0}^{n}\alpha_i D_i.
 \end{align*}
-where $\alpha_i \in \bq$ and $\deg D_i = d_i$. Let $f_i$ be Cartier divisors such that $D_i = V(f_i)$. We shall further assume that among there exist functions $f_0,\ldots, f_{m+1}$ form a basis for degree one rational functions on $\bp^m$.
+where $\alpha_i \in \bq$ and $\deg D_i = a_i$. Let $f_i$ be Cartier divisors such that $D_i = V(f_i)$. We shall further assume that among there exist functions $f_0,\ldots, f_{m+1}$ form a basis for degree one rational functions on $\bp^m$.
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
 The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ so that 
 \begin{align}
 \label{align:pm-span}
-\sum_{i=0}^{n} c_i \cdot d_i \cdot f_i = 0 & \text{ and } &c_i \geq \lfloor \alpha_i d\rfloor	
+\sum_{i=0}^{n} c_i \cdot a_i \cdot f_i = 0 & \text{ and } &c_i \geq \lfloor \alpha_i d\rfloor	
 \end{align}
 form a spanning set for $H^0(\bp^m, dD)$ over $k$. Furthermore, functions 
 of the form $u^d \cdot \prod_{i=1}^n f_i^{c_i} $ such that
@@ -255,7 +255,7 @@ canonical ring
 
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
-{{m + i} \choose {i}}$ generators $f_{\vec{v}} := \frac{u^{d_i}
+{{m + i} \choose {i}}$ generators $f_{\vec{v}} := \frac{u^{a_i}
 x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
 such that $\sum_{j = 0}^{m} v_j = c_i$ and $z$ \todo{how many?}
 relations of the form
@@ -290,68 +290,82 @@ As an example for why we need to add in ghost points for $\bp^2$, consider $\fra
 \todo{The example above needs to be changed because $x_0^2$ can be replaced by $2x_0$}
 
 \section{Canonical Rings on \texorpdfstring{$F_k$}{}}
+Let $D=\sum_{i=1}^m \alpha_i C_i$ for some curve $C_i\in F_k$, such that $C_1, \ldots, C_4$ are independent curves with bi-degrees (1,0), (1,0), (0,1), and (0,1) respectively.  Let $C_i = V(f_i)$ where $f_i \in \mathscr{O}(a_i, b_i)$.  Then each $C_i$ corresponds to a polynomial $f_i$ where $f_1$ and $f_2$ are independent linear polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent linear polynomials in $y_0$ and $y_1$.
 \begin{defn}
 Suppose $D = \sum_{i=1}^m \alpha_i C_i \in \mathbb{Q} \otimes \di(F_k)$.  Then define 
 \begin{equation}\label{eqn:define-T=(D)}
-	T_=(D) = \left\{i \in \{1, \ldots, m\}: d_i \sum_{k=1}^m d_k' \alpha_k = d_i' \sum_{k=1}^m d_k \alpha_k \right\},
+	T_=(D) = \left\{i \in \{1, \ldots, m\}: a_i \sum_{k=1}^m b_k \alpha_k = b_i \sum_{k=1}^m a_k \alpha_k \right\},
 \end{equation}
 \begin{equation}\label{eqn:define-T+(D)}
-	T_+(D) = \left\{ i \in \{1, \ldots, m\}:  \vphantom{\sum_{k=1}^m} d_i \sum_{k=1}^m \alpha_k d_k' > d_i' \sum_{k=1}^m \alpha_k d_k \right\},
+	T_+(D) = \left\{ i \in \{1, \ldots, m\}:  \vphantom{\sum_{k=1}^m} a_i \sum_{k=1}^m \alpha_k b_k > b_i \sum_{k=1}^m \alpha_k a_k \right\},
 \end{equation}
 and
 \begin{equation}\label{eqn:define-T-(D)}
-	T_-(D) = \left\{ j \in \{1, \ldots, m\}: d_j \sum_{k=1}^m \alpha_k d_k' < d_j' \sum_{k=1}^m \alpha_k d_k s \right\}.
+	T_-(D) = \left\{ j \in \{1, \ldots, m\}: a_j \sum_{k=1}^m \alpha_k b_k < b_j \sum_{k=1}^m \alpha_k a_k s \right\}.
 \end{equation}
 \end{defn}
 
 \begin{lem}
-If $D=\sum_{i=1}^m \alpha_i C_i$ for some curve $C_i\in F_k$, such that $C_1, \ldots, C_4$ are independent curves with bi-degrees (1,0), (1,0), (0,1), and (0,1) respectively.  Then each $C_i$ corresponds to a polynomial $f_i$ where $f_1$ and $f_2$ are independent linear polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent linear polynomials in $y_0$ and $y_1$.  Then $D$ is generated in degree at most
+$R_D$ is generated in degree at most
 \[
-	\sum_{i\in T_=(D)} \gcd(d_i, d_i')\ell_i + \sum_{i\in T_+(D) \atop j\in T_-(D)} (d_i d_j'- d_j d_i')\ell_{i,j}
+	\sum_{i\in T_=(D)} \gcd(a_i, b_i)\ell_i + \sum_{i\in T_+(D) \atop j\in T_-(D)} (a_i b_j- a_j b_i)\ell_{i,j}.
 \]
- with relations in degree at most \todo{add}.
 \end{lem}
 \begin{proof}
-Let $(d_i, d_i')$ be the bi-degrees of $f_i$. 
+Let $(a_i, b_i)$ be the bi-degrees of $f_i$. 
 
 Notice that if $\gamma \in (R_D)_d$, then 
 \[
-	g = \sum_{i=1}^m {f_i}^{a_i}
+	g = \sum_{i=1}^m {f_i}^{c_i}
 \]
-where each $a_i \ge - \alpha_i d_i$, $\sum_{i=1}^m a_i d = 0$, and $\sum_{i=1}^m a_i d_i' = 0$.  Then we can view $g$ inside of the lattice
-$S\subseteq \mathbb{R}^{n+1}$ given by ordered elements of the form $(d, a_1, \ldots, a_n)$ satisfying $a_i \ge - d \alpha_i$ for all $i$, $\sum_{i=1}^m a_i d_i = 0$, and $\sum_{i=1}^m a_i d_i' = 0$. 
+where each $c_i \ge - \alpha_i c_i$, $\sum_{i=1}^m c_i a_i = 0$, and $\sum_{i=1}^m c_i b_i = 0$.  Then we can view $g$ inside of the lattice
+$S\subseteq \mathbb{R}^{n+1}$ given by ordered elements of the form $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge - d \alpha_i$ for all $i$, $\sum_{i=1}^m c_i a_i = 0$, and $\sum_{i=1}^m c_i b_i = 0$. 
 From here, determining a spanning set for $(R_D)_d$ reduces to finding the extremal rays of $S$ \todo{cite previous lemma}.  
 
-To do this, we extend the method of O'Dorney \todo{cite}.  We first view the cone $T\subseteq \mathbb{R}^{n+1}$ given by elements of the form $(d, a_1, \ldots, a_n)$ satisfying $a_i \ge -\alpha_i d$ for all $i$ and $\sum_{i=1}^n a_i (d_i + d_i') =0$.  By O'Dorney, this has extremal rays given by 
+To do this, we extend the method of O'Dorney \todo{cite}.  We first view the cone $T\subseteq \mathbb{R}^{n+1}$ given by elements of the form $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge -\alpha_i d$ for all $i$ and $\sum_{i=1}^n c_i (a_i + b_i) =0$.  By O'Dorney, this has extremal rays given by 
 \[
-	e_i = (1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i} \alpha_j(d_j+ d_j')}{d_i + d_i'}, -\alpha_{i+1}, \ldots, - \alpha_m).
+	e_i = (1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i} \alpha_j(a_j+ b_j)}{a_i + b_i}, -\alpha_{i+1}, \ldots, - \alpha_m).
 \]
-Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_m$.  We can then intersect the hyperplane $H$ given $\sum_{i=1}^m  d_i X_i = 0$.  The extremal rays of $S$ are given by the set of $e_i$ contained in $H$ together with the points of intersection $e_{i,j}$ of $H$ and the line segment connecting $e_i, e_j \not \in H$.
+Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_m$.  We can then intersect the hyperplane $H$ given $\sum_{i=1}^m  a_i X_i = 0$.  The extremal rays of $S$ are given by the set of $e_i$ contained in $H$ together with the points of intersection $e_{i,j}$ of $H$ and the line segment connecting $e_i, e_j \not \in H$.
 
  We can calculate the following elements of $R_D$ whose corresponding lattice points lie on these extremal rays:
 
 For $i \in T_=(D)$
 define
 \[
-	\epsilon_i := (\prod_{k \ne i} f_k^{-\alpha \ell_i \gcd(d_i, d_i')}) (f_i^{\ell_i \frac{\gcd(d_i, d_i')}{d_i + d_i'}\sum_{k \ne i} \alpha_k (d_k + d_k')}) \in H^0(\ell_i \gcd(d_i, d_i') D).
+	\epsilon_i := (\prod_{k \ne i} f_k^{-\alpha \ell_i \gcd(a_i, b_i)}) (f_i^{\ell_i \frac{\gcd(a_i, b_i)}{a_i + b_i}\sum_{k \ne i} \alpha_k (a_k + b_k)}) \in H^0(\ell_i \gcd(a_i, b_i) D).
 \]
 For $i \in T_+(D)$ and $j \in T_-(D)$, define
 \[
-	\epsilon_{i, j} = (\prod_{k = 1}^m f_k^{-\alpha \ell_{i,j} (d_i d_j' - d_j d_i')}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i,j}(d_i d_j' - d_j d_i')D)
+	\epsilon_{i, j} = (\prod_{k = 1}^m f_k^{-\alpha \ell_{i,j} (a_i b_j - a_j b_i)}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i,j}(a_i b_j - a_j b_i)D)
 \]
 where
 \[
-	s_1 = d_j' \sum_{k \ne i,j} \alpha_k d_k - d_j \sum_{k\ne i, j} \alpha_k d_k'
+	s_1 = b_j \sum_{k \ne i,j} \alpha_k a_k - a_j \sum_{k\ne i, j} \alpha_k b_k
 \]
 and
 \[
-	s_2 = d_i' \sum_{k \ne i,j} \alpha_k d_k - d_i \sum_{k \ne i, j} \alpha_k d_k'.
+	s_2 = b_i \sum_{k \ne i,j} \alpha_k a_k - a_i \sum_{k \ne i, j} \alpha_k b_k.
 \]
 Let $E$ be the set of $\epsilon_i$ and $\epsilon_{i,j}$ given above, satisfying the respective conditions.
 $E$ satisfies the conditions of proposition \todo{cite earlier proposition}, so by applying that proposition $R_D$ is generated in degree at most
 \[
-	\sum_{i\in T_=(D)} \gcd(d_i, d_i')\ell_i + \sum_{i\in T_+(D) \atop j\in T_-(D)} (d_i d_j'- d_j d_i')\ell_{i,j}.
+	\sum_{i\in T_=(D)} \gcd(a_i, b_i)\ell_i + \sum_{i\in T_+(D) \atop j\in T_-(D)} (a_i b_j- a_j b_i)\ell_{i,j}.
 \]
+\end{proof}
+
+\todo{factor $\phi$ through $\psi$ and $\chi$.}
+\begin{lem}
+$\ker(\psi)$ is generated in degree at most \todo{insert number}.
+\end{lem}
+\begin{proof}
+We first claim that $\psi$ has a relation of the form
+\[
+	(y_j - \beta_j)\prod_{i=1}^m {y_i}^{c_{i}}
+\]
+whenever $d\in \mathbb{N}$, $c_i \ge -\alpha_i d$, and $\beta_j \in k[y_1, \ldots, y_4]$ satisfies $\psi(\beta_j)\in \mathscr{O}(a_j, b_j)$.
+To find such a $\beta$, we simply write $\epsilon_j$ as a polynomial in $\epsilon_1, \ldots \epsilon _4$.  
+
 
 \end{proof}
 
