@@ -160,6 +160,37 @@
 
 \section{Background}
 
+\begin{defn}
+\label{defn:lower-approximation}
+If $\frac{\alpha}{\beta}\in \bq$, then $\frac{c}{k}$ (written in
+reduced form with $c \in \bn, k \in \bn$) is a {\bf{best lower
+approximation}} to $\frac{\alpha}{\beta}$ if there does not exist
+any $\frac{c'}{k'}\in \bq$ with $0 < k'<k$ and $\frac{c}{k} \le
+\frac{c'}{k'}$.
+\end{defn}
+
+Moreover, if $\frac{\alpha}{\beta}\ge 0$, then the non-negative
+best lower approximations of $\frac{\alpha}{\beta}$ form a finite
+sequence
+\[
+	0 = \frac{c_0}{k_0} < \frac{c_1}{k_1} < \ldots < \frac{c_r}{k_r} = \frac{\alpha}{\beta}.
+\]
+Figure \ref{fig:s14/5-lattice} gives a pictorial representation of
+the positive best lower approximations of $\frac{\alpha}{\beta} =
+\frac{14}{5}$.
+
+\begin{figure}
+\includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
+\caption{This figure shows each non-negative best lower
+approximation of $\frac{14}{5}.$ Each ``$\bullet$'' denotes a best
+lower approximation and each ``$\circ$'' denotes a lattice point
+below $5y=14x$ which is not a best lower approximation.  Note that
+the non-negative best lower approximations generate the monoid of
+lattice points in the first quadrant satisfying  $5y \le 14x$, with
+the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$.}
+\label{fig:s14/5-lattice}
+\end{figure}
+
 \ssec{Notation}
 \begin{convention}
 Write
@@ -272,15 +303,16 @@ by taking the Veronese embedding.
 \begin{thm}
 \label{thm:proj-one-point}
 Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
-$\bp^m$. Let $D = \frac{a}{b} H$, with $a, b \in \bz$ and $H =
-V(x_k)$ a hyperplane of $\bp^m$, be a divisor on $\bp^m$. Let
+$\bp^m$. Let $D = \alpha H$, with $\alpha = \frac{a}{b} \in \bq$
+and $H = V(x_k)$ a hyperplane of $\bp^m$, be a divisor on $\bp^m$.
+Let
 \[
-	\left\lfloor \frac{a}{b} \right\rfloor = \frac{c_0}{d_0} < \frac{c_1}{d_1} <
-	\ldots < \frac{c_r}{d_r} = \frac{a}{b}
+	\left\lfloor \frac{a}{b} \right\rfloor = \frac{c_0}{d_0} <
+	\frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{a}{b}
 \]
 
 \noindent
-be the best lower approximations of $\frac{a}{b}$. Then the
+be the best lower approximations of $\alpha$. Then the
 canonical ring
 \[
 	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)
@@ -288,10 +320,10 @@ canonical ring
 
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
-{{m + i} \choose {i}}$ generators $f_{\vec{v}} := \frac{u^{d_i}
-x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
-such that $\sum_{j = 0}^{m} v_j = c_i$ and $z$ \todo{how many?}
-relations of the form
+{{m + i} \choose {i}}$ many generators $f_{d_i, \vec{v}} :=
+\frac{u^{d_i} x^{\vec{v}}} {x_k^{c_i}}$ where $\vec{v} \in
+\bz_{\geq 0}^{m + 1}$ such that $\sum_{j = 0}^{m} v_j = c_i$ and $z$ \todo{how many?}
+many relations of the form
 \[
 	x^{\vec{u}} x^{\vec{v}} = x^{\vec{w}} x^{\vec{z}}
 \]
@@ -301,10 +333,30 @@ when $\vec{u} + \vec{v} = \vec{w} + \vec{z}$.
 \end{thm}
 
 \begin{proof}
-We know $f_0$ is a minimal generator in degree $1$. If $x^{\vec{v}}$
-were not minimal for $\deg \vec{v} = c_i > 0$ for some $i > 0$, then
-$f_{\vec{v}} = f_{\vec{w}} f_{\vec{z}}$ for some $f_{\vec{w}},
-f_{\vec{z}} \in R_D$ with $\deg \vec{w}, \deg \vec{z} < \deg \vec{v}$.
+We know $\{f_{0, \vec{u}} : \deg \vec{u} = \left\lfloor \frac{a}{b}
+\right\rfloor \}$ are minimal generators in degree $1$. If
+$f_{d_i, \vec{v}}$ were not minimal for $\deg \vec{v} = c_i$ for
+some $i > 0$, then $f_{d_i, \vec{v}} = f_{s, \vec{w}}
+f_{t, \vec{z}}$ for some $s, t \in \bn$ and $\vec{w}, \vec{z} \in
+\bz_{\geq 0}^{m + 1}$. In particular, we see that 
+\begin{align*}
+	&d_i = s + t \\
+	&c_i = \deg \vec{v} = \deg \vec{w} + \deg \vec{z}
+\end{align*}
+
+\noindent
+so $\frac{c_i}{d_i}$ is the mediant of the rational numbers
+$\frac{\deg \vec{w}}{s}, \frac{\deg \vec{z}}{t}$ which both
+do not exceed $\alpha$. One of $\frac{\deg \vec{w}}{s},
+\frac{\deg \vec{z}}{t}$ must be at least $\frac{c_i}{d_i}$
+and $s$ and $t$ are both less than $d_i$, so we have a contradiction 
+of $\frac{c_i}{d_i}$ being a best lower approximation of $\alpha$
+(see Definition ~\ref{defn:lower-approximation}).
+
+Now we show that no further generators are necessary. Let $\vec{x}_i
+:= (d_i, c_i) \in \bz^2$ a lattice point. 
+
+
 \end{proof}
 
 
@@ -322,7 +374,7 @@ As an example for why we need to add in ghost points for $\bp^2$, consider $\fra
 \todo{construct class of additional examples}
 \todo{The example above needs to be changed because $x_0^2$ can be replaced by $2x_0$}
 
-\section{Canonical Rings on \texorpdfstring{$F_k$}{}}
+\section{Canonical Rings on Hirzebruch Surfaces}
 \begin{defn}
 Suppose $D = \sum_{i=1}^m \alpha_i C_i \in \mathbb{Q} \otimes \di(F_k)$.  Then define 
 \begin{equation}\label{eqn:define-T=(D)}
