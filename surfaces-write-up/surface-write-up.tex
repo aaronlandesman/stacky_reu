@@ -148,8 +148,8 @@
 \begin{document}
 
 \begin{abstract}
- 	Bonding generator and relation degrees of general $\bq$-divisors
-	of surfaces.
+ 	Bounding generator and relation degrees of general $\bq$-divisors
+	on projective spaces $\bp^n$ and Hirzebruch surfaces.
 \end{abstract}
 
 \maketitle
@@ -296,7 +296,7 @@ By definition of $H^0(\bp^m,dD)$, functions satisfying conditions
 \begin{rem}
 Remark about how we can assume divisor only consists of hyperplanes
 by taking the Veronese embedding.
-\todo{Robin: do this}
+\todo{write}
 \end{rem}
 
 
@@ -320,24 +320,25 @@ canonical ring
 
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
-{{m + i} \choose {i}}$ many generators $f_{d_i, \vec{v}} :=
+{{m + i} \choose {i}}$ many generators $f_{d_i}^{\vec{v}} :=
 \frac{u^{d_i} x^{\vec{v}}} {x_k^{c_i}}$ where $\vec{v} \in
 \bz_{\geq 0}^{m + 1}$ such that $\sum_{j = 0}^{m} v_j = c_i$ and $z$ \todo{how many?}
 many relations of the form
 \[
-	x^{\vec{u}} x^{\vec{v}} = x^{\vec{w}} x^{\vec{z}}
+	f_{d_i}^{\vec{v}} f_{d_j}^{\vec{w}} = f_{d_k}^{\vec{y}} f_{d_\ell}^{\vec{z}}
 \]
 
 \noindent
-when $\vec{u} + \vec{v} = \vec{w} + \vec{z}$.
+when $d_i + d_j = d_k + d_\ell$ and $\vec{v} + \vec{w} = \vec{y} +
+\vec{z}$.
 \end{thm}
 
 \begin{proof}
-We know $\{f_{0, \vec{u}} : \deg \vec{u} = \left\lfloor \frac{a}{b}
-\right\rfloor \}$ are minimal generators in degree $1$. If
-$f_{d_i, \vec{v}}$ were not minimal for $\deg \vec{v} = c_i$ for
-some $i > 0$, then $f_{d_i, \vec{v}} = f_{s, \vec{w}}
-f_{t, \vec{z}}$ for some $s, t \in \bn$ and $\vec{w}, \vec{z} \in
+We know $\{f_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor \frac{a}{b}
+\right\rfloor \}$ are minimal generators in degree $1$. Now let $i >
+0$. If $f_{d_i}^{\vec{v}}$ were not minimal for some $\vec{v}$ such
+that $\deg \vec{v} = c_i$, then $f_{d_i}^{\vec{v}} = f_{s}^{\vec{w}}
+f_{t}^{\vec{z}}$ for some $s, t \in \bn$ and $\vec{w}, \vec{z} \in
 \bz_{\geq 0}^{m + 1}$. In particular, we see that 
 \begin{align*}
 	&d_i = s + t \\
@@ -353,10 +354,25 @@ and $s$ and $t$ are both less than $d_i$, so we have a contradiction
 of $\frac{c_i}{d_i}$ being a best lower approximation of $\alpha$
 (see Definition ~\ref{defn:lower-approximation}).
 
-Now we show that no further generators are necessary. Let $\vec{x}_i
-:= (d_i, c_i) \in \bz^2$ a lattice point. 
+Now we show that no further generators are necessary. As done in
+the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
+{dorney:canonical}, each lattice point $(d, c) \in \bz^2$ such that
+$c \leq d \alpha$ is a nonnegative linear combination of $\vec{x}_i$
+and $\vec{x}_{i + 1}$ where $\vec{x}_i := (d_i, c_i) \in \bz^2$.
+Consequently, any element $\frac{u^{d} x^{\vec{v}}} {x_k^{c}} \in
+R_D$ is expressible as
+\begin{align*}
+	\frac{u^{d} x^{\vec{v}}} {x_k^{c}} = \frac{u^{d_i} x^{\vec{w}}}
+	{x_k^{c_i}} \frac{u^{d_{i + 1}} x^{\vec{z}}} {x_k^{c_{i + 1}}}
+\end{align*}
 
+\noindent
+where $\vec{w}, \vec{z} \in \bz_{\geq 0}^{m + 1}$ such that $\deg
+\vec{w} = c_i, \deg \vec{z} = c_{i + 1}$. But these are precisely
+two generators of the form $f_{d_i}^{\vec{w}}$ and $f_{d_{i + 1}}
+^{\vec{z}}$ as prescribed in the theorem statement.
 
+\todo{relations}
 \end{proof}
 
 
