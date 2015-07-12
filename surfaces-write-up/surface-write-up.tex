@@ -106,6 +106,7 @@
 \DeclareMathOperator\di{Div}
 \newcommand\bida{a}
 \newcommand\bidb{b}
+\newcommand\hirz{\mathbb{F}}
 
 \DeclareMathOperator{\supp}{Supp}
 \DeclareMathOperator{\initial}{in_\prec}
@@ -159,7 +160,7 @@
 
 \section{Background}
 
-\todo{macros: hirzebruch, degrees}
+\todo{macros: degrees}
 
 \begin{defn}
 \label{defn:lower-approximation}
@@ -315,8 +316,8 @@ $\bp^m$. Let $D = \alpha H$, with $\alpha = \frac{a}{b} \in \bq$
 and $H = V(x_k)$ a hyperplane of $\bp^m$, be a divisor on $\bp^m$.
 Let
 \[
-	\left\lfloor \frac{a}{b} \right\rfloor = \frac{c_0}{d_0} <
-	\frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{a}{b}
+	\left\lfloor \frac{c}{d} \right\rfloor = \frac{c_0}{d_0} <
+	\frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{c}{d}
 \]
 
 \noindent
@@ -364,13 +365,13 @@ of $\frac{c_i}{d_i}$ being a best lower approximation of $\alpha$
 
 Now we show that no further generators are necessary. As done in
 the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
-{dorney:canonical}, each lattice point $(d, c) \in \bz_{\geq 0}^2$
-such that $c \leq d \alpha$ is a non-negative linear combination of
+{dorney:canonical}, each lattice point $(d', c') \in \bz_{\geq 0}^2$
+such that $c' \leq d' \alpha$ is a non-negative linear combination of
 $\vec{x}_i$ and $\vec{x}_{i + 1}$ where $\vec{x}_i := (d_i, c_i) \in
-\bz^2$. Consequently, any element $\frac{u^{d} x^{\vec{v}}}
-{x_k^{c}} \in R_D$ is expressible as
+\bz^2$. Consequently, any element $\frac{u^{d'} x^{\vec{v}}}
+{x_k^{c'}} \in R_D$ is expressible as
 \begin{align*}
-	\frac{u^{d} x^{\vec{v}}} {x_k^{c}} = \frac{u^{d_i} x^{\vec{w}}}
+	\frac{u^{d'} x^{\vec{v}}} {x_k^{c'}} = \frac{u^{d_i} x^{\vec{w}}}
 	{x_k^{c_i}} \frac{u^{d_{i + 1}} x^{\vec{z}}} {x_k^{c_{i + 1}}}
 \end{align*}
 
