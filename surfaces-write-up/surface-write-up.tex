@@ -162,22 +162,26 @@
 
 \begin{defn}
 \label{defn:lower-approximation}
-If $\frac{\alpha}{\beta}\in \bq$, then $\frac{c}{k}$ (written in
-reduced form with $c \in \bn, k \in \bn$) is a {\bf{best lower
-approximation}} to $\frac{\alpha}{\beta}$ if there does not exist
-any $\frac{c'}{k'}\in \bq$ with $0 < k'<k$ and $\frac{c}{k} \le
-\frac{c'}{k'}$.
+If $\alpha \in \br$, then a rational number $\frac{c}{k} \leq \alpha
+$ (written in reduced form with $c \in \bz, k \in \bn$) is a
+\textbf{best lower approximation} to $\alpha$ if there does not
+exist $\frac{c'}{k'}\in \mathbf{Q}$ such that $0 < k'< k$ and
+$\frac{c}{k} \le \frac{c'}{k'} \le \alpha$. 
 \end{defn}
 
-Moreover, if $\frac{\alpha}{\beta}\ge 0$, then the non-negative
-best lower approximations of $\frac{\alpha}{\beta}$ form a finite
-sequence
+\begin{rem}
+\label{rem:lower-approximation}
+Note that all integers less than or equal to $\lfloor \alpha \rfloor$
+are best lower approximations to $\alpha$. Also, if $\alpha \ge 0$,
+then the non-negative best lower approximations of
+$\alpha$ form a finite sequence
 \[
-	0 = \frac{c_0}{k_0} < \frac{c_1}{k_1} < \ldots < \frac{c_r}{k_r} = \frac{\alpha}{\beta}.
+	0 = \frac{c_0}{k_0} < \frac{c_1}{k_1} < \ldots < \frac{c_r}{k_r} = \alpha.
 \]
-Figure \ref{fig:s14/5-lattice} gives a pictorial representation of
-the positive best lower approximations of $\frac{\alpha}{\beta} =
-\frac{14}{5}$.
+
+\noindent
+Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\alpha = \frac{14}{5}$.
+\end{rem}
 
 \begin{figure}
 \includegraphics{pics/spin-lower-approximations-pic-pics.pdf}

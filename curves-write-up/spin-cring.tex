@@ -1022,14 +1022,28 @@ Observe that Definition \ref{defn:graded-p-lex} remains the same if we replace $
 We are almost ready to state Lemma ~\ref{lem:sat-1}, which will yield an inductive procedure for determining the generators and relations of $R_D$, where $D \in \di \BP^1$ is an effective $
 \BQ$-divisor. Whereas O'Dorney considers arbitrary $\BQ$-divisors in $Div(\mathbb{P}^1)$ \cite[Theorem 8]{dorney:canonical}, we restrict attention to effective divisors and in Lemma ~\ref{lem:sat-1} we are able to obtain much tighter bounds.  Moreover, Lemma ~\ref{lem:sat-1} also extends to curves of genus $g > 0$. Before stating Lemma ~\ref{lem:sat-1}, we recall some notation from O'Dorney \cite{dorney:canonical}.
 
-\begin{defn}\label{den:lower-approximation}
-If $\frac{\alpha}{\beta}\in \BQ$, then $\frac{c}{k}$ (written in reduced form with $c \in \BN, k \in \BN$) is a {\bf{best lower approximation}} to $\frac{\alpha}{\beta}$ if there does not exist any $\frac{c'}{k'}\in \mathbf{Q}$ with $0<k'<k$ and $\frac{c}{k}\le \frac{c'}{k'}$. 
+\begin{defn}
+\label{defn:lower-approximation}
+If $\alpha \in \BR$, then a rational number $\frac{c}{k} \leq \alpha
+$ (written in reduced form with $c \in \BZ, k \in \BN$) is a
+\textbf{best lower approximation} to $\alpha$ if there does not
+exist $\frac{c'}{k'}\in \mathbf{Q}$ such that $0 < k'< k$ and
+$\frac{c}{k} \le \frac{c'}{k'} \le \alpha$. 
 \end{defn}
-Moreover, if $\frac{\alpha}{\beta}\ge 0$, then the non-negative best lower approximations of $\frac{\alpha}{\beta}$ form a finite sequence
+
+\begin{rem}
+\label{rem:lower-approximation}
+Note that all integers less than or equal to $\lfloor \alpha \rfloor$
+are best lower approximations to $\alpha$. Also, if $\alpha \ge 0$,
+then the non-negative best lower approximations of
+$\alpha$ form a finite sequence
 \[
-	0=\frac{c_0}{k_0} < \frac{c_1}{k_1} < \ldots < \frac{c_r}{k_r} = \frac{\alpha}{\beta}.
+	0 = \frac{c_0}{k_0} < \frac{c_1}{k_1} < \ldots < \frac{c_r}{k_r} = \alpha.
 \]
-Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\frac{\alpha}{\beta}=\frac{14}{5}$.
+
+\noindent
+Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\alpha = \frac{14}{5}$.
+\end{rem}
 
 \begin{figure}
 \includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
@@ -1053,7 +1067,8 @@ Let
 \[
 	0 < \frac{c_1}{k_1} < \ldots < \frac{c_n}{k_n} = \frac{\alpha}{\beta}
 \]
-be the positive best lower approximations of $\frac{\alpha}{\beta}$.
+be the positive best lower approximations of $\frac{\alpha}{\beta}$
+(similar to Remark ~\ref{rem:lower-approximation}).
 Then,
 
 \begin{enumerate}
@@ -1118,8 +1133,7 @@ Let
 \]
 
 \noindent
-be the positive best lower approximations of $\frac{
-\alpha}{\beta}$. 
+be the positive best lower approximations of $\frac{\alpha}{\beta}$. 
 Choose a positive best lower approximation $\frac{c_i}{k_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = k_i$ and $\deg(z_j)<k_i$ for all $j\in \{1, \ldots r\}$. Observe that $\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)}< \frac{\alpha}{\beta}$, for each $j$.  Hence, for each $j$, 
 \[
 	\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)} < \frac{c_i}{k_i},
