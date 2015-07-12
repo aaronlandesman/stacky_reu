@@ -320,12 +320,12 @@ canonical ring
 
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
-{{m + i} \choose {i}}$ generators $f_{\vec{v}} := \frac{u^{a_i}
+{{m + i} \choose {i}}$ generators $F_{\vec{v}} := \frac{u^{a_i}
 x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
 such that $\sum_{j = 0}^{m} v_j = c_i$ and $z$ \todo{how many?}
 relations of the form
 \[
-	f_{d_i}^{\vec{v}} f_{d_j}^{\vec{w}} = f_{d_k}^{\vec{y}} f_{d_\ell}^{\vec{z}}
+	F_{d_i}^{\vec{v}} F_{d_j}^{\vec{w}} = F_{d_k}^{\vec{y}} F_{d_\ell}^{\vec{z}}
 \]
 
 \noindent
@@ -334,11 +334,11 @@ when $d_i + d_j = d_k + d_\ell$ and $\vec{v} + \vec{w} = \vec{y} +
 \end{thm}
 
 \begin{proof}
-We know $\{f_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor \frac{a}{b}
+We know $\{F_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor \frac{a}{b}
 \right\rfloor \}$ are minimal generators in degree $1$. Now let $i >
-0$. If $f_{d_i}^{\vec{v}}$ were not minimal for some $\vec{v}$ such
-that $\deg \vec{v} = c_i$, then $f_{d_i}^{\vec{v}} = f_{s}^{\vec{w}}
-f_{t}^{\vec{z}}$ for some $s, t \in \bn$ and $\vec{w}, \vec{z} \in
+0$. If $F_{d_i}^{\vec{v}}$ were not minimal for some $\vec{v}$ such
+that $\deg \vec{v} = c_i$, then $F_{d_i}^{\vec{v}} = F_{s}^{\vec{w}}
+F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and $\vec{w}, \vec{z} \in
 \bz_{\geq 0}^{m + 1}$. In particular, we see that 
 \begin{align*}
 	&d_i = s + t \\
@@ -357,7 +357,7 @@ of $\frac{c_i}{d_i}$ being a best lower approximation of $\alpha$
 Now we show that no further generators are necessary. As done in
 the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
 {dorney:canonical}, each lattice point $(d, c) \in \bz_{\geq 0}^2$
-such that $c \leq d \alpha$ is a nonnegative linear combination of
+such that $c \leq d \alpha$ is a non-negative linear combination of
 $\vec{x}_i$ and $\vec{x}_{i + 1}$ where $\vec{x}_i := (d_i, c_i) \in
 \bz^2$. Consequently, any element $\frac{u^{d} x^{\vec{v}}}
 {x_k^{c}} \in R_D$ is expressible as
@@ -369,7 +369,7 @@ $\vec{x}_i$ and $\vec{x}_{i + 1}$ where $\vec{x}_i := (d_i, c_i) \in
 \noindent
 where $\vec{w}, \vec{z} \in \bz_{\geq 0}^{m + 1}$ such that $\deg
 \vec{w} = c_i, \deg \vec{z} = c_{i + 1}$. But these are precisely
-two generators of the form $f_{d_i}^{\vec{w}}$ and $f_{d_{i + 1}}
+two generators of the form $F_{d_i}^{\vec{w}}$ and $F_{d_{i + 1}}
 ^{\vec{z}}$ as prescribed in the theorem statement.
 
 \todo{relations}
