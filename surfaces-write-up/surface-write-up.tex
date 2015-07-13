@@ -518,7 +518,7 @@ $E$ satisfies the conditions of proposition \todo{cite earlier
 proposition}, so by applying that proposition $R_D$ is generated in 
 degree at most
 \[
-	\sum_{i\in T_=(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in T_+(D) \atop
+	\sigma = \sum_{i\in T_=(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in T_+(D) \atop
 	j \in T_-(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
 \]
 \end{proof}
@@ -531,7 +531,7 @@ $\ker(\psi)$ is generated in degree at most \todo{insert number}.
 \begin{proof}
 We first claim that $\psi$ has a relation of the form
 \begin{equation}\label{eqn:relations-psi}
-	(y_j - \beta_j)\prod_{i=1}^n {y_i}^{c_{i}}
+	(z_i - \beta_j)\prod_{j=1}^n {z_j}^{c_{i}}
 \end{equation}
 
 \noindent
@@ -558,26 +558,40 @@ $\bida_j + \sum_{i = 1}^m \bida_i c_i = 0$, and $\bidb_j + \sum_{i=1}^n \bidb_i 
 where $E$ is $\mathbb{R}_{\ge 0}$
 combination of elements in 
 \[
-	\{e_i \mbox{ if } i\in S\} \cup \{e_{i,j}: j\in S_- \mbox{ if } i \in S_+\} \cup \{e_{j,i}: j\in S_+ \mbox{ if } i \in S_-\}
+	\{e_i \mbox{ if } i\in S\} \cup \{e_{i,j}: j\in S_- \mbox{ if } i \in S_+\} \cup \{e_{j,i}: j\in S_+ \mbox{ if } i \in S_-\}.
 \]
-given by lattice point $(d_E, w_1, \ldots, w_n)$ with $w_i = 1$.  These conditions imply that 
+
+
+Let $M$ be the set of monomials of $\beta_j$.  Then for $\mu\in M$, the corresponding lattice point is of the form
 \[
-	d_E \le \left\{ \begin{split}  \ell_i \gcd(\bida_i, \bidb_i) \mbox{ if } i \in S_= 
+	E_\mu + \sum_{k\in T_=} r_k e_k + \sum_{h\in T_+ \atop k\in T_-} r_{h,k} e_{h,k}
+\]
+where $E_\mu$ is a $\mathbb{R}_{\ge 0}$-combination of elements in
+\begin{align*}
+			& \{e_j : j\in T_= \cap \{1, 2, 3, 4\}\} \\
+	\cup \; 	& \{e_{j, k}: j\in T_= \cap \{1, 2, 3, 4\}, k\in T_-\}\\
+	\cup \; 	& \{e_{k,j}: k\in T_+, j\in T_- \cap \{1, 2, 3, 4\}\}.
+\end{align*}
+
+Let $F\in R_D$ correspond to $E + \sum_{k\in T_=} (r_k) e_k + \sum_{h\in T_+ \atop k\in T_-} (r_{h,k}) e_{h,k}$ where $(r)$ signifies the fractional part of $r$.  Similarly, let $F_\mu \in R_D$ correspond to $E_\mu + \sum_{h\in T_+ \atop k\in T_-} (r_{h,k}) e_{h,k}$.  Then $F - \sum_{\mu\in M} F_\mu = 0$ gives us a relation in degree at most
+\[
+	\sigma + \deg(F),
+\]
+which generates $(z_i - \beta_i) \prod_{i=1}^n y_i^{c_i}$
+We can bound $\deg(F)$ by
+\[
+	\deg(F) \le \left\{ \begin{split}  \ell_i \gcd(\bida_i, \bidb_i) \mbox{ if } i \in S_= 
 			\\ \max_{j\in S_-}(\ell_{i,j} (\bida_i \bidb_
 j - \bida_j \bidb_i)) \mbox{ if } i\in S_+ \\
 			\\ \max_{j\in S_+}(\ell_{j, i} (\bida_j \bidb_
 i - \bida_i \bidb_j)) \mbox{ if } i \in S_- \end{split}  \right.
 \]
-
-
-Let $M$ be the set of monomials of $\beta_j$.  Then for $m\in M$, the corresponding lattice point is of the form
+Therefore, $\ker(\psi)$ is generated in degree at most
 \[
-	E_m + \sum_{k\in T_=} r_k e_k + \sum_{h\in T_+ \atop k\in T_-} r_{h,k} e_{h,k}
+	\tau = \sigma
+	+ \max( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i\in S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))).
 \]
-where $E_m$ is a $\mathbb{R}_{\ge 0}$ combination of elements in
-\[
-	\{e_j : j\in T_= \cap \{1, 2, 3, 4\}\} \cup \{e_{j, k}: j\in T_= \cap \{1, 2, 3, 4\}, k\in T_-\} \cup \{e_{k,j}: k\in T_+, j\in T_- \cap \{1, 2, 3, 4\}\}.
-\]
+
 
 \end{proof}
 
