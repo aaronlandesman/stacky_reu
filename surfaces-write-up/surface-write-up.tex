@@ -341,7 +341,8 @@ x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
 such that $\sum_{j = 0}^{m} v_j = c_i$ and $z$ \todo{how many?}
 relations of the form
 \[
-	F_{d_i}^{\vec{v}} F_{d_j}^{\vec{w}} = F_{d_k}^{\vec{y}} F_{d_\ell}^{\vec{z}}
+	G_{d_i, d_j}^{\vec{v}, \vec{w}} = F_{d_i}^{\vec{v}} F_{d_j}^{\vec{w}}
+	- (F_{d_k}^{\vec{y}})^{g_{i, j}} (F_{d_\ell}^{\vec{z}})^{g_{i, j}}
 \]
 
 \noindent
@@ -350,8 +351,8 @@ when $d_i + d_j = d_k + d_\ell$ and $\vec{v} + \vec{w} = \vec{y} +
 \end{thm}
 
 \begin{proof}
-We know $\{F_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor \frac{p}{q}
-\right\rfloor \}$ are minimal generators in degree $1$. Now let $i >
+We know $\left\{F_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor \frac{p}{q}
+\right\rfloor \right\}$ are minimal generators in degree $1$. Now let $i >
 0$. If $F_{d_i}^{\vec{v}}$ were not minimal for some $\vec{v}$ such
 that $\deg \vec{v} = c_i$, then $F_{d_i}^{\vec{v}} = F_{s}^{\vec{w}}
 F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and $\vec{w}, \vec{z} \in
@@ -372,24 +373,27 @@ of $\frac{c_i}{d_i}$ being a best lower approximation of $\alpha$
 
 Now we show that no further generators are necessary. As done in
 the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
-{dorney:canonical}, each lattice point $(\delta, \gamma) \in \bz_{\geq 0}^2$
-such that $c \leq d \alpha$ is a non-negative linear combination of
-$\vec{x}_i$ and $\vec{x}_{i + 1}$ where $\vec{x}_i := (d_i, c_i) \in
-\bz^2$. Consequently, any element $\frac{u^{\delta} x^{\vec{v}}}
-{x_k^{\gamma}} \in R_D$ is expressible as
+{dorney:canonical}, each lattice point $(\beta, \gamma) \in
+\bz_{\geq 0}^2$ such that $c \leq d \alpha$ is a non-negative
+linear combination of $\vec{x}_i$ and $\vec{x}_{i + 1}$ where
+$\vec{x}_i := (d_i, c_i) \in \bz^2$. Consequently, if $(\beta,
+\gamma) = h _1 (d_i, c_i) + h_2 (d_{i + 1}, c_{i + 1})$ for $h_1,
+h_2 \in \bz_{ \geq 0}$, then any element $\frac{u^{\beta} x^{\vec{v}}}
+{x_k^{ \gamma}} \in R_D$ is expressible as
 \begin{align*}
-	\frac{u^{\delta} x^{\vec{v}}} {x_k^{\gamma}} = \frac{u^{d_i} x^{\vec{w}}}
-	{x_k^{c_i}} \frac{u^{d_{i + 1}} x^{\vec{z}}} {x_k^{c_{i + 1}}}
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = (\frac{u^{d_i} x^{\vec{w}}}
+	{x_k^{c_i}})^{h_1} (\frac{u^{d_{i + 1}} x^{\vec{z}}} {x_k^{c_{i + 1}}})^{h_2}
 \end{align*}
 
 \noindent
-where $\vec{w}, \vec{z} \in \bz_{\geq 0}^{m + 1}$ such that $\deg
+for some $\vec{w}, \vec{z} \in \bz_{\geq 0}^{m + 1}$ such that $\deg
 \vec{w} = c_i, \deg \vec{z} = c_{i + 1}$. But these are precisely
-two generators of the form $F_{d_i}^{\vec{w}}$ and $F_{d_{i + 1}}
-^{\vec{z}}$ as prescribed in the theorem statement.
+powers of two generators of the form $F_{d_i}^{\vec{w}}$ and
+$F_{d_{i + 1}}^{\vec{z}}$ as prescribed in the theorem statement.
 
 \todo{relations}
 \end{proof}
+
 
 \todo{change thm to be inductive for adding pts, giving result on
 effective divisors}
