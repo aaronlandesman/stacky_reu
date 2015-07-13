@@ -108,6 +108,7 @@
 \newcommand\bidb{b}
 \newcommand\pdeg{\delta}
 \newcommand\hirz{\mathbb{F}}
+\newcommand\mss{\mathscr{S}}
 
 \DeclareMathOperator{\supp}{Supp}
 \DeclareMathOperator{\initial}{in_\prec}
@@ -327,6 +328,23 @@ by taking the Veronese embedding.
 \todo{write}
 \end{rem}
 
+\begin{defn}
+\label{defn:vec-sum}
+For $\vec{v} \in \br^n$, denote $\deg \vec{v} := \sum_{i = 0}
+^n v_i$ (i.e. the taxicab metric).
+Let $\mss_i := \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
+\sum_{i = 0} ^{m + 1} v_i = c_i\}$ be the set of $\bz_{\geq 0}
+^{m + 1}$-vectors with sum of components equal to $c_i$.
+\end{defn}
+
+\begin{defn}
+\label{defn:vec-order}
+Let $\vec{v}, \vec{w} \in \br^n$ be two vectors. Let $i$
+be the right-most coordinate such that $v_i$ is nonzero
+and $j$ be the left-most coordinate such that $w_j$ is
+nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
+\end{defn}
+
 
 \begin{thm}
 \label{thm:proj-one-point}
@@ -335,7 +353,7 @@ $\bp^m$. Let $D = \alpha H$, with $\alpha = \frac{p}{q} \in \bq$
 and $H = V(x_k)$ a hyperplane of $\bp^m$, be a divisor on $\bp^m$.
 Let
 \[
-	\left\lfloor \frac{p}{q} \right\rfloor = \frac{c_0}{d_0} <
+	0 = \frac{c_0}{d_0} <
 	\frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{p}{q}
 \]
 
@@ -348,26 +366,47 @@ canonical ring
 
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
-{{m + i} \choose {i}}$ generators $F_{\vec{v}}^{d_i} := \frac{u^{d_i}
+{{m + i} \choose {i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
 x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
-such that $\sum_{j = 0}^{m} v_j = c_i$ and $z$ \todo{how many?}
-relations of the form
-\[
-	F_{d_i}^{\vec{v}} F_{d_j}^{\vec{w}} = F_{d_k}^{\vec{y}} F_{d_\ell}^{\vec{z}}
-\]
+such that $\sum_{j = 0}^{m} v_j = c_i$. Furthermore, it has $z$
+many \todo{how many?} relations of the following two types.
+
+For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
+\vec{w} \in \mss_j$, there is a relation of the form either
+\begin{flalign*}
+	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
+	- \prod_{\vec{y} \in \mss_{k_{i, j}}} (F_{k_{i, j}}^{\vec{y}})
+	^{g_{\vec{y}}} &(i < k_{i, j} < j) \\
+	\text{or} \\
+	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
+	- \prod_{\substack{\vec{y} \in \mss_{k_{i, j}} \\ \vec{z} \in
+	\mss_{k_{i, j} + 1}}} (F_{k_{i, j}}^{\vec{y}})^{g_{\vec{y}}} \;
+	(F_{k_{i, j} + 1}^{\vec{z}})^{h_{\vec{z}}}
+	&(i < k_{i, j} < k_{i, j} + 1 < j).
+\end{flalign*}
+
+Furthermore, there are the relations for each $(i, j)$ with
+$j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
+\mss_j$ with $\vec{v} \not\prec \vec{w}$ (see Definition
+~\ref{defn:vec-order}) of the form 
+\begin{align*}
+	&L_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
+	- F_i^{\vec{y}} F_j^{\vec{w}} \\
+\end{align*}
 
 \noindent
-when $d_i + d_j = d_k + d_\ell$ and $\vec{v} + \vec{w} = \vec{y} +
-\vec{z}$.
+where $\vec{y} \in \mss_i$ and $\vec{w} \in \mss_j$ are the unique
+vectors such that $\vec{y} \prec \vec{w}$.
 \end{thm}
 
 \begin{proof}
-We know $\{F_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor \frac{p}{q}
-\right\rfloor \}$ are minimal generators in degree $1$. Now let $i >
-0$. If $F_{d_i}^{\vec{v}}$ were not minimal for some $\vec{v}$ such
-that $\deg \vec{v} = c_i$, then $F_{d_i}^{\vec{v}} = F_{s}^{\vec{w}}
-F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and $\vec{w}, \vec{z} \in
-\bz_{\geq 0}^{m + 1}$. In particular, we see that 
+We know $\left\{F_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor
+\frac{p}{q} \right\rfloor \right\}$ are minimal generators in
+degree $1$. Now let $i > 0$. Suppose $F_i^{\vec{v}}$ were not
+minimal for some $\vec{v} \in \mss_i$. Then $F_i^{\vec{v}} =
+F_{s}^{\vec{w}} F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and
+$\vec{w}, \vec{z} \in \bz_{ \geq 0}^{m + 1}$. In particular, we see
+that 
 \begin{align*}
 	&d_i = s + t \\
 	&c_i = \deg \vec{v} = \deg \vec{w} + \deg \vec{z}
@@ -384,24 +423,27 @@ of $\frac{c_i}{d_i}$ being a best lower approximation of $\alpha$
 
 Now we show that no further generators are necessary. As done in
 the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
-{dorney:canonical}, each lattice point $(\delta, \gamma) \in \bz_{\geq 0}^2$
-such that $c \leq d \alpha$ is a non-negative linear combination of
-$\vec{x}_i$ and $\vec{x}_{i + 1}$ where $\vec{x}_i := (d_i, c_i) \in
-\bz^2$. Consequently, any element $\frac{u^{\delta} x^{\vec{v}}}
-{x_k^{\gamma}} \in R_D$ is expressible as
+{dorney:canonical}, each lattice point $(\beta, \gamma) \in
+\bz_{\geq 0}^2$ such that $c \leq d \alpha$ is a non-negative
+linear combination of $\vec{x}_i$ and $\vec{x}_{i + 1}$ where
+$\vec{x}_i := (d_i, c_i) \in \bz^2$. Consequently, if $(\beta,
+\gamma) = \ell_1 (d_i, c_i) + \ell_2 (d_{i + 1}, c_{i + 1})$ for
+$\ell_1, \ell_2 \in \bz_{ \geq 0}$, then any element $\frac{u^{\beta}
+x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
 \begin{align*}
-	\frac{u^{\delta} x^{\vec{v}}} {x_k^{\gamma}} = \frac{u^{d_i} x^{\vec{w}}}
-	{x_k^{c_i}} \frac{u^{d_{i + 1}} x^{\vec{z}}} {x_k^{c_{i + 1}}}
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_i}
+	x^{\vec{w}}} {x_k^{c_i}}\right)^{\ell_1} \left(\frac{u^{d_{i + 1}}
+	x^{\vec{z}}} {x_k^{c_{i + 1}}}\right)^{\ell_2}
 \end{align*}
 
 \noindent
-where $\vec{w}, \vec{z} \in \bz_{\geq 0}^{m + 1}$ such that $\deg
-\vec{w} = c_i, \deg \vec{z} = c_{i + 1}$. But these are precisely
-two generators of the form $F_{d_i}^{\vec{w}}$ and $F_{d_{i + 1}}
-^{\vec{z}}$ as prescribed in the theorem statement.
+for some $\vec{w} \in \mss_i, \vec{z} \in \mss_{i + 1}$. But these
+are precisely powers of two generators of the form $F_i^{\vec{w}}$
+and $F_{d_{i + 1}}^{\vec{z}}$ as prescribed in the theorem statement.
 
 \todo{relations}
 \end{proof}
+
 
 \todo{change thm to be inductive for adding pts, giving result on
 effective divisors}
@@ -530,7 +572,7 @@ $E$ satisfies the conditions of proposition \todo{cite earlier
 proposition}, so by applying that proposition $R_D$ is generated in 
 degree at most
 \[
-	\sum_{i\in T_=(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in T_+(D) \atop
+	\sigma = \sum_{i\in T_=(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in T_+(D) \atop
 	j \in T_-(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
 \]
 \end{proof}
@@ -543,7 +585,7 @@ $\ker(\psi)$ is generated in degree at most \todo{insert number}.
 \begin{proof}
 We first claim that $\psi$ has a relation of the form
 \begin{equation}\label{eqn:relations-psi}
-	(y_j - \beta_j)\prod_{i=1}^n {y_i}^{c_{i}}
+	(z_i - \beta_j)\prod_{j=1}^n {z_j}^{c_{i}}
 \end{equation}
 
 \noindent
@@ -570,26 +612,40 @@ $\bida_j + \sum_{i = 1}^m \bida_i c_i = 0$, and $\bidb_j + \sum_{i=1}^n \bidb_i 
 where $E$ is $\mathbb{R}_{\ge 0}$
 combination of elements in 
 \[
-	\{e_i \mbox{ if } i\in S\} \cup \{e_{i,j}: j\in S_- \mbox{ if } i \in S_+\} \cup \{e_{j,i}: j\in S_+ \mbox{ if } i \in S_-\}
+	\{e_i \mbox{ if } i\in S\} \cup \{e_{i,j}: j\in S_- \mbox{ if } i \in S_+\} \cup \{e_{j,i}: j\in S_+ \mbox{ if } i \in S_-\}.
 \]
-given by lattice point $(d_E, w_1, \ldots, w_n)$ with $w_i = 1$.  These conditions imply that 
+
+
+Let $M$ be the set of monomials of $\beta_j$.  Then for $\mu\in M$, the corresponding lattice point is of the form
 \[
-	d_E \le \left\{ \begin{split}  \ell_i \gcd(\bida_i, \bidb_i) \mbox{ if } i \in S_= 
+	E_\mu + \sum_{k\in T_=} r_k e_k + \sum_{h\in T_+ \atop k\in T_-} r_{h,k} e_{h,k}
+\]
+where $E_\mu$ is a $\mathbb{R}_{\ge 0}$-combination of elements in
+\begin{align*}
+			& \{e_j : j\in T_= \cap \{1, 2, 3, 4\}\} \\
+	\cup \; 	& \{e_{j, k}: j\in T_= \cap \{1, 2, 3, 4\}, k\in T_-\}\\
+	\cup \; 	& \{e_{k,j}: k\in T_+, j\in T_- \cap \{1, 2, 3, 4\}\}.
+\end{align*}
+
+Let $F\in R_D$ correspond to $E + \sum_{k\in T_=} (r_k) e_k + \sum_{h\in T_+ \atop k\in T_-} (r_{h,k}) e_{h,k}$ where $(r)$ signifies the fractional part of $r$.  Similarly, let $F_\mu \in R_D$ correspond to $E_\mu + \sum_{h\in T_+ \atop k\in T_-} (r_{h,k}) e_{h,k}$.  Then $F - \sum_{\mu\in M} F_\mu = 0$ gives us a relation in degree at most
+\[
+	\sigma + \deg(F),
+\]
+which generates $(z_i - \beta_i) \prod_{i=1}^n y_i^{c_i}$
+We can bound $\deg(F)$ by
+\[
+	\deg(F) \le \left\{ \begin{split}  \ell_i \gcd(\bida_i, \bidb_i) \mbox{ if } i \in S_= 
 			\\ \max_{j\in S_-}(\ell_{i,j} (\bida_i \bidb_
 j - \bida_j \bidb_i)) \mbox{ if } i\in S_+ \\
 			\\ \max_{j\in S_+}(\ell_{j, i} (\bida_j \bidb_
 i - \bida_i \bidb_j)) \mbox{ if } i \in S_- \end{split}  \right.
 \]
-
-
-Let $M$ be the set of monomials of $\beta_j$.  Then for $m\in M$, the corresponding lattice point is of the form
+Therefore, $\ker(\psi)$ is generated in degree at most
 \[
-	E_m + \sum_{k\in T_=} r_k e_k + \sum_{h\in T_+ \atop k\in T_-} r_{h,k} e_{h,k}
+	\tau = \sigma
+	+ \max( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i\in S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))).
 \]
-where $E_m$ is a $\mathbb{R}_{\ge 0}$ combination of elements in
-\[
-	\{e_j : j\in T_= \cap \{1, 2, 3, 4\}\} \cup \{e_{j, k}: j\in T_= \cap \{1, 2, 3, 4\}, k\in T_-\} \cup \{e_{k,j}: k\in T_+, j\in T_- \cap \{1, 2, 3, 4\}\}.
-\]
+
 
 \end{proof}
 
