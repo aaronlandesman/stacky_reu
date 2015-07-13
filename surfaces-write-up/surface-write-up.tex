@@ -108,6 +108,7 @@
 \newcommand\bidb{b}
 \newcommand\pdeg{\delta}
 \newcommand\hirz{\mathbb{F}}
+\newcommand\mss{\mathscr{S}}
 
 \DeclareMathOperator{\supp}{Supp}
 \DeclareMathOperator{\initial}{in_\prec}
@@ -158,6 +159,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
+\todo{Clean up this stuff on siegel modular forms, hilbert modular forms, say something about hasse keel program, canoncical rings studied before}
+
+\todo{Might be reasonable to think about higher dimensional rational varieties that are similar to these hirzebruch surfaces.}
+
+\todo{The following stuff is almost nonsensical now, will be edited much more soon}
+
+Hasse keel program, birational map from $proj R(K + \Delta)$ to $M_2$, they showed finite generation, we're giving explicit generators and bounds.
+
+The work in this paper also yields bounds for certain rings of Hilbert modular forms. Recall that a Hilbert modular form is a generalization of modular forms to multiple variables.
+
+Siegel modular forms are a generalization of modular forms on the Siegel upper half plane to automorphic forms on the Siegel upper half space. Explicitly, the Siegel uper half space is $\mathscr H \cong \bc^n/\Lambda$ and siegel modular forms are functions on $Sp_{2g} \backslash \mathscr H.$ Then, modular functions are differentials invariant under the action of $Sp_{2g}$. In the case that $\Gamma \backslash \mathscr H$.
+
+Example: the Siegel 2-upper half plane $\bc^2/\Lambda$ Note that $\bc^2/\Lambda$ is algebraic if and only if there exists a hermitial form on $\Lambda$. Then, $Sp_{2g}$ acts on algebraic lattices. The quotient by this gives you the space of abelian varieties. This might be an open subset of projective space, according to David, 65$\%$.
 
 \section{Background}
 
@@ -248,8 +262,8 @@ Assuming $\chi$ is surjective, the minimal degree of generation of $\ker \phi$ i
 \begin{proof}
 Note that we have an exact sequence
 $$\begin{tikzcd}
-0 \ar r & \ker \chi \ar r & \ker \phi \ar r & \ker \psi \ar r & 0
-\end{tikzcd}.$$
+0 \ar r & \ker \chi \ar r & \ker \phi \ar r & \ker \psi \ar r & 0.
+\end{tikzcd}$$
 To see this, note that the left map is an inclusion because $\phi = \chi \circ \psi$. Next, the right map, given by $\chi|_{\ker \phi}:\ker \phi \rightarrow \ker \psi$ is a surjection, again because $\phi = \chi \circ \psi$. The composition of the two maps is $0$ by definition of the kernel of $\chi$. Finally, if $a \in \ker \phi$ and $a$ lies in the kernel of the right map, then by definition $\chi(a) = 0$.
 \end{proof}
 
@@ -277,22 +291,20 @@ Write
 \end{align*}
 where $\alpha_i \in \bq$ and $\deg D_i = \bida_i$. Let $f_i$ be Cartier divisors such that $D_i = V(f_i)$. We shall further assume that among there exist functions $f_0,\ldots, f_{m+1}$ form a basis for degree one rational functions on $\bp^m$.
 
-\todo{possibly change this to only have two equations}
 \begin{prop}
 \label{prop:pm-span-and-basis}
 The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ so that 
 \begin{align}
 \label{align:pm-span}
-\sum_{i=0}^{n} c_i \cdot \bida_i \cdot f_i = 0 & \text{ and } &c_i \geq \lfloor \alpha_i d\rfloor	
+\sum_{i=0}^{n} c_i \cdot \bida_i \cdot f_i = 0 && \text{ and } &&c_i \geq \lfloor \alpha_i d\rfloor	
 \end{align}
 
 \noindent
-\todo{the above ``and'' needs to be placed better}
 form a spanning set for $H^0(\bp^m, dD)$ over $k$. Furthermore, functions 
 of the form $u^d \cdot \prod_{i=1}^n f_i^{c_i} $ such that
 \begin{align}
 \label{align:pm-basis}
-c_i = -\lfloor d\alpha_i \rfloor & \text{ for } & i > m
+c_i = -\lfloor d\alpha_i \rfloor && \text{ for } && i > m
 \end{align}
 
 \noindent
@@ -303,6 +315,7 @@ form a basis for $H^0(\bp^m, dD)$ over $k$.
 By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
 ~\eqref{align:pm-span} lie in $H^0(\bp^m,dD)$. To complete the proof, it suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$ functions satisfying condition ~\eqref{align:pm-basis}. However we know $h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show that those functions satisfying condition ~\eqref{align:pm-basis} are independent. This follows from the assumption that $f_0,\ldots, f_n$ form a basis of degree 1 rational functions, and so degree $\lfloor d \deg D \rfloor $ monomials in $f_0,\ldots, f_n$ form a basis of degree $\lfloor d \deg D \rfloor $ rational functions.
 \end{proof}
+
 \todo{the following bound is the generation bound beginning from evan's paper}
 
 
@@ -315,6 +328,23 @@ by taking the Veronese embedding.
 \todo{write}
 \end{rem}
 
+\begin{defn}
+\label{defn:vec-sum}
+For $\vec{v} \in \br^n$, denote $\deg \vec{v} := \sum_{i = 0}
+^n v_i$ (i.e. the taxicab metric).
+Let $\mss_i := \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
+\sum_{i = 0} ^{m + 1} v_i = c_i\}$ be the set of $\bz_{\geq 0}
+^{m + 1}$-vectors with sum of components equal to $c_i$.
+\end{defn}
+
+\begin{defn}
+\label{defn:vec-order}
+Let $\vec{v}, \vec{w} \in \br^n$ be two vectors. Let $i$
+be the right-most coordinate such that $v_i$ is nonzero
+and $j$ be the left-most coordinate such that $w_j$ is
+nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
+\end{defn}
+
 
 \begin{thm}
 \label{thm:proj-one-point}
@@ -323,7 +353,7 @@ $\bp^m$. Let $D = \alpha H$, with $\alpha = \frac{p}{q} \in \bq$
 and $H = V(x_k)$ a hyperplane of $\bp^m$, be a divisor on $\bp^m$.
 Let
 \[
-	\left\lfloor \frac{p}{q} \right\rfloor = \frac{c_0}{d_0} <
+	0 = \frac{c_0}{d_0} <
 	\frac{c_1}{d_1} < \ldots < \frac{c_r}{d_r} = \frac{p}{q}
 \]
 
@@ -336,27 +366,47 @@ canonical ring
 
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
-{{m + i} \choose {i}}$ generators $F_{\vec{v}}^{d_i} := \frac{u^{d_i}
+{{m + i} \choose {i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
 x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
-such that $\sum_{j = 0}^{m} v_j = c_i$ and $z$ \todo{how many?}
-relations of the form
-\[
-	G_{d_i, d_j}^{\vec{v}, \vec{w}} = F_{d_i}^{\vec{v}} F_{d_j}^{\vec{w}}
-	- (F_{d_k}^{\vec{y}})^{g_{i, j}} (F_{d_\ell}^{\vec{z}})^{g_{i, j}}
-\]
+such that $\sum_{j = 0}^{m} v_j = c_i$. Furthermore, it has $z$
+many \todo{how many?} relations of the following two types.
+
+For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
+\vec{w} \in \mss_j$, there is a relation of the form either
+\begin{flalign*}
+	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
+	- \prod_{\vec{y} \in \mss_{k_{i, j}}} (F_{k_{i, j}}^{\vec{y}})
+	^{g_{\vec{y}}} &(i < k_{i, j} < j) \\
+	\text{or} \\
+	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
+	- \prod_{\substack{\vec{y} \in \mss_{k_{i, j}} \\ \vec{z} \in
+	\mss_{k_{i, j} + 1}}} (F_{k_{i, j}}^{\vec{y}})^{g_{\vec{y}}} \;
+	(F_{k_{i, j} + 1}^{\vec{z}})^{h_{\vec{z}}}
+	&(i < k_{i, j} < k_{i, j} + 1 < j).
+\end{flalign*}
+
+Furthermore, there are the relations for each $(i, j)$ with
+$j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
+\mss_j$ with $\vec{v} \not\prec \vec{w}$ (see Definition
+~\ref{defn:vec-order}) of the form 
+\begin{align*}
+	&L_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
+	- F_i^{\vec{y}} F_j^{\vec{w}} \\
+\end{align*}
 
 \noindent
-when $d_i + d_j = d_k + d_\ell$ and $\vec{v} + \vec{w} = \vec{y} +
-\vec{z}$.
+where $\vec{y} \in \mss_i$ and $\vec{w} \in \mss_j$ are the unique
+vectors such that $\vec{y} \prec \vec{w}$.
 \end{thm}
 
 \begin{proof}
-We know $\left\{F_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor \frac{p}{q}
-\right\rfloor \right\}$ are minimal generators in degree $1$. Now let $i >
-0$. If $F_{d_i}^{\vec{v}}$ were not minimal for some $\vec{v}$ such
-that $\deg \vec{v} = c_i$, then $F_{d_i}^{\vec{v}} = F_{s}^{\vec{w}}
-F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and $\vec{w}, \vec{z} \in
-\bz_{\geq 0}^{m + 1}$. In particular, we see that 
+We know $\left\{F_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor
+\frac{p}{q} \right\rfloor \right\}$ are minimal generators in
+degree $1$. Now let $i > 0$. Suppose $F_i^{\vec{v}}$ were not
+minimal for some $\vec{v} \in \mss_i$. Then $F_i^{\vec{v}} =
+F_{s}^{\vec{w}} F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and
+$\vec{w}, \vec{z} \in \bz_{ \geq 0}^{m + 1}$. In particular, we see
+that 
 \begin{align*}
 	&d_i = s + t \\
 	&c_i = \deg \vec{v} = \deg \vec{w} + \deg \vec{z}
@@ -377,19 +427,19 @@ the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
 \bz_{\geq 0}^2$ such that $c \leq d \alpha$ is a non-negative
 linear combination of $\vec{x}_i$ and $\vec{x}_{i + 1}$ where
 $\vec{x}_i := (d_i, c_i) \in \bz^2$. Consequently, if $(\beta,
-\gamma) = h _1 (d_i, c_i) + h_2 (d_{i + 1}, c_{i + 1})$ for $h_1,
-h_2 \in \bz_{ \geq 0}$, then any element $\frac{u^{\beta} x^{\vec{v}}}
-{x_k^{ \gamma}} \in R_D$ is expressible as
+\gamma) = \ell_1 (d_i, c_i) + \ell_2 (d_{i + 1}, c_{i + 1})$ for
+$\ell_1, \ell_2 \in \bz_{ \geq 0}$, then any element $\frac{u^{\beta}
+x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
 \begin{align*}
-	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = (\frac{u^{d_i} x^{\vec{w}}}
-	{x_k^{c_i}})^{h_1} (\frac{u^{d_{i + 1}} x^{\vec{z}}} {x_k^{c_{i + 1}}})^{h_2}
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_i}
+	x^{\vec{w}}} {x_k^{c_i}}\right)^{\ell_1} \left(\frac{u^{d_{i + 1}}
+	x^{\vec{z}}} {x_k^{c_{i + 1}}}\right)^{\ell_2}
 \end{align*}
 
 \noindent
-for some $\vec{w}, \vec{z} \in \bz_{\geq 0}^{m + 1}$ such that $\deg
-\vec{w} = c_i, \deg \vec{z} = c_{i + 1}$. But these are precisely
-powers of two generators of the form $F_{d_i}^{\vec{w}}$ and
-$F_{d_{i + 1}}^{\vec{z}}$ as prescribed in the theorem statement.
+for some $\vec{w} \in \mss_i, \vec{z} \in \mss_{i + 1}$. But these
+are precisely powers of two generators of the form $F_i^{\vec{w}}$
+and $F_{d_{i + 1}}^{\vec{z}}$ as prescribed in the theorem statement.
 
 \todo{relations}
 \end{proof}
