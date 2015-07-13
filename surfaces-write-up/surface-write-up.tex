@@ -158,6 +158,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
+\todo{Clean up this stuff on siegel modular forms, hilbert modular forms, say something about hasse keel program, canoncical rings studied before}
+
+\todo{Might be reasonable to think about higher dimensional rational varieties that are similar to these hirzebruch surfaces.}
+
+\todo{The following stuff is almost nonsensical now, will be edited much more soon}
+
+Hasse keel program, birational map from $proj R(K + \Delta)$ to $M_2$, they showed finite generation, we're giving explicit generators and bounds.
+
+The work in this paper also yields bounds for certain rings of Hilbert modular forms. Recall that a Hilbert modular form is a generalization of modular forms to multiple variables.
+
+Siegel modular forms are a generalization of modular forms on the Siegel upper half plane to automorphic forms on the Siegel upper half space. Explicitly, the Siegel uper half space is $\mathscr H \cong \bc^n/\Lambda$ and siegel modular forms are functions on $Sp_{2g} \backslash \mathscr H.$ Then, modular functions are differentials invariant under the action of $Sp_{2g}$. In the case that $\Gamma \backslash \mathscr H$.
+
+Example: the Siegel 2-upper half plane $\bc^2/\Lambda$ Note that $\bc^2/\Lambda$ is algebraic if and only if there exists a hermitial form on $\Lambda$. Then, $Sp_{2g}$ acts on algebraic lattices. The quotient by this gives you the space of abelian varieties. This might be an open subset of projective space, according to David, 65$\%$.
 
 \section{Background}
 
@@ -248,8 +261,8 @@ Assuming $\chi$ is surjective, the minimal degree of generation of $\ker \phi$ i
 \begin{proof}
 Note that we have an exact sequence
 $$\begin{tikzcd}
-0 \ar r & \ker \chi \ar r & \ker \phi \ar r & \ker \psi \ar r & 0
-\end{tikzcd}.$$
+0 \ar r & \ker \chi \ar r & \ker \phi \ar r & \ker \psi \ar r & 0.
+\end{tikzcd}$$
 To see this, note that the left map is an inclusion because $\phi = \chi \circ \psi$. Next, the right map, given by $\chi|_{\ker \phi}:\ker \phi \rightarrow \ker \psi$ is a surjection, again because $\phi = \chi \circ \psi$. The composition of the two maps is $0$ by definition of the kernel of $\chi$. Finally, if $a \in \ker \phi$ and $a$ lies in the kernel of the right map, then by definition $\chi(a) = 0$.
 \end{proof}
 
@@ -277,22 +290,20 @@ Write
 \end{align*}
 where $\alpha_i \in \bq$ and $\deg D_i = \bida_i$. Let $f_i$ be Cartier divisors such that $D_i = V(f_i)$. We shall further assume that among there exist functions $f_0,\ldots, f_{m+1}$ form a basis for degree one rational functions on $\bp^m$.
 
-\todo{possibly change this to only have two equations}
 \begin{prop}
 \label{prop:pm-span-and-basis}
 The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ so that 
 \begin{align}
 \label{align:pm-span}
-\sum_{i=0}^{n} c_i \cdot \bida_i \cdot f_i = 0 & \text{ and } &c_i \geq \lfloor \alpha_i d\rfloor	
+\sum_{i=0}^{n} c_i \cdot \bida_i \cdot f_i = 0 && \text{ and } &&c_i \geq \lfloor \alpha_i d\rfloor	
 \end{align}
 
 \noindent
-\todo{the above ``and'' needs to be placed better}
 form a spanning set for $H^0(\bp^m, dD)$ over $k$. Furthermore, functions 
 of the form $u^d \cdot \prod_{i=1}^n f_i^{c_i} $ such that
 \begin{align}
 \label{align:pm-basis}
-c_i = -\lfloor d\alpha_i \rfloor & \text{ for } & i > m
+c_i = -\lfloor d\alpha_i \rfloor && \text{ for } && i > m
 \end{align}
 
 \noindent
@@ -303,6 +314,7 @@ form a basis for $H^0(\bp^m, dD)$ over $k$.
 By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
 ~\eqref{align:pm-span} lie in $H^0(\bp^m,dD)$. To complete the proof, it suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$ functions satisfying condition ~\eqref{align:pm-basis}. However we know $h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show that those functions satisfying condition ~\eqref{align:pm-basis} are independent. This follows from the assumption that $f_0,\ldots, f_n$ form a basis of degree 1 rational functions, and so degree $\lfloor d \deg D \rfloor $ monomials in $f_0,\ldots, f_n$ form a basis of degree $\lfloor d \deg D \rfloor $ rational functions.
 \end{proof}
+
 \todo{the following bound is the generation bound beginning from evan's paper}
 
 
