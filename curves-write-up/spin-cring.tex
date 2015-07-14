@@ -907,7 +907,8 @@ Then,
 \end{align*}
 \end{lem}
 
-\sssec*{Idea of Proof:} To show $\supseteq$, we show that $T \subseteq \initial(I)$, which follows immediately from $(1)$ and $(2)$. Then, $\subseteq$ follows from condition $(3)$ and the fact that no terms in $S$ can be contained in $\initial(I)$ because $(1)$ implies that $S$ is a basis.
+\sssec*{Idea of Proof:} To show $\supseteq$, we show that $T \subseteq \initial(I)$, which follows immediately from $(1)$ and $(2)$.
+We deduce $\subseteq$ by noting that we can reduce any monomial in $k[x_1, \ldots, x_m, y_1, \ldots, y_n]$ to a monomial in the basis $S$ via a set of relations whose initial terms include each monomial in $\initial(I')\Bk[x_1, \ldots, x_m, y_1, \ldots, y_n] + \langle T \rangle$.
 
 \begin{proof}
 First, notice that $I'\subseteq I$ so 
@@ -1059,9 +1060,7 @@ Next, part (b) immediately follows from the conclusion of Lemma
 ~\ref{lem:relations_from_generators_induction}, reducing the proof
 to verifying the hypotheses of that lemma. The first two hypotheses
 follow immediately from the definition of block order. Checking the
-third condition is quite technical, but the conditions follow from
-certain slope conditions, given by ~\ref{custom:sat-1-*},
-~\ref{custom:sat-1-**}, and ~\ref{custom:sat-1-***}.  
+third condition is quite technical, but follows from the construction of $V$ and the $U_i$'s.
 
 
 \begin{proof}
