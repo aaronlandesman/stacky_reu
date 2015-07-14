@@ -410,8 +410,9 @@ $j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
 \end{align*}
 
 \noindent
-where $\vec{y} \in \mss_i$ and $\vec{w} \in \mss_j$ are the unique
-vectors such that $\vec{y} \prec \vec{w}$.
+where $\vec{y}$ and $\vec{w}$ are the unique
+vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
+\prec \vec{w}$.
 \end{thm}
 
 \begin{proof}
@@ -441,20 +442,29 @@ the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
 {dorney:canonical}, each lattice point $(\beta, \gamma) \in
 \bz_{\geq 0}^2$ such that $c \leq d \alpha$ is a non-negative
 linear combination of $\vec{x}_i$ and $\vec{x}_{i + 1}$ where
-$\vec{x}_i := (d_i, c_i) \in \bz^2$. Consequently, if $(\beta,
-\gamma) = \ell_1 (d_i, c_i) + \ell_2 (d_{i + 1}, c_{i + 1})$ for
-$\ell_1, \ell_2 \in \bz_{ \geq 0}$, then any element $\frac{u^{\beta}
+$\vec{x}_i := (d_i, c_i) \in \bz^2$. Let $(\beta, \gamma) = \ell_1
+(d_i, c_i) + \ell_2 (d_{i + 1}, c_{i + 1})$ for $\ell_1, \ell_2 \in
+\bz_{\geq 0}$. Consequently, any element $\frac{u^{\beta}
 x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
 \begin{align*}
-	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_i}
-	x^{\vec{w}}} {x_k^{c_i}}\right)^{\ell_1} \left(\frac{u^{d_{i + 1}}
-	x^{\vec{z}}} {x_k^{c_{i + 1}}}\right)^{\ell_2}
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_i}}
+	{x_k^{c_i}}\right)^{\ell_1} \left(\frac{u^{d_{i + 1}}}
+	{x_k^{c_{i + 1}}}\right)^{\ell_2} x^{\vec{v}}.
 \end{align*}
 
 \noindent
-for some $\vec{w} \in \mss_i, \vec{z} \in \mss_{i + 1}$. But these
-are precisely powers of two generators of the form $F_i^{\vec{w}}$
-and $F_{d_{i + 1}}^{\vec{z}}$ as prescribed in the theorem statement.
+We can break $\vec{v}$ into a sum of $\ell_1$ many vectors
+$\vec{w}_{(j)}$ in $\mss_2$ and $\ell_2$ many vectors $\vec{z}_{(k)}$
+in $\mss_2$ to give a decomposition
+\begin{align*}
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}}	= \prod_{j = 1}
+	^{\ell_1} \frac{u^{d_i} x^{\vec{w}_{(j)}}} {x_k^{c_i}}
+	\prod_{k = 1}^{\ell_2} \frac{u^{d_{i + 1}} x^{\vec{z}_{(k)}}}
+	{x_k^{c_{i + 1}}}
+\end{align*}
+into products of generators $F_i^{\vec{w}_{(j)}}$
+and $F_{d_{i + 1}}^{\vec{z}_{(k)}}$ which are in the form
+prescribed in the theorem statement.
 
 \todo{relations}
 Canonical form of 
@@ -592,17 +602,16 @@ with relations generated in degree at most
 \end{thm}
 
 \section{Canonical Rings on Hirzebruch surfaces}
-Let $D=\sum_{i=1}^m \alpha_i C_i$ for some curve $C_i\in F_k$, such
+Let $D=\sum_{i=1}^m \alpha_i C_i \in \mathbb{Q} \otimes \di(\hirz_
+k)$ for some curve $C_i$ of $\hirz_k$, such
 that $C_1, \ldots, C_4$ are independent curves with bi-degrees $(1,0)
 , (1,0), (0,1)$, and $(0,1)$ respectively. Let $C_i = V(f_i)$ where
-$f_i \in \mathscr{O}(\bida_i, \bidb_i)$. Then each $C_i$ corresponds to a
-polynomial $f_i$ where $f_1$ and $f_2$ are independent linear
+$f_i \in \mathscr{O}(\bida_i, \bidb_i)$.  Suppose $f_1$ and $f_2$ are independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
 linear polynomials in $y_0$ and $y_1$.
 
 \begin{defn}
-Suppose $D = \sum_{i=1}^m \alpha_i C_i \in \mathbb{Q} \otimes \di(F_
-k)$. Then define 
+Define 
 \begin{equation}\label{eqn:define-T=(D)}
 	\Te(D) = \left\{i \in \{1, \ldots, m\}: \bida_i \sum_{k=1}^m \bidb_k 
 \alpha_k = \bidb_i \sum_{k=1}^m \bida_k \alpha_k \right\},
@@ -622,7 +631,7 @@ k \bidb_k < \bidb_j \sum_{k=1}^m \alpha_k \bida_k s \right\}.
 \end{equation}
 \end{defn}
 
-\begin{lem}
+\begin{lem}\label{Hirzebruch-generators}
 $R_D$ is generated in degree at most
 \[
 	\sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{i\in \Tp(D) \atop j\in \Tm(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
@@ -698,16 +707,33 @@ and
 Let $E$ be the set of $\epsilon_i$ and $\epsilon_{i,j}$ given 
 above, satisfying the respective conditions.
 $E$ satisfies the conditions of proposition \ref{prop:cone-generation}, so by applying that proposition $R_D$ is generated in 
-degree at most
+degree less than
 \[
 	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in \Tp(D) \atop
 	j \in \Tm(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
 \]
 \end{proof}
 
-\todo{factor $\phi$ through $\psi$ and $\chi$.}
+Let $x_1, \ldots x_r$ be the generators given by lemma  \ref{Hirzebruch-generators}, and $\phi$ be the surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through 
+\[
+	\Sigma =  \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d \alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i. \rangle 
+\]
+into
+\[
+\begin{tikzcd}
+\bk[x_1,\ldots, x_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
+x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
+\end{tikzcd}
+\]
+
+Applying Lemma \ref{lem:bound-ker-chi}, we can bound the degree of generation of $\ker(\chi)$ less than
+\[
+	2 \sigma
+\]
+Finally, we calculate the degree of generation of $\psi$:
+
 \begin{lem}
-$\ker(\psi)$ is generated in degree at most
+$\ker(\psi)$ is generated in less than
 \[
 	\tau = \sigma
 	+ \max( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i\in S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))).
@@ -763,7 +789,7 @@ Let $F\in R_D$ correspond to $E + \sum_{k\in \Te} (r_k) e_k + \sum_{h\in \Tp \at
 \[
 	\sigma + \deg(F),
 \]
-which generates $(z_i - \beta_i) \prod_{i=1}^n y_i^{c_i}$
+which divides $(z_i - \beta_i) \prod_{i=1}^n y_i^{c_i}$.
 We can bound $\deg(F)$ by
 \[
 	\deg(F) \le \left\{ \begin{split}  \ell_i \gcd(\bida_i, \bidb_i) \mbox{ if } i \in S_= 
@@ -777,9 +803,29 @@ Therefore, $\ker(\psi)$ is generated in degree at most
 	\tau = \sigma
 	+ \max( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i\in S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))).
 \]
-
-
 \end{proof}
+
+Combining these results, we get the following theorem:
+
+\begin{thm}\label{Hirzebruch-generators/relations}
+Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\hirz_k$.  Let $C_i = V(f_i)$ where $f_i \in \mathscr{P}(a_i, b_i)$; further suppose $f_1$ and $f_2$ are independent linear
+polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
+linear polynomials in $y_0$ and $y_1$.
+Then $R_D$ is generated in degree less than 
+\[
+	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in \Tp(D) \atop
+	j \in \Tm(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}
+\]
+with relations generated in degree less than 
+\[
+	\max(2 \sigma, \sigma + \tau)
+\]
+where
+\[
+	\tau = \sigma
+	+ \max( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i\in S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))).
+\]
+\end{thm}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
