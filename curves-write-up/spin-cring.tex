@@ -907,7 +907,7 @@ Then,
 \end{align*}
 \end{lem}
 
-\sssec*{Idea of Proof:} To show $\supseteq$, we show that $T \subseteq \initial(I)$, which follows immediately from $(1)$ and $(2)$. Then, we show that $\subseteq$ follows from condition $(3)$ and the fact that no terms in $S$ can be contained in $\initial(I)$ because $(1)$ implies that $S$ is a basis.
+\sssec*{Idea of Proof:} To show $\supseteq$, we show that $T \subseteq \initial(I)$, which follows immediately from $(1)$ and $(2)$. Then, $\subseteq$ follows from condition $(3)$ and the fact that no terms in $S$ can be contained in $\initial(I)$ because $(1)$ implies that $S$ is a basis.
 
 \begin{proof}
 First, notice that $I'\subseteq I$ so 
@@ -1004,7 +1004,7 @@ Let
 	0 < \frac{c_1}{k_1} < \ldots < \frac{c_n}{k_n} = \frac{\alpha}{\beta}
 \]
 be the positive best lower approximations of $\frac{\alpha}{\beta}$
-(similar to Remark ~\ref{rem:lower-approximation}).
+{\rm(}similar to Remark ~\ref{rem:lower-approximation}{\rm)}.
 Then,
 
 \begin{enumerate}
@@ -1040,10 +1040,10 @@ Then,
 			exist $r<i$ such that $\sum_{j=1}^r a_j c_j> c_{r + 1}$.
 	\end{enumerate}
 
-\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$
-	in degrees at most $\beta$ with $I$ generated over $I'$ in
-	degrees at most $\max(2 \beta, \beta + \tau)$ (where $\tau = \max(1,
-	\max_{1 \leq i \leq m}(\deg(x_i)))$).
+\item[(c)] Let $\tau = \max(1,
+	\max_{1 \leq i \leq m}(\deg(x_i)))$. Then, $R_\halfcan$ is generated over $R_\halfcan'$
+	in degrees up to $\beta$ with $I$ generated over $I'$ in
+	degrees up to $\max(2 \beta, \beta + \tau).$
 \end{enumerate}
 \end{lem}
 
@@ -2076,7 +2076,17 @@ finite list of exceptional cases, as listed in Table
 ~\ref{table:g-1-exceptional}.
 \end{thm}
 
-\sssec*{Idea of Proof:} We check the theorem in two cases, depending on whether $\Delta > 0$. If $\Delta > 0$, we first check that the theorem holds for $L_X$ by adding in log points, and then check it holds for $L$ by raising the stabilizer orders of stacky points in a sequence of steps. When raising the stacky orders, it is important that we increment the stabilizer orders of the maximum possible number of stacky points at each step, so that the corresponding set will remain admissible. The check for $\Delta = 0$ is similar, although in this case we do not need to add in log points, only stacky points, and we will need to utilize the base cases from Subsection ~\ref{ssec:g-1_base}.
+\sssec*{Idea of Proof:}
+We check the theorem in two cases, depending on whether $\Delta > 0$.
+If $\Delta > 0$, we first check that the theorem holds for $L_X$
+by adding in log points, and then check it holds for $L$ by raising
+the stabilizer orders of stacky points in a sequence of steps. When
+raising the stacky orders, it is important that we increment the
+stabilizer orders of the maximum possible number of stacky points
+at each step, so that the corresponding set will remain admissible.
+The check for $\Delta = 0$ is similar, although in this case we do
+not need to add in log points, only stacky points, and we will need
+to utilize the base cases from Subsection ~\ref{ssec:g-1_base}.
 
 \begin{proof}
 
@@ -2086,7 +2096,7 @@ finite list of exceptional cases, as listed in Table
 
 If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $\halfcan_X \in \di X$ satisfy $2 \halfcan_X \sim K_X + \Delta$. We have $\deg \halfcan_X \geq 1$, so, by Riemann--Roch, $h^0(\sx, \halfcan) \geq 1.$ Therefore, $\halfcan$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $\halfcan$ is an effective divisor.
 
-We first now show the theorem holds for $\halfcan_X$ by induction. Since $\halfcan_X$ is effective, we may induct on the degree of the log spin canonical divisor. The base case is easy: the theorem holds for $\halfcan_X' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $\halfcan_X' \in \di X$, with $\halfcan_X'$ effective. We will show it holds for $\halfcan_X' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $\halfcan_X'$.
+We first now show the theorem holds for $\halfcan_X$ by induction. Since $\halfcan_X$ is effective, we may induct on the degree of the log spin canonical divisor. The base case is easy: the theorem holds for $\halfcan_X' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $\halfcan_X' \in \di X$, with $\halfcan_X'$ effective. We will show it holds for $\halfcan_X' + P$, verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $\halfcan_X'$.
 
 First, if $P$ is not a basepoint of $\halfcan',$ then the hypotheses of Lemma ~\ref{lem:sat-1} are satisfied.
 Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $\halfcan = \halfcan' + P$.
