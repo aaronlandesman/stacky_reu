@@ -907,7 +907,7 @@ Then,
 \end{align*}
 \end{lem}
 
-\sssec*{Idea of Proof:} To get $\supseteq$, we use the fact that
+\sssec*{Idea of Proof:} To show $\supseteq$, we show $T \subset \initial(I),$ which follows immediately from $(1)$ and $(2)$. Then, $\subseteq$ follows from condition $(3)$, since $(1)$ implies $S$ is a basis, so no terms in $S$ can be contained in $\initial(I)$.
 
 \begin{proof}
 First, notice that $I'\subseteq I$ so 
@@ -1046,6 +1046,10 @@ Then,
 \end{enumerate}
 \end{lem}
 
+\sssec*{Idea of proof:} The proof will be fairly involved. To show part (a), we first define an set of generators of $R_\halfcan$ over $R_{\halfcan'}$, with one generator corresponding to each best lower approximation. We then use Riemann--Roch to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$, showing that the set of elements we produce forms a basis.
+
+Next, part (b) immediately follows from an application of Lemma ~\ref{relations_from_generators_induction}, we only need verify the hypotheses of Lemma ~\ref{relations_from_generators_induction}. The first two hypotheses follow immediately from the construction of block order. Checking the third condition is quite technical, but the conditions ~\ref{custom:sat-1-*}, ~\ref{custom:sat-1-**}, and ~\ref{custom:sat-1-***} give certain slope conditions, which are precisely what is needed to verify the third condition of Lemma ~\ref{relations_from_generators_induction}.
+
 \begin{proof}
 {\bf Part (a):}
 By
@@ -1053,7 +1057,7 @@ Equation ~\ref{eqn:deg1-sat-ind}, for any $k
 \in \BN$ such that $\lfloor k \frac{ \alpha}{\beta} \rfloor > 0$,
 
 \[
-	h^0 (X, k \halfcan ) = h^0(X, k \halfcan') + \lfloor k \frac{\alpha}{\beta}\rfloor.
+	h^0 (X, k \halfcan ) = h^0(X, k \halfcan') + \left\lfloor k \frac{\alpha}{\beta} \right\rfloor.
 \]
 
 \noindent
@@ -1553,6 +1557,8 @@ $\Bk[y_{i, e_i}]_{i\in J} \otimes \Bk[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$
 	\item[(d)] The triple $(\sx, \halfcan', J)$ is admissible.
 \end{enumerate}
 \end{lem}
+
+\sssec{Idea of proof:} The construction of the $y_{i,e_i}$ in Part (a) uses Riemann--Roch and condition ~\ref{custom:Ad-iii}. The inequality in Part (a) follows from the fact that $L$ is similar to $L'$, but with some of the $e_i$ incremented by $2$. Part (b) follows by noting that the generators in Part (a) form an independent set, as can be seen by noting that the sublattice spanned by $y_{i,e_i}$ and $y_{i, e_i'}$ has determinant $1$ for $i \in J$. To check part (c) we construct relations between the generators of $R_{\halfcan}$ over $R_{\halfcan'}$. We note that an element lies in $R_{\halfcan'}$ if and only if its pole order at $P_i$ for $i \in J$ is not too large, and use Lemma ~\ref{lem:admissible_inequality} to check this bound. Part (d) follows fairly easily from the definition of admissibility.
 
 \begin{proof}
 We prove this in case (1). Case (2) follows a similar procedure.
@@ -2067,6 +2073,8 @@ finite list of exceptional cases, as listed in Table
 ~\ref{table:g-1-exceptional}.
 \end{thm}
 
+\sssec*{Idea of Proof:} We check the theorem in two cases, depending on whether $\Delta > 0$. If $\Delta > 0$, we first check that the theorem holds for $L_X$ by adding in log points, and then check it holds for $L$ by raising the stabilizer orders of stacky points in a sequence of steps. When raising the stacky orders, it is important that we increment the stabilizer orders of the maximum possible number of stacky points at each step, so that the corresponding set will remain admissible. The check for $\Delta = 0$ is similar, although in this case we do not need to add in log points, only stacky points, and we will need to utilize the base cases from Subsection ~\ref{ssec:g-1_base}.
+
 \begin{proof}
 
 \vskip.1in
@@ -2437,6 +2445,8 @@ is generated as a $\Bk$-algebra by elements of degree at most $e =
 so long as $\sigma$ does not lie in the finite list of exceptional
 cases in Table ~\ref{table:g-0-exceptional}.
 \end{thm}
+
+\sssec*{Idea of proof:} The method of this proof is almost identical to that of Theorem ~\ref{thm:g-1-main}. When $\delta > 0$, we first add in log points, and then increment the stabilizer orders of stacky points, checking that the theorem holds at each step. The more technical case occurs when $\delta = 0$, in which case we simply increment the stabilizer orders of stacky points starting from one of our base cases, and check that every stacky curve can be reached by a sequence of admissible incrementations from a base case.
 
 \begin{proof}
 If $\sx$ has no stacky points, then we can assume that $\halfcan \sim
