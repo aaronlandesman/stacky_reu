@@ -390,29 +390,29 @@ For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
 \vec{w} \in \mss_j$, there is a relation of the form either
 \begin{flalign*}
 	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
-	- \prod_{\vec{y} \in \mss_{k_{i, j}}} (F_{k_{i, j}}^{\vec{y}})
-	^{g_{\vec{y}}} &(i < k_{i, j} < j) \\
+	- \prod_{\vec{y} \in \mss_{h_{i, j}}} (F_{h_{i, j}}^{\vec{y}})
+	^{g_{\vec{y}}} &(i < h_{i, j} < j) \\
 	\text{or} \\
 	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
-	- \prod_{\substack{\vec{y} \in \mss_{k_{i, j}} \\ \vec{z} \in
-	\mss_{k_{i, j} + 1}}} (F_{k_{i, j}}^{\vec{y}})^{g_{\vec{y}}} \;
-	(F_{k_{i, j} + 1}^{\vec{z}})^{h_{\vec{z}}}
-	&(i < k_{i, j} < k_{i, j} + 1 < j).
+	- \prod_{\substack{\vec{y} \in \mss_{h_{i, j}} \\ \vec{z} \in
+	\mss_{h_{i, j} + 1}}} (F_{h_{i, j}}^{\vec{y}})^{g_{\vec{y}}} \;
+	(F_{k_{i, j} + 1}^{\vec{z}})^{g'_{\vec{z}}}
+	&(i < h_{i, j} < h_{i, j} + 1 < j).
 \end{flalign*}
 
 Furthermore, there are the relations for each $(i, j)$ with
-$j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
-\mss_j$ with $\vec{v} \not\prec \vec{w}$ (see Definition
+$j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{z} \in
+\mss_j$ with $\vec{v} \not\prec \vec{z}$ (see Definition
 ~\ref{defn:vec-order}) of the form 
 \begin{align*}
-	&L_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
-	- F_i^{\vec{y}} F_j^{\vec{w}} \\
+	&L_{i, j}^{\vec{v}, \vec{z}} = F_i^{\vec{v}} F_j^{\vec{z}}
+	- F_i^{\vec{y}} F_j^{\vec{z}} \\
 \end{align*}
 
 \noindent
-where $\vec{y}$ and $\vec{w}$ are the unique
+where $\vec{y}$ and $\vec{z}$ are the unique
 vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
-\prec \vec{w}$.
+\prec \vec{z}$.
 \end{thm}
 
 \begin{proof}
@@ -420,18 +420,18 @@ We know $\left\{F_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor
 \frac{p}{q} \right\rfloor \right\}$ are minimal generators in
 degree $1$. Now let $i > 0$. Suppose $F_i^{\vec{v}}$ were not
 minimal for some $\vec{v} \in \mss_i$. Then $F_i^{\vec{v}} =
-F_{s}^{\vec{w}} F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and
-$\vec{w}, \vec{z} \in \bz_{ \geq 0}^{m + 1}$. In particular, we see
+F_{s}^{\vec{y}} F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and
+$\vec{y}, \vec{z} \in \bz_{ \geq 0}^{m + 1}$. In particular, we see
 that 
 \begin{align*}
 	&d_i = s + t \\
-	&c_i = \deg \vec{v} = \deg \vec{w} + \deg \vec{z}
+	&c_i = \deg \vec{v} = \deg \vec{y} + \deg \vec{z}
 \end{align*}
 
 \noindent
 so $\frac{c_i}{d_i}$ is the mediant of the rational numbers
-$\frac{\deg \vec{w}}{s}, \frac{\deg \vec{z}}{t}$ which both
-do not exceed $\alpha$. One of $\frac{\deg \vec{w}}{s},
+$\frac{\deg \vec{y}}{s}, \frac{\deg \vec{z}}{t}$ which both
+do not exceed $\alpha$. One of $\frac{\deg \vec{y}}{s},
 \frac{\deg \vec{z}}{t}$ must be at least $\frac{c_i}{d_i}$
 and $s$ and $t$ are both less than $d_i$, so we have a contradiction 
 of $\frac{c_i}{d_i}$ being a best lower approximation of $\alpha$
@@ -440,16 +440,16 @@ of $\frac{c_i}{d_i}$ being a best lower approximation of $\alpha$
 Now we show that no further generators are necessary. As done in
 the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
 {dorney:canonical}, each lattice point $(\beta, \gamma) \in
-\bz_{\geq 0}^2$ such that $c \leq d \alpha$ is a non-negative
-linear combination of $\vec{x}_i$ and $\vec{x}_{i + 1}$ where
-$\vec{x}_i := (d_i, c_i) \in \bz^2$. Let $(\beta, \gamma) = \ell_1
-(d_i, c_i) + \ell_2 (d_{i + 1}, c_{i + 1})$ for $\ell_1, \ell_2 \in
+\bz_{\geq 0}^2$ such that $\gamma \leq \beta \alpha$ is a non-negative
+linear combination of $(d_h, c_h)$ and $(d_{h + 1}, c_{h + 1})$ for
+some $h \in \{0, \ldots, r\}$. Let $(\beta, \gamma) = \ell_1
+(d_h, c_h) + \ell_2 (d_{h + 1}, c_{h + 1})$ for $\ell_1, \ell_2 \in
 \bz_{\geq 0}$. Consequently, any element $\frac{u^{\beta}
 x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
 \begin{align*}
-	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_i}}
-	{x_k^{c_i}}\right)^{\ell_1} \left(\frac{u^{d_{i + 1}}}
-	{x_k^{c_{i + 1}}}\right)^{\ell_2} x^{\vec{v}}.
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_h}}
+	{x_k^{c_h}}\right)^{\ell_1} \left(\frac{u^{d_{h + 1}}}
+	{x_k^{c_{h + 1}}}\right)^{\ell_2} x^{\vec{v}}.
 \end{align*}
 
 \noindent
@@ -457,14 +457,24 @@ We can break $\vec{v}$ into a sum of $\ell_1$ many vectors
 $\vec{w}_{(j)}$ in $\mss_2$ and $\ell_2$ many vectors $\vec{z}_{(k)}$
 in $\mss_2$ to give a decomposition
 \begin{align*}
-	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}}	= \prod_{j = 1}
-	^{\ell_1} \frac{u^{d_i} x^{\vec{w}_{(j)}}} {x_k^{c_i}}
-	\prod_{k = 1}^{\ell_2} \frac{u^{d_{i + 1}} x^{\vec{z}_{(k)}}}
-	{x_k^{c_{i + 1}}}
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}}	= \prod_{\lambda = 1}
+	^{\ell_1} \frac{u^{d_h} x^{\vec{w}_{(\lambda)}}} {x_k^{c_h}}
+	\prod_{\lambda = 1}^{\ell_2} \frac{u^{d_{h + 1}} x^{\vec{z}_{(\lambda)}}}
+	{x_k^{c_{h + 1}}}
 \end{align*}
-into products of generators $F_i^{\vec{w}_{(j)}}$
-and $F_{d_{i + 1}}^{\vec{z}_{(k)}}$ which are in the form
+
+\noindent
+consisting of products of generators $F_h^{\vec{y}_{(\lambda)}}$
+and $F_{h + 1}^{\vec{z}_{(\lambda)}}$ which are in the form
 prescribed in the theorem statement.
+
+In particular, if $j \geq i + 2$ then $F_i^{\vec{v}} F_j^{\vec{w}}$
+has a decomposition of this form for some $h_{i, j}$. We also have
+that $i \leq h_{i, j} < j$ since $(d_i + d_j, c_i + c_j)$ is in the
+$\bz_{\geq 0}$-span of $(d_{h_{i, j}}, c_{h_{i, j}})$ and
+$(d_{h_{i, j} + 1}, c_{h_{i, j} + 1})$. The demonstration that
+$h_{i, j} \neq i$ is equivalent to the proof given by O'Dorney
+\cite[Theorem 6]{dorney:canonical}.
 
 \todo{relations}
 Canonical form of 
