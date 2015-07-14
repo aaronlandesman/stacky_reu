@@ -418,8 +418,8 @@ We define $H^0$ of a stacky divisor as follows.
 
 \begin{defn}
 \label{defn:h0-stacky}
-Recall the standard notation 
-$$\sco(D) := \{f \in \Bk(X)^\times : \di f + D \geq 0 \}.$$
+Recall the standard notation for the line bundle $\sco(D)$ on an integral normal scheme $X$ associated to a divisor $D \in \di X$:
+$$\Gamma(U, \sco(D)) := \{f \in \Bk(X)^\times : \di|_U f + D|_U \geq 0 \}.$$
 Let $\sx$ be a stacky curve with coarse space $X$.
 If $D \in \di \sx$ is a Weil divisor, then we define
 \begin{align*}
@@ -674,19 +674,19 @@ In this section, we work out several examples of computing presentations for spi
 
 \begin{example}
 \label{eg:base-1-0}
-Let $(\sx',0, \halfcan')$ be a log stacky curve of genus $g = 1,$ with $\halfcan' = 0$.
+Let $(\sx',0, \halfcan')$ be a log spin curve of genus $g = 1,$ with $\halfcan' = 0$.
 Counting dimensions, we see $h^0(\sx, k\halfcan')=1$ for all $k \in \mathbb{Z}_{\ge 0}$ so it is immediately clear that $R_{\halfcan'} \cong \Bk[x]$ with $x$ a generator in degree 1.
 \end{example}
 
 
 \begin{example}
 \label{eg:adding-point}
-Let $\sx$ be a stacky curve with coarse space $X$ and signature $(0
-; 3; 3)$. Let $P_1$ denote the lone stacky point which has stabilizer
+Let $(\sx,3 \cdot \infty, L)$ be a stacky curve with coarse space $X$ and signature 
+$(0; 3; 3)$. Let $P_1$ denote the lone stacky point which has stabilizer
 order $3$ and suppose $\infty$ is a fixed closed point of $X$ that is
 not equal to $P_1$.
 
-We will deduce the structure of the log spin canonical ring $R_L$
+Recall the notation $L_X = \lfloor L \rfloor \in \di X$. We will deduce the structure of the log spin canonical ring $R_L$
 from the structure of the spin canonical ring $R_{L_X} := R(X, 3
 \cdot \infty, L_X)$. This technique will later be generalized in Lemma ~\ref{lem:sat-1}.
 
@@ -2570,7 +2570,7 @@ study of stacky canonical rings, for providing invaluable guidance,
 and for his mentorship. We also thank Ken Ono and the Emory
 University Number Theory REU for arranging our project and
 providing a great environment for mathematical learning and
-collaboration. We thank Jorge Sentieiro Neves for pointing out the
+collaboration. We thank Jorge Neves for pointing out the
 bounds given by Miles Reid's work on the maximal degrees of minimal
 generators and relations of spin canonical rings in high genera. We
 also thank Brian Conrad and John Voight for helpful comments on
