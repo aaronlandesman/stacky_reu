@@ -221,7 +221,7 @@ Write
 \begin{align*}
 	D = \sum_{i=1}^{n}\alpha_i D_i.
 \end{align*}
-where $\alpha_i \in \bq$.
+where $\alpha_i \in \bq$. \todo{Peter: What are the $D_i$'s.}
 \end{convention}
 
 \begin{convention}
@@ -293,22 +293,23 @@ Since $e_1, \ldots, e_r$ are extremal rays, by Proposition ~\ref{prop:cone-gener
 
 
 \section{Canonical Rings on Projective Space}
-In this section, we bound the degrees of generators and relations for divisors on $\bp^m$, for all $m \geq 1$. The $n = 1$ case was covered in \cite{dorney:canonical}.
+In this section, we bound the degrees of generators and relations for divisors on $\bp^m$, for all $m \geq 1$. The $\bp^1$ case was covered in \cite{dorney:canonical}.
 
 \ssec{Preliminaries on Projective Space}
 
-For the remainder of this section, we shall fix $m \geq 1$ and choose an isomorphism $\bp^m \cong \proj V$ so that $x_0,\ldots, x_m$ form a basis for $V$. Through the rest of this section, we will think of $x_i$ as a rational section of $H^0(\bp^m, \sco_{\bp^m})$ of degree 1.
+For the remainder of this section, we shall fix $m \geq 1$ and choose an isomorphism $\bp^m \cong \proj V$ so that $x_0,\ldots, x_m$ form a basis for $V$.  We will think of $x_i$ as a rational section of $H^0(\bp^m, \sco_{\bp^m})$ of degree 1.
 
 
 Write
 \begin{align*}
 	D = \sum_{i=0}^{n}\alpha_i D_i.
 \end{align*}
-where $\alpha_i \in \bq$ and $\deg D_i = \bida_i$. Let $f_i$ be Cartier divisors such that $D_i = V(f_i)$. We shall further assume that among there exist functions $f_0,\ldots, f_{m+1}$ form a basis for degree one rational functions on $\bp^m$.
+where $\alpha_i \in \bq$ and $\deg D_i = \bida_i$. Let $f_i$ be Cartier divisors such that $D_i = V(f_i)$. We shall further assume that (after reordering) $f_0,\ldots, f_{m}$ form a basis for degree one rational functions on $\bp^m$. \todo{Peter: Make reference to ghost points here?}
+\todo{Peter: Also, this is a poorly placed statement of our assumption, because we are not assuming that for the one point/induction case that follows right?}
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
-The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ so that 
+The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying
 \begin{align}
 \label{align:pm-span}
 \sum_{i=0}^{n} c_i \cdot \bida_i \cdot f_i = 0 && \text{ and } &&c_i \geq \lfloor \alpha_i d\rfloor	
@@ -316,7 +317,7 @@ The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ so that
 
 \noindent
 form a spanning set for $H^0(\bp^m, dD)$ over $k$. Furthermore, functions 
-of the form $u^d \cdot \prod_{i=1}^n f_i^{c_i} $ such that
+of the form $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying
 \begin{align}
 \label{align:pm-basis}
 c_i = -\lfloor d\alpha_i \rfloor && \text{ for } && i > m
