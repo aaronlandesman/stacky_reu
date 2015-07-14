@@ -118,6 +118,9 @@
 \DeclareMathOperator{\newspan}{span}
 \DeclareMathOperator{\proj}{Proj}
 \DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\Te}{T_=}
+\DeclareMathOperator{\Tp}{T_+}
+\DeclareMathOperator{\Tm}{T_-}
 %\captionsetup[table]{belowskip = 4pt}
 
 \makeatletter
@@ -470,7 +473,7 @@ As an example for why we need to add in ghost points for $\bp^2$, consider $\fra
 \todo{construct class of additional examples}
 \todo{The example above needs to be changed because $x_0^2$ can be replaced by $2x_0$}
 
-\begin{lem}
+\begin{lem} \label{P-m-generators}
 Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $C_i = v(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$.  Then $R_D$ is generated in degree at most $\sum_{i=1}^n \ell_i a_i$.
 % and relations in degree at most  .\todo{insert numbers}
 \end{lem}
@@ -489,6 +492,29 @@ for each $i\in \{1, \ldots n\}$.  Therefore, applying proposition \ref{prop:cone
 \]
 \end{proof}
 
+\todo{Discussion of factoring $\phi$ through $\psi$ and $\chi$}
+
+\begin{lem}\label{P-m-relations-psi}
+$\ker(\psi)$ is generated in degree at most \todo{insert number}.
+\end{lem}
+\begin{proof}
+We first claim that $\psi$ has a relation of the form
+\begin{equation}\label{eqn:relations-psi}
+	(z_i - \beta_j)\prod_{j=1}^n {z_j}^{c_{i}}
+\end{equation}
+
+\noindent
+for some $d\in \mathbb{N}$, $c_i \ge -\alpha_i d$, $\bida_j + \sum_{i = 1}
+^n \bida_i c_i = 0$, $\bidb_j + \sum_{i=1}^n \bidb_i c_i = 0$, and $\beta_j \in
+k[z_1, \ldots, y_3]$ satisfies $\psi(\beta_j)\in \mathscr{O}(\bida)$.
+
+To find such a $\beta$, we simply write $\epsilon_j$ as a 
+polynomial in $\epsilon_1, \ldots \epsilon _3$. Furthermore, these
+generate all relations, since they allow us to reduce any $\prod_{i =
+1}^n \epsilon_i^{r_i}$ to a canonical form. \todo{add reference to
+earlier description of canonical form.}
+\end{proof}
+
 \section{Canonical Rings on Hirzebruch surfaces}
 Let $D=\sum_{i=1}^m \alpha_i C_i$ for some curve $C_i\in F_k$, such
 that $C_1, \ldots, C_4$ are independent curves with bi-degrees $(1,0)
@@ -502,12 +528,12 @@ linear polynomials in $y_0$ and $y_1$.
 Suppose $D = \sum_{i=1}^m \alpha_i C_i \in \mathbb{Q} \otimes \di(F_
 k)$. Then define 
 \begin{equation}\label{eqn:define-T=(D)}
-	T_=(D) = \left\{i \in \{1, \ldots, m\}: \bida_i \sum_{k=1}^m \bidb_k 
+	\Te(D) = \left\{i \in \{1, \ldots, m\}: \bida_i \sum_{k=1}^m \bidb_k 
 \alpha_k = \bidb_i \sum_{k=1}^m \bida_k \alpha_k \right\},
 \end{equation}
 
 \begin{equation}\label{eqn:define-T+(D)}
-	T_+(D) = \left\{ i \in \{1, \ldots, m\}:  \vphantom{\sum_{k=1}^m} 
+	\Tp(D) = \left\{ i \in \{1, \ldots, m\}:  \vphantom{\sum_{k=1}^m} 
 \bida_i \sum_{k=1}^m \alpha_k \bidb_k > \bidb_i \sum_{k=1}^m \alpha_k \bida_k 
 \right\},
 \end{equation}
@@ -515,7 +541,7 @@ k)$. Then define
 \noindent
 and
 \begin{equation}\label{eqn:define-T-(D)}
-	T_-(D) = \left\{ j \in \{1, \ldots, m\}: \bida_j \sum_{k=1}^m \alpha_
+	\Tm(D) = \left\{ j \in \{1, \ldots, m\}: \bida_j \sum_{k=1}^m \alpha_
 k \bidb_k < \bidb_j \sum_{k=1}^m \alpha_k \bida_k s \right\}.
 \end{equation}
 \end{defn}
@@ -523,7 +549,7 @@ k \bidb_k < \bidb_j \sum_{k=1}^m \alpha_k \bida_k s \right\}.
 \begin{lem}
 $R_D$ is generated in degree at most
 \[
-	\sum_{i\in T_=(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{i\in T_+(D) \atop j\in T_-(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
+	\sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{i\in \Tp(D) \atop j\in \Tm(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
 \]
 \end{lem}
 
@@ -565,7 +591,7 @@ connecting the $e_i, e_j \not \in H$.
 We can calculate the following elements of $R_D$ whose
 corresponding lattice points lie on these extremal rays:
 
-For $i \in T_=(D)$
+For $i \in \Te(D)$
 define
 \[
 	\epsilon_i := (\prod_{k \ne i} f_k^{-\alpha_k \ell_i \gcd(\bida_i, \bidb_i)})
@@ -573,7 +599,7 @@ define
 	\alpha_k (\bida_k + \bidb_k)}) \in H^0(\ell_i \gcd(\bida_i, \bidb_i) D).
 \]
 
-For $i \in T_+(D)$ and $j \in T_-(D)$, define
+For $i \in \Tp(D)$ and $j \in \Tm(D)$, define
 \[
 	\epsilon_{i, j} := (\prod_{k = 1}^m f_k^{-\alpha_k \ell_{i,j} (\bida_i \bidb_
 j - \bida_j \bidb_i)}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i,j}(\bida_i \bidb_j - 
@@ -598,14 +624,18 @@ above, satisfying the respective conditions.
 $E$ satisfies the conditions of proposition \ref{prop:cone-generation}, so by applying that proposition $R_D$ is generated in 
 degree at most
 \[
-	\sigma = \sum_{i\in T_=(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in T_+(D) \atop
-	j \in T_-(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
+	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in \Tp(D) \atop
+	j \in \Tm(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
 \]
 \end{proof}
 
 \todo{factor $\phi$ through $\psi$ and $\chi$.}
 \begin{lem}
-$\ker(\psi)$ is generated in degree at most \todo{insert number}.
+$\ker(\psi)$ is generated in degree at most
+\[
+	\tau = \sigma
+	+ \max( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i\in S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))).
+\]
 \end{lem}
 
 \begin{proof}
@@ -617,7 +647,7 @@ We first claim that $\psi$ has a relation of the form
 \noindent
 for some $d\in \mathbb{N}$, $c_i \ge -\alpha_i d$, $\bida_j + \sum_{i = 1}
 ^n \bida_i c_i = 0$, $\bidb_j + \sum_{i=1}^n \bidb_i c_i = 0$, and $\beta_j \in
-k[y_1, \ldots, y_4]$ satisfies $\psi(\beta_j)\in \mathscr{O}(\bida_j,
+k[z_1, \ldots, z_4]$ satisfies $\psi(\beta_j)\in \mathscr{O}(\bida_j,
 \bidb_j)$.
 
 To find such a $\beta$, we simply write $\epsilon_j$ as a 
@@ -633,7 +663,7 @@ set of $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$ satisfying $c
 $\bida_j + \sum_{i = 1}^m \bida_i c_i = 0$, and $\bidb_j + \sum_{i=1}^n \bidb_i c_i
 = 0$.  A careful computation deduces that $\gamma (d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots, c_n)$ is of the form 
 \[
-	E + \sum_{k\in T_=} r_k e_k + \sum_{h\in T_+ \atop k\in T_-} r_{h,k} e_{h,k},
+	E + \sum_{k\in \Te} r_k e_k + \sum_{h\in \Tp \atop k\in \Tm} r_{h,k} e_{h,k},
 \] 
 where $E$ is $\mathbb{R}_{\ge 0}$
 combination of elements in 
@@ -644,16 +674,16 @@ combination of elements in
 
 Let $M$ be the set of monomials of $\beta_j$.  Then for $\mu\in M$, the corresponding lattice point is of the form
 \[
-	E_\mu + \sum_{k\in T_=} r_k e_k + \sum_{h\in T_+ \atop k\in T_-} r_{h,k} e_{h,k}
+	E_\mu + \sum_{k\in \Te} r_k e_k + \sum_{h\in \Tp \atop k\in \Tm} r_{h,k} e_{h,k}
 \]
 where $E_\mu$ is a $\mathbb{R}_{\ge 0}$-combination of elements in
 \begin{align*}
-			& \{e_j : j\in T_= \cap \{1, 2, 3, 4\}\} \\
-	\cup \; 	& \{e_{j, k}: j\in T_= \cap \{1, 2, 3, 4\}, k\in T_-\}\\
-	\cup \; 	& \{e_{k,j}: k\in T_+, j\in T_- \cap \{1, 2, 3, 4\}\}.
+			& \{e_j : j\in \Te \cap \{1, 2, 3, 4\}\} \\
+	\cup \; 	& \{e_{j, k}: j\in \Te \cap \{1, 2, 3, 4\}, k\in \Tm\}\\
+	\cup \; 	& \{e_{k,j}: k\in \Tp, j\in \Tm \cap \{1, 2, 3, 4\}\}.
 \end{align*}
 
-Let $F\in R_D$ correspond to $E + \sum_{k\in T_=} (r_k) e_k + \sum_{h\in T_+ \atop k\in T_-} (r_{h,k}) e_{h,k}$ where $(r)$ signifies the fractional part of $r$.  Similarly, let $F_\mu \in R_D$ correspond to $E_\mu + \sum_{h\in T_+ \atop k\in T_-} (r_{h,k}) e_{h,k}$.  Then $F - \sum_{\mu\in M} F_\mu = 0$ gives us a relation in degree at most
+Let $F\in R_D$ correspond to $E + \sum_{k\in \Te} (r_k) e_k + \sum_{h\in \Tp \atop k\in \Tm} (r_{h,k}) e_{h,k}$ where $(r)$ signifies the fractional part of $r$.  Similarly, let $F_\mu \in R_D$ correspond to $E_\mu + \sum_{h\in \Tp \atop k\in \Tm} (r_{h,k}) e_{h,k}$.  Then $F - \sum_{\mu\in M} F_\mu = 0$ gives us a relation in degree at most
 \[
 	\sigma + \deg(F),
 \]
