@@ -895,7 +895,7 @@ Suppose there are sets of monomials $S\subseteq R_\halfcan-R_{\halfcan'}$ and $T
 \begin{enumerate}
 \item $S$ forms a $\Bk$-basis for $R_\halfcan$ over $R_\halfcan'$
 \item $T \succ S\succ \Bk[x_1, \ldots, x_n]$ {\rm(}meaning all monomials in $T$ are bigger than all monomials in $S$ which are bigger than all monomials in $\Bk[x_1, \ldots, x_n]${\rm)}
-\item All monomials in $\Bk[x_1, \ldots, x_m, y_1, \ldots, y_n]$ lie in 
+\item  All monomials in $\Bk[x_1, \ldots, x_m, y_1, \ldots, y_n]$ lie in 
 \begin{align*}
 	S \; \cup\; \langle T\rangle \; \cup \; \initial(I') \Bk[x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; \Bk[x_1, \ldots, x_m]
 \end{align*}
@@ -1046,9 +1046,9 @@ Then,
 \end{enumerate}
 \end{lem}
 
-\sssec*{Idea of proof:} The proof will be fairly involved. To show part (a), we first define an set of generators of $R_\halfcan$ over $R_{\halfcan'}$, with one generator corresponding to each best lower approximation. We then use Riemann--Roch to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$, showing that the set of elements we produce forms a basis.
+\sssec*{Idea of proof:} The proof will be fairly involved. To show part (a), we first define an set of generators of $R_\halfcan$ over $R_{\halfcan'}$, with one generator corresponding to each positive best lower approximation of $\frac{\alpha}{\beta}$. We then use Riemann--Roch to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$, showing that the set of elements we produce forms a basis.
 
-Next, part (b) immediately follows from an application of Lemma ~\ref{lem:relations_from_generators_induction}, we only need verify the hypotheses of Lemma ~\ref{lem:relations_from_generators_induction}. The first two hypotheses follow immediately from the construction of block order. Checking the third condition is quite technical, but the conditions ~\ref{custom:sat-1-*}, ~\ref{custom:sat-1-**}, and ~\ref{custom:sat-1-***} give certain slope conditions, which are precisely what is needed to verify the third condition of Lemma ~\ref{lem:relations_from_generators_induction}.
+Next, part (b) immediately follows from the conclusion of Lemma ~\ref{lem:relations_from_generators_induction}, so we only need verify the hypotheses of that lemma. The first two hypotheses follow immediately from the construction of block order. Checking the third condition is quite technical, but the conditions ~\ref{custom:sat-1-*}, ~\ref{custom:sat-1-**}, and ~\ref{custom:sat-1-***} give certain slope conditions, which are precisely what is needed to verify the third condition of Lemma ~\ref{lem:relations_from_generators_induction}.
 
 \begin{proof}
 {\bf Part (a):}
