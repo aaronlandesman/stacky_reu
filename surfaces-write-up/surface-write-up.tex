@@ -262,27 +262,31 @@ By assumption, $\sigma \in \Sigma$ as $\sigma = \sum_{i=1}^{t} r_i e_i$ with $r_
 \label{lem:composite-map}
 Let $D = \sum_{i=1}^{n}\alpha_i D_i$ where $D_i = V(f_i)$. Suppose we have a surjection $\phi: \bk[x_1,x_2,\ldots, x_r] \rightarrow R_D$ given by $x_i \mapsto p_i(f_1, \ldots, f_n),$ where $p_i$ is a monomial in $f_1,\ldots, f_n$. Then, define
 \begin{align*}
-	\Sigma = \langle u^d y_1^{c_1} \cdots y_n^{c_n} : c_i \geq -d \alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i. \rangle 
+	\Sigma = \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d \alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i. \rangle 
 \end{align*}
 In this case, we can factor $\phi$ through maps $\chi, \psi$ defined by
 \todo{Make this have mapsto on bottom}
-$$\begin{tikzcd}
+\[
+\begin{tikzcd}
 \bk[x_1,\ldots, x_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
-x_i \ar r & u^{d_i}y_1^{c_{i1}} \cdots y_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}
-\end{tikzcd}$$
+x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}
+\end{tikzcd}
+\]
 Assuming $\chi$ is surjective, the minimal degree of generation of $\ker \phi$ is at most the maximum of the minimal degree of generation of $\ker \chi$ and the minimal degree of generation of $\ker \psi$.
 \end{lem}
 \begin{proof}
 Note that we have an exact sequence
-$$\begin{tikzcd}
+\[
+\begin{tikzcd}
 0 \ar r & \ker \chi \ar r & \ker \phi \ar r & \ker \psi \ar r & 0.
-\end{tikzcd}$$
+\end{tikzcd}
+\]
 To see this, note that the left map is an inclusion because $\phi = \chi \circ \psi$. Next, the right map, given by $\chi|_{\ker \phi}:\ker \phi \rightarrow \ker \psi$ is a surjection, again because $\phi = \chi \circ \psi$. The composition of the two maps is $0$ by definition of the kernel of $\chi$. Finally, if $a \in \ker \phi$ and $a$ lies in the kernel of the right map, then by definition $\chi(a) = 0$.
 \end{proof}
 
 \begin{lem}
 \label{lem:bound-ker-chi}
-Retaining the notation of Lemma ~\ref{lem:composite-map}, if $\Sigma$ has extremal rays $e_1,\ldots, e_r$ in degrees $d_1, \ldots, d_r$ then $\ker \chi$ has a system of generators in degrees less than $\sum_{i=1}^{r}d_r-1$.
+Retaining the notation of Lemma ~\ref{lem:composite-map}, if $\Sigma$ has extremal rays $e_1,\ldots, e_r$ in degrees $d_1, \ldots, d_r$ then $\ker \chi$ has a system of generators in degrees less than $2(\sum_{i=1}^{r}d_r-1)$.
 \end{lem}
 \begin{proof}
 Since $e_1, \ldots, e_r$ are extremal rays, by Proposition ~\ref{prop:cone-generation}, every element $\sigma \in \Sigma$ can be written in a canonical form $\lambda + \sum_{i=1}^{r}e_i$. Now, letting $\lambda_0 := 0,\lambda_1, \ldots, \lambda_m$ be all elements of $\Sigma$ so that we can write $\lambda_i = \sum_{i=1}^{r}\bida_i e_i$ with $0 \leq \bida_i < 1$ for all $i$. Then, for any $1 \leq i \leq j \leq m,$ we can write $\lambda_i + \lambda_j$ in the above canonical form, yielding a relation in degree at most $\deg \lambda_i + \deg \lambda_j \leq 2 \cdot \left( \sum_{i=1}^{r}d_r -1 \right).$ Furthermore, these relations generate all relations, as one can apply a sequence of these relations to put any $\sigma \in \Sigma$ into canonical form.
@@ -483,8 +487,9 @@ As an example for why we need to add in ghost points for $\bp^2$, consider $\fra
 \todo{construct class of additional examples}
 \todo{The example above needs to be changed because $x_0^2$ can be replaced by $2x_0$}
 
+Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $C_i = v(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
 \begin{lem} \label{P-m-generators}
-Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $C_i = v(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$.  Then $R_D$ is generated in degree at most $\sum_{i=1}^n \ell_i a_i$.
+$R_D$ is generated in degree at most $\sum_{i=1}^n \ell_i a_i$.
 % and relations in degree at most  .\todo{insert numbers}
 \end{lem}
 \begin{proof}
@@ -502,7 +507,23 @@ for each $i\in \{1, \ldots n\}$.  Therefore, applying proposition \ref{prop:cone
 \]
 \end{proof}
 
-\todo{Discussion of factoring $\phi$ through $\psi$ and $\chi$}
+Let $x_1, \ldots x_r$ be the generators given by lemma  \ref{P-m-generators}, and $\phi$ be the surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through 
+\[
+	\Sigma =  \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d \alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i. \rangle 
+\]
+into
+\[
+\begin{tikzcd}
+\bk[x_1,\ldots, x_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
+x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
+\end{tikzcd}
+\]
+
+Applying Lemma \ref{lem:bound-ker-chi}, we can bound the degree of generation of $\ker(\chi)$ less than
+\[
+	\sum_{i=1}^n \ell_i a_i.
+\]
+Finally, we calculate the degree of generation of $\psi$:
 
 \begin{lem}\label{P-m-relations-psi}
 $\ker(\psi)$ is generated in degree at most 
@@ -535,11 +556,30 @@ Therefore, we can write any element of $\Sigma'$ as
 \]
 for $r_j \in \mathbb{R}$ for each $j$.
 
-Whenever some $r_j \ge 1$, we can generate the generation at hand by one of lower degree by factoring out the section $\epsilon_j$ corresponding to the lattice point $e_j$ (see Equation \ref{eqn:epilon-def-P-m}).  Therefore, we can bound the degree of generation of $\ker(\psi)$ by
+Whenever some $r_j \ge 1$, we can generate the generation at hand by one of lower degree by factoring out the section $\epsilon_j$ corresponding to the lattice point $e_j$ (see Equation \ref{eqn:epilon-def-P-m}).  Therefore, we can bound the degree of generation of $\ker(\psi)$ less than
 \[
 	\delta_i + \sum_{i=1}^n \ell_i a_i.
 \]
 \end{proof}
+
+Therefore, since $\ker(\chi)$ and $\ker(\psi)$ are generated in degrees less than $\sum_{i=1}^n \ell_i a_i$ and $\delta_i + \sum_{i=1}^n \ell_i a_i$ respectively, Lemma \ref{lem:composite-map} implies that $\ker(\phi)$ is generated in degrees less than
+\[
+	\max(\sum_{i=1}^n \ell_i a_i, \delta_i + \sum_{i=1}^n \ell_i a_i).
+\]
+
+Combining these results, we get the following theorem:
+
+\begin{thm}\label{P-m-generators/relations}
+Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $C_i = v(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
+Then $R_D$ is generated in degree at most 
+\[
+	\sum_{i=1}^n \ell_i a_i
+\]
+with relations generated in degree at most
+\[
+	\max(\sum_{i=1}^n \ell_i a_i, \delta_i + \sum_{i=1}^n \ell_i a_i).
+\]
+\end{thm}
 
 \section{Canonical Rings on Hirzebruch surfaces}
 Let $D=\sum_{i=1}^m \alpha_i C_i$ for some curve $C_i\in F_k$, such
