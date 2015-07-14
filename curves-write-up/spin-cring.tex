@@ -628,33 +628,36 @@ $(0; 3; 3)$. Let $P_1$ denote the lone stacky point which has stabilizer
 order $3$ and suppose $\infty$ is a fixed closed point of $X$ that is
 not equal to $P_1$.
 
-Recall the notation $L_X = \lfloor L \rfloor \in \di X$. We will deduce the structure of the log spin canonical ring $R_L$
-from the structure of the spin canonical ring $R_{L_X} := R(X, 3
-\cdot \infty, L_X)$. This technique will later be generalized in Lemma ~\ref{lem:sat-1}.
+Recall the notation $\halfcan_X = \lfloor L \rfloor \in \di X$
+(i.e.~ the divisor without any stacky points). We will deduce the
+structure of the log spin canonical ring $R_\halfcan$ from the
+structure of the spin canonical ring $R_{\halfcan_X} := R(X, 3 \cdot
+ \infty, \halfcan_X)$. This technique will later be generalized in
+Lemma ~\ref{lem:sat-1}.
 
-Note that $R_{L_X} \cong \Bk[x_1, x_2]$ where $\deg x_1 = \deg x_2 = 1.
+Note that $R_{\halfcan_X} \cong \Bk[x_1, x_2]$ where $\deg x_1 = \deg x_2 = 1.
 $ To see this, observe that we will need two generators in degree $1$
-because $h^0(X, L_X) = 2$ by Riemann--Roch. Because $L_X$ is very 
-ample, we have that $R_{L_X}$ is generated in degree 1. To
-conclude, note that $R_{L_X}$ does not have any relations. If there
-exists some relation, then $\dim \proj R_{L_X} < 1$. This would
-contradict the fact that $L_X$ is very ample. Thus, $\proj R_{L_X}
+because $h^0(X, \halfcan_X) = 2$ by Riemann--Roch. Because $\halfcan_X$ is very 
+ample, we have that $R_{\halfcan_X}$ is generated in degree 1. To
+conclude, note that $R_{\halfcan_X}$ does not have any relations. If there
+exists some relation, then $\dim \proj R_{\halfcan_X} < 1$. This would
+contradict the fact that $\halfcan_X$ is very ample. Thus, $\proj R_{\halfcan_X}
 \cong X$ which has dimension 1.
 
-Next, we construct generators and relations for $R_L$ using those
-of $R_{L_X}$. Note that we have a natural inclusion $\iota: R_{L_X}
-\hookrightarrow R_L$ induced by the inclusions $H^0(\sx, k\halfcan_X)
+Next, we construct generators and relations for $R_\halfcan$ using those
+of $R_{\halfcan_X}$. Note that we have a natural inclusion $\iota: R_{\halfcan_X}
+\hookrightarrow R_\halfcan$ induced by the inclusions $H^0(\sx, k\halfcan_X)
 \hookrightarrow H^0(\sx, k\halfcan)$ for each $k \geq 0$. By Riemann Roch,
-we see there is some element $y_{1, 3} \in (R_L)_3$ with $\ord_{P_1}
+we see there is some element $y_{1, 3} \in (R_\halfcan)_3$ with $\ord_{P_1}
 (y_{1, 3}) = -1$, not in the image of the inclusion $\iota$. We
 claim that there exist $a_1, a_2 \in \Bk$ and a degree $4$ polynomial
 $f(x_1, x_2) \in \Bk[x_1, x_2]$ such that
 \begin{align*}
-	R_L \cong \Bk[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3}
+	R_\halfcan \cong \Bk[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3}
 	+ f(x_1,x_2))
 \end{align*}
 
-First, note that $x_1, x_2, y_{1, 3}$ generate all of $R_L$ from the
+First, note that $x_1, x_2, y_{1, 3}$ generate all of $R_\halfcan$ from the
 Generalized Max Noether Theorem for genus zero curves from Voight
 and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}. That is, the maps
 \begin{align*}
@@ -664,14 +667,14 @@ and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}. That is, the maps
 \noindent
 are surjective for $k \geq 4$. A relation of the form $a_1 x_1 y_{1,
 3} + a_2 x_2 y_{1, 3} + f(x_1, x_2) = 0$ must exist because $h^0(\sx,
-4L) - h^0(\sx, 4L_X) = 1,$ but $x_1 y_{1, 3}$ and $x_2 y_{1, 3}$
+4L) - h^0(\sx, 4\halfcan_X) = 1,$ but $x_1 y_{1, 3}$ and $x_2 y_{1, 3}$
 define two linearly independent elements with nontrivial image in
-the 1-dimensional vector space $H^0(\sx, 4L) / H^0(\sx, 4L_X).$ So,
+the 1-dimensional vector space $H^0(\sx, 4L) / H^0(\sx, 4\halfcan_X).$ So,
 we obtain a surjection
 \begin{align}
 \label{align:surjection}
 	\Bk[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3} + f(x_1, x_2)) 
-	\rightarrow R_L.
+	\rightarrow R_\halfcan.
 \end{align}
 
 To complete the example, it suffices to show there are no
@@ -834,7 +837,7 @@ Finally, to check \ref{custom:Ad-iii}, note that $\max_{k \geq 0}S_{\sigma,J}(i,
 \begin{example}
 \label{eg:exception-1-5}
 Let $(\sx', 0, L')$ be a log spin curve of genus 1 with $L' = P -
- Q + \frac{2}{5} P_1.$ Let $x_2 \in (R_L)_2$ be any nonzero element.
+ Q + \frac{2}{5} P_1.$ Let $x_2 \in (R_\halfcan)_2$ be any nonzero element.
 We obtain $\di x_2|_{P_1} = 0,$ since $2P - 2Q \sim 0$ and by Riemann
 --Roch, $\dim_\Bk (P_L)_2 = 1.$ Let $y_3 \in (R_\halfcan)_3$ be any nonzero
 element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since
@@ -1299,7 +1302,7 @@ First, we present a definition of admissibility.
 Here, we define a notion of admissibility that is quite similar to the admissibility defined by Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky}. Our notion is an adaptation the case of log spin canonical divisors.
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that
-we cannot assume that $\{P_i\} \cap \Supp(L_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $\halfcan_X'$, rather than relative to the $\sco_X$.
+we cannot assume that $\{P_i\} \cap \Supp(\halfcan_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $\halfcan_X'$, rather than relative to the $\sco_X$.
 
 \begin{defn}
 \label{def:order-sup}
@@ -1824,7 +1827,7 @@ By Lemma ~\ref{lem:generation-5},
 \end{align*}
 is surjective because $\deg f \geq 11$ implies that
 $$\deg a_i =\deg f - \deg x_i -2 \geq 4.$$
-In particular, there exist $\alpha, \beta \in R_L$ so that
+In particular, there exist $\alpha, \beta \in R_\halfcan$ so that
 $$\phi(a_i) = \phi(s_1) \cdot \alpha + \phi(s_1) \cdot \beta.$$ 
 Choosing $g_i,h_i\in \Bk[x_1, \ldots, x_n]_{\deg(a_i)-2}$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha, \phi(h_i) = \beta$, we have 
 $$a_i \equiv s_1 g_i + s_2 h_i \bmod I_{\halfcan, \deg a_i},$$ as claimed.
@@ -1930,8 +1933,8 @@ holds for all log spin curves $(\sx, \Delta, \halfcan)$.
 \begin{rem}
 \label{rem:genus-2-explicit-bound}
 For this remark, we retain the terminology from the proof of Theorem ~\ref{thm:g-high-main}.
-Suppose $e :=  \max(e_1,\ldots, e_r).$ Then, $R_L$ has a generator in degree $e$ when $e \geq 5$ and a relation in degree at least $2e-4$ when $e \geq 7$. Since the proof of Theorem ~\ref{thm:g-1-main} is given by inductively 
-applying Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2}, we obtain that $R_L$ is minimally generated over $R_{L'}$ by an element in degree $e,$ assuming $e \geq 5$. Furthermore, if $e \geq 7$ and $e_i = e,$ 
+Suppose $e :=  \max(e_1,\ldots, e_r).$ Then, $R_\halfcan$ has a generator in degree $e$ when $e \geq 5$ and a relation in degree at least $2e-4$ when $e \geq 7$. Since the proof of Theorem ~\ref{thm:g-1-main} is given by inductively 
+applying Lemmas ~\ref{lem:sat-1} and ~\ref{lem:sat-2}, we obtain that $R_\halfcan$ is minimally generated over $R_{L'}$ by an element in degree $e,$ assuming $e \geq 5$. Furthermore, if $e \geq 7$ and $e_i = e,$ 
 then there must be a relation with leading term $y_{i,e_i} \cdot y_{i,e_i-4}.$ Hence, there is a relation in degree at least $2e - 4$. 
 Further, by examining the statements of Lemma ~\ref{lem:sat-1} and \ref{lem:sat-2} in the case that there are $1 \leq i < j \leq r$ with $e_i = e_j = e$, then, there is necessarily a relation with leading term $y_{i, e_i} \cdot y_{j, e_j}$ in degree $2e$. This analysis also applies to the cases that $g = 0$ and $g = 1$.
 \end{rem}
@@ -2039,12 +2042,12 @@ finite list of exceptional cases, as listed in Table
 
 If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $\halfcan_X \in \di X$ satisfy $2 \halfcan_X \sim K_X + \Delta$. We have $\deg \halfcan_X \geq 1$, so, by Riemann--Roch, $h^0(\sx, \halfcan) \geq 1.$ Therefore, $\halfcan$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $\halfcan$ is an effective divisor.
 
-We first now show the theorem holds for $\halfcan_X$ by induction. Since $\halfcan_X$ is effective, we may induct on the degree of the log spin canonical divisor. The base case is easy: the theorem holds for $\halfcan_X' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $\halfcan_X' \in \di X$, with $\halfcan_X'$ effective. We will show it holds for $L_X' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $\halfcan_X'$.
+We first now show the theorem holds for $\halfcan_X$ by induction. Since $\halfcan_X$ is effective, we may induct on the degree of the log spin canonical divisor. The base case is easy: the theorem holds for $\halfcan_X' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $\halfcan_X' \in \di X$, with $\halfcan_X'$ effective. We will show it holds for $\halfcan_X' + P,$ verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $\halfcan_X'$.
 
 First, if $P$ is not a basepoint of $\halfcan',$ then the hypotheses of Lemma ~\ref{lem:sat-1} are satisfied.
 Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $\halfcan = \halfcan' + P$.
 
-Otherwise, $P$ is a basepoint of $\halfcan_X'$, so the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(L_X') \geq 2$ as $\deg L_X' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $L_X = L_X'+P$. By induction, the theorem holds for $\halfcan_X$.
+Otherwise, $P$ is a basepoint of $\halfcan_X'$, so the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(\halfcan_X') \geq 2$ as $\deg \halfcan_X' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $\halfcan_X = \halfcan_X'+P$. By induction, the theorem holds for $\halfcan_X$.
 
 To complete the case that $\Delta > 0$, we now need show the theorem holds for a \emph{stacky} log spin canonical divisor $\halfcan$.  It suffices to show that if the theorem holds for a log spin canonical divisor $\halfcan'$ with $\deg \lfloor L' \rfloor > 0$, then it holds for $L' + \subhalf {e_i}P_i$ with $e_i$ odd.  As above, if $P$ is not a basepoint of $\halfcan'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-1}. On the other hand, if $P$ is a basepoint of $\halfcan'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-2}.
 
@@ -2472,7 +2475,7 @@ $2e$.
 \label{rem:genus-0-explicit-bound}
 The proof of Theorem ~\ref{thm:g-0-main} in genus zero gives an
 explicit construction of the generators and relations for the log
-spin canonical ring $R_L$. This is similar to the case of genus 1
+spin canonical ring $R_\halfcan$. This is similar to the case of genus 1
 in Remark ~\ref{rem:genus-1-explicit-bound}. Furthermore, there is
 a generator in degree $e$ and a relation in degree at least $2e-4$
 when $e := \max(e_1, \ldots, e_r)$ is at least $7$ (see Remark ~\ref
@@ -2487,11 +2490,11 @@ Here, we describe how to obtain a slightly better bound for our
 application to modular forms from Example ~\ref{eg:congruence-bounds} in the cases $g=0$ and $g=1$.
 When $g=0$, a careful scrutiny of Theorem ~\ref{thm:g-0-main} reveals that,
 if $\Delta > 0$ and $\sx$ has signature $(0; 3, \ldots, 3; \delta)$,
-then $R_L$ is generated in weight at most 4. Since $\delta > 0$,
-$L_X$ is effective. Additionally, $R_{L_X}$ is generated in weight 1,
+then $R_\halfcan$ is generated in weight at most 4. Since $\delta > 0$,
+$\halfcan_X$ is effective. Additionally, $R_{\halfcan_X}$ is generated in weight 1,
 and inductive applications of Lemma ~\ref{lem:sat-1} only add
 generators in weights 3 and 4 and relations in weight at most 8.
-Therefore, $R_L$ is generated in weight at most 4 with relations in
+Therefore, $R_\halfcan$ is generated in weight at most 4 with relations in
 weight at most 8. Note that a similar analysis of the proof of
 Theorem ~\ref{thm:g-1-main} yields that when $g = 1$, congruence
 subgroups are generated in weight at most 4 with relations in
@@ -2509,7 +2512,7 @@ In this section, we present several directions for further research.
 		proof of Theorem ~\ref{thm:main} 
 		gives an 
 		explicit procedure for computing the generators and relations of $R_
-		\halfcan$ when the genus of $\sx$ is $0$ or $1$.  When $\sx$ has genus at least 2, Lemmas ~\ref{lem:sat-1} and $\ref{lem:sat-2}$ allow us to explicitly construct a presentation of $R_\halfcan$ from a presentation of $R_{L_X}$ where $X$ is the coarse space $X$.  However, obtaining a presentation for $X$ requires nontrivial computation.  This suggests the following Petri-like question:
+		\halfcan$ when the genus of $\sx$ is $0$ or $1$.  When $\sx$ has genus at least 2, Lemmas ~\ref{lem:sat-1} and $\ref{lem:sat-2}$ allow us to explicitly construct a presentation of $R_\halfcan$ from a presentation of $R_{\halfcan_X}$ where $X$ is the coarse space $X$.  However, obtaining a presentation for $X$ requires nontrivial computation.  This suggests the following Petri-like question:
 		\begin{question}
 		\label{ques:spin-canonical-petri}
 			Is there a general structure theorem describing a set of minimal 
@@ -2577,7 +2580,7 @@ In this section, we present several directions for further research.
 			apart from well a characterized list of families?
 		\end{question}
 		\begin{rem}\label{rem:reduce-3,6}
-			Note that when $L$ is not effective and $\sx$ has a stacky point, $R_L$ must have a generator in degree 4 with maximal pole order at one of the stacky points.  Therefore, these bounds cannot in general be reduced further to 
+			Note that when $L$ is not effective and $\sx$ has a stacky point, $R_\halfcan$ must have a generator in degree 4 with maximal pole order at one of the stacky points.  Therefore, these bounds cannot in general be reduced further to 
 			$e'' := \max(3, e_1, \ldots, e_r)$ and $2e.''$
 			\end{rem}
 	\item While Theorem ~\ref{thm:main} gives a set of 
