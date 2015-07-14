@@ -907,7 +907,7 @@ Then,
 \end{align*}
 \end{lem}
 
-\sssec*{Idea of Proof:} To show $\supseteq$, we show that $T \subseteq \initial(I)$, which follows immediately from $(1)$ and $(2)$. Then, we show that $\subseteq$ follows from condition $(3)$ and the fact that no terms in $S$ can be contained in $\initial(I)$ because $(1)$ implies that $S$ is a basis.
+\sssec*{Idea of Proof:} To show $\supseteq$, we show that $T \subseteq \initial(I)$, which follows immediately from $(1)$ and $(2)$. Then, $\subseteq$ follows from condition $(3)$ and the fact that no terms in $S$ can be contained in $\initial(I)$ because $(1)$ implies that $S$ is a basis.
 
 \begin{proof}
 First, notice that $I'\subseteq I$ so 
@@ -1004,7 +1004,7 @@ Let
 	0 < \frac{c_1}{k_1} < \ldots < \frac{c_n}{k_n} = \frac{\alpha}{\beta}
 \]
 be the positive best lower approximations of $\frac{\alpha}{\beta}$
-(similar to Remark ~\ref{rem:lower-approximation}).
+{\rm(}similar to Remark ~\ref{rem:lower-approximation}{\rm)}.
 Then,
 
 \begin{enumerate}
@@ -1127,7 +1127,7 @@ Then define
 \end{equation}
 Note that $S_0$ is not part of this union and in fact $S\cap S_0 = \emptyset$ by pole order considerations.
 
-By equation \ref{eqn:deg1-sat-ind} for $k \in \BN$,
+By Equation ~\ref{eqn:deg1-sat-ind} for $k \in \BN$,
 \[
 	h^0(X, \lfloor k \halfcan \rfloor) = h^0(X, \lfloor k \halfcan'
 		\rfloor) + \left\lfloor k \frac{\alpha} {\beta} \right \rfloor,
@@ -1561,7 +1561,20 @@ $\Bk[y_{i, e_i}]_{i\in J} \otimes \Bk[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$
 \end{enumerate}
 \end{lem}
 
-\sssec{Idea of proof:} The construction of the $y_{i,e_i}$ in Part (a) uses Riemann--Roch and condition ~\ref{custom:Ad-iii}. The inequality in Part (a) follows from the fact that $L$ is similar to $L'$, but with some of the $e_i$ incremented by $2$. Part (b) follows because the sublattice spanned by $y_{i,e_i}$ and $y_{i, e_i'}$ has determinant $1$ for $i \in J,$ so the generators in Part (a) generate all of $R_\halfcan$ over $R_{\halfcan'}$. To check part (c) we construct relations between the generators of $R_{\halfcan}$ over $R_{\halfcan'}$. We note that an element lies in $R_{\halfcan'}$ if and only if its pole order at $P_i$ for $i \in J$ is not too large, and use Lemma ~\ref{lem:admissible_inequality} to check this bound. Part (d) follows fairly easily from the definition of admissibility.
+\sssec*{Idea of proof:}
+The construction of the $y_{i, e_i}$ in Part (a) uses Riemann--Roch
+and condition ~\ref{custom:Ad-iii}. The inequality in Part (a)
+follows from the fact that $\halfcan$ is similar to $\halfcan'$,
+but with some of the $e_i$ incremented by $2$. Part (b) follows
+because the sub-lattice spanned by $y_{i, e_i}$ and $y_{i, e_i'}$
+has determinant $1$ for $i \in J$, so the generators in Part (a)
+generate all of $R_\halfcan$ over $R_{\halfcan'}$. To check part (c),
+we construct relations between the generators of $R_{\halfcan}$
+over $R_{\halfcan'}$: we note that an element lies in $R_{\halfcan'}$
+if and only if its pole order at $P_i$ for $i \in J$ is not too
+large, and use Lemma ~\ref{lem:admissible_inequality} to bound pole
+orders. Part (d) follows fairly easily from the definition of
+admissibility.
 
 \begin{proof}
 We prove this in case (1). Case (2) follows a similar procedure.
