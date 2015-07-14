@@ -1020,14 +1020,14 @@ Then,
 	Equip $\Bk[y_1, \ldots, y_n]$ with graded $P$-lex, as defined in
 	Definition ~\ref{defn:graded-p-lex}, and equip $\Bk[y_1, \ldots,
 	y_n] \otimes \Bk[u, x_1, \ldots, x_m]$ with block order.
-	If $I'$ and $I$ are the ideals of relations of $\Bk[u, x_1, \ldots, x_m]
-	\to R_{\halfcan'}$ and $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]
-	\to R_{\halfcan}$ respectively, then
+	If $I'$ is the ideals of relations of $\Bk[u, x_1, \ldots, x_m]
+	\to R_{\halfcan'}$ and $I$ is the ideal of relations of
+	$\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]	\to R_{\halfcan}$, then
 
 	\begin{align*}
 		\initial(I) &= \initial(I') \Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n] 
 											 + \langle U_i: 1 \le i \le n-1 \rangle
-											 + \langle V \rangle, \\
+											 + \langle V \rangle \\
 	\end{align*}
 	where $V = \{x_i y_j: 1 \le i \le m, 1 \le j \le n\}$ and $U_i$ is
 	the set of monomials of the form $\prod_{j = 1}^{i} y_j^{a_j}$ with
@@ -1041,10 +1041,10 @@ Then,
 			exist $r<i$ such that $\sum_{j=1}^r a_j c_j> c_{r + 1}$.
 	\end{enumerate}
 
-\item[(c)] In particular, $R_\halfcan$ is generated over $R_\halfcan'$
-	in degrees at most $\beta$ with $I$ generated over $I'$ in
-	degrees at most $\max(2 \beta, \beta + \tau)$ (where $\tau = \max(1,
-	\max_{1 \leq i \leq m}(\deg(x_i)))$).
+\item[(c)] Let $\tau = \max(1, \max_{1 \leq i \leq m}(\deg(x_i)))$.
+	Then, $R_\halfcan$ is generated over $R_\halfcan'$
+	in degrees up to $\beta$ with $I$ generated over $I'$ in
+	degrees up to $\max(2 \beta, \beta + \tau).$
 \end{enumerate}
 \end{lem}
 
@@ -1504,7 +1504,7 @@ if they hold for $J$.
 For our inductive arguments in Theorems ~\ref{thm:g-high-main},
 ~\ref{thm:g-1-main}, and ~\ref{thm:g-0-main}, we will often add in a
 single stacky point with stabilizer order $3$. Say $(\sx, \Delta,
-\halfcan)$ is a log spin curve with signature $\sigma = (g; e_1,
+\halfcan)$ is a log spin curve with signature $\sigma := (g; e_1,
 \ldots, e_r; \delta) = (g; 3, \ldots, 3; \delta)$, and our base cases
 include signatures $\sigma$ characterized by one of the following:
 cases, which we will soon refer to in Lemma
@@ -1523,7 +1523,8 @@ cases, which we will soon refer to in Lemma
 \begin{lem}
 \label{lem:raise-stacky-order}
 Suppose $(\sx', \Delta, \halfcan')$ is a log spin curve with coarse
-space $X'$ and signature $\sigma = (g; e_1', \ldots, e_r'; \delta)$.  Define $R':= R_{\halfcan'}$.  Further, assume either 
+space $X'$ and signature $\sigma := (g; e_1', \ldots, e_r'; \delta)$.
+Define $R':= R_{\halfcan'}$.  Further, assume either 
 \begin{enumerate}
 	\item $(\sx', \halfcan', J)$ is admissible with generators $x_1,
 		\ldots, x_m \in R'$ and $y_{i, e_i'} \in R' $ for all $i \in J$, as 
@@ -2087,7 +2088,8 @@ We now have all the tools necessary to prove our main theorem, ~\ref{thm:main} i
 
 \begin{thm}
 \label{thm:g-1-main}
-Let $(\sx, \Delta, \halfcan)$ log spin curve so that $\sx$ has signature $\sigma = (1; e_1, \ldots, e_r; \delta)$.
+Let $(\sx, \Delta, \halfcan)$ log spin curve so that $\sx$ has
+signature $\sigma := (1; e_1, \ldots, e_r; \delta)$.
 If $g = 1$, then the log spin canonical ring
 \begin{align*}
 	R(\sx, \Delta, \halfcan) = \bigoplus_{k = 0}^\infty H^0(\sx, k L)
@@ -2173,7 +2175,7 @@ In addition to the bound on the degree of the generators and relations, as detai
 \section{Genus Zero}
 \label{sec:g-0}
 We will prove that if $(\sx, \Delta, \halfcan)$ is a log spin
-curve and $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r;
+curve and $\sx$ has signature $\sigma := (0; e_1, \ldots, e_r;
 \delta)$, then $R(\sx, \Delta, L)$ is generated in degree at most
 $e := \max(5, e_1, \ldots, e_r)$ with relations generated in degree
 at most $2e$, so long as $\sigma$ does not lie in the finite list
@@ -2474,7 +2476,7 @@ Now we can combine the base cases from Subsection \ref{ssec:g-0-base} with the i
 \begin{thm}
 \label{thm:g-0-main}
 Let $(\sx, \Delta, \halfcan)$ log spin curve,
-so that $\sx$ has signature $\sigma = (0; e_1, \ldots, e_r; \delta)$.
+so that $\sx$ has signature $\sigma := (0; e_1, \ldots, e_r; \delta)$.
 Then, the log spin canonical ring
 
 \begin{align*}
