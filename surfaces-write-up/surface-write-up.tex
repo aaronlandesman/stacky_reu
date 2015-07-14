@@ -410,8 +410,9 @@ $j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
 \end{align*}
 
 \noindent
-where $\vec{y} \in \mss_i$ and $\vec{w} \in \mss_j$ are the unique
-vectors such that $\vec{y} \prec \vec{w}$.
+where $\vec{y}$ and $\vec{w}$ are the unique
+vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
+\prec \vec{w}$.
 \end{thm}
 
 \begin{proof}
@@ -441,20 +442,29 @@ the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
 {dorney:canonical}, each lattice point $(\beta, \gamma) \in
 \bz_{\geq 0}^2$ such that $c \leq d \alpha$ is a non-negative
 linear combination of $\vec{x}_i$ and $\vec{x}_{i + 1}$ where
-$\vec{x}_i := (d_i, c_i) \in \bz^2$. Consequently, if $(\beta,
-\gamma) = \ell_1 (d_i, c_i) + \ell_2 (d_{i + 1}, c_{i + 1})$ for
-$\ell_1, \ell_2 \in \bz_{ \geq 0}$, then any element $\frac{u^{\beta}
+$\vec{x}_i := (d_i, c_i) \in \bz^2$. Let $(\beta, \gamma) = \ell_1
+(d_i, c_i) + \ell_2 (d_{i + 1}, c_{i + 1})$ for $\ell_1, \ell_2 \in
+\bz_{\geq 0}$. Consequently, any element $\frac{u^{\beta}
 x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
 \begin{align*}
-	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_i}
-	x^{\vec{w}}} {x_k^{c_i}}\right)^{\ell_1} \left(\frac{u^{d_{i + 1}}
-	x^{\vec{z}}} {x_k^{c_{i + 1}}}\right)^{\ell_2}
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_i}}
+	{x_k^{c_i}}\right)^{\ell_1} \left(\frac{u^{d_{i + 1}}}
+	{x_k^{c_{i + 1}}}\right)^{\ell_2} x^{\vec{v}}.
 \end{align*}
 
 \noindent
-for some $\vec{w} \in \mss_i, \vec{z} \in \mss_{i + 1}$. But these
-are precisely powers of two generators of the form $F_i^{\vec{w}}$
-and $F_{d_{i + 1}}^{\vec{z}}$ as prescribed in the theorem statement.
+We can break $\vec{v}$ into a sum of $\ell_1$ many vectors
+$\vec{w}_{(j)}$ in $\mss_2$ and $\ell_2$ many vectors $\vec{z}_{(k)}$
+in $\mss_2$ to give a decomposition
+\begin{align*}
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}}	= \prod_{j = 1}
+	^{\ell_1} \frac{u^{d_i} x^{\vec{w}_{(j)}}} {x_k^{c_i}}
+	\prod_{k = 1}^{\ell_2} \frac{u^{d_{i + 1}} x^{\vec{z}_{(k)}}}
+	{x_k^{c_{i + 1}}}
+\end{align*}
+into products of generators $F_i^{\vec{w}_{(j)}}$
+and $F_{d_{i + 1}}^{\vec{z}_{(k)}}$ which are in the form
+prescribed in the theorem statement.
 
 \todo{relations}
 Canonical form of 
