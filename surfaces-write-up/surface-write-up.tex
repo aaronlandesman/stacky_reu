@@ -489,13 +489,13 @@ Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let $f_
 \end{lem}
 \begin{proof}
 Let 
-\begin{align*}
+\begin{align}\label{eqn:Sigma-def}
 	\Sigma = \{(d, c_1, \ldots, c_n) \in \bz^{n+1} : c_i \geq - d \alpha_i,1 \leq i \leq n \text{ and } \sum_{i=1}^{n}k_i^j = 0, 1 \leq j \leq t\}.
-\end{align*}
+\end{align}
 We note that $\Sigma$ has extremal rays given by the lattice points $e_i$ corresponding to
-\[
+\begin{equation}\label{eqn:epilon-def-P-m}
 	\epsilon_i = \prod_{j\ne i} (f_j)^{-\alpha_j \ell_i a_i} {f_i}^{\ell_i \sum_{j\ne i} \alpha_j a_j}
-\]
+\end{equation}
 for each $i\in \{1, \ldots n\}$.  Therefore, applying proposition \ref{prop:cone-generation}, we see $R_D$ is generated in degree less than
 \[
 	\sum_{i=1}^n \ell_i a_i.
@@ -505,12 +505,15 @@ for each $i\in \{1, \ldots n\}$.  Therefore, applying proposition \ref{prop:cone
 \todo{Discussion of factoring $\phi$ through $\psi$ and $\chi$}
 
 \begin{lem}\label{P-m-relations-psi}
-$\ker(\psi)$ is generated in degree at most \todo{insert number}.
+$\ker(\psi)$ is generated in degree at most 
+\[
+	\delta_i + \sum_{i=1}^n \ell_i a_i.
+\]
 \end{lem}
 \begin{proof}
 We first claim that $\psi$ has a relation of the form
 \begin{equation}\label{eqn:relations-psi}
-	(z_i - \beta_j)\prod_{j=1}^n {z_j}^{c_{i}}
+	(z_i - \beta_j)\prod_{j=1}^n {z_j}^{c_{j}}
 \end{equation}
 
 \noindent
@@ -523,6 +526,19 @@ polynomial in $\epsilon_1, \ldots \epsilon _3$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{i =
 1}^n \epsilon_i^{r_i}$ to a canonical form. \todo{add reference to
 earlier description of canonical form.}
+
+Now we bound the degree of generation of these relations for a fixed $z_i$.  We associate $(z_i - \beta_j)\prod_{j=1}^n z_j^{c_j}$ that has degree $d$ with the lattice point $(d, c_1, \ldots, c_n)$.  Let $\Sigma_i \subseteq \mathbb{R}^{n+1}$ be the set of points of the form $(d, r_1, \ldots, r_n)$ satisfying $r_j \ge -d \alpha_j$ for all $j$ and $\sum_{j=1}^n r_j a_j = -a_i$.  Then we see $\Sigma_i$ is a translation of $\Sigma$ (see Equation \ref{eqn:Sigma-def}) by $\delta_i = (\frac{a_i}{\deg(D)}, -\frac{\alpha_1 a_1}{\deg(D)}, \ldots, - \frac{\alpha_n a_n}{\deg(D)})$.
+
+Therefore, we can write any element of $\Sigma'$ as
+\[
+	\delta_i + \sum_{j=1}^n r_j e_j
+\]
+for $r_j \in \mathbb{R}$ for each $j$.
+
+Whenever some $r_j \ge 1$, we can generate the generation at hand by one of lower degree by factoring out the section $\epsilon_j$ corresponding to the lattice point $e_j$ (see Equation \ref{eqn:epilon-def-P-m}).  Therefore, we can bound the degree of generation of $\ker(\psi)$ by
+\[
+	\delta_i + \sum_{i=1}^n \ell_i a_i.
+\]
 \end{proof}
 
 \section{Canonical Rings on Hirzebruch surfaces}
@@ -651,7 +667,7 @@ $\ker(\psi)$ is generated in degree at most
 \begin{proof}
 We first claim that $\psi$ has a relation of the form
 \begin{equation}\label{eqn:relations-psi}
-	(z_i - \beta_j)\prod_{j=1}^n {z_j}^{c_{i}}
+	(z_i - \beta_j)\prod_{j=1}^n {z_j}^{c_{j}}
 \end{equation}
 
 \noindent
