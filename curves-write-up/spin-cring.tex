@@ -1017,7 +1017,8 @@ Then,
 		\ord_u(f) < \ord_u(h) \implies f\prec h.
 	\]
 	Equip $\Bk[y_1, \ldots, y_n]$ with graded $P$-lex, as defined in
-	Definition ~\ref{defn:graded-p-lex} and $\Bk[y_1, \ldots, y_n] \otimes \Bk[u, x_1, \ldots, x_m]$ with block order.
+	Definition ~\ref{defn:graded-p-lex}, and equip $\Bk[y_1, \ldots,
+	y_n] \otimes \Bk[u, x_1, \ldots, x_m]$ with block order.
 	If $I'$ and $I$ are the ideals of relations of $\Bk[u, x_1, \ldots, x_m]
 	\to R_{\halfcan'}$ and $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]
 	\to R_{\halfcan}$ respectively, then
@@ -1046,9 +1047,9 @@ Then,
 \end{enumerate}
 \end{lem}
 
-\sssec*{Idea of proof:} The proof will be fairly involved. To show part (a), we first define an set of generators of $R_\halfcan$ over $R_{\halfcan'}$, with one generator corresponding to each best lower approximation. We then use Riemann--Roch to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$, showing that the set of elements we produce forms a basis.
+\sssec*{Idea of proof:} The proof will be fairly involved. To show part (a), we first define a set of generators of $R_\halfcan$ over $R_{\halfcan'}$ with one generator corresponding to each best lower approximation. We then use Riemann--Roch to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$ and show that the set of elements we produce forms a basis.
 
-Next, part (b) immediately follows from an application of Lemma ~\ref{lem:relations_from_generators_induction}, we only need verify the hypotheses of Lemma ~\ref{lem:relations_from_generators_induction}. The first two hypotheses follow immediately from the construction of block order. Checking the third condition is quite technical, but the conditions ~\ref{custom:sat-1-*}, ~\ref{custom:sat-1-**}, and ~\ref{custom:sat-1-***} give certain slope conditions, which are precisely what is needed to verify the third condition of Lemma ~\ref{lem:relations_from_generators_induction}.
+Next, part (b) immediately follows from an application of Lemma ~\ref{lem:relations_from_generators_induction} so we only need verify the hypotheses of Lemma ~\ref{lem:relations_from_generators_induction}. The first two hypotheses follow immediately from the definition of block order. Checking the third condition is quite technical but follows from certain slope conditions derived from the conditions ~\ref{custom:sat-1-*}, ~\ref{custom:sat-1-**}, and ~\ref{custom:sat-1-***}.
 
 \begin{proof}
 {\bf Part (a):}
