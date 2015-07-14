@@ -55,6 +55,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\ssec{\subsection}
+\newcommand\sssec{\subsubsection}
 \newcommand\BH{{\mathbb H}}
 \newcommand\BN{{\mathbb N}}
 \newcommand\BC{{\mathbb C}}
@@ -439,6 +440,13 @@ graded component of $R$.
 \begin{rem}
 Although Definition ~\ref{defn:h0-stacky} may seem fairly ad hoc, it is naturally motivated in the context of stacks. See Voight and Zureick-Brown \cite[Lemma 5.4.7]{vzb:stacky} for a proof that Definition ~\ref{defn:h0-stacky} is equivalent to the stack-theoretic description.
 \end{rem}
+
+\begin{defn}
+\label{defn:order-sup}
+Let $D \in \di \sx.$ If $z$ is a rational section of $\sco(D)$ denote the order of
+zero of $z$ at $P$ by $\ord_P^D(z)$.
+\end{defn}
+
 
 \begin{defn}
 \label{defn:log-spin-canonical-ring}
@@ -898,6 +906,9 @@ Then,
 	+ \langle T \rangle.
 \end{align*}
 \end{lem}
+
+\sssec*{Idea of Proof:} To get $\supseteq$, we use the fact that
+
 \begin{proof}
 First, notice that $I'\subseteq I$ so 
 \[
@@ -1303,13 +1314,7 @@ the admissibility defined by Voight and Zureick-Brown
 the case of log spin canonical divisors.
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that
-we cannot assume that $\{P_i\} \cap \Supp(\halfcan_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $\halfcan_X'$, rather than relative to the $\sco_X$.
-
-\begin{defn}
-\label{def:order-sup}
-Let $D \in \di \sx.$ If $z$ is a rational section of $\sco(D)$ denote the order of
-zero of $z$ at $P$ by $\ord_P^D(z)$.
-\end{defn}
+we cannot assume that $\{P_i\} \cap \Supp(\halfcan_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $\halfcan_X'$, rather than relative to the $\sco_X,$ using Definition ~\ref{defn:order-sup}.
 
 \begin{defn}
 \label{defn:admissible}
@@ -2004,7 +2009,7 @@ In this subsection we set up the base cases needed for our inductive approach, o
 \label{table:g-1-base}
 \end{table}
 
-The cases that $L' = 0, \: L' = P-Q +\frac{1}{3}P_1 + \frac{1}{3}P_2,$ and $L' = P-Q + \frac{2}{5}P_1$ were checked in Examples ~\ref{eg:base-1-0}, \ref{eg:base-1-33}, and \ref{eg:exception-1-5} respectively.
+Generators and relations $L' = 0, \: L' = P-Q +\frac{1}{3}P_1 + \frac{1}{3}P_2,$ and $L' = P-Q + \frac{2}{5}P_1$ were checked in Examples ~\ref{eg:base-1-0}, \ref{eg:base-1-33}, and \ref{eg:exception-1-5} respectively. Note that admissibility for $L' = P-Q +\frac{1}{3}P_1 + \frac{1}{3}P_2,$ is verified in Example ~\ref{eg:base-1-33-adm}. The verification of admissibility for the other cases is similar.
 
 The base cases of $L' = \frac{3}{7}P_1$ and $L' = \frac{1}{3}P_1 +\frac{1}{3}P_2$ can be similarly computed. Although $L' = P - Q + \frac{2}{5}P_1,$ and $L' = \frac{3}{7}P_1$ are used as base cases for the induction, they are also exceptional cases; see Table ~\ref{table:g-1-exceptional}.
 
