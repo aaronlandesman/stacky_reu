@@ -1572,7 +1572,7 @@ $\Bk[y_{i, e_i}]_{i\in J} \otimes \Bk[x_1, \ldots, x_m, y_{i, e_i'}]_{i\in J}$
 \end{enumerate}
 \end{lem}
 
-\sssec*{Idea of proof:}
+\sssec*{Idea of Proof:}
 The construction of the $y_{i, e_i}$ in Part (a) uses Riemann--Roch
 and condition ~\ref{custom:Ad-iii}. The inequality in Part (a)
 follows from the fact that $\halfcan$ is similar to $\halfcan'$,
@@ -1949,8 +1949,8 @@ $5$ and minimal relations in degree at most $10$.
 \end{cor}
 
 \begin{proof}
-If $\Delta = 0$, the result is immediate from Reid \cite[Theorem 3.4]
-{reid:infinitesimal}. Otherwise, if $\Delta > 0$, the bound on the
+If $\delta = 0$, the result is immediate from Reid \cite[Theorem 3.4]
+{reid:infinitesimal}. Otherwise, if $\delta > 0$, the bound on the
 degrees of minimal generators follows from Lemma
 ~\ref{lem:generation-5}, while the bound on the degrees of minimal
 relations follows from Proposition ~\ref{prop:relation-10}.
@@ -2101,16 +2101,20 @@ finite list of exceptional cases, as listed in Table
 \end{thm}
 
 \sssec*{Idea of Proof:}
-We check the theorem in two cases, depending on whether $\Delta > 0$.
-If $\Delta > 0$, we first check that the theorem holds for $\halfcan_X$
-by inductively adding in log points to the base case of $\halfcan_X'
-= 0$. Then we check that the theorem holds for $\halfcan$ by adding
-stacky points and then inductively raising the stabilizer orders of
-stacky points in the following sequence of steps. When
-raising the stacky orders, it is important that we increment the
-stabilizer orders of the maximum possible number of stacky points
-at each step, so that the corresponding set will remain admissible.
-The check for $\Delta = 0$ is similar, although in this case we do
+We check the theorem in two cases, depending on whether $\delta > 0$.
+If $\delta > 0$, we first check that the theorem holds for
+$\halfcan_X$ by inductively adding in log points to the base case of$
+\halfcan_X' = 0$. Then we check that the theorem holds for $\halfcan$
+by adding stacky points and then inductively raising the 
+stabilizer orders of stacky points in the following sequence of 
+steps. When raising the stacky orders, it is important that we 
+increment the stabilizer orders of as many stacky points as 
+possible to maintain admissibility for the maximal possible sets of 
+stacky points. Then, we may also use the fact that raising the 
+stabilizer orders of any subset of these maximal sets of stacky 
+points will still preserve admissibility.
+
+The check for $\delta = 0$ is similar, although in this case we do
 not need to add in log points, only stacky points, and we will need
 to utilize the base cases from Subsection ~\ref{ssec:g-1_base}.
 
@@ -2118,9 +2122,9 @@ to utilize the base cases from Subsection ~\ref{ssec:g-1_base}.
 
 \vskip.1in
 \noindent
-{\sf Case 1: $\Delta > 0$}
+{\sf Case 1: $\delta > 0$}
 
-If $\Delta > 0$, we must have $\Delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $\halfcan_X \in \di X$ satisfy $2 \halfcan_X \sim K_X + \Delta$. We have $\deg \halfcan_X \geq 1$, so, by Riemann--Roch, $h^0(\sx, \halfcan) \geq 1.$ Therefore, $\halfcan$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $\halfcan$ is an effective divisor.
+If $\delta > 0$, we must have $\delta \geq 2$, by Remark ~\ref{rem:delta-not-1}. In this case, let $\halfcan_X \in \di X$ satisfy $2 \halfcan_X \sim K_X + \Delta$. We have $\deg \halfcan_X \geq 1$, so, by Riemann--Roch, $h^0(\sx, \halfcan) \geq 1.$ Therefore, $\halfcan$ is linearly equivalent to an effective divisor. Thus, without loss of generality, we may assume $\halfcan$ is an effective divisor.
 
 We first now show the theorem holds for $\halfcan_X$ by induction. Since $\halfcan_X$ is effective, we may induct on the degree of the log spin canonical divisor. The base case is easy: the theorem holds for $\halfcan_X' = 0$ by Example ~\ref{eg:base-1-0}. Assume it holds for $\halfcan_X' \in \di X$, with $\halfcan_X'$ effective. We will show it holds for $\halfcan_X' + P$, verifying the inductive step. There are two cases, depending on whether $P$ is a basepoint of $\halfcan_X'$.
 
@@ -2129,13 +2133,13 @@ Therefore, by Lemma ~\ref{lem:sat-1}, the theorem holds for $\halfcan = \halfcan
 
 Otherwise, $P$ is a basepoint of $\halfcan_X'$, so the hypotheses of Lemma ~\ref{lem:sat-2} are satisfied since $\deg 3(\halfcan_X') \geq 2$ as $\deg \halfcan_X' \geq 1.$ Therefore, by Lemma ~\ref{lem:sat-2}, the theorem holds for $\halfcan_X = \halfcan_X'+P$. By induction, the theorem holds for $\halfcan_X$.
 
-To complete the case that $\Delta > 0$, we now need show the theorem holds for a \emph{stacky} log spin canonical divisor $\halfcan$.  It suffices to show that if the theorem holds for a log spin canonical divisor $\halfcan'$ with $\deg \lfloor L' \rfloor > 0$, then it holds for $L' + \subhalf {e_i}P_i$ with $e_i$ odd.  As above, if $P$ is not a basepoint of $\halfcan'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-1}. On the other hand, if $P$ is a basepoint of $\halfcan'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-2}.
+To complete the case that $\delta > 0$, we now need show the theorem holds for a \emph{stacky} log spin canonical divisor $\halfcan$.  It suffices to show that if the theorem holds for a log spin canonical divisor $\halfcan'$ with $\deg \lfloor L' \rfloor > 0$, then it holds for $L' + \subhalf {e_i}P_i$ with $e_i$ odd.  As above, if $P$ is not a basepoint of $\halfcan'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-1}. On the other hand, if $P$ is a basepoint of $\halfcan'$ then the theorem holds for $L' + \subhalf {e_i}P_i$ by Lemma ~\ref{lem:sat-2}.
 
 \vskip.1in
 \noindent
-{\sf Case 2: $\Delta = 0$}
+{\sf Case 2: $\delta = 0$}
 
-Since $\Delta = 0$, we may write $\halfcan = \halfcan_X + \sum_{i = 1}^{r}\subhalf{e_i}P_i.$ There are now two further subcases, depending on whether $\halfcan_X = 0$ or $\halfcan_X = P - Q$ for $P$ and $Q$ two distinct hyperelliptic fixed  points.
+Since $\delta = 0$, we may write $\halfcan = \halfcan_X + \sum_{i = 1}^{r}\subhalf{e_i}P_i.$ There are now two further subcases, depending on whether $\halfcan_X = 0$ or $\halfcan_X = P - Q$ for $P$ and $Q$ two distinct hyperelliptic fixed  points.
 
 \vskip.1in
 \noindent
@@ -2146,10 +2150,10 @@ Note that we are assuming $\halfcan$ is not one of the exceptional cases listed 
 First, we deal with the case $\sx$ has at least 1 stacky point. By Example ~\ref{eg:exception-1-5}, if $L' = P - Q + \frac{2}{5}P_1,$ then $R_{\halfcan'}$ is generated in degrees $2,3,$ and $5$ with a single relation in degree 12. Furthermore, $(\sx, \halfcan', \{1\})$ is admissible, and satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}. Observe that $\halfcan'$ itself is an exceptional case, as it has a generator in degree $12 > 2 \cdot 5$. However, after applying Lemma ~\ref{lem:raise-stacky-order}, we see that $P - Q + \frac{3}{7}P_2$ does satisfy the constraints of this theorem, because only relations in degree $\leq 14 = 2 \cdot 7$ are added, and the relation in degree $12$ coming from $R_{\halfcan'}$, lies in a degree less than $2 \cdot 7 = 14$. Therefore, the Theorem holds for $L' = P - Q + \frac{3}{7}P_2$. Then, applying Lemma ~\ref{lem:raise-stacky-order} $\frac{e-7}{2}$ times shows that the Theorem holds for $L = P - Q + \frac{e- 1}{2e}P_1$.
 
 Second, we deal with the case that $\sx$ has at least two stacky points. 
-If $(\sx', \delta, \halfcan')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then as found in 
+If $(\sx', \Delta, \halfcan')$ is a spin canonical curve so that $L' = P - Q + \frac{1}{3}P_1+ \frac{1}{3}P_2$, then as found in 
 Example ~\ref{eg:base-1-33}, the triple $(\sx', 0, P-Q + \frac{1}{3}P_1+\frac{1}{3}P_2)$
 satisfies the hypotheses of Lemma ~\ref{lem:raise-stacky-order}.
-Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx', \delta', \halfcan')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ 
+Therefore, applying Lemma ~\ref{lem:sat-2} $r-2$ times, we see that the theorem holds for $(\sx', \Delta', \halfcan')$ with $L' = P - Q + \sum_{i = 1}^{r}\frac{1}{3}P_i.$ 
 Finally, by Corollary ~\ref{cor:raise-stacky-order}, this theorem holds 
 for $L' = P - Q + \sum_{i = 1}^{r}\subhalf {e_i}P_i$, as desired. 
 
@@ -2485,7 +2489,15 @@ so long as $\sigma$ does not lie in the finite list of exceptional
 cases in Table ~\ref{table:g-0-exceptional}.
 \end{thm}
 
-\sssec*{Idea of proof:} The method of this proof is almost identical to that of Theorem ~\ref{thm:g-1-main}. When $\delta > 0$, we first add in log points, and then increment the stabilizer orders of stacky points, checking that the theorem holds at each step. The more technical case occurs when $\delta = 0$, in which case we simply increment the stabilizer orders of stacky points starting from one of our base cases, and check that every stacky curve can be reached by a sequence of admissible incrementations from a base case.
+\sssec*{Idea of Proof:}
+The method of this proof is almost identical to that of Theorem
+~\ref{thm:g-1-main}. When $\delta > 0$, we first add in log points,
+and then increment the stabilizer orders of stacky points, checking
+that the theorem holds at each step. The more technical case occurs
+when $\delta = 0$, in which case we simply increment the stabilizer
+orders of stacky points starting from one of our base cases, and
+check that every stacky curve can be reached by a sequence of
+admissible incrementations from a base case.
 
 \begin{proof}
 If $\sx$ has no stacky points, then we can assume that $\halfcan \sim
