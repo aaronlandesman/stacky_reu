@@ -121,6 +121,8 @@
 \DeclareMathOperator{\Te}{T_=}
 \DeclareMathOperator{\Tp}{T_+}
 \DeclareMathOperator{\Tm}{T_-}
+\DeclareMathOperator{\num}{p}
+\DeclareMathOperator{\den}{q}
 %\captionsetup[table]{belowskip = 4pt}
 
 \makeatletter
@@ -479,7 +481,9 @@ When $\langle f_1, \ldots, f_r \rangle = \langle x_0, \ldots, x_n \rangle$ (the 
 
 \begin{example}
 \label{eg:hyperplane}
-Suppose $D = \frac{1}{2}H_0 - \frac{1}{3}H_1$ where $H_0 = V(x_0), H_1 = V(x_1)$ are two coordinate hyperplanes in $\bp^2$. Then, $R_D$ has generators in degree $2$ and $3$ which can be written as $u^2 \frac{x_0}{x_1}, u^3 \frac{x_0}{x_1}.$
+Suppose $D = \frac{1}{2}H_0 - \frac{1}{3}H_1$ where $H_0 = V(x_0), H_1 = V(x_1)$ are two coordinate hyperplanes in $\bp^2$. Then, $R_D$ has generators in degree $2$ and $3$ which can be written as $u^2 \frac{x_1}{x_0}, u^3 \frac{x_1}{x_0}.$ In fact, for all degrees less than $5$ the elements of $R_D$ can all be expressed as rational functions in $x_0, x_1$. However, in degree $6$, there is the rational function $\frac{x_1^2 x_2}{x_0^3}.$ Since this involves $x_2$, it must be a generator.
+
+This example easily generalizes to the following situation: Suppose $D = \sum_{i=1}^{n} \frac{d}{s}$
 \end{example}
 
 
@@ -570,7 +574,7 @@ Whenever some $r_j \ge 1$, we can generate the generation at hand by one of lowe
 
 Therefore, since $\ker(\chi)$ and $\ker(\psi)$ are generated in degrees less than $\sum_{i=1}^n \ell_i a_i$ and $\delta_i + \sum_{i=1}^n \ell_i a_i$ respectively, Lemma \ref{lem:composite-map} implies that $\ker(\phi)$ is generated in degrees less than
 \[
-	\max(\sum_{i=1}^n \ell_i a_i, \delta_i + \sum_{i=1}^n \ell_i a_i).
+	\max \left(\sum_{i=1}^n \ell_i a_i, \delta_i + \sum_{i=1}^n \ell_i a_i \right).
 \]
 
 Combining these results, we get the following theorem:
@@ -583,7 +587,7 @@ Then $R_D$ is generated in degree at most
 \]
 with relations generated in degree at most
 \[
-	\max(\sum_{i=1}^n \ell_i a_i, \delta_i + \sum_{i=1}^n \ell_i a_i).
+	\max \left(\sum_{i=1}^n \ell_i a_i, \delta_i + \sum_{i=1}^n \ell_i a_i \right).
 \]
 \end{thm}
 
