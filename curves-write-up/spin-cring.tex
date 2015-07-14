@@ -1047,10 +1047,21 @@ Then,
 \end{enumerate}
 \end{lem}
 
-\sssec*{Idea of proof:} The proof will be fairly involved. To show part (a), we first define a set of generators of $R_\halfcan$ over $R_{\halfcan'}$ with one generator corresponding to each positive best lower approximation of $\frac{\alpha}{\beta}$. We then use Riemann--Roch to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$ and show that the set of elements we produce forms a basis.
+\sssec*{Idea of proof:}
+The proof will be fairly involved. To show part (a), we first
+define a set of generators of $R_\halfcan$ over $R_{\halfcan'}$
+with one generator corresponding to each positive best lower
+approximation of $\frac{\alpha}{\beta}$. We then use Riemann--Roch
+to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$ and
+show that the set of elements we produce forms a basis.
 
-Next, part (b) immediately follows from the conclusion of Lemma ~\ref{lem:relations_from_generators_induction}, reducing the proof to verifying the hypotheses of that lemma. 
-The first two hypotheses follow immediately from the definition of block order. Checking the third condition is quite technical, but the conditions follow from certain slope conditions, given by ~\ref{custom:sat-1-*}, ~\ref{custom:sat-1-**}, and ~\ref{custom:sat-1-***}.  
+Next, part (b) immediately follows from the conclusion of Lemma
+~\ref{lem:relations_from_generators_induction}, reducing the proof
+to verifying the hypotheses of that lemma. The first two hypotheses
+follow immediately from the definition of block order. Checking the
+third condition is quite technical, but the conditions follow from
+certain slope conditions, given by ~\ref{custom:sat-1-*},
+~\ref{custom:sat-1-**}, and ~\ref{custom:sat-1-***}.  
 
 
 \begin{proof}
@@ -2093,8 +2104,9 @@ finite list of exceptional cases, as listed in Table
 We check the theorem in two cases, depending on whether $\Delta > 0$.
 If $\Delta > 0$, we first check that the theorem holds for $\halfcan_X$
 by inductively adding in log points to the base case of $\halfcan_X'
-= 0$. Then we check that it holds for $\halfcan$ by raising
-the stabilizer orders of stacky points in a sequence of steps. When
+= 0$. Then we check that the theorem holds for $\halfcan$ by adding
+stacky points and then inductively raising the stabilizer orders of
+stacky points in the following sequence of steps. When
 raising the stacky orders, it is important that we increment the
 stabilizer orders of the maximum possible number of stacky points
 at each step, so that the corresponding set will remain admissible.
