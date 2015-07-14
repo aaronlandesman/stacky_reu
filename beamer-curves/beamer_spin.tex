@@ -196,6 +196,7 @@ $\PSL_2(\BR)$ acting on the upper half plane $\BH$ by linear fractional transfor
 
 
 \begin{itemize}
+\item Examples: $\Gamma = \Gamma_0(N) \subset \SL_2(\BZ)$\\
 \item Suppose $\Gamma \backslash \BH$ has finite area. \\
 
 \item Then $\Gamma \backslash \BH$ can be given the structure of an {\bf{orbifold}} by completing it with cusps.  
@@ -207,7 +208,6 @@ $\PSL_2(\BR)$ acting on the upper half plane $\BH$ by linear fractional transfor
 %% frame
 
 \begin{frame}{Modular Forms}
-Let $\Gamma$  be a Fuchsian group (e.g.~$\Gamma = \Gamma_0(N) \subset \SL_2(\BZ)$).
 
 \begin{defn}
 A \textbf{modular form} for $\Gamma$ of weight $k \in \BZ_{\geq 0}$ is a holomorphic function $f \colon \BH \to \BC$ such that
@@ -268,7 +268,7 @@ and such that the limit $\lim_{z \to *} f(z)$ exists for all cusps $*$.
 \end{block}
 
 \begin{block}{Log Spin Canonical Ring}
-Voight and Zureick-Brown showed the following corollary:
+Therefore,
 \begin{align*}
   M(\Gamma) &\cong R_{X,\Delta} := \bigoplus_{k \geq 0} H^0(X, \Omega^1(\Delta)^{\otimes \frac{k}{2}}) \\
 \end{align*}
@@ -454,6 +454,9 @@ distinct points.
 Weakly bounds generator and relations degrees in terms of
 the least common multiples of the $e_i$'s when $g = 0$.
 \end{block}
+\begin{itemize}
+\item O'Dorney's result bounds generators and relations in degrees below 238 and 385 in the previous example.
+\end{itemize}
 
 \begin{block}{Theorem (Voight and Zureick-Brown)}
 Bounds generator degrees by $6
@@ -466,7 +469,7 @@ Bounds generator degrees by $6
 %%frame
 
 \begin{frame}{Main Result}
-Our main result gives the following bound
+Our main result:
 
 \begin{thm}
 \label{thm:main}
@@ -493,23 +496,22 @@ signatures $\sigma$.
 Let $(\sx', \Delta, \halfcan')$ be a log spin curve over a perfect
 field $k$, so that $\sx$ has signature $\sigma := (g; e_1, \ldots,
 e_r; \delta)$. Recall $\halfcan \sim \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i
-+ \sum_{j = 1}^{\ell} P_\ell$.
++ \sum_{j = 1}^{\ell} Q_\ell$.
 \end{block}
 
 \begin{block}{Inductive Step}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve with the same
-signature, except with an additional point or higher stabilizer
-orders.
-
-Describe how $R(\sx, \Delta, \halfcan)$ is generated over
-$R(\sx', \Delta, \halfcan')$.
+Given generators and relations of $(\sx', \Delta, \halfcan)$, we can deduce generators and relations in $(\sx', \Delta, \halfcan)$, in the following situations:
+\begin{itemize}
+\item $(\sx, \Delta, \halfcan)$ looks the same as $(\sx', \Delta, \halfcan)$, except with one additional stacky point
+\item $(\sx, \Delta, \halfcan)$ looks the same as $(\sx', \Delta, \halfcan)$, except with the stabilizer order of a stacky point incremented by 2.
+\end{itemize}
 \end{block}
 
-\begin{itemize}
-\item Induction on adding points \\
-\item Induction on raising stabilizer order \\
-\item Base cases
-\end{itemize}
+%\begin{itemize}
+%\item Induction on adding points \\
+%\item Induction on raising stabilizer order \\
+%\item Base cases
+%\end{itemize}
 \end{frame}
 
 \begin{frame}{Applications}
