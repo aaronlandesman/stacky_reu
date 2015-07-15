@@ -166,18 +166,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-\todo{Clean up this stuff on siegel modular forms, hilbert modular forms, say something about hasse keel program, canoncical rings studied before}
 
-\todo{Might be reasonable to think about higher dimensional rational varieties that are similar to these hirzebruch surfaces.}
-
-\todo{The following stuff is almost nonsensical now, will be edited much more soon}
-
+\todo{write more about hassett keel program}
+\cite{hassett:classical-and-minimal-models}
 Hasse keel program, birational map from $proj R(K + \Delta)$ to $M_2$, they showed finite generation, we're giving explicit generators and bounds.
 
-The work in this paper also yields bounds for certain rings of Hilbert modular forms. Recall that a Hilbert modular form is a generalization of modular forms to multiple variables.
+The work in this paper also yields bounds for certain rings of Hilbert 
+modular forms and Siegel modular forms. Recall that Hilbert and Siegel 
+modular forms are both to higher dimensions variables. In the case of 
+Hilbert Modular forms, one considers modular forms on an $m$ fold product 
+of upper half planes, which transform under the action of finite index 
+subgroups of the groups of positive determinant matrices. Similarly, Siegel 
+modular forms are modular forms on the Siegel upper half space which are 
+stable under the action of the symplectic group. While in general these 
+quotients can be quite complicated spaces, in the case that the resulting 
+quotient spaces are isomorphic to $\bp^m$ for some $m$, or some Hirzebruch 
+surface, our main result gives a method for bounding the degree of 
+generators and relations for the corresponding rings of Hilbert modular 
+forms and Siegel modular forms. Namely, as in \cite{vzb:stacky}, one can 
+port these modular form groups from the analytic category to the algebraic 
+category, and then view the ring of modular forms as a certain stacky 
+canonical ring on our underlying algebraic space.
+\todo{include references}
 
-Siegel modular forms are a generalization of modular forms on the Siegel upper half plane to automorphic forms on the Siegel upper half space. Explicitly, the Siegel uper half space is $\mathscr H \cong \bc^n/\Lambda$ and siegel modular forms are functions on $Sp_{2g} \backslash \mathscr H.$ Then, modular functions are differentials invariant under the action of $Sp_{2g}$. In the case that $\Gamma \backslash \mathscr H$.
-
+\todo{Possibly keep or delete following example}
 Example: the Siegel 2-upper half plane $\bc^2/\Lambda$ Note that $\bc^2/\Lambda$ is algebraic if and only if there exists a hermitial form on $\Lambda$. Then, $Sp_{2g}$ acts on algebraic lattices. The quotient by this gives you the space of abelian varieties. This might be an open subset of projective space, according to David, 65$\%$.
 
 \section{Background}
@@ -227,10 +239,10 @@ where $\alpha_i \in \bq$. \todo{Peter: What are the $D_i$'s.}
 \end{convention}
 
 \begin{convention}
-Let $\{x_0, \ldots, x_m\}$ be coordinates for $\bp^m$. Let
+Let $[x_0, \ldots, x_m]$ be coordinates for $\bp^m$. Let
 $\vec{v} = (v_0, \ldots, v_m) \in \br^{m + 1}$. Then write
 \[
-	x_{\vec{v}} := \prod_{i = 0}^{m} x_i^{v_i}
+	x^{\vec{v}} := \prod_{i = 0}^{m} x_i^{v_i}
 \]
 \end{convention}
 
@@ -383,10 +395,10 @@ canonical ring
 
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
-{{m + i} \choose {i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
+{{m + c_i - 1} \choose {c_i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
 x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
-such that $\sum_{j = 0}^{m} v_j = c_i$. Furthermore, it has $z$
-many \todo{how many?} relations of the following two types.
+such that $\sum_{j = 0}^{m} v_j = c_i$. Furthermore, it has
+relations of the following two types.
 
 For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
 \vec{w} \in \mss_j$, there is a relation of the form either
