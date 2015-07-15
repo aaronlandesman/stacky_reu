@@ -619,13 +619,13 @@ We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n$ such that $\psi$
 \end{equation}
 
 \noindent
-for all $d \in \mathbb{N}$ and $c_i \ge -\alpha_i d$ satisfying $\bida_j + \sum_{i = 1}
-^n \bida_i c_i = 0$.
+for all $d \in \mathbb{N}$ and $c_i \ge -\alpha_i d$ satisfying $\bida_i + \sum_{j = 1}
+^n \bida_j c_j = 0$.
 
-To find such a $\beta$, we simply write $\epsilon_j$ as a 
-polynomial in $\epsilon_1, \ldots \epsilon _3$. Furthermore, these
-generate all relations, since they allow us to reduce any $\prod_{i =
-1}^n \epsilon_i^{r_i}$ to a canonical form as given by Proposition \ref{prop:cone-generation}.
+To find such a $\beta$, we simply write $f_i$ as a 
+polynomial in $f_1, \ldots f_3$. Furthermore, these
+generate all relations, since they allow us to reduce any $\prod_{j =
+1}^n f_j^{r_i}$ to a canonical form as given by Proposition \ref{prop:cone-generation}.
 
 We now fix $z_i$ and bound the degree of generation of this set of relations of the form $(z_i - \beta_i) \prod_{j=1}^n z_j^{c_j}$.  We first associate $(z_i - \beta_i)\prod_{j=1}^n z_j^{c_j}$ with $(d, c_1, \ldots, c_n)$ where $d$ is its degree.  Let $\Sigma_i \subseteq \mathbb{Z}^{n+1}$ be the set of points of the form $(d, r_1, \ldots, r_n)$ satisfying $r_j \ge -d \alpha_j$ for all $j$ and $\sum_{j=1}^n r_j a_j = -a_i$.  
 Then we see $\Sigma_i$ is contained in the $\mathbb{R}_{\ge 0}$-span of $e_1, \ldots, e_n$ (as defined in Equation \ref{defn:e_i-P-n}) translated by by $\delta_i = (\frac{a_i}{\deg(D)}, -\frac{\alpha_1 a_1}{\deg(D)}, \ldots, - \frac{\alpha_n a_n}{\deg(D)})$.
@@ -702,19 +702,20 @@ $R_D$ is generated in degree at most
 Let $(\bida_i, \bidb_i)$ be the bi-degrees of $f_i$. Notice that if $\gamma
 \in (R_D)_d$, then 
 \[
-	g = \sum_{i=1}^m {f_i}^{c_i}
+	g = \sum_{i=1}^n {f_i}^{c_i}
 \]
 
 \noindent
-where each $c_i \ge - \alpha_i c_i$, $\sum_{i=1}^m c_i \bida_i = 0$,
-and $\sum_{i=1}^m c_i \bidb_i = 0$. Then we can view $g$ inside of the
+where each $c_i \ge - \alpha_i c_i$, $\sum_{i=1}^n c_i \bida_i = 0$,
+and $\sum_{i=1}^n c_i \bidb_i = 0$. Then we can view $g$ inside of the
 lattice $S \subseteq \mathbb{R}^{n + 1}$ given by ordered elements of
 the form $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge - d \alpha_i$
-for all $i$, $\sum_{i=1}^m c_i \bida_i = 0$, and $\sum_{i = 1}^m c_i \bidb_i =
+for all $i$, $\sum_{i=1}^n c_i \bida_i = 0$, and $\sum_{i = 1}^n c_i \bidb_i =
  0$. From here, determining a spanning set for $(R_D)_d$ reduces to
-finding the extremal rays of $S$ \todo{cite previous lemma}.
+finding the extremal rays of $S$ by Proposition \ref{prop:cone-generation}.
 
-To do this, we extend the method of O'Dorney \todo{cite}. We first
+To do this, we extend the method of O'Dorney \cite[Theorem 8]{dorney:canonical}. 
+We first
 view the cone inside of $\mathbb{R}^{n+1}$ given by elements of the
 form $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge -d \alpha_i$ for
 all $i$ and $\sum_{i = 1}^n c_i (\bida_i + \bidb_i) =0$. By O'Dorney, this
@@ -725,15 +726,15 @@ has extremal rays given by
 	\alpha_j(\bida_j+ \bidb_j)}{\bida_i + \bidb_i}, -\alpha_{i + 1}, \ldots, - \alpha_m).
 \]
 
-Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_m$.
-We can then intersect the hyperplane $H$ given $\sum_{i=1}^m \bida_i X_i
-= 0$ to get a subspace $S$. The extremal rays of $S$ are given
-by the set of $e_i$ contained in $H$ together with the points of
-intersection $e_{i, j}$ of $H$ and the edges of the simplex
-connecting the $e_i, e_j \not \in H$.
+Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_n$.
+We can intersect $\Delta^{n-1}$ with the hyperplane $H$ given by 
+$\sum_{i=1}^n \bida_i X_i = 0$
+ to get a subspace $S \subseteq \Delta^{n-1}$. The extremal rays of $S$ must lie on the edges of $\Delta$ \todo{Peter: Do we need to cite/argue this, or is it clear?} and are thus given
+by the set of $e_i$ contained in $H$ together with the points $e_{i, j}$ given by intersections of $H$ with edges of the simplex
+connecting $e_i, e_j \not \in H$.
 \todo{more detail above}
 
-We can calculate the following elements of $R_D$ whose
+We can calculate elements of $R_D$ whose
 corresponding lattice points lie on these extremal rays:
 
 For $i \in \Te(D)$
@@ -746,7 +747,7 @@ define
 
 For $i \in \Tp(D)$ and $j \in \Tm(D)$, define
 \[
-	\epsilon_{i, j} := (\prod_{k = 1}^m f_k^{-\alpha_k \ell_{i,j} (\bida_i \bidb_
+	\epsilon_{i, j} := (\prod_{k \ne i,j} f_k^{-\alpha_k \ell_{i,j} (\bida_i \bidb_
 j - \bida_j \bidb_i)}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i,j}(\bida_i \bidb_j - 
 \bida_j \bidb_i)D)
 \]
@@ -766,7 +767,7 @@ and
 
 Let $E$ be the set of $\epsilon_i$ and $\epsilon_{i,j}$ given 
 above, satisfying the respective conditions.
-$E$ satisfies the conditions of proposition \ref{prop:cone-generation}, so by applying that proposition $R_D$ is generated in 
+The lattice points corresponding to elements of $E$ satisfies the conditions of proposition \ref{prop:cone-generation}, so by applying that proposition, $R_D$ is generated in 
 degree less than
 \[
 	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in \Tp(D) \atop
@@ -774,7 +775,7 @@ degree less than
 \]
 \end{proof}
 
-Let $x_1, \ldots x_r$ be the generators given by lemma  \ref{Hirzebruch-generators}, and $\phi$ be the surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through 
+Let $x_1, \ldots x_r$ be the generators of $R_D$ in degree less than $\sigma$ (as given by lemma \ref{Hirzebruch-generators}), and let $\phi$ be the surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through 
 \[
 	\Sigma =  \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d \alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i. \rangle 
 \]
@@ -786,10 +787,8 @@ x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} 
 \end{tikzcd}
 \]
 
-Applying Lemma \ref{lem:bound-ker-chi}, we can bound the degree of generation of $\ker(\chi)$ less than
-\[
-	2 \sigma
-\]
+Applying Lemma \ref{lem:bound-ker-chi}, we can bound the degrees of generation of $\ker(\chi)$ below
+$2 \sigma$.
 Finally, we calculate the degree of generation of $\psi$:
 
 \begin{lem}
@@ -801,22 +800,19 @@ $\ker(\psi)$ is generated in less than
 \end{lem}
 
 \begin{proof}
-We first claim that $\psi$ has a relation of the form
+We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n$ such that $\psi$ has relations of the form
 \begin{equation}\label{eqn:relations-psi}
-	(z_i - \beta_j)\prod_{j=1}^n {z_j}^{c_{j}}
+	(z_i - \beta_i)\prod_{j=1}^n {z_j}^{c_{j}}
 \end{equation}
 
 \noindent
-for some $d\in \mathbb{N}$, $c_i \ge -\alpha_i d$, $\bida_j + \sum_{i = 1}
-^n \bida_i c_i = 0$, $\bidb_j + \sum_{i=1}^n \bidb_i c_i = 0$, and $\beta_j \in
-k[z_1, \ldots, z_4]$ satisfies $\psi(\beta_j)\in \mathscr{O}(\bida_j,
-\bidb_j)$.
+for all $d \in \mathbb{N}$ and $c_i \ge -\alpha_i d$ satisfying $\bida_i + \sum_{j = 1}
+^n \bida_j c_j = 0$ and $\bidb_i + \sum_{i=1}^n \bidb_j c_j = 0$.
 
-To find such a $\beta$, we simply write $\epsilon_j$ as a 
-polynomial in $\epsilon_1, \ldots \epsilon _4$. Furthermore, these
-generate all relations, since they allow us to reduce any $\prod_{i =
-1}^n \epsilon_i^{r_i}$ to a canonical form. \todo{add reference to
-earlier description of canonical form.}
+To find such a $\beta$, we simply write $f_i$ as a 
+polynomial in $f_1, \ldots f_4$. Furthermore, these
+generate all relations, since they allow us to reduce any $\prod_{j =
+1}^n f_j^{r_j}$ to the canonical form (see Proposition \ref{prop:cone-generation}).  \todo{Peter: I think the canonical form given in the proposition isn't the one we actually want.}
 
 Note that we can view the relations from Equation
 \ref{eqn:relations-psi} as an element of $S$ given
