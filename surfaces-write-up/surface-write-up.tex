@@ -350,8 +350,8 @@ by taking the Veronese embedding.
 For $\vec{v} \in \br^n$, denote $\deg \vec{v} := \sum_{i = 0}
 ^n v_i$ (i.e. the taxicab metric).
 Let $\mss_i := \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
-\sum_{i = 0} ^{m + 1} v_i = c_i\}$ be the set of $\bz_{\geq 0}
-^{m + 1}$-vectors with sum of components equal to $c_i$.
+\sum_{i = 0} ^{m + 1} v_i = c_i\}$ be the set of points in
+$\bz_{\geq 0}^{m + 1}$ with sum of components equal to $c_i$.
 \end{defn}
 
 \begin{defn}
@@ -403,18 +403,18 @@ For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
 \end{flalign*}
 
 Furthermore, there are the relations for each $(i, j)$ with
-$j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{z} \in
-\mss_j$ with $\vec{v} \not\prec \vec{z}$ (see Definition
-~\ref{defn:vec-order}) of the form 
+$j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
+\mss_j$ with $\vec{v} \not\prec \vec{w}$ (see Definition
+~\ref{defn:vec-order}) of the form
 \begin{align*}
-	&L_{i, j}^{\vec{v}, \vec{z}} = F_i^{\vec{v}} F_j^{\vec{z}}
+	&L_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
 	- F_i^{\vec{y}} F_j^{\vec{z}} \\
 \end{align*}
 
 \noindent
 where $\vec{y}$ and $\vec{z}$ are the unique
 vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
-\prec \vec{z}$.
++ \vec{z} = \vec{v} + \vec{w}$ and $\vec{y} \prec \vec{z}$.
 \end{thm}
 
 \begin{proof}
@@ -455,7 +455,7 @@ x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
 \end{align*}
 
 \noindent
-We can break $\vec{v}$ into a sum of $\ell_1$ many vectors
+We can then break $\vec{v}$ into a sum of $\ell_1$ many vectors
 $\vec{w}_{(j)}$ in $\mss_2$ and $\ell_2$ many vectors $\vec{z}_{(k)}$
 in $\mss_2$ to give a decomposition
 \begin{align*}
@@ -484,27 +484,54 @@ to transform any monomial in the $F_i^{\vec{v}}$'s involving
 indices that differ by more than $1$ to a monomial in the $F_i
 ^{\vec{v}}$'s involving indices that differ by at most $1$.
 
-Furthermore, we have relations
+We also have relations involving generators in consecutive
+indices. Suppose $F_i^{\vec{v}}$ and $F_j^{\vec{w}}$ are
+generators with $j = i$ or $j = i + 1$ and $\vec{v} \in
+\mss_i, \vec{w} \in \mss_j$ with $\vec{v} \not\prec \vec{w}$.
+Let $\vec{y}$ and $\vec{z}$ be the unique vectors in $\mss_i$ and
+$\mss_j$, respectively, such that $\vec{y} + \vec{z} = \vec{v} +
+\vec{w}$ and $\vec{y} \prec \vec{z}$ (i.e.~ the nonzero indices
+of $\vec{y}$ followed by those of $\vec{z}$ give an increasing
+sequence). Then we see that
+\begin{align*}
+	F_i^{\vec{v}} F_j^{\vec{w}} = x^{\vec{v} + \vec{w}}
+																 \left(\frac{u^{d_i}}{x_k^{c_i}}\right)
+																 \left(\frac{u^{d_j}}{x_k^{c_j}}\right)
+															= x^{\vec{y} + \vec{z}}
+																 \left(\frac{u^{d_i}}{x_k^{c_i}}\right)
+																 \left(\frac{u^{d_j}}{x_k^{c_j}}\right)
+															= F_i^{\vec{y}} F_j^{\vec{z}}
+\end{align*}
 
-\todo{relations}
-Canonical form of 
-\[
-	\prod_{\substack{0 \leq i \leq m + 1 \\ \vec{y}
-	\in \mss_i}} (F_i^{\vec{y}})^{g_{\vec{y}}}
-\]
+\noindent 
+which give the relations $L_{i, j}^{\vec{v}, \vec{w}}$.
+
+Now, we may apply the relations $L_{i, j}^{\vec{v}, \vec{w}}$
+to any monomial in the $F_i^{\vec{v}}$'s involving
+indices that differ by at most $1$ to produce the canonical form
+\begin{align*}
+	(F_i^{\vec{v}_{(1)}})^{g_{\vec{v}_{(1)}}} \cdots
+	(F_i^{\vec{v}_{(1)}})^{g_{\vec{v}_{(\ell_1)}}}
+	(F_{i + 1}^{\vec{w}_{(1)}})^{g_{\vec{w}_{(1)}}} \cdots
+	(F_{i + 1}^{\vec{w}_{(\ell_2)}})^{g_{\vec{w}_{(\ell_2)}}}
+\end{align*}
 
 \noindent
-where the indices with
-some nonzero $g_{\vec{y}}$ are consecutive.
+where $\vec{v}_{(1)} \prec \vec{v}_{(2)} \prec \ldots \prec
+\vec{v}_{(\ell_1)} \prec \vec{w}_{(1)} \prec \ldots \prec
+\vec{w}_{(\ell_2)}$. Consequently, the relations of form
+$G_{i, j}^{\vec{v}, \vec{w}}$ and of form $L_{i, j}^{\vec{v},
+\vec{w}}$ generate all the relations among the $F_{i}^{\vec{v},
+\vec{w}}$.
 \end{proof}
 
 
 \todo{change thm to be inductive for adding pts, giving result on
-effective divisors}
+effective divisors?}
 \todo{remark on not doing two points}
 
-\ssec{Bounds for Arbitrary Divisors on Projective Space}
 
+\ssec{Bounds for Arbitrary Divisors on Projective Space}
 \begin{rem}
 When $\langle f_1, \ldots, f_r \rangle = \langle x_0, \ldots, x_n \rangle$ (the irrelevant ideal), we may directly use the hypersurface method by considering $x_0, \ldots, x_n$ instead of the $f_i$'s. However, when $\sqrt{\langle f_1, \ldots, f_r \rangle} = \langle x_0, \ldots, x_n \rangle$ (or the saturation), we cannot obtain the same result from our modification of O'Dorney's method as seen in Example ~\ref{eg:radical}. Instead we must use ghost points and hypersurfaces.
 \end{rem} \todo{Peter: What is the purpose of this remark?  The only method we have extends to ghost points so that this is satisfied.}
@@ -592,7 +619,7 @@ We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n$ such that $\psi$
 \end{equation}
 
 \noindent
-for all $d\in \mathbb{N}$ and $c_i \ge -\alpha_i d$ satisfying $\bida_j + \sum_{i = 1}
+for all $d \in \mathbb{N}$ and $c_i \ge -\alpha_i d$ satisfying $\bida_j + \sum_{i = 1}
 ^n \bida_i c_i = 0$.
 
 To find such a $\beta$, we simply write $\epsilon_j$ as a 
