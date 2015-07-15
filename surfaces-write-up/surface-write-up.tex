@@ -349,10 +349,12 @@ By definition of $H^0(\bp^m,dD)$, functions satisfying conditions
 
 We first restrict attention to the case $n=1$, so $D = \alpha D_i$.
 
-\ssec{One point on Projective Space}
+
+\ssec{One Hypersurface on Projective Space}
 \label{ssec:proj-one-point}
 
 \begin{rem}
+\label{rem:proj-veronese}
 Remark about how we can assume divisor only consists of hyperplanes
 by taking the Veronese embedding.
 \todo{write}
@@ -524,7 +526,7 @@ to any monomial in the $F_i^{\vec{v}}$'s involving
 indices that differ by at most $1$ to produce the canonical form
 \begin{align*}
 	(F_i^{\vec{v}_{(1)}})^{g_{\vec{v}_{(1)}}} \cdots
-	(F_i^{\vec{v}_{(1)}})^{g_{\vec{v}_{(\ell_1)}}}
+	(F_i^{\vec{v}_{(\ell_1)}})^{g_{\vec{v}_{(\ell_1)}}}
 	(F_{i + 1}^{\vec{w}_{(1)}})^{g_{\vec{w}_{(1)}}} \cdots
 	(F_{i + 1}^{\vec{w}_{(\ell_2)}})^{g_{\vec{w}_{(\ell_2)}}}
 \end{align*}
@@ -538,10 +540,53 @@ $G_{i, j}^{\vec{v}, \vec{w}}$ and of form $L_{i, j}^{\vec{v},
 \vec{w}}$.
 \end{proof}
 
+\begin{rem}
+\label{rem:proj-two-points}
+Note that we cannot extend this result to the case when
+$D$ is supported at two hypersurfaces with arbitrary rational
+coefficients in the same manner that O'Dorney does for the
+$\bp^1$ case \cite[Section 4]{dorney:canonical}. As will be shown
+in Example ~\ref{eg:hyperplane}, the degrees of generation of the
+canonical ring of a general $\bq$-divisor containing two
+hyperplanes cannot be bounded so tightly. The two-point
+$\bp^1$ result leverages particular facts about the structure of
+$\bp^1$.
+\end{rem}
 
-\todo{change thm to be inductive for adding pts, giving result on
-effective divisors?}
-\todo{remark on not doing two points}
+\begin{rem}
+\label{rem:proj-one-point-ind}
+Note that the method of proof for Theorem ~\ref{thm:proj-one-point}
+can be immediately generalized to work inductively. If $D = D' + H$
+for some hyperplane $H$, then we can use the proof above to show
+the canonical ring $R_D$ is generated over $R_D'$ by the same
+generators and with the same relations given in Theorem
+~\ref{thm:proj-one-points}.
+\end{rem}
+
+\begin{thm}
+\label{thm:proj-effective}
+Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
+$\bp^m$. Let $D = \sum_{i = 1}^{n} \alpha_i H_i$, with $\alpha_i =
+\frac{p_i}{q_i} \in \bq$ and each $H_i$ a hypersurface of
+$\bp^m$, be an effective divisor on $\bp^m$.
+
+Then the canonical ring
+\[
+	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)
+\]
+
+\noindent
+is generated in degrees up to $\max_{1 \leq i \leq n}{q_i}$ with
+relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
+\end{thm}
+
+\begin{proof}
+First, we apply Remark ~\ref{rem:proj-veronese} to reduce the
+problem to letting each $H_i$ be a hyperplane of $\bp^m$.
+Then, the proof follows from applying Remark
+~\ref{rem:proj-one-point-ind} inductively on a one-hyperplane case
+from Theorem ~\ref{them:proj-one-point}.
+\end{proof}
 
 
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
