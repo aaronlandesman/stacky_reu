@@ -147,8 +147,8 @@ To do so, it is useful to have a bound on the
 degrees in which the generators and relations can occur. In the
 special case that $\Gamma$ has no odd weight modular forms, Voight
 and Zureick-Brown give tight bounds \cite[Chapters 7-9]{vzb:stacky}.
-We extend their result to all Fuchsian groups $\Gamma$ in the main
-theorem of this work.
+The main theorem of this work extends their result to all Fuchsian
+groups $\Gamma$.
 
 We can now consider the orbifold $\Gamma \backslash \BH$ over $\BC$.
 For example, in the case $\Gamma$ acts freely on $\BH$, $\Gamma
@@ -183,7 +183,7 @@ shows that, in most cases, $R(X, K_X)$
 is generated in degree 1 with relations in degree 2 (see
 Saint-Donat \cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
 \cite[Section 3.3]{acgh:algebraic-curves}). This has the pleasant 
-geometric consequence that canonically embedded curves of genus $\geq 4$ which are not hyperelliptic, trigonal, or a plane quintic are scheme-theoretically cut out by degree 2 equations.
+geometric consequence that canonically embedded curves of genus $\geq 4$ which are not hyperelliptic curves, trigonal curves, or plane quintics are scheme-theoretically cut out by degree 2 equations.
 
 Following Voight and Zureick-Brown \cite{vzb:stacky}, we generalize 
 Petri's theorem in the direction of stacky curves equipped with
@@ -210,19 +210,19 @@ A brief overview of stacky curves, log divisors, and log spin
 canonical rings is given in Subsection
 ~\ref{ssec:stacky-background}.
 
-Our main theorem is to bound the degrees of generators and relations of
-a log spin canonical ring. Let $\sx$ be a stacky curve with
-signature $\sigma = (g; e_1, \ldots, e_r; \delta)$. The application
-of O'Dorney's work \cite[Chapter 5]{dorney:canonical} to log spin
-canonical rings gives a weak bound in the case $g = 0$ in terms of
-the least common multiples of the $e_i$'s. In their treatment of
-log spin canonical rings, Voight and Zureick-Brown
+Our main theorem is to bound the degrees of generators and
+relations of a log spin canonical ring. Let $\sx$ be a stacky curve
+with signature $\sigma := (g; e_1, \ldots, e_r; \delta)$. The
+application of O'Dorney's work \cite[Chapter 5]{dorney:canonical}
+to log spin canonical rings gives a weak bound in the case $g = 0$
+in terms of the least common multiples of the $e_i$'s. In their
+treatment of log spin canonical rings, Voight and Zureick-Brown
 \cite[Corollary 10.4.6]{vzb:stacky} bounded generator degrees by $6
 \cdot \max(e_1, \ldots, e_r)$ and relation degrees by $12 \cdot \max
-(e_1, \ldots, e_ r)$ when $\halfcan$ is effective. Note that the
-bounds we deduce differ from those stated in Voight and Zureick-
-Brown \cite[Corollary 10.4.6]{vzb:stacky} by a factor of 2 because
-their grading convention differs from ours by a factor of 2.
+ (e_1, \ldots, e_ r)$ when $\halfcan$ is effective. Note that the
+bounds we deduce differ from those stated in Voight and
+Zureick-Brown \cite[Corollary 10.4.6]{vzb:stacky} by a factor of 2
+because their grading convention differs from ours by a factor of 2.
 
 These bounds are far from tight and do not collectively
 cover all cases in all genera. The main theorem of this paper
@@ -661,7 +661,7 @@ contradict the fact that $\halfcan_X$ is very ample. Thus, $\proj R_{\halfcan_X}
 Next, we construct generators and relations for $R_\halfcan$ using those
 of $R_{\halfcan_X}$. Note that we have a natural inclusion $\iota: R_{\halfcan_X}
 \hookrightarrow R_\halfcan$ induced by the inclusions $H^0(\sx, k\halfcan_X)
-\hookrightarrow H^0(\sx, k\halfcan)$ for each $k \geq 0$. By Riemann Roch,
+\hookrightarrow H^0(\sx, k\halfcan)$ for each $k \geq 0$. By Riemann--Roch,
 we see there is some element $y_{1, 3} \in (R_\halfcan)_3$ with $\ord_{P_1}
 (y_{1, 3}) = -1$, not in the image of the inclusion $\iota$. We
 claim that there exist $a_1, a_2 \in \Bk$ and a degree $4$ polynomial
@@ -839,13 +839,14 @@ $R_{\halfcan'} \cong \Bk[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u
 \label{eg:exception-1-5}
 Let $(\sx', 0, L')$ be a log spin curve of genus 1 with $L' = P -
  Q + \frac{2}{5} P_1.$ Let $x_2 \in (R_\halfcan)_2$ be any nonzero element.
-We obtain $\di x_2|_{P_1} = 0,$ since $2P - 2Q \sim 0$ and by Riemann
---Roch, $\dim_\Bk (P_L)_2 = 1.$ Let $y_3 \in (R_\halfcan)_3$ be any nonzero
-element. We obtain $\di y_3|_{P_1} = - P_1,$ by Riemann Roch, since
-if $y_3$ did not have a pole at $R$, we would obtain $y_3 \in H^0
-(\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as $P \neq Q$. Finally,
-let $y_5 \in (R_\halfcan)_5$ be an element with $y_5|_{P_1} = -P_1$. Then,
-we claim there is some $\alpha \in \Bk$ so that
+We obtain $\di x_2|_{P_1} = 0,$ since $2P - 2Q \sim 0$ and by
+Riemann--Roch, $\dim_\Bk (P_L)_2 = 1.$ Let $y_3 \in (R_\halfcan)_3$
+be any nonzero element. We obtain $\di y_3|_{P_1} = -P_1,$ by
+Riemann--Roch, since if $y_3$ did not have a pole at $R$, we would
+obtain $y_3 \in H^0 (\sx,3P-3Q) \cong H^0(\sx, P - Q) \cong 0$ as
+$P \neq Q$. Finally, let $y_5 \in (R_\halfcan)_5$ be an element with
+$y_5|_{P_1} = -P_1$. Then, we claim there is some $\alpha \in \Bk$
+so that
 
 $$R_\halfcan \cong \Bk[x_2 , y_3, y_5]/(y_3^4 - \alpha x_2 y_5^2).$$
 
@@ -1206,7 +1207,7 @@ We now restrict our attention to log canonical rings of stacky curves.  Lemma \r
 
 \begin{lem}
 \label{lem:sat-2}
-Let $(\sx, \Delta, \halfcan)$ and $(\sx', \Delta, \halfcan')$ be log spin curves with the same coarse space $X = X'$ having signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$, where $e_r=3$.  Suppose $g > 0,$ and, if $g = 1,$ then $\deg 3\halfcan' \geq 2.$ Then, by Riemann-Roch $\sat(Eff(L'))\le 2$.
+Let $(\sx, \Delta, \halfcan)$ and $(\sx', \Delta, \halfcan')$ be log spin curves with the same coarse space $X = X'$ having signatures $(g; e_1, \ldots, e_r; \delta)$ and $(g, e_1, \ldots, e_{r- 1}, \delta)$, where $e_r=3$.  Suppose $g > 0,$ and, if $g = 1,$ then $\deg 3\halfcan' \geq 2.$ Then, by Riemann--Roch $\sat(Eff(L'))\le 2$.
 Furthermore, let $R_{\halfcan'} = \Bk[x_2, x_3
 , x_5, \ldots, x_m]/I'$ and let $\halfcan = \halfcan' + \frac{1}{
 3}P$, where $P\in X$ is a base point of $\halfcan'$ (which includes the case when $H^0(X, \lfloor \halfcan'\rfloor) = 0$).
@@ -1222,7 +1223,7 @@ Then, the following statements hold.
 	\item[(a)] General elements  $y_i \in H^0(\sx,iL)$ for $i \in
 		\{3, 4\}$ satisfy $-\ord_P^{\halfcan'}(y_i) = 1$ and any such choice of elements
 		$y_3, y_4,$ minimally generate $R_\halfcan$ over $R_{\halfcan'}$.
-	\item[(b)] Equip $\Bk[y_3, y_4]$ with $grevlex$ so that $y_3 \prec 
+	\item[(b)] Equip $\Bk[y_3, y_4]$ with grevlex so that $y_3 \prec 
 		y_4$
 		and equip the ring $\Bk[y_3, y_4] \otimes \Bk[x_2, \ldots, x_m]$ with block 
 		order. Then,
@@ -1236,10 +1237,9 @@ Then, the following statements hold.
 First, note that when genus is at least we shall show the assumptions on $g$ imply $H^0(\sx, 3 \halfcan), H^0(\sx, 4 \halfcan)$ are both basepoint-free: If $g \geq 2$ then $\deg 3 \halfcan > 2g - 1$ 
 and $\deg 4 \halfcan > 2g - 1$, so $H^0(\sx, 3 \halfcan)$ and $H^0(\sx, 4 \halfcan)$ are base point free. If $g = 1$, we assume $\deg 3 \halfcan \geq 2 > 2g - 1$, so we also have $\deg 4 \halfcan \geq 2 > 2g - 1,$ so again $H^0(\sx, 3 \halfcan)$ and $H^0(\sx, 4 \halfcan)$ are base point free. 
 
-Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord_P^{\halfcan'}(y_i) = 1$ by Riemann-Roch, proving part (a).
+Therefore, general elements $y_3$ and $y_4$ satisfy $-\ord_P^{\halfcan'}(y_i) = 1$ by Riemann--Roch, proving part (a).
 
-A quick computation checks that
-the following set $S$ is a $\Bk$ basis for $R_\halfcan$ over $R_{\halfcan'}$:
+A quick computation checks that the set
 
 \begin{align*}
 	S =	& \; \{ y_3^ax_2^b x_3^\epsilon \mid a \geq 0, b 
@@ -1247,6 +1247,7 @@ the following set $S$ is a $\Bk$ basis for $R_\halfcan$ over $R_{\halfcan'}$:
 \end{align*}
 
 \noindent
+is a $\Bk$ basis for $R_\halfcan$ over $R_{\halfcan'}$, thus
 completing part (a).
 
 Letting
@@ -1415,7 +1416,7 @@ $x_{7, 2}$ respectively).
 
 \begin{figure}[H]
 \includegraphics{pics/spin-377-pic-pics.pdf} \\
-\caption{Generators in the $(\deg z, -ord_{P_i}(z))$ lattice}
+\caption{Generators in the $(\deg z, -ord_{P_2}(z))$ lattice}
 \label{fig:377}
 \end{figure}
 
@@ -1538,7 +1539,7 @@ Define $R':= R_{\halfcan'}$.  Further, assume either
 \end{enumerate}
 Let
 $(\sx, \Delta, \halfcan)$ be another log spin curve
-with coarse space $X$, so that $X \cong X'$ and signature $(g; e_1, \ldots, e_r;
+with coarse space $X$, so that $X \cong X'$ and with signature $(g; e_1, \ldots, e_r;
 \delta)$ such that $e_i = e_i' + 2$ for all $i \in J$ and
 $e_j = e_j'$ for $j \notin J$. Define $R := R_\halfcan$.  Then the following are true:
 \begin{enumerate}
@@ -1611,7 +1612,7 @@ The assumption \ref{custom:Ad-iii} implies
 
 \noindent
 and so $H^0(\sx', e_iL'-E_i + Q_i)$ is base point free by 
-Riemann Roch.
+Riemann--Roch.
 Hence, a general element
 \begin{align*}
 	y_{i, e_i} \in H^0(\sx', e_iL'-E_i + Q_i)
@@ -1813,7 +1814,7 @@ We now consider the case when the genus is at least 2. In this case, we are able
 \ssec{Bounds on Generators and Relations in Genus At Least Two}
 \label{ssec:bounds-high-genus}
 
-The main result of this subsection is that for a log spin curve with no stacky points $(X, \Delta, L)$, the spin canonical ring $R_\halfcan$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[Theorem 3.4]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Throughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ so $H^0(X, 2L)$ is basepoint-free by Riemann-Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
+The main result of this subsection is that for a log spin curve with no stacky points $(X, \Delta, L)$, the spin canonical ring $R_\halfcan$ is generated in degree at most $5$, with relations in degree at most $10$. The case that $\Delta = 0$ was completed by Reid \cite[Theorem 3.4]{reid:infinitesimal}. For $\Delta > 0$, the generation bound is shown in Lemma ~\ref{lem:generation-5} and the relations bound is shown in Lemma ~\ref{prop:relation-10}. Throughout this subsection, we will implicitly use Remark ~\ref{rem:delta-not-1}, which implies $\deg 2L \geq 2g$ so $H^0(X, 2L)$ is basepoint-free by Riemann--Roch. We summarize the results of this subsection in Corollary ~\ref{cor:g-2-presentation-bound}.
 
 The proofs of this subsection results are similar to those in Neves ~\cite[Proposition III.4 and Proposition III.12]{neves:halfcan}. However, the statements differ, as we assume $\Delta > 0$ instead of $\Delta = 0$ and do not assume there is a basepoint-free pencil contained in $H^0(X, L).$ 
 
@@ -1968,13 +1969,7 @@ complete the base case when $L = \halfcan_X$ and then apply Lemma
 \label{thm:g-high-main}
 Let $g \geq 2$ and let $(\sx, \Delta, \halfcan)$ be a log spin curve
 with signature $(g; e_1, \ldots, e_r; \delta)$. Then the
-log spin canonical ring
-
-\begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(\sx, k L )
-\end{align*}
-
-\noindent
+log spin canonical ring $R(\sx, \Delta, \halfcan)$
 is generated as a $\Bk$-algebra by elements in degree at most $e =
 \max(5, e_1, \ldots, e_r)$ with minimal relations in degree at most $2e$.
 \end{thm}
@@ -1987,7 +1982,7 @@ By Corollary ~\ref{cor:g-2-presentation-bound}, the theorem holds for $(\sx, \De
 Next, suppose the theorem holds for $\halfcan' = \halfcan_X + \sum_{i=1}^{r-1} \frac{1}{3}P_i$. Let $\halfcan$ be a log spin canonical divisor of the form $\halfcan = \halfcan_X + \sum_{i = 1}^r \frac{1}{3} P_i$, which means that $\halfcan = \halfcan' + \frac{1}{3} P_r$.  If $P_r$ is a basepoint of $\halfcan'$, then the theorem holds for $\halfcan$ by Lemma ~\ref{lem:sat-2}.
 Otherwise, $P_r$ is not a basepoint of $\halfcan'$, meaning that in particular $R_{\halfcan'}$ is saturated in 1.
 Therefore, since $P_r$ is a not basepoint of $\halfcan'$, Equation
-~\ref{eqn:deg1-sat-ind} holds by Riemann Roch.
+~\ref{eqn:deg1-sat-ind} holds by Riemann--Roch.
 In this case, the theorem holds for $\halfcan$ by Lemma ~\ref{lem:sat-1}.
 
 We have thus shown the theorem for all $(\sx, \Delta, \halfcan)$ with $g \ge 2$ and signature $(g; 3, \ldots, 3; \delta)$. Therefore, by Corollary 
@@ -2084,14 +2079,9 @@ We now have all the tools necessary to prove our main theorem, ~\ref{thm:main} i
 
 \begin{thm}
 \label{thm:g-1-main}
-Let $(\sx, \Delta, \halfcan)$ log spin curve so that $\sx$ has
+Let $(\sx, \Delta, \halfcan)$ log spin curve with
 signature $\sigma := (1; e_1, \ldots, e_r; \delta)$.
-If $g = 1$, then the log spin canonical ring
-\begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k = 0}^\infty H^0(\sx, k L)
-\end{align*}
-
-\noindent
+If $g = 1$, then the log spin canonical ring $R(\sx, \Delta, \halfcan)$
 is generated as a $\Bk$-algebra by elements of degree at most $\max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e,$ so long as $\sigma$ does not lie in a
 finite list of exceptional cases, as listed in Table
 ~\ref{table:g-1-exceptional}.
@@ -2244,7 +2234,7 @@ throughout this section.
 First, we present the saturations of the log spin canonical divisor
 (recall Definition ~\ref{defn:sat}) for all cases where $g = 0$ and
 $\delta = 0$ in Table ~\ref{table:g-0-sat}. The saturations can
-be computed using Riemann-Roch. By classifying the saturations of
+be computed using Riemann--Roch. By classifying the saturations of
 all signatures, we can determine the base cases on which we can
 apply inductive lemmas from Section ~\ref{sec:induction}. Note that
 the saturations of log spin canonical divisors only depend on the
@@ -2471,15 +2461,9 @@ Now we can combine the base cases from Subsection \ref{ssec:g-0-base} with the i
 
 \begin{thm}
 \label{thm:g-0-main}
-Let $(\sx, \Delta, \halfcan)$ log spin curve,
-so that $\sx$ has signature $\sigma := (0; e_1, \ldots, e_r; \delta)$.
-Then, the log spin canonical ring
-
-\begin{align*}
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k = 0}^\infty H^0(\sx, L)
-\end{align*}
-
-\noindent
+Let $(\sx, \Delta, \halfcan)$ log spin curve with signature
+$\sigma := (0; e_1, \ldots, e_r; \delta)$.
+Then, the log spin canonical ring $R(\sx, \Delta, \halfcan)$
 is generated as a $\Bk$-algebra by elements of degree at most $e =
 \max(5, e_1, \ldots, e_r)$ and has relations in degree at most $2e$,
 so long as $\sigma$ does not lie in the finite list of exceptional
@@ -2611,8 +2595,9 @@ In this section, we present several directions for further research.
 		
 \item One direction for further research is to extend the results
 	of this paper to divisors $D \in \di \sx$ on a stacky curve $\sx$, 
-	where $nD \sim K.$ The canonical rings of such divisors often
-	arise as rings of fractional weight $\frac{2}{n}$ modular forms.
+	where $nD \sim K$ for some integer $n$ greater than $2$. The
+	canonical rings	of such divisors often arise as rings of
+	fractional weight $\frac{2}{n}$ modular forms.
 	For more details on fractional weight modular forms, see Adler and
 	Ramanan \cite[p. 96]{adler:moduli} and Milnor
 	\cite[$\mathsection$ 6]{milnor:fractional-weight}.
