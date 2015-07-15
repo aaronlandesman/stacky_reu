@@ -423,7 +423,7 @@ We define $H^0$ of a stacky divisor as follows.
 \label{defn:h0-stacky}
 Recall the standard notation for the line bundle $\sco(D)$ on an integral normal scheme $X$ associated to a divisor $D \in \di X$:
 \[
-	\Gamma(U, \sco(D)) := \{f \in \Bk(X)^\times : \di|_U f + D|_U \geq 0 \}.
+	\Gamma(U, \sco(D)) := \{f \in \Bk(X)^\times : \di|_U f + D|_U \geq 0 \} \cup \{0\}.
 \]
 
 \noindent
@@ -1331,7 +1331,7 @@ the admissibility defined by Voight and Zureick-Brown
 the case of log spin canonical divisors.
 
 One key difference between the notion of admissibility in Definition ~\ref{defn:admissible} and that of Voight and Zureick-Brown \cite[Definition 8.5.1]{vzb:stacky} is that
-we cannot assume that $\{P_i\} \cap \Supp(\halfcan_X') = \emptyset$, as $H^0(X, \halfcan_X')$ may have no global sections. We circumvent this issue by working with the orders of zeros and poles relative to $\halfcan_X'$, rather than relative to the $\sco_X,$ using Definition ~\ref{defn:order-sup}.
+we cannot assume that $\{P_i\} \cap \Supp(\halfcan_X') = \emptyset$, as $ \halfcan_X'$ may have no nonzero global sections. We circumvent this issue by working with the orders of zeros and poles relative to $\halfcan_X'$, rather than relative to the $\sco_X,$ using Definition ~\ref{defn:order-sup}.
 
 \begin{defn}
 \label{defn:admissible}
@@ -1436,13 +1436,13 @@ $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$, as in Example
 is admissible.
 
 Recall that
-$$R_{\halfcan'} \cong \Bk[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$.
+$$R_{\halfcan'} \cong \Bk[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u).$$
 We have two generators $x_3$ and $y_3$ in degree 3 with a pole of order $1=\frac{3- 1}{2}$ by construction. Hence, \ref{custom:Ad-i} holds. We next check \ref{custom:Ad-ii} for the point $P_1$, as the case of $P_2$ is symmetric. Here, by construction
 \[
 \frac{-\ord_{P_1}(z)}{\ord(z)} = \begin{cases}
 	0 &\text{ if }z \in \{u, y_3\}\\
-	\frac{1}{4} &\text{ if }z = y_4
-\end{cases}.
+	\frac{1}{4} &\text{ if }z = y_4.
+\end{cases}
 \]
 
 \noindent
@@ -2038,7 +2038,7 @@ In this subsection we set up the base cases needed for our inductive approach, o
 \label{table:g-1-base}
 \end{table}
 
-Generators and relations $L' = 0, \: L' = P-Q +\frac{1}{3}P_1 + \frac{1}{3}P_2,$ and $L' = P-Q + \frac{2}{5}P_1$ were checked in Examples ~\ref{eg:base-1-0}, \ref{eg:base-1-33}, and \ref{eg:exception-1-5} respectively. Note that admissibility for $L' = P-Q +\frac{1}{3}P_1 + \frac{1}{3}P_2,$ is verified in Example ~\ref{eg:base-1-33-adm}. The verification of admissibility for the other cases is similar.
+Generators and relations for $R_{L'}$ with $L' = 0, \: L' = P-Q +\frac{1}{3}P_1 + \frac{1}{3}P_2,$ and $L' = P-Q + \frac{2}{5}P_1$ were checked in Examples ~\ref{eg:base-1-0}, \ref{eg:base-1-33}, and \ref{eg:exception-1-5} respectively. Note that admissibility for $(\sx',0,P-Q +\frac{1}{3}P_1 + \frac{1}{3}P_2)$ is verified in Example ~\ref{eg:base-1-33-adm}. The verification of admissibility for the other cases is similar.
 
 The base cases of $L' = \frac{3}{7}P_1$ and $L' = \frac{1}{3}P_1 +\frac{1}{3}P_2$ can be similarly computed. Although $L' = P - Q + \frac{2}{5}P_1,$ and $L' = \frac{3}{7}P_1$ are used as base cases for the induction, they are also exceptional cases; see Table ~\ref{table:g-1-exceptional}.
 
@@ -2491,8 +2491,8 @@ The method of this proof is almost identical to that of Theorem
 ~\ref{thm:g-1-main}. When $\delta > 0$, we first add in log points,
 and then increment the stabilizer orders of stacky points, checking
 that the theorem holds at each step. The more technical case occurs
-when $\delta = 0$, in which case we simply increment the stabilizer
-orders of stacky points starting from one of several base cases, and
+when $\delta = 0$. In this case, we increment the stabilizer
+orders of stacky points starting from one of the base cases, and
 check that every stacky curve can be reached by a sequence of
 admissible incrementations from a base case.
 
