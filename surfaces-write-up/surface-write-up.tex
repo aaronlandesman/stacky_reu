@@ -171,23 +171,27 @@
 \cite{hassett:classical-and-minimal-models}
 Hasse keel program, birational map from $proj R(K + \Delta)$ to $M_2$, they showed finite generation, we're giving explicit generators and bounds.
 
-The work in this paper also yields bounds for certain rings of Hilbert 
+\todo{Hassett-keel, see reference in davids paper about parametrizing $\alpha$ and considering stacky divisors. Would want to know whether they are a moduli space, though we just give generators and relations. This is one of the few examples other than that of nagata dealing with stacky surfaces.}
+
+The work in this paper also has relations to certain rings of Hilbert 
 modular forms and Siegel modular forms. Recall that Hilbert and Siegel 
 modular forms are both to higher dimensions variables. In the case of 
 Hilbert Modular forms, one considers modular forms on an $m$ fold product 
 of upper half planes, which transform under the action of finite index 
 subgroups of the groups of positive determinant matrices. Similarly, Siegel 
 modular forms are modular forms on the Siegel upper half space which are 
-stable under the action of the symplectic group. While in general these 
-quotients can be quite complicated spaces, in the case that the resulting 
-quotient spaces are isomorphic to $\bp^m$ for some $m$, or some Hirzebruch 
-surface, our main result gives a method for bounding the degree of 
-generators and relations for the corresponding rings of Hilbert modular 
-forms and Siegel modular forms. Namely, as in \cite{vzb:stacky}, one can 
-port these modular form groups from the analytic category to the algebraic 
-category, and then view the ring of modular forms as a certain stacky 
-canonical ring on our underlying algebraic space.
+stable under the action of the symplectic group. 
+
+Voight and Zureick-Brown \cite[Proposition 6.1.5]{vzb:stacky}, which allows one to translate the analytic category of 1-dimensional complex orbifolds to the algebraic category of stacky curves. 
+We expect that  will similarly allow one to generalize yield an eqivalence of categories between an appropriate subcategory of $m$-dimensional orbifolds and a subcategory of $m$-dimensional algebraic spaces.
+In particular, this will allow us to translate rings of Hilbert Modular forms and Siegel modular forms whose underlying space is isomorphic to $\bp^m$ or a Hirzebruch surface to canonical rings on the corresponding algebraic surfaces. Thereby, our techniques would give a bound on generators and relations for Hilbert and Siegel modular forms with certain underlying spaces.
 \todo{include references}
+
+Another closely related topic is the Hassett-Kell program, which aims to describe log canonical models of the form
+\begin{align*}
+	\overline {\mathscr M}_g(\alpha) := \oplus_{d \geq 0}H^0 \left( \overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} + \alpha\delta \rfloor  \right) 
+\end{align*}
+in terms of certain moduli spaces. Fractional divisors on surfaces also naturally appear when considering the canonical ring of surfaces of kodaira dimension 1. A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and their canonical ring are most naturally described in the setting of fractional divisors. \todo{Add references}
 
 \todo{Possibly keep or delete following example}
 Example: the Siegel 2-upper half plane $\bc^2/\Lambda$ Note that $\bc^2/\Lambda$ is algebraic if and only if there exists a hermitial form on $\Lambda$. Then, $Sp_{2g}$ acts on algebraic lattices. The quotient by this gives you the space of abelian varieties. This might be an open subset of projective space, according to David, 65$\%$.
