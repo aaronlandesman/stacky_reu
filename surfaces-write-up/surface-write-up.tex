@@ -992,21 +992,22 @@ polynomial in $f_1, \ldots f_4$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{j =
 1}^n f_j^{r_j}$ to the canonical form where $r_i = - \lfloor d \alpha_i \rfloor$ whenever $i > 4$.
 
-Note that we can view a relation from Equation
-~\ref{eqn:hirz-relations-psi} as an element of $S$ given
-by $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$.  Let $S'\subseteq (\mathbb{R}_{\ge 0})^{n+1}$ be the
-set of $(d, r_1, \ldots, r_{i-1}, r_i + 1, r_{i+1}, \ldots , r_n)$ satisfying $r_i \ge -\alpha_i d$,
+%Note that we can view a relation from Equation
+%~\ref{eqn:hirz-relations-psi} as an element of $S$ given
+%by $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$.  
+Let $S'\subseteq S$ be the
+set of $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$ satisfying $c_i \ge -\alpha_i d$,
 $\bida_i + \sum_{j = 1}^m \bida_j c_j = 0$, and $\bidb_i + \sum_{j=1}^n \bidb_j c_j
-= 0$.  A careful computation deduces that $\gamma \in S'$ is of the form 
+= 0$.  A careful computation deduces that the lattice point corresponding to $y_i \prod_{j=1}^n {y_j}^{c_j}$ is of the form 
 \[
 	E + \sum_{k\in \Te} r_k e_k + \sum_{\substack{h \in \Tp \\ k \in \Tm}} r_{h,k} e_{h,k}
 \] 
 
 \noindent
-where $E$ is $\mathbb{R}_{\ge 0}$
+where $E$ is in degree $\mathbb{R}_{\ge 0}$
 combination of elements in 
 \[
-	\{e_i \mbox{ if } i \in S\} \cup \{e_{i, j}: j \in \Tm \mbox{ if }
+	\{e_j: j\in \{i\} \cap S\} \cup \{e_{i, j}: j \in \Tm \mbox{ if }
 	i	\in \Tp \} \cup \{e_{j, i}: j \in \Tp \mbox{ if } i \in \Tm \}.
 \]
 
