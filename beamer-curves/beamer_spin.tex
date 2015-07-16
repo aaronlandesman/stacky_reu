@@ -77,6 +77,7 @@
 \newcommand\so{{\mathscr O}}
 \newcommand\sg{{\mathscr G}}
 \newcommand \sx{{\mathscr X}}
+\newcommand \sy{{\mathscr Y}}
 
 \newcommand\scm{{\mathscr M}}
 \newcommand\scn{{\mathscr N}}
@@ -190,16 +191,13 @@ July 17, 2015\\
 %\pause
 
 \begin{defn}
-$\Gamma$ is a {\bf Fuchsian} group if it is a discrete subgroup of
-$\PSL_2(\BR)$ acting on the upper half plane $\BH$ by linear fractional transformations.
+{\bf Fuchsian Group}: a discrete subgroup $\Gamma \subseteq \PSL_2(\BR)$
 \end{defn}
 
 
 \begin{itemize}
 \item Examples: $\Gamma = \Gamma_0(N) \subset \SL_2(\BZ)$\\
-\item Suppose $\Gamma \backslash \BH$ has finite area. \\
-
-\item Then $\Gamma \backslash \BH$ can be given the structure of an {\bf{orbifold}} by completing it with cusps.  
+\item If $\Gamma \backslash \BH$ has finite area, then we can compactify $\Gamma \backslash \BH$ with cusps to get an {\bf orbifold} 
 \end{itemize}
 %In presentation describe orbifold as a generalization to reimann surfaces that allow fractional points.
 
@@ -217,7 +215,7 @@ A \textbf{modular form} for $\Gamma$ of weight $k \in \BZ_{\geq 0}$ is a holomor
 \end{align*}
 
 \noindent
-and such that the limit $\lim_{z \to *} f(z)$ exists for all cusps $*$.
+and $\lim_{z \to *} f(z)$ exists for all cusps $*$.
 \end{defn}
 
 
@@ -232,7 +230,7 @@ and such that the limit $\lim_{z \to *} f(z)$ exists for all cusps $*$.
 \begin{frame}{Ring of Modular Forms}
 
 \begin{defn}
-  Let $M_k(\Gamma)$ be the $\BC$-vector space of modular forms for $\Gamma$ of weight $k$.    
+  Let $M_k(\Gamma)$ be the $\BC$-vector space of weight $k$ modular forms on $\Gamma \backslash \mathbb{H}$.
 \end{defn}
 
 \begin{defn}[Ring of Modular Forms]
@@ -252,26 +250,40 @@ and such that the limit $\lim_{z \to *} f(z)$ exists for all cusps $*$.
 
 %% frame
 
+\begin{frame}
+\frametitle{$M(\SL_2(\BZ)) \cong \BC[E_4,E_6]$}
+
+  \begin{center}
+    \includegraphics[width=7cm, height=7cm]{pics/fun-domain-SL2.png}
+  \end{center}
+
+\end{frame}
+
+%% frame
+
+
+
+%% frame
+
 \begin{frame}{Translation to Geometry (Kodaira--Spencer)}
 \begin{block}{Modular Curves}
 \begin{enumerate}
-  \item $Y = [\BH / \Gamma]$
-  \item $X = Y \cup \Delta = [\overline{\BH} / \Gamma]$
+  \item $\sy = [\BH / \Gamma]$
+  \item $\sx = \sy \cup \Delta = [\overline{\BH / \Gamma}]$
 \end{enumerate}
 \end{block}
 
 \begin{block}{Kodaira--Spencer}
 \begin{align*}
-  M_k(\Gamma) &\cong H^0(X, \Omega^1(\Delta)^{\otimes \frac{k}{2}}) \\
+  M_k(\Gamma) &\cong H^0(\sx, \Omega^1(\Delta)^{\otimes \frac{k}{2}}) \\
 	f(z) &\mapsto f(z)\, dz^{\otimes \frac{k}{2}}
 \end{align*}
 \end{block}
 
 \begin{block}{Log Spin Canonical Ring}
-Therefore,
 %but this is something proved in VZB following from K--S
 \begin{align*}
-  M(\Gamma) &\cong R_{X,\Delta} := \bigoplus_{k \geq 0} H^0(X, \Omega^1(\Delta)^{\otimes \frac{k}{2}}) \\
+  M(\Gamma) &\cong R_{\sx,\Delta} := \bigoplus_{k \geq 0} H^0(\sx, \Omega^1(\Delta)^{\otimes \frac{k}{2}}) \\
 \end{align*}
 \end{block}
 
