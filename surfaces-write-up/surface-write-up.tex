@@ -166,6 +166,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
+For any Weil $\bq$-divisor 
+
 
 \todo{Hassett-keel, see reference in davids paper about parametrizing $\alpha$ and considering stacky divisors. Would want to know whether they are a moduli space, though we just give generators and relations. This is one of the few examples other than that of nagata dealing with stacky surfaces.}
 
@@ -888,7 +890,7 @@ all $i$ and $\sum_{i = 1}^n c_i (\bida_i + \bidb_i) = 0$. By O'Dorney, this
 has extremal rays given by
  
 \[
-	e_i = (1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i}
+	e_i := (1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i}
 	\alpha_j (\bida_j + \bidb_j)}{\bida_i + \bidb_i}, -\alpha_{i + 1},
 	\ldots, -\alpha_m).
 \]
@@ -898,17 +900,17 @@ We can intersect $\Delta^{n-1}$ with the hyperplane $H$ given by
 $\sum_{i=1}^n \bida_i X_i = 0$  to get a subspace $S \subseteq \Delta
 ^{n-1}$. The extremal rays of $S$ must lie on the edges of $\Delta
 ^{n - 1}$ \todo{Peter: Do we need to cite/argue this, or is it clear?}.
-Thus, the extremal rays of $S$ are given by the set of $e_i$
-contained in $H$ and by the points $e_{i, j}$ that are the
-intersections of $H$ with edges of the simplex connecting the
-distinct $e_i, e_j$ not contained in $\in H$.
+Thus, the extremal rays of $S$ are given by the $e_i$'s
+contained in $H$ and the intersection points $e_{i, j}$ of $H$
+and the edges $\overline{e_i e_j}$ of the simplex between
+distinct $e_i, e_j$ not contained in $H$.
 \todo{more detail above}
 
 We can calculate elements of $R_D$ whose
 corresponding lattice points lie on these extremal rays:
 
-For $i \in \Te(D)$
-define
+For $i \in \Te(D)$, define \todo{below section needs to be simplified, maybe
+by introducing new variables}
 \[
 	\epsilon_i := (\prod_{k \ne i} f_k^{-\alpha_k \ell_i \gcd(\bida_i, \bidb_i)})
 	(f_i^{\ell_i \frac{\gcd(\bida_i, \bidb_i)}{\bida_i + \bidb_i}\sum_{k \ne i}
@@ -922,6 +924,7 @@ For $i \in \Tp(D)$ and $j \in \Tm(D)$, define
 	(\bida_i \bidb_j - \bida_j \bidb_i) D \right)
 \]
 
+\noindent
 where
 \[
 	s_1 = \bidb_j \sum_{k \ne i,j} \alpha_k \bida_k - \bida_j \sum_{k \ne i, j}
