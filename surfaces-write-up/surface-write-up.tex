@@ -779,7 +779,7 @@ for all $d \in \mathbb{N}$ and $c_i \ge -\alpha_i d$ satisfying $\bida_i + \sum_
 
 We define the $\beta_i$ above so that $\beta_i$ is the expansion of $f_i$ when viewed as a polynomial in $k[f_1,\ldots, f_{m+1}]$. Furthermore, the relations given in Equation ~\eqref{eqn:pm-relation-degree}
 generate all relations, since they allow us to reduce any $\prod_{j =
-1}^n f_j^{r_i}$ to a canonical form as given by Proposition ~\ref{prop:cone-generation}.
+1}^n f_j^{r_i}$ to a canonical form, with $r_i = -\lfloor d \alpha_i\rfloor$ whenever $i  > m + 1$.
 
 For the remainder of the proof, fix $i \in \{1,\ldots, n\}$. 
 To complete the proof, it suffices to bound the degree of generation of the relations of the form $(z_i - \beta_i) \prod_{j=1}^n z_j^{c_j}$, by 
@@ -826,7 +826,7 @@ By ~\ref{lem:bound-ker-chi}, $\ker(\chi)$ is generated in degrees up to $2\sum_{
 
 \section{Canonical Rings on Hirzebruch surfaces}
 Let $D=\sum_{i=1}^n \alpha_i D_i \in \mathbb{Q} \otimes \di(\hirz_
-k).$ such
+m).$ such
 that $D_1, \ldots, D_4$ are distinct divisors with bi-degrees $(1,0)
 , (1,0), (0,1)$, and $(0,1)$ respectively. Let $D_i = V(f_i)$ where
 $f_i \in \sco(\bida_i, \bidb_i)$.  
@@ -845,7 +845,7 @@ Define
 \begin{equation}
 \label{eqn:define-T+(D)}
 	\Tp(D) = \left\{ i \in \{1, \ldots, n\}:  \vphantom{\sum_{k = 1}^n} 
-	\bida_i \sum_{k = 1}^m \alpha_k \bidb_k > \bidb_i \sum_{k = 1}^n \alpha_k \bida_k 
+	\bida_i \sum_{k = 1}^n \alpha_k \bidb_k > \bidb_i \sum_{k = 1}^n \alpha_k \bida_k 
 \right\},
 \end{equation}
 
@@ -940,9 +940,7 @@ and
 	\alpha_k \bidb_k = -b_i (\alpha_i a_i + \alpha_j a_j) + a_i (\alpha_i b_i + \alpha_j b_j).
 \]
 
-Let $E$ be the set of $\epsilon_i$ and $\epsilon_{i,j}$ given 
-above, satisfying the respective conditions.
-The lattice points corresponding to elements of $E$ satisfies the conditions of Proposition ~\ref{prop:cone-generation}, so by applying that proposition, $R_D$ is generated in 
+The set of $e_i$ and $e_{i,j}$ given above satisfies the conditions of Proposition ~\ref{prop:cone-generation}, so by applying that proposition, $R_D$ is generated in 
 degrees less than
 \[
 	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{\substack{
@@ -992,14 +990,14 @@ for all $d \in \mathbb{N}$ and $c_i \ge -\alpha_i d$ satisfying $\bida_i + \sum_
 To find such a $\beta$, we simply write $f_i$ as a 
 polynomial in $f_1, \ldots f_4$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{j =
-1}^n f_j^{r_j}$ to the canonical form (see Proposition ~\ref{prop:cone-generation}).  \todo{Peter: I think the canonical form given in the proposition isn't the one we actually want.}
+1}^n f_j^{r_j}$ to the canonical form where $r_i = - \lfloor d \alpha_i \rfloor$ whenever $i > 4$.
 
-Note that we can view the relations from Equation
-~\ref{eqn:hirz-relations-psi} \todo{is this the right ref?} as an element of $S$ given
+Note that we can view a relation from Equation
+~\ref{eqn:hirz-relations-psi} as an element of $S$ given
 by $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$.  Let $S'\subseteq (\mathbb{R}_{\ge 0})^{n+1}$ be the
-set of $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$ satisfying $c_i \ge -\alpha_i d$,
-$\bida_j + \sum_{i = 1}^m \bida_i c_i = 0$, and $\bidb_j + \sum_{i=1}^n \bidb_i c_i
-= 0$.  A careful computation deduces that $\gamma (d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots, c_n)$ is of the form 
+set of $(d, r_1, \ldots, r_{i-1}, r_i + 1, r_{i+1}, \ldots , r_n)$ satisfying $r_i \ge -\alpha_i d$,
+$\bida_i + \sum_{j = 1}^m \bida_j c_j = 0$, and $\bidb_i + \sum_{j=1}^n \bidb_j c_j
+= 0$.  A careful computation deduces that $\gamma \in S'$ is of the form 
 \[
 	E + \sum_{k\in \Te} r_k e_k + \sum_{\substack{h \in \Tp \\ k \in \Tm}} r_{h,k} e_{h,k}
 \] 
