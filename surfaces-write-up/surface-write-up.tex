@@ -238,22 +238,31 @@ with relations generated in degree at most
 
 \begin{thm}
 \label{lem:hirz-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\hirz_k$.  Let $C_i = V(f_i)$ where $f_i \in \mathscr{P}(a_i, b_i)$; further suppose $f_1$ and $f_2$ are independent linear
+Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\hirz_k$.  
+Let $C_i = V(f_i)$ where $f_i \in \mathscr{P}(a_i, b_i)$; further 
+suppose $f_1$ and $f_2$ are independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
 linear polynomials in $y_0$ and $y_1$.
 Then $R_D$ is generated in degree less than 
 \[
-	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in \Tp(D) \atop
+	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i
+	\in \Tp(D) \atop
 	j \in \Tm(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}
 \]
+
+\noindent
 with relations generated in degree less than 
 \[
 	\max(2 \sigma, \sigma + \tau)
 \]
+
+\noindent
 where
 \[
 	\tau = \sigma
-	+ \max( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i\in S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))).
+	+ \max \left( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i \in
+	S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))
+	\right).
 \]
 \end{thm}
 
@@ -920,13 +929,15 @@ degree less than
 
 Let $x_1, \ldots x_r$ be the generators of $R_D$ in degree less than $\sigma$ (as given by Lemma ~\ref{lem:hirz-generators}), and let $\phi$ be the surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through 
 \[
-	\Sigma =  \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d \alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i. \rangle 
+	\Sigma =  \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d
+	\alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i.
+	\rangle 
 \]
 into
 \[
 \begin{tikzcd}
-\bk[x_1,\ldots, x_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
-x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
+	\bk[x_1,\ldots, x_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
+	x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
 \end{tikzcd}
 \]
 
@@ -938,7 +949,9 @@ Finally, we calculate the degree of generation of $\psi$:
 $\ker(\psi)$ is generated in less than
 \[
 	\tau = \sigma
-	+ \max( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i\in S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))).
+	+ \max \left( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i \in
+	S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))
+	\right).
 \]
 \end{lem}
 
