@@ -435,31 +435,32 @@ By definition of $H^0(\bp^m,dD)$, functions satisfying conditions
 \ssec{Effective Divisors on Projective Space}
 \label{ssec:proj-one-point}
 
-In this subsection, we restrict attention to the case of effective divisors.
+In this subsection, we restrict attention to the case of effective fractional divisors $D \in \bq \otimes \di \bp^m$.
 
 \begin{defn}
 \label{defn:vec-sum}
 For $\vec{v} \in \br^n$, denote $\deg \vec{v} := \sum_{i = 0}
-^n v_i$ (i.e. the taxicab metric).
-Let $\mss_i := \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
-\sum_{i = 0} ^{m + 1} v_i = c_i\}$ be the set of points in
-$\bz_{\geq 0}^{m + 1}$ with sum of components equal to $c_i$.
+^n v_i$.
+Let 
+\begin{align*}
+	\mss_i := \left \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
+\deg \vec v = c_i \right\}.	
+\end{align*}
 \end{defn}
 
 \begin{defn}
 \label{defn:vec-order}
-Let $\vec{v}, \vec{w} \in \br^n$ be two vectors. Let $i$
-be the right-most coordinate such that $v_i$ is nonzero
-and $j$ be the left-most coordinate such that $w_j$ is
+Let $\vec{v}, \vec{w} \in \br^n$. Let $i \in \{1,\ldots, n\}$
+be the biggest index such that $v_i$ is nonzero
+and $j \in \{1,\ldots, n\}$ be the smallest index such that $w_j$ is
 nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
 \end{defn}
 
 
 \begin{thm}
 \label{thm:proj-one-point}
-Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
-$\bp^m$. Let $D = \alpha H$, with $\alpha = \frac{p}{q} \in \bq$
-and $H = V(x_k)$ a hyperplane of $\bp^m$, be a divisor on $\bp^m$.
+Let $\bp^m \cong \proj \bk [x_0, \ldots, x_m].$ Let $D = \alpha H$, with $\alpha = \frac{p}{q} \in \bq$
+and $H := V(x_k)$ a hyperplane of $\bp^m$.
 Let
 \[
 	0 = \frac{c_0}{d_0} <
@@ -467,7 +468,7 @@ Let
 \]
 
 \noindent
-be the best lower approximations of $\alpha$. Then the
+be the best lower approximations of $\alpha$. Then, the
 canonical ring
 \[
 	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)
@@ -476,11 +477,11 @@ canonical ring
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
 {{m + c_i - 1} \choose {c_i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
-x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
-such that $\sum_{j = 0}^{m} v_j = c_i$. Furthermore, it has
-relations of the following two types.
-
-For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
+x^{\vec{v}}}{x_k^{c_i}}$ where $1 \leq i \leq r$, $\vec{v} \in \bz_{\geq 0}^{m + 1}$
+with $\deg \vec v = c_i$. Furthermore, it has
+relations of the following two types:
+\begin{enumerate}
+	\item For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
 \vec{w} \in \mss_j$, there is a relation of the form either
 \begin{flalign*}
 	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
@@ -493,15 +494,16 @@ For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
 	(F_{k_{i, j} + 1}^{\vec{z}})^{g'_{\vec{z}}}
 	&(i < h_{i, j} < h_{i, j} + 1 < j).
 \end{flalign*}
-
-Furthermore, there are the relations for each $(i, j)$ with
+	\item For each $(i, j)$ with
 $j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
 \mss_j$ with $\vec{v} \not\prec \vec{w}$ (see Definition
-~\ref{defn:vec-order}) of the form
+~\ref{defn:vec-order}) there is a relation of the form
 \begin{align*}
 	&L_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
 	- F_i^{\vec{y}} F_j^{\vec{z}} \\
 \end{align*}
+
+\end{enumerate}
 
 \noindent
 where $\vec{y}$ and $\vec{z}$ are the unique
