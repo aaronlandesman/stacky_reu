@@ -290,6 +290,7 @@ $\alpha$ form a finite sequence
 \noindent
 Figure ~\ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\alpha = \frac{14}{5}$.
 \end{rem}
+\todo{possibly define mediant}
 
 \begin{figure}
 \includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
@@ -490,9 +491,9 @@ relations of the following two types:
 	^{g_{\vec{y}}} &(i < h_{i, j} < j) \\
 	\text{or} \\
 	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
-	- \prod_{\substack{\vec{y} \in \mss_{h_{i, j}} \\ \vec{z} \in
-	\mss_{h_{i, j} + 1}}} (F_{h_{i, j}}^{\vec{y}})^{g_{\vec{y}}} \;
-	(F_{k_{i, j} + 1}^{\vec{z}})^{g'_{\vec{z}}}
+	- \prod_{\vec{y} \in \mss_{h_{i, j}}} (F_{h_{i, j}}^{\vec{y}})^{g_{\vec{y}}}
+	\cdot \prod_{ \vec{z} \in
+	\mss_{h_{i, j} + 1}} (F_{k_{i, j} + 1}^{\vec{z}})^{g'_{\vec{z}}}
 	&(i < h_{i, j} < h_{i, j} + 1 < j).
 \end{flalign*}
 	\item For each $(i, j)$ with
@@ -511,11 +512,11 @@ where $\vec{y}$ and $\vec{z}$ are the unique
 vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
 + \vec{z} = \vec{v} + \vec{w}$ and $\vec{y} \prec \vec{z}$.
 \end{thm}
-
+\todo{Write idea of proof}
 \begin{proof}
-We know $\left\{F_{0}^{\vec{v}} : \deg \vec{v} = \left\lfloor
+We will first check that $F^{\vec v}_i$ determine a system of minimal generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} : \deg \vec{v} = \left\lfloor
 \frac{p}{q} \right\rfloor \right\}$ are minimal generators in
-degree $1$. Now let $i > 0$. Suppose $F_i^{\vec{v}}$ were not
+degree $1$. Now let $i > 1$. Suppose $F_i^{\vec{v}}$ were not
 minimal for some $\vec{v} \in \mss_i$. Then $F_i^{\vec{v}} =
 F_{s}^{\vec{y}} F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and
 $\vec{y}, \vec{z} \in \bz_{ \geq 0}^{m + 1}$. In particular, we see
@@ -530,47 +531,43 @@ so $\frac{c_i}{d_i}$ is the mediant of the rational numbers
 $\frac{\deg \vec{y}}{s}, \frac{\deg \vec{z}}{t}$ which both
 do not exceed $\alpha$. One of $\frac{\deg \vec{y}}{s},
 \frac{\deg \vec{z}}{t}$ must be at least $\frac{c_i}{d_i}$
-and $s$ and $t$ are both less than $d_i$, so we have a contradiction 
-of $\frac{c_i}{d_i}$ being a best lower approximation of $\alpha$
+and $s$ and $t$ are both less than $d_i$, which contradicts the assumption that $\frac{c_i}{d_i}$ is a best lower approximation of $\alpha$
 (see Definition ~\ref{defn:lower-approximation}).
 
-Now we show that no further generators are necessary. As done in
-the proof of the $\bp^1$ case by O'Dorney \cite[Theorem 6]
-{dorney:canonical}, each lattice point $(\beta, \gamma) \in
-\bz_{\geq 0}^2$ such that $\gamma \leq \beta \alpha$ is a non-negative
-linear combination of $(d_h, c_h)$ and $(d_{h + 1}, c_{h + 1})$ for
-some $h \in \{0, \ldots, r\}$. Let $(\beta, \gamma) = \ell_1
-(d_h, c_h) + \ell_2 (d_{h + 1}, c_{h + 1})$ for $\ell_1, \ell_2 \in
-\bz_{\geq 0}$. Consequently, any element $\frac{u^{\beta}
+Next we show that $F^{\vec v}_i$ generate all of $R_D$. In the case $m = 1$, O'Dorney \cite[Theorem 6]
+{dorney:canonical} demonstrates that each lattice point $(\beta, \gamma) \in
+\bz_{\geq 0}^2$ with $\gamma \leq \beta \alpha$ lies in the $\bz_{\geq 0}$ span of $(d_h, c_h)$ and $(d_{h + 1}, c_{h + 1})$ for
+some $h \in \{0, \ldots, r\}$. Let $(\beta, \gamma) = \kappa_1
+(d_h, c_h) + \kappa_2 (d_{h + 1}, c_{h + 1})$ for $\kappa_1, \kappa_2 \in
+\bz_{\geq 0}$. Any element $\frac{u^{\beta}
 x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
 \begin{align*}
 	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_h}}
-	{x_k^{c_h}}\right)^{\ell_1} \left(\frac{u^{d_{h + 1}}}
-	{x_k^{c_{h + 1}}}\right)^{\ell_2} x^{\vec{v}}.
+	{x_k^{c_h}}\right)^{\kappa_1} \left(\frac{u^{d_{h + 1}}}
+	{x_k^{c_{h + 1}}}\right)^{\kappa_2} x^{\vec{v}}.
 \end{align*}
 
 \noindent
-We can then break $\vec{v}$ into a sum of $\ell_1$ many vectors
-$\vec{w}_{(j)}$ in $\mss_2$ and $\ell_2$ many vectors $\vec{z}_{(k)}$
-in $\mss_2$ to give a decomposition
-\begin{align*}
+We can then write $\vec{v}  = \sum_{\lambda=1}^{\kappa_1}\vec{w}_{(\lambda)} + \sum_{\eta=1}^{\kappa_2} \vec z_{(\eta)}$ with $w_{(\lambda)} \in \mss_h$ and $z_{(\eta)} \in \mss_{h+1}$ to give a decomposition
+\begin{align}
+\label{eqn:one-point-canonical-form}
 	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}}	= \prod_{\lambda = 1}
-	^{\ell_1} \frac{u^{d_h} x^{\vec{w}_{(\lambda)}}} {x_k^{c_h}}
-	\prod_{\lambda = 1}^{\ell_2} \frac{u^{d_{h + 1}} x^{\vec{z}_{(\lambda)}}}
+	^{\kappa_1} \frac{u^{d_h} x^{\vec{w}_{(\lambda)}}} {x_k^{c_h}}
+	\prod_{\eta = 1}^{\kappa_2} \frac{u^{d_{h + 1}} x^{\vec{z}_{(\eta)}}}
 	{x_k^{c_{h + 1}}}
-\end{align*}
-
+\end{align}
 \noindent
 consisting of products of generators $F_h^{\vec{y}_{(\lambda)}}$
-and $F_{h + 1}^{\vec{z}_{(\lambda)}}$ which are in the form
-prescribed in the theorem statement.
+and $F_{h + 1}^{\vec{z}_{(\eta)}}$ which are in the form
+prescribed in the theorem statement. Since we wrote an arbitrary monomial $\frac{u^{\beta} x^{\vec{v}}}{x_k^\gamma} \in R_D$ as a product of generators, this shows that $F_i^{\vec v}$ minimally generate $R_D$.
 
+Next, we show that the relations given in the statement of the theorem generate all relations. 
 In particular, if $j \geq i + 2$ then $F_i^{\vec{v}} F_j^{\vec{w}}$
-has a decomposition of this form for some $h_{i, j}$. We also have
+has a decomposition of the form ~\eqref{eqn:one-point-canonical-form} where $h$ depends on $i, j$, so we notate $h = h_{i, j} \in \{1, \ldots, r\}$. We also have
 that $i \leq h_{i, j} < j$ since $(d_i + d_j, c_i + c_j)$ is in the
 $\bz_{\geq 0}$-span of $(d_{h_{i, j}}, c_{h_{i, j}})$ and
 $(d_{h_{i, j} + 1}, c_{h_{i, j} + 1})$. Furthermore, we have that
-$h_{i, j} \neq i$ is equivalent to the proof given by O'Dorney
+$h_{i, j} \neq i, j-1$ as can be shown in the same manner as the analogous statement in O'Dorney
 \cite[Theorem 6]{dorney:canonical}. This gives the relations
 $G_{i, j}^{\vec{v}, \vec{w}}$.
 
@@ -590,12 +587,12 @@ of $\vec{y}$ followed by those of $\vec{z}$ give an increasing
 sequence). Then we see that
 \begin{align*}
 	F_i^{\vec{v}} F_j^{\vec{w}} = x^{\vec{v} + \vec{w}}
-																 \left(\frac{u^{d_i}}{x_k^{c_i}}\right)
-																 \left(\frac{u^{d_j}}{x_k^{c_j}}\right)
-															= x^{\vec{y} + \vec{z}}
-																 \left(\frac{u^{d_i}}{x_k^{c_i}}\right)
-																 \left(\frac{u^{d_j}}{x_k^{c_j}}\right)
-															= F_i^{\vec{y}} F_j^{\vec{z}}
+	\left(\frac{u^{d_i}}{x_k^{c_i}}\right)
+	\left(\frac{u^{d_j}}{x_k^{c_j}}\right)
+	= x^{\vec{y} + \vec{z}}
+	\left(\frac{u^{d_i}}{x_k^{c_i}}\right)
+	\left(\frac{u^{d_j}}{x_k^{c_j}}\right)
+	= F_i^{\vec{y}} F_j^{\vec{z}},
 \end{align*}
 
 \noindent 
@@ -606,15 +603,15 @@ to any monomial in the $F_i^{\vec{v}}$'s involving
 indices that differ by at most $1$ to produce the canonical form
 \begin{align*}
 	(F_i^{\vec{v}_{(1)}})^{g_{\vec{v}_{(1)}}} \cdots
-	(F_i^{\vec{v}_{(\ell_1)}})^{g_{\vec{v}_{(\ell_1)}}}
+	(F_i^{\vec{v}_{(\kappa_1)}})^{g_{\vec{v}_{(\kappa_1)}}}
 	(F_{i + 1}^{\vec{w}_{(1)}})^{g_{\vec{w}_{(1)}}} \cdots
-	(F_{i + 1}^{\vec{w}_{(\ell_2)}})^{g_{\vec{w}_{(\ell_2)}}}
+	(F_{i + 1}^{\vec{w}_{(\kappa_2)}})^{g_{\vec{w}_{(\kappa_2)}}}
 \end{align*}
 
 \noindent
 where $\vec{v}_{(1)} \prec \vec{v}_{(2)} \prec \ldots \prec
-\vec{v}_{(\ell_1)} \prec \vec{w}_{(1)} \prec \ldots \prec
-\vec{w}_{(\ell_2)}$. Consequently, the relations of form
+\vec{v}_{(\kappa_1)} \prec \vec{w}_{(1)} \prec \ldots \prec
+\vec{w}_{(\kappa_2)}$. Consequently, the relations of form
 $G_{i, j}^{\vec{v}, \vec{w}}$ and of form $L_{i, j}^{\vec{v},
 \vec{w}}$ generate all the relations among the $F_{i}^{\vec{v},
 \vec{w}}$.
@@ -627,22 +624,22 @@ $D$ is supported at two hypersurfaces with arbitrary rational
 coefficients in the same manner that O'Dorney does for the
 $\bp^1$ case \cite[Section 4]{dorney:canonical}. As will be shown
 in Example ~\ref{eg:hyperplane}, the degrees of generation of the
-canonical ring of a general $\bq$-divisor containing two
+canonical ring of a general $\bq$-divisor supported on two
 hyperplanes cannot be bounded so tightly. The two-point
 $\bp^1$ result leverages particular facts about the structure of
-$\bp^1$.
+$\bp^1$. \todo{Possibly say what facts?}
 \end{rem}
 
 \begin{rem}
 \label{rem:proj-one-point-ind}
 The method of proof for Theorem ~\ref{thm:proj-one-point}
-can be immediately generalized to work inductively. If $D = D' + H$
-for some hyperplane $H$, then we can use the proof above to show
+can be immediately generalized to work inductively. If $D = D' + \alpha H$
+for some hyperplane $\alpha H$, then we can use the proof above to show
 the canonical ring $R_D$ is generated over $R_D'$ by the same
 generators and with the same relations given in Theorem
 ~\ref{thm:proj-one-point}.
 \end{rem}
-
+\todo{Perhaps we should consider restating the above theorem in this form, and then say for simplicity we prove it when the base is 0?}
 \begin{thm}
 \label{thm:proj-effective}
 Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
