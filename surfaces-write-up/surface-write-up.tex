@@ -174,15 +174,15 @@
 The work in this paper also has relations to certain rings of Hilbert 
 modular forms and Siegel modular forms. Recall that Hilbert and Siegel 
 modular forms are both to higher dimensions variables. In the case of 
-Hilbert Modular forms, one considers modular forms on a product of $m$
+Hilbert modular forms, one considers modular forms on a product of $m$
 upper half planes, which transform under the action of finite index 
 subgroups of the groups of positive determinant matrices. Similarly, Siegel 
 modular forms are modular forms on the Siegel upper half space which are 
 stable under the action of the symplectic group. 
 
 By a result by Voight and Zureick-Brown \cite[Proposition 6.1.5]{vzb:stacky}, one can translate the analytic category of 1-dimensional complex orbifolds to the algebraic category of stacky curves. 
-We expect that  will similarly allow one to generalize yield an eqivalence of categories between an appropriate subcategory of $m$-dimensional orbifolds and a subcategory of $m$-dimensional algebraic spaces.
-In particular, this will allow us to translate rings of Hilbert Modular forms and Siegel modular forms whose underlying space is isomorphic to $\bp^m$ or a Hirzebruch surface to canonical rings on the corresponding algebraic surfaces. Thereby, our techniques would give a bound on generators and relations for Hilbert and Siegel modular forms with certain underlying spaces.
+We expect that  will similarly allow one to generalize yield an equivalence of categories between an appropriate subcategory of $m$-dimensional orbifolds and a subcategory of $m$-dimensional algebraic spaces.
+In particular, this will allow us to translate rings of Hilbert modular forms and Siegel modular forms whose underlying space is isomorphic to $\bp^m$ or a Hirzebruch surface to canonical rings on the corresponding algebraic surfaces. Thereby, our techniques would give a bound on generators and relations for Hilbert and Siegel modular forms with certain underlying spaces.
 \todo{include references}
 
 Another closely related topic is the Hassett-Keel program 
@@ -190,7 +190,7 @@ initiated in \todo{ was it actually initiated here? check vzb.} \cite{hassett:cl
 \begin{align*}
 	\overline {\mathscr M}_g(\alpha) := \oplus_{d \geq 0}H^0 \left( \overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} + \alpha\delta \rfloor  \right) 
 \end{align*}
-in terms of certain moduli spaces. Fractional divisors on surfaces also naturally appear when considering the canonical ring of surfaces of kodaira dimension 1. A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and their canonical ring are most naturally described in the setting of fractional divisors. \todo{Add references}
+in terms of certain moduli spaces. Fractional divisors on surfaces also naturally appear when considering the canonical ring of surfaces of Kodaira dimension 1. A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and their canonical ring are most naturally described in the setting of fractional divisors. \todo{Add references}
 
 Furthermore, this work extends the study of canonical rings of
 $\bq$-divisors on curves, as done by O'Dorney \cite{dorney:canonical},
@@ -199,6 +199,65 @@ Voight--Zureick-Brown \cite{vzb:stacky}, and Landesman--Ruhm--Zhang
 surfaces.
 
 \todo{more!}
+
+\ssec{Main Results}
+
+\todo{put main results! use restate, maybe?}
+
+\begin{thm}
+\label{thm:proj-effective-intro}
+Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
+$\bp^m$. Let $D = \sum_{i = 1}^{n} \alpha_i C_i$, with $\alpha_i =
+\frac{p_i}{q_i} \in \bq$ and each $C_i$ a hypersurface of
+$\bp^m$, be an effective divisor on $\bp^m$.
+
+Then the canonical ring
+\[
+	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)
+\]
+
+\noindent
+is generated in degrees up to $\max_{1 \leq i \leq n}{q_i}$ with
+relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
+\end{thm}
+
+\todo{transition}
+
+\begin{thm}
+\label{proj-generators-relations-intro}
+Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $C_i = v(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
+Then $R_D$ is generated in degree at most 
+\[
+	\sum_{i=1}^n \ell_i a_i
+\]
+with relations generated in degree at most
+\[
+	\max \left(2 \sum_{i=1}^n \ell_i a_i, \frac{\max_{1\le i \le n}(\bida_i)}{\deg(D)} + \sum_{i=1}^n \ell_i a_i \right).
+\]
+\end{thm}
+
+\todo{transition}
+
+\begin{thm}
+\label{hirz-generators-relations}
+Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\hirz_k$.  Let $C_i = V(f_i)$ where $f_i \in \mathscr{P}(a_i, b_i)$; further suppose $f_1$ and $f_2$ are independent linear
+polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
+linear polynomials in $y_0$ and $y_1$.
+Then $R_D$ is generated in degree less than 
+\[
+	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{i\in \Tp(D) \atop
+	j \in \Tm(D)} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}
+\]
+with relations generated in degree less than 
+\[
+	\max(2 \sigma, \sigma + \tau)
+\]
+where
+\[
+	\tau = \sigma
+	+ \max( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{i\in S_+ \atop j\in S_-}(\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))).
+\]
+\end{thm}
 
 \section{Background}
 
