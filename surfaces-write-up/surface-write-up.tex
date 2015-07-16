@@ -316,7 +316,6 @@ In this section, we bound the degrees of generators and relations for divisors o
 
 For the remainder of this section, we shall fix $m \geq 1$ and choose an isomorphism $\bp^m \cong \proj V$ so that $x_0,\ldots, x_m$ form a basis for $V$.  We will think of $x_i$ as a rational section of $H^0(\bp^m, \sco_{\bp^m})$ of degree 1.
 
-
 Write
 \begin{align*}
 	D = \sum_{i=0}^{n}\alpha_i D_i.
@@ -329,7 +328,7 @@ We shall further assume that (after reordering) $f_0,\ldots, f_{m}$ form a basis
 The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying
 \begin{align}
 \label{align:pm-span}
-\sum_{i=1}^{n} c_i \cdot \bida_i \cdot f_i = 0 && \text{ and } &&c_i \geq \lfloor \alpha_i d\rfloor	
+\sum_{i=1}^{n} c_i \cdot \bida_i = 0 && \text{ and } &&c_i \geq \lfloor \alpha_i d\rfloor	
 \end{align}
 
 \noindent
@@ -346,14 +345,13 @@ form a basis for $H^0(\bp^m, dD)$ over $k$.
 
 \begin{proof}
 By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
-~\eqref{align:pm-span} lie in $H^0(\bp^m,dD)$. To complete the proof, it suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$ functions satisfying condition ~\eqref{align:pm-basis}. However we know $h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show that those functions satisfying condition ~\eqref{align:pm-basis} are independent. This follows from the assumption that $f_0,\ldots, f_n$ form a basis of degree 1 rational functions, and so degree $\lfloor d \deg D \rfloor $ monomials in $f_0,\ldots, f_n$ form a basis of degree $\lfloor d \deg D \rfloor $ rational functions.
+~\eqref{align:pm-span} lie in $H^0(\bp^m,dD)$. To complete the proof, it suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$ functions satisfying condition ~\eqref{align:pm-basis}. However we know $h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show that those functions satisfying condition ~\eqref{align:pm-basis} are independent. This follows from the assumption that $f_0,\ldots f_n$ form a basis of degree 1 rational functions, and so degree $\lfloor d \deg D \rfloor $ monomials in $f_0,\ldots, f_n$ form a basis of degree $\lfloor d \deg D \rfloor $ rational functions.
 \end{proof}
 
-We first restrict attention to the case $n=1$, so $D = \alpha D_i$.
-
-
-\ssec{Effective Divisors of Hypersurfaces on Projective Space}
+\ssec{Effective Divisors on Projective Space}
 \label{ssec:proj-one-point}
+
+In this subsection, we restrict attention to the case of effective divisors.
 
 \begin{rem}
 \label{rem:proj-veronese}
