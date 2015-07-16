@@ -354,15 +354,7 @@ We first restrict attention to the case $n=1$, so $D = \alpha D_i$.
 
 \ssec{Effective Divisors of Hypersurfaces on Projective Space}
 \label{ssec:proj-one-point}
-
-\begin{rem}
-\label{rem:proj-veronese}
-For any divisor $D = \sum_{i = 0}^{n} \alpha_i C_i$ on $\bp^m$
-with each $C_i$ a hypersurface, we can use the Veronese mappings
-to view $D$ as a divisor on $\bp^{m'}$ for some $m' \in \bz_{\geq 0}$
-with $D = \sum_{i = 0}^{n} \alpha_i H_i$ where $H_i$ are hypersurfaces
-in $\bp^{m'}$.
-\end{rem}
+\todo{intro}
 
 \begin{defn}
 \label{defn:vec-sum}
@@ -559,12 +551,22 @@ $\bp^1$.
 
 \begin{rem}
 \label{rem:proj-one-point-ind}
-Note that the method of proof for Theorem ~\ref{thm:proj-one-point}
+The method of proof for Theorem ~\ref{thm:proj-one-point}
 can be immediately generalized to work inductively. If $D = D' + H$
 for some hyperplane $H$, then we can use the proof above to show
 the canonical ring $R_D$ is generated over $R_D'$ by the same
 generators and with the same relations given in Theorem
 ~\ref{thm:proj-one-point}.
+\end{rem}
+
+\begin{rem}
+\label{rem:proj-veronese}
+For any divisor $D = \sum_{i = 0}^{n} \alpha_i C_i$ on $\bp^m$
+with each $C_i$ a hypersurface and $\alpha_i \in \br$, we can use
+the Veronese mappings to view $D$ as a divisor on $\bp^{m'}$ for some $m' \in \bz_{\geq 0}$
+with $D = \sum_{i = 0}^{n} \alpha_i H_i$ where $H_i$ are 
+hypersurfaces
+in $\bp^{m'}$.
 \end{rem}
 
 \begin{thm}
@@ -585,11 +587,18 @@ relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
 \end{thm}
 
 \begin{proof}
-First, we apply Remark ~\ref{rem:proj-veronese} to reduce the
-problem to letting each $H_i$ be a hyperplane of $\bp^m$.
-Then, the proof follows from applying Remark
-~\ref{rem:proj-one-point-ind} inductively on a one-hyperplane case
-from Theorem ~\ref{thm:proj-one-point}.
+We derive the result from the following inductive argument.
+If $n = 0$, i.e.~ $D = 0$, then we are done.
+Now, we look to inductively add hypersurfaces.
+If $D' = \sum_{i = 0}^{n} \alpha_i C_i$ is some $\bq$-divisor
+on $\bp^m$, then we look at $D = D' + C$ where $C$ is a
+hypersurface of degree $\pdeg$. Now use the Veronese mapping
+to view $D$ as a divisor on $\bp^{m ({m + \pdeg} \choose \pdeg - 1)}$
+and the image of $C$ as the intersection of a Veronese variety
+with a hyperplane. Then we can reduce inductively adding hypersurfaces
+to the case of adding hyperplanes. However, this is accomplished
+by the method used in Theorem ~\ref{thm:proj-one-point} in an
+inductive manner as mentioned in Remark ~\ref{rem:proj-one-point-ind}.
 \end{proof}
 
 
