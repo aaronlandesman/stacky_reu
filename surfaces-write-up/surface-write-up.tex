@@ -46,8 +46,7 @@
 \usepackage{tikz-cd}
 \usetikzlibrary{matrix,arrows,decorations.pathmorphing}
 
-%%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%%%%%%%%%%%%%%%%
 
 \theoremstyle{plain}
   \newtheorem{thm}{Theorem}[section]
@@ -137,7 +136,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Canonical rings of rational divisors on projective space and Hirzebruch surfaces}
+\title{Canonical rings of $\bq$-divisors on projective space and Hirzebruch surfaces}
 
 \author{Aaron Landesman}
 \address[Aaron Landesman]{Department of Mathematics, Harvard University}
@@ -167,6 +166,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
+For any Weil $\bq$-divisor 
+
 
 \todo{Hassett-keel, see reference in davids paper about parametrizing $\alpha$ and considering stacky divisors. Would want to know whether they are a moduli space, though we just give generators and relations. This is one of the few examples other than that of nagata dealing with stacky surfaces.}
 
@@ -189,7 +190,7 @@ initiated in \todo{was it actually initiated here? check vzb.} \cite{hassett:cla
 \begin{align*}
 	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0}H^0 \left( \overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} + \alpha\delta \rfloor  \right) 
 \end{align*}
-in terms of certain moduli spaces. Fractional divisors on surfaces also naturally appear when considering the canonical ring of surfaces of Kodaira dimension 1. A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and their canonical ring are most naturally described in the setting of fractional divisors. \todo{Add references}
+in terms of certain moduli spaces. $\bq$-divisors on surfaces also naturally appear when considering the canonical ring of surfaces of Kodaira dimension 1. A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and their canonical ring are most naturally described in the setting of $\bq$-divisors. \todo{Add references}
 
 Furthermore, this work extends the study of canonical rings of
 $\bq$-divisors on curves, as done by O'Dorney \cite{dorney:canonical},
@@ -306,10 +307,12 @@ the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$.}
 
 \ssec{Notation}
 \begin{convention}
-Notate a fractional (Weil) divisor
+Notate a (Weil) $\bq$-divisor
 \begin{align*}
 	D = \sum_{i=1}^{n}\alpha_i D_i \in \di X \otimes \bq.
 \end{align*}
+
+\noindent
 where $\alpha_i \in \bq$ and $D_i \in \di X$ is an irreducible divisor.
 \end{convention}
 
@@ -435,31 +438,32 @@ By definition of $H^0(\bp^m,dD)$, functions satisfying conditions
 \ssec{Effective Divisors on Projective Space}
 \label{ssec:proj-one-point}
 
-In this subsection, we restrict attention to the case of effective divisors.
+In this subsection, we restrict attention to the case of effective fractional divisors $D \in \bq \otimes \di \bp^m$.
 
 \begin{defn}
 \label{defn:vec-sum}
 For $\vec{v} \in \br^n$, denote $\deg \vec{v} := \sum_{i = 0}
-^n v_i$ (i.e. the taxicab metric).
-Let $\mss_i := \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
-\sum_{i = 0} ^{m + 1} v_i = c_i\}$ be the set of points in
-$\bz_{\geq 0}^{m + 1}$ with sum of components equal to $c_i$.
+^n v_i$.
+Let 
+\begin{align*}
+	\mss_i := \left \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
+\deg \vec v = c_i \right\}.	
+\end{align*}
 \end{defn}
 
 \begin{defn}
 \label{defn:vec-order}
-Let $\vec{v}, \vec{w} \in \br^n$ be two vectors. Let $i$
-be the right-most coordinate such that $v_i$ is nonzero
-and $j$ be the left-most coordinate such that $w_j$ is
+Let $\vec{v}, \vec{w} \in \br^n$. Let $i \in \{1,\ldots, n\}$
+be the biggest index such that $v_i$ is nonzero
+and $j \in \{1,\ldots, n\}$ be the smallest index such that $w_j$ is
 nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
 \end{defn}
 
 
 \begin{thm}
 \label{thm:proj-one-point}
-Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
-$\bp^m$. Let $D = \alpha H$, with $\alpha = \frac{p}{q} \in \bq$
-and $H = V(x_k)$ a hyperplane of $\bp^m$, be a divisor on $\bp^m$.
+Let $\bp^m \cong \proj \bk [x_0, \ldots, x_m].$ Let $D = \alpha H$, with $\alpha = \frac{p}{q} \in \bq$
+and $H := V(x_k)$ a hyperplane of $\bp^m$.
 Let
 \[
 	0 = \frac{c_0}{d_0} <
@@ -467,7 +471,7 @@ Let
 \]
 
 \noindent
-be the best lower approximations of $\alpha$. Then the
+be the best lower approximations of $\alpha$. Then, the
 canonical ring
 \[
 	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)
@@ -476,11 +480,11 @@ canonical ring
 \noindent
 has a minimal presentation consisting of the $\sum_{i = 0}^{r}
 {{m + c_i - 1} \choose {c_i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
-x^{\vec{v}}}{x_k^{c_i}}$ where $\vec{v} \in \bz_{\geq 0}^{m + 1}$
-such that $\sum_{j = 0}^{m} v_j = c_i$. Furthermore, it has
-relations of the following two types.
-
-For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
+x^{\vec{v}}}{x_k^{c_i}}$ where $1 \leq i \leq r$, $\vec{v} \in \bz_{\geq 0}^{m + 1}$
+with $\deg \vec v = c_i$. Furthermore, it has
+relations of the following two types:
+\begin{enumerate}
+	\item For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
 \vec{w} \in \mss_j$, there is a relation of the form either
 \begin{flalign*}
 	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
@@ -493,15 +497,16 @@ For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
 	(F_{k_{i, j} + 1}^{\vec{z}})^{g'_{\vec{z}}}
 	&(i < h_{i, j} < h_{i, j} + 1 < j).
 \end{flalign*}
-
-Furthermore, there are the relations for each $(i, j)$ with
+	\item For each $(i, j)$ with
 $j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
 \mss_j$ with $\vec{v} \not\prec \vec{w}$ (see Definition
-~\ref{defn:vec-order}) of the form
+~\ref{defn:vec-order}) there is a relation of the form
 \begin{align*}
 	&L_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
 	- F_i^{\vec{y}} F_j^{\vec{z}} \\
 \end{align*}
+
+\end{enumerate}
 
 \noindent
 where $\vec{y}$ and $\vec{z}$ are the unique
@@ -887,7 +892,7 @@ all $i$ and $\sum_{i = 1}^n r_i (\bida_i + \bidb_i) = 0$.  This
 has extremal rays given by
  
 \[
-	e_i = (1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i}
+	e_i := (1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i}
 	\alpha_j (\bida_j + \bidb_j)}{\bida_i + \bidb_i}, -\alpha_{i + 1},
 	\ldots, -\alpha_m).
 \]
@@ -897,17 +902,17 @@ We can intersect $\Delta^{n-1}$ with the hyperplane $H$ given by
 $\sum_{i=1}^n \bida_i X_i = 0$  to get a subspace $S \subseteq \Delta
 ^{n-1}$. The extremal rays of $S$ must lie on the edges of $\Delta
 ^{n - 1}$ \todo{Peter: Do we need to cite/argue this, or is it clear?}.
-Thus, the extremal rays of $S$ are given by the set of $e_i$
-contained in $H$ and by the points $e_{i, j}$ that are the
-intersections of $H$ with edges of the simplex connecting the
-distinct $e_i, e_j$ not contained in $\in H$.
+Thus, the extremal rays of $S$ are given by the $e_i$'s
+contained in $H$ and the intersection points $e_{i, j}$ of $H$
+and the edges $\overline{e_i e_j}$ of the simplex between
+distinct $e_i, e_j$ not contained in $H$.
 \todo{more detail above}
 
 We can calculate elements of $R_D$ whose
 corresponding lattice points lie on these extremal rays:
 
-For $i \in \Te(D)$
-define
+For $i \in \Te(D)$, define \todo{below section needs to be simplified, maybe
+by introducing new variables}
 \[
 	\epsilon_i := (\prod_{k \ne i} f_k^{-\alpha_k \ell_i \gcd(\bida_i, \bidb_i)})
 	(f_i^{\ell_i \frac{\gcd(\bida_i, \bidb_i)}{\bida_i + \bidb_i}\sum_{k \ne i}
@@ -921,6 +926,7 @@ For $i \in \Tp(D)$ and $j \in \Tm(D)$, define
 	(\bida_i \bidb_j - \bida_j \bidb_i) D \right)
 \]
 
+\noindent
 where
 \[
 	s_1 = \bidb_j \sum_{k \ne i,j} \alpha_k \bida_k - \bida_j \sum_{k \ne i, j}
