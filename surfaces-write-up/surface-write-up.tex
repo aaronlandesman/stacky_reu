@@ -261,8 +261,8 @@ with relations generated in degree less than
 where
 \[
 	\tau = \sigma
-	+ \max \left( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{
-	\substack{i \in	S_+ \\ j\in S_-}}(\ell_{i,j} (\bida_i \bidb_j
+	+ \max \left( \max_{i\in \Te}(\ell_i \gcd(a_i, b_i)), \max_{
+	\substack{i \in	\Tp \\ j\in \Tm}}(\ell_{i,j} (\bida_i \bidb_j
 	- \bida_j \bidb_i))	\right).
 \]
 \end{thm}
@@ -964,8 +964,8 @@ Finally, we calculate the degree of generation of $\psi$:
 $\ker(\psi)$ is generated in less than
 \[
 	\tau = \sigma
-	+ \max \left( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{\substack{
-	i \in	S_+ \\ j\in S_-}} (\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))
+	+ \max \left( \max_{i\in \Te}(\ell_i \gcd(a_i, b_i)), \max_{\substack{
+	i \in	\Tp \\ j\in \Tm}} (\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))
 	\right).
 \]
 \end{lem}
@@ -1000,8 +1000,8 @@ $\bida_j + \sum_{i = 1}^m \bida_i c_i = 0$, and $\bidb_j + \sum_{i=1}^n \bidb_i 
 where $E$ is $\mathbb{R}_{\ge 0}$
 combination of elements in 
 \[
-	\{e_i \mbox{ if } i \in S\} \cup \{e_{i, j}: j \in S_- \mbox{ if }
-	i	\in S_+ \} \cup \{e_{j, i}: j \in S_+ \mbox{ if } i \in S_- \}.
+	\{e_i \mbox{ if } i \in S\} \cup \{e_{i, j}: j \in \Tm \mbox{ if }
+	i	\in \Tp \} \cup \{e_{j, i}: j \in \Tp \mbox{ if } i \in \Tm \}.
 \]
 
 
@@ -1042,19 +1042,19 @@ which divides $(z_i - \beta_i) \prod_{i = 1}^n y_i^{c_i}$.
 We can bound $\deg(F)$ by
 \[
 	\deg(F) \le \begin{cases}
-	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in S_= \\
-	\max_{j \in S_-} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
-	&\mbox{ if } i \in S_+ \\
-	\max_{j \in S_+} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
-	&\mbox{ if } i \in S_- \end{cases}.
+	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in \Te \\
+	\max_{j \in \Tm} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
+	&\mbox{ if } i \in \Tp \\
+	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
+	&\mbox{ if } i \in \Tm \end{cases}.
 \]
 
 \noindent
 Therefore, $\ker(\psi)$ is generated in degree at most
 \[
 	\tau = \sigma
-	+ \max \left(\max_{i\in S_=} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
-	\; \max_{\substack{i \in S_+ \\ j \in S_-}} \bigl(\ell_{i, j}
+	+ \max \left(\max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
+	\; \max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
 	(\bida_i \bidb_j - \bida_j
 	\bidb_i) \bigr) \right).
 \]
@@ -1084,8 +1084,8 @@ with relations generated in degree less than
 where
 \[
 	\tau = \sigma
-	+ \max \left( \max_{i\in S_=} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
-	\max_{\substack{i \in S_+ \\ j \in S_-}} \bigl(\ell_{i, j}
+	+ \max \left( \max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
+	\max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
 	(\bida_i \bidb_j - \bida_j \bidb_i) \bigr) \right).
 \]
 \end{thm}
