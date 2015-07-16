@@ -294,7 +294,7 @@ $d$  & $\dim M_{2k}(\SL_2(\BBZ))$  \\
 \begin{frame}
 
 \begin{block}{Goal}
-Given a general congruence subgroup $\Gamma \subseteq \SL_2(\BBZ)$ or more generally a Fuchsian group with finite quotient.
+Suppose $\Gamma$ is a congruent subgroup of $\SL_2(\BBZ)$ or more generally a Fuchsian group with finite quotient.  Then can we bound the degrees of generators and relations of $\overline{\Gamma \backslash \mathbb{H}}$?
 \end{block}
 
 \end{frame}
@@ -304,8 +304,8 @@ Given a general congruence subgroup $\Gamma \subseteq \SL_2(\BBZ)$ or more gener
 \begin{frame}{Translation to Geometry (Kodaira--Spencer)}
 \begin{block}{Modular Curves}
 \begin{enumerate}
-  \item $\sy = [\BH / \Gamma]$
-  \item $\sx = \sy \cup \Delta = [\overline{\BH / \Gamma}]$
+  \item $\sy = \Gamma \backslash \BH$
+  \item $\sx = \sy \cup \Delta = \overline{\Gamma \backslash \BH}$
 \end{enumerate}
 \end{block}
 
@@ -330,17 +330,17 @@ Given a general congruence subgroup $\Gamma \subseteq \SL_2(\BBZ)$ or more gener
 
 \begin{frame}{Stacky Curves}
 \begin{defn}
-A \textbf{stacky curve} $\sx$ over an algebraically closed field $\Bk$
-is the data of
+A \textbf{stacky curve} $\sx$ over $\Bk$
+is informally
 	\begin{itemize}
-		\item smooth proper connected scheme $X$ of dimension $1$ \\ 
-		\item together with a finite number of closed points of $X$, $P_
-			1, \ldots, P_r$, called {\bf stacky points}, with {\bf stabilizer 
-			orders} $e_1, \ldots, e_r \in \BZ_{\geq 2}.$ \\ 
-		\item The scheme $X$ associated to a stacky curve $\sx$ is 
-			called the {\bf coarse space} of $\sx$.
+		\item Informally: a curve where some points have ``fractional order''
+		\item Formally: Deligne-Mumford Stack satisfying...
 	\end{itemize}
 \end{defn}
+
+\begin{itemize}
+\item Let $X$ be the {\bf coarse space} of $\sx$
+\end{itemize}
 
 \begin{fact}
 \[
@@ -364,9 +364,9 @@ is the data of
 		%\filldraw[draw=black,fill=black] (0,0) node [below=2pt] {$\mu_{a_1}$} circle (1.5pt);
     %\filldraw[draw=black,fill=black] (1.5,0) node [below=2pt] {$\mu_{a_1}$} circle (1.5pt);
 		
-		\filldraw[draw=black,fill=black] (-1.5,0) node [below=2pt]{$\frac{n_1}{a_1}P_1$} circle (1.5pt);
-		\filldraw[draw=black,fill=black] (0,0) node [below=2pt] {$\frac{n_2}{a_2}P_2$} circle (1.5pt);
-		\filldraw[draw=black,fill=black] (1.5,0) node [below=2pt] {$\frac{n_3}{a_3}P_3$} circle (1.5pt);
+		\filldraw[draw=black,fill=black] (-1.5,0) node [below=2pt]{$\frac{1}{a_1}P_1$} circle (1.5pt);
+		\filldraw[draw=black,fill=black] (0,0) node [below=2pt] {$\frac{1}{a_2}P_2$} circle (1.5pt);
+		\filldraw[draw=black,fill=black] (1.5,0) node [below=2pt] {$\frac{1}{a_3}P_3$} circle (1.5pt);
 		
     % \filldraw[draw=white,fill=white] (0,-1) node {$\mu_3$} circle
     % (8pt); don't do this
@@ -381,13 +381,13 @@ is the data of
   \end{itemize}
 \end{rem}
 
-\begin{block}{General Description of ``Stacky'' Divisors}
-\[
-	\di \sx = \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
-	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
-	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
-\]
-\end{block}
+%\begin{block}{General Description of ``Stacky'' Divisors}
+%\[
+%	\di \sx = \left(\bigoplus_{P\notin \{P_1, \ldots, P_r\}} \langle 
+%	P \rangle \right) \oplus \left(\bigoplus_{i = 1}^r \left \langle 
+%	\frac{1}{e_i}P_i \right \rangle \right) \subseteq \BQ \otimes \di X.
+%\]
+%\end{block}
 \end{frame}
 
 %% frame
@@ -395,25 +395,30 @@ is the data of
 \begin{frame}{Log Spin Canonical Divisors}
 We can equip stacky curves with an effective divisor $\Delta$.
 
-\begin{defn}
-Divisor $\Delta$ is a \textbf{log divisor} if it is a sum of distinct
-points each with trivial stabilizer. Let $\delta := \deg \Delta$
-denote its degree.
-\end{defn}
+%\begin{defn}
+%Divisor $\Delta$ is a \textbf{log divisor} if it is a sum of distinct
+%points each with trivial stabilizer. Let $\delta := \deg \Delta$
+%denote its degree.
+%\end{defn}
+
+
+%\begin{defn}
+%If $\sx$ has coarse space $X$ of genus $g$, then we say $\sx$ has
+%\textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
+%\end{defn}
 
 
 \begin{defn}
-If $\sx$ has coarse space $X$ of genus $g$, then we say $\sx$ has
-\textbf{signature} $\sigma = (g; e_1, \ldots, e_r; \delta)$.
-\end{defn}
-
-
-\begin{defn}
-$\halfcan \in \di
+Suppose $\halfcan \in \di
 \sx$ satisfies $2 \halfcan \sim K_X + \Delta + \sum_{i = 1}^{r}
-\frac{e_i - 1}{e_i} P_i$. Such a divisor $\halfcan$ is called a
+\frac{e_i - 1}{e_i} P_i$.  We call $\halfcan$ a
 \textbf{log spin canonical divisor} on $(\sx, \Delta)$.
 \end{defn}
+
+\begin{block}{Fact}
+Notice that $\halfcan \sim \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i
++ \sum_{j = 1}^{\ell} Q_j$.
+\end{block}
 
 \end{frame}
 
@@ -421,28 +426,32 @@ $\halfcan \in \di
 
 \begin{frame}{Log Spin Canonical Rings}
 
-\begin{defn}
-If divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
-with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
-\rfloor$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
-\lfloor \alpha_i \rfloor P_i$.
-\end{defn}
+%\begin{defn}
+%If divisor $D \in \di \sx$ and $D = \sum_{i = 1}^{n} \alpha_i P_i$
+%with $\alpha_i \in \BQ$, the floor of a divisor $\lfloor D
+%\rfloor$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
+%\lfloor \alpha_i \rfloor P_i$.
+%\end{defn}
 
-\begin{defn}
-Let $\sx$ be a stacky curve with coarse space $X$.
-If $D \in \di \sx$ is a divisor, then we define
+%\begin{defn}
+%Let $\sx$ be a stacky curve with coarse space $X$.
+%If $D \in \di \sx$ is a divisor, then we define
 
-\[
-	H^0(\sx, D) := H^0(X, \lfloor D \rfloor).
-\]
-\end{defn}
+%\[
+%	H^0(\sx, D) := H^0(X, \lfloor D \rfloor).
+%\]
+%\end{defn}
 
 \begin{defn}
 The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \[
-	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(\sx, k \halfcan).
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor).
 \]
 \end{defn}
+
+\begin{itemize}
+\item Not ad hoc
+\end{itemize}
 
 \end{frame}
 
@@ -450,35 +459,27 @@ The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
 \section{Main Result}
 
 \begin{frame}{Main Problem}
-\begin{block}{Setup}
-Let $\sx$ be a stacky curve with
-signature $\sigma = (g; e_1, \ldots, e_r; \delta)$.
-Log divisor $\Delta \in \di X$ is a sum of distinct points.
-Recall $2 \halfcan \sim K_X + \Delta + \sum_{i = 1}^{r}
-\frac{e_i - 1}{e_i} P_i$.
-\end{block}
-
-\begin{block}{Fact}
-Notice that $\halfcan \sim \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i
-+ \sum_{j = 1}^{\ell} Q_j$.
-\end{block}
+%\begin{block}{Setup}
+%Let $\sx$ be a stacky curve of genus 0 with stacky points $P_1, \ldots P_r$
+%Recall $2 \halfcan \sim K_X + \Delta + \sum_{i = 1}^{r}
+%\frac{e_i - 1}{e_i} P_i$.
+%\end{block}
 
 \begin{block}{Goal}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve.
+%Let $(\sx, \Delta, \halfcan)$ be a log spin curve.
 Bound the degrees of generators and relations of log spin
 canonical rings
 
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(\sx, k \halfcan).
+	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor).
 \]
 \end{block}
 \end{frame}
 
 \begin{frame}{Example of Log Spin Canonical Ring}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve with signature $\sigma =
-(0; 3, 7, 7; 0)$ and $\halfcan \sim -\infty + \frac{1}{3} P_1 +
-\frac{3}{7} P_2 + \frac{3}{7} P_3,$ where $P_1, P_2,$ and $P_3$ are
-distinct points.
+Let $(\sx, \Delta, \halfcan)$ be genus 0 such that $\halfcan \sim -\infty + \frac{1}{3} P_1 +
+\frac{3}{7} P_2 + \frac{3}{7} P_3$. 
+%where $P_1, P_2,$ and $P_3$ are distinct points.
 
 \vspace*{-0.5cm}
 \begin{align*}
@@ -491,7 +492,7 @@ distinct points.
 
 \begin{figure}
 \includegraphics{pics/spin-377-pic-pics.pdf} \\
-\caption{Generators in the $(\deg z, -ord_{P_i}(z))$ lattice}
+\caption{Generators in the $(\deg z, -ord_{P_2}(z))$ lattice}
 \end{figure}
 
 \end{frame}
@@ -509,9 +510,12 @@ the least common multiples of the $e_i$'s when $g = 0$.
 
 \begin{block}{Theorem (Voight and Zureick-Brown)}
 Bounds generator degrees by $6
-\cdot \max(e_1, \ldots, e_r)$ and relation degrees by $12 \cdot \max
-(e_1, \ldots, e_ r)$ when $\halfcan$ is effective.
+\cdot \max(3, e_1, \ldots, e_r)$ and relation degrees by $12 \cdot \max
+(3, e_1, \ldots, e_ r)$ when $\halfcan$ is effective.
 \end{block}
+\begin{itemize}
+\item The result of Voight and Zureick-Brown bounds generators and relations by 42 and 84 in the previous example.
+\end{itemize}
 
 \end{frame}
 
@@ -522,39 +526,40 @@ Our main result:
 
 \begin{thm}
 \label{thm:main}
-Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
-field $k$, so that $\sx$ has signature $\sigma := (g; e_1, \ldots,
-e_r; \delta)$. Let $e := \max(5, e_1, \ldots, e_r)$.
+Suppose $(\sx, \Delta, \halfcan)$ is genus zero with stacky points $P_1, \ldots P_r$.  Let $e := \max(5, e_1, \ldots, e_r)$.
 
 The log spin canonical ring 
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(\sx, k \halfcan)
+	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor)
 \]
 
 \noindent
-is generated as a $\Bk$-algebra by elements of degree at most $e$ with
-relations generated in degrees up to $2e$ with a finite list of exceptional
-signatures $\sigma$.
+is ``almost always'' generated in degrees at most $e$ with
+relations generated in degrees up to $2e$.
 \end{thm}
 \end{frame}
 
 %% frame
 
-\begin{frame}{Main Idea}
-\begin{block}{Setup}
-Let $(\sx', \Delta, \halfcan')$ be a log spin curve over a perfect
-field $k$, so that $\sx$ has signature $\sigma := (g; e_1, \ldots,
-e_r; \delta)$. Recall $\halfcan \sim \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i
-+ \sum_{j = 1}^{\ell} Q_\ell$.
-\end{block}
+\begin{frame}{Main Idea of Proof}
+%\begin{block}{Setup}
+%Let $(\sx', \Delta, \halfcan')$ be a log spin curve over a perfect
+%field $k$, so that $\sx$ has signature $\sigma := (g; e_1, \ldots,
+%e_r; \delta)$. Recall $\halfcan \sim \sum_{i = 1}^{r} \frac{e_i - 1}{2e_i} P_i
+%+ \sum_{j = 1}^{\ell} Q_\ell$.
+%\end{block}
 
 \begin{block}{Inductive Step}
-Given generators and relations of $(\sx', \Delta, \halfcan)$, we can deduce generators and relations in $(\sx', \Delta, \halfcan)$, in the following situations:
+Given generators and relations of $(\sx', \Delta, \halfcan)$, we can deduce generators and relations in $(\sx, \Delta, \halfcan)$, in the following situations:
 \begin{itemize}
-\item $(\sx, \Delta, \halfcan)$ looks the same as $(\sx', \Delta, \halfcan)$, except with one additional stacky point
-\item $(\sx, \Delta, \halfcan)$ looks the same as $(\sx', \Delta, \halfcan)$, except with the stabilizer order of a stacky point incremented by 2.
+\item $(\sx, \Delta, \halfcan)$ looks like $(\sx', \Delta, \halfcan)$, except with one added stacky point
+\item $(\sx, \Delta, \halfcan)$ looks like $(\sx', \Delta, \halfcan)$, except with one stabilizer order $e_i$ incremented by 2
 \end{itemize}
 \end{block}
+
+\begin{rem}
+These inductive methods are explicit!
+\end{rem}
 
 %\begin{itemize}
 %\item Induction on adding points \\
@@ -564,32 +569,35 @@ Given generators and relations of $(\sx', \Delta, \halfcan)$, we can deduce gene
 \end{frame}
 
 \begin{frame}{Applications}
-Let $\Gamma$ be a Fuchsian group and $\sx$ the stacky curve
-associated to $\Gamma \backslash \BH$ with signature $\sigma
-:= (g; e_1, \ldots, e_r; \delta)$. Let $e_\ell := \max(\ell, e_1, \ldots, e_r)$.
+%Let $\Gamma$ be a Fuchsian group and $\sx$ the stacky curve
+%associated to $\Gamma \backslash \BH$ with signature $\sigma
+%:= (g; e_1, \ldots, e_r; \delta)$. Let $e_\ell := \max(\ell, e_1, \ldots, e_r)$.
+%
+%The ring of modular forms $M(\Gamma)$ is generated as a $\BC$-algebra
+%
+%\begin{block}{Main Corollary}
+%\begin{itemize}
+%\item if $M_k(\Gamma) = 0$ for all odd $k$:
+%by elements of
+%degree at most $6 e_3$ with relations
+%generated in degrees at most $12 e_3$ \\
+%\end{itemize}
 
-The ring of modular forms $M(\Gamma)$ is generated as a $\BC$-algebra
-
-\begin{block}{Main Corollary}
-\begin{itemize}
-\item if $M_k(\Gamma) = 0$ for all odd $k$:
-by elements of
-degree at most $6 e_3$ with relations
-generated in degrees at most $12 e_3$ \\
-\end{itemize}
-
-\begin{itemize}
-\item otherwise: by elements of degree at most $e_5$ with
-relations generated in degrees at most $2 e_5$ with a
-finite list of exceptional signatures $\sigma$.
-\end{itemize}
-\end{block}
+%\begin{itemize}
+%\item otherwise: by elements of degree at most $e_5$ with
+%relations generated in degrees at most $2 e_5$ with a
+%finite list of exceptional signatures $\sigma$.
+%\end{itemize}
+%\end{block}
 
 \begin{block}{Corollary}
-When $\Gamma \subseteq \SL_2(\BZ)$ is a congruence subgroup such
-that $\Gamma$ has a nonzero odd weight modular form, then $M(\Gamma)$ is
+Suppose $\Gamma \subseteq \SL_2(\BZ)$ is a congruence subgroup
+\begin{itemize}
+\item $M(\Gamma)$ is generated in degrees up to 6 with relations generated in degrees at most 12. 
+\item If $\Gamma$ has a nonzero odd weight modular form, then $M(\Gamma)$ is
 generated in degrees up to $5$ with relations generated in degrees
 at most $10$.
+\end{itemize}
 \end{block}
 \end{frame}
 
@@ -616,9 +624,10 @@ at most $10$.
 	\item Ken Ono
 	\item Others who offered helpful insight
 	\begin{itemize}
-		\item John Voight
 		\item Brian Conrad
-		\item Jorge Sentieiro Neves
+		\item Jorge Neves
+		\item John Voight
+		\item Shou-Wu Zhang
 		%\item Ravi Vakil
 		%\item Nadim Rustom
 	\end{itemize}
