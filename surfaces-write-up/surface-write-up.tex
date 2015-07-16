@@ -46,8 +46,7 @@
 \usepackage{tikz-cd}
 \usetikzlibrary{matrix,arrows,decorations.pathmorphing}
 
-%%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%%%%%%%%%%%%%%%%
 
 \theoremstyle{plain}
   \newtheorem{thm}{Theorem}[section]
@@ -137,7 +136,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Canonical rings of rational divisors on projective space and Hirzebruch surfaces}
+\title{Canonical rings of $\bq$-divisors on projective space and Hirzebruch surfaces}
 
 \author{Aaron Landesman}
 \address[Aaron Landesman]{Department of Mathematics, Harvard University}
@@ -189,7 +188,7 @@ initiated in \todo{was it actually initiated here? check vzb.} \cite{hassett:cla
 \begin{align*}
 	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0}H^0 \left( \overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} + \alpha\delta \rfloor  \right) 
 \end{align*}
-in terms of certain moduli spaces. Fractional divisors on surfaces also naturally appear when considering the canonical ring of surfaces of Kodaira dimension 1. A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and their canonical ring are most naturally described in the setting of fractional divisors. \todo{Add references}
+in terms of certain moduli spaces. $\bq$-divisors on surfaces also naturally appear when considering the canonical ring of surfaces of Kodaira dimension 1. A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and their canonical ring are most naturally described in the setting of $\bq$-divisors. \todo{Add references}
 
 Furthermore, this work extends the study of canonical rings of
 $\bq$-divisors on curves, as done by O'Dorney \cite{dorney:canonical},
@@ -240,7 +239,7 @@ with relations generated in degree at most
 \begin{thm}
 \label{lem:hirz-generators-relations}
 Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\hirz_k$.  
-Let $C_i = V(f_i)$ where $f_i \in \mathscr{P}(a_i, b_i)$; further 
+Let $C_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further 
 suppose $f_1$ and $f_2$ are independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
 linear polynomials in $y_0$ and $y_1$.
@@ -261,8 +260,8 @@ with relations generated in degree less than
 where
 \[
 	\tau = \sigma
-	+ \max \left( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{
-	\substack{i \in	S_+ \\ j\in S_-}}(\ell_{i,j} (\bida_i \bidb_j
+	+ \max \left( \max_{i\in \Te}(\ell_i \gcd(a_i, b_i)), \max_{
+	\substack{i \in	\Tp \\ j\in \Tm}}(\ell_{i,j} (\bida_i \bidb_j
 	- \bida_j \bidb_i))	\right).
 \]
 \end{thm}
@@ -271,8 +270,8 @@ where
 
 \begin{defn}
 \label{defn:lower-approximation}
-If $\alpha \in \br$, then a rational number $\frac{c}{k} \leq \alpha
-$ (written in reduced form with $c \in \bz, k \in \bn$) is a
+If $\alpha \in \br$, then a rational number $\frac{c}{k} \leq \alpha$
+(written in reduced form with $c \in \bz, k \in \bn$) is a
 \textbf{best lower approximation} to $\alpha$ if there does not
 exist $\frac{c'}{k'}\in \mathbf{Q}$ such that $0 < k'< k$ and
 $\frac{c}{k} \le \frac{c'}{k'} \le \alpha$. 
@@ -306,10 +305,12 @@ the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$.}
 
 \ssec{Notation}
 \begin{convention}
-Notate a fractional (Weil) divisor
+Notate a (Weil) $\bq$-divisor
 \begin{align*}
 	D = \sum_{i=1}^{n}\alpha_i D_i \in \di X \otimes \bq.
 \end{align*}
+
+\noindent
 where $\alpha_i \in \bq$ and $D_i \in \di X$ is an irreducible divisor.
 \end{convention}
 
@@ -826,7 +827,7 @@ Let $D=\sum_{i=1}^n \alpha_i D_i \in \mathbb{Q} \otimes \di(\hirz_
 k).$ such
 that $D_1, \ldots, D_4$ are distinct divisors with bi-degrees $(1,0)
 , (1,0), (0,1)$, and $(0,1)$ respectively. Let $D_i = V(f_i)$ where
-$f_i \in \mathscr{O}(\bida_i, \bidb_i)$.  Suppose $f_1$ and $f_2$ are independent linear
+$f_i \in \sco(\bida_i, \bidb_i)$.  Suppose $f_1$ and $f_2$ are independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
 linear polynomials in $y_0$ and $y_1$.
 
@@ -966,8 +967,8 @@ Finally, we calculate the degree of generation of $\psi$:
 $\ker(\psi)$ is generated in less than
 \[
 	\tau = \sigma
-	+ \max \left( \max_{i\in S_=}(\ell_i \gcd(a_i, b_i)), \max_{\substack{
-	i \in	S_+ \\ j\in S_-}} (\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))
+	+ \max \left( \max_{i\in \Te}(\ell_i \gcd(a_i, b_i)), \max_{\substack{
+	i \in	\Tp \\ j\in \Tm}} (\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))
 	\right).
 \]
 \end{lem}
@@ -1002,8 +1003,8 @@ $\bida_j + \sum_{i = 1}^m \bida_i c_i = 0$, and $\bidb_j + \sum_{i=1}^n \bidb_i 
 where $E$ is $\mathbb{R}_{\ge 0}$
 combination of elements in 
 \[
-	\{e_i \mbox{ if } i \in S\} \cup \{e_{i, j}: j \in S_- \mbox{ if }
-	i	\in S_+ \} \cup \{e_{j, i}: j \in S_+ \mbox{ if } i \in S_- \}.
+	\{e_i \mbox{ if } i \in S\} \cup \{e_{i, j}: j \in \Tm \mbox{ if }
+	i	\in \Tp \} \cup \{e_{j, i}: j \in \Tp \mbox{ if } i \in \Tm \}.
 \]
 
 
@@ -1044,19 +1045,19 @@ which divides $(z_i - \beta_i) \prod_{i = 1}^n y_i^{c_i}$.
 We can bound $\deg(F)$ by
 \[
 	\deg(F) \le \begin{cases}
-	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in S_= \\
-	\max_{j \in S_-} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
-	&\mbox{ if } i \in S_+ \\
-	\max_{j \in S_+} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
-	&\mbox{ if } i \in S_- \end{cases}.
+	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in \Te \\
+	\max_{j \in \Tm} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
+	&\mbox{ if } i \in \Tp \\
+	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
+	&\mbox{ if } i \in \Tm \end{cases}.
 \]
 
 \noindent
 Therefore, $\ker(\psi)$ is generated in degree at most
 \[
 	\tau = \sigma
-	+ \max \left(\max_{i\in S_=} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
-	\; \max_{\substack{i \in S_+ \\ j \in S_-}} \bigl(\ell_{i, j}
+	+ \max \left(\max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
+	\; \max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
 	(\bida_i \bidb_j - \bida_j
 	\bidb_i) \bigr) \right).
 \]
@@ -1066,7 +1067,7 @@ Combining these results, we get the following theorem:
 
 \begin{thm}
 \label{thm:hirz-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i$ for curves $D_i$ on $\hirz_k$.  Let $D_i = V(f_i)$ where $f_i \in \mathscr{P}(a_i, b_i)$; further suppose $f_1$ and $f_2$ are independent linear
+Let $D = \sum_{i=1}^n \alpha_i D_i$ for curves $D_i$ on $\hirz_k$.  Let $D_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further suppose $f_1$ and $f_2$ are independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
 linear polynomials in $y_0$ and $y_1$.
 Then $R_D$ is generated in degree less than 
@@ -1086,8 +1087,8 @@ with relations generated in degree less than
 where
 \[
 	\tau = \sigma
-	+ \max \left( \max_{i\in S_=} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
-	\max_{\substack{i \in S_+ \\ j \in S_-}} \bigl(\ell_{i, j}
+	+ \max \left( \max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
+	\max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
 	(\bida_i \bidb_j - \bida_j \bidb_i) \bigr) \right).
 \]
 \end{thm}
