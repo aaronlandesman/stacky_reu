@@ -867,10 +867,9 @@ for all $i$, $\sum_{i=1}^n c_i \bida_i = 0$, and $\sum_{i = 1}^n c_i \bidb_i =
 finding the extremal rays of $S$ by Proposition ~\ref{prop:cone-generation}.
 
 To do this, we extend the method of O'Dorney \cite[Theorem 8]{dorney:canonical}. 
-We first
-view the cone inside of $\mathbb{R}^{n+1}$ given by elements of the
+We first view the cone inside of $\mathbb{R}^{n+1}$ given by elements of the
 form $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge -d \alpha_i$ for
-all $i$ and $\sum_{i = 1}^n c_i (\bida_i + \bidb_i) =0$. By O'Dorney, this
+all $i$ and $\sum_{i = 1}^n c_i (\bida_i + \bidb_i) = 0$. By O'Dorney, this
 has extremal rays given by
  
 \[
@@ -879,11 +878,14 @@ has extremal rays given by
 \]
 
 Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_n$.
-We can intersect $\Delta^{n-1}$ with the hyperplane $H$ given by 
-$\sum_{i=1}^n \bida_i X_i = 0$
- to get a subspace $S \subseteq \Delta^{n-1}$. The extremal rays of $S$ must lie on the edges of $\Delta$ \todo{Peter: Do we need to cite/argue this, or is it clear?} and are thus given
-by the set of $e_i$ contained in $H$ together with the points $e_{i, j}$ given by intersections of $H$ with edges of the simplex
-connecting $e_i, e_j \not \in H$.
+We can intersect $\Delta^{n-1}$ with the hyperplane $H$ given by
+$\sum_{i=1}^n \bida_i X_i = 0$  to get a subspace $S \subseteq \Delta
+^{n-1}$. The extremal rays of $S$ must lie on the edges of $\Delta
+^{n - 1}$ \todo{Peter: Do we need to cite/argue this, or is it clear?}.
+Thus, the extremal rays of $S$ are given by the set of $e_i$
+contained in $H$ and by the points $e_{i, j}$ that are the
+intersections of $H$ with edges of the simplex connecting the
+distinct $e_i, e_j$ not contained in $\in H$.
 \todo{more detail above}
 
 We can calculate elements of $R_D$ whose
