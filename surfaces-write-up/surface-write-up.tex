@@ -1027,21 +1027,25 @@ generate all relations, since they allow us to reduce any $\prod_{j =
 Let $\Sigma'\subseteq \Sigma$ be the \todo{change all $S$ to sigma's}
 set of $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$ satisfying $c_i \ge -\alpha_i d$,
 $\bida_i + \sum_{j = 1}^m \bida_j c_j = 0$, and $\bidb_i + \sum_{j=1}^n \bidb_j c_j
-= 0$.  Let $\sigma\in \Sigma'$ correspond to the monomial $y_i \prod_{j=1}^n {y_j}^{c_j}$.  Then we can write $\sigma$ as a sum of $r_j e_j$'s for $j\in \Te$ and $r_{j,k}$ for $r\in \Tp, k\in \Tm$.  Let $V$ be the set of $e_i$ $e_{i,j}$ and $e_{j,i}$ as $j$ ranges that exist (i.e. $e_i$ if the hyperplane from lemma \ref{lem:hirz-generators} intersects $e_i$, and the $e_{i,j}$'s or $e_{j,i}$'s if the hyperplane intersects the corresponding edge of the simplex).  A careful computation deduces that if $e_i$ exists
+= 0$.  
+Let $\sigma\in \Sigma'$ correspond to the monomial $y_i \prod_{j=1}^n {y_j}^{c_j}$.  Then we can write $\sigma$ as a sum of $r_j e_j$'s for $j\in \Te$ and $r_{j,k}$ for $r\in \Tp, k\in \Tm$.  
+For convenience, let $e_j$ (when it exists) be in degree $d_j$ with $j^{th}$ component $-\alpha_j d_j + \kappa_j$ and let $e_{i,j}$ (when it exists) lie in degrees $d_{i,j}$ with $i^{th}$ component $\kappa_{i,j}'$ and $j^{th}$ component $\kappa_{j,i}''$.
+Then a careful computation deduces that 
+%if $i\in \Te$, $i\in \Tp$, and $i\in \Tm$, then
 \[
-	l
+	\sigma = \lambda + E
 \]
-\[
-	\lambda + E
-\] 
+where $\lambda \in \Sigma$ and
+\begin{equation}\label{eqn:hirz-E-translation}
+	E = \begin{cases}
+	\frac{1}{\kappa_i} e_i  	&  \mbox{ if }i\in \Te\\
+	\sum_{j\in \Tm} r_{i,j} e_{i,j}: r_{i,j}\in \br, \sum_{j\in \Tm} r_{i,j}\kappa_{i,j}' = 1 & \mbox{ if } i\in \Tp\\
+	\sum_{j\in \Tp} r_{j,i} e_{j,i}: r_{j,i} \in \br, \sum_{j\in \Tm} r_{j,i} \kappa_{i,j}'' = 1 	& \mbox{ if } i\in \Tm\\
+	\end{cases}.
+\end{equation}
 
 \noindent
-where $\lambda\in S$ and
-\[
-	k
-\]
-
-
+From this, we can deduce that
 \[
 	\deg(E) \le \begin{cases}
 	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in \Te \\
@@ -1050,53 +1054,14 @@ where $\lambda\in S$ and
 	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
 	&\mbox{ if } i \in \Tm \end{cases}.
 \]
- 
- 
- $= V_1 \cup V_2 \cup V_3$ where
-\begin{align*}
-	&	V_1 = \{ \{e_i\} \mbox{ if }
-	&	V_2= \{e_{i, j}: j \in \Tm \mbox{ if } i	\in \Tp \}
-	&	V_3=  \{e_{j, i}: j \in \Tp \mbox{ if } i \in \Tm \}.
-\end{align*}
-
-
-Let $M$ be the set of monomials of $\beta_j$.  Then for $\mu\in M$, the corresponding lattice point is of the form
+Let $M$ be the set of monomials terms of $\beta_j$.  Then for $\mu\in M$, we can further compute that the lattice point corresponding to $\mu \prod_{j=1}^n {f_i}^{c_i}$ is of the form
 \[
-	E_\mu + \sum_{k\in \Te} r_k e_k + \sum_{\substack{
-	h \in \Tp \\ k \in \Tm}} r_{h,k} e_{h,k}
+	\sigma + E_\mu
 \]
-where $E_\mu$ is in degree
-\[
-	\deg(F) \le \begin{cases}
-	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in \Te \\
-	\max_{j \in \Tm} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
-	&\mbox{ if } i \in \Tp \\
-	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
-	&\mbox{ if } i \in \Tm \end{cases}.
-\]
+where $E_\mu$ is defined similarly to $E$ (in particular, they lie in the same degree).
 
-a $\mathbb{R}_{\ge 0}$-combination of elements in
-\begin{align*}
-	\{e_j : j \in \{1, 2, 3, 4\} \cap \Te\}
-	&\cup \; \{e_{j, k}: k \in \Tm, \; j \in \{1, 2, 3, 4\} \cap \Te\} \\
-	&\cup \; \{e_{k, j}: k \in \Tp, \; j \in \{1, 2, 3, 4\} \cap \Tm\}.
-\end{align*}
-
-Let $F \in R_D$ correspond to the lattice point
-\[
-	E + \sum_{k \in \Te} \fr(r_k) e_k + \sum_{\substack{h \in \Tp \\
-	k \in \Tm}} \fr(r_{h,k}) e_{h,k}
-\]
-
-\noindent
-where $\fr(r)$ signifies the fractional part of $r$.  Similarly, let $F_\mu
-\in R_D$ correspond to the lattice point
-\[
-	E_\mu + \sum_{\substack{h \in \Tp \\ k \in \Tm}} \fr(r_{h,k}) e_{h,k}.
-\]
-
-\noindent
-Then $F - \sum_{\mu \in M} F_\mu = 0$ gives us a
+Let $F\in R_D$ corresponding to the lattice point $E$ and let $F_\mu$ correspond to the lattice point $E_\mu$.  
+Then $F - \sum_{\mu \in M} F_\mu = 0$ induces a
 relation in degree at most
 \[
 	\sigma + \deg(F)
@@ -1104,9 +1069,9 @@ relation in degree at most
 
 \noindent
 which divides $(z_i - \beta_i) \prod_{i = 1}^n y_i^{c_i}$.
-We can bound $\deg(F)$ by
+We can bound $\deg(F)$ (which equals $\deg(F_\mu)$ for all $\mu$) by
 \[
-	\deg(F) \le \begin{cases}
+	\deg(F) = \deg(E) \le \begin{cases}
 	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in \Te \\
 	\max_{j \in \Tm} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
 	&\mbox{ if } i \in \Tp \\
