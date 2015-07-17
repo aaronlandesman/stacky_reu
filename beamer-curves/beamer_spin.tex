@@ -200,7 +200,7 @@ July 17, 2015\\
 
 \begin{itemize}
 \item Examples: $\Gamma = \Gamma_0(N) \subset \SL_2(\BZ)$\\
-\item If $\Gamma \backslash \BH$ has finite area, then we can compactify $\Gamma \backslash \BH$ with cusps to get an {\bf orbifold} 
+\item If $\Gamma \backslash \BH$ has finite area, then we can compactify $\Gamma \backslash \BH$ with cusps to get an {\bf orbifold}.
 \end{itemize}
 %In presentation describe orbifold as a generalization to reimann surfaces that allow fractional points.
 
@@ -273,15 +273,15 @@ and $\lim_{z \to *} f(z)$ exists for all cusps $*$.
 \begin{center}
 \begin{tabular}{ |c| c| c|}
 \hline
-$d$  & $\dim M_{2k}(\SL_2(\BBZ))$  \\ 
+Weight $k$  & $\dim M_{2k}(\SL_2(\BBZ))$  \\ 
 \hline
 0& 1 \\ 
 1& 0 \\  
-2& 1  \\
-3& 1  \\
-4& 1  \\
-5& 1  \\
-6& 2   \\
+2& 1 \\
+3& 1 \\
+4& 1 \\
+5& 1 \\
+6& 2 \\
 \hline
 \end{tabular}
 \end{center}
@@ -322,7 +322,7 @@ Can we bound the degrees of generators and relations of $\overline{\Gamma \backs
 \begin{block}{Log Spin Canonical Ring}
 %but this is something proved in VZB following from K--S
 \begin{align*}
-  M(\Gamma) &\cong R_{\sx,\Delta} := \bigoplus_{k \geq 0} H^0(\sx, \Omega^1(\Delta)^{\otimes \frac{k}{2}}) \\
+  M(\Gamma) \cong R_{\sx,\Delta} := \bigoplus_{k \geq 0} H^0(\sx, \Omega^1(\Delta)^{\otimes \frac{k}{2}})
 \end{align*}
 \end{block}
 
@@ -342,9 +342,9 @@ is informally
 \end{defn}
 
 \begin{fact}
-Let $X$ be the {\bf coarse space} of $\sx$.
+Let $X$ be the {\bf coarse space} of $\sx$. Then
 \[
-	K_{\sx} = K_X + \sum \frac{e_P-1}{e_P} P
+	K_{\sx} = K_X + \sum \frac{e_P-1}{e_P} P.
 \]
 \end{fact}
 \end{frame}
@@ -445,15 +445,21 @@ Suppose $\halfcan \in \di
 %\end{defn}
 
 \begin{defn}
-The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ is
+The {\bf log spin canonical ring} of $(\sx, \Delta, \halfcan)$ with
+coarse space $X$ is
 \[
-	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor).
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(X, \lfloor k
+	\halfcan \rfloor).
 \]
 \end{defn}
 
-\begin{itemize}
-\item Not ad hoc
-\end{itemize}
+\begin{rem}
+Let $\sx = \sy \cup \Delta = \overline{\Gamma \backslash \BH}$.
+Recall that
+\[
+	M(\Gamma) \cong R(\sx, \Delta, \halfcan).
+\]
+\end{rem}
 
 \end{frame}
 
@@ -473,7 +479,7 @@ Bound the degrees of generators and relations of log spin
 canonical rings
 
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor).
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor).
 \]
 \end{block}
 \end{frame}
@@ -515,7 +521,7 @@ Bounds generator degrees by $6
 
 \begin{block}{Application to Previous Example}
 \begin{itemize}
-\item O'Dorney: generators in degrees $\leq 238$, relations in degrees $\leq 385$
+\item O'Dorney: generators in degrees $\leq 238$, relations in degrees $\leq 385$.
 \item Voight--Zureick-Brown: generators in degrees $\leq 42$, relations in $\leq 84$.
 \end{itemize}
 \end{block}
@@ -532,7 +538,7 @@ Let $e := \max(5, e_1, \ldots, e_r)$.
 
 The log spin canonical ring 
 \[
-	R(\sx, \Delta, \halfcan) = \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor)
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor)
 \]
 
 \noindent
