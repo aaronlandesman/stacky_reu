@@ -163,6 +163,7 @@
 
 \maketitle
 \todo{make title shorter so it doesn't overlap with page numbers}
+\todo{Aaron: Standardize generation in degree ... phrasing. I like ``generation in degree at most''}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -292,6 +293,8 @@ where
 \]
 \end{thm}
 
+\todo{Include summary of what each of the sections do.}
+
 \section{Lemmas for Generation and Relations}
 \label{sec:lemmas}
 
@@ -331,7 +334,6 @@ the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$.}
 \label{fig:s14/5-lattice}
 \end{figure}
 
-\ssec{Notation}
 \begin{convention}
 Notate a (Weil) $\bq$-divisor
 \begin{align*}
@@ -708,6 +710,20 @@ inductive manner as mentioned in Remark ~\ref{rem:proj-one-point-ind}.
 
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
 
+
+We now offer bounds on generators and relations of $R_D$ for a general divisor $D$ on $\bp^m$.
+
+Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \bp^m$ and let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$ $\deg(f_i) = a_i$ for all $i$. 
+
+For the remainder of this section, we shall make the additional assumption that 
+\begin{align}
+\label{eqn:pm-basis-assumption}
+	f_1, \ldots, f_{m+1} \text{ form a } \bk \text{ basis of all degree 1 functions.}
+\end{align}
+
+Our first aim in this section is to prove Theorem ~\ref{thm:proj-generators-relations} bounding the number of generators and relations of $R_D$. Before doing so, we justify the assumption ~\eqref{eqn:bpm-basis-assumption} through a several convincing examples.
+
+
 \begin{example}
 \label{eg:hyperplane}
 Suppose $D = \frac{1}{2}H_0 - \frac{1}{3}H_1$ where $H_0 = V(x_0), H_1 = V(x_1)$ are two coordinate hyperplanes in $\bp^2$. Then, $R_D$ has generators in degree $2$ and $3$ which can be written as $u^2 \frac{x_1}{x_0}, u^3 \frac{x_1}{x_0}.$ In fact, for all degrees less than $5$ the elements of $R_D$ can all be expressed as rational functions in $x_0, x_1$. However, in degree $6$, there is the rational function $\frac{x_1^2 x_2}{x_0^3}.$ Since this involves $x_2$, it must be a generator.
@@ -719,24 +735,20 @@ This example further generalizes to the following situation: Suppose $D = \sum_{
 
 \begin{rem}
 \label{rem:ghost-motivation}
-Example ~\ref{eg:hyperplane} shows that the naive generalization of ~\cite[Theorem 8]{dorney:canonical} of generation in degree at most $\sum_{i=1}^{n}\ell_i$ cannot possibly hold. The reason for this is that the divisors may ``be contained in a hyperplane,'' i.e., be expressable as functions in $m$ of the $m+1$ variables on $\bp^m$. This problem can easily be circumvented by adding in ``ghost points.'' That is, we may add divisors of the form $0 \cdot H_i$ to $D$, and reorder so that if $D = \sum_{i=1}^{n}\alpha_i V(f_i)$, then $f_0, \ldots, f_n$
+Example ~\ref{eg:hyperplane} shows that the naive generalization of ~\cite[Theorem 8]{dorney:canonical} of generation in degree at most $\sum_{i=1}^{n}\ell_i$ cannot possibly hold. The reason for this is that the divisors may ``be contained in a hyperplane,'' i.e., be expressable as functions in $m$ of the $m+1$ variables on $\bp^m$. This problem can easily be circumvented by adding in ``ghost points.'' That is, we may add divisors of the form $0 \cdot H_i$ to $D$, and reorder so that if $D = \sum_{i=1}^{n}\alpha_i V(f_i)$, then $f_0, \ldots, f_n$.
+
+In Example ~\ref{eg:radical}, we show that it is still, in general, necessary to add ghost points, even when the irreducible components of a divisor are not all contained in a hyperplane.
 \end{rem}
 
 \begin{example}
 \label{eg:radical}
-In this example, we show that it is still, in general, necessary to add ghost points, even when the irreducible components of a divisor are not all contained in a hyperplane.
-
 Consider $\frac{-1}{5}V(x_0^2 + x_1^2 + x_2^2) + \frac{1}{7}V(x_0^2 + x_1^2 + x_3^2) + \frac{1}{17}V(x_0^2 + x_2^2 + x_3^2) - \frac{1}{596}V(x_1^2 + x_2^2 + x_3^2)$. In degree $355216 = 5 \cdot 7 \cdot 17 \cdot 596$, this has dimension $10$. 
 \todo{Clarify what this example means by the lattice approach}
 However, we possibly use the lattice approach, as all lower degrees only have dimension 1. In fact, we may construct similar examples using any set of degree $n$ divisor with very small degree.
 \end{example}
 \todo{construct class of additional examples}
-\todo{The example above needs to be changed because $x_0^2$ can be replaced by $2x_0$}
 
-We now offer bounds on generators and relations of $R_D$ for a general divisor $D$ on $\bp^m$.
-
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \bp^m$ and let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$.
-\todo{Aaron: Do we want to make the convention somewhere that $f_1,\ldots, f_{m+1}$ generate $O(1)$?}
+Having justified the necessity of adding ghost points, we proceed to bound the number of generators and relations.
 
 \begin{lem} \label{lem:proj-generators}
 $R_D$ is generated in degrees up to $\sum_{i=1}^n \ell_i a_i.$
@@ -830,10 +842,10 @@ Whenever some $r_j \ge 1$, we can generate the relation $(z_i - \beta_i)\prod_{j
 \end{proof}
 
 
-Combining the above results, we obtain the following theorem:
+Combining the above results, we obtain the following bound on the degrees of generators and relations of $R_D$.
 
 \begin{thm}
-\label{lem:proj-generators-relations}
+\label{thm:proj-generators-relations}
 Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \bp^m$. Let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
 Then $R_D$ is generated in degree at most 
 \[
@@ -854,9 +866,15 @@ By ~\ref{lem:bound-ker-chi}, $\ker(\chi)$ is generated in degrees up to $2\sum_{
 
 \section{Canonical Rings on Hirzebruch surfaces}
 \label{sec:hirz}
+
+In this section, the main aim is to prove Theorem ~\ref{thm:}, bounding the degree of generators and relations of the canonical ring of a $\bq$-divisor on any hirzebruch surface.
+
+\todo{Aaron: Give some definitions to make clear what the structure of divisors are}
+\todo{Aaron: clarify that $R_D$ is assumed to have both positive bidegrees}
+\todo{Aaron: Have $\ell_{i,j}$ been defined?}
 Let $D=\sum_{i=1}^n \alpha_i D_i \in \mathbb{Q} \otimes \di(\hirz_
 m).$ such
-that $D_1, \ldots, D_4$ are distinct divisors with bi-degrees $(1,0)
+that $D_1, D_2, D_3,$ and $D_4$ are distinct divisors with bi-degrees $(1,0)
 , (1,0), (0,1)$, and $(0,1)$ respectively. Let $D_i = V(f_i)$ where
 $f_i \in \sco(\bida_i, \bidb_i)$.  
 Then, $f_1$ and $f_2$ are independent linear
@@ -883,7 +901,7 @@ and
 \begin{equation}
 \label{eqn:define-T-(D)}
 	\Tm(D) = \left\{ j \in \{1, \ldots, n\}: \bida_j \sum_{k = 1}^n \alpha_k
-	\bidb_k < \bidb_j \sum_{k=1}^n \alpha_k \bida_k s \right\}.
+	\bidb_k < \bidb_j \sum_{k=1}^n \alpha_k \bida_k \right\}.
 \end{equation}
 \end{defn}
 
@@ -899,32 +917,37 @@ $R_D$ is generated in degree at most
 
 \begin{proof}
 %Let $(\bida_i, \bidb_i)$ be the bi-degrees of $f_i$. 
-Notice that if $\gamma
-\in (R_D)_d$, then 
+Suppose $\gamma
+\in (R_D)_d$. \todo{Aaron: Why is $\gamma$ defined? It doesn't seem to be used anywhere.}
+ Then 
 \[
 	g = \sum_{i = 1}^n {f_i}^{c_i}
 \]
 
 \noindent
 where each $c_i \ge - \alpha_i c_i$, $\sum_{i=1}^n c_i \bida_i = 0$,
-and $\sum_{i=1}^n c_i \bidb_i = 0$. Then we can any view $g$ inside the
-lattice $S \subseteq \mathbb{R}^{n + 1}$ given by ordered elements of
-the form $(d, c_1, \ldots, c_n)$ satisfying $c_i \ge - d \alpha_i$
-for all $i$, $\sum_{i=1}^n c_i \bida_i = 0$, and $\sum_{i = 1}^n c_i \bidb_i =
- 0$. From here, determining a spanning set for $(R_D)_d$ reduces to
-finding the extremal rays of $S$ by Proposition ~\ref{prop:cone-generation}.
+and $\sum_{i=1}^n c_i \bidb_i = 0$. We can any view $\sigma$ inside the
+lattice 
+\begin{align*}
+	\Sigma = \{ (d, c_1, \ldots, c_n) \in \bz_{\geq 0}^{n+1} : c_i \ge - d \alpha_i \text{ for all }i \text{ and }\sum_{i=1}^n c_i \bida_i = \sum_{i = 1}^n c_i \bidb_i = 0 \}.	
+\end{align*}
 
+By Proposition ~\ref{prop:cone-generation}, in order to determining a spanning set for $(R_D)_d,$ it suffices to find the extremal rays of $\Sigma.$
 To do this, we extend the method of O'Dorney \cite[Theorem 8]{dorney:canonical}. 
-We first consider the cone inside of $\mathbb{R}^{n+1}$ given by elements of the
-form $(d, r_1, \ldots, r_n)$ satisfying $r_i \ge -d \alpha_i$ for
-all $i$ and $\sum_{i = 1}^n r_i (\bida_i + \bidb_i) = 0$.  This
+We first consider the subcone $\Sigma_1 \subset \Sigma$
+given by
+\begin{align*}
+	\Sigma_1 = \{ (d, c_1, \ldots, c_n) \in \bz_{\geq 0}^{n+1} : c_i \ge - d \alpha_i \text{ for all }i \text{ and }\sum_{i=1}^n c_i (\bida_i+\bidb_i) = 0 \}.	
+\end{align*}
+Then, $\Sigma_1$
 has extremal rays given by
  
 \[
 	e_i := (1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i}
 	\alpha_j (\bida_j + \bidb_j)}{\bida_i + \bidb_i}, -\alpha_{i + 1},
-	\ldots, -\alpha_m).
+	\ldots, -\alpha_n).
 \]
+for $1 \leq i \leq n$.
 
 Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_n$.
 We can intersect $\Delta^{n-1}$ with the hyperplane $H$ given by
@@ -968,22 +991,26 @@ and
 	s_2 = -\bidb_i \sum_{k \ne i, j} \alpha_k \bida_k + \bida_i \sum_{k \ne i, j}
 	\alpha_k \bidb_k = -b_i (\alpha_i a_i + \alpha_j a_j) + a_i (\alpha_i b_i + \alpha_j b_j).
 \]
+\todo{Aaron: Why are $\epsilon_{i,j}$ defined here instead of $e_{i,j}$. We don't use the $\epsilon$ here, and we do use the $e$ here.}
 
-The set of $e_i$ and $e_{i,j}$ given above satisfies the conditions of Proposition ~\ref{prop:cone-generation}, so by applying that proposition, $R_D$ is generated in 
-degrees less than
+The set of $e_i$ and $e_{i,j}$ given above satisfies the conditions of Proposition ~\ref{prop:cone-generation}, $R_D$ is generated in 
+degrees less than the sum of the degrees of the $e_i$ and $e_{i,j}$, which is
 \[
 	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{\substack{
 	i \in \Tp(D) \\	j \in \Tm(D)}} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
 \]
+\todo{Aaron: Do you use $\sigma$ later? We are usually reserving $\sigma$ for a lattice point. Perhaps something like $\delta$ would be more appropriate if you want to refer to it later. Also, you should number if if you want to refer to it later. In general, it's bad style to define things in the proofs. This could have been defined prior to the theorem statement as well, which would simplify the statement. We should also then clarify that $\sigma$ depends on $D$.}
+
+
 \end{proof}
 
-Let $x_1, \ldots x_r$ be the generators of $R_D$ in degrees less than $\sigma$ (as given by Lemma ~\ref{lem:hirz-generators}), and let $\phi$ be the surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through 
+Let $x_1, \ldots x_r$ be the generators of $R_D$ in degrees less than $\sigma$ (as given by Lemma ~\ref{lem:hirz-generators}), and let $\phi$ be the surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through the semigroup ring 
 \[
-	\Sigma =  \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d
-	\alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i.
-	\rangle 
+	\bk[\Sigma] = \left \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d
+	\alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i
+	\right \rangle.
 \]
-into
+by
 \[
 \begin{tikzcd}
 	\bk[x_1,\ldots, x_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
@@ -991,7 +1018,7 @@ into
 \end{tikzcd}
 \]
 
-Applying Lemma ~\ref{lem:bound-ker-chi}, we can bound the degree of generation of $\ker(\chi)$ below
+By Lemma ~\ref{lem:bound-ker-chi}, we can bound the degree of generation of $\ker(\chi)$ below
 $2 \sigma$.
 Finally, we calculate the degree of generation of $\psi$:
 
@@ -1119,6 +1146,10 @@ where
 	(\bida_i \bidb_j - \bida_j \bidb_i) \bigr) \right).
 \]
 \end{thm}
+\todo{Aaron: Shouldn't $\tau$ not include $\sigma$?}
+
+
+\todo{Aaron: I know exactly what is going on, but please spell out the proof in 2 lines for completeness.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Further Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
