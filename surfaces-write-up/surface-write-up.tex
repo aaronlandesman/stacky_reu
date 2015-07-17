@@ -1119,10 +1119,14 @@ generate all relations, since they allow us to reduce any $\prod_{j =
 %~\ref{eqn:hirz-relations-psi} as an element of $S$ given
 %by $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$.  
 Let $\Sigma'\subseteq \Sigma$ be the \todo{change all $S$ to sigma's}
-set of $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$ satisfying $c_i \ge -\alpha_i d$,
-$\bida_i + \sum_{j = 1}^m \bida_j c_j = 0$, and $\bidb_i + \sum_{j=1}^n \bidb_j c_j
-= 0$.
-Let $\sigma\in \Sigma'$ correspond to the monomial $y_i \prod_{j=1}^n {y_j}^{c_j}$.  Then we can write $\sigma$ as a sum of $r_j e_j$'s for $j\in \Te$ and $r_{j,k}$ for $r\in \Tp, k\in \Tm$.  
+set
+\begin{align*}
+	\Sigma' = & \{(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)  \in \bz^{n+1}_{\geq 0} : \\
+	& c_i \ge -\alpha_i d, \text{ for all i, and } \bida_i + \sum_{j = 1}^m \bida_j c_j = \bidb_i + \sum_{j=1}^n \bidb_j c_j
+= 0 \}
+\end{align*}
+
+Let $\sigma\in \Sigma'$ correspond to the monomial $y_i \prod_{j=1}^n {y_j}^{c_j}$.  Then we can write $\sigma$ as a sum of $r_j e_j$'s for $j\in \Te$ and $r_{j,k}e_{j,k}$ for $j\in \Tp, k\in \Tm$.  
 For convenience, let $e_j$ (when it exists) be in degree $d_j$ with $j^{th}$ component $-\alpha_j d_j + \kappa_j$ and let $e_{i,j}$ (when it exists) lie in degrees $d_{i,j}$ with $i^{th}$ component $\kappa_{i,j}'$ and $j^{th}$ component $\kappa_{j,i}''$.
 Then a careful computation deduces that 
 %if $i\in \Te$, $i\in \Tp$, and $i\in \Tm$, then
