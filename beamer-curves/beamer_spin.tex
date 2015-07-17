@@ -294,7 +294,8 @@ $d$  & $\dim M_{2k}(\SL_2(\BBZ))$  \\
 \begin{frame}
 
 \begin{block}{Goal}
-Suppose $\Gamma$ is a congruent subgroup of $\SL_2(\BBZ)$ or more generally a Fuchsian group with finite quotient.  Then can we bound the degrees of generators and relations of $\overline{\Gamma \backslash \mathbb{H}}$?
+Let $\Gamma$ be a congruent subgroup of $\SL_2(\BBZ)$ (or any Fuchsian group with finite quotient). \\
+Can we bound the degrees of generators and relations of $\overline{\Gamma \backslash \mathbb{H}}$?
 \end{block}
 
 \end{frame}
@@ -338,11 +339,8 @@ is informally
 	\end{itemize}
 \end{defn}
 
-\begin{itemize}
-\item Let $X$ be the {\bf coarse space} of $\sx$
-\end{itemize}
-
 \begin{fact}
+Let $X$ be the {\bf coarse space} of $\sx$.
 \[
 	K_{\sx} = K_X + \sum \frac{e_P-1}{e_P} P
 \]
@@ -500,30 +498,29 @@ Let $(\sx, \Delta, \halfcan)$ be genus 0 such that $\halfcan \sim -\infty + \fra
 %% frame
 
 \begin{frame}{Previous Work}
-\begin{block}{Application of O'Dorney's Work}
+\begin{block}{Bounds (O'Dorney)}
 Weakly bounds generator and relations degrees in terms of
 the least common multiples of the $e_i$'s when $g = 0$.
 \end{block}
-\begin{itemize}
-\item O'Dorney's result bounds generators and relations in degrees below 238 and 385 in the previous example.
-\end{itemize}
 
 \begin{block}{Theorem (Voight and Zureick-Brown)}
 Bounds generator degrees by $6
 \cdot \max(3, e_1, \ldots, e_r)$ and relation degrees by $12 \cdot \max
 (3, e_1, \ldots, e_ r)$ when $\halfcan$ is effective.
 \end{block}
+
+\begin{block}{Application to Previous Example}
 \begin{itemize}
-\item The result of Voight and Zureick-Brown bounds generators and relations by 42 and 84 in the previous example.
+\item O'Dorney: generators in degrees $\leq 238$, relations in degrees $\leq 385$
+\item Voight--Zureick-Brown: generators in degrees $\leq 42$, relations in $\leq 84$.
 \end{itemize}
+\end{block}
 
 \end{frame}
 
 %%frame
 
 \begin{frame}{Main Result}
-Our main result:
-
 \begin{thm}
 \label{thm:main}
 Suppose $(\sx, \Delta, \halfcan)$ is genus zero with stacky points $P_1, \ldots P_r$.  Let $e := \max(5, e_1, \ldots, e_r)$.
@@ -552,8 +549,8 @@ relations generated in degrees up to $2e$.
 \begin{block}{Inductive Step}
 Given generators and relations of $(\sx', \Delta, \halfcan)$, we can deduce generators and relations in $(\sx, \Delta, \halfcan)$, in the following situations:
 \begin{itemize}
-\item $(\sx, \Delta, \halfcan)$ looks like $(\sx', \Delta, \halfcan)$, except with one added stacky point
-\item $(\sx, \Delta, \halfcan)$ looks like $(\sx', \Delta, \halfcan)$, except with one stabilizer order $e_i$ incremented by 2
+\item $(\sx, \Delta, \halfcan)$ looks like $(\sx', \Delta, \halfcan')$, except with one added stacky point
+\item $(\sx, \Delta, \halfcan)$ looks like $(\sx', \Delta, \halfcan')$, except with one stabilizer order $e_i$ incremented by 2
 \end{itemize}
 \end{block}
 
@@ -593,11 +590,13 @@ These inductive methods are explicit!
 \begin{block}{Corollary}
 Suppose $\Gamma \subseteq \SL_2(\BZ)$ is a congruence subgroup
 \begin{itemize}
-\item $M(\Gamma)$ is generated in degrees up to 6 with relations generated in degrees at most 12. 
-\item If $\Gamma$ has a nonzero odd weight modular form, then $M(\Gamma)$ is
-generated in degrees up to $5$ with relations generated in degrees
-at most $10$.
+\item General: $M(\Gamma)$ is generated up to degree $6$, relations up to degree $12$. 
+\item Some nonzero odd weight modular form: $M(\Gamma)$ is generated up to degree $5$ , relations up to degree $10$.
 \end{itemize}
+\end{block}
+
+\begin{block}{Remark}
+We have generalized this result to general Fuchsian groups.
 \end{block}
 \end{frame}
 
