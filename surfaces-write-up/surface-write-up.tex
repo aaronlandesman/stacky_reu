@@ -726,18 +726,44 @@ Our first aim in this section is to prove Theorem ~\ref{thm:proj-generators-rela
 
 \begin{example}
 \label{eg:hyperplane}
-Suppose $D = \frac{1}{2}H_0 - \frac{1}{3}H_1$ where $H_0 = V(x_0), H_1 = V(x_1)$ are two coordinate hyperplanes in $\bp^2$. Then, $R_D$ has generators in degree $2$ and $3$ which can be written as $u^2 \frac{x_1}{x_0}, u^3 \frac{x_1}{x_0}.$ In fact, for all degrees less than $5$ the elements of $R_D$ can all be expressed as rational functions in $x_0, x_1$. However, in degree $6$, there is the rational function $\frac{x_1^2 x_2}{x_0^3}.$ Since this involves $x_2$, it must be a generator.
+Suppose $D = \frac{1}{2}H_0 - \frac{1}{3}H_1$ where $H_0 = V(x_0),
+H_1 = V(x_1)$ are two coordinate hyperplanes in $\bp^2$. Then, $R_D$
+has generators in degree $2$ and $3$ which can be written as $u^2
+\frac{x_1}{x_0}, u^3 \frac{x_1}{x_0}.$ In fact, for all degrees
+less than $5$ the elements of $R_D$ can all be expressed as
+rational functions in $x_0, x_1$. However, in degree $6$, there is
+the rational function $\frac{x_1^2 x_2}{x_0^3}$. Since this
+involves $x_2$, it must be a generator.
 
-This example generalizes slightly to any divisor of the form $D = \frac{1}{k}H_0 - \frac{1}{k+1}H_1 \in \di \bp^2 \otimes \bq,$ with $k \in \bn$, showing that there will always exist a generator in degree $a(a+1).$
+This example generalizes slightly to any divisor of the form $D =
+\frac{1}{k}H_0 - \frac{1}{k+1}H_1 \in \di \bp^2 \otimes \bq,$ with
+$k \in \bn$, showing that there will always exist a generator in
+degree $a(a + 1)$.
 
-This example further generalizes to the following situation: Suppose $D = \sum_{i=1}^{n} \frac{\num_i}{\den_i}D_i \in \di \bp^m \otimes \bq,$ where $\deg D_i = \bida_i$ and $\deg D = \frac{1}{\lcm_{1 \leq i \leq n}(\den_i \cdot \bida_i)}$. Then, if $D_i = V(f_i)$ where all $f_i$ can be written as a polynomial function in $x_0, \ldots, x_{m-1},$ we have $R_D$ always has a generator in degree $\lcm(\den_i \cdot \bida_i)$.
+This example further generalizes to the following situation:
+Suppose $D = \sum_{i=1}^{n} \frac{\num_i}{\den_i}D_i \in \di \bp^m
+\otimes \bq,$ where $\deg D_i = \bida_i$ and $\deg D = \frac{1}{\lcm
+_{1 \leq i \leq n}(\den_i \cdot \bida_i)}$. Then, if $D_i = V(f_i)$
+where all $f_i$ can be written as a polynomial function in $x_0,
+\ldots, x_{m-1},$ we have $R_D$ always has a generator in degree
+$\lcm(\den_i \cdot \bida_i)$.
 \end{example}
 
 \begin{rem}
 \label{rem:ghost-motivation}
-Example ~\ref{eg:hyperplane} shows that the naive generalization of ~\cite[Theorem 8]{dorney:canonical} of generation in degree at most $\sum_{i=1}^{n}\ell_i$ cannot possibly hold. The reason for this is that the divisors may ``be contained in a hyperplane,'' i.e., be expressable as functions in $m$ of the $m+1$ variables on $\bp^m$. This problem can easily be circumvented by adding in ``ghost points.'' That is, we may add divisors of the form $0 \cdot H_i$ to $D$, and reorder so that if $D = \sum_{i=1}^{n}\alpha_i V(f_i)$, then $f_0, \ldots, f_n$.
+Example ~\ref{eg:hyperplane} shows that the naive generalization of
+~\cite[Theorem 8]{dorney:canonical} of generation in degree at most
+$\sum_{i=1}^{n}\ell_i$ cannot possibly hold. The reason for this is
+that the divisors may ``be contained in a hyperplane,'' i.e.~ be
+expressible as functions in $m$ of the $m+1$ variables on $\bp^m$.
+This problem can easily be circumvented by adding in ``ghost
+points.'' That is, we may add divisors of the form $0 \cdot H_i$ to
+$D$, and reorder so that if $D = \sum_{i=1}^{n}\alpha_i V(f_i)$,
+then $f_0, \ldots, f_n$.
 
-In Example ~\ref{eg:radical}, we show that it is still, in general, necessary to add ghost points, even when the irreducible components of a divisor are not all contained in a hyperplane.
+In Example ~\ref{eg:radical}, we show that it is still, in general,
+necessary to add ghost points, even when the irreducible components
+of a divisor are not all contained in a hyperplane.
 \end{rem}
 
 \begin{example}
@@ -867,7 +893,7 @@ By ~\ref{lem:bound-ker-chi}, $\ker(\chi)$ is generated in degrees up to $2\sum_{
 \section{Canonical Rings on Hirzebruch surfaces}
 \label{sec:hirz}
 
-In this section, the main aim is to prove Theorem ~\ref{thm:}, bounding the degree of generators and relations of the canonical ring of a $\bq$-divisor on any hirzebruch surface.
+In this section, the main aim is to prove Theorem ~\ref{thm:}, bounding the degree of generators and relations of the canonical ring of a $\bq$-divisor on any Hirzebruch surface.
 
 \todo{Aaron: Give some definitions to make clear what the structure of divisors are}
 \todo{Aaron: clarify that $R_D$ is assumed to have both positive bidegrees}
