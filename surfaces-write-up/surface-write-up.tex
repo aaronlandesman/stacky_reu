@@ -658,7 +658,7 @@ $\bp^1$. \todo{Possibly say what facts?}
 \label{rem:proj-one-point-ind}
 The method of proof for Theorem ~\ref{thm:proj-one-point}
 can be immediately generalized to work inductively. If $D = D' + \alpha H$
-for some hyperplane $\alpha H$, then we can use the proof above to show
+for some hyperplane $H$, then the proof of Theorem ~\ref{thm:proj-one-point}, mutatis mutandis, extends to show
 the canonical ring $R_D$ is generated over $R_D'$ by the same
 generators and with the same relations given in Theorem
 ~\ref{thm:proj-one-point}.
@@ -666,29 +666,24 @@ generators and with the same relations given in Theorem
 \todo{Perhaps we should consider restating the above theorem in this form, and then say for simplicity we prove it when the base is 0?}
 \begin{thm}
 \label{thm:proj-effective}
-Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
-$\bp^m$. Let $D = \sum_{i = 1}^{n} \alpha_i D_i$, with $\alpha_i =
-\frac{p_i}{q_i} \in \bq$ and each $D_i$ a hypersurface of
-$\bp^m$, be an effective divisor on $\bp^m$.
+Let $[x_0, \ldots, x_m]$ be a projective coordinate system for
+$\bp^m$. Let $D = \sum_{i = 1}^{n} \alpha_i D_i \in \bq \otimes \bp^m$, with $\alpha_i =
+\frac{p_i}{q_i} \in \bq$.
 
 Then the canonical ring
-\[
-	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)
-\]
-
-\noindent
+$R_D$
 is generated in degrees up to $\max_{1 \leq i \leq n}{q_i}$ with
-relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
+relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$.
 \end{thm}
 
 \begin{proof}
 We derive the result from the following inductive argument.
 If $n = 0$, i.e.~ $D = 0$, then we are done.
 Now, we look to inductively add hypersurfaces.
-If $D' = \sum_{i = 0}^{n} \alpha_i C_i$ is some $\bq$-divisor
+If $D' = \sum_{i = 0}^{n} \alpha_i D_i$ is some $\bq$-divisor
 on $\bp^m$, then we look at $D = D' + C$ where $C$ is a
-hypersurface of degree $\pdeg$. Now use the Veronese mapping
-to view $D$ as a divisor on $\bp^{m ({m + \pdeg} \choose \pdeg - 1)}$
+hypersurface of degree $\pdeg$. \todo{Aaron: rewrite this to make sense} Now use the Veronese mapping
+to view $C$ as a hypersurface on $\bp^{\binom{{m + \pdeg}}{ \pdeg} -1 }$
 and the image of $C$ as the intersection of a Veronese variety
 with a hyperplane. Then we can reduce inductively adding hypersurfaces
 to the case of adding hyperplanes. However, this is accomplished
@@ -1119,7 +1114,7 @@ where
 %%%%%%%%%%%%%%%%%%%%%%%%% Further Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Conclusion}
-This paper extends the work of O'Dorney on $\bp^1$ to $\bp^m$ and Hirzebruch Surfaces, bounding the degrees of generation and relations of canonical rings of arbitrary divisors $D$.  The methods for deducing bounds on generators and relations of $\hirz_k$ applied similar ideas to O'Dorney's method on $\bp^1$.  
+This paper extends the work of O'Dorney \cite{dorney:canonical} on $\bp^1$ to $\bp^m$ and Hirzebruch Surfaces, bounding the degrees of generation and relations of canonical rings of arbitrary divisors $D$.  The methods for deducing bounds on generators and relations of $\hirz_k$ applied similar methods to that of O'Dorney's for $\bp^1$.  
 
 We can view $\hirz_0$ as $\bp^1\times \bp^1$ and more generally $\hirz_k$ as a $\bp^1$ bundle over $\bp^1$.  One might hope that similar ideas could be generalized to all bundles.  Specifically:
 \begin{question}
