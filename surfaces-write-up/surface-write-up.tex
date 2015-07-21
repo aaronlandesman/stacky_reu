@@ -204,9 +204,16 @@ subgroups of the groups of positive determinant matrices. Similarly, Siegel
 modular forms are modular forms on the Siegel upper half space which are 
 stable under the action of the symplectic group. 
 
-By a result by Voight and Zureick-Brown \cite[Proposition 6.1.5]{vzb:stacky}, one can translate the analytic category of 1-dimensional complex orbifolds to the algebraic category of stacky curves. 
-We expect that  will similarly allow one to generalize yield an equivalence of categories between an appropriate subcategory of $m$-dimensional orbifolds and a subcategory of $m$-dimensional algebraic spaces.
-In particular, this will allow us to translate rings of Hilbert modular forms and Siegel modular forms whose underlying space is isomorphic to $\bp^m$ or a Hirzebruch surface to canonical rings on the corresponding algebraic surfaces. Thereby, our techniques would give a bound on generators and relations for Hilbert and Siegel modular forms with certain underlying spaces.
+By a result by Voight and Zureick-Brown \cite[Proposition 6.1.5]{vzb:stacky}, 
+one can translate the analytic category of 1-dimensional complex orbifolds to the algebraic category of stacky curves. 
+We expect that  will similarly allow one to generalize yield an equivalence of
+categories between an appropriate subcategory of $m$-dimensional orbifolds and
+a subcategory of $m$-dimensional algebraic spaces.
+In particular, this will allow us to translate rings of Hilbert modular forms
+and Siegel modular forms whose underlying space is isomorphic to $\bp^m$ or a
+Hirzebruch surface to canonical rings on the corresponding algebraic surfaces.
+Thereby, our techniques would give a bound on generators and relations for
+Hilbert and Siegel modular forms with certain underlying spaces.
 \todo{include references}
 
 Another closely related topic is the Hassett-Keel program 
@@ -214,7 +221,11 @@ initiated in \todo{was it actually initiated here? check vzb.} \cite{hassett:cla
 \begin{align*}
 	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0}H^0 \left( \overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} + \alpha\delta \rfloor  \right) 
 \end{align*}
-in terms of certain moduli spaces. $\bq$-divisors on surfaces also naturally appear when considering the canonical ring of surfaces of Kodaira dimension 1. A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and their canonical ring are most naturally described in the setting of $\bq$-divisors. \todo{Add references}
+in terms of certain moduli spaces. $\bq$-divisors on surfaces also naturally
+appear when considering the canonical ring of surfaces of Kodaira dimension 1.
+A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and
+their canonical ring are most naturally described in the setting of
+$\bq$-divisors. \todo{Add references}
 
 Furthermore, this work extends the study of canonical rings of
 $\bq$-divisors on curves, as done by O'Dorney \cite{dorney:canonical},
@@ -249,7 +260,9 @@ relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
 
 \begin{thm}
 \label{proj-generators-relations-intro}
-Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $C_i = v(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
+Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let
+$f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $C_i = v(f_i)$
+for all $i$; suppose $\deg(f_i) = a_i$. 
 Then $R_D$ is generated in degree at most 
 \[
 	\sum_{i=1}^n \ell_i a_i
@@ -386,7 +399,11 @@ $\sum_{i = 1}^{t} r_i$.
 
 \begin{lem}
 \label{lem:composite-map}
-Let $D = \sum_{i=1}^{n}\alpha_i D_i$ where $D_i = V(f_i)$. Suppose we have a surjection $\phi: \bk[x_1,x_2,\ldots, x_r] \rightarrow R_D$ given by $x_i \mapsto p_i(f_1, \ldots, f_n),$ where $p_i$ is a monomial in $f_1,\ldots, f_n$. Let $\bida_1, \ldots, \bida_n, \bidb_1, \ldots, \bidb_n \in \bz_{\geq 0}.$ Then, define
+Let $D = \sum_{i=1}^{n}\alpha_i D_i$ where $D_i = V(f_i)$. Suppose we have a
+surjection $\phi: \bk[x_1,x_2,\ldots, x_r] \rightarrow R_D$ given by $x_i
+\mapsto p_i(f_1, \ldots, f_n),$ where $p_i$ is a monomial in $f_1,\ldots, f_n$.
+Let $\bida_1, \ldots, \bida_n, \bidb_1, \ldots, \bidb_n \in \bz_{\geq 0}.$
+Then, define
 \begin{align*}
 	\Sigma = \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d \alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i = 0 \rangle. 
 \end{align*}
@@ -398,7 +415,9 @@ In this case, we can factor $\phi$ as a composition of $\chi$ and $\psi$ defined
 x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
 \end{tikzcd}
 \]
-Assuming $\chi$ is surjective, the minimal degree of generation of $\ker \phi$ is at most the maximum of the minimal degree of generation of $\ker \chi$ and the minimal degree of generation of $\ker \psi$.
+Assuming $\chi$ is surjective, the minimal degree of generation of $\ker \phi$
+is at most the maximum of the minimal degree of generation of $\ker \chi$ and
+the minimal degree of generation of $\ker \psi$.
 \end{lem}
 \begin{proof}
 First, we show there is an exact sequence
@@ -407,34 +426,58 @@ First, we show there is an exact sequence
 0 \ar {r} & \ker \chi \ar{r}{\rho} & \ker \phi \ar {r}{\tau} & \ker \psi \ar r & 0.
 \end{tikzcd}
 \]
-To see this, note that $\rho$ is injective and $\tau$ is surjective\ because $\phi = \chi \circ \psi$. Additionally, $\tau \circ \rho = 0$ by definition of the kernel of $\chi$. Finally, if $a \in\ker \tau$, then by definition $\chi(a) = 0,$ so $a \in \im \rho$.
+To see this, note that $\rho$ is injective and $\tau$ is surjective\ because
+$\phi = \chi \circ \psi$. Additionally, $\tau \circ \rho = 0$ by definition of
+the kernel of $\chi$. Finally, if $a \in\ker \tau$, then by definition $\chi(a)
+= 0,$ so $a \in \im \rho$.
 
-This shows that lifts of generators of $\ker \psi$ together with images of generators of $\ker \chi$ generate all of $\ker \phi,$ as desired. 
+This shows that lifts of generators of $\ker \psi$ together with images of
+generators of $\ker \chi$ generate all of $\ker \phi,$ as desired. 
 \end{proof}
 
 \begin{lem}
 \label{lem:bound-ker-chi}
-Retaining the notation of Lemma ~\ref{lem:composite-map}, if $\Sigma$ has extremal rays $e_1,\ldots, e_r$ in degrees $d_1, \ldots, d_r$ then $\ker \chi$ is generated in degrees up to $2(\sum_{i=1}^{r}d_r-1)$.
+Retaining the notation of Lemma ~\ref{lem:composite-map}, if $\Sigma$ has
+extremal rays $e_1,\ldots, e_r$ in degrees $d_1, \ldots, d_r$ then $\ker \chi$
+is generated in degrees up to $2(\sum_{i=1}^{r}d_r-1)$.
 \end{lem}
 \begin{proof}
-Since $e_1, \ldots, e_r$ are extremal rays, by Proposition ~\ref{prop:cone-generation}, every element $\sigma \in \Sigma$ can be written in a canonical form $\lambda + \sum_{i=1}^{r}e_i$. Now, let $\lambda_0 := 0,\lambda_1, \ldots, \lambda_m$ be all elements of $\Sigma$ which can be written in the form $\lambda_i = \sum_{i=1}^{r}r_i e_i$ with $0 \leq r_i < 1.$ Then, for any $1 \leq i \leq j \leq m,$ we can write $\lambda_i + \lambda_j$ in the above canonical form, yielding a relation in degree at most $\deg \lambda_i + \deg \lambda_j \leq 2 \cdot \left( \sum_{i=1}^{r}d_r -1 \right).$ Furthermore, these relations generate all relations, as one can apply a sequence of these relations to put any $\sigma \in \Sigma$ into canonical form $\sigma = \lambda + \sum_{i=1}^{r}w_i e_i$ as in Proposition ~\ref{prop:cone-generation}.
+Since $e_1, \ldots, e_r$ are extremal rays, by Proposition
+~\ref{prop:cone-generation}, every element $\sigma \in \Sigma$ can be written
+in a canonical form $\lambda + \sum_{i=1}^{r}e_i$. Now, let $\lambda_0 :=
+0,\lambda_1, \ldots, \lambda_m$ be all elements of $\Sigma$ which can be
+written in the form $\lambda_i = \sum_{i=1}^{r}r_i e_i$ with $0 \leq r_i < 1.$
+Then, for any $1 \leq i \leq j \leq m,$ we can write $\lambda_i + \lambda_j$ in
+the above canonical form, yielding a relation in degree at most $\deg \lambda_i
++ \deg \lambda_j \leq 2 \cdot \left( \sum_{i=1}^{r}d_r -1 \right).$
+Furthermore, these relations generate all relations, as one can apply a
+sequence of these relations to put any $\sigma \in \Sigma$ into canonical form
+$\sigma = \lambda + \sum_{i=1}^{r}w_i e_i$ as in Proposition
+~\ref{prop:cone-generation}.
 \end{proof}
 
 
 \section{Canonical Rings on Projective Space}
 \label{sec:proj}
-In this section, we bound the degrees of generators and relations for divisors on $\bp^m$, for all $m \geq 1$. The $\bp^1$ case was covered in \cite{dorney:canonical}.
+In this section, we bound the degrees of generators and relations for divisors
+on $\bp^m$, for all $m \geq 1$. The $\bp^1$ case was covered in
+\cite{dorney:canonical}.
 
 \ssec{Preliminaries on Projective Space}
 
-For the remainder of this section, we shall fix $m \geq 1$ and choose an isomorphism $\bp^m \cong \proj V$ so that $x_0,\ldots, x_m$ form a basis for $V$.  We will think of $x_i$ as a rational section of $H^0(\bp^m, \sco_{\bp^m})$ of degree 1.
+For the remainder of this section, we shall fix $m \geq 1$ and choose an
+isomorphism $\bp^m \cong \proj V$ so that $x_0,\ldots, x_m$ form a basis for
+$V$.  We will think of $x_i$ as a rational section of $H^0(\bp^m,
+\sco_{\bp^m})$ of degree 1.
 
 Write
 \begin{align*}
 	D = \sum_{i=0}^{n}\alpha_i D_i.
 \end{align*}
-where $n \in \bz$, $\alpha_i \in \bq$, and $\deg D_i = \bida_i$. Let $D_i$ be Cartier divisors such that $D_i = V(f_i)$.
-We shall further assume that (after reordering) $f_0,\ldots, f_{m}$ form a basis for degree one rational functions on $\bp^m$.
+where $n \in \bz$, $\alpha_i \in \bq$, and $\deg D_i = \bida_i$. Let $D_i$ be
+Cartier divisors such that $D_i = V(f_i)$.
+We shall further assume that (after reordering) $f_0,\ldots, f_{m}$ form a
+basis for degree one rational functions on $\bp^m$.
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
@@ -458,7 +501,16 @@ form a basis for $H^0(\bp^m, dD)$ over $k$.
 
 \begin{proof}
 By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
-~\eqref{align:pm-span} lie in $H^0(\bp^m,dD)$. To complete the proof, it suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$ functions satisfying condition ~\eqref{align:pm-basis}. However we know $h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show that those functions satisfying condition ~\eqref{align:pm-basis} are independent. This follows from the assumption that $f_0,\ldots f_n$ form a basis of degree 1 rational functions, and so degree $\lfloor d \deg D \rfloor $ monomials in $f_0,\ldots, f_n$ form a basis of degree $\lfloor d \deg D \rfloor $ rational functions.
+~\eqref{align:pm-span} lie in $H^0(\bp^m,dD)$. To complete the proof, it
+suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form
+a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$
+functions satisfying condition ~\eqref{align:pm-basis}. However we know
+$h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show
+that those functions satisfying condition ~\eqref{align:pm-basis} are
+independent. This follows from the assumption that $f_0,\ldots f_n$ form a
+basis of degree 1 rational functions, and so degree $\lfloor d \deg D \rfloor $
+monomials in $f_0,\ldots, f_n$ form a basis of degree $\lfloor d \deg D \rfloor
+$ rational functions.
 \end{proof}
 
 \ssec{Effective Divisors on Projective Space}
@@ -552,7 +604,9 @@ vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
 \end{thm}
 \todo{Write idea of proof}
 \begin{proof}
-We will first check that $F^{\vec v}_i$ determine a system of minimal generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} : \deg \vec{v} = \left\lfloor
+We will first check that $F^{\vec v}_i$ determine a system of minimal
+generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} : \deg \vec{v} =
+\left\lfloor
 \frac{p}{q} \right\rfloor \right\}$ are minimal generators in
 degree $1$. Now let $i > 1$. Suppose $F_i^{\vec{v}}$ were not
 minimal for some $\vec{v} \in \mss_i$. Then $F_i^{\vec{v}} =
@@ -569,12 +623,14 @@ so $\frac{c_i}{d_i}$ is the mediant of the rational numbers
 $\frac{\deg \vec{y}}{s}, \frac{\deg \vec{z}}{t}$ which both
 do not exceed $\alpha$. One of $\frac{\deg \vec{y}}{s},
 \frac{\deg \vec{z}}{t}$ must be at least $\frac{c_i}{d_i}$
-and $s$ and $t$ are both less than $d_i$, which contradicts the assumption that $\frac{c_i}{d_i}$ is a best lower approximation of $\alpha$
+and $s$ and $t$ are both less than $d_i$, which contradicts the assumption that
+$\frac{c_i}{d_i}$ is a best lower approximation of $\alpha$
 (see Definition ~\ref{defn:lower-approximation}).
 
 Next we show that $F^{\vec v}_i$ generate all of $R_D$. In the case $m = 1$, O'Dorney \cite[Theorem 6]
 {dorney:canonical} demonstrates that each lattice point $(\beta, \gamma) \in
-\bz_{\geq 0}^2$ with $\gamma \leq \beta \alpha$ lies in the $\bz_{\geq 0}$ span of $(d_h, c_h)$ and $(d_{h + 1}, c_{h + 1})$ for
+\bz_{\geq 0}^2$ with $\gamma \leq \beta \alpha$ lies in the $\bz_{\geq 0}$ span
+of $(d_h, c_h)$ and $(d_{h + 1}, c_{h + 1})$ for
 some $h \in \{0, \ldots, r\}$. Let $(\beta, \gamma) = \kappa_1
 (d_h, c_h) + \kappa_2 (d_{h + 1}, c_{h + 1})$ for $\kappa_1, \kappa_2 \in
 \bz_{\geq 0}$. Any element $\frac{u^{\beta}
@@ -586,7 +642,9 @@ x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
 \end{align*}
 
 \noindent
-We can then write $\vec{v}  = \sum_{\lambda=1}^{\kappa_1}\vec{w}_{(\lambda)} + \sum_{\eta=1}^{\kappa_2} \vec z_{(\eta)}$ with $w_{(\lambda)} \in \mss_h$ and $z_{(\eta)} \in \mss_{h+1}$ to give a decomposition
+We can then write $\vec{v}  = \sum_{\lambda=1}^{\kappa_1}\vec{w}_{(\lambda)} +
+\sum_{\eta=1}^{\kappa_2} \vec z_{(\eta)}$ with $w_{(\lambda)} \in \mss_h$ and
+$z_{(\eta)} \in \mss_{h+1}$ to give a decomposition
 \begin{align}
 \label{eqn:one-point-canonical-form}
 	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}}	= \prod_{\lambda = 1}
@@ -597,11 +655,15 @@ We can then write $\vec{v}  = \sum_{\lambda=1}^{\kappa_1}\vec{w}_{(\lambda)} + \
 \noindent
 consisting of products of generators $F_h^{\vec{y}_{(\lambda)}}$
 and $F_{h + 1}^{\vec{z}_{(\eta)}}$ which are in the form
-prescribed in the theorem statement. Since we wrote an arbitrary monomial $\frac{u^{\beta} x^{\vec{v}}}{x_k^\gamma} \in R_D$ as a product of generators, this shows that $F_i^{\vec v}$ minimally generate $R_D$.
+prescribed in the theorem statement. Since we wrote an arbitrary monomial
+$\frac{u^{\beta} x^{\vec{v}}}{x_k^\gamma} \in R_D$ as a product of generators,
+this shows that $F_i^{\vec v}$ minimally generate $R_D$.
 
 Next, we show that the relations given in the statement of the theorem generate all relations. 
 In particular, if $j \geq i + 2$ then $F_i^{\vec{v}} F_j^{\vec{w}}$
-has a decomposition of the form ~\eqref{eqn:one-point-canonical-form} where $h$ depends on $i, j$, so we notate $h = h_{i, j} \in \{1, \ldots, r\}$. We also have
+has a decomposition of the form ~\eqref{eqn:one-point-canonical-form} where $h$
+depends on $i, j$, so we notate $h = h_{i, j} \in \{1, \ldots, r\}$. We also
+have
 that $i \leq h_{i, j} < j$ since $(d_i + d_j, c_i + c_j)$ is in the
 $\bz_{\geq 0}$-span of $(d_{h_{i, j}}, c_{h_{i, j}})$ and
 $(d_{h_{i, j} + 1}, c_{h_{i, j} + 1})$. Furthermore, we have that
@@ -711,7 +773,9 @@ inductive manner as mentioned in Remark ~\ref{rem:proj-one-point-ind}.
 
 We now offer bounds on generators and relations of $R_D$ for a general divisor $D$ on $\bp^m$.
 
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \bp^m$ and let $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$ $\deg(f_i) = a_i$ for all $i$. 
+Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \bp^m$ and let $f_i$ be
+homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$
+$\deg(f_i) = a_i$ for all $i$. 
 
 For the remainder of this section, we shall make the additional assumption that 
 \begin{align}
@@ -719,7 +783,10 @@ For the remainder of this section, we shall make the additional assumption that
 	f_1, \ldots, f_{m+1} \text{ form a } \bk \text{ basis of all degree 1 functions.}
 \end{align}
 
-Our first aim in this section is to prove Theorem ~\ref{thm:proj-generators-relations} bounding the number of generators and relations of $R_D$. Before doing so, we justify the assumption ~\eqref{eqn:pm-basis-assumption} through a several convincing examples.
+Our first aim in this section is to prove Theorem
+~\ref{thm:proj-generators-relations} bounding the number of generators and
+relations of $R_D$. Before doing so, we justify the assumption
+~\eqref{eqn:pm-basis-assumption} through a several convincing examples.
 
 
 \begin{example}
@@ -766,13 +833,19 @@ of a divisor are not all contained in a hyperplane.
 
 \begin{example}
 \label{eg:radical}
-Consider $\frac{-1}{5}V(x_0^2 + x_1^2 + x_2^2) + \frac{1}{7}V(x_0^2 + x_1^2 + x_3^2) + \frac{1}{17}V(x_0^2 + x_2^2 + x_3^2) - \frac{1}{596}V(x_1^2 + x_2^2 + x_3^2)$. In degree $355216 = 5 \cdot 7 \cdot 17 \cdot 596$, this has dimension $10$. 
+Consider $\frac{-1}{5}V(x_0^2 + x_1^2 + x_2^2) + \frac{1}{7}V(x_0^2 + x_1^2 +
+x_3^2) + \frac{1}{17}V(x_0^2 + x_2^2 + x_3^2) - \frac{1}{596}V(x_1^2 + x_2^2 +
+x_3^2)$. In degree $355216 = 5 \cdot 7 \cdot 17 \cdot 596$, this has dimension
+$10$. 
 \todo{Clarify what this example means by the lattice approach}
-However, we possibly use the lattice approach, as all lower degrees only have dimension 1. In fact, we may construct similar examples using any set of degree $n$ divisor with very small degree.
+However, we possibly use the lattice approach, as all lower degrees only have
+dimension 1. In fact, we may construct similar examples using any set of degree
+$n$ divisor with very small degree.
 \end{example}
 \todo{construct class of additional examples}
 
-Having justified the necessity of adding ghost points, we proceed to bound the number of generators and relations.
+Having justified the necessity of adding ghost points, we proceed to bound the
+number of generators and relations.
 
 \begin{lem} \label{lem:proj-generators}
 $R_D$ is generated in degrees up to $\sum_{i=1}^n \ell_i a_i.$
@@ -781,12 +854,16 @@ $R_D$ is generated in degrees up to $\sum_{i=1}^n \ell_i a_i.$
 \begin{proof}
 Let 
 \begin{align}\label{eqn:Sigma-def}
-	\Sigma = \left \{(d, c_1, \ldots, c_n) \in \bz^{n+1} : c_i \geq - d \alpha_i, \; 1 \leq i \leq n, \text{ and } \sum_{i=1}^{n} \ell_i \bida_i = 0 \right \}.
+	\Sigma = \left \{(d, c_1, \ldots, c_n) \in \bz^{n+1} : c_i \geq - d
+\alpha_i, \; 1 \leq i \leq n, \text{ and } \sum_{i=1}^{n} \ell_i \bida_i = 0
+\right \}.
 \end{align}
 \todo{Possibly take this definition out of the proof, and move it into the setup, since we want to reference it later.}
 We note that $\Sigma$ has extremal rays given by the lattice points 
 \begin{equation}\label{defn:e-i-proj}
-	e_i = \left(\ell_i \bida_i, - \alpha_1 \ell_i \bida_i, \ldots -\alpha_{i-1} \ell_i \bida_i, \ell_i \sum_{j\ne i} \alpha_j \bida_j, -\alpha_{i+1} \ell_i \bida_i, \ldots, -\alpha_n, \ell_i \bida_i \right)
+	e_i = \left(\ell_i \bida_i, - \alpha_1 \ell_i \bida_i, \ldots
+-\alpha_{i-1} \ell_i \bida_i, \ell_i \sum_{j\ne i} \alpha_j \bida_j,
+-\alpha_{i+1} \ell_i \bida_i, \ldots, -\alpha_n, \ell_i \bida_i \right)
 \end{equation}
 for each $i\in \{1, \ldots n\}$.
 Therefore, applying Proposition ~\ref{prop:cone-generation}, we see $R_D$ is generated in degrees less than
@@ -797,7 +874,9 @@ Therefore, applying Proposition ~\ref{prop:cone-generation}, we see $R_D$ is gen
 
 \begin{rem}
 \label{rem:pm-extremal-rays}
-Note for future reference that the extremal rays of the cone $\Sigma$, as defined in the proof of Lemma ~\ref{lem:proj-generators} correspond to the elements
+Note for future reference that the extremal rays of the cone $\Sigma$, as
+defined in the proof of Lemma ~\ref{lem:proj-generators} correspond to the
+elements
 \begin{equation}
 \label{eqn:epsilon-def-proj}
 	\epsilon_i = \prod_{j\ne i} (f_j)^{-\alpha_j \ell_i a_i} {f_i}^{\ell_i \sum_{j\ne i} \alpha_j a_j}\in R_D.
@@ -806,9 +885,14 @@ Note for future reference that the extremal rays of the cone $\Sigma$, as define
 
 
 
-Let $x_1, \ldots x_r$ be the generators in degrees at most $\sum_{i=1}^n \ell_i \bida_i$ (given by Lemma ~\ref{lem:proj-generators}), and let $\phi$ be the surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through the semigroup ring 
+Let $x_1, \ldots x_r$ be the generators in degrees at most $\sum_{i=1}^n \ell_i
+\bida_i$ (given by Lemma ~\ref{lem:proj-generators}), and let $\phi$ be the
+surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through the
+semigroup ring 
 \[
-	\bk[\Sigma] =  \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \in \mathbb{Z}, \; c_i \geq -d \alpha_i, \mbox{ and }\sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i \rangle. 
+	\bk[\Sigma] =  \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \in
+\mathbb{Z}, \; c_i \geq -d \alpha_i, \mbox{ and }\sum_{i=1}^{n} \bida_i c_i =
+\sum_{i=1}^{n} \bidb_i c_i \rangle. 
 \]
 by
 \[
@@ -818,7 +902,8 @@ x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} 
 \end{tikzcd}
 \]
 
-By Lemma ~\ref{lem:bound-ker-chi}, we can bound the degree of generation of $\ker(\chi)$ and we next calculate the degree of generation of $\ker \psi$:
+By Lemma ~\ref{lem:bound-ker-chi}, we can bound the degree of generation of
+$\ker(\chi)$ and we next calculate the degree of generation of $\ker \psi$:
 
 \begin{lem}
 \label{lem:proj-relations-psi}
@@ -938,7 +1023,9 @@ that $D_1, D_2, D_3,$ and $D_4$ are distinct divisors with bi-degrees $(1,0)
 $f_i \in \sco(\bida_i, \bidb_i)$.  
 Then, $f_1$ and $f_2$ are independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
-linear polynomials in $y_0$ and $y_1$. \todo{Talk a little about Hirzebruch surfaces before this paragraph; especially, describe what it's sections look like.}
+linear polynomials in $y_0$ and $y_1$. \todo{Talk a little about Hirzebruch
+surfaces before this paragraph; especially, describe what it's sections look
+like.}
 
 \begin{defn}
 Define 
@@ -988,15 +1075,20 @@ where each $c_i \ge - \alpha_i c_i$, $\sum_{i=1}^n c_i \bida_i = 0$,
 and $\sum_{i=1}^n c_i \bidb_i = 0$. We can any view $\sigma$ inside the
 lattice 
 \begin{align*}
-	\Sigma = \{ (d, c_1, \ldots, c_n) \in \bz_{\geq 0}^{n+1} : c_i \ge - d \alpha_i \text{ for all }i \text{ and }\sum_{i=1}^n c_i \bida_i = \sum_{i = 1}^n c_i \bidb_i = 0 \}.	
+	\Sigma = \{ (d, c_1, \ldots, c_n) \in \bz_{\geq 0}^{n+1} : c_i \ge - d
+\alpha_i \text{ for all }i \text{ and }\sum_{i=1}^n c_i \bida_i = \sum_{i =
+1}^n c_i \bidb_i = 0 \}.	
 \end{align*}
 
-By Proposition ~\ref{prop:cone-generation}, in order to determining a spanning set for $(R_D)_d,$ it suffices to find the extremal rays of $\Sigma.$
+By Proposition ~\ref{prop:cone-generation}, in order to determining a spanning
+set for $(R_D)_d,$ it suffices to find the extremal rays of $\Sigma.$
 To do this, we extend the method of O'Dorney \cite[Theorem 8]{dorney:canonical}. 
 We first consider the sub-cone $\Sigma_1 \subset \Sigma$
 given by
 \begin{align*}
-	\Sigma_1 = \{ (d, c_1, \ldots, c_n) \in \bz_{\geq 0}^{n+1} : c_i \ge - d \alpha_i \text{ for all }i \text{ and }\sum_{i=1}^n c_i (\bida_i+\bidb_i) = 0 \}.	
+	\Sigma_1 = \{ (d, c_1, \ldots, c_n) \in \bz_{\geq 0}^{n+1} : c_i \ge -
+d \alpha_i \text{ for all }i \text{ and }\sum_{i=1}^n c_i (\bida_i+\bidb_i) = 0
+\}.	
 \end{align*}
 Then, $\Sigma_1$
 has extremal rays given by
@@ -1053,17 +1145,26 @@ and
 \]
 \todo{Aaron: Why are $\epsilon_{i,j}$ defined here instead of $e_{i,j}$. We don't use the $\epsilon$ here, and we do use the $e$ here.}
 
-The set of $e_i$ and $e_{i,j}$ given above satisfies the conditions of Proposition ~\ref{prop:cone-generation}, $R_D$ is generated in 
+The set of $e_i$ and $e_{i,j}$ given above satisfies the conditions of
+Proposition ~\ref{prop:cone-generation}, $R_D$ is generated in 
 degrees less than the sum of the degrees of the $e_i$ and $e_{i,j}$, which is
 \[
 	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{\substack{
 	i \in \Tp(D) \\	j \in \Tm(D)}} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
 \]
-\todo{Aaron: Do you use $\sigma$ later? We are usually reserving $\sigma$ for a lattice point. Perhaps something like $\delta$ would be more appropriate if you want to refer to it later. Also, you should number if if you want to refer to it later. In general, it's bad style to define things in the proofs. This could have been defined prior to the theorem statement as well, which would simplify the statement. We should also then clarify that $\sigma$ depends on $D$.}
+\todo{Aaron: Do you use $\sigma$ later? We are usually reserving $\sigma$ for a
+lattice point. Perhaps something like $\delta$ would be more appropriate if you
+want to refer to it later. Also, you should number if if you want to refer to
+it later. In general, it's bad style to define things in the proofs. This could
+have been defined prior to the theorem statement as well, which would simplify
+the statement. We should also then clarify that $\sigma$ depends on $D$.}
 
 \end{proof}
 
-Let $x_1, \ldots x_r$ be the generators of $R_D$ in degrees less than $\sigma$ (as given by Lemma ~\ref{lem:hirz-generators}), and let $\phi$ be the surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through the semigroup ring 
+Let $x_1, \ldots x_r$ be the generators of $R_D$ in degrees less than $\sigma$
+(as given by Lemma ~\ref{lem:hirz-generators}), and let $\phi$ be the
+surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through the
+semigroup ring 
 \[
 	\bk[\Sigma] = \left \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d
 	\alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i
@@ -1094,7 +1195,8 @@ $\ker(\psi)$ is generated in less than
 \end{lem}
 
 \begin{proof}
-We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n$ \todo{Aaron: Say where these polynomials live in}
+We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n$ \todo{Aaron:
+Say where these polynomials live in}
  such that $\psi$ has relations of the form
 \begin{equation}
 \label{eqn:hirz-relations-psi}
@@ -1102,15 +1204,18 @@ We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n$ \todo{Aaron: Say
 \end{equation}
 
 \noindent
-for any degree $d \in \mathbb{N}$ \todo{Aaron: This confuses me because $d$ is not used above, is $d$ supposed to be $i$? Peter: Fixed?}
+for any degree $d \in \mathbb{N}$ \todo{Aaron: This confuses me because $d$ is
+not used above, is $d$ supposed to be $i$? Peter: Fixed?}
  and $c_i \ge -\alpha_i d$ satisfying $\bida_i + \sum_{j = 1}
 ^n \bida_j c_j = 0$ and $\bidb_i + \sum_{j=1}^n \bidb_j c_j = 0$.
 
-To find such a $\beta$, \todo{Aaron: why is there no $i$ subscript? I changed this in the $\bp^m$ case, probably copy past, mutatis mutandis}
+To find such a $\beta$, \todo{Aaron: why is there no $i$ subscript? I changed
+this in the $\bp^m$ case, probably copy past, mutatis mutandis}
  we simply write $f_i$ as a 
 polynomial in $f_1, \ldots f_4$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{j =
-1}^n f_j^{c_j}$ to the canonical form where $r_i = - \lfloor d \alpha_i \rfloor$ whenever $i > 4$. \todo{Add $\ell_i$ defenition}
+1}^n f_j^{c_j}$ to the canonical form where $r_i = - \lfloor d \alpha_i
+\rfloor$ whenever $i > 4$. \todo{Add $\ell_i$ defenition}
 
 %Note that we can view a relation from Equation
 %~\ref{eqn:hirz-relations-psi} as an element of $S$ given
@@ -1123,9 +1228,14 @@ set
 = 0 \}
 \end{align*}
 
-Let $\sigma\in \Sigma'$ correspond to the monomial $y_i \prod_{j=1}^n {y_j}^{c_j}$.  Then we can write $\sigma$ as a sum of $r_j e_j$'s for $j\in \Te$ and $r_{j,k}e_{j,k}$ for $j\in \Tp, k\in \Tm$.  
-For convenience, let $e_j$ (when it exists) be in degree $d_j$ with $j^{th}$ component $-\alpha_j d_j + \kappa_j$ and let $e_{i,j}$ (when it exists) lie in degrees $d_{i,j}$ with $i^{th}$ component $\kappa_{i,j}'$ and $j^{th}$ component $\kappa_{j,i}''$.
-Then a careful computation deduces that 
+Let $\sigma\in \Sigma'$ correspond to the monomial $y_i \prod_{j=1}^n
+{y_j}^{c_j}$.  Then we can write $\sigma$ as a sum of $r_j e_j$'s for $j\in
+\Te$ and $r_{j,k}e_{j,k}$ for $j\in \Tp, k\in \Tm$.  
+For convenience, let $e_j$ (when it exists) be in degree $d_j$ with $j^{th}$
+component $-\alpha_j d_j + \kappa_j$ and let $e_{i,j}$ (when it exists) lie in
+degrees $d_{i,j}$ with $i^{th}$ component $\kappa_{i,j}'$ and $j^{th}$
+component $\kappa_{j,i}''$.
+Then a careful computation implies that 
 %if $i\in \Te$, $i\in \Tp$, and $i\in \Tm$, then
 \[
 	\sigma = \lambda + E
@@ -1149,7 +1259,9 @@ From this, we can deduce that
 	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
 	&\mbox{ if } i \in \Tm \end{cases}.
 \]
-Let $M$ be the set of monomials terms of $\beta_j$.  Then for $\mu\in M$, we can further compute that the lattice point corresponding to $\mu \prod_{j=1}^n {f_i}^{c_i}$ is of the form
+Let $M$ be the set of monomials terms of $\beta_j$.  Then for $\mu\in M$, we
+can further compute that the lattice point corresponding to $\mu \prod_{j=1}^n
+{f_i}^{c_i}$ is of the form
 \[
 	\sigma + E_\mu
 \]
@@ -1189,7 +1301,9 @@ Combining these results, we get the following theorem:
 
 \begin{thm}
 \label{thm:hirz-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \hirz_k.$ Let $D_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further suppose $f_1$ and $f_2$ are independent linear
+Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \hirz_k.$ Let $D_i =
+V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further suppose $f_1$ and $f_2$ are
+independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
 linear polynomials in $y_0$ and $y_1$.
 Then $R_D$ is generated in degrees at most
@@ -1223,28 +1337,54 @@ where
 
 \section{Conclusion}
 \label{sec:conc}
-This paper extends the work of O'Dorney \cite{dorney:canonical} on $\bp^1$ to $\bp^m$ and Hirzebruch Surfaces, bounding the degrees of generation and relations of canonical rings of arbitrary divisors $D$.  The methods for deducing bounds on generators and relations of $\hirz_k$ applied similar methods to that of O'Dorney's for $\bp^1$.  
+This paper extends the work of O'Dorney \cite{dorney:canonical} on $\bp^1$ to
+$\bp^m$ and Hirzebruch Surfaces, bounding the degrees of generation and
+relations of canonical rings of arbitrary divisors $D$.  The methods for
+deducing bounds on generators and relations of $\hirz_k$ applied similar
+methods to that of O'Dorney's for $\bp^1$.  
 
-We can view $\hirz_0$ as $\bp^1\times \bp^1$ and more generally $\hirz_k$ as a $\bp^1$ bundle over $\bp^1$.  One might hope that similar ideas could be generalized to all bundles.  Specifically:
+We can view $\hirz_0$ as $\bp^1\times \bp^1$ and more generally $\hirz_k$ as a
+$\bp^1$ bundle over $\bp^1$.  One might hope that similar ideas could be
+generalized to all bundles.  Specifically:
 \begin{question}
 \label{qn:general-product-bundle}
-Suppose $X$ and $Y$ are schemes.  Let $D$ be a divisor on $X\times Y$ or more generally on an $X$ bundles over $Y$.  Can we describe $D$ in terms of divisors $D_1, \ldots D_n$ on $X$ and $D_1', \ldots d_n'$ on $Y$.  Furthermore, can we find generators for $R_D$ and its ideal of relations using those of the $R_{D_i}$'s and $R_{D_j'}$'s?
+Suppose $X$ and $Y$ are schemes.  Let $D$ be a divisor on $X\times Y$ or more
+generally on an $X$ bundles over $Y$.  Can we describe $D$ in terms of divisors
+$D_1, \ldots D_n$ on $X$ and $D_1', \ldots d_n'$ on $Y$.  Furthermore, can we
+find generators for $R_D$ and its ideal of relations using those of the
+$R_{D_i}$'s and $R_{D_j'}$'s?
 \end{question}
 
-An immediate obstruction to this is the fact that we critically used the fact that $\hirz_k$ has well-defined bi-degrees.  Unfortunately, in general $\Pic(X \times Y) \not \cong \Pic(X) \times \Pic(Y)$.
+An immediate obstruction to this is the fact that we critically used the fact
+that $\hirz_k$ has well-defined bi-degrees.  Unfortunately, in general $\Pic(X
+\times Y) \not \cong \Pic(X) \times \Pic(Y)$.
 
-Alternatively, we can view $\hirz_1$ as $\bp^2$ blown up at a point.  This suggests the following question:
+Alternatively, we can view $\hirz_1$ as $\bp^2$ blown up at a point.  This
+suggests the following question:
 \begin{question}
 \label{qn:general-blowup}
-Let $X$ be a scheme.  Let $X'$ be the blowup of $X$ at a point $P$ with a divisor $D$.  First, is there a way to express $D$ in terms of divisors $D_1, \ldots, D_n$ on $X$?  Furthermore, is there a way to describe generators and relations of $R_D$ in terms of those of $R_{D_i}$ for all $i$.
+Let $X$ be a scheme.  Let $X'$ be the blowup of $X$ at a point $P$ with a
+divisor $D$.  First, is there a way to express $D$ in terms of divisors $D_1,
+\ldots, D_n$ on $X$?  Furthermore, is there a way to describe generators and
+relations of $R_D$ in terms of those of $R_{D_i}$ for all $i$.
 \end{question}
 
-Fortunately, the Picard group of $X$ blown up at a point is the same as that of $X$ times an additional copy of $\bz$.  Perhaps analyzing the argument from Lemma ~\ref{lem:hirz-generators-relations} \todo{make sure this is the lemma and not the theorem with the same name} in the case of $\hirz_k$ from the perspective of adding a copy of $\mathbb{Z}$ to the Picard group, as induced by the blowup, might suggest a general method for blowups.
+Fortunately, the Picard group of $X$ blown up at a point is the same as that of
+$X$ times an additional copy of $\bz$.  Perhaps analyzing the argument from
+Lemma ~\ref{lem:hirz-generators-relations} \todo{make sure this is the lemma
+and not the theorem with the same name} in the case of $\hirz_k$ from the
+perspective of adding a copy of $\mathbb{Z}$ to the Picard group, as induced by
+the blowup, might suggest a general method for blowups.
 
-Answering Question ~\ref{qn:general-blowup} would in fact provide an answer for all rational surfaces, via the minimal model program for surfaces \todo{Reference}.  One might to provide an analogous result to Lemma ~\ref{lem:hirz-generators-relations} \todo{make sure this is the lemma and not the theorem with the same name} in the case of all minimal surfaces:
+Answering Question ~\ref{qn:general-blowup} would in fact provide an answer for
+all rational surfaces, via the minimal model program for surfaces
+\todo{Reference}.  One might to provide an analogous result to Lemma
+~\ref{lem:hirz-generators-relations} \todo{make sure this is the lemma and not
+the theorem with the same name} in the case of all minimal surfaces:
 \begin{question}
 \label{qn:general-minimal-surface}
-Can we describe generators and relations of $R_D$ for $D$ a divisor on an arbitrary minimal surface $X$?
+Can we describe generators and relations of $R_D$ for $D$ a divisor on an
+arbitrary minimal surface $X$?
 \end{question}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
