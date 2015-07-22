@@ -1055,7 +1055,7 @@ and
 \label{lem:hirz-generators}
 $R_D$ is generated in degree at most
 \[
-	\sum_{i \in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{\substack
+	\sigma = \sum_{i \in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{\substack
 	{i \in \Tp(D) \\ j\in \Tm(D)}} (\bida_i \bidb_j - \bida_j \bidb_i)
 	\ell	_{i,j}.
 \]
@@ -1063,16 +1063,16 @@ $R_D$ is generated in degree at most
 
 \begin{proof}
 %Let $(\bida_i, \bidb_i)$ be the bi-degrees of $f_i$. 
-Suppose $\gamma
-\in (R_D)_d$. \todo{Aaron: Why is $\gamma$ defined? It doesn't seem to be used anywhere.}
+Suppose $g
+\in (R_D)_d$.
  Then 
 \[
 	g = \sum_{i = 1}^n {f_i}^{c_i}
 \]
 
 \noindent
-where each $c_i \ge - \alpha_i c_i$, $\sum_{i=1}^n c_i \bida_i = 0$,
-and $\sum_{i=1}^n c_i \bidb_i = 0$. We can any view $\sigma$ inside the
+for some $c_i \ge - \alpha_i d$ such that $\sum_{i=1}^n c_i \bida_i = 0$
+and $\sum_{i=1}^n c_i \bidb_i = 0$. We can view $\sigma$ inside the
 lattice 
 \begin{align*}
 	\Sigma = \{ (d, c_1, \ldots, c_n) \in \bz_{\geq 0}^{n+1} : c_i \ge - d
@@ -1103,32 +1103,32 @@ for $1 \leq i \leq n$.
 Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_n$.
 We can intersect $\Delta^{n-1}$ with the hyperplane $H$ given by
 $\sum_{i=1}^n \bida_i X_i = 0$  to get a subspace $S \subseteq \Delta
-^{n-1}$. The extremal rays of $S$ must lie on the edges of $\Delta
-^{n - 1}$ \todo{Peter: Do we need to cite/argue this, or is it clear?}.
-Thus, the extremal rays of $S$ are given by the $e_i$'s
-contained in $H$ and the intersection points $e_{i, j}$ of $H$
-and the edges $\overline{e_i e_j}$ of the simplex between
-distinct $e_i, e_j$ not contained in $H$.
-\todo{more detail above}
+^{n-1}$.  Since $\Sigma \subseteq S$, if each extremal rays of $S$ contains an element of the lattice $\Sigma$, then those representatives in $\Sigma$ are in fact the extremal rays of $\Sigma$.
 
-We can calculate elements of $R_D$ whose
-corresponding lattice points lie on these extremal rays:
+The extremal rays of $S$ must lie on the edges of $\Delta
+^{n - 1}$, \todo{Peter: Do we need to cite/argue this, or is it clear?}
+and are given by the $e_i$'s
+contained in $H$ and the intersection points $e_{i, j}$ of $H$
+together with the edges $\overline{e_i e_j}$ of the simplex between
+distinct $e_i, e_j$ not contained in $H$.
+\todo{more detail above;  Peter: resolved?}
+The following are elements of $R_D$ whose corresponding lattice point lies on each of the above extremal rays:
 
 For $i \in \Te(D)$, define \todo{below section needs to be simplified, maybe
 by introducing new variables}
-\[
+\begin{equation}\label{eqn:epsilon_i}
 	\epsilon_i := (\prod_{k \ne i} f_k^{-\alpha_k \ell_i \gcd(\bida_i, \bidb_i)})
 	(f_i^{\ell_i \frac{\gcd(\bida_i, \bidb_i)}{\bida_i + \bidb_i}\sum_{k \ne i}
 	\alpha_k (\bida_k + \bidb_k)}) \in H^0(\ell_i \gcd(\bida_i, \bidb_i) D).
-\]
+\end{equation}
 
 \noindent
 For $i \in \Tp(D)$ and $j \in \Tm(D)$, define
-\[
+\begin{equation}\label{eqn:epsilon_i,j}
 	\epsilon_{i, j} := \left(\prod_{k \ne i, j} f_k^{-\alpha_k \ell_{i,j} (\bida_i \bidb_
-	j - \bida_j \bidb_i)}) {f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i, j}
-	(\bida_i \bidb_j - \bida_j \bidb_i) D \right)
-\]
+	j - \bida_j \bidb_i)} {f_i}^{s_1} {f_j}^{s_2}\right) \in H^0(\ell_{i, j}
+	(\bida_i \bidb_j - \bida_j \bidb_i) D
+\end{equation}
 
 \noindent
 where
@@ -1145,8 +1145,8 @@ and
 \]
 \todo{Aaron: Why are $\epsilon_{i,j}$ defined here instead of $e_{i,j}$. We don't use the $\epsilon$ here, and we do use the $e$ here.}
 
-The set of $e_i$ and $e_{i,j}$ given above satisfies the conditions of
-Proposition ~\ref{prop:cone-generation}, $R_D$ is generated in 
+The set of $e_i$'s and $e_{i,j}$'s corresponding to the $\epsilon_i$'s and $\epsilon_{i,j}$'s given above satisfies the conditions of
+Proposition ~\ref{prop:cone-generation}, implying that $R_D$ is generated in 
 degrees less than the sum of the degrees of the $e_i$ and $e_{i,j}$, which is
 \[
 	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{\substack{
