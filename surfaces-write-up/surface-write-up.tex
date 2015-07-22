@@ -157,8 +157,10 @@
 \begin{document}
 
 \begin{abstract}
- 	Bounding generator and relation degrees of general $\bq$-divisors
-	on projective spaces $\bp^n$ and Hirzebruch surfaces.
+ 	We give bounds on the degree of generation and relations of
+	canonical rings of arbitrary $\bq$-divisors
+	on projective spaces of all dimensions
+	and Hirzebruch surfaces.
 \end{abstract}
 
 \maketitle
@@ -169,76 +171,67 @@
 \section{Introduction}
 \label{sec:intro}
 For any Weil $\bq$-divisor $D$ on a rational surface $X$, the graded
-\textbf{canonical ring} $R(X, D) := \bigoplus_{d \geq 0} H^0(X, dD)$
-has connections to rings of Hilbert and Siegel modular forms. In the
-study of these canonical rings, it is natural to describe
-presentations. We study the generators and relations of canonical
+\textbf{canonical ring} is $R(X, D) := \bigoplus_{d \geq 0} H^0(X, \lfloor dD \rfloor)$.
+We study the generators and relations of canonical
 rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$.
 When $D$ is a general $\bq$-divisor on any $\bp^m$ or on any
 $\hirz_m$, we give bounds on the generators and relations of
 $R(X, D)$. In particular, we give a complete description of the
-canonical ring when $X = \bp^m$ and $D$ is an $\bq$-divisor
-containing one hypersurface and give stronger bounds when
-$D$ is any effective $\bq$-divisor on $\bp^m$.
+canonical ring when $X = \bp^m$ and $D$ is any effective
+$\bq$-divisor.
 
-In part, this work is motivated by moving to generalize the work
-of O'Dorney \cite{dorney:canonical} who gives similar descriptions
+In part, this work is motivated by
+of O'Dorney \cite{dorney:canonical}, who gives similar descriptions
 of canonical rings for general $\bq$-divisors on $\bp^1$. For
 particular $\bq$ divisors on stacky curves, the work by
 Voight--Zureick-Brown \cite{vzb:stacky} and Landesman--Ruhm--Zhang
 \cite{lrz:spin-cring} on log spin canonical rings provides
 useful bounds on rings of modular forms of Fuchsian groups.
-The results of this work may have applications to Hilbert
-and Siegel modular forms. \todo{reword last sentence}
 
-
-
-\todo{Hassett-keel, see reference in davids paper about parametrizing $\alpha$ and considering stacky divisors. Would want to know whether they are a moduli space, though we just give generators and relations. This is one of the few examples other than that of nagata dealing with stacky surfaces.}
-
-The work in this paper also has relations to certain rings of Hilbert 
+The work in this paper may help calculate a presentation of certain rings of Hilbert 
 modular forms and Siegel modular forms. Recall that Hilbert and Siegel 
-modular forms are both to higher dimensions variables. In the case of 
-Hilbert modular forms, one considers modular forms on a product of $m$
-upper half planes, which transform under the action of finite index 
-subgroups of the groups of positive determinant matrices. Similarly, Siegel 
-modular forms are modular forms on the Siegel upper half space which are 
-stable under the action of the symplectic group. 
-
+modular forms are both generalizations of modular forms to higher dimensions.
 By a result by Voight and Zureick-Brown \cite[Proposition 6.1.5]{vzb:stacky}, 
-one can translate the analytic category of 1-dimensional complex orbifolds to the algebraic category of stacky curves. 
-We expect that  will similarly allow one to generalize yield an equivalence of
+one can translate the analytic category of 1-dimensional complex orbifolds to
+the algebraic category of stacky curves. 
+We expect that one can generalize this result to yield an equivalence of
 categories between an appropriate subcategory of $m$-dimensional orbifolds and
 a subcategory of $m$-dimensional algebraic spaces.
-In particular, this will allow us to translate rings of Hilbert modular forms
-and Siegel modular forms whose underlying space is isomorphic to $\bp^m$ or a
+In particular, this would allow us to translate rings of Hilbert modular forms
+and Siegel modular forms whose coarse space is a projective space or a
 Hirzebruch surface to canonical rings on the corresponding algebraic surfaces.
 Thereby, our techniques would give a bound on generators and relations for
 Hilbert and Siegel modular forms with certain underlying spaces.
 \todo{include references}
 
 Another closely related topic is the Hassett-Keel program 
-initiated in \todo{was it actually initiated here? check vzb.} \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form
+initiated in \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form
 \begin{align*}
-	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0}H^0 \left( \overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} + \alpha\delta \rfloor  \right) 
+	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0}H^0 \left(
+	\overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} +
+	\alpha\delta \rfloor  \right) 
 \end{align*}
-in terms of certain moduli spaces. $\bq$-divisors on surfaces also naturally
+in terms of certain moduli spaces. Moreover, $\bq$-divisors on surfaces also naturally
 appear when considering the canonical ring of surfaces of Kodaira dimension 1.
 A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and
 their canonical ring are most naturally described in the setting of
 $\bq$-divisors. \todo{Add references}
 
-Furthermore, this work extends the study of canonical rings of
+\todo{Aaron: This pararaph was already stated above. Can we remove it?}
+This work extends the study of canonical rings of
 $\bq$-divisors on curves, as done by O'Dorney \cite{dorney:canonical},
 Voight--Zureick-Brown \cite{vzb:stacky}, and Landesman--Ruhm--Zhang
 \cite{lrz:spin-cring}, to general projective space and Hirzebruch
 surfaces.
 
-\todo{more!}
+\todo{more! Aaron: I think this is plenty of introduction}
 
 \ssec{Main Results}
 
 \todo{put main results! use restate, maybe?}
-
+\todo{Aaron: Some of these theorem statements have been copied from older versions of the statements
+and not updated to reflect the difference. I agree we should use Theorem-restate, but we should make
+sure to copy the ones stated below, and not copy these ones}
 \begin{thm}
 \label{thm:proj-effective-intro}
 Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
@@ -305,7 +298,7 @@ where
 \]
 \end{thm}
 
-\todo{Include summary of what each of the sections do.}
+\todo{Include summary of what each of the sections do.}0
 
 \section{Lemmas for Generation and Relations}
 \label{sec:lemmas}
