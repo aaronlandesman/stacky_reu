@@ -1047,11 +1047,11 @@ and
 \begin{lem}
 \label{lem:hirz-generators}
 $R_D$ is generated in degree at most
-\[
-	\sigma = \sum_{i \in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{\substack
+\begin{equation}\label{eqn:def-sigma}
+	\rho = \sum_{i \in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{\substack
 	{i \in \Tp(D) \\ j\in \Tm(D)}} (\bida_i \bidb_j - \bida_j \bidb_i)
 	\ell	_{i,j}.
-\]
+\end{equation}
 \end{lem}
 
 \begin{proof}
@@ -1065,7 +1065,7 @@ Suppose $g
 
 \noindent
 for some $c_i \ge - \alpha_i d$ such that $\sum_{i=1}^n c_i \bida_i = 0$
-and $\sum_{i=1}^n c_i \bidb_i = 0$. We can view $\sigma$ inside the
+and $\sum_{i=1}^n c_i \bidb_i = 0$. We can view $g$ inside the
 lattice 
 \begin{align*}
 	\Sigma = \{ (d, c_1, \ldots, c_n) \in \bz_{\geq 0}^{n+1} : c_i \ge - d
@@ -1110,7 +1110,7 @@ The following are elements of $R_D$ whose corresponding lattice point lies on ea
 For $i \in \Te(D)$, define \todo{below section needs to be simplified, maybe
 by introducing new variables}
 \begin{equation}\label{eqn:epsilon_i}
-	\epsilon_i := (\prod_{k \ne i} f_k^{-\alpha_k \ell_i \gcd(\bida_i, \bidb_i)})
+	\epsilon_i := \left(\prod_{k \ne i} f_k^{-\alpha_k \ell_i \gcd(\bida_i, \bidb_i)}\right)
 	(f_i^{\ell_i \frac{\gcd(\bida_i, \bidb_i)}{\bida_i + \bidb_i}\sum_{k \ne i}
 	\alpha_k (\bida_k + \bidb_k)}) \in H^0(\ell_i \gcd(\bida_i, \bidb_i) D).
 \end{equation}
@@ -1119,8 +1119,8 @@ by introducing new variables}
 For $i \in \Tp(D)$ and $j \in \Tm(D)$, define
 \begin{equation}\label{eqn:epsilon_i,j}
 	\epsilon_{i, j} := \left(\prod_{k \ne i, j} f_k^{-\alpha_k \ell_{i,j} (\bida_i \bidb_
-	j - \bida_j \bidb_i)} {f_i}^{s_1} {f_j}^{s_2}\right) \in H^0(\ell_{i, j}
-	(\bida_i \bidb_j - \bida_j \bidb_i) D
+	j - \bida_j \bidb_i)} \right){f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i, j}
+	(\bida_i \bidb_j - \bida_j \bidb_i) D)
 \end{equation}
 
 \noindent
@@ -1137,12 +1137,12 @@ and
 	\alpha_k \bidb_k = -b_i (\alpha_i a_i + \alpha_j a_j) + a_i (\alpha_i b_i + \alpha_j b_j).
 \]
 \todo{Aaron: Why are $\epsilon_{i,j}$ defined here instead of $e_{i,j}$. We don't use the $\epsilon$ here, and we do use the $e$ here.}
+A quick calculation deduces that these $\epsilon_i$'s and $\epsilon_{i,j}$'s lie on the extremal rays given by the $e_i$'s and $e_{i,j}$'s.
 
-The set of $e_i$'s and $e_{i,j}$'s corresponding to the $\epsilon_i$'s and $\epsilon_{i,j}$'s given above satisfies the conditions of
-Proposition ~\ref{prop:cone-generation}, implying that $R_D$ is generated in 
-degrees less than the sum of the degrees of the $e_i$ and $e_{i,j}$, which is
+Thus Proposition ~\ref{prop:cone-generation} implies that $R_D$ is generated in 
+degrees less than the sum of the degrees of the $\epsilon_i$'s and $\epsilon_{i,j}$'s, which is
 \[
-	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{\substack{
+	\rho = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{\substack{
 	i \in \Tp(D) \\	j \in \Tm(D)}} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
 \]
 \todo{Aaron: Do you use $\sigma$ later? We are usually reserving $\sigma$ for a
@@ -1150,11 +1150,13 @@ lattice point. Perhaps something like $\delta$ would be more appropriate if you
 want to refer to it later. Also, you should number if if you want to refer to
 it later. In general, it's bad style to define things in the proofs. This could
 have been defined prior to the theorem statement as well, which would simplify
-the statement. We should also then clarify that $\sigma$ depends on $D$.}
+the statement. We should also then clarify that $\sigma$ depends on $D$.  \\
+Peter: $\sigma$ replaced by $\rho$. It's also defined now in the lemma statement rather than its proof.  
+}
 
 \end{proof}
 
-Let $x_1, \ldots x_r$ be the generators of $R_D$ in degrees less than $\sigma$
+Let $x_1, \ldots x_r$ be the generators of $R_D$ in degrees less than $\rho$
 (as given by Lemma ~\ref{lem:hirz-generators}), and let $\phi$ be the
 surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through the
 semigroup ring 
@@ -1174,22 +1176,21 @@ by
 \]
 
 By Lemma ~\ref{lem:bound-ker-chi}, we can bound the degree of generation of $\ker(\chi)$ below
-$2 \sigma$.
+$2 \rho$.
 Finally, we calculate the degree of generation of $\psi$:
 
 \begin{lem}
 $\ker(\psi)$ is generated in less than
 \[
-	\tau = \sigma
-	+ \max \left( \max_{i\in \Te}(\ell_i \gcd(a_i, b_i)), \max_{\substack{
+	\tau : = \rho
+	+ \max \left(\max_{i\in \Te}(\ell_i \gcd(a_i, b_i)), \max_{\substack{
 	i \in	\Tp \\ j\in \Tm}} (\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))
 	\right).
 \]
 \end{lem}
 
 \begin{proof}
-We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n$ \todo{Aaron:
-Say where these polynomials live in}
+We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n\in \bk[z_1, z_2, z_3, z_4]$
  such that $\psi$ has relations of the form
 \begin{equation}
 \label{eqn:hirz-relations-psi}
@@ -1197,14 +1198,12 @@ Say where these polynomials live in}
 \end{equation}
 
 \noindent
-for any degree $d \in \mathbb{N}$ \todo{Aaron: This confuses me because $d$ is
-not used above, is $d$ supposed to be $i$? Peter: Fixed?}
- and $c_i \ge -\alpha_i d$ satisfying $\bida_i + \sum_{j = 1}
+whenever there is some degree $d \in \mathbb{N}$
+and $c_i \ge -\alpha_i d$ satisfying $\bida_i + \sum_{j = 1}
 ^n \bida_j c_j = 0$ and $\bidb_i + \sum_{j=1}^n \bidb_j c_j = 0$.
 
-To find such a $\beta$, \todo{Aaron: why is there no $i$ subscript? I changed
-this in the $\bp^m$ case, probably copy past, mutatis mutandis}
- we simply write $f_i$ as a 
+To find such a $\beta_i$,
+we simply write $f_i$ as a 
 polynomial in $f_1, \ldots f_4$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{j =
 1}^n f_j^{c_j}$ to the canonical form where $r_i = - \lfloor d \alpha_i
@@ -1225,14 +1224,14 @@ Let $\sigma\in \Sigma'$ correspond to the monomial $y_i \prod_{j=1}^n
 {y_j}^{c_j}$.  Then we can write $\sigma$ as a sum of $r_j e_j$'s for $j\in
 \Te$ and $r_{j,k}e_{j,k}$ for $j\in \Tp, k\in \Tm$.  
 For convenience, let $e_j$ (when it exists) be in degree $d_j$ with $j^{th}$
-component $-\alpha_j d_j + \kappa_j$ and let $e_{i,j}$ (when it exists) lie in
-degrees $d_{i,j}$ with $i^{th}$ component $\kappa_{i,j}'$ and $j^{th}$
-component $\kappa_{j,i}''$.
-Then a careful computation implies that 
+component $-\alpha_j d_j + \kappa_j$ for some $\kappa_j \in \br$ and let $e_{j,k}$ (when it exists) lie in
+degrees $d_{j,k}$ with $j^{th}$ component $-\alpha_j d_{j,k} + \kappa_{j,k}'$ and $k^{th}$
+component $-\alpha_j d_{j,k} + \kappa_{j,k}''$ for $\kappa_{j,k}', \kappa_{j,k}'' \in \br$
+Then a careful computation deduces that 
 %if $i\in \Te$, $i\in \Tp$, and $i\in \Tm$, then
-\[
+\begin{equation}\label{eqn:sigma-in-terms-of-lambda/E}
 	\sigma = \lambda + E
-\]
+\end{equation}
 where $\lambda \in \Sigma$ and
 \begin{equation}\label{eqn:hirz-E-translation}
 	E = \begin{cases}
@@ -1252,19 +1251,19 @@ From this, we can deduce that
 	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
 	&\mbox{ if } i \in \Tm \end{cases}.
 \]
-Let $M$ be the set of monomials terms of $\beta_j$.  Then for $\mu\in M$, we
-can further compute that the lattice point corresponding to $\mu \prod_{j=1}^n
+Let $M$ be the set of monomials terms of $\beta_i$.  Then for $\mu\in M$, we
+can further compute that the lattice point, $\sigma_\mu$, corresponding to $\mu \prod_{j=1}^n
 {f_i}^{c_i}$ is of the form
 \[
-	\sigma + E_\mu
+	\sigma_\mu = \lambda + E_\mu
 \]
-where $E_\mu$ is defined similarly to $E$ (in particular, they lie in the same degree).
+where $\lambda \in \Sigma$ is the same as in Equation \ref{eqn:sigma-in-terms-of-lambda/E} and $E_\mu$ is defined in a similar fashion as $E$ in Equation \ref{eqn:hirz-E-translation} (in particular, they lie in the same degree).
 
 Let $F\in R_D$ corresponding to the lattice point $E$ and let $F_\mu$ correspond to the lattice point $E_\mu$.  
 Then $F - \sum_{\mu \in M} F_\mu = 0$ induces a
 relation in degree at most
 \[
-	\sigma + \deg(F)
+	\rho + \deg(F)
 \]
 
 \noindent
@@ -1282,7 +1281,7 @@ We can bound $\deg(F)$ (which equals $\deg(F_\mu)$ for all $\mu$) by
 \noindent
 Therefore, $\ker(\psi)$ is generated in degree at most
 \[
-	\tau = \sigma
+	\tau = \rho
 	+ \max \left(\max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
 	\; \max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
 	(\bida_i \bidb_j - \bida_j
@@ -1301,7 +1300,7 @@ polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
 linear polynomials in $y_0$ and $y_1$.
 Then $R_D$ is generated in degrees at most
 \[
-	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i +
+	\rho = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i +
 	\sum_{\substack{i \in \Tp(D) \\	j \in \Tm(D)}} (\bida_i \bidb_j
 	- \bida_j \bidb_i) \ell_{i, j}
 \]
@@ -1309,7 +1308,7 @@ Then $R_D$ is generated in degrees at most
 \noindent
 with relations generated in degrees at most 
 \[
-	\max(2 \sigma, \sigma + \tau)
+	\max(2 \rho, \tau)
 \]
 
 \noindent
@@ -1321,7 +1320,7 @@ where
 	(\bida_i \bidb_j - \bida_j \bidb_i) \bigr) \right).
 \]
 \end{thm}
-\todo{Aaron: Shouldn't $\tau$ not include $\sigma$?}
+\todo{Aaron: Shouldn't $\tau$ not include $\sigma$?  Peter: Fixed}
 
 
 \todo{Aaron: I know exactly what is going on, but please spell out the proof in 2 lines for completeness.}
