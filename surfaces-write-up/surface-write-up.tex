@@ -252,7 +252,7 @@ relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
 \todo{transition}
 
 \begin{thm}
-\label{proj-generators-relations-intro}
+\label{thm:proj-generators-relations-intro}
 Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let
 $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $C_i = v(f_i)$
 for all $i$; suppose $\deg(f_i) = a_i$. 
@@ -269,7 +269,7 @@ with relations generated in degree at most
 \todo{transition}
 
 \begin{thm}
-\label{lem:hirz-generators-relations}
+\label{thm:hirz-generators-relations}
 Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\hirz_k$.  
 Let $C_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further 
 suppose $f_1$ and $f_2$ are independent linear
@@ -840,6 +840,11 @@ $n$ divisor with very small degree.
 Having justified the necessity of adding ghost points, we proceed to bound the
 number of generators and relations.
 
+\begin{defn}\label{def:ell_i}
+Let $D = \sum_{i=1}^n \alpha_i D_i$ where $\alpha_i = \frac{c_i}{k_i}$. \todo{Peter: better notation for fraction?}  Then notate
+\[\ell_i = \lcm_{j\ne i}(k_i).\]
+\end{defn}
+
 \begin{lem} \label{lem:proj-generators}
 $R_D$ is generated in degrees up to $\sum_{i=1}^n \ell_i a_i.$
 % and relations in degree at most  .\todo{insert numbers}
@@ -1007,18 +1012,20 @@ In this section, the main aim is to prove Theorem
 generators and relations of the canonical ring of a $\bq$-divisor
 on any Hirzebruch surface.
 
-\todo{Aaron: Give some definitions to make clear what the structure of divisors are}
-\todo{Aaron: clarify that $R_D$ is assumed to have both positive bidegrees}
-\todo{Aaron: Have $\ell_{i,j}$ been defined?}
-Let $D = \sum_{i = 1}^n \alpha_i D_i \in \mathbb{Q} \otimes \di (\hirz_m)$ such
-that $D_1, D_2, D_3,$ and $D_4$ are distinct divisors with bi-degrees $(1,0)
-, (1,0), (0,1)$, and $(0,1)$ respectively. Let $D_i = V(f_i)$ where
+We can talk about sections of $\hirz_m$ in terms of polynomials in $u,v, w,x$; furthermore we can talk about bi-degrees of a monomial $u^a v^{b} w^c x^d$ given by $(a + b + mc, c + d)$.  Sections on open subsets of $\hirz_m$ look like polynomials with each monomial having the same bidegrees, and rational sections have both bidegrees 0. \todo{Peter @ Aaron: can you add your exact sequence argument for why this is true?}
+
+Why can write $\bq$-divisors of $\hirz_m$ as $D = \sum_{i = 1}^n \alpha_i D_i \in \mathbb{Q} \otimes \di (\hirz_m)$, where each $D_i = V(f_i)$ for some polynomial $f_i$, with each monomial having the same bidegrees.  Since sections on $H^0(dD)$ must be rational sections, they must have both bidegrees non-negative, meaning that both bidegrees of $D$ must be non-negative for $R_D$ to be non-trivial.
+
+For the remainder of this section we will assume $D_1, D_2, D_3,$ and $D_4$ are distinct divisors with bi-degrees $(1,0)$
+, $(1,0)$, $(0,1)$, and $(0,1)$ respectively. Let $D_i = V(f_i)$ where
 $f_i \in \sco(\bida_i, \bidb_i)$.  
 Then, $f_1$ and $f_2$ are independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
 linear polynomials in $y_0$ and $y_1$. \todo{Talk a little about Hirzebruch
 surfaces before this paragraph; especially, describe what it's sections look
-like.}
+like. \\
+Peter: Fixed?
+}
 
 \begin{defn}
 Define 
@@ -1042,6 +1049,11 @@ and
 	\Tm(D) = \left\{ j \in \{1, \ldots, n\}: \bida_j \sum_{k = 1}^n \alpha_k
 	\bidb_k < \bidb_j \sum_{k=1}^n \alpha_k \bida_k \right\}.
 \end{equation}
+\end{defn}
+
+\begin{defn}\label{def:ell_ij}
+Let $D = \sum_{i=1}^n \alpha_i D_i$ where $\alpha_i = \frac{c_i}{k_i}$. \todo{Peter: better notation for fraction?}  Then notate
+\[\ell_{i,j} = \lcm_{h\ne i,j}(k_h).\]
 \end{defn}
 
 \begin{lem}
@@ -1073,7 +1085,7 @@ lattice
 1}^n c_i \bidb_i = 0 \}.	
 \end{align*}
 
-By Proposition ~\ref{prop:cone-generation}, in order to determining a spanning
+In order to determine a generating
 set for $(R_D)_d,$ it suffices to find the extremal rays of $\Sigma.$
 To do this, we extend the method of O'Dorney \cite[Theorem 8]{dorney:canonical}. 
 We first consider the sub-cone $\Sigma_1 \subset \Sigma$
@@ -1081,9 +1093,9 @@ given by
 \begin{align*}
 	\Sigma_1 = \{ (d, c_1, \ldots, c_n) \in \bz_{\geq 0}^{n+1} : c_i \ge -
 d \alpha_i \text{ for all }i \text{ and }\sum_{i=1}^n c_i (\bida_i+\bidb_i) = 0
-\}.	
+\},
 \end{align*}
-Then, $\Sigma_1$
+which
 has extremal rays given by
  
 \[
@@ -1093,53 +1105,58 @@ has extremal rays given by
 \]
 for $1 \leq i \leq n$.
 
-Let $\Delta^{n-1}$ be the simplex with vertices $e_1, \ldots e_n$.
-We can intersect $\Delta^{n-1}$ with the hyperplane $H$ given by
-$\sum_{i=1}^n \bida_i X_i = 0$  to get a subspace $S \subseteq \Delta
-^{n-1}$.  Since $\Sigma \subseteq S$, if each extremal rays of $S$ contains an element of the lattice $\Sigma$, then those representatives in $\Sigma$ are in fact the extremal rays of $\Sigma$.
+Let $S$ be the $\mathbb{R}_{\ge 0}$ span of $e_1, \ldots e_n$.
+We can intersect $S$ with the hyperplane $H$ given by
+$\sum_{i=1}^n \bida_i X_i = 0$  to get a subspace $S' \subseteq S$.  Then, as long as each extremal rays of $S'$ contains an element of the lattice $\Sigma$, those representatives must in fact the extremal rays of $\Sigma'$.
 
-The extremal rays of $S$ must lie on the edges of $\Delta
-^{n - 1}$, \todo{Peter: Do we need to cite/argue this, or is it clear?}
+The extremal rays of $S'$ can be represented by points lying only on the edges of 
+$\overline{e_i e_j}$
 and are given by the $e_i$'s
 contained in $H$ and the intersection points $e_{i, j}$ of $H$
 together with the edges $\overline{e_i e_j}$ of the simplex between
 distinct $e_i, e_j$ not contained in $H$.
 \todo{more detail above;  Peter: resolved?}
-The following are elements of $R_D$ whose corresponding lattice point lies on each of the above extremal rays:
+The following are elements of $R_D$ correspond to lattice point on each of the extremal rays listed above:
 
-For $i \in \Te(D)$, define \todo{below section needs to be simplified, maybe
-by introducing new variables}
+For $i \in \Te(D)$, define $\epsilon_i \in R_D$ in degree $d_i = \ell_i \gcd(a_i, b_i)$ by 
+\todo{below section needs to be simplified, maybe
+by introducing new variables; 
+Peter: I replaced some terms with degrees $d_i$ and $d_{i,j}$}
 \begin{equation}\label{eqn:epsilon_i}
-	\epsilon_i := \left(\prod_{k \ne i} f_k^{-\alpha_k \ell_i \gcd(\bida_i, \bidb_i)}\right)
-	(f_i^{\ell_i \frac{\gcd(\bida_i, \bidb_i)}{\bida_i + \bidb_i}\sum_{k \ne i}
-	\alpha_k (\bida_k + \bidb_k)}) \in H^0(\ell_i \gcd(\bida_i, \bidb_i) D).
+	\epsilon_i := \left(\prod_{k \ne i} f_k^{-\alpha_k d_i}\right)
+	f_i^{ \frac{d_i}{\bida_i + \bidb_i}\sum_{k \ne i}
+	\alpha_k (\bida_k + \bidb_k)}.
 \end{equation}
 
 \noindent
-For $i \in \Tp(D)$ and $j \in \Tm(D)$, define
+For $i \in \Tp(D)$ and $j \in \Tm(D)$, define $\epsilon_{i,j}\in R_D$ in degree $d_{i,j} = \ell_{i, j}(\bida_i \bidb_j - \bida_j \bidb_i)$ by
 \begin{equation}\label{eqn:epsilon_i,j}
-	\epsilon_{i, j} := \left(\prod_{k \ne i, j} f_k^{-\alpha_k \ell_{i,j} (\bida_i \bidb_
-	j - \bida_j \bidb_i)} \right){f_i}^{s_1} {f_j}^{s_2} \in H^0(\ell_{i, j}
-	(\bida_i \bidb_j - \bida_j \bidb_i) D)
+	\epsilon_{i, j} := \left(\prod_{k \ne i, j} f_k^{-\alpha_k d_{i,j}} \right){f_i}^{s_1} {f_j}^{s_2}
 \end{equation}
 
 \noindent
 where
 \[
 	s_1 = \bidb_j \sum_{k \ne i,j} \alpha_k \bida_k - \bida_j \sum_{k \ne i, j}
-	\alpha_k \bidb_k = b_j (\alpha_i a_i + \alpha_j a_j) - a_j (\alpha_i b_i + \alpha_j b_j)
+	\alpha_k \bidb_k
 \]
 
 \noindent
 and
 \[
 	s_2 = -\bidb_i \sum_{k \ne i, j} \alpha_k \bida_k + \bida_i \sum_{k \ne i, j}
-	\alpha_k \bidb_k = -b_i (\alpha_i a_i + \alpha_j a_j) + a_i (\alpha_i b_i + \alpha_j b_j).
+	\alpha_k \bidb_k.
 \]
-\todo{Aaron: Why are $\epsilon_{i,j}$ defined here instead of $e_{i,j}$. We don't use the $\epsilon$ here, and we do use the $e$ here.}
-A quick calculation deduces that these $\epsilon_i$'s and $\epsilon_{i,j}$'s lie on the extremal rays given by the $e_i$'s and $e_{i,j}$'s.
+\todo{Aaron: Why are $\epsilon_{i,j}$ defined here instead of $e_{i,j}$. We don't use the $\epsilon$ here, and we do use the $e$ here. \\
+Peter: I have a slight leaning towards this notation, because the algebraic object is use more later (I think, although I'll check to make sure); also, I think writing out the ordered tuple would actually be harder, because there is no product notation, and it can be hard to denote the cordinates.}
+A quick calculation deduces that these $\epsilon_i$'s and $\epsilon_{i,j}$'s lie on the extremal rays represented by the $e_i$'s and $e_{i,j}$'s, respectively.
+\begin{rem}
+For the remainder of this section replace the $e_i$'s and $e_{i,j}$'s with a (possibly) different representative of it's extremal ray say that their lattice points correspond to the $\epsilon_i$'s and $\epsilon_{i,j}$'s, respectively.
+\end{rem}\todo{Peter: I don't like having a remark inside of a proof.  Also, it feels like this could reasonably be replaced with a better constructed/organized proof, so that $e_i$'s are just defined this way initially; let me know if you see a good way to do so...  As for Aaron's comment above, we could do something like that, except we already defined $e_i$'s to be something different, which might be equally/more confusing.}
 
-Thus Proposition ~\ref{prop:cone-generation} implies that $R_D$ is generated in 
+Thus,
+Proposition ~\ref{prop:cone-generation} implies that 
+$R_D$ is generated in 
 degrees less than the sum of the degrees of the $\epsilon_i$'s and $\epsilon_{i,j}$'s, which is
 \[
 	\rho = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{\substack{
@@ -1180,7 +1197,7 @@ $2 \rho$.
 Finally, we calculate the degree of generation of $\psi$:
 
 \begin{lem}
-$\ker(\psi)$ is generated in less than
+$\ker(\psi)$ is generated in degrees less than
 \[
 	\tau : = \rho
 	+ \max \left(\max_{i\in \Te}(\ell_i \gcd(a_i, b_i)), \max_{\substack{
@@ -1190,8 +1207,8 @@ $\ker(\psi)$ is generated in less than
 \end{lem}
 
 \begin{proof}
-We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n\in \bk[z_1, z_2, z_3, z_4]$
- such that $\psi$ has relations of the form
+We first claim that there exist $\beta_1, \ldots, \beta_n\in \bk[z_1, z_2, z_3, z_4]$
+ such that $\ker(\psi)$ has relations of the form
 \begin{equation}
 \label{eqn:hirz-relations-psi}
 	(z_i - \beta_i)\prod_{j=1}^n {z_j}^{c_{j}}
@@ -1199,7 +1216,7 @@ We first claim that $\psi$ there are $\beta_1, \ldots, \beta_n\in \bk[z_1, z_2, 
 
 \noindent
 whenever there is some degree $d \in \mathbb{N}$
-and $c_i \ge -\alpha_i d$ satisfying $\bida_i + \sum_{j = 1}
+and $c_j \ge -\alpha_j d$ (for all $j$) satisfying $\bida_i + \sum_{j = 1}
 ^n \bida_j c_j = 0$ and $\bidb_i + \sum_{j=1}^n \bidb_j c_j = 0$.
 
 To find such a $\beta_i$,
@@ -1207,21 +1224,21 @@ we simply write $f_i$ as a
 polynomial in $f_1, \ldots f_4$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{j =
 1}^n f_j^{c_j}$ to the canonical form where $r_i = - \lfloor d \alpha_i
-\rfloor$ whenever $i > 4$. \todo{Add $\ell_i$ defenition}
+\rfloor$ whenever $i > 4$.
 
 %Note that we can view a relation from Equation
 %~\ref{eqn:hirz-relations-psi} as an element of $S$ given
 %by $(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)$.  
-Let $\Sigma'\subseteq \Sigma$ be the \todo{change all $S$ to sigma's}
+Let $\Omega\subseteq \Sigma$ be the 
 set
 \begin{align*}
-	\Sigma' = & \{(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)  \in \bz^{n+1}_{\geq 0} : \\
+	\Omega = & \{(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)  \in \bz^{n+1}_{\geq 0} : \\
 	& c_i \ge -\alpha_i d, \text{ for all i, and } \bida_i + \sum_{j = 1}^m \bida_j c_j = \bidb_i + \sum_{j=1}^n \bidb_j c_j
 = 0 \}
 \end{align*}
 
-Let $\sigma\in \Sigma'$ correspond to the monomial $y_i \prod_{j=1}^n
-{y_j}^{c_j}$.  Then we can write $\sigma$ as a sum of $r_j e_j$'s for $j\in
+Let $\omega\in \Omega'$ correspond to the monomial $y_i \prod_{j=1}^n
+{y_j}^{c_j}$.  Then we can write $\omega$ as a sum of $r_j e_j$'s for $j\in
 \Te$ and $r_{j,k}e_{j,k}$ for $j\in \Tp, k\in \Tm$.  
 For convenience, let $e_j$ (when it exists) be in degree $d_j$ with $j^{th}$
 component $-\alpha_j d_j + \kappa_j$ for some $\kappa_j \in \br$ and let $e_{j,k}$ (when it exists) lie in
@@ -1267,7 +1284,7 @@ relation in degree at most
 \]
 
 \noindent
-which divides $(z_i - \beta_i) \prod_{i = 1}^n y_i^{c_i}$.
+which divides $(z_i - \beta_i) \prod_{i = 1}^n y_i^{c_i}$ (recall that $\rho$, defined in Equation \ref{eqn:def-sigma}, is an upper bound for generation degree).
 We can bound $\deg(F)$ (which equals $\deg(F_\mu)$ for all $\mu$) by
 \[
 	\deg(F) = \deg(E) \le \begin{cases}
@@ -1320,10 +1337,15 @@ where
 	(\bida_i \bidb_j - \bida_j \bidb_i) \bigr) \right).
 \]
 \end{thm}
+\begin{proof}
+The generation degree bound is as stated in Lemma \ref{lem:hirz-generators}.  By Proposition \ref{lem:composite-map}, the degree of generation of $\ker(\phi)$ is at most the maximum of the generation degrees of $\ker(\chi)$ and $\ker(\psi)$, giving us the desired relations bound.
+\end{proof}
+
 \todo{Aaron: Shouldn't $\tau$ not include $\sigma$?  Peter: Fixed}
 
 
-\todo{Aaron: I know exactly what is going on, but please spell out the proof in 2 lines for completeness.}
+\todo{Aaron: I know exactly what is going on, but please spell out the proof in 2 lines for completeness.\\
+Peter: Better?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Further Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1363,16 +1385,13 @@ relations of $R_D$ in terms of those of $R_{D_i}$ for all $i$.
 
 Fortunately, the Picard group of $X$ blown up at a point is the same as that of
 $X$ times an additional copy of $\bz$.  Perhaps analyzing the argument from
-Lemma ~\ref{lem:hirz-generators-relations} \todo{make sure this is the lemma
-and not the theorem with the same name} in the case of $\hirz_k$ from the
+Lemma ~\ref{thm:hirz-generators-relations} in the case of $\hirz_1$ from the
 perspective of adding a copy of $\mathbb{Z}$ to the Picard group, as induced by
 the blowup, might suggest a general method for blowups.
 
 Answering Question ~\ref{qn:general-blowup} would in fact provide an answer for
 all rational surfaces, via the minimal model program for surfaces
-\todo{Reference}.  One might to provide an analogous result to Lemma
-~\ref{lem:hirz-generators-relations} \todo{make sure this is the lemma and not
-the theorem with the same name} in the case of all minimal surfaces:
+\todo{Reference}.  One might then hope to further extend these results to all minimal surfaces:
 \begin{question}
 \label{qn:general-minimal-surface}
 Can we describe generators and relations of $R_D$ for $D$ a divisor on an
