@@ -22,6 +22,8 @@
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{caption}
+\usepackage{thmtools}
+\usepackage{thm-restate}
 
 \usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
 \def\listtodoname{List of Todos}
@@ -181,12 +183,13 @@ canonical ring when $X = \bp^m$ and $D$ is any effective
 $\bq$-divisor.
 
 In part, this work is motivated by a recent paper by
-O'Dorney \cite{dorney:canonical} who gives similar descriptions
+O'Dorney \cite{dorney:canonical}, which gives similar descriptions
 of canonical rings for general $\bq$-divisors on $\bp^1$. This
 study also has connections to the papers by Voight--Zureick-Brown 
-\cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring} on log 
-spin canonical rings of particular $\bq$ divisors on stacky curves which 
-provide bounds on rings of modular forms of Fuchsian groups.
+\cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring}
+on log spin canonical rings on stacky curves which provide bounds
+on rings of modular forms of Fuchsian groups through the study
+of particular $\bq$-divisors on curves.
 
 The work in this paper may help calculate a presentation of certain rings of Hilbert 
 modular forms and Siegel modular forms. Recall that Hilbert and Siegel 
@@ -217,21 +220,10 @@ A surface has Kodaira dimension 1 if and only if it is an elliptic surface, and
 their canonical ring are most naturally described in the setting of
 $\bq$-divisors. \todo{Add references}
 
-\todo{Aaron: This paragraph was already stated above. Can we remove it?}
-This work extends the study of canonical rings of
-$\bq$-divisors on curves, as done by O'Dorney \cite{dorney:canonical},
-Voight--Zureick-Brown \cite{vzb:stacky}, and Landesman--Ruhm--Zhang
-\cite{lrz:spin-cring}, to general projective space and Hirzebruch
-surfaces.
-
-\todo{more! Aaron: I think this is plenty of introduction}
-
 \ssec{Main Results}
-
-\todo{put main results! use restate, maybe?}
 \todo{Aaron: Some of these theorem statements have been copied from older versions of the statements
 and not updated to reflect the difference. I agree we should use Theorem-restate, but we should make
-sure to copy the ones stated below, and not copy these ones}
+sure to copy the ones stated below, and not copy these ones. Robin: thm-restate only allows you to restate earlier theorems and not later ones, so the main thms must appear numbered as 1.-}
 \begin{thm}
 \label{thm:proj-effective-intro}
 Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
@@ -251,55 +243,59 @@ relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
 
 \todo{transition}
 
-\begin{thm}
-\label{thm:proj-generators-relations-intro}
-Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\mathbb{P}^m$.  Let
-$f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that $C_i = v(f_i)$
-for all $i$; suppose $\deg(f_i) = a_i$. 
+\begin{restatable}{thm}{restateproj}
+\label{thm:proj-generators-relations}
+Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \bp^m$. Let
+$f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
+$D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
 Then $R_D$ is generated in degree at most 
 \[
 	\sum_{i=1}^n \ell_i a_i
 \]
+
+\noindent
 with relations generated in degree at most
 \[
-	\max \left(2 \sum_{i=1}^n \ell_i a_i, \frac{\max_{1\le i \le n}(\bida_i)}{\deg(D)} + \sum_{i=1}^n \ell_i a_i \right).
+	\max \left(2 \sum_{i=1}^n \ell_i a_i, \frac{\max_{1\le i \le n}
+	(	\bida_i)}{\deg(D)} + \sum_{i=1}^n \ell_i a_i \right).
 \]
-\end{thm}
+\end{restatable}
 
 \todo{transition}
 
-\begin{thm}
-\label{thm:hirz-generators-relations-intro}
-Let $D = \sum_{i=1}^n \alpha_i C_i$ for curves $C_i$ on $\hirz_k$.  
-Let $C_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further 
-suppose $f_1$ and $f_2$ are independent linear
+\begin{restatable}{thm}{hirzrestate}
+\label{thm:hirz-generators-relations}
+Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \hirz_k.$ Let $D_i =
+V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further suppose $f_1$ and $f_2$ are
+independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
 linear polynomials in $y_0$ and $y_1$.
-Then $R_D$ is generated in degree less than 
+Then $R_D$ is generated in degrees at most
 \[
-	\sigma = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i +
-	\sum_{\substack{i	\in \Tp(D) \\	j \in \Tm(D)}} (\bida_i
-	\bidb_j - \bida_j \bidb_i)\ell_{i,j}
+	\rho = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i +
+	\sum_{\substack{i \in \Tp(D) \\	j \in \Tm(D)}} (\bida_i \bidb_j
+	- \bida_j \bidb_i) \ell_{i, j}
 \]
 
 \noindent
-with relations generated in degree less than 
+with relations generated in degrees at most 
 \[
-	\max(2 \sigma, \sigma + \tau)
+	\max(2 \rho, \tau)
 \]
 
 \noindent
 where
 \[
 	\tau = \sigma
-	+ \max \left( \max_{i\in \Te}(\ell_i \gcd(a_i, b_i)), \max_{
-	\substack{i \in	\Tp \\ j\in \Tm}}(\ell_{i,j} (\bida_i \bidb_j
-	- \bida_j \bidb_i))	\right).
+	+ \max \left( \max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
+	\max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
+	(\bida_i \bidb_j - \bida_j \bidb_i) \bigr) \right).
 \]
-\end{thm}
+\end{restatable}
 
 \todo{Include summary of what each of the sections do.}
-\todo{Incorporate the following section into the pm section}
+\todo{Incorporate the following section into the $\bp^{m}$ section}
+
 \section{Lemmas for Generation and Relations}
 \label{sec:lemmas}
 
@@ -967,26 +963,11 @@ less than
 \]
 \end{proof}
 
-Combining the above results, we obtain the following bound on the
-degrees of generators and relations of $R_D$.
+By combining these results, we get our main theorem bounding
+the generator and relation degrees of the canonical ring of
+$\bq$-divisors on projective space.
 
-\begin{thm}
-\label{thm:proj-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \bp^m$. Let
-$f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
-$D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
-Then $R_D$ is generated in degree at most 
-\[
-	\sum_{i=1}^n \ell_i a_i
-\]
-
-\noindent
-with relations generated in degree at most
-\[
-	\max \left(2 \sum_{i=1}^n \ell_i a_i, \frac{\max_{1\le i \le n}
-	(	\bida_i)}{\deg(D)} + \sum_{i=1}^n \ell_i a_i \right).
-\]
-\end{thm}
+\restateproj*
 
 \begin{proof}
 The bound on degree of generation is precisely the content of Lemma 
@@ -1004,6 +985,8 @@ is generated in degrees less than
 	(\bida_i)}{\deg(D)} + \sum_{i=1}^n \ell_i a_i \right).
 \]
 \end{proof}
+
+\todo{say something about ghost points?}
 
 \section{Canonical Rings on Hirzebruch surfaces}
 \label{sec:hirz}
@@ -1306,44 +1289,17 @@ Therefore, $\ker(\psi)$ is generated in degree at most
 \]
 \end{proof}
 
-Combining these results, we get the following theorem:
+By combining these results, we get our main theorem bounding
+the generator and relation degrees of the canonical ring of
+$\bq$-divisors on Hirzebruch surfaces.
 
-\begin{thm}
-\label{thm:hirz-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \hirz_k.$ Let $D_i =
-V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further suppose $f_1$ and $f_2$ are
-independent linear
-polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
-linear polynomials in $y_0$ and $y_1$.
-Then $R_D$ is generated in degrees at most
-\[
-	\rho = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i +
-	\sum_{\substack{i \in \Tp(D) \\	j \in \Tm(D)}} (\bida_i \bidb_j
-	- \bida_j \bidb_i) \ell_{i, j}
-\]
+\hirzrestate*
 
-\noindent
-with relations generated in degrees at most 
-\[
-	\max(2 \rho, \tau)
-\]
-
-\noindent
-where
-\[
-	\tau = \sigma
-	+ \max \left( \max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
-	\max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
-	(\bida_i \bidb_j - \bida_j \bidb_i) \bigr) \right).
-\]
-\end{thm}
 \begin{proof}
 The generation degree bound is as stated in Lemma \ref{lem:hirz-generators}.  By Proposition \ref{lem:composite-map}, the degree of generation of $\ker(\phi)$ is at most the maximum of the generation degrees of $\ker(\chi)$ and $\ker(\psi)$, giving us the desired relations bound.
 \end{proof}
 
-\todo{Aaron: Shouldn't $\tau$ not include $\sigma$?  Peter: Fixed}
-
-
+\todo{add something about ghost points?}
 \todo{Aaron: I know exactly what is going on, but please spell out the proof in 2 lines for completeness.\\
 Peter: Better?}
 
