@@ -897,7 +897,7 @@ x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} 
 \]
 
 By Lemma ~\ref{lem:bound-ker-chi}, we can bound the degree of generation of
-$\ker(\chi)$ and we next calculate the degree of generation of $\ker \psi$:
+$\ker \chi $ and we next calculate the degree of generation of $\ker \psi$:
 
 \begin{lem}
 \label{lem:proj-relations-psi}
@@ -974,7 +974,7 @@ The bound on degree of generation is precisely the content of Lemma
 ~\ref{lem:proj-generators}. It only remains to bound the degree of 
 relations.
 
-By ~\ref{lem:bound-ker-chi}, $\ker(\chi)$ is generated in degrees 
+By ~\ref{lem:bound-ker-chi}, $\ker \chi$ is generated in degrees 
 up to $2\sum_{i=1}^n \ell_i a_i$ and by Lemma
 ~\ref{lem:proj-relations-psi}, $\ker \psi,$ is generated in
 degrees up to $\frac{\bida_i}{\deg(D)} + \sum_{i=1}^n \ell_i a_i$. 
@@ -1158,8 +1158,18 @@ It's confusing for the reader who is thinking in terms of lattice points
 to suddently switch to thinking in a ring. At the very least, you should say 
 it is the preimage of the map from the lattice to the canonical ring, since the
 current use of corresponding isn't ever made clear, but
-this would probably then take a bunch more space too, and I would also find this significantly more confusing than just saying the lattice points.}
-A quick calculation deduces that these $\epsilon_i$'s and $\epsilon_{i,j}$'s lie on the extremal rays represented by the $e_i$'s and $e_{i,j}$'s, respectively.
+this would probably then take a bunch more space too, and I would also find this significantly more confusing than just saying the lattice points.
+
+Robin: Yeah, I thought that we had agreed upon doing the entire
+proof in terms of the lattice points and then occasionally giving
+the algebraic translation (and noting that it is simply the
+algebraic translation) rather than this ``in-between'' sort of
+thing. I agree with Aaron that it's confusing for a reader who has
+not gone through the details before.}
+
+A quick calculation deduces that these $\epsilon_i$'s and
+$\epsilon_{i,j}$'s lie on the extremal rays represented by the
+$e_i$'s and $e_{i,j}$'s, respectively.
 \begin{rem}
 For the remainder of this section replace the $e_i$'s and $e_{i,j}$'s with a (possibly) different representative of it's extremal ray say that their lattice points correspond to the $\epsilon_i$'s and $\epsilon_{i,j}$'s, respectively.
 \end{rem}
@@ -1176,9 +1186,10 @@ I also think it's confusing to switch notation in the middle of a proof.
 Earlier in the proof, we should just call the $e_{ij}$ something like $\hat{e_{ij}}$. Then, we should never define $\epsilon_{ij}$, since it's only used in this
 proof, and should really be $e_{ij}$, as I was explaining in my previous todo.
 Instead of defining $\epsilon_{ij}$, just define $e_{ij}$ which are the
-appropriately scaled $\hat{e_{ij}}$ and everything will be much clearer.}
-Thus,
-Proposition ~\ref{prop:cone-generation} implies that 
+appropriately scaled $\hat{e_{ij}}$ and everything will be much clearer.
+Robin: agree with Aaron here.}
+
+Thus, Proposition ~\ref{prop:cone-generation} implies that 
 $R_D$ is generated in 
 degrees less than the sum of the degrees of the $\epsilon_i$'s and $\epsilon_{i,j}$'s, which is
 \[
@@ -1206,7 +1217,7 @@ by
 \end{tikzcd}
 \]
 
-By Lemma ~\ref{lem:bound-ker-chi}, we can bound the degree of generation of $\ker(\chi)$ below
+By Lemma ~\ref{lem:bound-ker-chi}, we can bound the degree of generation of $\ker \chi$ below
 $2 \rho$.
 Finally, we calculate the degree of generation of $\psi$:
 
@@ -1340,8 +1351,8 @@ $\bq$-divisors on Hirzebruch surfaces.
 \begin{proof}
 The generation degree bound is as stated in Lemma \ref{lem:hirz-generators}.
 By Proposition \ref{lem:composite-map}, the degree of generation of
-$\ker \phi$ is at most the maximum of the generation degrees of $\ker(\chi)$
-and $\ker \psi$, giving us the desired relations bound. The bound on $\ker(\chi)$
+$\ker \phi$ is at most the maximum of the generation degrees of $\ker \chi$
+and $\ker \psi$, giving us the desired relations bound. The bound on $\ker \chi$
 follows from Lemma ~\ref{lem:bound-ker-chi} and the bound on $\ker \psi$
 follows from Lemma ~\ref{lem:hirz-bound-ker-psi}.
 $\ker \psi$ follows from 
