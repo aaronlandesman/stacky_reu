@@ -1041,7 +1041,7 @@ and
 
 \begin{defn}\label{def:ell_ij}
 Let $D = \sum_{i=1}^n \alpha_i D_i$ where $\alpha_i = \frac{c_i}{k_i}$.
-\todo{Peter: better notation for fraction? Aaron: I like this notation}  Then notate
+Then notate
 \[\ell_{i,j} = \lcm_{h\ne i,j}(k_h).\]
 \end{defn}
 
@@ -1270,14 +1270,15 @@ For convenience, let $e_j$ (when it exists) be in degree $d_j$ with $j^{th}$
 component $-\alpha_j d_j + \kappa_j$ for some $\kappa_j \in \bq$ and let $e_{j,k}$ (when it exists) lie in
 degrees $d_{j,k}$ with $j^{th}$ component $-\alpha_j d_{j,k} + \kappa_{j,k}'$ and $k^{th}$
 component $-\alpha_j d_{j,k} + \kappa_{j,k}''$ for $\kappa_{j,k}', \kappa_{j,k}'' \in \bq$
-Then a careful computation deduces that
+Then a careful computation deduces that we can write
 
-\todo{Aaron: What is $\sigma$ here? Is it $\rho$?}
+\todo{Aaron: What is $\sigma$ here? Is it $\rho$? \\
+Peter: Should have been $\omega$...}
 %if $i\in \Te$, $i\in \Tp$, and $i\in \Tm$, then
 \begin{equation}\label{eqn:sigma-in-terms-of-lambda/E}
-	\sigma = \lambda + E
+	\omega = \lambda + E
 \end{equation}
-where $\lambda \in \Sigma$ and
+for some $\lambda \in \Sigma$ and $E$ of the form
 \begin{equation}\label{eqn:hirz-E-translation}
 	E = \begin{cases}
 	\frac{1}{\kappa_i} e_i  	&  \mbox{ if }i\in \Te\\
@@ -1287,7 +1288,7 @@ where $\lambda \in \Sigma$ and
 \end{equation}
 
 \noindent
-From this, we can deduce that
+From this, we can further deduce that for such an $E$,
 \[
 	\deg(E) \le \begin{cases}
 	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in \Te \\
@@ -1296,22 +1297,31 @@ From this, we can deduce that
 	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
 	&\mbox{ if } i \in \Tm \end{cases}.
 \]
-Let $M$ be the set of monomials terms of $\beta_i$.  Then for $\mu\in M$, we
-\todo{Aaron: What is $M$?}
+Let $M$ be the set of monomials terms of $\beta_i$.  Then for $\mu = \prod_{j=1}^n
+{f_i}^{c_i}\in M$, we
+\todo{Aaron: What is $M$? \\
+Peter: I don't quite follow this question... Is your objection that ``the set of monomial terms of $\beta_i$'' is too imprecise?}
 \todo{Aaron: Again, why do we keep defining lattce points in
 	terms of elements in the canonical ring? Why not just
-write out what the lattice points are in coordinates?}
-can further compute that the lattice point, $\sigma_\mu$, corresponding to $\mu :=
-\prod_{j=1}^n
-{f_i}^{c_i}$ is of the form
+write out what the lattice points are in coordinates? \\ 
+Peter: Fixed?}
+can further compute that the lattice point, $\omega_\mu = (c_1 ,\ldots c_n)$, corresponding to $\mu
+$ is of the form
 \[
-	\sigma_\mu = \lambda + E_\mu
+	\omega_\mu = \lambda + E_\mu
 \]
-where $\lambda \in \Sigma$ is the same as in Equation \ref{eqn:sigma-in-terms-of-lambda/E} and $E_\mu$ is defined in a similar fashion as $E$ in Equation \ref{eqn:hirz-E-translation} (in particular, they lie in the same degree).
+where $\lambda \in \Sigma$ is the same as in Equation \ref{eqn:sigma-in-terms-of-lambda/E} and $E_\mu$ is defined in a similar fashion as $E$ in Equation \ref{eqn:hirz-E-translation}:
+\begin{equation}\label{eqn:hirz-E_mu-translation}
+E_\mu = \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Te}}q_i e_i\right) + \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tp \\ j\in \Tm}} q_{i,j} e_{i,j}\right) + \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tm \\ j\in \Tp}} q_{j,i} e_{i,j}\right)
+\end{equation}
+for some $q_i$'s, $q_{i,j}$'s and $q_{j,i}$'s (for appropriate $i$'s and $j$'s) in $\bq_{\ge 0}$.  
 \todo{Aaron: if $\sigma_\mu$ is an element, how can it be written as
 	the sum of an element and a set? Same question for $\sigma$ above.
 	Also, I do not know what $E_\mu$ is. You really have to define it,
-since there's no way to check the validity of this proof without it.}
+since there's no way to check the validity of this proof without it.  \\
+Peter: $E$ and $E_\mu$ are elements, not sets...}
+Note that $E_\mu$ lies in the same degree as $E$ for all $\mu$.
+
 Let $F\in R_D$ corresponding to the lattice point $E$ and let $F_\mu$ correspond to the lattice point $E_\mu$.  
 Then $F - \sum_{\mu \in M} F_\mu = 0$ induces a
 relation in degree at most
