@@ -837,7 +837,8 @@ Having justified the necessity of adding ghost points, we proceed to bound the
 number of generators and relations.
 
 \begin{defn}\label{def:ell_i}
-Let $D = \sum_{i=1}^n \alpha_i D_i$ where $\alpha_i = \frac{c_i}{k_i}$. \todo{Peter: better notation for fraction? Aaron: This seems fine to me. Are you saying you want a better notation, or asking if this is a better notation?}  Then notate
+Let $D = \sum_{i=1}^n \alpha_i D_i$ where $\alpha_i = \frac{c_i}{k_i}$.
+Then notate
 \[\ell_i = \lcm_{j\ne i}(k_i).\]
 \end{defn}
 
@@ -1270,15 +1271,17 @@ For convenience, let $e_j$ (when it exists) be in degree $d_j$ with $j^{th}$
 component $-\alpha_j d_j + \kappa_j$ for some $\kappa_j \in \bq$ and let $e_{j,k}$ (when it exists) lie in
 degrees $d_{j,k}$ with $j^{th}$ component $-\alpha_j d_{j,k} + \kappa_{j,k}'$ and $k^{th}$
 component $-\alpha_j d_{j,k} + \kappa_{j,k}''$ for $\kappa_{j,k}', \kappa_{j,k}'' \in \bq$
-By a careful computation, we can write
-
-\todo{Aaron: What is $\sigma$ here? Is it $\rho$? \\
-Peter: Should have been $\omega$...}
-%if $i\in \Te$, $i\in \Tp$, and $i\in \Tm$, then
+By a careful computation, we can find $\lambda \in \Sigma$ 
+\todo{Aaron: Is it at all possible to write down what $\lambda$ and the $r_{i,j}$ are?
+I suspect we should be able to write them in a couple lines, which would
+definitely clarify how we're getting the bound on degree $E$. While I agree
+it's fine to hide the computation of the $r_{i,j}$ it would still clarify matters
+to say what the $r_{i,j}$ and $\lambda$ are.}
+and $r_{i,j} \in \bq$ so that we can write
 \begin{equation}\label{eqn:sigma-in-terms-of-lambda/E}
-	\omega = \lambda + E
-\end{equation}
-for some $\lambda \in \Sigma$ and $E$ of the form
+-	\sigma = \lambda + E
+ \end{equation}
+with $E$ of the form
 \begin{equation}\label{eqn:hirz-E-translation}
 	E = \begin{cases}
 	\frac{1}{\kappa_i} e_i  	&  \mbox{ if }i\in \Te\\
@@ -1300,26 +1303,54 @@ From this, we can further deduce that for such an $E$,
 Let $M$ be the set of monomials terms of $\beta_i$.  Then for $\mu = \prod_{j=1}^n
 {f_i}^{c_i}\in M$, we
 \todo{Aaron: What is $M$? \\
-Peter: I don't quite follow this question... Is your objection that ``the set of monomial terms of $\beta_i$'' is too imprecise?}
+Peter: I don't quite follow this question... Is your objection that ``the set of monomial terms of $\beta_i$'' is too imprecise?
+
+Aaron: Sorry, I was trying to say that
+I don't understand what ``the set of monomials in terms of beta i'' means.
+Do you just mean that $M = \{\psi(\beta_1), \ldots, \psi(\beta_n)\}$?
+
+However, I'm really baffled as to why you want to apply $\psi$ to the
+$\beta_i$, since two lines later, you then apply the reverse correspondence
+and want to work back in the semigroupring. Why don't you just stay in the
+semigroup ring the whole time?
+I think I'm misunderstanding this, but is $\omega_\mu$ just equal to
+$\beta_i$ for some $i$? Also, why is $\omega_\mu$ missing a $d$ index
+as its first index?
+}
 \todo{Aaron: Again, why do we keep defining lattce points in
 	terms of elements in the canonical ring? Why not just
 write out what the lattice points are in coordinates? \\ 
-Peter: Fixed?}
-can further compute that the lattice point, $\omega_\mu = (c_1 ,\ldots c_n)$, corresponding to $\mu
+Peter: Fixed?
+
+Aaron: I like that $E$ is defined in terms of $e_i$.
+I'm still confused about $\omega$ and $\mu$ though. see my above comment.
+}
+can further compute that there exist $q_i, q_{i,j} \in \bq_{\geq 0}$ and $\lambda \in
+\Sigma$ so that the lattice point, $\omega_\mu = (c_1 ,\ldots c_n)$,
+corresponding to $\mu
 $ is of the form
 \[
 	\omega_\mu = \lambda + E_\mu
 \]
-where $\lambda \in \Sigma$ is the same as in Equation \ref{eqn:sigma-in-terms-of-lambda/E} and $E_\mu$ is defined in a similar fashion as $E$ in Equation \ref{eqn:hirz-E-translation}:
+where $\lambda$ is the same as in Equation \ref{eqn:sigma-in-terms-of-lambda/E} and $E_\mu$ is defined in a similar fashion as $E$ in Equation \ref{eqn:hirz-E-translation} by
 \begin{equation}\label{eqn:hirz-E_mu-translation}
-E_\mu = \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Te}}q_i e_i\right) + \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tp \\ j\in \Tm}} q_{i,j} e_{i,j}\right) + \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tm \\ j\in \Tp}} q_{j,i} e_{i,j}\right)
+E_\mu = \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Te}}q_i e_i\right) +
+\left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tp \\ j\in \Tm}} q_{i,j}
+e_{i,j}\right) + \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tm \\ j\in
+\Tp}} q_{j,i} e_{i,j}\right).
 \end{equation}
-for some $q_i$'s, $q_{i,j}$'s and $q_{j,i}$'s (for appropriate $i$'s and $j$'s) in $\bq_{\ge 0}$.  
 \todo{Aaron: if $\sigma_\mu$ is an element, how can it be written as
 	the sum of an element and a set? Same question for $\sigma$ above.
 	Also, I do not know what $E_\mu$ is. You really have to define it,
 since there's no way to check the validity of this proof without it.  \\
-Peter: $E$ and $E_\mu$ are elements, not sets...}
+Peter: $E$ and $E_\mu$ are elements, not sets...
+
+Aaron: My mistake. Thanks for writing it out though. However,
+since $E, E_\mu$ are so similar, why not defining them so that they look similar?
+I.e., why not define them either both in three cases as $E$
+or both as sums as $E_\mu$. It's confusing that they are the same, but not
+written in a parallel fashion.
+}
 Note that $E_\mu$ lies in the same degree as $E$ for all $\mu$.
 
 Let $F\in R_D$ corresponding to the lattice point $E$ and let $F_\mu$ correspond to the lattice point $E_\mu$.  
@@ -1369,8 +1400,6 @@ $\ker \psi$ follows from
 \end{proof}
 
 \todo{add something about ghost points?}
-\todo{Aaron: I know exactly what is going on, but please spell out the proof in 2 lines for completeness.\\
-Peter: Better?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Further Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
