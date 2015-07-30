@@ -827,7 +827,8 @@ expressible as functions in $m$ of the $m+1$ variables on $\bp^m$.
 This problem can easily be circumvented by adding in ``ghost
 points.'' That is, we may add divisors of the form $0 \cdot H_i$ to
 $D$, and reorder so that if $D = \sum_{i=1}^{n}\alpha_i V(f_i)$,
-then $\bk[f_0, \ldots, f_m]$ has transcendence degree $m+1$ over $\bk$.
+then $f_0, \ldots, f_m$ cut out linearly independent
+hyperplanes in $\bp^m$.
 
 In Example ~\ref{eg:radical}, we show that it is still, in general,
 necessary to add ghost points, even when the irreducible components
@@ -867,8 +868,18 @@ Let
 \alpha_i, \; 1 \leq i \leq n, \text{ and } \sum_{i=1}^{n} \ell_i \bida_i = 0
 \right \}.
 \end{align}
-\todo{Aaron: Possibly take this definition out of the proof, and move it into the setup, since we want to reference it later.  \\
-Peter: I like having the statement of the lemma being nice and consise; also the statement has nothing to do with this geometric picture, so I find it more natural to have the geometric side contained in the proof.  I also don't quite see why it is so bad to reference something from inside a previous proof; a reader can surely locate it...
+\todo{Aaron: Possibly take this definition out of the proof, and move it into
+	the setup, since we want to reference it later.  \\
+Peter: I like having the statement of the lemma being nice and consise; also
+the statement has nothing to do with this geometric picture, so I find it more
+natural to have the geometric side contained in the proof.  I also don't quite
+see why it is so bad to reference something from inside a previous proof; a
+reader can surely locate it...
+
+Aaron: In general, I like the idea of having proofs self contained,
+so that one should only refer to the proof statement, not the
+body of the proof.
+I'm not very strongly tied to this idea though, and I think it's fine. I think it's fine.
 }
 We note that $\Sigma$ has extremal rays given by the lattice points 
 \begin{equation}\label{defn:e-i-proj}
@@ -1031,7 +1042,9 @@ distinct divisors with bi-degrees $(1,0)$
 $f_i \in \sco(\bida_i, \bidb_i)$.  
 Then, $f_1$ and $f_2$ are independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
-linear polynomials in $y_0$ and $y_1$.  In order to achieve this condition on $D_1, \ldots D_4$, it may be necessary to add in ``Ghost Divisors'' (i.e. divisors with of the desired form with a coefficient $\alpha_i = 0$).
+linear polynomials in $y_0$ and $y_1$.  In order to achieve this condition on
+$D_1, \ldots D_4$, it may be necessary to add in ``Ghost Divisors'' (i.e.
+divisors with of the desired form with a coefficient $0$).
 \begin{defn}
 Define 
 \begin{equation}
@@ -1120,13 +1133,14 @@ rays of $\Sigma \otimes_\bz \bq$.
 The extremal rays of $\Sigma \otimes_\bz \bq$ can be represented by points
 lying only on the edges 
 $\overline{e_i e_j}$.
-The extremal rays are spanned by those $e_i$'s
+The extremal rays are given by multiples of those $\epsilon_i$'s
 which are contained in $H$ together with intersection points $e_{i, j}$ which
 can be expressed as $H \cap \overline{e_i e_j},$ where $i \neq j$ and $e_i,
 e_j \notin H$. Note that $e_{i,j}$ is only defined in the case
 $\# \{H \cap \overline{e_i, e_j}\} = 1$.
 
-From this we can deduce the representatives of $\Sigma$ lying on its extremal rays given by the following:
+
+From this we can deduce that a set of extremal rays of $\Sigma$ are given as follows:
 For $i \in \Te(D)$, define $e_i \in R_D$ in degree $d_i = \ell_i \gcd(a_i, b_i)$ by 
 \begin{equation}\label{eqn:epsilon_i}
 	e_i := (-\alpha_1 d_i, \ldots, - \alpha_{i-1} d_i, \frac{d_i}{\bida_i + \bidb_i}\sum_{k \ne i}
@@ -1134,7 +1148,7 @@ For $i \in \Te(D)$, define $e_i \in R_D$ in degree $d_i = \ell_i \gcd(a_i, b_i)$
 \end{equation}
 
 \noindent
-For $i \in \Tp(D)$ and $j \in \Tm(D)$, define $e_{i,j}\in R_D$ in degree $d_{i,j} = \ell_{i, j}(\bida_i \bidb_j - \bida_j \bidb_i)$ by
+For $i \in \Tp(D)$ and $j \in \Tm(D)$, with $i < j$, define $e_{i,j}\in R_D$ in degree $d_{i,j} = \ell_{i, j}(\bida_i \bidb_j - \bida_j \bidb_i)$ by
 \begin{equation}\label{eqn:epsilon_i,j}
 	\begin{split}& e_{i,j} := (-\alpha_1 d_{i,j}, \ldots -\alpha_{i-1} d_{i,j}, \bidb_j \sum_{k \ne i,j} \alpha_k \bida_k - \bida_j \sum_{k \ne i, j}
 	\alpha_k \bidb_k, -\alpha_{i+1} d_{i,j}, \\
@@ -1142,7 +1156,17 @@ For $i \in \Tp(D)$ and $j \in \Tm(D)$, define $e_{i,j}\in R_D$ in degree $d_{i,j
 	\alpha_k \bidb_k, -\alpha_{j+1}d_{i,j}, \ldots, - \alpha_{n}d_{i,j}).
 	\end{split}
 \end{equation}
-Note that the above expression is for when $i < j$, but a small rearangement gives when $j < i$.  \todo{Peter: I changed the above expression, but I'm still feel a little dubious that this is easier to read...}
+Note that the above expression makes sense when $i < j$, but one
+can similarly define $e_{i,j}$ when $j < i$.  
+\todo{Peter: I changed the above expression,
+but I'm still feel a little dubious that this is easier to read...
+
+Aaron: I agree this is harder to read. Why don't we just write
+$e_{i,j} = a e_i + b e_j$ (where of course you replace a and b by explicit
+constants). Wouldn't that be much cleaner? Also, I think we should
+explicitly state what the small rearrangement is to switch 
+$i$ and $j$, but perhaps it won't be relevant if you write $e_{ij} $
+as a linear combination of $e_i, e_j$.}
 
 %\noindent
 %where
@@ -1158,8 +1182,10 @@ Note that the above expression is for when $i < j$, but a small rearangement giv
 %	\alpha_k \bidb_k.
 %\]
 
-A quick calculation deduces that these $e_i$'s and
-$e_i{i,j}$'s lie on the extremal rays of $\Sigma$.
+Since these $e_i$ are multiples of $\epsilon_i$ and these
+$e_{i,j}$ are points of intersection of $H$ with
+$\overline {e_ie_j}$ such that neither $e_i$ nor $e_j$
+are contained in $H$, these form a set of extremal rays of $\Sigma$.
 %\begin{rem}
 %For the remainder of this section replace the $e_i$'s and $e_{i,j}$'s with a %(possibly) different representative of it's extremal ray say that their lattice points %correspond to the $\epsilon_i$'s and $\epsilon_{i,j}$'s, respectively.
 %\end{rem}
@@ -1236,6 +1262,12 @@ and $c_j \ge -\alpha_j d$ (for all $j$) satisfying $\bida_i + \sum_{j = 1}
 ^n \bida_j c_j = 0$ and $\bidb_i + \sum_{j=1}^n \bidb_j c_j = 0$.
 
 To find such a $\beta_i$,
+\todo{Aaron: Shouldn't we say something above like, the kernel
+	is bounded by the maximum of something over all $i$,
+	so for the remainder of the proof, we fix an $i$.
+	Also, I think it would help if things
+	that depend on $i$, such as $E,\sigma,\lambda$
+have an $i$ subscript.}
 we simply write $f_i$ as a 
 polynomial in $f_1, \ldots f_4$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{j =
@@ -1250,7 +1282,7 @@ set
 \begin{align*}
 	\Omega = & \{(d, c_1, \ldots, c_{i-1}, c_i + 1, c_{i+1}, \ldots , c_n)  \in \bz^{n+1}_{\geq 0} : \\
 	& c_i \ge -\alpha_i d, \text{ for all i, and } \bida_i + \sum_{j = 1}^m \bida_j c_j = \bidb_i + \sum_{j=1}^n \bidb_j c_j
-= 0 \}
+= 0 \}.
 \end{align*}
 
 Let $\omega\in \Omega'$ correspond to the monomial $y_i \prod_{j=1}^n
@@ -1267,7 +1299,11 @@ definitely clarify how we're getting the bound on degree $E$. While I agree
 it's fine to hide the computation of the $r_{i,j}$ it would still clarify matters
 to say what the $r_{i,j}$ and $\lambda$ are.
 \\
-Peter: There is not a unique choice of the $r_{i,j}$'s.  When we write out $\sigma$ in terms of the $e_i$'s and $e_{i,j}'s$ with coefficients $C_i$ and $C_{i,j}$, any choice of $r_{i,j}$'s that are at most equal to the coefficient $C_{i,j}$ and such that $\sum_{j\in T_-} r_{i,j}\kappa'_{i,j}=1$ will work.}
+Peter: There is not a unique choice of the $r_{i,j}$'s.  When we write out $\sigma$ in terms of the $e_i$'s and $e_{i,j}'s$ with coefficients $C_i$ and $C_{i,j}$, any choice of $r_{i,j}$'s that are at most equal to the coefficient $C_{i,j}$ and such that $\sum_{j\in T_-} r_{i,j}\kappa'_{i,j}=1$ will work.
+
+Aaron: OK. In that case, why don't you say that? Since I didn't understand those constraints on $r_{i,j}$, I think
+the reader would probably also be lost without explicitly writing those constraints.
+Also, what about $\lambda$? Is that uniquely determined?}
 and $r_{i,j} \in \bq$ (in general such a choice may be very non-unique) so that we can write
 \begin{equation}\label{eqn:sigma-in-terms-of-lambda/E}
 	\sigma = \lambda + E
@@ -1310,37 +1346,28 @@ as its first index?
 \\
 Peter: $\beta_i$'s are polynomials in $f_1, \ldots f_4$.  By the monomial terms in $\beta_i$ I mean look at each monomial appearing in this polynomial and take the set of those.
 }
-can further compute that there exist $q_i, q_{i,j} \in \bq_{\geq 0}$ and $\lambda \in
+can further compute that there exist $q_i, q_{i,j} \in \bq_{\geq 0}$ 
+\todo{Aaron: Would it be reasonable to given these $q_{ij}$ a $\mu$
+superscript or subscript to indicate dependence on $\mu$?}
+and $\lambda \in
 \Sigma$ so that the lattice point, $\omega_\mu = (c_1 ,\ldots c_n)$,
 corresponding to $\mu
 $ is of the form
 \[
 	\omega_\mu = \lambda + E_\mu
 \]
-where $\lambda$ is the same as in Equation \ref{eqn:sigma-in-terms-of-lambda/E} and $E_\mu$ is defined in a similar fashion as $E$ in Equation \ref{eqn:hirz-E-translation} by
+where $\lambda$ is the same as in Equation \ref{eqn:sigma-in-terms-of-lambda/E} and $E_\mu$ is defined by
+
 \begin{equation}\label{eqn:hirz-E_mu-translation}
 E_\mu = \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Te}}q_i e_i\right) +
 \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tp \\ j\in \Tm}} q_{i,j}
 e_{i,j}\right) + \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tm \\ j\in
 \Tp}} q_{j,i} e_{i,j}\right).
 \end{equation}
-\todo{Aaron: if $\sigma_\mu$ is an element, how can it be written as
-	the sum of an element and a set? Same question for $\sigma$ above.
-	Also, I do not know what $E_\mu$ is. You really have to define it,
-since there's no way to check the validity of this proof without it.  \\
-Peter: $E$ and $E_\mu$ are elements, not sets...
 
-Aaron: My mistake. Thanks for writing it out though. However,
-since $E, E_\mu$ are so similar, why not defining them so that they look similar?
-I.e., why not define them either both in three cases as $E$
-or both as sums as $E_\mu$. It's confusing that they are the same, but not
-written in a parallel fashion.
-\\
-Peter: Well... We had a conversation a while ago that saying something like $j \in \{i\} \cap T_=$ might look a little funny (saying $j$ ranging over the set of i intersect $T_=$ meaning $j$ either ranges over the emptyset or the singleton set of $i$).  I We could make this change in the first one if it is preferable.  On the other hand, transforming the second into the form of the first would be terribly ugly (like 12 cases, some of which are sumed together... or something like that...).
-}
 Note that $E_\mu$ lies in the same degree as $E$ for all $\mu$.
 
-Let $F\in R_D$ corresponding to the lattice point $E$ and let $F_\mu$ correspond to the lattice point $E_\mu$.  
+Let $F\in R_D$ correspond to the lattice point $E$ and let $F_\mu$ correspond to the lattice point $E_\mu$.  
 Then $F - \sum_{\mu \in M} F_\mu = 0$ induces a
 relation in degree at most
 \[
