@@ -223,9 +223,6 @@ their canonical ring are most naturally described in the setting of
 $\bq$-divisors \cite[Chapter V, Theorem 12.1]{barthHPV:compactComplexSurfaces}. 
 
 \ssec{Main Results}
-\todo{Aaron: Some of these theorem statements have been copied from older versions of the statements
-and not updated to reflect the difference. I agree we should use Theorem-restate, but we should make
-sure to copy the ones stated below, and not copy these ones. Robin: thm-restate only allows you to restate earlier theorems and not later ones, so the main thms must appear numbered as 1.-}
 \begin{thm}
 \label{thm:proj-effective-intro}
 Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
@@ -542,8 +539,9 @@ nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
 
 \begin{thm}
 \label{thm:proj-one-point}
-Let $\bp^m \cong \proj \bk [x_0, \ldots, x_m].$ Let $D = \alpha H$, with $\alpha = \frac{p}{q} \in \bq$
-and $H := V(x_k)$ a hyperplane of $\bp^m$.
+Let $\bp^m \cong \proj \bk [x_0, \ldots, x_m].$ Let $D' \in \bq
+\otimes \div \bp^m$ and $D = D' + \alpha H$, with $\alpha =
+\frac{p}{q} \in \bq$ and $H := V(x_k)$ a hyperplane of $\bp^m$.
 Let
 \[
 	0 = \frac{c_0}{d_0} <
@@ -558,11 +556,11 @@ canonical ring
 \]
 
 \noindent
-has a minimal presentation consisting of the $\sum_{i = 0}^{r}
+has a minimal presentation over $R_{D'}$ consisting of the $\sum_{i = 0}^{r}
 {{m + c_i - 1} \choose {c_i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
 x^{\vec{v}}}{x_k^{c_i}}$ where $1 \leq i \leq r$, $\vec{v} \in \bz_{\geq 0}^{m + 1}$
 with $\deg \vec v = c_i$. Furthermore, it has
-relations of the following two types:
+relations generated \todo{over $R_{D'}$?} by the following two types:
 \begin{enumerate}
 	\item For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
 \vec{w} \in \mss_j$, there is a relation of the form either
@@ -593,8 +591,23 @@ where $\vec{y}$ and $\vec{z}$ are the unique
 vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
 + \vec{z} = \vec{v} + \vec{w}$ and $\vec{y} \prec \vec{z}$.
 \end{thm}
-\todo{Write idea of proof}
+
+\sssec*{Idea of Proof:}
+The proof follows in four steps. First, we demonstrate that
+the $F_{i}^{\vec{v}}$'s form a set of minimal generators of $R_D$
+over $R_{D'}$ by leveraging the fact that $F_{i}^{\vec{v}}$ has
+``maximal pole order'' at some coordinate among rational functions
+in degree $i$. Then, the relations $G_{i, j}^{\vec{v}, \vec{w}}$
+follow from the demonstration that the $F_{i}^{\vec{v}}$'s generate
+all of $R_D$ over $R_{D'}$. We derive the relations
+$L_{i, j}^{\vec{v}, \vec{w}}$ by considering when products of
+generators in neighboring degrees are equal. Finally, we demonstrate
+that $G_{i, j}^{\vec{v}, \vec{w}}$'s and $L_{i, j}^{\vec{v}, \vec{w}}$'s
+generate all of the relations by using them to reduce elements of
+$R_D$ to a canonical form.
+
 \begin{proof}
+For simplicity, we give a proof for when $D' = 0$.
 We will first check that $F^{\vec v}_i$ determine a system of minimal
 generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} : \deg \vec{v} =
 \left\lfloor
@@ -721,24 +734,23 @@ $\bp^1$ result leverages the fact that $\bp^1$ has two
 independent coordinates.
 \end{rem}
 
-\begin{rem}
-\label{rem:proj-one-point-ind}
-The method of proof for Theorem ~\ref{thm:proj-one-point}
-can be immediately generalized to work inductively. If $D = D' + \alpha H$
-for some hyperplane $H$, then the proof of Theorem ~\ref{thm:proj-one-point}, mutatis mutandis, extends to show
-the canonical ring $R_D$ is generated over $R_D'$ by the same
-generators and with the same relations given in Theorem
-~\ref{thm:proj-one-point}.
-\end{rem}
-\todo{Perhaps we should consider restating the above theorem in this form, and then say for simplicity we prove it when the base is 0?}
+%\begin{rem}
+%\label{rem:proj-one-point-ind}
+%The method of proof for Theorem ~\ref{thm:proj-one-point}
+%can be immediately generalized to work inductively. If $D = D' + \alpha H$
+%for some hyperplane $H$, then the proof of Theorem ~\ref{thm:proj-one-point}, mutatis mutandis, extends to show
+%the canonical ring $R_D$ is generated over $R_D'$ by the same
+%generators and with the same relations given in Theorem
+%~\ref{thm:proj-one-point}.
+%\end{rem}
+
 \begin{thm}
 \label{thm:proj-effective}
 Let $[x_0, \ldots, x_m]$ be a projective coordinate system for
 $\bp^m$. Let $D = \sum_{i = 1}^{n} \alpha_i D_i \in \bq \otimes \bp^m$, with $\alpha_i =
 \frac{p_i}{q_i} \in \bq$.
 
-Then the canonical ring
-$R_D$
+Then the canonical ring $R_D$
 is generated in degrees up to $\max_{1 \leq i \leq n}{q_i}$ with
 relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$.
 \end{thm}
@@ -748,12 +760,12 @@ We derive the result from the following inductive argument.
 If $n = 0$, i.e.~ $D = 0$, then we are done.
 Now, we look to inductively add hypersurfaces.
 If $D' = \sum_{i = 0}^{n} \alpha_i D_i$ is some $\bq$-divisor
-on $\bp^m$, then we look at $D = D' + C$ where $C$ is a
-hypersurface of degree $\pdeg$. \todo{Aaron: rewrite this to make sense} Now use the Veronese mapping
-to view $C$ as a hypersurface on $\bp^{\binom{{m + \pdeg}}{ \pdeg} -1 }$
+on $\bp^m$, then we look at $R_D$ where $D = D' + C$ for some
+degree $\pdeg$ hypersurface $C$. Now use the Veronese mapping
+to view $C$ as a hypersurface on $\bp^{\binom{{m + \pdeg}}{\pdeg} - 1}$
 and the image of $C$ as the intersection of a Veronese variety
-with a hyperplane. Then we can reduce inductively adding hypersurfaces
-to the case of adding hyperplanes. However, this is accomplished
+with a hyperplane. Then we can reduce the process of inductively
+adding hypersurfaces to when the hypersurfaces are hyperplanes. However, this is accomplished
 by the method used in Theorem ~\ref{thm:proj-one-point} in an
 inductive manner as mentioned in Remark ~\ref{rem:proj-one-point-ind}.
 \end{proof}
