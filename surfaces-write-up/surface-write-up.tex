@@ -223,10 +223,10 @@ their canonical ring are most naturally described in the setting of
 $\bq$-divisors \cite[Chapter V, Theorem 12.1]{barthHPV:compactComplexSurfaces}. 
 
 \ssec{Main Results}
-\begin{thm}
+
+\begin{restatable}{thm}{restateeffective}
 \label{thm:proj-effective-intro}
-Let $X = \bp^m$ with $\{x_0, \ldots, x_m\}$ a coordinate system for
-$\bp^m$. Let $D = \sum_{i = 1}^{n} \alpha_i C_i$, with $\alpha_i =
+Let $D = \sum_{i = 1}^{n} \alpha_i C_i \in \bz \otimes_\bz \di \bp^m$, with $\alpha_i =
 \frac{p_i}{q_i} \in \bq$ and each $C_i$ a hypersurface of
 $\bp^m$, be an effective divisor on $\bp^m$.
 
@@ -238,13 +238,13 @@ Then the canonical ring
 \noindent
 is generated in degrees up to $\max_{1 \leq i \leq n}{q_i}$ with
 relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
-\end{thm}
+\end{restatable}
 
 \todo{transition}
 
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \bp^m$. Let
+Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$. Let
 $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
 $D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
 Then $R_D$ is generated in degree at most 
@@ -264,7 +264,7 @@ with relations generated in degree at most
 
 \begin{restatable}{thm}{hirzrestate}
 \label{thm:hirz-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \hirz_k.$ Let $D_i =
+Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes_\bq \di \hirz_k.$ Let $D_i =
 V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further suppose $f_1$ and $f_2$ are
 independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
@@ -540,7 +540,7 @@ nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
 \begin{thm}
 \label{thm:proj-one-point}
 Let $\bp^m \cong \proj \bk [x_0, \ldots, x_m].$ Let $D' \in \bq
-\otimes \div \bp^m$ and $D = D' + \alpha H$, with $\alpha =
+\otimes \di \bp^m$ and $D = D' + \alpha H$, with $\alpha =
 \frac{p}{q} \in \bq$ and $H := V(x_k)$ a hyperplane of $\bp^m$.
 Let
 \[
@@ -595,19 +595,28 @@ vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
 \sssec*{Idea of Proof:}
 The proof follows in four steps. First, we demonstrate that
 the $F_{i}^{\vec{v}}$'s form a set of minimal generators of $R_D$
-over $R_{D'}$ by leveraging the fact that $F_{i}^{\vec{v}}$ has
-``maximal pole order'' at some coordinate among rational functions
-in degree $i$. Then, the relations $G_{i, j}^{\vec{v}, \vec{w}}$
-follow from the demonstration that the $F_{i}^{\vec{v}}$'s generate
-all of $R_D$ over $R_{D'}$. We derive the relations
+over $R_{D'}$ using their construction in terms of best lower
+approximations to $\alpha$. Then, since the $F_{i}^{\vec{v}}$ generate
+all of $R_D$ over $R_{D'}$, we obtain the
+relations $G_{i, j}^{\vec{v}, \vec{w}}$.
+We derive the relations
 $L_{i, j}^{\vec{v}, \vec{w}}$ by considering when products of
 generators in neighboring degrees are equal. Finally, we demonstrate
 that $G_{i, j}^{\vec{v}, \vec{w}}$'s and $L_{i, j}^{\vec{v}, \vec{w}}$'s
-generate all of the relations by using them to reduce elements of
+generate all of the relations by using them to reduce arbitrary
+elements of
 $R_D$ to a canonical form.
 
 \begin{proof}
-For simplicity, we give a proof for when $D' = 0$.
+For simplicity, we give a proof for when $D' = 0$, but the general
+can be analogously proved by replacing the orders of zeros and poles
+by the order of zeros and poles relative to $D'$. That is,
+one can work with rational sections of $\mathscr O_{\bp^m}(D')$
+instead of rational sections of $\mathscr O_{\bp^m}$,
+and the following proof goes through otherwise unchanged.
+\todo{Aaron: Has anyone actually gone through the proof
+	for general effective divisors carefully, to make
+sure the above claim is correct?}
 We will first check that $F^{\vec v}_i$ determine a system of minimal
 generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} : \deg \vec{v} =
 \left\lfloor
@@ -744,30 +753,36 @@ independent coordinates.
 %~\ref{thm:proj-one-point}.
 %\end{rem}
 
-\begin{thm}
-\label{thm:proj-effective}
-Let $[x_0, \ldots, x_m]$ be a projective coordinate system for
-$\bp^m$. Let $D = \sum_{i = 1}^{n} \alpha_i D_i \in \bq \otimes \bp^m$, with $\alpha_i =
-\frac{p_i}{q_i} \in \bq$.
+\restateeffective*
 
-Then the canonical ring $R_D$
-is generated in degrees up to $\max_{1 \leq i \leq n}{q_i}$ with
-relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$.
-\end{thm}
 
 \begin{proof}
-We derive the result from the following inductive argument.
+We proceed by induction on $n$.
 If $n = 0$, i.e.~ $D = 0$, then we are done.
-Now, we look to inductively add hypersurfaces.
-If $D' = \sum_{i = 0}^{n} \alpha_i D_i$ is some $\bq$-divisor
-on $\bp^m$, then we look at $R_D$ where $D = D' + C$ for some
-degree $\pdeg$ hypersurface $C$. Now use the Veronese mapping
-to view $C$ as a hypersurface on $\bp^{\binom{{m + \pdeg}}{\pdeg} - 1}$
-and the image of $C$ as the intersection of a Veronese variety
-with a hyperplane. Then we can reduce the process of inductively
-adding hypersurfaces to when the hypersurfaces are hyperplanes. However, this is accomplished
-by the method used in Theorem ~\ref{thm:proj-one-point} in an
-inductive manner as mentioned in Remark ~\ref{rem:proj-one-point-ind}.
+Now, we inductively add hypersurfaces.
+Let $D' = \sum_{i = 0}^{n} \alpha_i D_i \in \bq \otimes_\bq\di \bp^m$, 
+for which the theorem holds. It suffices to show
+the theorem holds for $D \in \di \bq \otimes_\bq \bp^m$, where $D = D' + C$ for some
+degree $\pdeg$ hypersurface $C$.
+If $C$ were a hyperplane, we would then be done, by Theorem ~\ref{thm:proj-one-point}.
+
+To complete the theorem, we reduce the case that $C$ is a general hypersurface
+to the case that $C$ is a hyperplane, essentially by using the Veronese embedding.
+
+If $C$ is of degree $\pdeg$, then we construct the veronese embedding
+$\nu_\pdeg^m: \bp^m \rightarrow \bp^{\binom{m+\pdeg}{\pdeg}-1}$
+so that the image of $C$ is the intersection of 
+a hyperplane in $\bp^{\binom{{m + \pdeg}}{\pdeg} - 1}$ with $\nu_\pdeg^m(\bp^m)$.
+Now, note that the ring $H^0(\bp^m, C)$ is isomorphic to the
+$\pdeg$ veronese subring of $R_{V(x_0)}$, and so
+the canonical ring $R_H$ of the hyperplane $H \subset \bp^{\binom{m+\pdeg}{\pdeg}-1}$
+restricting to $\nu_\pdeg^m(C)$ is isomorphic to $R_C$.
+Therefore, we can bound the degree of generators and relations of
+$R_D$ over $R_{D'}$ by the degree of generators and
+relations for $R_C \cong R_H.$
+This reduces the case of a hypersurface $C$ to
+a hyperplane $H$, completeting the proof by Theorem
+~\ref{thm:proj-one-point}.
 \end{proof}
 
 
