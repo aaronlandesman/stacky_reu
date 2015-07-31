@@ -883,21 +883,7 @@ Let
 \alpha_i, \; 1 \leq i \leq n, \text{ and } \sum_{i=1}^{n} \ell_i \bida_i = 0
 \right \}.
 \end{align}
-\todo{Aaron: Possibly take this definition out of the proof, and move it into
-	the setup, since we want to reference it later.  \\
-Peter: I like having the statement of the lemma being nice and consise; also
-the statement has nothing to do with this geometric picture, so I find it more
-natural to have the geometric side contained in the proof.  I also don't quite
-see why it is so bad to reference something from inside a previous proof; a
-reader can surely locate it...
 
-Aaron: In general, I like the idea of having proofs self contained,
-so that one should only refer to the proof statement, not the
-body of the proof.
-I'm not very strongly tied to this idea though, and I think it's fine. I think it's fine.
-\\
-Peter: I understand where your objection is coming from.  However, I don't see a good way to fix it without creating a very ugly statement of the lemma.
-}
 We note that $\Sigma$ has extremal rays given by the lattice points 
 \begin{equation}\label{defn:e-i-proj}
 	e_i = \left(\ell_i \bida_i, - \alpha_1 \ell_i \bida_i, \ldots
@@ -1277,7 +1263,11 @@ To find such a $\beta_i$,
 	that depend on $i$, such as $E,\sigma,\lambda$
 have an $i$ subscript.
 
-Peter: Better (on the first comment? As for the second, that might be a little tricky, because we already have $E_\mu$, so we would have to do something like $E_{i,\mu}$ (which we could of course do...)}
+Peter: Better (on the first comment? As for the second, that might be a little tricky, because we already have $E_\mu$, so we would have to do something like $E_{i,\mu}$ (which we could of course do...)
+
+Aaron: Does $E_\mu$ depend on $i$? I thought it didn't, but if it does, then we should definitely do $E_{i,\mu}$ since I didn't
+realize it depends on $i$. If $E_\mu$ doesn't depend on $i$, then we can just write $E_i$, and $E_\mu$,
+and there is no danger of confusion because the subscripts live in different categories.}
 we simply write $f_i$ as a 
 polynomial in $f_1, \ldots f_4$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{j =
@@ -1307,6 +1297,10 @@ and $r_{i,j} \in \bq$ (in general such a choice may be very non-unique) so that 
 \begin{equation}\label{eqn:sigma-in-terms-of-lambda/E}
 	\sigma = \lambda + E
  \end{equation}
+
+\todo{Is $\sigma = \omega$? If not I'm very confused, since I don't see $\sigma$ defined anywhere before or after
+	but it seems like the key to the whole proof.
+}
 with $E$ of the form
 \begin{equation}\label{eqn:hirz-E-translation}
 	E = \begin{cases}
