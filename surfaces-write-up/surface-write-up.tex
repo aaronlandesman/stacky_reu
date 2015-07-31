@@ -166,7 +166,8 @@
 \end{abstract}
 
 \maketitle
-\todo{Aaron: Standardize generation in degree ... phrasing. I like ``generation in degree at most''}
+\todo{Aaron: Standardize generation in degree ... phrasing. I like ``generation in degree at most.''\\
+Peter: I prefer ``Generated in degrees at most'' (plural).}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -396,11 +397,10 @@ Then, define
 	\Sigma = \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d \alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i = 0 \rangle. 
 \end{align*}
 In this case, we can factor $\phi$ as a composition of $\chi$ and $\psi$ defined by
-\todo{Make this have mapsto on bottom}
 \[
 \begin{tikzcd}
 \bk[x_1,\ldots, x_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
-x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
+x_i \arrow[mapsto]{r} & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \arrow[mapsto]{r} & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
 \end{tikzcd}
 \]
 Assuming $\chi$ is surjective, the minimal degree of generation of $\ker \phi$
@@ -1267,7 +1267,10 @@ Peter: Better (on the first comment? As for the second, that might be a little t
 
 Aaron: Does $E_\mu$ depend on $i$? I thought it didn't, but if it does, then we should definitely do $E_{i,\mu}$ since I didn't
 realize it depends on $i$. If $E_\mu$ doesn't depend on $i$, then we can just write $E_i$, and $E_\mu$,
-and there is no danger of confusion because the subscripts live in different categories.}
+and there is no danger of confusion because the subscripts live in different categories.
+\\
+Peter:  Yes, essentially everything in the remainder of this proof depends on $i$, e.g.: $\omega$, $\lambda$ (depends on $i$ as well as the choice of $r_{i,j}$'s), $E$, all $E_\mu$'s, $F$, $F_\mu$'s; I think that is everything.  I do not believe it would be helpful to add subscripts to all of these.  Instead maybe it would be better just to have one sentence that very clearly says everything in the following proof fixes $i$ and depends on $i$.
+}
 we simply write $f_i$ as a 
 polynomial in $f_1, \ldots f_4$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{j =
@@ -1295,11 +1298,13 @@ component $-\alpha_j d_{j,k} + \kappa_{j,k}''$ for $\kappa_{j,k}', \kappa_{j,k}'
 By a careful computation, we can find $\lambda \in \Sigma$ 
 and $r_{i,j} \in \bq$ (in general such a choice may be very non-unique) so that we can write
 \begin{equation}\label{eqn:sigma-in-terms-of-lambda/E}
-	\sigma = \lambda + E
+	\omega = \lambda + E
  \end{equation}
 
 \todo{Is $\sigma = \omega$? If not I'm very confused, since I don't see $\sigma$ defined anywhere before or after
 	but it seems like the key to the whole proof.
+	\\
+Peter: Oops, sorry, I changed some of the $\sigma$'s to $\omega$'s but clearly not all of them.  Maybe I should have used a macro...  I fixed the ones I saw, but let me know if you see any more $\sigma$'s popping up anywhere.
 }
 with $E$ of the form
 \begin{equation}\label{eqn:hirz-E-translation}
@@ -1309,7 +1314,7 @@ with $E$ of the form
 	\sum_{j\in \Tp} r_{j,i} e_{j,i}: r_{j,i} \in \bq, \sum_{j\in \Tp} r_{j,i} \kappa_{i,j}'' = 1 	& \mbox{ if } i\in \Tm\\
 	\end{cases}.
 \end{equation}
-Specifically, if we write out $\sigma = \sum_{j\in \Te} s_j e_j + \sum_{j\in \Tp, k \in \Tp} s_{j,k} e_{j,k}$, then any choice of $r_{j,k}$'s not greater than the respective $s_{j,k}$'s such that $r_{i,j} \kappa_{i,j}' =1$ (when $i\in \Tp$ but a similar statement holds for $i\in \Tm$) will suffice.  Such a choice of $r_{i,j}$'s uniquely determines the necessary $\lambda$.
+Specifically, if we write out $\omega = \sum_{j\in \Te} s_j e_j + \sum_{j\in \Tp, k \in \Tp} s_{j,k} e_{j,k}$, then any choice of $r_{j,k}$'s not greater than the respective $s_{j,k}$'s such that $r_{i,j} \kappa_{i,j}' =1$ (when $i\in \Tp$ but a similar statement holds for $i\in \Tm$) will suffice.  Such a choice of $r_{i,j}$'s uniquely determines the necessary $\lambda$.
 
 From this, we can further deduce that for such an $E$,
 \[
