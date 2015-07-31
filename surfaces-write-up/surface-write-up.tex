@@ -895,6 +895,8 @@ Aaron: In general, I like the idea of having proofs self contained,
 so that one should only refer to the proof statement, not the
 body of the proof.
 I'm not very strongly tied to this idea though, and I think it's fine. I think it's fine.
+\\
+Peter: I understand where your objection is coming from.  However, I don't see a good way to fix it without creating a very ugly statement of the lemma.
 }
 We note that $\Sigma$ has extremal rays given by the lattice points 
 \begin{equation}\label{defn:e-i-proj}
@@ -1158,30 +1160,21 @@ $\# \{H \cap \overline{e_i, e_j}\} = 1$.
 From this we can deduce that a set of extremal rays of $\Sigma$ are given as follows:
 For $i \in \Te(D)$, define $e_i \in R_D$ in degree $d_i = \ell_i \gcd(a_i, b_i)$ by 
 \begin{equation}\label{eqn:epsilon_i}
-	e_i := (-\alpha_1 d_i, \ldots, - \alpha_{i-1} d_i, \frac{d_i}{\bida_i + \bidb_i}\sum_{k \ne i}
-	\alpha_k (\bida_k + \bidb_k), - \alpha_{i+1} d_i, \ldots, - \alpha_n d_i)
+	e_i := d_i \epsilon_i %(-\alpha_1 d_i, \ldots, - \alpha_{i-1} d_i, \frac{d_i}{\bida_i + \bidb_i}\sum_{k \ne i}
+	%\alpha_k (\bida_k + \bidb_k), - \alpha_{i+1} d_i, \ldots, - \alpha_n d_i)
 \end{equation}
 
 \noindent
 For $i \in \Tp(D)$ and $j \in \Tm(D)$, with $i < j$, define $e_{i,j}\in R_D$ in degree $d_{i,j} = \ell_{i, j}(\bida_i \bidb_j - \bida_j \bidb_i)$ by
 \begin{equation}\label{eqn:epsilon_i,j}
-	\begin{split}& e_{i,j} := (-\alpha_1 d_{i,j}, \ldots -\alpha_{i-1} d_{i,j}, \bidb_j \sum_{k \ne i,j} \alpha_k \bida_k - \bida_j \sum_{k \ne i, j}
-	\alpha_k \bidb_k, -\alpha_{i+1} d_{i,j}, \\
-	&\ldots -\alpha_{j-1} d_{i,j}, -\bidb_i \sum_{k \ne i, j} \alpha_k \bida_k + \bida_i \sum_{k \ne i, j}
-	\alpha_k \bidb_k, -\alpha_{j+1}d_{i,j}, \ldots, - \alpha_{n}d_{i,j}).
-	\end{split}
+e_{i,j} := \frac{a_j\sum_{k\ne i,j} d_{i,j}\alpha_k b_k - b_j\sum_{k \ne i,j} d_k \alpha_k a_k}{a_ib_j - b_i a_j} \epsilon_i + \frac{a_i \sum_{k\ne i,j} d_{i,j} \alpha_k b_k - b_i\sum_{k\ne i,j} d_{i,j} \alpha_ka_k}{a_jb_i - b_j a_i} \epsilon_j
+%	
+%	(-\alpha_1 d_{i,j}, \ldots -\alpha_{i-1} d_{i,j}, \bidb_j \sum_{k \ne i,j} \alpha_k \bida_k - \bida_j \sum_{k \ne i, j}
+%	\alpha_k \bidb_k, -\alpha_{i+1} d_{i,j}, \\
+%	&\ldots -\alpha_{j-1} d_{i,j}, -\bidb_i \sum_{k \ne i, j} \alpha_k \bida_k + \bida_i \sum_{k \ne i, j}
+%	\alpha_k \bidb_k, -\alpha_{j+1}d_{i,j}, \ldots, - \alpha_{n}d_{i,j}).
+%	\end{split}
 \end{equation}
-Note that the above expression makes sense when $i < j$, but one
-can similarly define $e_{i,j}$ when $j < i$.  
-\todo{Peter: I changed the above expression,
-but I'm still feel a little dubious that this is easier to read...
-
-Aaron: I agree this is harder to read. Why don't we just write
-$e_{i,j} = a e_i + b e_j$ (where of course you replace a and b by explicit
-constants). Wouldn't that be much cleaner? Also, I think we should
-explicitly state what the small rearrangement is to switch 
-$i$ and $j$, but perhaps it won't be relevant if you write $e_{ij} $
-as a linear combination of $e_i, e_j$.}
 
 %\noindent
 %where
@@ -1282,12 +1275,14 @@ To find such a $\beta_i$,
 	so for the remainder of the proof, we fix an $i$.
 	Also, I think it would help if things
 	that depend on $i$, such as $E,\sigma,\lambda$
-have an $i$ subscript.}
+have an $i$ subscript.
+
+Peter: Better (on the first comment? As for the second, that might be a little tricky, because we already have $E_\mu$, so we would have to do something like $E_{i,\mu}$ (which we could of course do...)}
 we simply write $f_i$ as a 
 polynomial in $f_1, \ldots f_4$. Furthermore, these
 generate all relations, since they allow us to reduce any $\prod_{j =
 1}^n f_j^{c_j}$ to the canonical form where $r_i = - \lfloor d \alpha_i
-\rfloor$ whenever $i > 4$.
+\rfloor$ whenever $i > 4$.  To bound the degree of generation of these relations, we bound the degree of generation of the ideal $(z_i - \beta_i) \cap \ker(\psi)$ for each $i$.
 
 %Note that we can view a relation from Equation
 %~\ref{eqn:hirz-relations-psi} as an element of $S$ given
@@ -1306,19 +1301,8 @@ Let $\omega\in \Omega'$ correspond to the monomial $y_i \prod_{j=1}^n
 For convenience, let $e_j$ (when it exists) be in degree $d_j$ with $j^{th}$
 component $-\alpha_j d_j + \kappa_j$ for some $\kappa_j \in \bq$ and let $e_{j,k}$ (when it exists) lie in
 degrees $d_{j,k}$ with $j^{th}$ component $-\alpha_j d_{j,k} + \kappa_{j,k}'$ and $k^{th}$
-component $-\alpha_j d_{j,k} + \kappa_{j,k}''$ for $\kappa_{j,k}', \kappa_{j,k}'' \in \bq$
+component $-\alpha_j d_{j,k} + \kappa_{j,k}''$ for $\kappa_{j,k}', \kappa_{j,k}'' \in \bq$.
 By a careful computation, we can find $\lambda \in \Sigma$ 
-\todo{Aaron: Is it at all possible to write down what $\lambda$ and the $r_{i,j}$ are?
-I suspect we should be able to write them in a couple lines, which would
-definitely clarify how we're getting the bound on degree $E$. While I agree
-it's fine to hide the computation of the $r_{i,j}$ it would still clarify matters
-to say what the $r_{i,j}$ and $\lambda$ are.
-\\
-Peter: There is not a unique choice of the $r_{i,j}$'s.  When we write out $\sigma$ in terms of the $e_i$'s and $e_{i,j}'s$ with coefficients $C_i$ and $C_{i,j}$, any choice of $r_{i,j}$'s that are at most equal to the coefficient $C_{i,j}$ and such that $\sum_{j\in T_-} r_{i,j}\kappa'_{i,j}=1$ will work.
-
-Aaron: OK. In that case, why don't you say that? Since I didn't understand those constraints on $r_{i,j}$, I think
-the reader would probably also be lost without explicitly writing those constraints.
-Also, what about $\lambda$? Is that uniquely determined?}
 and $r_{i,j} \in \bq$ (in general such a choice may be very non-unique) so that we can write
 \begin{equation}\label{eqn:sigma-in-terms-of-lambda/E}
 	\sigma = \lambda + E
@@ -1328,11 +1312,11 @@ with $E$ of the form
 	E = \begin{cases}
 	\frac{1}{\kappa_i} e_i  	&  \mbox{ if }i\in \Te\\
 	\sum_{j\in \Tm} r_{i,j} e_{i,j}: r_{i,j}\in \bq, \sum_{j\in \Tm} r_{i,j}\kappa_{i,j}' = 1 & \mbox{ if } i\in \Tp\\
-	\sum_{j\in \Tp} r_{j,i} e_{j,i}: r_{j,i} \in \bq, \sum_{j\in \Tm} r_{j,i} \kappa_{i,j}'' = 1 	& \mbox{ if } i\in \Tm\\
+	\sum_{j\in \Tp} r_{j,i} e_{j,i}: r_{j,i} \in \bq, \sum_{j\in \Tp} r_{j,i} \kappa_{i,j}'' = 1 	& \mbox{ if } i\in \Tm\\
 	\end{cases}.
 \end{equation}
+Specifically, if we write out $\sigma = \sum_{j\in \Te} s_j e_j + \sum_{j\in \Tp, k \in \Tp} s_{j,k} e_{j,k}$, then any choice of $r_{j,k}$'s not greater than the respective $s_{j,k}$'s such that $r_{i,j} \kappa_{i,j}' =1$ (when $i\in \Tp$ but a similar statement holds for $i\in \Tm$) will suffice.  Such a choice of $r_{i,j}$'s uniquely determines the necessary $\lambda$.
 
-\noindent
 From this, we can further deduce that for such an $E$,
 \[
 	\deg(E) \le \begin{cases}
@@ -1362,8 +1346,6 @@ as its first index?
 Peter: $\beta_i$'s are polynomials in $f_1, \ldots f_4$.  By the monomial terms in $\beta_i$ I mean look at each monomial appearing in this polynomial and take the set of those.
 }
 can further compute that there exist $q_i, q_{i,j} \in \bq_{\geq 0}$ 
-\todo{Aaron: Would it be reasonable to given these $q_{ij}$ a $\mu$
-superscript or subscript to indicate dependence on $\mu$?}
 and $\lambda \in
 \Sigma$ so that the lattice point, $\omega_\mu = (c_1 ,\ldots c_n)$,
 corresponding to $\mu
@@ -1374,10 +1356,10 @@ $ is of the form
 where $\lambda$ is the same as in Equation \ref{eqn:sigma-in-terms-of-lambda/E} and $E_\mu$ is defined by
 
 \begin{equation}\label{eqn:hirz-E_mu-translation}
-E_\mu = \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Te}}q_i e_i\right) +
-\left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tp \\ j\in \Tm}} q_{i,j}
+E_\mu = \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Te}}q_i^\mu e_i\right) +
+\left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tp \\ j\in \Tm}} q_{i,j}^\mu
 e_{i,j}\right) + \left(\sum_{\substack{i \in \{1, 2, 3, 4\} \cap \Tm \\ j\in
-\Tp}} q_{j,i} e_{i,j}\right).
+\Tp}} q_{j,i}^\mu e_{i,j}\right).
 \end{equation}
 
 Note that $E_\mu$ lies in the same degree as $E$ for all $\mu$.
