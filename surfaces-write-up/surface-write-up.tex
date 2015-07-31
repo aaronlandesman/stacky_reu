@@ -167,7 +167,11 @@
 
 \maketitle
 \todo{Aaron: Standardize generation in degree ... phrasing. I like ``generation in degree at most.''\\
-Peter: I prefer ``Generated in degrees at most'' (plural).}
+Peter: I prefer ``Generated in degrees at most'' (plural).
+
+Aaron: What does plural mean here?
+I was thinking of doing something along the lines of
+$R$ is generated in degree at most $g$ with relations in degree at most $r$.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1270,6 +1274,9 @@ realize it depends on $i$. If $E_\mu$ doesn't depend on $i$, then we can just wr
 and there is no danger of confusion because the subscripts live in different categories.
 \\
 Peter:  Yes, essentially everything in the remainder of this proof depends on $i$, e.g.: $\omega$, $\lambda$ (depends on $i$ as well as the choice of $r_{i,j}$'s), $E$, all $E_\mu$'s, $F$, $F_\mu$'s; I think that is everything.  I do not believe it would be helpful to add subscripts to all of these.  Instead maybe it would be better just to have one sentence that very clearly says everything in the following proof fixes $i$ and depends on $i$.
+
+Aaron: How does $E_\mu$ depend on $i$? If you'd prefer to just say everything depends on $i$, I'm ok with it, though I still think including $i$ subscripts would be slightly
+preferable. Perhaps just say near the beginning a list of all the things that will depend on $i$. I don't think you can say "everything for the remainder of the proof depends on i", because that's not true, e.g., $\ell_j$ for $j \neq i$ doesn't depend on $i$, though of course this is very confusing because you write $\ell_i$ in the definition of $\deg E$. (Won't this be more difficult than just writing a supscript or superscript $i$ though?)
 }
 we simply write $f_i$ as a 
 polynomial in $f_1, \ldots f_4$. Furthermore, these
@@ -1301,11 +1308,12 @@ and $r_{i,j} \in \bq$ (in general such a choice may be very non-unique) so that 
 	\omega = \lambda + E
  \end{equation}
 
-\todo{Is $\sigma = \omega$? If not I'm very confused, since I don't see $\sigma$ defined anywhere before or after
-	but it seems like the key to the whole proof.
-	\\
-Peter: Oops, sorry, I changed some of the $\sigma$'s to $\omega$'s but clearly not all of them.  Maybe I should have used a macro...  I fixed the ones I saw, but let me know if you see any more $\sigma$'s popping up anywhere.
+\todo{Aaron:
+Does $E$ depend on $\omega$? I.e. have we fixed an $\omega$ for the rest of the proof?
+If so, why can we do this?
 }
+\todo{Aaron: If $i$ has been fixed for the remainder of the proof, why 
+are we using $i$ as dummy subscripts everywhere?}
 with $E$ of the form
 \begin{equation}\label{eqn:hirz-E-translation}
 	E = \begin{cases}
