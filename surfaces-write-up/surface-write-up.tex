@@ -171,7 +171,8 @@ Peter: I prefer ``Generated in degrees at most'' (plural).
 
 Aaron: What does plural mean here?
 I was thinking of doing something along the lines of
-$R$ is generated in degree at most $g$ with relations in degree at most $r$.}
+$R$ is generated in degree at most $g$ with relations in degree at most $r$. \\
+Peter: The plural is signifying it is not just generated in 1 degree.  It is generated in all the degrees up to $g$ with relations generated in degrees all the degrees up to $r$.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1277,6 +1278,8 @@ Peter:  Yes, essentially everything in the remainder of this proof depends on $i
 
 Aaron: How does $E_\mu$ depend on $i$? If you'd prefer to just say everything depends on $i$, I'm ok with it, though I still think including $i$ subscripts would be slightly
 preferable. Perhaps just say near the beginning a list of all the things that will depend on $i$. I don't think you can say "everything for the remainder of the proof depends on i", because that's not true, e.g., $\ell_j$ for $j \neq i$ doesn't depend on $i$, though of course this is very confusing because you write $\ell_i$ in the definition of $\deg E$. (Won't this be more difficult than just writing a supscript or superscript $i$ though?)
+\\
+Peter: Where does $\ell_j$ appear?  It may be a typo... I can't remember...  I think there are only $\ell_i$'s and $\ell_{i,j}$'s.  Anyway, what I meant was every new variable defined after this point depends on $i$, not every variable used.
 }
 we simply write $f_i$ as a 
 polynomial in $f_1, \ldots f_4$. Furthermore, these
@@ -1311,9 +1314,12 @@ and $r_{i,j} \in \bq$ (in general such a choice may be very non-unique) so that 
 \todo{Aaron:
 Does $E$ depend on $\omega$? I.e. have we fixed an $\omega$ for the rest of the proof?
 If so, why can we do this?
+\\
+Your write, it depends on $\omega$, not just $i$.  We can do this, because we will take the maximum over all $\omega$.  What I mean by this, is for any starting relation (with initial term $\omega$ under some appropriate order) we reduce it to a different relation of the form described in the proof.  We then take the maximum of the degrees of the relation that any $\omega$ is reduced to.
 }
 \todo{Aaron: If $i$ has been fixed for the remainder of the proof, why 
-are we using $i$ as dummy subscripts everywhere?}
+are we using $i$ as dummy subscripts everywhere?\\
+I don't follow; as in $e_i$'s?  or $e_{i,j}$'s?  $i$ is fixed in all of these statements, whereas $j$ ranges as necessary ($j$ is not fixed).}
 with $E$ of the form
 \begin{equation}\label{eqn:hirz-E-translation}
 	E = \begin{cases}
