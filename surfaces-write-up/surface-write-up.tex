@@ -1324,8 +1324,8 @@ with $E$ of the form
 	E = \begin{cases}
 	\frac{1}{\kappa_i} e_i  	&  \mbox{ if }i\in \Te\\
 	\sum_{j\in \Tm} r_{i,j} e_{i,j}: r_{i,j}\in \bq, \sum_{j\in \Tm} r_{i,j}\kappa_{i,j}' = 1 & \mbox{ if } i\in \Tp\\
-	\sum_{j\in \Tp} r_{j,i} e_{j,i}: r_{j,i} \in \bq, \sum_{j\in \Tp} r_{j,i} \kappa_{i,j}'' = 1 	& \mbox{ if } i\in \Tm\\
-	\end{cases}.
+	\sum_{j\in \Tp} r_{j,i} e_{j,i}: r_{j,i} \in \bq, \sum_{j\in \Tp} r_{j,i} \kappa_{i,j}'' = 1 	& \mbox{ if } i\in \Tm.
+	\end{cases}
 \end{equation}
 Specifically, if we write out $\omega = \sum_{j\in \Te} s_j e_j + \sum_{j\in \Tp, k \in \Tp} s_{j,k} e_{j,k}$, then any choice of $r_{j,k}$'s not greater than the respective $s_{j,k}$'s such that $r_{i,j} \kappa_{i,j}' =1$ (when $i\in \Tp$ but a similar statement holds for $i\in \Tm$) will suffice.  Such a choice of $r_{i,j}$'s uniquely determines the necessary $\lambda$.
 
@@ -1336,7 +1336,7 @@ From this, we can further deduce that for such an $E$,
 	\max_{j \in \Tm} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
 	&\mbox{ if } i \in \Tp \\
 	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
-	&\mbox{ if } i \in \Tm \end{cases}.
+	&\mbox{ if } i \in \Tm. \end{cases}
 \]
 Let $M$ be the set of monomials terms of $\beta_i$.  Then for $\mu = \prod_{j=1}^n
 {f_i}^{c_i}\in M$, we
@@ -1392,8 +1392,8 @@ We can bound $\deg(F)$ (which equals $\deg(F_\mu)$ for all $\mu$) by
 	\max_{j \in \Tm} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
 	&\mbox{ if } i \in \Tp \\
 	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
-	&\mbox{ if } i \in \Tm \end{cases}.
-\]
+	&\mbox{ if } i \in \Tm. \end{cases}
+	\]
 
 \noindent
 Therefore, $\ker \psi$ is generated in degree at most
