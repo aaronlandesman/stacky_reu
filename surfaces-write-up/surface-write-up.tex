@@ -291,7 +291,7 @@ with relations generated in degrees at most
 \noindent
 where
 \[
-	\tau = \sigma
+	\tau = \rho
 	+ \max \left( \max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
 	\max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
 	(\bida_i \bidb_j - \bida_j \bidb_i) \bigr) \right).
@@ -1149,14 +1149,22 @@ $\# \{H \cap \overline{e_i, e_j}\} = 1$.
 
 
 From this we can deduce that a set of extremal rays of $\Sigma$ are given as follows:
-For $i \in \Te(D)$, define $e_i \in R_D$ in degree $d_i = \ell_i \gcd(a_i, b_i)$ by 
+For $i \in \Te(D)$, define $e_i \in R_D$ in degree 
+\[
+	d_i = \ell_i \gcd(a_i, b_i)
+\]
+by 
 \begin{equation}\label{eqn:epsilon_i}
 	e_i := d_i \epsilon_i %(-\alpha_1 d_i, \ldots, - \alpha_{i-1} d_i, \frac{d_i}{\bida_i + \bidb_i}\sum_{k \ne i}
 	%\alpha_k (\bida_k + \bidb_k), - \alpha_{i+1} d_i, \ldots, - \alpha_n d_i)
 \end{equation}
 
 \noindent
-For $i \in \Tp(D)$ and $j \in \Tm(D)$, with $i < j$, define $e_{i,j}\in R_D$ in degree $d_{i,j} = \ell_{i, j}(\bida_i \bidb_j - \bida_j \bidb_i)$ by
+For $i \in \Tp(D)$ and $j \in \Tm(D)$, with $i < j$, define $e_{i,j}\in R_D$ in degree 
+\[
+	d_{i,j} = \ell_{i, j}(\bida_i \bidb_j - \bida_j \bidb_i)
+\]
+by
 \begin{equation}\label{eqn:epsilon_i,j}
 e_{i,j} := \frac{a_j\sum_{k\ne i,j} d_{i,j}\alpha_k b_k - b_j\sum_{k \ne i,j} d_{i,j} \alpha_k a_k}{a_ib_j - b_i a_j} \epsilon_i + \frac{a_i \sum_{k\ne i,j} d_{i,j} \alpha_k b_k - b_i\sum_{k\ne i,j} d_{i,j} \alpha_ka_k}{a_jb_i - b_j a_i} \epsilon_j
 %	
@@ -1307,28 +1315,25 @@ component $-\alpha_k d_{j,k} + \kappa_{j,k}''$ for $\kappa_{j,k}', \kappa_{j,k}'
 
 We note that for $(f_i - \beta_i)\prod_{j=1}^n f_j^{c_j}=0$ to be a relation, every monomial must actually lie in $R_D$; this implies that $s_i\kappa_i\ge 1$, $\sum_{j\in \Tm} s_{i,j}\kappa_{i,j}' \ge 1$, and $\sum_{j\in \Tp} s_{i,j}\kappa_{j,i}'' \ge 1$ if $i\in \Te$, $i\in \Tp$, and $i\in \Tm$ respectively.
 
-If $i\in \Tp$ choose $r_{i,j}\in \bq_{\ge 0}$ for all $j\in \Tm$ such that $\sum_{j\in \Tm} r_{i,j}\kappa_{i,j}' = 1$; similarly, if $i\in \Tm$ choose $r_{j,i}\in \bq_{\ge 0}$ for all $j\in \Tp$ such that $\sum_{j\in \Tm} r_{j,i}\kappa_{j,i}'' = 1$.
+If $i\in \Te$ define $r_i := \frac{1}{\kappa_i}$.  If $i\in \Tp$ choose $r_{i,j}\in \bq_{\ge 0}$ for all $j\in \Tm$ such that $\sum_{j\in \Tm} r_{i,j}\kappa_{i,j}' = 1$; similarly, if $i\in \Tm$ choose $r_{j,i}\in \bq_{\ge 0}$ for all $j\in \Tp$ such that $\sum_{j\in \Tm} r_{j,i}\kappa_{j,i}'' = 1$.  For $j,k\ne i$, define all $r_j$ and $r_{j,k}$'s to be 0.
 Define $E$ by
 \begin{equation}\label{eqn:hirz-E-translation}
-	E := \begin{cases}
-	\frac{1}{\kappa_i} e_i  &  \mbox{ if }i\in \Te\\
-	\sum_{j\in \Tm} r_{i,j} e_{i,j} & \mbox{ if } i\in \Tp\\
-	\sum_{j\in \Tp} r_{j,i} e_{j,i} 	& \mbox{ if } i\in \Tm.
-	\end{cases}
+	E := \sum_{j\in \Te} (s_j - \lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} (s_{j,k} - \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}.
 \end{equation}
 Define
 \begin{equation}\label{eqn:defn-lambda}
-	\lambda = \sigma - E\in \Sigma.
+	\lambda := \sigma - E = \sum_{j\in \Te} (\lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} ( \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}\in \Sigma.
  \end{equation}
 Note that
 \[
-	\deg(E) \le \begin{cases}
+	\deg(E) \le \rho + \begin{cases}
 	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in \Te \\
 	\max_{j \in \Tm} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
 	&\mbox{ if } i \in \Tp \\
 	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
 	&\mbox{ if } i \in \Tm. \end{cases}
 \]
+where $\rho$ is as in Equation \ref{eqn:def-sigma}.
 
 Let $M_i$ be the set of monomials terms of $\beta_i$ (recall $\beta_i$ is a polynomial in $f_1, \ldots f_4$).  Let $\mu = \prod_{j=1}^4
 {f_j}^{h_j}\in M_i$ and consider the lattice point (in the same degree $d$ as $\sigma$)
@@ -1339,17 +1344,17 @@ Define
 \[
 	E_\mu = \sigma_\mu - \lambda.
 \]
-A quick computation deduces that $E_\mu$ lies in $\Sigma$ (using the condition on the $r_{i,j}$'s and $r_{j,i}'s$) and has the same degree as $E$.
+A quick computation deduces that $E_\mu$ lies in $\Sigma$ (using the condition on the $r_{i,j}$'s and $r_{j,i}s$) and has the same degree as $E$.
 
 Let $F\in R_D$ be the monomial given by the lattice point $E$ and $F_\mu \in R_D$ be the monomial given by the lattice point $E_\mu$ for each $\mu \in M_i$.  
-Then $F - \sum_{\mu \in M} F_\mu = 0$ is a relation %in degree
+Then $F - \sum_{\mu \in M_i} F_\mu = 0$ is a relation %in degree
 %\[
 %	\deg(F) = \deg(E)
 %\]
-which divides $(z_i - \beta_i) \prod_{i = 1}^n y_i^{c_i}$. 
+which divides $(z_i - \beta_i) \prod_{j = 1}^n z_j^{c_j}$. 
 We can bound $\deg(F)$ (which equals $\deg(F_\mu)$ for all $\mu$) by
 \[
-	\deg(F) = \deg(E) \le \begin{cases}
+	\deg(F) = \deg(E) \le \rho + \begin{cases}
 	\ell_i \gcd(\bida_i, \bidb_i)	&\mbox{ if } i \in \Te \\
 	\max_{j \in \Tm} \bigl(\ell_{i, j} (\bida_i \bidb_j - \bida_j \bidb_i)\bigr)
 	&\mbox{ if } i \in \Tp \\
