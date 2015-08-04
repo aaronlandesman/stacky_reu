@@ -15,7 +15,6 @@
 \usepackage{tikz-cd}
 \usepackage{mathrsfs}
 \usepackage{subfiles}
-%\usepackage{mathpazo} not a huge fan
 \usepackage{euler}
 \usepackage{hyperref}
 \usepackage{color}
@@ -229,7 +228,7 @@ $\bq$-divisors \cite[Chapter V, Theorem 12.1]{barthHPV:compactComplexSurfaces}.
 In Section \ref{sec:lemmas}, we discuss background knowledge and present some useful lemmas.  In Section \ref{sec:proj} we focus on projective spaces: $\mathbb{P}^n$ and prove the following two results:
 \begin{restatable}{thm}{restateeffective}
 \label{thm:proj-effective-intro}
-Let $D = \sum_{i = 1}^{n} \alpha_i C_i \in \bz \otimes_\bz \di \bp^m$, with $\alpha_i =
+Let $D = \sum_{i = 0}^{n} \alpha_i C_i \in \bz \otimes_\bz \di \bp^m$, with $\alpha_i =
 \frac{p_i}{q_i} \in \bq$ and each $C_i$ a hypersurface of
 $\bp^m$, be an effective divisor on $\bp^m$.
 
@@ -245,19 +244,19 @@ relations generated in degrees at most $2 \max_{1 \leq i \leq n}{q_i}$
 
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$. Let
+Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$. Let
 $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
 $D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
 Then $R_D$ is generated in degrees at most 
 \[
-	\sum_{i=1}^n \ell_i a_i
+	\sum_{i=0}^n \ell_i a_i
 \]
 
 \noindent
 with relations generated in degrees at most
 \[
-	\max \left(2 \sum_{i=1}^n \ell_i a_i, \frac{\max_{1\le i \le n}
-	(	\bida_i)}{\deg(D)} + \sum_{i=1}^n \ell_i a_i \right).
+	\max \left(2 \sum_{i=0}^n \ell_i a_i, \frac{\max_{1\le i \le n}
+	(	\bida_i)}{\deg(D)} + \sum_{i=0}^n \ell_i a_i \right).
 \]
 \end{restatable}
 
@@ -303,6 +302,8 @@ Peter: I'm not sure what this refers to...  Can you be more specific}
 
 \section{Lemmas for Generation and Relations}
 \label{sec:lemmas}
+
+\todo{Aaron: weren't we going to take this section out and move it into the later sections?}
 
 \begin{defn}
 \label{defn:lower-approximation}
@@ -477,19 +478,30 @@ basis for degree one rational functions on $\bp^m$.
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
-The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying \todo{Peter: Why do we include this $u$?  IN the later sections, I don't use this notation and we should standardize.}
+The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying \todo{Peter: Why
+do we include this $u$?  IN the later sections, I don't use this notation and
+we should standardize.
+
+Aaron: Isn't it necessary to distinguish the functions? For instance, we could consider $f_0$ either as a function in degree 1 or 2 for $D = \frac{1}{2}x_0$, and we need
+$u^d$ to distinguish which degree it lives in.
+I think we will need to go through and include the $d$ throughout.
+Do you think there's a way to avoid including the $d$?
+}
 \begin{align}
 \label{align:pm-span}
-\sum_{i=1}^{n} c_i \cdot \bida_i = 0 && \text{ and } &&c_i \geq \lfloor \alpha_i d\rfloor	
+\sum_{i=0}^{n} c_i \cdot \bida_i = 0 && \text{ and } &&c_i \geq \lfloor \alpha_i d\rfloor	
 \end{align}
 
 \noindent
 form a spanning set for $H^0(\bp^m, dD)$ over $k$. Furthermore, functions 
-of the form $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying
+of the form $u^d \cdot \prod_{i=0}^n f_i^{c_i}$ satisfying
 \begin{align}
 \label{align:pm-basis}
 c_i = -\lfloor d\alpha_i \rfloor && \text{ for } && i > m
-\end{align}\todo{Peter: Should be for $i> m+1$ right?  Looking below I see an $f_0$, where as above $f_i$ ranges 1 to $n$.  We should choose whether or not 0 is included in the indexing and fix the section to match that convention.}
+\end{align}\todo{Peter: Should be for $i> m+1$ right?  Looking below I see an $f_0$, where as above $f_i$ ranges 1 to $n$.  We should choose whether or not 0 is included in the indexing and fix the section to match that convention.
+
+Aaron: I tried to fix it at $0$ everywhere. If probably missed a few places, so keep your eyes peeled.
+}
 
 \noindent
 form a basis for $H^0(\bp^m, dD)$ over $k$.
@@ -515,12 +527,16 @@ $ rational functions.
 In this subsection, we restrict attention to the case of effective
 fractional divisors $D \in \bq \otimes \di \bp^m$. We completely
 characterize the canonical rings when $D$ consists of one
-hypersurface and give strong \todo{Peter: I'm opposed to the inclusion of the word strong, as it ambiguous and subjective.  I think we should either replace it with tight, and then explicitly say later how it is tight, or just get rid of the adjective.} bounds on generator and relation
+hypersurface and give tight bounds on generator and relation
 degrees for general effective divisors $D$.
-
+\todo{Aaron: make a remark as to why these bounds are tight}
 \begin{convention}
 Let $[x_0, \ldots, x_m]$ be coordinates for $\bp^m$. Let
-$\vec{v} = (v_0, \ldots, v_m) \in \bq^{m + 1}$. \todo{Peter: do we want to allow $\vec{v}\in \mathbb{Q}^{m+1}$ rather than $\mathbb{Z}^{m+1}$?  I'm not sure if the arguments actually need the generality (and if so, it is a little worrisome since fractional powers aren't clearly defined algebraically.}  Then write
+$\vec{v} = (v_0, \ldots, v_m) \in \bq^{m + 1}$. \todo{Peter: do we want to allow $\vec{v}\in \mathbb{Q}^{m+1}$ rather than $\mathbb{Z}^{m+1}$?  I'm not sure if the arguments actually need the generality (and if so, it is a little worrisome since fractional powers aren't clearly defined algebraically.
+
+Aaron: No, these vectors should just lie in $\bz$. They're just used
+to given an ordering on monomials.
+}  Then write
 \[
 	x^{\vec{v}} := \prod_{i = 0}^{m} x_i^{v_i}
 \]
@@ -811,14 +827,14 @@ a hyperplane $H$, completeting the proof by Theorem
 
 We now offer bounds on generators and relations of $R_D$ for a general divisor $D$ on $\bp^m$.
 
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes \di \bp^m$ and let $f_i$ be
+Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes \di \bp^m$ and let $f_i$ be
 homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$
 $\deg(f_i) = a_i$ for all $i$. 
 
 For the remainder of this section, we shall make the additional assumption that 
 \begin{align}
 \label{eqn:pm-basis-assumption}
-	f_1, \ldots, f_{m+1} \text{ form a } \bk \text{ basis of all degree 1 functions.}
+	f_0, \ldots, f_{m} \text{ form a } \bk \text{ basis of all degree 1 functions.}
 \end{align}
 
 Our first aim in this section is to prove Theorem
@@ -844,7 +860,7 @@ $k \in \bn$, showing that there will always exist a generator in
 degree $a(a + 1)$.
 
 This example further generalizes to the following situation:
-Suppose $D = \sum_{i=1}^{n} \frac{\num_i}{\den_i}D_i \in \di \bp^m
+Suppose $D = \sum_{i=0}^{n} \frac{\num_i}{\den_i}D_i \in \di \bp^m
 \otimes \bq,$ where $\deg D_i = \bida_i$ and $\deg D = \frac{1}{\lcm
 _{1 \leq i \leq n}(\den_i \cdot \bida_i)}$. Then, if $D_i = V(f_i)$
 where all $f_i$ can be written as a polynomial function in $x_0,
@@ -856,12 +872,12 @@ $\lcm(\den_i \cdot \bida_i)$.
 \label{rem:ghost-motivation}
 Example ~\ref{eg:hyperplane} shows that the naive generalization of
 ~\cite[Theorem 8]{dorney:canonical} of generation in degree at most
-$\sum_{i=1}^{n}\ell_i$ cannot possibly hold. The reason for this is
+$\sum_{i=0}^{n}\ell_i$ cannot possibly hold. The reason for this is
 that the divisors may ``be contained in a hyperplane,'' i.e.~ be
 expressible as functions in $m$ of the $m+1$ variables on $\bp^m$.
 This problem can easily be circumvented by adding in ``ghost
 points.'' That is, we may add divisors of the form $0 \cdot H_i$ to
-$D$, and reorder so that if $D = \sum_{i=1}^{n}\alpha_i V(f_i)$,
+$D$, and reorder so that if $D = \sum_{i=0}^{n}\alpha_i V(f_i)$,
 then $f_0, \ldots, f_m$ cut out linearly independent
 hyperplanes in $\bp^m$.
 
@@ -889,13 +905,13 @@ Having justified the necessity of adding ghost points, we proceed to bound the
 number of generators and relations.
 
 \begin{defn}\label{def:ell_i}
-Let $D = \sum_{i=1}^n \alpha_i D_i$ where $\alpha_i = \frac{c_i}{k_i}$.
+Let $D = \sum_{i=0}^n \alpha_i D_i$ where $\alpha_i = \frac{c_i}{k_i}$.
 Then notate
 \[\ell_i = \lcm_{j\ne i}(k_i).\]
 \end{defn}
 
 \begin{lem} \label{lem:proj-generators}
-$R_D$ is generated in degrees at most $\sum_{i=1}^n \ell_i a_i.$
+$R_D$ is generated in degrees at most $\sum_{i=0}^n \ell_i a_i.$
 
 \end{lem}
 \begin{proof}
@@ -915,7 +931,7 @@ We note that $\Sigma$ has extremal rays given by the lattice points
 for each $i\in \{1, \ldots n\}$.
 Therefore, applying Proposition ~\ref{prop:cone-generation}, we see $R_D$ is generated in degrees less than
 \[
-	\sum_{i=1}^n \ell_i a_i.
+	\sum_{i=0}^n \ell_i a_i.
 \]
 \end{proof}
 
@@ -937,15 +953,15 @@ Let $x_1, \ldots x_r$ be the generators in degrees at most $\sum_{i=1}^n \ell_i
 surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through the
 semigroup ring 
 \[
-	\bk[\Sigma] =  \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \in
-\mathbb{Z}, \; c_i \geq -d \alpha_i, \mbox{ and }\sum_{i=1}^{n} \bida_i c_i =
-\sum_{i=1}^{n} \bidb_i c_i \rangle. 
+	\bk[\Sigma] =  \langle u^d z_0^{c_0} \cdots z_n^{c_n} : c_i \in
+\mathbb{Z}, \; c_i \geq -d \alpha_i, \mbox{ and }\sum_{i=0}^{n} \bida_i c_i =
+\sum_{i=0}^{n} \bidb_i c_i \rangle. 
 \]
 by
 \[
 \begin{tikzcd}
 \bk[x_1,\ldots, x_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
-x_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
+x_i \ar r & u^{d_i}z_0^{c_{i0}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
 \end{tikzcd}
 \]
 
@@ -967,42 +983,42 @@ We first claim there exist $\beta_1, \ldots, \beta_n \in k[\Sigma]$
 such that $\ker \psi$ is generated by
 \begin{equation}
 \label{eqn:relations-psi-proj}
-	(z_i - \beta_i)\prod_{j=1}^n {z_j}^{c_{j}}
+	(z_i - \beta_i)\prod_{j=0}^n {z_j}^{c_{j}}
 \end{equation}
 
 \noindent
 for all $d \in \mathbb{N}$ and $c_i \ge -\alpha_i d$ satisfying
-$\bida_i + \sum_{j = 1}^n \bida_j c_j = 0$.
+$\bida_i + \sum_{j = 0}^n \bida_j c_j = 0$.
 
 We define the $\beta_i$ above so that $\beta_i$ is the expansion of
-$f_i$ when viewed as a polynomial in $k[f_1,\ldots, f_{m + 1}]$.
+$f_i$ when viewed as a polynomial in $k[f_0,\ldots, f_{m}]$.
 Furthermore, the relations given in Equation
 ~\eqref{eqn:proj-relation-degree} generate all relations, since they
-allow us to reduce any $ \prod_{j = 1}^n f_j^{r_i}$ to a canonical
-form, with $r_i = -\lfloor  d \alpha_i\rfloor$ whenever $i  > m + 1$.
+allow us to reduce any $ \prod_{j = 0}^n f_j^{r_i}$ to a canonical
+form, with $r_i = -\lfloor  d \alpha_i\rfloor$ whenever $i  > m$.
 
 For the remainder of the proof, fix $i \in \{1,\ldots, n\}$. To
 complete the proof, it suffices to bound the degree of generation
 of the relations of the form $(z_i - \beta_i) \prod_{j = 1}^n
 z_j^{c_j}$, by Equation ~\eqref{eqn:proj-relation-degree}. We first
-associate $(z_i - \beta_i)\prod_{j=1}^n z_j^{c_j}$ with $(d, c_1,
+associate $(z_i - \beta_i)\prod_{j=0}^n z_j^{c_j}$ with $(d, c_1,
 \ldots, c_n) \in \Sigma,$ as defined in Equation
-~\eqref{eqn:Sigma-def}. Let $\Sigma_i \subseteq \mathbb{Z}^{n + 1}$
+~\eqref{eqn:Sigma-def}. Let $\Sigma_i \subseteq \mathbb{Z}^{n + 2}$
 be the set of points of the form $(d, r_1, \ldots, r_n)$ satisfying
-$r_j \ge -d \alpha_j$ for all $j$ and $\sum_{j=1}^n r_j a_j = -a_i$.
+$r_j \ge -d \alpha_j$ for all $j$ and $\sum_{j=0}^n r_j a_j = -a_i$.
 Let
 \begin{align*}
-	\delta_i = \left(\frac{a_i}{\deg(D)}, -\frac{\alpha_1 a_1}{\deg(D)},
+	\delta_i = \left(\frac{a_i}{\deg(D)}, -\frac{\alpha_0 a_0}{\deg(D)},
 	\ldots, - \frac{\alpha_n a_n}{\deg(D)} \right).
 \end{align*}
 
 \noindent
 Then we see $\Sigma_i \subseteq \delta_i + \newspan_{\bq_{\geq 0}}
-(e_1, \ldots, e_n)$ with $e_i$ as defined in Equation
+(e_0, \ldots, e_n)$ with $e_i$ as defined in Equation
 ~\ref{defn:e-i-proj}. Therefore, we can write any element of
 $\Sigma_i$ as
 \[
-	\delta_i + \sum_{j=1}^n r_j e_j
+	\delta_i + \sum_{j=0}^n r_j e_j
 \]
 where $r_j \in \mathbb{R}$ for each $j$.
 
@@ -1012,7 +1028,7 @@ $\epsilon_j$ was defined in Equation ~\ref{eqn:epsilon-def-proj} and
 $h \in \Sigma_i$. Therefore, $\ker \psi$ is generated in degrees
 less than
 \[
-	\frac{\bida_i}{\deg(D)} + \sum_{i=1}^n \ell_i a_i.
+	\frac{\bida_i}{\deg(D)} + \sum_{i=0}^n \ell_i a_i.
 \]
 \end{proof}
 
@@ -1028,14 +1044,14 @@ The bound on degree of generation is precisely the content of Lemma
 relations.
 
 By ~\ref{lem:bound-ker-chi}, $\ker \chi$ is generated in degrees 
-at most $2\sum_{i=1}^n \ell_i a_i$ and by Lemma
+at most $2\sum_{i=0}^n \ell_i a_i$ and by Lemma
 ~\ref{lem:proj-relations-psi}, $\ker \psi,$ is generated in
-degrees up to $\frac{\bida_i}{\deg(D)} + \sum_{i=1}^n \ell_i a_i$. 
+degrees up to $\frac{\bida_i}{\deg(D)} + \sum_{i=0}^n \ell_i a_i$. 
 Consequently, Lemma ~\ref{lem:composite-map} implies that $\ker \phi$
 is generated in degrees less than
 \[
-	\max \left(2 \sum_{i=1}^n \ell_i a_i, \frac{\max_{1\le i \le n}
-	(\bida_i)}{\deg(D)} + \sum_{i=1}^n \ell_i a_i \right).
+	\max \left(2 \sum_{i=0}^n \ell_i a_i, \frac{\max_{1\le i \le n}
+	(\bida_i)}{\deg(D)} + \sum_{i=0}^n \ell_i a_i \right).
 \]
 \end{proof}
 
