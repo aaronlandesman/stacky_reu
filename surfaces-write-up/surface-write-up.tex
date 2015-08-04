@@ -166,7 +166,8 @@
 \end{abstract}
 
 \maketitle
-\todo{Standardize ``generation in degrees at most.''}
+\todo{Standardize ``generation in degrees at most.''  \\
+Peter: Fixed, although sometimes we say ``generated in degrees less than'' which is meant to be distinct (less than rather than less then or equal to).}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -237,8 +238,8 @@ Then the canonical ring
 \]
 
 \noindent
-is generated in degrees up to $\max_{1 \leq i \leq n}{q_i}$ with
-relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
+is generated in degrees at most $\max_{1 \leq i \leq n}{q_i}$ with
+relations generated in degrees at most $2 \max_{1 \leq i \leq n}{q_i}$
 \end{restatable}
 
 \begin{restatable}{thm}{restateproj}
@@ -246,13 +247,13 @@ relations generated in degrees up to $2 \max_{1 \leq i \leq n}{q_i}$
 Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$. Let
 $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
 $D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
-Then $R_D$ is generated in degree at most 
+Then $R_D$ is generated in degrees at most 
 \[
 	\sum_{i=1}^n \ell_i a_i
 \]
 
 \noindent
-with relations generated in degree at most
+with relations generated in degrees at most
 \[
 	\max \left(2 \sum_{i=1}^n \ell_i a_i, \frac{\max_{1\le i \le n}
 	(	\bida_i)}{\deg(D)} + \sum_{i=1}^n \ell_i a_i \right).
@@ -430,7 +431,7 @@ generators of $\ker \chi$ generate all of $\ker \phi,$ as desired.
 \label{lem:bound-ker-chi}
 Retaining the notation of Lemma ~\ref{lem:composite-map}, if $\Sigma$ has
 extremal rays $e_1,\ldots, e_r$ in degrees $d_1, \ldots, d_r$ then $\ker \chi$
-is generated in degrees up to $2(\sum_{i=1}^{r}d_r-1)$.
+is generated in degrees at most $2(\sum_{i=1}^{r}d_r-1)$.
 \end{lem}
 \begin{proof}
 Since $e_1, \ldots, e_r$ are extremal rays, by Proposition
@@ -878,7 +879,7 @@ Then notate
 \end{defn}
 
 \begin{lem} \label{lem:proj-generators}
-$R_D$ is generated in degrees up to $\sum_{i=1}^n \ell_i a_i.$
+$R_D$ is generated in degrees at most $\sum_{i=1}^n \ell_i a_i.$
 
 \end{lem}
 \begin{proof}
@@ -937,7 +938,7 @@ $\ker \chi $ and we next calculate the degree of generation of $\ker \psi$:
 
 \begin{lem}
 \label{lem:proj-relations-psi}
-$\ker \psi$ is generated in degrees up to
+$\ker \psi$ is generated in degrees at most
 \begin{align}
 \label{eqn:proj-relation-degree}
 	\frac{\max_{1\le i \le n}(\bida_i)}{\deg(D)} +  \sum_{i=1}^n \ell_i a_i.
@@ -1011,7 +1012,7 @@ The bound on degree of generation is precisely the content of Lemma
 relations.
 
 By ~\ref{lem:bound-ker-chi}, $\ker \chi$ is generated in degrees 
-up to $2\sum_{i=1}^n \ell_i a_i$ and by Lemma
+at most $2\sum_{i=1}^n \ell_i a_i$ and by Lemma
 ~\ref{lem:proj-relations-psi}, $\ker \psi,$ is generated in
 degrees up to $\frac{\bida_i}{\deg(D)} + \sum_{i=1}^n \ell_i a_i$. 
 Consequently, Lemma ~\ref{lem:composite-map} implies that $\ker \phi$
@@ -1083,7 +1084,7 @@ Then notate
 
 \begin{lem}
 \label{lem:hirz-generators}
-$R_D$ is generated in degree at most
+$R_D$ is generated in degrees at most
 \begin{equation}\label{eqn:def-sigma}
 	\rho := \sum_{i \in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{\substack
 	{i \in \Tp(D) \\ j\in \Tm(D)}} (\bida_i \bidb_j - \bida_j \bidb_i)
@@ -1361,7 +1362,7 @@ We can bound $\deg(F)$ (which equals $\deg(F_\mu)$ for all $\mu$) by
 	\]
 
 \noindent
-Therefore, $\ker \psi$ is generated in degree at most
+Therefore, $\ker \psi$ is generated in degreesat most
 \[
 	\tau = \rho
 	+ \max \left(\max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
