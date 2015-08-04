@@ -177,27 +177,27 @@ For any Weil $\bq$-divisor $D$ on a rational surface $X$, the graded
 \textbf{canonical ring} is $R(X, D) := \bigoplus_{d \geq 0} H^0(X, \lfloor dD \rfloor)$.
 We study the generators and relations of canonical
 rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$.
-When $D$ is a general $\bq$-divisor on any $\bp^m$ or on any
+When $D$ is a general $\bq$-divisor on any $\bp^m$ or on any Hirzebruch Surface
 $\hirz_m$, we give bounds on the generators and relations of
 $R(X, D)$. In particular, we give a complete description of the
 canonical ring when $X = \bp^m$ and $D$ is any effective
-$\bq$-divisor.
+$\bq$-divisor.  
 
 In part, this work is motivated by a recent paper by
 O'Dorney \cite{dorney:canonical}, which gives similar descriptions
 of canonical rings for general $\bq$-divisors on $\bp^1$. This
 study also has connections to the papers by Voight--Zureick-Brown 
 \cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring}
-on log spin canonical rings on stacky curves which provide bounds
+on canonical rings of stacky curves which provide bounds
 on rings of modular forms of Fuchsian groups through the study
-of particular $\bq$-divisors on curves.
+of particular $\bq$-divisors on curves.  \todo{Peter: I think this is too much specificity about our result.  I think everything after ``stacky curves'' should be eliminated, as it seems a little self-promoting.}
 
 The work in this paper may help calculate a presentation of certain rings of
 Hilbert 
 modular forms and Siegel modular forms. Recall that Hilbert and Siegel 
-modular forms are both generalizations of modular forms to higher dimensions,
+modular forms are two generalizations of modular forms to higher dimensions,
 as described in \cite{geer:siegel-modular} and \cite{bruinier:hilbert-modular}.
-By a result by Voight and Zureick-Brown \cite[Proposition 6.1.5]{vzb:stacky}, 
+By Voight and Zureick-Brown \cite[Proposition 6.1.5]{vzb:stacky}, 
 one can translate the analytic category of 1-dimensional complex orbifolds to
 the algebraic category of stacky curves. 
 We expect that one can generalize this result to yield an equivalence of
@@ -208,6 +208,7 @@ and Siegel modular forms whose coarse space is a projective space or a
 Hirzebruch surface to canonical rings on the corresponding algebraic surfaces.
 Thereby, our techniques would give a bound on generators and relations for
 Hilbert and Siegel modular forms with certain underlying spaces.
+\todo{Peter:  Hmm... this is very vague.  It almost feels like a further question type statement, then a statement of why what we're doing matters.  I guess the real issue, as we have sort of discussed, is that there are not any clear motivating reasons why one would actually use what we have done... Oh well}
 
 Another closely related topic is the Hassett-Keel program 
 initiated in \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form
@@ -225,7 +226,7 @@ $\bq$-divisors \cite[Chapter V, Theorem 12.1]{barthHPV:compactComplexSurfaces}.
 
 \ssec{Main Results}
 
-In section 2, we discuss background knowledge and present some useful lemmas.  In section 3 we focus on projective spaces: $\mathbb{P}^n$ and prove the following two results:
+In Section \ref{sec:lemmas}, we discuss background knowledge and present some useful lemmas.  In Section \ref{sec:proj} we focus on projective spaces: $\mathbb{P}^n$ and prove the following two results:
 \begin{restatable}{thm}{restateeffective}
 \label{thm:proj-effective-intro}
 Let $D = \sum_{i = 1}^{n} \alpha_i C_i \in \bz \otimes_\bz \di \bp^m$, with $\alpha_i =
@@ -261,7 +262,7 @@ with relations generated in degrees at most
 \end{restatable}
 
 \noindent
-In section 4, we shift our attention to Hirzebruch Surfaces and prove the following theorem:
+In section \ref{sec:hirz}, we shift our attention to Hirzebruch Surfaces and prove the following theorem:
 
 \begin{restatable}{thm}{hirzrestate}
 \label{thm:hirz-generators-relations}
@@ -294,7 +295,7 @@ where
 \end{restatable}
 
 \noindent
-Together, Theorems \ref{thm:proj-generators-relations} and \ref{thm:hirz-generators-relations} provide bounds on generators and relations for the canonical ring of $\mathbb{Q}$-divisors of all minimal rational surfaces.  Section 5 concludes the paper and discusses further questions.
+Together, Theorems \ref{thm:proj-generators-relations} and \ref{thm:hirz-generators-relations} provide bounds on generators and relations for the canonical ring of $\mathbb{Q}$-divisors of all minimal rational surfaces.  Section \ref{sec:conc} concludes the paper and discusses further questions.
 
 \todo{Incorporate the following section into the $\bp^{m}$ section
 \\
@@ -348,9 +349,13 @@ Notate a (Weil) $\bq$-divisor
 where $\alpha_i \in \bq$ and $D_i \in \di X$ is an irreducible divisor.
 \end{convention}
 
-Now we give a result describing the generators of a cone via its
-extremal rays.
-\todo{write more transition}
+
+
+
+We now present some preliminary results which will be used to prove Theorems \ref{thm:proj-generators-relations} and \ref{thm:hirz-generators-relations} in Sections \ref{sec:proj} and \ref{sec:hirz} respectively.
+%Now we give a result describing the generators of a cone via its
+%extremal rays.
+%\todo{write more transition}
 
 \begin{prop}
 \label{prop:cone-generation}
@@ -452,14 +457,13 @@ $\sigma = \lambda + \sum_{i=1}^{r}w_i e_i$ as in Proposition
 \section{Canonical Rings on Projective Space}
 \label{sec:proj}
 In this section, we bound the degrees of generators and relations for divisors
-on $\bp^m$, for all $m \geq 1$. The $\bp^1$ case was covered in
+on $\bp^m$, for all $m \geq 1$. The $\bp^1$ case restricts to the results of
 \cite{dorney:canonical}.
 
 \ssec{Preliminaries on Projective Space}
 
 For the remainder of this section, we shall fix $m \geq 1$ and choose an
-isomorphism $\bp^m \cong \proj V$ so that $x_0,\ldots, x_m$ form a basis for
-$V$.  We will think of $x_i$ as a rational section of $H^0(\bp^m,
+isomorphism $\bp^m \cong \proj V$ for some vector space $V$ with basis $x_0,\ldots, x_m$.  We will think of $x_i$ as a rational section of $H^0(\bp^m,
 \sco_{\bp^m})$ of degree 1.
 
 Write
@@ -473,7 +477,7 @@ basis for degree one rational functions on $\bp^m$.
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
-The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying
+The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying \todo{Peter: Why do we include this $u$?  IN the later sections, I don't use this notation and we should standardize.}
 \begin{align}
 \label{align:pm-span}
 \sum_{i=1}^{n} c_i \cdot \bida_i = 0 && \text{ and } &&c_i \geq \lfloor \alpha_i d\rfloor	
@@ -485,7 +489,7 @@ of the form $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying
 \begin{align}
 \label{align:pm-basis}
 c_i = -\lfloor d\alpha_i \rfloor && \text{ for } && i > m
-\end{align}
+\end{align}\todo{Peter: Should be for $i> m+1$ right?  Looking below I see an $f_0$, where as above $f_i$ ranges 1 to $n$.  We should choose whether or not 0 is included in the indexing and fix the section to match that convention.}
 
 \noindent
 form a basis for $H^0(\bp^m, dD)$ over $k$.
@@ -511,12 +515,12 @@ $ rational functions.
 In this subsection, we restrict attention to the case of effective
 fractional divisors $D \in \bq \otimes \di \bp^m$. We completely
 characterize the canonical rings when $D$ consists of one
-hypersurface and give strong bounds on generator and relation
+hypersurface and give strong \todo{Peter: I'm opposed to the inclusion of the word strong, as it ambiguous and subjective.  I think we should either replace it with tight, and then explicitly say later how it is tight, or just get rid of the adjective.} bounds on generator and relation
 degrees for general effective divisors $D$.
 
 \begin{convention}
 Let $[x_0, \ldots, x_m]$ be coordinates for $\bp^m$. Let
-$\vec{v} = (v_0, \ldots, v_m) \in \bq^{m + 1}$. Then write
+$\vec{v} = (v_0, \ldots, v_m) \in \bq^{m + 1}$. \todo{Peter: do we want to allow $\vec{v}\in \mathbb{Q}^{m+1}$ rather than $\mathbb{Z}^{m+1}$?  I'm not sure if the arguments actually need the generality (and if so, it is a little worrisome since fractional powers aren't clearly defined algebraically.}  Then write
 \[
 	x^{\vec{v}} := \prod_{i = 0}^{m} x_i^{v_i}
 \]
@@ -567,7 +571,7 @@ with $\deg \vec v = c_i$. Furthermore, it has
 relations generated by the following two forms:
 \begin{enumerate}
 	\item For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
-\vec{w} \in \mss_j$, there is a relation of the form either
+\vec{w} \in \mss_j$, there is a relation of the form: either
 \begin{flalign*}
 	&G_{i, j}^{\vec{v}, \vec{w}} = F_i^{\vec{v}} F_j^{\vec{w}}
 	- \prod_{\vec{y} \in \mss_{h_{i, j}}} (F_{h_{i, j}}^{\vec{y}})
@@ -578,7 +582,7 @@ relations generated by the following two forms:
 	\cdot \prod_{ \vec{z} \in
 	\mss_{h_{i, j} + 1}} (F_{k_{i, j} + 1}^{\vec{z}})^{g'_{\vec{z}}}
 	&(i < h_{i, j} < h_{i, j} + 1 < j).
-\end{flalign*}
+\end{flalign*} \todo{Peter: Can you clarify when these two cases occur: i.e. does the first only occur if $j = h_{i,j}+1$; otherwise, in cases when $i< h_{i,j} < h_{i,j} + 1< j$, do we get relations of both forms?}
 	\item For each $(i, j)$ with
 $j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
 \mss_j$ with $\vec{v} \not\prec \vec{w}$ (see Definition
@@ -1431,8 +1435,7 @@ perspective of adding a copy of $\mathbb{Z}$ to the Picard group, as induced by
 the blowup, might suggest a general method for blowups.
 
 Answering Question ~\ref{qn:general-blowup} would in fact provide an answer for
-all rational surfaces, via the minimal model program for surfaces
-\todo{Reference}.  One might then hope to further extend these results to all minimal surfaces:
+all rational surfaces, via the minimal model program for surfaces.  One might then hope to further extend these results to all minimal surfaces:
 \begin{question}
 \label{qn:general-minimal-surface}
 Can we describe generators and relations of $R_D$ for $D$ a divisor on an
