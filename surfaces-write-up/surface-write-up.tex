@@ -189,7 +189,9 @@ study also has connections to the papers by Voight--Zureick-Brown
 \cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring}
 on canonical rings of stacky curves which provide bounds
 on rings of modular forms of Fuchsian groups through the study
-of particular $\bq$-divisors on curves.  \todo{Peter: I think this is too much specificity about our result.  I think everything after ``stacky curves'' should be eliminated, as it seems a little self-promoting.}
+of particular $\bq$-divisors on curves.  \todo{I think this is too much 
+specificity about our result.  I think everything after ``stacky curves'' should be 
+eliminated, as it seems a little self-promoting.}
 
 The work in this paper may help calculate a presentation of certain rings of
 Hilbert 
@@ -530,11 +532,7 @@ degrees for general effective divisors $D$.
 \todo{Aaron: make a remark as to why these bounds are tight}
 \begin{convention}
 Let $[x_0, \ldots, x_m]$ be coordinates for $\bp^m$. Let
-$\vec{v} = (v_0, \ldots, v_m) \in \bq^{m + 1}$. \todo{Peter: do we want to allow $\vec{v}\in \mathbb{Q}^{m+1}$ rather than $\mathbb{Z}^{m+1}$?  I'm not sure if the arguments actually need the generality (and if so, it is a little worrisome since fractional powers aren't clearly defined algebraically.
-
-Aaron: No, these vectors should just lie in $\bz$. They're just used
-to given an ordering on monomials.
-}  Then write
+$\vec{v} = (v_0, \ldots, v_m) \in \bz^{m + 1}$.  Then write
 \[
 	x^{\vec{v}} := \prod_{i = 0}^{m} x_i^{v_i}
 \]
@@ -542,7 +540,7 @@ to given an ordering on monomials.
 
 \begin{defn}
 \label{defn:vec-sum}
-For $\vec{v} \in \bq^n$, denote $\deg \vec{v} := \sum_{i = 0}
+For $\vec{v} \in \bz^n$, denote $\deg \vec{v} := \sum_{i = 0}
 ^n v_i$.
 Let 
 \begin{align*}
@@ -556,7 +554,7 @@ be the set of vectors of degree $c_i$.
 
 \begin{defn}
 \label{defn:vec-order}
-Let $\vec{v}, \vec{w} \in \bq^n$. Let $i \in \{1,\ldots, n\}$
+Let $\vec{v}, \vec{w} \in \bz^n$. Let $i \in \{1,\ldots, n\}$
 be the biggest index such that $v_i$ is nonzero
 and $j \in \{1,\ldots, n\}$ be the smallest index such that $w_j$ is
 nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
