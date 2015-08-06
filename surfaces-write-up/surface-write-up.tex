@@ -525,10 +525,9 @@ $ rational functions.
 \label{ssec:proj-one-point}
 
 In this subsection, we restrict attention to the case of effective
-fractional divisors $D \in \bq \otimes \di \bp^m$. We completely
-characterize the canonical rings when $D$ consists of one
-hypersurface and give tight bounds on generator and relation
-degrees for general effective divisors $D$.
+fractional divisors $D \in \bq \otimes \di \bp^m$. We give an explicit presentation of the canonical rings when $D$ is an effective
+divisor.
+
 \todo{Aaron: make a remark as to why these bounds are tight}
 \begin{convention}
 Let $[x_0, \ldots, x_m]$ be coordinates for $\bp^m$. Let
@@ -554,9 +553,9 @@ be the set of vectors of degree $c_i$.
 
 \begin{defn}
 \label{defn:vec-order}
-Let $\vec{v}, \vec{w} \in \bz^n$. Let $i \in \{1,\ldots, n\}$
+Let $\vec{v}, \vec{w} \in \bz^{m+1}$. Let $i \in \{0,\ldots, m\}$
 be the biggest index such that $v_i$ is nonzero
-and $j \in \{1,\ldots, n\}$ be the smallest index such that $w_j$ is
+and $j \in \{0,\ldots, m\}$ be the smallest index such that $w_j$ is
 nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
 \end{defn}
 
@@ -765,7 +764,7 @@ $G_{i, j}^{\vec{v}, \vec{w}}$ and of form $L_{i, j}^{\vec{v},
 \begin{rem}
 \label{rem:proj-two-points}
 Note that we cannot extend this result to the case when
-$D$ is supported at two hypersurfaces with arbitrary rational
+$D$ is supported at two hypersurfaces with arbitrary rational (non-effective)
 coefficients in the same manner that O'Dorney does for the
 $\bp^1$ case \cite[Section 4]{dorney:canonical}. As will be shown
 in Example ~\ref{eg:hyperplane}, the degrees of generation of the
@@ -816,6 +815,12 @@ This reduces the case of a hypersurface $C$ to
 a hyperplane $H$, completeting the proof by Theorem
 ~\ref{thm:proj-one-point}.
 \end{proof}
+
+\begin{rem}
+\label{rem:exact-effective-bounds}
+Note that the proof of Theorem ~\ref{thm:proj-effective-intro} not only gives bounds on the degrees of the generators and relations, but actually gives an explicit method for computing the presentaiton. In particular, these bounds are tight. The generator bound is always acheived and the bound on the relations is achieved if $m \geq 2$.
+\end{rem}
+
 
 
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
