@@ -1364,7 +1364,7 @@ For $(f_i - \beta_i)\prod_{j=1}^n f_j^{c_j}$ to be a relation, it must, in parti
 If $i\in \Te$ define $r_i := \frac{1}{\kappa_i}$.  If $i\in \Tp$ choose $r_{i,j}\in \bq_{\ge 0}$ for all $j\in \Tm$ such that $\sum_{j\in \Tm} r_{i,j}\kappa_{i,j}' = 1$; similarly, if $i\in \Tm$ choose $r_{j,i}\in \bq_{\ge 0}$ for all $j\in \Tp$ such that $\sum_{j\in \Tm} r_{j,i}\kappa_{j,i}'' = 1$.  For $j\ne i$, define $r_j := 0$ and for all pairs $(j,k)$ so that $j \neq i$ and $k \neq i$ define $r_{j,k} := 0$.
 Define $E$ by
 \begin{equation}\label{eqn:hirz-E-translation}
-	E := \sum_{j\in \Te} (s_j - \lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} (s_{j,k} - \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}.
+E := 	\sum_{j\in \Te} (s_j - \lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} (s_{j,k} - \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}
 \end{equation}
 
 
@@ -1377,7 +1377,7 @@ Note that
 	\max_{j \in \Tp} \bigl(\ell_{j, i} (\bida_j \bidb_ i - \bida_i \bidb_j) \bigr)
 	&\mbox{ if } i \in \Tm. \end{cases}
 \]
-where $\rho$ is as in Equation \ref{eqn:def-sigma}.
+where $\rho$ is as in Equation \ref{eqn:def-sigma}.  In this sum the $\rho$ term corresponds to the sums of fractional parts of $s_j - r_j$'s and $s_{j,k} - r_{j,k}$'s, whereas the second term corresponds to the sums of $r_j$'s and $r_{j,k}$'s (noting that in equation \ref{eqn:hirz-E-translation} $s_j - \lfloor s_j - r_j \rfloor$ equals $r_j$ plus the fractional part of $s_j - r_j$, and a similar statement holds for $s_{j,k} - \lfloor s_{j,k} - r_{j,k}$).
 
 \todo{Aaron: Is one of these terms corresponding to $E$ and the other to $\lambda$? If so, can you say which?\\
 Peter: No, one corresponds to $r_j$ and one to the fractional part of $s_j - r_j$.
