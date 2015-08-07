@@ -313,7 +313,7 @@ Notate a (Weil) $\bq$-divisor
 \end{align*}
 
 \noindent
-where $\alpha_i \in \bq$ and $D_i \in \di X$ is an integral codimension 1 closed subscheme of $X$. When it is convenient to do so, we shall sometimes start the indexing at $0$, so that $i$ runs from $0$ to $n$. For such a divisor $D$ with $\alpha_i = \frac{c_i}{k_i}$ let $\ell_i = \lcm_{j\ne i}(k_i)$
+where $\alpha_i \in \bq$ and $D_i \in \di X$ is an integral codimension 1 closed subscheme of $X$. When it is convenient to do so, we shall sometimes start the indexing at $0$, so that $i$ runs from $0$ to $n$. The degree of $D$ is by definition $\deg D = \sum_{i=1}^{n}\alpha_i$. For such a divisor $D$ with $\alpha_i = \frac{c_i}{k_i}$ let $\ell_i = \lcm_{j\ne i}(k_i)$
 and let $\ell_{i,j} = \lcm_{h\ne i,j}(k_h).$ The floor of a $\bq$-divisor $D$ is a divisor $\lfloor D
 \rfloor \in \di X$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
 \lfloor \alpha_i \rfloor P_i$. Let $
@@ -692,7 +692,7 @@ Note that the proof of Theorem ~\ref{thm:proj-effective-intro} not only gives bo
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
 
 
-We now offer bounds on generators and relations of $R_D$ for a general divisor $D$ on $\bp^m$.
+We now offer bounds on generators and relations of $R_D$ for a general $\bq$-divisor $D \in \bq \otimes_\bq \di \bp^m$.
 
 Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes \di \bp^m$ and let $f_i$ be
 homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$
@@ -706,25 +706,24 @@ For the remainder of this section, we shall make the additional assumption that
 
 Our first aim in this section is to prove Theorem
 ~\ref{thm:proj-generators-relations} bounding the number of generators and
-relations of $R_D$. Before doing so, we justify the assumption
-~\eqref{eqn:pm-basis-assumption} through a several convincing examples.
-
+relations of $R_D$. Before doing so, we justify the importance of assumption
+~\eqref{eqn:pm-basis-assumption} with several illustrative examples.
 
 \begin{example}
 \label{eg:hyperplane}
 In this example,we show that the naive generalization of
 ~\cite[Theorem 8]{dorney:canonical} of generation in degree at most
 $\sum_{i=0}^{n}\ell_i$ cannot possibly hold. The reason for this is
-that the divisors may ``be contained in a hyperplane,'' i.e.~ be
+that the divisors may be
 expressible as functions in $m$ of the $m+1$ variables on $\bp^m$.
 
-Suppose $D = \frac{1}{2}H_0 - \frac{1}{3}H_1$ where $H_0 = V(x_0),
+Concretely, take $D = \frac{1}{2}H_0 - \frac{1}{3}H_1$ where $H_0 = V(x_0),
 H_1 = V(x_1)$ are two coordinate hyperplanes in $\bp^2$. Then, $R_D$
 has generators in degree $2$ and $3$ which can be written as $u^2
 \frac{x_1}{x_0}, u^3 \frac{x_1}{x_0}.$ In fact, for all degrees
-less than $5$ the elements of $R_D$ can all be expressed as
+less than $5$, the elements of $R_D$ can all be expressed as
 rational functions in $x_0, x_1$. However, in degree $6$, there is
-the rational function $\frac{x_1^2 x_2}{x_0^3}$. Since this
+$u^6 \frac{x_1^2 x_2}{x_0^3}$. Since this
 involves $x_2$, it must be a generator.
 
 This example generalizes slightly to any divisor of the form $D =
@@ -737,23 +736,22 @@ Suppose $D = \sum_{i=0}^{n} \frac{\num_i}{\den_i}D_i \in \di \bp^m
 \otimes \bq,$ where $\deg D_i = \bida_i$ and $\deg D = \frac{1}{\lcm
 _{1 \leq i \leq n}(\den_i \cdot \bida_i)}$. Then, if $D_i = V(f_i)$
 where all $f_i$ can be written as a polynomial function in $x_0,
-\ldots, x_{m-1},$ we have $R_D$ always has a generator in degree
+\ldots, x_{m-1},$ it follows that $R_D$ always has a generator in degree
 $\lcm(\den_i \cdot \bida_i)$.
 \end{example}
 
-\begin{rem}
-\label{rem:ghost-motivation}
-The problem that a divisor may be contained in a hyperplane, 
+The problem that a divisor may be
+expressible as functions in $m$ of the $m+1$ variables on $\bp^m$, 
 as illustrated in Example ~\ref{eg:hyperplane}, can easily be circumvented by adding in ``ghost
 points.'' That is, we may add divisors of the form $0 \cdot H_i$ to
 $D$, and reorder so that if $D = \sum_{i=0}^{n}\alpha_i V(f_i)$,
-then $f_0, \ldots, f_m$ cut out linearly independent
-hyperplanes in $\bp^m$.
+then $f_0, \ldots, f_m$ are independent linear functions in
+$x_0,\ldots, x_m$.
 
 In Example ~\ref{eg:radical}, we show that it is still, in general,
 necessary to add ghost points, even when the irreducible components
-of a divisor are not all contained in a hyperplane.
-\end{rem}
+of a divisor are not all
+expressible as functions in $m$ of the $m+1$ variables on $\bp^m$.
 
 \begin{example}
 \label{eg:radical}
@@ -764,19 +762,16 @@ $6$.
 However,  approach, as all lower degrees only have
 dimension at most 1. Therefore, we cannot hope to bound the degree
 of generation of $R_D$ as a linear combination of $\ell_i$,
-in analogy to ~\ref[Theorem 8]{dorney:canonical}
+in analogy to \cite[Theorem 8]{dorney:canonical}
 unless we require that $D$ includes ghost points. That is, unless
-$D_0,\ldots D_m$ are taken to be hyperplanes spanning $\bp^m$.
-In fact, we may construct similar examples using any set of degree
-$n$ divisor with very small degree.
+$D_0,\ldots D_m$ are taken to be linearly independent hyperplanes.
 \end{example}
 
 Having justified the necessity of adding ghost points, we proceed to bound the
 number of generators and relations of arbitrary $\bq$-divisors in 
-projective space. We bound the generators in Lemma ~\ref{lem:proj-
-generators}, and we use Lemmas ~\ref{lem:composite-map}, ~\ref{lem:bound-ker-chi}, and ~\ref{lem:proj-relations-psi} to bound the 
+projective space. We bound the generators in Lemma ~\ref{lem:proj-generators}, and we use Lemmas ~\ref{lem:composite-map}, ~\ref{lem:bound-ker-chi}, and ~\ref{lem:proj-relations-psi} to bound the 
 degree of relations in the proof of Theorem ~\ref{thm:proj-generators-relations}. Note that Proposition ~\ref{prop:cone-generation}, Lemma ~\ref{lem:composite-map}, and Lemma ~\ref{lem:bound-ker-chi} are quite 
-general and will be used in Section ~\ref{sec:hirz} to bound the 
+general and will also be used in Section ~\ref{sec:hirz} to bound the 
 degree of generators and relations on Hirzebruch surfaces.
 
 \begin{defn}
@@ -799,7 +794,7 @@ $\alpha$ form a finite sequence
 \]
 
 \noindent
-Figure ~\ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\alpha = \frac{14}{5}$.
+Figure ~\ref{fig:s14/5-lattice} gives a pictorial representation of the best lower approximations of $\alpha = \frac{14}{5}$.
 \end{rem}
 
 \begin{figure}
@@ -833,10 +828,11 @@ $e_1, \ldots, e_t$.
 Then, as a semigroup, $\Sigma$ is generated by
 elements whose first coordinate is less than $\sum_{i = 1}^{t}
 \pdeg_i$. Furthermore, every element $\sigma \in \Sigma$ can be
-written in a canonical form $\lambda + \sum_{i = 1}^{t} w_i e_i$ 
-with $\lambda = \sum_{i = 1}^{r} s_i e_i$ with $0 \leq s_i < 1$, the
-first coordinate of $\lambda$ less than $\sum_{i=1}^{t}\pdeg_i$,
-and $w_1, \ldots, w_t \in \bz_{\geq 0}$.
+written in a canonical form \[\sigma = \lambda + \sum_{i = 1}^{t} w_i e_i\]
+with $w_1, \ldots, w_t \in \bz_{\geq 0}$,
+$0 \leq s_i < 1$, and $\lambda = \sum_{i = 1}^{r} s_i e_i$ 
+so that the
+first coordinate of $\lambda$ is less than $\sum_{i=1}^{t}\pdeg_i$.
 \end{prop}
 
 \begin{proof}
@@ -851,13 +847,15 @@ generated by elements whose first coordinate is less than
 $\sum_{i = 1}^{t} r_i$.
 \end{proof}
 
-Using Proposition ~\ref{prop:cone generation}, in order to bound
+By Proposition ~\ref{prop:cone generation}, in order to bound
 the degree of generation of $R_D$, we only need bound
-the degrees of generators of an associated cone. We now carry out
+the degrees of extremal rays of an associated cone. We now carry out
 this strategy.
 
 \begin{lem} \label{lem:proj-generators}
-$R_D$ is generated in degrees at most $\sum_{i=0}^n \ell_i a_i.$
+Let $D = \sum_{i=1}^{n} \alpha_i D_i \in \bq \otimes \di \bp^m,$ where
+$\deg D_i = \bida_i$, $\alpha_i = \frac{c_i}{k_i}\in \bq$, and
+$\ell_i = \lcm_{j \neq i} (k_i)$. Then, $R_D$ is generated in degrees at most $\sum_{i=0}^n \ell_i \bida_i.$
 
 \end{lem}
 \begin{proof}
@@ -877,7 +875,7 @@ We note that $\Sigma$ has extremal rays given by the lattice points
 for each $i\in \{1, \ldots n\}$.
 Therefore, applying Proposition ~\ref{prop:cone-generation}, we see $R_D$ is generated in degrees less than
 \[
-	\sum_{i=0}^n \ell_i a_i.
+	\sum_{i=0}^n \ell_i \bida_i.
 \]
 \end{proof}
 
