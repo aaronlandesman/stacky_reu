@@ -247,7 +247,7 @@ relations generated in degrees at most $2 \max_{1 \leq i \leq n}{q_i}$
 \label{thm:proj-generators-relations}
 Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ where $\alpha_i = \frac{c_i}{k_i}$.
 Then notate
-\[\ell_i = \lcm_{j\ne i}(k_i).\]. 
+\[\ell_i = \lcm_{j\ne i}(k_i).\] 
 Let
 $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
 $D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
@@ -381,14 +381,14 @@ $ rational functions.
 \label{ssec:proj-one-point}
 
 In this subsection, we restrict attention to the case of effective
-fractional divisors $D \in \bq \otimes \di \bp^m$. We give an explicit presentation of the canonical rings when $D$ is an effective
+fractional divisors $D \in \bq \otimes \di \bp^m$. We give an explicit presentation of the canonical ring when $D$ is an effective
 divisor.
 
 \begin{convention}
 Let $[x_0, \ldots, x_m]$ be coordinates for $\bp^m$. Let
 $\vec{v} = (v_0, \ldots, v_m) \in \bz^{m + 1}$.  Then write
 \[
-	x^{\vec{v}} := \prod_{i = 0}^{m} x_i^{v_i}
+	x^{\vec{v}} := \prod_{i = 0}^{m} x_i^{v_i}.
 \]
 \end{convention}
 
@@ -403,23 +403,21 @@ Let
 \end{align*}
 
 \noindent
-be the set of vectors of degree $c_i$.
 \end{defn}
 
-Next, we define an ordering on the vectors, which will allow us
-to present a system of relations for $R_D$. Although it is not
-stated explicitly later, in the case that $D = \alpha_1 D_1$, the relations in Theorem ~\ref{thm:proj-one-point} form a reduced grobner basis with respect to this ordering.
+Next, we define an ordering on these vectors, which will be used to give a presentation for $R_D$. Although it is not
+stated explicitly later, in the case that $D = \alpha_1 D_1$ is supported on a single hypersurface, the relations in Theorem ~\ref{thm:proj-one-point} form a reduced grobner basis with respect to this ordering.
 
 \begin{defn}
 \label{defn:vec-order}
 Let $\vec{v}, \vec{w} \in \bz^{m+1}$. Let $i \in \{0,\ldots, m\}$
 be the biggest index such that $v_i$ is nonzero
 and $j \in \{0,\ldots, m\}$ be the smallest index such that $w_j$ is
-nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
+nonzero. Define a partial ordering on $\bz^{m+1}$ by $\vec{v} \prec \vec{w}$ if $i \leq j$.
 \end{defn}
 
 We are now ready to give an inductive method for computing
-the generators and relations of $R_D$ in terms of $R_{D'}$, 
+the generators and relations of $R_D$ in terms of $R_{D'}$ 
 in the case that $D' = R_D + \alpha H$ for $H$ a hyperplane.
 The statement and proofs are natural generalizations of
 \cite[Theorem 6]{dorney:canonical}.
@@ -640,9 +638,9 @@ independent coordinates.
 %~\ref{thm:proj-one-point}.
 %\end{rem}
 
-The above Theorem ~\ref{thm:proj-one-point} allows us to inductively
+Theorem ~\ref{thm:proj-one-point} gives an inductive procedure to
 compute presentations of effective divisors which are supported on
-hyperplanes, but for $m \geq 2$, there are hypersurfaces which
+hyperplanes. However, for $m \geq 2$, there are hypersurfaces which
 are not unions of hyperplanes. We now adress this general case, giving an inductive presentation of canonical rings of effective divisors, and a tight bound on the degrees of their generators and
 relations.
 
@@ -654,22 +652,22 @@ We proceed by induction on $n$.
 If $n = 0$, i.e.~ $D = 0$, then we are done.
 Now, we inductively add hypersurfaces.
 Let $D' = \sum_{i = 0}^{n} \alpha_i D_i \in \bq \otimes_\bq\di \bp^m$, 
-for which the theorem holds. It suffices to show
-the theorem holds for $D \in \di \bq \otimes_\bq \bp^m$, where $D = D' + C$ for some
+and assume the theorem holds for $D'$. It suffices to show
+the theorem holds for $D \in \di \bq \otimes_\bq \bp^m$, where $D = D' + \alpha C$ for some
 degree $\pdeg$ hypersurface $C$.
 If $C$ were a hyperplane, we would then be done, by Theorem ~\ref{thm:proj-one-point}.
 
 To complete the theorem, we reduce the case that $C$ is a general hypersurface
-to the case that $C$ is a hyperplane, essentially by using the Veronese embedding.
+to the case that $C$ is a hyperplane, by using the Veronese embedding.
 
-If $C$ is of degree $\pdeg$, then we construct the veronese embedding
+If $C$ is of degree $\pdeg$, consider the veronese embedding
 $\nu_\pdeg^m: \bp^m \rightarrow \bp^{\binom{m+\pdeg}{\pdeg}-1}$
 so that the image of $C$ is the intersection of 
 a hyperplane in $\bp^{\binom{{m + \pdeg}}{\pdeg} - 1}$ with $\nu_\pdeg^m(\bp^m)$.
-Now, note that the ring $H^0(\bp^m, C)$ is isomorphic to the
-$\pdeg$ veronese subring of $R_{V(x_0)}$, and so
+Now, note that the ring $R_{\alpha C}$ is isomorphic to the
+$\pdeg$ veronese subring of $R_{\alpha V(x_0)} = \bigoplus_{d \geq 0} H^0(\bp^m, d \alpha V(x_0))$ and so
 the canonical ring $R_H$ of the hyperplane $H \subset \bp^{\binom{m+\pdeg}{\pdeg}-1}$
-restricting to $\nu_\pdeg^m(C)$ is isomorphic to $R_C$.
+restricted to $\nu_\pdeg^m(C)$ is isomorphic to $R_C$.
 Therefore, we can bound the degree of generators and relations of
 $R_D$ over $R_{D'}$ by the degree of generators and
 relations for $R_C \cong R_H.$
