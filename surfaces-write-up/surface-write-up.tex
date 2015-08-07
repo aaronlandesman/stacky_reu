@@ -1414,53 +1414,35 @@ $\ker \psi$ follows from
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Further Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Conclusion}
+\section{Further Questions}
 \label{sec:conc}
-This paper extends the work of O'Dorney \cite{dorney:canonical} on $\bp^1$ to
-$\bp^m$ and Hirzebruch Surfaces, bounding the degrees of generation and
-relations of canonical rings of arbitrary divisors $D$.  The methods for
-deducing bounds on generators and relations of $\hirz_k$ applied similar
-methods to that of O'Dorney's for $\bp^1$.  
+In this section, we briefly state some further questions.
 
-We can view $\hirz_0$ as $\bp^1\times \bp^1$ and more generally $\hirz_k$ as a
-$\bp^1$ bundle over $\bp^1$.  One might hope that similar ideas could be
-generalized to all bundles.  Specifically:
-\begin{question}
-\label{qn:general-product-bundle}
-Suppose $X$ and $Y$ are schemes.  Let $D$ be a divisor on $X\times Y$ or more
-generally on an $X$ bundles over $Y$.  Can we describe $D$ in terms of divisors
-$D_1, \ldots D_n$ on $X$ and $D_1', \ldots d_n'$ on $Y$.  Furthermore, can we
-find generators for $R_D$ and its ideal of relations using those of the
-$R_{D_i}$'s and $R_{D_j'}$'s?
-\end{question}
-
-An immediate obstruction to this is the fact that we critically used the fact
-that $\hirz_k$ has well-defined bi-degrees.  Unfortunately, in general $\Pic(X
-\times Y) \not \cong \Pic(X) \times \Pic(Y)$.
-
-Alternatively, we can view $\hirz_1$ as $\bp^2$ blown up at a point.  This
-suggests the following question:
-\begin{question}
-\label{qn:general-blowup}
-Let $X$ be a scheme.  Let $X'$ be the blowup of $X$ at a point $P$ with a
-divisor $D$.  First, is there a way to express $D$ in terms of divisors $D_1,
-\ldots, D_n$ on $X$?  Furthermore, is there a way to describe generators and
-relations of $R_D$ in terms of those of $R_{D_i}$ for all $i$.
-\end{question}
-
-Fortunately, the Picard group of $X$ blown up at a point is the same as that of
-$X$ times an additional copy of $\bz$.  Perhaps analyzing the argument from
-Lemma ~\ref{thm:hirz-generators-relations} in the case of $\hirz_1$ from the
-perspective of adding a copy of $\bz$ to the Picard group, as induced by
-the blowup, might suggest a general method for blowups.
-
-Answering Question ~\ref{qn:general-blowup} would in fact provide an answer for
-all rational surfaces, via the minimal model program for surfaces.  One might then hope to further extend these results to all minimal surfaces:
+Recall that every minimal rational surface is either isomorphic to
+$\bp^2$ or $\hirz_m$ for some $m \geq 0, m \neq 1$. By Theorems
+~\ref{thm:proj-generators-relations} and ~\ref{thm:hirz-generators-relations}, we have given bounds for the generators and relations
+of arbitrary canonical rings on any minimal rational surface. A
+natural extension of our results is the following.
 \begin{question}
 \label{qn:general-minimal-surface}
 Can we describe generators and relations of $R_D$ for $D$ a divisor on an
-arbitrary minimal surface $X$?
+arbitrary rational surface $X$?
 \end{question}
+
+By the classification of rational surfaces, every rational surface
+can be obtained from a minimal rational surface by a sequence of blow-ups \todo{Aaron: Include reference}. Therefore, to answer Question \ref{qn:general-minimal-surface} affirmatively, it suffices
+to bound the degree of generators and relations of the 
+canonical ring of a divisor on a blow-up of that surface in terms of the canonical ring of a divisor on that surface.
+
+Another direction to generalize the work in this paper
+would be to try to express canonical rings of $\bq$-divisors on
+$X \times Y$ in terms of $X$ and $Y$. In this paper,
+we bounded the degrees of presentations on canonical rings on $\bp^1 \times \bp^1 \cong \hirz_0$.
+Perhaps similar techniques can be used to bound
+degrees of presentaitons on canonical rings on $(\bp^1)^k$ or
+more generally on $(\bp^1)^{i_1} \times \cdots (\bp^k)^{i_k}.$
+One might further try to generalize this to bounding degrees of presentations on bundles over $\bp^m$ or on more general
+products of schemes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
