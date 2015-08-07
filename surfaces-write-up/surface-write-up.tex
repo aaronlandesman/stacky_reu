@@ -166,6 +166,9 @@
 
 \maketitle
 
+\todo{Make sure to include $u^d$ everywhere necessary}
+\todo{Make sure to index starting from 0 in $\bp^m$ section}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
@@ -341,15 +344,7 @@ basis for degree one rational functions on $\bp^m$.
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
-The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying \todo{Peter: Why
-do we include this $u$?  In the later sections, I don't use this notation and
-we should standardize.
-
-Aaron: Isn't it necessary to distinguish the functions? For instance, we could consider $f_0$ either as a function in degree 1 or 2 for $D = \frac{1}{2}x_0$, and we need
-$u^d$ to distinguish which degree it lives in.
-I think we will need to go through and include the $d$ throughout.
-Do you think there's a way to avoid including the $d$?
-}
+The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying
 
 \begin{align}
 \label{align:pm-span}
@@ -362,10 +357,7 @@ of the form $u^d \cdot \prod_{i=0}^n f_i^{c_i}$ satisfying
 \begin{align}
 \label{align:pm-basis}
 c_i = -\lfloor d\alpha_i \rfloor && \text{ for } && i > m
-\end{align}\todo{Peter: Should be for $i> m+1$ right?  Looking below I see an $f_0$, where as above $f_i$ ranges 1 to $n$.  We should choose whether or not 0 is included in the indexing and fix the section to match that convention.
-
-Aaron: I tried to fix it at $0$ everywhere. If probably missed a few places, so keep your eyes peeled.
-}
+\end{align}
 
 \noindent
 form a basis for $H^0(\bp^m, dD)$ over $k$.
@@ -1245,7 +1237,7 @@ are contained in $H$, these form a set of extremal rays of $\Sigma$.
 %its more of a notational convention, and it doesn't really belong in the proof.
 %I also think it's confusing to switch notation in the middle of a proof.
 %Earlier in the proof, we should just call the $e_{ij}$ something like $\hat{e_{ij}}$. Then, we should never define $\epsilon_{ij}$, since it's only used in this
-%proof, and should really be $e_{ij}$, as I was explaining in my previous todo.
+%proof, and should really be $e_{ij}$, as I was explaining in my previous note.
 %Instead of defining $\epsilon_{ij}$, just define $e_{ij}$ which are the
 %appropriately scaled $\hat{e_{ij}}$ and everything will be much clearer.
 %Robin: agree with Aaron here.}
@@ -1313,31 +1305,6 @@ as elements of $\bk[\Sigma],$ which is possible as $f_1,f_2,f_3,f_4$ generate $\
 generate all relations, since they allow us to reduce any monomial $\prod_{j =
 1}^n f_j^{r_j}$ to the canonical form where $r_j = - \lfloor d \alpha_i
 \rfloor$
-\todo{Aaron: Am I misremembering, or did we agree on the phone that you would put $i$ subscripts on all the things that depend on $i$?
-If not, weren't you at least going to say somewhere which things depend on $i$?
-\\
-Peter: I still don't entirely agree that explaining the dependency is
-important.  What I mean by this is that the proof fixes $i, \sigma,$ etc. and
-proves the desired result.  Proving it for each possible choice of course
-proves the general result; however, it doesn't seem important to me whether or
-not the intermediate variables are the same in the proof for $i'$ and $\sigma'$
-than for $i$ and $\sigma$.  Either way the proof is valid.  This is why I have
-been somewhat resistant (sorry if annoyingly so...)to adding them in.
-
-On a side note, in some cases actually writing them in would be cumbersome,
-e.g. replacing $s_{j,k}$ with $s_{j,k,\sigma}$ (since there is one choice of
-$s_{j,k}$ for every $\sigma$.  
-
-If you want, can you tell me exactly which variables would be helpful in
-understanding the proof to know their dependencies?
-
-Aaron: Ok, I'll stop bugging you about it. I just thought we
-should add it because I didn't understand that it depended
-on $i$ when I read it. Maybe we can see what David
-has to say about it when he reads it?
-Also, I don't see why calling $s_{j,k}$ by $s_{j,k,\sigma}$ is cumbersome,
-that seems fine to me.
-}
 
  whenever $j > 4$.  To bound the degree of generation of these relations, we bound the degree of generation of the ideal $(z_i - \beta_i) \cap \ker(\psi)$ for each $i$.
 
@@ -1378,13 +1345,6 @@ Note that
 	&\mbox{ if } i \in \Tm. \end{cases}
 \]
 where $\rho$ is as in Equation \ref{eqn:def-sigma}.  In this sum the $\rho$ term corresponds to the sums of fractional parts of $s_j - r_j$'s and $s_{j,k} - r_{j,k}$'s, whereas the second term corresponds to the sums of $r_j$'s and $r_{j,k}$'s (noting that in equation \ref{eqn:hirz-E-translation} $s_j - \lfloor s_j - r_j \rfloor$ equals $r_j$ plus the fractional part of $s_j - r_j$, and a similar statement holds for $s_{j,k} - \lfloor s_{j,k} - r_{j,k}$).
-
-\todo{Aaron: Is one of these terms corresponding to $E$ and the other to $\lambda$? If so, can you say which?\\
-Peter: No, one corresponds to $r_j$ and one to the fractional part of $s_j - r_j$.
-
-Aaron: Ok, can you give a 1-2 sentence explanation then, just saying
-which which corresponds to which?
-}
 
 Define
 \begin{equation}\label{eqn:defn-lambda}
