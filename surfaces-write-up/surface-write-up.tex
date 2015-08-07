@@ -156,12 +156,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
 \begin{abstract}
  	We give bounds on the degree of generation and relations of
 	canonical rings of arbitrary $\bq$-divisors
 	on projective spaces of all dimensions
-	and Hirzebruch surfaces.
+	and Hirzebruch surfaces. We also give an explicit presentation 		and tight bounds on the
+	generators and relations of the canonical ring of an effective
+	stacky divisor on projective spaces of all dimensions.
 \end{abstract}
 
 \maketitle
@@ -174,10 +175,11 @@
 \section{Introduction}
 \label{sec:intro}
 For any Weil $\bq$-divisor $D$ on a rational surface $X$, the graded
-\textbf{canonical ring} is $R(X, D) := \bigoplus_{d \geq 0} H^0(X, \lfloor dD \rfloor)$.
+\textbf{canonical ring} is $R(X, D) := \bigoplus_{d \geq 0} u^d H^0(X, \lfloor dD \rfloor)$, where $u$ is a dummy variable to keep
+track of indexing.
 We study the generators and relations of canonical
 rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$.
-When $D$ is a general $\bq$-divisor on any $\bp^m$ or on any Hirzebruch Surface
+When $D$ is a general $\bq$-divisor on $\bp^m$ or
 $\hirz_m$, we give bounds on the generators and relations of
 $R(X, D)$. In particular, we give a complete description of the
 canonical ring when $X = \bp^m$ and $D$ is any effective
@@ -187,9 +189,23 @@ In part, this work is motivated by a recent paper by
 O'Dorney \cite{dorney:canonical}, which gives similar descriptions
 of canonical rings for general $\bq$-divisors on $\bp^1$. This
 study also has connections to the papers by Voight--Zureick-Brown 
-\cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring}
+\cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring},
 which provide tight bounds on generators and relations
 of canonical rings on arbitrary stacky curves.
+
+Another closely related topic is the Hassett-Keel program 
+initiated in \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form
+\begin{align*}
+	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0} u^d H^0 \left(
+	\overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} +
+	\alpha\delta \rfloor  \right) 
+\end{align*}
+in terms of certain moduli spaces. Moreover, $\bq$-divisors on surfaces also naturally
+appear when considering the canonical ring of surfaces of Kodaira dimension 1.
+A surface has Kodaira dimension 1 if and only if it is an elliptic surface \cite[p. 244]{
+barthHPV:compactComplexSurfaces}, and
+the canonical rings of elliptic surfaces most naturally described in the setting of
+$\bq$-divisors \cite[Chapter V, Theorem 12.1]{barthHPV:compactComplexSurfaces}. 
 
 We expect the work in this paper will help calculate a presentation of certain rings of
 Hilbert 
@@ -208,39 +224,25 @@ Hirzebruch surface to canonical rings on the corresponding algebraic surfaces.
 Thereby, our techniques would give a bound on generators and relations for
 Hilbert and Siegel modular forms with certain underlying spaces.
 
-Another closely related topic is the Hassett-Keel program 
-initiated in \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form
-\begin{align*}
-	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0}H^0 \left(
-	\overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} +
-	\alpha\delta \rfloor  \right) 
-\end{align*}
-in terms of certain moduli spaces. Moreover, $\bq$-divisors on surfaces also naturally
-appear when considering the canonical ring of surfaces of Kodaira dimension 1.
-A surface has Kodaira dimension 1 if and only if it is an elliptic surface \cite[p. 244]{
-barthHPV:compactComplexSurfaces}, and
-their canonical ring are most naturally described in the setting of
-$\bq$-divisors \cite[Chapter V, Theorem 12.1]{barthHPV:compactComplexSurfaces}. 
-
-\ssec{Main Results}
+\ssec{Main Results and Outline}
 
 In Section \ref{sec:proj} we prove the following two results bounding
 the degree of generators and relations of
-stacky canoincal rings on $\bp^m$:
+stacky canonical rings on $\bp^m$:
 \begin{restatable}{thm}{restateeffective}
 \label{thm:proj-effective-intro}
-Let $D = \sum_{i = 0}^{n} \alpha_i C_i \in \bz \otimes_\bz \di \bp^m$, with $\alpha_i =
-\frac{p_i}{q_i} \in \bq$ and each $C_i$ a hypersurface of
-$\bp^m$, be an effective divisor on $\bp^m$.
+Let $D = \sum_{i = 0}^{n} \alpha_i D_i \in \bz \otimes_\bz \di \bp^m$, with $\alpha_i =
+\frac{c_i}{k_i} \in \bq_{> 0}$ and let each $D_i$ be a hypersurface of
+$\bp^m$.
 
 Then the canonical ring
 \[
-	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)
+	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
 \]
 
 \noindent
-is generated in degrees at most $\max_{1 \leq i \leq n}{q_i}$ with
-relations generated in degrees at most $2 \max_{1 \leq i \leq n}{q_i}$
+is generated in degrees at most $\max_{1 \leq i \leq n}{k_i}$ with
+relations generated in degrees at most $2 \max_{1 \leq i \leq n}{k_i}$
 \end{restatable}
 
 \begin{restatable}{thm}{restateproj}
@@ -249,8 +251,8 @@ Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ where $\alpha_
 Then notate
 \[\ell_i = \lcm_{j\ne i}(k_i).\] 
 Let
-$f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
-$D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
+$f_0, \ldots, f_n$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
+$D_i = V(f_i)$ for all $i$, $\deg(f_i) = a_i,$ and $f_0,\ldots, f_m$ are independent linear polynomials. 
 Then $R_D$ is generated in degrees at most 
 \[
 	\sum_{i=0}^n \ell_i a_i
@@ -312,9 +314,12 @@ Notate a (Weil) $\bq$-divisor
 
 \noindent
 where $\alpha_i \in \bq$ and $D_i \in \di X$ is an integral codimension 1 closed subscheme of $X$. When it is convenient to do so, we shall sometimes start the indexing at $0$, so that $i$ runs from $0$ to $n$. For such a divisor $D$ with $\alpha_i = \frac{c_i}{k_i}$ let $\ell_i = \lcm_{j\ne i}(k_i)$
-and let $\ell_{i,j} = \lcm_{h\ne i,j}(k_h).$ Let $
-	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)$
-denote the canonical ring associated to the $\bq$ divisor $D$.
+and let $\ell_{i,j} = \lcm_{h\ne i,j}(k_h).$ The floor of a $\bq$-divisor $D$ is a divisor $\lfloor D
+\rfloor \in \di X$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
+\lfloor \alpha_i \rfloor P_i$. Let $
+	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)$
+denote the canonical ring associated to the $\bq$-divisor $D$. If $R$
+is a graded ring, we denote the $d$th graded component of $R$ by $R_d$.
 \section{Canonical Rings on Projective Space}
 \label{sec:proj}
 In this section, we bound the degrees of generators and relations for divisors
@@ -339,12 +344,12 @@ Write
 \end{align*}
 where $n \in \bz$, $\alpha_i \in \bq$, and $\deg D_i = \bida_i$. Let $D_i$ be
 Cartier divisors such that $D_i = V(f_i)$.
-We shall further assume that (after reordering) $f_0,\ldots, f_{m}$ form a
+We shall further assume that (possibly after reordering) $f_0,\ldots, f_{m}$ form a
 basis for degree one rational functions on $\bp^m$.
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
-The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying
+The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i} \in (R_D)_d$ satisfying
 
 \begin{align}
 \label{align:pm-span}
@@ -372,9 +377,8 @@ functions satisfying condition ~\eqref{align:pm-basis}. However we know
 $h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show
 that those functions satisfying condition ~\eqref{align:pm-basis} are
 independent. This follows from the assumption that $f_0,\ldots f_n$ form a
-basis of degree 1 rational functions, and so degree $\lfloor d \deg D \rfloor $
-monomials in $f_0,\ldots, f_n$ form a basis of degree $\lfloor d \deg D \rfloor
-$ rational functions.
+basis of degree 1 rational functions, and so all monomials in $f_0,\ldots, f_m$ of degree degree $\lfloor d \deg D \rfloor $
+form a basis of degree $\lfloor d \deg D \rfloor$ rational functions.
 \end{proof}
 
 \ssec{Effective Divisors on Projective Space}
@@ -438,7 +442,7 @@ Let
 be the best lower approximations of $\alpha$. Then, the
 canonical ring
 \[
-	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)
+	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
 \]
 
 \noindent
@@ -446,7 +450,7 @@ has a minimal presentation over $R_{D'}$ consisting of the $\sum_{i = 0}^{r}
 {{m + c_i - 1} \choose {c_i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
 x^{\vec{v}}}{x_k^{c_i}}$ where $1 \leq i \leq r$, $\vec{v} \in \bz_{\geq 0}^{m + 1}$
 with $\deg \vec v = c_i$. Furthermore, it has
-relations generated by the following two forms:
+relations generated by the following two classes of elements.
 \begin{enumerate}
 	\item For each $(i, j)$ with $j \geq i + 2$ and each $\vec{v} \in \mss_i,
 \vec{w} \in \mss_j$, there is a relation of the form either
@@ -522,13 +526,13 @@ do not exceed $\alpha$. One of $\frac{\deg \vec{y}}{s},
 \frac{\deg \vec{z}}{t}$ must be at least $\frac{c_i}{d_i}$
 and $s$ and $t$ are both less than $d_i$, which contradicts the assumption that
 $\frac{c_i}{d_i}$ is a best lower approximation of $\alpha$
-(see Definition ~\ref{defn:lower-approximation}).
+(see Definition ~\ref{defn:lower-approximation}). Therefore, none of the $F_i^{\vec v}$ are redundant.
 
 Next we show that $F^{\vec v}_i$ generate all of $R_D$. In the case $m = 1$, O'Dorney \cite[Theorem 6]
 {dorney:canonical} demonstrates that each lattice point $(\beta, \gamma) \in
 \bz_{\geq 0}^2$ with $\gamma \leq \beta \alpha$ lies in the $\bz_{\geq 0}$ span
 of $(d_h, c_h)$ and $(d_{h + 1}, c_{h + 1})$ for
-some $h \in \{0, \ldots, r\}$. Let $(\beta, \gamma) = \kappa_1
+some $h \in \{0, \ldots, r\}$. A similar strategy works in the case $m > 1$. Let $(\beta, \gamma) = \kappa_1
 (d_h, c_h) + \kappa_2 (d_{h + 1}, c_{h + 1})$ for $\kappa_1, \kappa_2 \in
 \bz_{\geq 0}$. Any element $\frac{u^{\beta}
 x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
@@ -564,12 +568,13 @@ depends on $i$ and $ j$, so we notate $h_{i, j} := h \in \{1, \ldots, r\}$. We
 also have that $i \leq h_{i, j} < j$ since $(d_i + d_j, c_i + c_j)$ is in the
 $\bz_{\geq 0}$-span of $(d_{h_{i, j}}, c_{h_{i, j}})$ and
 $(d_{h_{i, j} + 1}, c_{h_{i, j} + 1})$. Furthermore,
-$h_{i, j} \neq i$ and $h_{i, j} \neq j - 1$ by the proof of the analogous 
-statement in $bp^1$ given by O'Dorney
-\cite[Theorem 6]{dorney:canonical}. This gives the relations
+$h_{i, j} \neq i$ and $h_{i, j} \neq j - 1$
+as follows from an analogous proof to that given by O'Dorney
+\cite[Theorem 6]{dorney:canonical} for the case of
+$\bp^1$. This gives the relations
 $G_{i, j}^{\vec{v}, \vec{w}}$.
 
-The application of $G_{i, j}^{\vec{v}, \vec{w}}$ can be used
+One can use the relations $G_{i, j}^{\vec{v}, \vec{w}}$
 to transform any monomial in the $F_i^{\vec{v}}$'s involving
 indices that differ by more than $1$ to a monomial in the $F_i
 ^{\vec{v}}$'s involving indices that differ by at most $1$.
@@ -624,8 +629,9 @@ $\bp^1$ case \cite[Section 4]{dorney:canonical}. As will be shown
 in Example ~\ref{eg:hyperplane}, the degrees of generation of the
 canonical ring of a general $\bq$-divisor supported on two
 hyperplanes cannot be bounded so tightly. The two-point
-$\bp^1$ result leverages the fact that $\bp^1$ has two
-independent coordinates.
+$\bp^1$ result leverages the fact that $\bp^1$ has precisely two
+independent coordinates, so that two distinct integral subschemes
+cannot be equations of only $m$ of the $m+1$ coordinates.
 \end{rem}
 
 %\begin{rem}
@@ -665,7 +671,7 @@ $\nu_\pdeg^m: \bp^m \rightarrow \bp^{\binom{m+\pdeg}{\pdeg}-1}$
 so that the image of $C$ is the intersection of 
 a hyperplane in $\bp^{\binom{{m + \pdeg}}{\pdeg} - 1}$ with $\nu_\pdeg^m(\bp^m)$.
 Now, note that the ring $R_{\alpha C}$ is isomorphic to the
-$\pdeg$ veronese subring of $R_{\alpha V(x_0)} = \bigoplus_{d \geq 0} H^0(\bp^m, d \alpha V(x_0))$ and so
+$\pdeg$ veronese subring of $R_{\alpha V(x_0)} = \bigoplus_{d \geq 0} u^d H^0(\bp^m, d \alpha V(x_0))$ and so
 the canonical ring $R_H$ of the hyperplane $H \subset \bp^{\binom{m+\pdeg}{\pdeg}-1}$
 restricted to $\nu_\pdeg^m(C)$ is isomorphic to $R_C$.
 Therefore, we can bound the degree of generators and relations of
