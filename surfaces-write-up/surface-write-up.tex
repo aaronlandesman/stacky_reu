@@ -165,8 +165,6 @@
 \end{abstract}
 
 \maketitle
-\todo{Standardize ``generation in degrees at most.''  \\
-Peter: Fixed, although sometimes we say ``generated in degrees less than'' which is meant to be distinct (less than rather than less then or equal to).}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -187,13 +185,10 @@ O'Dorney \cite{dorney:canonical}, which gives similar descriptions
 of canonical rings for general $\bq$-divisors on $\bp^1$. This
 study also has connections to the papers by Voight--Zureick-Brown 
 \cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring}
-on canonical rings of stacky curves which provide bounds
-on rings of modular forms of Fuchsian groups through the study
-of particular $\bq$-divisors on curves.  \todo{I think this is too much 
-specificity about our result.  I think everything after ``stacky curves'' should be 
-eliminated, as it seems a little self-promoting.}
+which provide tight bounds on generators and relations
+of canonical rings on arbitrary stacky curves.
 
-The work in this paper may help calculate a presentation of certain rings of
+We expect the work in this paper will help calculate a presentation of certain rings of
 Hilbert 
 modular forms and Siegel modular forms. Recall that Hilbert and Siegel 
 modular forms are two generalizations of modular forms to higher dimensions,
@@ -209,7 +204,6 @@ and Siegel modular forms whose coarse space is a projective space or a
 Hirzebruch surface to canonical rings on the corresponding algebraic surfaces.
 Thereby, our techniques would give a bound on generators and relations for
 Hilbert and Siegel modular forms with certain underlying spaces.
-\todo{Peter:  Hmm... this is very vague.  It almost feels like a further question type statement, then a statement of why what we're doing matters.  I guess the real issue, as we have sort of discussed, is that there are not any clear motivating reasons why one would actually use what we have done... Oh well}
 
 Another closely related topic is the Hassett-Keel program 
 initiated in \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form
@@ -248,7 +242,10 @@ relations generated in degrees at most $2 \max_{1 \leq i \leq n}{q_i}$
 
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
-Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$. Let
+Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ where $\alpha_i = \frac{c_i}{k_i}$.
+Then notate
+\[\ell_i = \lcm_{j\ne i}(k_i).\]. 
+Let
 $f_i$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
 $D_i = V(f_i)$ for all $i$; suppose $\deg(f_i) = a_i$. 
 Then $R_D$ is generated in degrees at most 
@@ -269,7 +266,11 @@ In section \ref{sec:hirz}, we shift our attention to Hirzebruch Surfaces and pro
 
 \begin{restatable}{thm}{hirzrestate}
 \label{thm:hirz-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes_\bq \di \hirz_k.$ Let $D_i =
+Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes_\bq \di \hirz_k$ 
+where $\alpha_i = \frac{c_i}{k_i}$.
+Then notate
+\[\ell_{i,j} = \lcm_{h\ne i,j}(k_h).\] 
+Let $D_i =
 V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further suppose $f_1$ and $f_2$ are
 independent linear
 polynomials in $x_0$ and $x_1$ and $f_3$ and $f_4$ are independent
@@ -301,28 +302,33 @@ where
 Together, Theorems \ref{thm:proj-generators-relations} and \ref{thm:hirz-generators-relations} provide bounds on generators and relations for the canonical ring of $\bq$-divisors of all minimal rational surfaces.  Section \ref{sec:conc} concludes the paper and discusses further questions.
 
 \ssec{Notations and Conventions}
-\todo{Aaron: State other notations used here. I think there are few enough that we can just do it in a paragraph or two at the end of the introduction here.}
-\begin{convention}
 Notate a (Weil) $\bq$-divisor
 \begin{align*}
 	D = \sum_{i=1}^{n}\alpha_i D_i \in \di X \otimes \bq.
 \end{align*}
 
 \noindent
-where $\alpha_i \in \bq$ and $D_i \in \di X$ is an irreducible divisor. When it is convenient to do so, we shall sometimes start the indexing at $0$, so that $i$ runs from $0$ to $n$.
-\end{convention}
-
+where $\alpha_i \in \bq$ and $D_i \in \di X$ is an integral codimension 1 closed subscheme of $X$. When it is convenient to do so, we shall sometimes start the indexing at $0$, so that $i$ runs from $0$ to $n$. For such a divisor $D$ with $\alpha_i = \frac{c_i}{k_i}$ let $\ell_i = \lcm_{j\ne i}(k_i)$
+and let $\ell_{i,j} = \lcm_{h\ne i,j}(k_h).$ Let $
+	R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)$
+denote the canonical ring associated to the $\bq$ divisor $D$.
 \section{Canonical Rings on Projective Space}
 \label{sec:proj}
 In this section, we bound the degrees of generators and relations for divisors
-on $\bp^m$, for all $m \geq 1$. The $\bp^1$ case restricts to the results of
-\cite{dorney:canonical}.
+on $\bp^m$, for all $m \geq 1$ in Theorem ~\ref{thm:proj-effective-intro}. 
+The $\bp^1$ case restricts to the results of
+\cite{dorney:canonical}. We also give an explicit description of the
+generators of the canonical ring $R_D$ when $D$ is an effective divisor in Theorem ~\ref{thm:proj-generators-relations}
 
-\ssec{Preliminaries on Projective Space}
 
 For the remainder of this section, we shall fix $m \geq 1$ and choose an
 isomorphism $\bp^m \cong \proj V$ for some vector space $V$ with basis $x_0,\ldots, x_m$.  We will think of $x_i$ as a rational section of $H^0(\bp^m,
 \sco_{\bp^m})$ of degree 1.
+
+\ssec{Preliminaries on Projective Space}
+Before bounding the degree of generation and relations of
+canonical rings on projective space, we first
+describe a particular choice of basis for $R_D$ as a $\bk$ bector space.
 
 Write
 \begin{align*}
@@ -336,7 +342,7 @@ basis for degree one rational functions on $\bp^m$.
 \begin{prop}
 \label{prop:pm-span-and-basis}
 The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i}$ satisfying \todo{Peter: Why
-do we include this $u$?  IN the later sections, I don't use this notation and
+do we include this $u$?  In the later sections, I don't use this notation and
 we should standardize.
 
 Aaron: Isn't it necessary to distinguish the functions? For instance, we could consider $f_0$ either as a function in degree 1 or 2 for $D = \frac{1}{2}x_0$, and we need
@@ -344,6 +350,7 @@ $u^d$ to distinguish which degree it lives in.
 I think we will need to go through and include the $d$ throughout.
 Do you think there's a way to avoid including the $d$?
 }
+
 \begin{align}
 \label{align:pm-span}
 \sum_{i=0}^{n} c_i \cdot \bida_i = 0 && \text{ and } &&c_i \geq \lfloor \alpha_i d\rfloor	
@@ -385,7 +392,6 @@ In this subsection, we restrict attention to the case of effective
 fractional divisors $D \in \bq \otimes \di \bp^m$. We give an explicit presentation of the canonical rings when $D$ is an effective
 divisor.
 
-\todo{Aaron: make a remark as to why these bounds are tight}
 \begin{convention}
 Let $[x_0, \ldots, x_m]$ be coordinates for $\bp^m$. Let
 $\vec{v} = (v_0, \ldots, v_m) \in \bz^{m + 1}$.  Then write
@@ -408,6 +414,10 @@ Let
 be the set of vectors of degree $c_i$.
 \end{defn}
 
+Next, we define an ordering on the vectors, which will allow us
+to present a system of relations for $R_D$. Although it is not
+stated explicitly later, in the case that $D = \alpha_1 D_1$, the relations in Theorem ~\ref{thm:proj-one-point} form a reduced grobner basis with respect to this ordering.
+
 \begin{defn}
 \label{defn:vec-order}
 Let $\vec{v}, \vec{w} \in \bz^{m+1}$. Let $i \in \{0,\ldots, m\}$
@@ -415,6 +425,13 @@ be the biggest index such that $v_i$ is nonzero
 and $j \in \{0,\ldots, m\}$ be the smallest index such that $w_j$ is
 nonzero. Define $\vec{v} \prec \vec{w}$ if $i \leq j$.
 \end{defn}
+
+We are now ready to give an inductive method for computing
+the generators and relations of $R_D$ in terms of $R_{D'}$, 
+in the case that $D' = R_D + \alpha H$ for $H$ a hyperplane.
+The statement and proofs are natural generalizations of
+\cite[Theorem 6]{dorney:canonical}.
+
 
 \begin{thm}
 \label{thm:proj-one-point}
@@ -454,14 +471,6 @@ relations generated by the following two forms:
 	\mss_{h_{i, j} + 1}} (F_{k_{i, j} + 1}^{\vec{z}})^{g'_{\vec{z}}}
 	&(i < h_{i, j} < h_{i, j} + 1 < j).
 \end{flalign*}
-\todo{Peter: Can you clarify when these two cases occur: i.e. does the first 
-only occur if $j = h_{i,j}+1$; otherwise, in cases when $i< h_{i,j} < h_{i,j} + 1< 
-j$, do we get relations of both forms? \\
-Robin: It purely depends on whether the product $F_i^{\vec{v}} F_j^{\vec{w}} 
-$ happens to lie on the ray given by $\frac{c_{h_{i, j}}}{d_{h_{i, j}}}$ which is 
-not clearly determined by $i$ or $j$ from what I can see... Unless you see 
-something else. Only one relation exists for each $(i, j)$ and it is exactly one 
-of the two forms. I figured that the ``either'' made that clear, no?}
 	\item For each $(i, j)$ with
 $j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
 \mss_j$ with $\vec{v} \not\prec \vec{w}$ (see Definition
@@ -501,9 +510,7 @@ by the order of zeros and poles relative to $D'$. That is,
 one can work with rational sections of $\mathscr O_{\bp^m}(D')$
 instead of rational sections of $\mathscr O_{\bp^m}$,
 and the following proof goes through otherwise unchanged.
-\todo{Aaron: Has anyone actually gone through the proof
-	for general effective divisors carefully, to make
-sure the above claim is correct?}
+
 We will first check that $F^{\vec v}_i$ determine a system of minimal
 generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} : \deg \vec{v} =
 \left\lfloor
@@ -641,6 +648,12 @@ independent coordinates.
 %~\ref{thm:proj-one-point}.
 %\end{rem}
 
+The above Theorem ~\ref{thm:proj-one-point} allows us to inductively
+compute presentations of effective divisors which are supported on
+hyperplanes, but for $m \geq 2$, there are hypersurfaces which
+are not unions of hyperplanes. We now adress this general case, giving an inductive presentation of canonical rings of effective divisors, and a tight bound on the degrees of their generators and
+relations.
+
 \restateeffective*
 
 
@@ -703,6 +716,12 @@ relations of $R_D$. Before doing so, we justify the assumption
 
 \begin{example}
 \label{eg:hyperplane}
+In this example,we show that the naive generalization of
+~\cite[Theorem 8]{dorney:canonical} of generation in degree at most
+$\sum_{i=0}^{n}\ell_i$ cannot possibly hold. The reason for this is
+that the divisors may ``be contained in a hyperplane,'' i.e.~ be
+expressible as functions in $m$ of the $m+1$ variables on $\bp^m$.
+
 Suppose $D = \frac{1}{2}H_0 - \frac{1}{3}H_1$ where $H_0 = V(x_0),
 H_1 = V(x_1)$ are two coordinate hyperplanes in $\bp^2$. Then, $R_D$
 has generators in degree $2$ and $3$ which can be written as $u^2
@@ -726,14 +745,10 @@ where all $f_i$ can be written as a polynomial function in $x_0,
 $\lcm(\den_i \cdot \bida_i)$.
 \end{example}
 
-\begin{rem}\todo{Peter: maybe move this out of a remark and just say it with the previous example?  As it stands, the previous example is a little unclear as to what its purpose is...}
+\begin{rem}
 \label{rem:ghost-motivation}
-Example ~\ref{eg:hyperplane} shows that the naive generalization of
-~\cite[Theorem 8]{dorney:canonical} of generation in degree at most
-$\sum_{i=0}^{n}\ell_i$ cannot possibly hold. The reason for this is
-that the divisors may ``be contained in a hyperplane,'' i.e.~ be
-expressible as functions in $m$ of the $m+1$ variables on $\bp^m$.
-This problem can easily be circumvented by adding in ``ghost
+The problem that a divisor may be contained in a hyperplane, 
+as illustrated in Example ~\ref{eg:hyperplane}, can easily be circumvented by adding in ``ghost
 points.'' That is, we may add divisors of the form $0 \cdot H_i$ to
 $D$, and reorder so that if $D = \sum_{i=0}^{n}\alpha_i V(f_i)$,
 then $f_0, \ldots, f_m$ cut out linearly independent
@@ -749,20 +764,24 @@ of a divisor are not all contained in a hyperplane.
 Consider $\frac{-1}{5}V(x_0^2 + x_1^2 + x_2^2) + \frac{1}{7}V(x_0^2 + x_1^2 +
 x_3^2) + \frac{1}{17}V(x_0^2 + x_2^2 + x_3^2) - \frac{1}{596}V(x_1^2 + x_2^2 +
 x_3^2)$. In degree $355216 = 5 \cdot 7 \cdot 17 \cdot 596$, this has dimension
-$10$. 
-\todo{Clarify what this example means by the lattice approach 
-\\
-Peter: Maybe we should put this after the ensuing proofs.  That way, rather than saying the Lattice Approach, we could say that this example illustrates how the prveious method requires us to add ghost points (and is false otherwise).}
-However, we possibly use the lattice approach, as all lower degrees only have
-dimension 1. In fact, we may construct similar examples using any set of degree
+$6$.
+However,  approach, as all lower degrees only have
+dimension at most 1. Therefore, we cannot hope to bound the degree
+of generation of $R_D$ as a linear combination of $\ell_i$,
+in analogy to ~\ref[Theorem 8]{dorney:canonical}
+unless we require that $D$ includes ghost points. That is, unless
+$D_0,\ldots D_m$ are taken to be hyperplanes spanning $\bp^m$.
+In fact, we may construct similar examples using any set of degree
 $n$ divisor with very small degree.
 \end{example}
-\todo{construct class of additional examples}
-\todo{Throughout this section, include some more transition, explaining which lemmas are general and will be used again for hirzebruch surfaces and which lemmas will be used only for $\bp^m$.}
+
 Having justified the necessity of adding ghost points, we proceed to bound the
-number of generators and relations.
-
-
+number of generators and relations of arbitrary $\bq$-divisors in 
+projective space. We bound the generators in Lemma ~\ref{lem:proj-
+generators}, and we use Lemmas ~\ref{lem:composite-map}, ~\ref{lem:bound-ker-chi}, and ~\ref{lem:proj-relations-psi} to bound the 
+degree of relations in the proof of Theorem ~\ref{thm:proj-generators-relations}. Note that Proposition ~\ref{prop:cone-generation}, Lemma ~\ref{lem:composite-map}, and Lemma ~\ref{lem:bound-ker-chi} are quite 
+general and will be used in Section ~\ref{sec:hirz} to bound the 
+degree of generators and relations on Hirzebruch surfaces.
 
 \begin{defn}
 \label{defn:lower-approximation}
@@ -798,10 +817,6 @@ lattice points in the first quadrant satisfying  $5y \le 14x$, with
 the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$.}
 \label{fig:s14/5-lattice}
 \end{figure}
-
-
-
-We now present some preliminary results which will be used to prove Theorems \ref{thm:proj-generators-relations} and \ref{thm:hirz-generators-relations} in Sections \ref{sec:proj} and \ref{sec:hirz} respectively.
 
 \begin{prop}
 \label{prop:cone-generation}
@@ -840,12 +855,10 @@ generated by elements whose first coordinate is less than
 $\sum_{i = 1}^{t} r_i$.
 \end{proof}
 
-
-\begin{defn}\label{def:ell_i}
-Let $D = \sum_{i=0}^n \alpha_i D_i$ where $\alpha_i = \frac{c_i}{k_i}$.
-Then notate
-\[\ell_i = \lcm_{j\ne i}(k_i).\]
-\end{defn}
+Using Proposition ~\ref{prop:cone generation}, in order to bound
+the degree of generation of $R_D$, we only need bound
+the degrees of generators of an associated cone. We now carry out
+this strategy.
 
 \begin{lem} \label{lem:proj-generators}
 $R_D$ is generated in degrees at most $\sum_{i=0}^n \ell_i a_i.$
@@ -883,11 +896,12 @@ elements
 \end{equation}
 \end{rem}
 
-
-
 Let $x_1, \ldots x_r$ be the generators in degrees at most $\sum_{i=1}^n \ell_i
 \bida_i$ (given by Lemma ~\ref{lem:proj-generators}), and let $\phi$ be the
-surjection $k[x_1, \ldots x_r] \to R_D$.  We can factor $\phi$ through the
+surjection $k[x_1, \ldots x_r] \to R_D$.
+For the remainder of the section, we aim to bound the degree of relations
+of $R_D$, or equivalently, the degree of generation of $\ker \phi$.
+  We can factor $\phi$ through the
 semigroup ring 
 \[
 	\bk[\Sigma] =  \langle u^d z_0^{c_0} \cdots z_n^{c_n} : c_i \in
@@ -902,8 +916,12 @@ x_i \ar r & u^{d_i}z_0^{c_{i0}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} 
 \end{tikzcd}
 \]
 
-By Lemma ~\ref{lem:bound-ker-chi}, we can bound the degree of generation of
-$\ker \chi $ and we next calculate the degree of generation of $\ker \psi$:
+We next show in Lemma ~\ref{lem:composite-map} that the degree of 
+generators for $\ker \phi$, which is the same as the degree of relations
+of $R_D$ can be bounded in terms of the degree of generators for
+$\ker \chi$ and for $\ker \psi$.
+In Lemma ~\ref{lem:bound-ker-chi}, we bound the degree of generation of
+$\ker \chi $ and we then calculate the degree of generation of $\ker \psi$ in Lemma ~\ref{lem:proj-relations-psi}
 
 \begin{lem}
 \label{lem:composite-map}
@@ -1100,12 +1118,6 @@ and
 	\Tm(D) = \left\{ i \in \{1, \ldots, n\}: \bida_i \sum_{k = 1}^n \alpha_k
 	\bidb_k < \bidb_i \sum_{k=1}^n \alpha_k \bida_k \right\}.
 \end{equation}
-\end{defn}
-
-\begin{defn}\label{def:ell_ij}
-Let $D = \sum_{i=1}^n \alpha_i D_i$ where $\alpha_i = \frac{c_i}{k_i}$.
-Then notate
-\[\ell_{i,j} = \lcm_{h\ne i,j}(k_h).\]
 \end{defn}
 
 \begin{lem}
@@ -1354,10 +1366,8 @@ Define $E$ by
 \begin{equation}\label{eqn:hirz-E-translation}
 	E := \sum_{j\in \Te} (s_j - \lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} (s_{j,k} - \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}.
 \end{equation}
-Define
-\begin{equation}\label{eqn:defn-lambda}
-	\lambda := \sigma - E = \sum_{j\in \Te} (\lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} ( \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}\in \Sigma.
- \end{equation}
+
+
 Note that
 \[
 	\deg(E) \le \rho + \begin{cases}
@@ -1368,8 +1378,18 @@ Note that
 	&\mbox{ if } i \in \Tm. \end{cases}
 \]
 where $\rho$ is as in Equation \ref{eqn:def-sigma}.
+
 \todo{Aaron: Is one of these terms corresponding to $E$ and the other to $\lambda$? If so, can you say which?\\
-Peter: No, one corresponds to $r_j$ and one to the fractional part of $s_j - r_j$.}
+Peter: No, one corresponds to $r_j$ and one to the fractional part of $s_j - r_j$.
+
+Aaron: Ok, can you give a 1-2 sentence explanation then, just saying
+which which corresponds to which?
+}
+
+Define
+\begin{equation}\label{eqn:defn-lambda}
+	\lambda := \sigma - E = \sum_{j\in \Te} (\lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} ( \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}\in \Sigma.
+ \end{equation}
 
 Let $M_i$ be the set of monomials terms of $\beta_i = \beta_i(f_1, \ldots f_4)$.  Let $\mu = \prod_{j=1}^4
 {f_j}^{h_j}\in M_i$ and consider the lattice point 
@@ -1384,14 +1404,7 @@ Define
 A quick computation deduces that $E_\mu$ lies in $\Sigma$ 
 and has the same degree as $E$.
 
-Let $F = \Psi(E) \in R_D$
-\todo{Aaron: Didn't we agree you would write these as $\psi(E)$ or something like that? 
-\\
-Peter: Okay, I'm still a little unhappy with with the identification of lattice
-points in $\Sigma$ with monomials (since $\Psi$ maps monomials in a polynomial
-ring to monomials in $R_D$), but I made the change
-Aaron: Thanks. If you're unhappy, you can always just define the map $\iota:\Sigma \rightarrow \bk[\Sigma]$ and say $F_\mu = \iota \circ \psi (E_\mu)$}
- and $F_\mu = \psi(E_\mu)
+Let $F = \Psi(E) \in R_D$ and $F_\mu = \psi(E_\mu)
 \in R_D$ for each $\mu \in M_i$.  
 Then $F - \sum_{\mu \in M_i} F_\mu = 0$ is a relation %in degree
 %\[
