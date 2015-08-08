@@ -268,10 +268,9 @@ with relations generated in degrees at most
 
 \noindent
 In section \ref{sec:hirz}, we shift our attention to Hirzebruch Surfaces and prove the following theorem:
-\todo{todo: explain what u,v,w,x are here}
 \begin{restatable}{thm}{hirzrestate}
 \label{thm:hirz-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes_\bq \di \hirz_k$ 
+Let $u,v,z,w$ be the coordinates for the Hirzebruch surface $\hirz_m$, as described at the beginning of section ~\ref{sec:hirz}. Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes_\bq \di \hirz_m$ 
 where $\alpha_i = \frac{c_i}{k_i}$.
 Then notate
 \[\ell_{i,j} = \lcm_{h\ne i,j}(k_h).\] 
@@ -907,18 +906,6 @@ w_i \ar r & u^{d_i}z_0^{c_{i0}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_0^{c_{i0}} 
 \end{tikzcd}
 \end{equation}
 
-
-\begin{rem}
-\label{rem:pm-extremal-rays}
-Note for future reference that the extremal rays of the cone $\Sigma$, as
-defined in Equation ~\eqref{eqn:e-i-proj} correspond to the
-elements
-\begin{equation}
-\label{eqn:epsilon-def-proj}
-	\epsilon_i := \psi(e_i) = u^{\ell_i a_i}\prod_{j\ne i} (f_j)^{-\alpha_j \ell_i a_i} {f_i}^{\ell_i \sum_{j\ne i} \alpha_j a_j}\in R_D.
-\end{equation}
-\end{rem}
-
 In Lemma ~\ref{lem:composite-map} we show that the degree of the
 generators for $\ker \phi$, which is the same as the degree of relations
 of $R_D$, is bounded by the maximum of the degree of generators for
@@ -1083,11 +1070,19 @@ In this section, the main aim is to prove Theorem
 generators and relations of the canonical ring of a $\bq$-divisor
 on any Hirzebruch surface.
 
+One way to describe the hirzebruch surface $\hirz_m$ is as a quotient
+\[
+\hirz_m \cong (\ba^2 \setminus \{0\}) \times (\ba^2 \setminus \{0\})/\mathbb G_m \times \mathbb G_m
+\]
+where $\mathbb G_m$ is the multiplicative subgroup of $\ba^1$, and the action of $\mathbb G_m \times \mathbb G_m$ is given by
+$(\lambda, \mu) \cdot (u:v; z:w) \mapsto (\lambda u: \lambda v; \mu z: \lambda^{-m} \mu w),$ as described in \cite[p.~ 6]{counting-cubic}. \todo{add counting-cubic (as found in our Dropbox/stacky-REU/references folder to bibliography} Hence, one can think of
+$\hirz_m$ as a $\bp^1$ bundle where $u,v$ are the coordinates on
+$\bp^1$ and $z,w$ are the coordinates on the fiber.
 Sections of a line bundle $\mathscr L$ on $\hirz_m$ can be written as
-polynomials in $u,v, w,x$.
-Furthermore we define the bi-degree of a monomial $u^a v^{b} w^c x^d$
+rational functions in $z, w, u, v$.
+Furthermore we define the bi-degree of a monomial $u^a v^{b} z^c w^d$
 on $\hirz_n$ to be
-$(a + b + mc, c + d)$.  Rational section of $\hirz_m$ can be written as
+$(a + b + mc, c + d)$. Rational sections of $\hirz_m$ can be written as
 rational functions where each monomial has bi-degree 0. To see this, 
 observe
 $\Pic(\hirz_m) \cong \bz \times \bz$, where the class of a line bundle
@@ -1095,16 +1090,23 @@ in $\Pic(\hirz_m)$
 is determined by its bi-degree, as follows from the excision exact sequence
 for class groups.
 
-
 For the remainder of this section we will assume $D_1, D_2, D_3,$ and $D_4$ are
 distinct divisors with bi-degrees $(1,0)$
-, $(1,0)$, $(0,1)$, and $(0,1)$ respectively. Let $D_i = V(f_i)$ where
-$f_i \in \sco(\bida_i, \bidb_i)$.  
-Then, $f_1$ and $f_2$ are independent linear
-polynomials in $u$ and $v$ and $f_3$ and $f_4$ are independent
-linear polynomials in $w$ and $x$.  In order to achieve this condition on
-$D_1, \ldots D_4$, it may be necessary to add in ``Ghost Divisors'' (i.e.
+, $(1,0)$, $(0,1)$, and $(0,1)$ respectively with $D_i = V(f_i)$ for $1 \leq i \leq 4$ with $f_i \in \sco(\bida_i, \bidb_i)$.  
+In order to achieve this condition on
+$D_1, \ldots D_4$, it may be necessary to add in ``ghost divisors'' (i.e.
 divisors with of the desired form with a coefficient $0$).
+Also, note that, $f_1$ and $f_2$ are independent linear
+polynomials in $u$ and $v$ and $f_3$ and $f_4$ are independent
+linear polynomials in $z$ and $w$.
+Analogously to Proposition ~\ref{prop:pm-span-and-basis} for the case
+of $\bp^m$, all rational functions on $\hirz_m$
+can be written uniquely in a form where their numerator is a function
+of only $f_1,f_2,f_3$, and $f_4$.
+\todo{Aaron: Do either of you think we should write out this as
+a proposition more clearly? I'm fine either way, but it was something
+missing which I thought I should point out.}
+
 \begin{defn}
 Define 
 \begin{equation}
@@ -1131,7 +1133,7 @@ and
 
 \begin{lem}
 \label{lem:hirz-generators}
-$R_D$ is generated in degrees at most
+For $D = \sum_{i=1}^{n} \frac{c_i}{k_i}D_i \in \di \bq \otimes_\bz \hirz_m$, with $\deg D_i = (\bida_i, \bidb_i), \ell_i = \lcm_{j\neq i} (k_j), \ell_{i,j} = \lcm_{h \neq i,j} (k_h).$ Then, the canonical ring $R_D$ is generated in degrees at most
 \begin{equation}\label{eqn:def-sigma}
 	\rho := \sum_{i \in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{\substack
 	{i \in \Tp(D) \\ j\in \Tm(D)}} (\bida_i \bidb_j - \bida_j \bidb_i)
@@ -1149,7 +1151,7 @@ Suppose $g
 \]
 
 \noindent
-for some $c_i \ge - \alpha_i d$ for all $i$ such that $\sum_{i=1}^n c_i \bida_i = 0$
+for some $c_i \ge - \alpha_i d$ such that $\sum_{i=1}^n c_i \bida_i = 0$
 and $\sum_{i=1}^n c_i \bidb_i = 0$. We can view $g$ as an element $(d, c_1, \ldots, c_n)$ of the
 lattice 
 \begin{align*}
@@ -1180,8 +1182,8 @@ for $1 \leq i \leq n$.
 
 Let $\Sigma_1 \otimes_\bz \bq$ be the $\bq_{\ge 0}$ span of $\epsilon_1, \ldots \epsilon_n$.
 We can intersect $\Sigma_1 \otimes_\bz \bq$ with the hyperplane $H :=
-V(\sum_{i=1}^n \bida_i x_i)$  to get the subspace $\Sigma \otimes_\bz \bq = H \cap \Sigma_1
-\otimes_\bz \bq$.  Then, the extremal rays of $\Sigma$ are precisely the extremal 
+V(\sum_{i=1}^n \bida_i x_i)$  to get the subspace $\Sigma \otimes_\bz \bq = H \cap (\Sigma_1
+\otimes_\bz \bq)$.  Then, the extremal rays of $\Sigma$ are precisely the extremal 
 rays of $\Sigma \otimes_\bz \bq$.
 
 The extremal rays of $\Sigma \otimes_\bz \bq$ can be represented by points
@@ -1194,8 +1196,9 @@ e_j \notin H$. Note that $e_{i,j}$ is only defined in the case
 $\# \{H \cap \overline{e_i, e_j}\} = 1$.
 
 
-From this we can deduce that a set of extremal rays of $\Sigma$ are given as follows:
-For $i \in \Te(D)$, define $e_i \in R_D$ in degree 
+From this geometric description of the extremal rays, we can write
+the extremal rays algebraically as follows.
+For $i \in \Te(D)$, define $e_i \in \bk[\Sigma]$ in degree 
 \[
 	d_i = \ell_i \gcd(a_i, b_i)
 \]
@@ -1206,7 +1209,7 @@ by
 \end{equation}
 
 \noindent
-For $i \in \Tp(D)$ and $j \in \Tm(D)$, with $i < j$, define $e_{i,j}\in R_D$ in degree 
+For $i \in \Tp(D)$ and $j \in \Tm(D)$, with $i < j$, define $e_{i,j}\in \bk[\Sigma]$ in degree 
 \[
 	d_{i,j} = \ell_{i, j}(\bida_i \bidb_j - \bida_j \bidb_i)
 \]
@@ -1261,7 +1264,7 @@ are contained in $H$, these form a set of extremal rays of $\Sigma$.
 
 Thus, Proposition ~\ref{prop:cone-generation} implies that 
 $R_D$ is generated in 
-degrees less than the sum of the degrees of the $\epsilon_i$'s and $\epsilon_{i,j}$'s, which is
+degrees less than the sum of the degrees of the $e_i$ and $e_{i,j}$, which is
 \[
 	\rho = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{\substack{
 	i \in \Tp(D) \\	j \in \Tm(D)}} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
@@ -1270,12 +1273,12 @@ degrees less than the sum of the degrees of the $\epsilon_i$'s and $\epsilon_{i,
 
 Let $w_1, \ldots w_r$ be the generators of $R_D$ in degrees less than $\rho$
 (as given by Lemma ~\ref{lem:hirz-generators}), and let $\phi$ be the
-surjection $k[w_1, \ldots w_r] \to R_D$.  We can factor $\phi$ through the
+surjection $k[w_1, \ldots w_r] \to R_D$. As in Section ~\ref{sec:proj}, we can factor $\phi$ through the
 semigroup ring 
 \[
 	\bk[\Sigma] = \left \langle u^d z_1^{c_1} \cdots z_n^{c_n} : c_i \geq -d
 	\alpha_i, \sum_{i=1}^{n} \bida_i c_i = \sum_{i=1}^{n} \bidb_i c_i
-	\right \rangle.
+	\right \rangle
 \]
 
 \noindent
@@ -1314,7 +1317,8 @@ We first claim that there exist $\beta_1, \ldots, \beta_n\in \bk[z_1, z_2, z_3, 
 lying in some degree $d \in \mathbb{N}$
 with $c_j \ge -\alpha_j d$ (for all $j$) satisfying $\bida_i + \sum_{j = 1}
 ^n \bida_j c_j = 0$ and $\bidb_i + \sum_{j=1}^n \bidb_j c_j = 0$.
-
+\todo{Aaron: The next two paragraphs are missing a lot of $u^d$ degree prefixes. Can one of you add them in and go through the proof
+to make sure there are no others missing?}
 We claim such a $\beta_i$,
 can be expressed as a polynomial $\beta_i(f_1,f_2,f_3,f_4)$ with 
 $\beta_i(f_1,f_2,f_3,f_4) = f_i$
@@ -1423,7 +1427,6 @@ $\ker \phi$ is at most the maximum of the generation degrees of $\ker \chi$
 and $\ker \psi$, giving us the desired relations bound. The bound on $\ker \chi$
 follows from Lemma ~\ref{lem:bound-ker-chi} and the bound on $\ker \psi$
 follows from Lemma ~\ref{lem:hirz-bound-ker-psi}.
-$\ker \psi$ follows from 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Further Questions %%%%%%%%%%%%%%%%%%%%%%%%%%%%
