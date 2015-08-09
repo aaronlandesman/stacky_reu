@@ -167,9 +167,6 @@
 
 \maketitle
 
-\todo{Make sure to include $u^d$ everywhere necessary}
-\todo{Make sure to index starting from 0 in $\bp^m$ section}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
@@ -178,10 +175,13 @@ For any Weil $\bq$-divisor $D$ on a rational surface $X$, the graded
 \textbf{canonical ring} is $R(X, D) := \bigoplus_{d \geq 0} u^d H^0(X, \lfloor dD \rfloor)$, where $u$ is a dummy variable to keep
 track of degree.
 We study the generators and relations of canonical
-rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$ \todo{Peter: Bad to have $m$ as both the dimension of $\bp$ and the coefficient for the hirzebruch surface?}.
+rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$ \todo{Peter: Bad to have $m$ as both the dimension of $\bp$ and the coefficient for the hirzebruch surface?
+
+Aaron: It doesn't seem like this would cause any confusing to me. They're always discussed separately.
+}.
 When $D$ is a general $\bq$-divisor on $\bp^m$ or
 $\hirz_m$, we give bounds on the generators and relations of
-$R(X, D)$. In particular, we give a complete description \todo{Peter: The phrase ``complete description'' is ambiguous and might be objectionable to a reader.  Is ``minimal presentation'' better?} of the
+$R(X, D)$. In particular, we give a minimal presentation of the
 canonical ring when $X = \bp^m$ and $D$ is any effective
 $\bq$-divisor.  
 
@@ -193,8 +193,7 @@ study also has connections to the papers by Voight--Zureick-Brown
 which provide tight bounds on generators and relations
 of canonical rings and spin canonical rings, respectively, on arbitrary stacky curves.
 
-Another closely related topic is the Hassett-Keel program \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form \todo{Robin: define $\mathscr{M}_g$? Not sure what this is.  \\
-Peter: Isn't it defined in the line below?  (Maybe it was added after your comment)}
+Another closely related topic is the Hassett-Keel program \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form 
 \begin{align*}
 	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0} u^d H^0 \left(
 	\overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} +
@@ -347,8 +346,8 @@ Write
 \end{align*}
 where $n \in \bz$, $\alpha_i \in \bq$, and $\deg D_i = \bida_i$. Let $D_i$ be
 Cartier divisors such that $D_i = V(f_i)$.
-We shall further assume that (possibly after reordering) $f_0,\ldots, f_{m}$ form a
-basis for degree one rational functions on $\bp^m$.  \todo{Peter: This assumption is inconsistent with a comment made later (see next todo); later, we allow for there to be only one $D_i$ ($D= D_i$), which contradicts $m>0$.}
+We shall further assume for this subsection that (possibly after reordering) $f_0,\ldots, f_{m}$ form a
+basis for degree one rational functions on $\bp^m$.  
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
@@ -413,7 +412,9 @@ Let
 \end{defn}
 
 Next, we define an ordering on these vectors, which will be used to give a presentation for $R_D$. Although it is not
-stated explicitly later, in the case that $D = \alpha_1 D_1$ \todo{Peter: Inconsistent with previous assumption.  To be clear it doesn't matter for any proofs, because that assumption is not necessary until after this section.  I suggest we find some way to move that assumption from earlier until after the effective case.} is supported on a single hypersurface, the relations in Theorem ~\ref{thm:proj-one-point} form a reduced grobner basis with respect to this ordering.
+stated explicitly later, in the case that $D = \alpha_1 D_1$ is supported on a single hypersurface, the relations in
+Theorem ~\ref{thm:proj-one-point} form a reduced grobner basis with respect to
+this ordering.
 
 \begin{defn}
 \label{defn:vec-order}
@@ -702,10 +703,8 @@ homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$
 $\deg(f_i) = a_i$ for all $i$. 
 
 For the remainder of this section, we shall make the additional assumption that 
-\begin{align}
-\label{eqn:pm-basis-assumption}
-	f_0, \ldots, f_{m} \text{ form a } \bk \text{ basis of all degree 1 functions.}
-\end{align}
+\begin{align} \label{eqn:pm-basis-assumption} f_0, \ldots, f_{m} \text{ form a
+	} \bk \text{ basis of all degree 1 functions.} \end{align}
 
 The first aim of this section is to prove Theorem
 ~\ref{thm:proj-generators-relations} bounding the number of generators and
@@ -1330,9 +1329,6 @@ such that $\ker \psi$ has relations of the form
 lying in some degree $d \in \mathbb{N}$
 with $c_j \ge -\alpha_j d$ (for all $j$) satisfying $\bida_i + \sum_{j = 1}
 ^n \bida_j c_j = 0$ and $\bidb_i + \sum_{j=1}^n \bidb_j c_j = 0$.
-\todo{Aaron: The next two paragraphs are missing a lot of $u^d$ degree prefixes. Can one of you add them in and go through the proof
-to make sure there are no others missing?\\
-Peter: I added a bunch.  Should be better (although quite possibly missed a few more).}
 Specifically, $\beta_i$,
 is the polynomial $\beta_i(z_1,z_2,z_3,z_4)$ so that
 $\beta_i(z_1,z_2,z_3,z_4) - z_i \in \ker \psi$. Such an element
