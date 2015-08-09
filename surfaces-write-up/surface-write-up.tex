@@ -175,10 +175,7 @@ For any Weil $\bq$-divisor $D$ on a rational surface $X$, the graded
 \textbf{canonical ring} is $R(X, D) := \bigoplus_{d \geq 0} u^d H^0(X, \lfloor dD \rfloor)$, where $u$ is a dummy variable to keep
 track of degree.
 We study the generators and relations of canonical
-rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$ \todo{Peter: Bad to have $m$ as both the dimension of $\bp$ and the coefficient for the hirzebruch surface?
-
-Aaron: It doesn't seem like this would cause any confusing to me. They're always discussed separately.
-}.
+rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$.
 When $D$ is a general $\bq$-divisor on $\bp^m$ or
 $\hirz_m$, we give bounds on the generators and relations of
 $R(X, D)$. In particular, we give a minimal presentation of the
@@ -1106,18 +1103,6 @@ Analogously to Proposition ~\ref{prop:pm-span-and-basis} for the case
 of $\bp^m$, all rational functions on $\hirz_m$
 can be written uniquely in a form where their numerator is a function
 of only $f_1,f_2,f_3$, and $f_4$.
-\todo{Aaron: Do either of you think we should write out this as
-a proposition more clearly? I'm fine either way, but it was something
-missing which I thought I should point out. \\
-Peter: The one line argument is ``Every numerator is a polynomial in $u, v, z, w$; we can generate $u$ and $v$ from $f_1$ and $f_2$, and we can generate $z$ and $w$ from $f_3$ and $f_4$.''  This can be added if you want
-
-Aaron: I agree that argument is obvious. I was more referring to the analog
-of proposition ~\ref{prop:pm-span-and-basis}, that is, how to show
-every numerator is a polynomial in $u,v,z,w$. This would probably be
-an argument that takes a couple paragraphs.
-\\
-Peter: I see what you mean.  What was the argument for that again.  It was some exact sequence thing you came up with right?
-}
 
 \begin{defn}
 Define 
@@ -1440,7 +1425,7 @@ follows from Lemma ~\ref{lem:hirz-bound-ker-psi}.
 
 \section{Further Questions}
 \label{sec:conc}
-In this section, we briefly state some further questions.
+%In this section, we briefly state some further questions.  \todo{Peter: Redundant (see title of section...)?}
 
 Recall that every minimal rational surface is either isomorphic to
 $\bp^2$ or $\hirz_m$ for some $m \geq 0, m \neq 1$ \cite{eisenbud-harris:minimal}. By Theorems
@@ -1457,11 +1442,11 @@ Every rational surface can be obtained from a minimal rational surface by a
 sequence of blow-ups \cite{eisenbud-harris:minimal}. Therefore, to answer
 Question \ref{qn:general-minimal-surface} affirmatively, it suffices
 to bound the degree of generators and relations of the 
-canonical ring of a divisor on a blow-up of that surface in terms of the canonical ring of a divisor on that surface.
+canonical ring of a divisor on a blow-up of that surface in terms of canonical rings of some associated divisors on that original surface.
 
 Another direction to generalize the work in this paper
 would be to try to express canonical rings of $\bq$-divisors on
-$X \times Y$ in terms of $X$ and $Y$. In this paper,
+$X \times Y$ in terms of those on $X$ and $Y$. In this paper,
 we bounded the degrees of presentations on canonical rings on $\bp^1 \times \bp^1 \cong \hirz_0$.
 Perhaps similar techniques can be used to bound
 degrees of presentations on canonical rings on $(\bp^1)^k$ or
