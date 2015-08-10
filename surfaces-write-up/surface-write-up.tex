@@ -247,7 +247,7 @@ relations generated in degrees at most $2 \max_{1 \leq i \leq n}{k_i}$
 \label{thm:proj-generators-relations}
 Let $\bp^m$ have projective coordinates $x_0,\ldots, x_m$. Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ where $\alpha_i = \frac{c_i}{k_i}$.
 Then notate
-\[\ell_i = \lcm_{j\ne i}(k_i).\] 
+\[\ell_i = \lcm_{j\ne i}(k_j).\] 
 Let
 $f_0, \ldots, f_n$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
 $D_i = V(f_i)$ for all $i$, $\deg(f_i) = a_i,$ and $f_0,\ldots, f_m$ are independent linear polynomials in $x_0, \ldots, x_m$. 
@@ -310,7 +310,7 @@ Notate a (Weil) $\bq$-divisor
 \end{align*}
 
 \noindent
-where $\alpha_i \in \bq$ and $D_i \in \di X$ is an integral codimension 1 closed subscheme of $X$. When it is convenient to do so, we shall sometimes start the indexing at $0$, so that $i$ runs from $0$ to $n$. The degree of $D$ is by definition $\deg D = \sum_{i=1}^{n}\alpha_i$. For such a divisor $D$ with $\alpha_i = \frac{c_i}{k_i}$ let $\ell_i = \lcm_{j\ne i}(k_i)$
+where $\alpha_i \in \bq$ and $D_i \in \di X$ is an integral codimension 1 closed subscheme of $X$. When it is convenient to do so, we shall sometimes start the indexing at $0$, so that $i$ runs from $0$ to $n$. The degree of $D$ is by definition $\deg D = \sum_{i=1}^{n}\alpha_i$. For such a divisor $D$ with $\alpha_i = \frac{c_i}{k_i}$ let $\ell_i = \lcm_{j\ne i}(k_j)$
 and let $\ell_{i,j} = \lcm_{h\ne i,j}(k_h).$ The floor of a $\bq$-divisor $D$ is a divisor $\lfloor D
 \rfloor \in \di X$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
 \lfloor \alpha_i \rfloor P_i$. Let $
@@ -860,7 +860,7 @@ this strategy.
 \begin{lem} \label{lem:proj-generators}
 Let $D = \sum_{i=1}^{n} \alpha_i D_i \in \bq \otimes \di \bp^m,$ where
 $\deg D_i = \bida_i$, $\alpha_i = \frac{c_i}{k_i}\in \bq$, and
-$\ell_i = \lcm_{j \neq i} (k_i)$. Then, $R_D$ is generated in degrees at most $\sum_{i=0}^n \ell_i \bida_i.$
+$\ell_i = \lcm_{j \neq i} (k_j)$. Then, $R_D$ is generated in degrees at most $\sum_{i=0}^n \ell_i \bida_i.$
 
 \end{lem}
 \begin{proof}
@@ -974,7 +974,7 @@ $\sigma = \lambda + \sum_{i=1}^{r}w_i e_i$ as in Equation
 \label{lem:proj-relations-psi}
 Let $D = \sum_{i=0}^{n} \alpha_i D_i \in \bq \otimes \di \bp^m,$ where
 $\deg D_i = \bida_i$, $\alpha_i = \frac{c_i}{k_i}\in \bq$, and
-$\ell_i = \lcm_{j \neq i} (k_i)$. Define $\Sigma$ as in Equation
+$\ell_i = \lcm_{j \neq i} (k_j)$. Define $\Sigma$ as in Equation
 ~\eqref{eqn:Sigma-defn} and $\psi$ as ~\eqref{eqn:factor-through-semigroup-ring}. Then, $\ker \psi$ is generated in degrees at most
 \begin{align}
 \label{eqn:proj-relation-degree}
