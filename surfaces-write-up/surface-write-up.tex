@@ -246,17 +246,7 @@ relations generated in degrees at most $2 \max_{1 \leq i \leq n}{k_i}$
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
 Let $\bp^m$ have projective coordinates $x_0,\ldots, x_m$. Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ where $\alpha_i = \frac{c_i}{k_i}$.
-Then notate \todo{Peter: It seems a bit weird to me how we define this
-notation.  It is used throughout the paper and defined here, but after this
-point it is never redefined nor is it referenced to this definition.  Would it
-be good to make this into an equation and reference the first time it is used
-in section 2?
-
-Aaron: Actually, it is redefined several times later. For example, see the notations and
-conventions at the end of the intro. I think it's defined elsewhere as well.
-It's fine to reference it here and refer to it later
-if you'd like to do that though.
-}
+Then notate 
 \[\ell_i = \lcm_{j\ne i}(k_j).\] 
 Let
 $f_0, \ldots, f_n$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
@@ -280,7 +270,7 @@ In Section \ref{sec:hirz}, we shift our attention to Hirzebruch Surfaces and pro
 \label{thm:hirz-generators-relations}
 Let $u,v,z,w$ be the coordinates for the Hirzebruch surface $\hirz_m$, as described at the beginning of Section ~\ref{sec:hirz}. Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq \otimes_\bq \di \hirz_m$ 
 where $\alpha_i = \frac{c_i}{k_i}$.
-Then notate \todo{Peter: Same comment as above.}
+Then notate
 \[\ell_{i,j} = \lcm_{h\ne i,j}(k_h).\] 
 Let $D_i =
 V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further suppose $f_1$ and $f_2$ are
@@ -354,7 +344,7 @@ Write
 where $n \in \bz$, $\alpha_i \in \bq$, and $\deg D_i = \bida_i$. Let $D_i$ be
 Cartier divisors such that $D_i = V(f_i)$.
 We shall further assume for this subsection that (possibly after reordering) $f_0,\ldots, f_{m}$ form a
-basis for degree one rational functions on $\bp^m$.  
+basis for degree one rational functions on $\bp^m$.  This may necessitate the inclusion of ``Ghost Divisors'' $D_i$ with coefficients $\alpha_i = 0$. 
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
@@ -366,8 +356,8 @@ The functions $u^d \cdot \prod_{i=1}^n f_i^{c_i} \in (R_D)_d$ satisfying
 \end{align}
 
 \noindent
-form a spanning set for $H^0(\bp^m, dD)$ over $k$. Furthermore, functions 
-of the form $u^d \cdot \prod_{i=0}^n f_i^{c_i}$ satisfying
+span $H^0(\bp^m, dD)$ over $k$. Furthermore, functions 
+of the form $u^d \cdot \prod_{i=0}^n f_i^{c_i}$ satisfying Equation \ref{align:pm-span} and
 \begin{align}
 \label{align:pm-basis}
 c_i = -\lfloor d\alpha_i \rfloor && \text{ for } && i > m
@@ -379,14 +369,14 @@ form a basis for $H^0(\bp^m, dD)$ over $k$.
 
 \begin{proof}
 By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
-~\eqref{align:pm-span} lie in $H^0(\bp^m,dD)$. To complete the proof, it
+~\eqref{align:pm-span} lie in $H^0(\mathbb{P}^m,dD)$, and all functions of that form lie in $H^0(\mathbb{P}^m, dD)$. To complete the proof, it
 suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form
-a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$
+a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$ \todo{Peter: $\lfloor dD\rfloor$ is a divisor, not a number.  Do we mean $\deg(\lfloor dD \rfloor)$?}
 functions satisfying condition ~\eqref{align:pm-basis}. However we know
 $h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show
 that those functions satisfying condition ~\eqref{align:pm-basis} are
 independent. This follows from the assumption that $f_0,\ldots f_n$ form a
-basis of degree 1 rational functions, and so all monomials in $f_0,\ldots, f_m$ of degree degree $\lfloor d \deg D \rfloor $
+basis of degree 1 rational functions, and so all monomials in $f_0,\ldots, f_m$ of degree $\lfloor d \deg D \rfloor $ \todo{Peter: Why are we looking at monomials in this degree?  Don't we want to say monomials in degree $d$ or something?}
 form a basis of degree $\lfloor d \deg D \rfloor$ rational functions.
 \end{proof}
 
@@ -413,7 +403,7 @@ Let
 \begin{align*}
 	\mss_i := \left \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
 \deg \vec v = c_i \right\}.	
-\end{align*}
+\end{align*}\todo{Peter: Should we say ``with $c_i$ as in section 2.1?''}
 
 \noindent
 \end{defn}
@@ -428,7 +418,9 @@ this ordering.
 Let $\vec{v}, \vec{w} \in \bz^{m+1}$. Let $i \in \{0,\ldots, m\}$
 be the biggest index such that $v_i$ is nonzero
 and $j \in \{0,\ldots, m\}$ be the smallest index such that $w_j$ is
-nonzero. Define a partial ordering on $\bz^{m+1}$ by $\vec{v} \prec \vec{w}$ if $i \leq j$.
+nonzero. Define a partial ordering on $\bz^{m+1}$ by $\vec{v} \prec \vec{w}$ if $i \leq j$.  \todo{Peter: Why do we have $i$ defined as the biggest and $j$ defined as the smallest?  Anyway, I don't believe this is a partial ordering.  Specifically, I don't believe it satisfies antisymmetry:
+\\
+Let $m=1$.  $\vec{v}= (1,0), \vec(w) = (2,0)$.  Then $\vec{w} \prec \vec{w}$ and $\vec{w} \prec{v}$, which by antisymmetry should imply $\vec{v} = \vec{w}$.  I'm not sure if I am missing something simple in the definition ... but this seems to contradict it being a partial order.  Maybe we don't actually care that it is a partial order though\ldots.}
 \end{defn}
 
 We are now ready to give an inductive method for computing
