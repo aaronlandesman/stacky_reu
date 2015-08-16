@@ -369,15 +369,30 @@ form a basis for $H^0(\bp^m, dD)$ over $k$.
 
 \begin{proof}
 By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
-~\eqref{align:pm-span} lie in $H^0(\mathbb{P}^m,dD)$, and all functions of that form lie in $H^0(\mathbb{P}^m, dD)$. To complete the proof, it
+~\eqref{align:pm-span} lie in $H^0(\mathbb{P}^m,dD)$, and all functions of that form lie in $H^0(\mathbb{P}^m, dD)$.
+\todo{Aaron: Peter, what do you mean when you say ``all functions of that form lie in...''? How is
+this different from saying that functions satisfying that equation lie in $H^0$?}
+To complete the proof, it
 suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form
-a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \lfloor dD \rfloor }{m}$ \todo{Peter: $\lfloor dD\rfloor$ is a divisor, not a number.  Do we mean $\deg(\lfloor dD \rfloor)$?}
+a basis of $H^0(\bp^m,dD)$. Note that there $\binom{m+ \deg \lfloor dD \rfloor }{m}$
 functions satisfying condition ~\eqref{align:pm-basis}. However we know
-$h^0(\bp^m,dD) = \binom{m+ \lfloor dD \rfloor }{m},$ so it suffices to show
+$h^0(\bp^m,dD) = \binom{m+ \deg \lfloor dD \rfloor }{m},$ so it suffices to show
 that those functions satisfying condition ~\eqref{align:pm-basis} are
 independent. This follows from the assumption that $f_0,\ldots f_n$ form a
-basis of degree 1 rational functions, and so all monomials in $f_0,\ldots, f_m$ of degree $\lfloor d \deg D \rfloor $ \todo{Peter: Why are we looking at monomials in this degree?  Don't we want to say monomials in degree $d$ or something?}
-form a basis of degree $\lfloor d \deg D \rfloor$ rational functions.
+basis of degree 1 rational functions, and so all monomials in $f_0,\ldots, f_m$
+of degree $\deg \lfloor d \deg D \rfloor $ \todo{Peter: Why are we looking at
+monomials in this degree?  Don't we want to say monomials in degree $d$ or
+something?
+
+Aaron: You're right it was a typo. I fixed it now though. The monomials
+in this degree are precisely those monomials which
+are a basis for $H^0(dD).$ If we just took monomials in degree d,
+those would only form bases in the case $\deg D = 1$. Here, we're talking
+about a k basis, so the fact that there is a d there doesn't really matter,
+we only care about generatord for the vector space $H^0(dD)$ where $dD$ is some
+arbitrary divisor.
+}
+form a basis of degree $\deg \lfloor d  D \rfloor$ rational functions.
 \end{proof}
 
 \ssec{Effective Divisors on Projective Space}
@@ -399,11 +414,13 @@ $\vec{v} = (v_0, \ldots, v_m) \in \bz^{m + 1}$.  Then write
 \label{defn:vec-sum}
 For $\vec{v} \in \bz^n$, denote $\deg \vec{v} := \sum_{i = 0}
 ^n v_i$.
-Let 
+For a given sequence of numbers $c_0, \ldots, c_r$, (which
+we will later take to be the best lower approximations
+for a certain divisor) let 
 \begin{align*}
 	\mss_i := \left \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
 \deg \vec v = c_i \right\}.	
-\end{align*}\todo{Peter: Should we say ``with $c_i$ as in section 2.1?''}
+\end{align*}
 
 \noindent
 \end{defn}
@@ -418,9 +435,17 @@ this ordering.
 Let $\vec{v}, \vec{w} \in \bz^{m+1}$. Let $i \in \{0,\ldots, m\}$
 be the biggest index such that $v_i$ is nonzero
 and $j \in \{0,\ldots, m\}$ be the smallest index such that $w_j$ is
-nonzero. Define a partial ordering on $\bz^{m+1}$ by $\vec{v} \prec \vec{w}$ if $i \leq j$.  \todo{Peter: Why do we have $i$ defined as the biggest and $j$ defined as the smallest?  Anyway, I don't believe this is a partial ordering.  Specifically, I don't believe it satisfies antisymmetry:
+nonzero. Define a relation on $\bz^{m+1}$ by $\vec{v} \prec \vec{w}$ if $i \leq j$.  \todo{Peter: Why do we have $i$ defined as the biggest and $j$ defined as the smallest?  Anyway, I don't believe this is a partial ordering.  Specifically, I don't believe it satisfies antisymmetry:
 \\
-Let $m=1$.  $\vec{v}= (1,0), \vec(w) = (2,0)$.  Then $\vec{w} \prec \vec{w}$ and $\vec{w} \prec{v}$, which by antisymmetry should imply $\vec{v} = \vec{w}$.  I'm not sure if I am missing something simple in the definition ... but this seems to contradict it being a partial order.  Maybe we don't actually care that it is a partial order though\ldots.}
+Let $m=1$.  $\vec{v}= (1,0), \vec(w) = (2,0)$.  Then $\vec{w} \prec \vec{w}$
+and $\vec{w} \prec{v}$, which by antisymmetry should imply $\vec{v} = \vec{w}$.
+I'm not sure if I am missing something simple in the definition ... but this
+seems to contradict it being a partial order.  Maybe we don't actually care
+that it is a partial order though\ldots.
+
+Aaron: Good catch. You're right though, that it's not important
+that it is a partial ordering. I changed it to a relation.
+}
 \end{defn}
 
 We are now ready to give an inductive method for computing
