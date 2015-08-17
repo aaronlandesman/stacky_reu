@@ -169,6 +169,7 @@
 \todo{Aaron: Remove labels which are not referenced}
 \todo{Aaron: Make sure indexing at 0 is correct in projective space
 section, particularly toward the end}
+\todo{Aaron: Make sure to use $\bk$ instead of $k$ for the field}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
@@ -271,18 +272,19 @@ with relations generated in degrees at most
 \end{restatable}
 
 \noindent
-In Section \ref{sec:hirz}, we shift our attention to Hirzebruch Surfaces. Recall that for each $m \geq 0$ we can define the
+In Section \ref{sec:hirz}, we shift our attention to Hirzebruch surfaces. Recall that for each $m \geq 0$ we can define the
 Hirzebruch surface $F_m := \proj(\sym^\bullet \sco_{\bp^1} \oplus
 \sco_{\bp^1}(m)),$ or as a quotient of an open subscheme of
 $\ba^4$ by a 
-kweighted action, as is done in the
+weighted action, as is done in the
 beginning of Section \ref{sec:hirz}.
 Note that Hirzebruch surfaces are normal
 and locally factorial, being $\bp^1$ bundles over
 $\bp^1$, and therefore the natural map from Cartier
 divisors to Weil divisors is an isomorphism.
 In other words, all Cartier divisors arise as the zero locus
-of a section of some line bundle. The analogous fact for
+of a section of some line bundle. We implicitly use this in the
+statement of the following theorem. The analogous fact for
 projective space was also implicitly used in Theorems
 ~\ref{thm:proj-effective-intro} and ~\ref{thm:proj-generators-relations}.
 
@@ -333,13 +335,16 @@ and relations for the canonical ring of any $\bq$-divisor on any
 minimal rational surface. Section \ref{sec:conc} discusses further questions.
 
 \ssec{Notations and Conventions}
+We will use $m \in \bz$ to index the dimension of a given projective
+space $\bp^m$ or the type of the hirzebruch surface $\hirz_m$.
 Let $D$ be a (Weil) $\bq$-divisor of the form
 \begin{align*}
 	D = \sum_{i=1}^{n}\alpha_i D_i \in \di X \otimes \bq.
 \end{align*}
 
 \noindent
-where $\alpha_i \in \bq$ and $D_i \in \di X$ is an integral
+where $n \in \bz$ indexes the number of irreducible divisors in 
+the above expansion of $D$, $\alpha_i \in \bq$, and $D_i \in \di X$ is an integral
 codimension 1 closed subscheme of $X$. When it is convenient to do
 so, we shall sometimes start the indexing at $0$, so that $i$ runs
 from $0$ to $n$. Define the degree of $D$ by $\deg D \colon =
@@ -772,7 +777,7 @@ $\deg(f_i) = a_i$ for all $i$.
 
 For the remainder of this section, we shall make the additional assumption that 
 \begin{align} \label{eqn:pm-basis-assumption} f_0, \ldots, f_{m}
-	\text{ are $m$ independent linear forms.} \end{align}
+	\text{ are independent linear forms.} \end{align}
 
 The first aim of this section is to prove Theorem
 ~\ref{thm:proj-generators-relations} bounding the number of generators and
