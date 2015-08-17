@@ -247,13 +247,15 @@ relations generated in degrees at most $2 \max_{1 \leq i \leq n}{k_i}$
 
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
-Let $\bp^m$ have projective coordinates $x_0,\ldots, x_m$. Let
-$f_0, \ldots, f_n$ be homogeneous polynomials in $x_0, \ldots, x_m$ such that
-for $1 \leq i \leq n$ we have $D_i = V(f_i)$ and $\deg(f_i) = a_i,$ and such that $f_0,\ldots, f_m$ are independent linear polynomials in $x_0, \ldots, x_m$. 
 Let $D =
-\sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ where
-$\alpha_i = \frac{c_i}{k_i}$.
-Then notate 
+\sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ 
+with $\alpha_i = \frac{c_i}{k_i}\in \bq.$ Let $\bp^m \cong \proj \bk[x_0,\ldots, x_m]$ with
+$f_0, \ldots, f_n \in \bk[x_0, \ldots, x_m]$ such that
+for $1 \leq i \leq n$ we have $D_i = V(f_i)$ and $\deg(f_i) = a_i.$
+Further, after reordering the terms of $D$, and possibly adding in
+$D_i$ with coefficient $\alpha_i = 0$, assume that $f_0,\ldots, f_m$ are independent linear
+polynomials in $x_0, \ldots, x_m$. 
+Define 
 \[\ell_i = \lcm_{j\ne i}(k_j).\] 
 Then $R_D$ is generated in degrees at most 
 \[
@@ -269,20 +271,35 @@ with relations generated in degrees at most
 \end{restatable}
 
 \noindent
-In Section \ref{sec:hirz}, we shift our attention to Hirzebruch Surfaces and prove the following theorem:
+In Section \ref{sec:hirz}, we shift our attention to Hirzebruch Surfaces. Recall that for each $m \geq 0$ we can define the
+Hirzebruch surface $F_m := \proj(\sym^\bullet \sco_{\bp^1} \oplus
+\sco_{\bp^1}(m)),$ or as a quotient of an open subscheme of
+$\ba^4$ by a 
+kweighted action, as is done in the
+beginning of Section \ref{sec:hirz}.
+Note that Hirzebruch surfaces are normal
+and locally factorial, being $\bp^1$ bundles over
+$\bp^1$, and therefore the natural map from Cartier
+divisors to Weil divisors is an isomorphism.
+In other words, all Cartier divisors arise as the zero locus
+of a section of some line bundle. The analogous fact for
+projective space was also implicitly used in Theorems
+~\ref{thm:proj-effective-intro} and ~\ref{thm:proj-generators-relations}.
+
 \begin{restatable}{thm}{hirzrestate}
 \label{thm:hirz-generators-relations}
-Let $u,v,z,w$ be the coordinates for the Hirzebruch surface
-$\hirz_m$, as described at the beginning of Section
-~\ref{sec:hirz}. For $1 \leq i \leq n$, let $D_i =
-V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further suppose $f_1$ and $f_2$ are
-independent linear
-polynomials in $u$ and $v$ and $f_3$ and $f_4$ are independent
-linear polynomials in $w$ and $x$.
 Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq
 \otimes_\bq \di \hirz_m$ 
 where $\alpha_i = \frac{c_i}{k_i}$.
-Then notate
+Let $u,v,z,w$ be the coordinates for the Hirzebruch surface
+$\hirz_m$, as described at the beginning of Section
+~\ref{sec:hirz}. For $1 \leq i \leq n$, let $D_i =
+V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further, after reordering
+the $D_i$ and possibly adding $D_i$ with corresponding $\alpha_i = 0$, suppose $f_1$ and $f_2$ are
+independent linear
+polynomials in $u$ and $v$ and $f_3$ and $f_4$ are independent
+linear polynomials in $w$ and $x$.
+Define
 \[\ell_{i,j} = \lcm_{h\ne i,j}(k_h).\] 
 Then $R_D$ is generated in degrees at most
 \[
@@ -326,7 +343,7 @@ where $\alpha_i \in \bq$ and $D_i \in \di X$ is an integral
 codimension 1 closed subscheme of $X$. When it is convenient to do
 so, we shall sometimes start the indexing at $0$, so that $i$ runs
 from $0$ to $n$. Define the degree of $D$ by $\deg D \colon =
-\sum_{i=1}^{n}\alpha_i$. For such a divisor $D$ with $\alpha_i =
+\sum_{i=1}^{n}\alpha_i \cdot \deg D_i$. For such a divisor $D$ with $\alpha_i =
 \frac{c_i}{k_i}$ let $\ell_i = \lcm_{j\ne i}(k_j)$
 and let $\ell_{i,j} = \lcm_{h\ne i,j}(k_h).$ The floor of a $\bq$-divisor $D$ is a divisor $\lfloor D
 \rfloor \in \di X$ is defined to be $\lfloor D \rfloor \colon = \sum_{i = 1}^{n}
