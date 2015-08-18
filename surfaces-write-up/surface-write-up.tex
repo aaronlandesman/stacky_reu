@@ -360,7 +360,12 @@ Let $\bk$ be a field and let $\bp^m$ denote $m$-dimensional
 projective space over $\bk$. In this section, we bound the degrees
 of generators and relations for divisors
 on $\bp^m$, for all $m \geq 1$ in Theorem
-~\ref{thm:proj-effective-intro}. 
+~\ref{thm:proj-effective-intro}.
+Note that if $\deg D < 0$ the
+canonical ring is concentrated in degree 0, and if
+$\deg D = 0$, then the canonical ring has a single
+generator. Therefore, for the remainder of this section,
+we shall assume $\deg D > 0$.
 The $\bp^1$ case restricts to the results of
 \cite{dorney:canonical}. We also give an explicit description of the
 generators of the canonical ring $R_D$ when $D$ is an effective divisor in Theorem ~\ref{thm:proj-generators-relations}
@@ -1134,6 +1139,19 @@ $\Pic(\hirz_m) \cong \bz \times \bz$, where the class of a line bundle
 in $\Pic(\hirz_m)$
 is determined by its bi-degree, as follows from the excision exact sequence
 for class groups.
+
+Furthermore, similarly to the case of projective space, 
+we will restrict to the case that $D$ is a divisor
+for which both of its bi-degrees are positive. We now justify this
+restriction. If either of the bidegrees of $D$ are negative,
+then the canonical ring is concentrated in degree 0. If one of the
+bidegrees is 0, say the first one is 0, then $R_D$ is isomorphic
+to $R_{D'}$, where $D' \in \bq \otimes_\bq \di \bp^1$, 
+where $D'$ can be written as a sum of divisors whose degrees
+are multiples of the second bidegree of $D$. Since the case of
+$\bp^1$ has already been analyzed in \cite{canonical:dorney}, we
+are justified in assuming that both bi-degrees of $D$ are positive.
+
 
 For the remainder of this section we will assume $D_1, D_2, D_3,$ and $D_4$ are
 distinct divisors with bi-degrees $(1,0)$
