@@ -265,8 +265,37 @@ with relations generated in degrees at most
 	(	\bida_i)}{\deg(D)} + \sum_{i=0}^n \ell_i a_i \right).
 \]
 \end{restatable}
+\begin{rem}\label{rem:proj-tight-bounds} Note that the bounds
+	given in Theorem ~\ref{thm:proj-effective-intro}
+are tight and are typically attained, as explained in
+Remark ~\ref{rem:exact-effective-bounds}.
+Additionally, the bounds given in Theorem 
+~\ref{thm:proj-generators-relations} are asymptotically
+tight to within a factor of two 
+for the following class of divisors. Consider
+a divisor 
+$ D = \sum_{i=0}^n\frac{p_i}{2q_i}H_i \in \bq \otimes_\bq \di \bp^m$
+such that $H_i$ are hyperplanes,  
+$q_i$ are pairwise coprime integers, and $p_i$ are chosen
+so that $\deg D = \frac{1}{2 \prod_{i=0}^n}q_i$. Further,
+choose a linear subspace $\pi: \bp^1 \rightarrow \bp^m$  generically so that
+$\pi^* D = \sum_{i=0}^n \frac{p_i}{2q_i}P_i$, 
+where $P_i$ are distinct points in $\bp^1$. To choose such a map
+$\pi$, we may need to assume that the base field is infinite.
+Note that by the Remark immediately following Theorem 8 in 
+\cite{dorney:canonical},
+the given bounds on the generators and relations of
+$R_{\pi^*D}$ are within
+a factor of two of the degree of generation and relations of
+$R_{\pi^*D}$. Finally, since restriction map
+$R_D \rightarrow R_{\pi^*D}$ induced by the restriction maps
+on cohomology $H^0(\bp^m, dD) \rightarrow H^0(\bp^1, \pi^*(dD))
+\cong H^0(\bp^1, d\pi^* D)$ are surjective, we obtain that
+the bounds for the generators and relations of $R_D$ also
+agree with the degree of generation and relations 
+to within a factor of two.
+ \end{rem}
 
-\noindent
 In Section \ref{sec:hirz}, we shift our attention to Hirzebruch surfaces. Recall that for each $m \geq 0$ we can define the
 Hirzebruch surface $F_m := \proj(\sym^\bullet \sco_{\bp^1} \oplus
 \sco_{\bp^1}(m)),$ or as a quotient of an open subscheme of
