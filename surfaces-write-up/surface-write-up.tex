@@ -166,22 +166,10 @@
 \end{abstract}
 
 \maketitle
-\todo{Aaron: Remove labels which are not referenced
-\\
-Peter: I did this for a few of them, but I'm wondering what the
-purpose of this is.  It appears the same in the PDF either way
-right?
-
-Aaron: Well, the point is to actually remove the references
-numbers from equations which aren't referenced, since this
-removes clutter. That is, put a star after the environment
-name (change begin{equation} to begin{equation*}).
-I think it makes sense not to label things
-if you don't use those labels, and 
-David recommended doing this in his comments.
-}
 \todo{Aaron: Make sure indexing at 0 is correct in projective space
-section, particularly toward the end}
+section, particularly toward the end.
+\\
+Peter: Think I got all of them.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
@@ -432,18 +420,6 @@ form a basis for $H^0(\bp^m, dD)$ over $\bk$.
 \begin{proof}
 By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
 ~\eqref{align:pm-span} lie in $H^0(\mathbb{P}^m,dD)$.
-\todo{Aaron: Peter, what do you mean when you say ``all functions of that form lie in...''? How is
-this different from saying that functions satisfying that equation lie in $H^0$?
-\\
-Peter:  Oops, meant to write the converse statement, but accidently
-just restated the original statement-it's fixed now.
-
-Aaron: Well, it should really be all such functions are linear
-combinations of things in that form. However,
-that's what I proved in the next couple setences. I.e.,
-the remainder of the proof is showing that this set is indeed
-a basis. I removed your added clause.
-}
 To complete the proof, it
 suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form
 a basis of $H^0(\bp^m,dD)$. Note that there are $\binom{m+ \deg \lfloor dD \rfloor }{m}$
@@ -1002,7 +978,7 @@ $\ker \chi $ and we bound the degree of generation of $\ker \psi$ in Lemma ~\ref
 
 \begin{lem}
 \label{lem:composite-map}
-Lex $X$ be an arbitrary scheme and let $D = \sum_{i=0}^{n}\alpha_i D_i\in \bq \otimes_\bz \di X$ where $D_i = V(f_i)$. Suppose we have a
+Let $X$ be an arbitrary scheme and let $D = \sum_{i=0}^{n}\alpha_i D_i\in \bq \otimes_\bz \di X$ where $D_i = V(f_i)$. Suppose we have a
 surjection $\phi\colon \bk[w_1,\ldots, w_r] \rightarrow R_D$ given by $w_i
 \mapsto p_i(f_0, \ldots, f_n),$ where $p_i$ is a monomial in $f_0,\ldots, f_n$.
 Let $\bida_0, \ldots, \bida_n, \bidb_0, \ldots, \bidb_n \in \bz_{\geq 0}.$
@@ -1286,10 +1262,9 @@ For $i \in \Te(D)$, define $e_i \in \bk[\Sigma]$ in degree
 	d_i = \ell_i \gcd(a_i, b_i)
 \]
 by 
-\begin{equation}
-	e_i \colon = d_i \epsilon_i %(-\alpha_1 d_i, \ldots, - \alpha_{i-1} d_i, \frac{d_i}{\bida_i + \bidb_i}\sum_{k \ne i}
-	%\alpha_k (\bida_k + \bidb_k), - \alpha_{i+1} d_i, \ldots, - \alpha_n d_i)
-\end{equation}
+\[
+	e_i \colon = d_i \epsilon_i.
+\]
 
 \noindent
 For $i \in \Tp(D)$ and $j \in \Tm(D)$, with $i < j$, define $e_{i,j}\in \bk[\Sigma]$ in degree 
@@ -1297,30 +1272,10 @@ For $i \in \Tp(D)$ and $j \in \Tm(D)$, with $i < j$, define $e_{i,j}\in \bk[\Sig
 	d_{i,j} = \ell_{i, j}(\bida_i \bidb_j - \bida_j \bidb_i)
 \]
 by
-\begin{align}
+\begin{align*}
 e_{i,j} \colon = &\frac{a_j\sum_{k\ne i,j} d_{i,j}\alpha_k b_k - b_j\sum_{k \ne i,j} d_{i,j} \alpha_k a_k}{a_ib_j - b_i a_j} \epsilon_i \\
 &+ \frac{a_i \sum_{k\ne i,j} d_{i,j} \alpha_k b_k - b_i\sum_{k\ne i,j} d_{i,j} \alpha_ka_k}{a_jb_i - b_j a_i} \epsilon_j
-%	
-%	(-\alpha_1 d_{i,j}, \ldots -\alpha_{i-1} d_{i,j}, \bidb_j \sum_{k \ne i,j} \alpha_k \bida_k - \bida_j \sum_{k \ne i, j}
-%	\alpha_k \bidb_k, -\alpha_{i+1} d_{i,j}, \\
-%	&\ldots -\alpha_{j-1} d_{i,j}, -\bidb_i \sum_{k \ne i, j} \alpha_k \bida_k + \bida_i \sum_{k \ne i, j}
-%	\alpha_k \bidb_k, -\alpha_{j+1}d_{i,j}, \ldots, - \alpha_{n}d_{i,j}).
-%	\end{split}
-\end{align}
-
-%\noindent
-%where
-%\[
-%	s_1 = \bidb_j \sum_{k \ne i,j} \alpha_k \bida_k - \bida_j \sum_{k \ne i, j}
-%	\alpha_k \bidb_k
-%\]
-%
-%\noindent
-%and
-%\[
-%	s_2 = -\bidb_i \sum_{k \ne i, j} \alpha_k \bida_k + \bida_i \sum_{k \ne i, j}
-%	\alpha_k \bidb_k.
-%\]
+\end{align*}
 
 Since these $e_i$ are multiples of $\epsilon_i$ and these
 $e_{i,j}$ are points of intersection of $H$ with
@@ -1391,9 +1346,9 @@ $\ker \psi$ is generated in degrees less than
 \begin{proof}
 We first claim that there exist $u^{\deg z_1}\beta_1, \ldots, u^{\deg z_n} \beta_n\in \bk[uz_1, uz_2, uz_3, uz_4]$
 such that $\ker \psi$ has relations of the form
-\begin{equation}
+\[
 	u^d(z_i - \beta_i)\prod_{j=1}^n {z_j}^{c_{j}}
-\end{equation}
+\]
 
 \noindent
 lying in some degree $d \in \mathbb{N}$
@@ -1459,9 +1414,9 @@ where $\rho$ is as in Equation \ref{eqn:def-sigma}. To obtain the
 bound given in Equation ~\eqref{eqn:e-bound}, the $\rho$ term corresponds to the sums of fractional parts of $s_j - r_j$'s and $s_{j,k} - r_{j,k}$'s, whereas the second term corresponds to the sums of $r_j$'s and $r_{j,k}$'s (noting that in equation \ref{eqn:hirz-E-translation} $s_j - \lfloor s_j - r_j \rfloor= r_j + \fr(s_j - r_j)$).
 
 Define
-\begin{equation}
+\[
 	\lambda \colon = \sigma - E = \sum_{j\in \Te} (\lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} ( \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}\in \Sigma.
- \end{equation}
+\]
 
 Let $M_i$ be the set of monomials terms of $\beta_i = \beta_i(z_1, \ldots z_4)$.  Let $\mu = \prod_{j=1}^4
 {z_j}^{h_j}\in M_i$ and consider the lattice point 
