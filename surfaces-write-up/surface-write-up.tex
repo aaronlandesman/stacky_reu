@@ -171,7 +171,7 @@
 \section{Introduction}
 \label{sec:intro}
 For any Weil $\bq$-divisor $D$ on a rational surface $X$, the graded
-\textbf{canonical ring} is $R(X, D) \colon = \bigoplus_{d \geq 0} u^d H^0(X, \lfloor dD \rfloor)$, where $u$ is a dummy variable to keep
+\textbf{canonical ring} is $R(X, D) := \bigoplus_{d \geq 0} u^d H^0(X, \lfloor dD \rfloor)$, where $u$ is a dummy variable to keep
 track of degree.
 We study the generators and relations of canonical
 rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$.
@@ -186,12 +186,13 @@ O'Dorney \cite{dorney:canonical}, which gives similar descriptions
 of canonical rings for general $\bq$-divisors on $\bp^1$. This
 study also has connections to the papers by Voight--Zureick-Brown 
 \cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring},
-which provide tight bounds on generators and relations
-of canonical rings and spin canonical rings, respectively, on arbitrary stacky curves.
+which provide tight bounds on the degree of generators and relations
+of log canonical rings and log spin canonical rings on arbitrary
+stacky curves.
 
 Another closely related topic is the Hassett-Keel program \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form 
 \begin{align*}
-	\overline {\mathscr M}_g(\alpha) \colon = \bigoplus_{d \geq 0} u^d H^0 \left(
+	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0} u^d H^0 \left(
 	\overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} +
 	\alpha\delta \rfloor  \right) 
 \end{align*}
@@ -228,12 +229,12 @@ the degree of generators and relations of
 stacky canonical rings on $\bp^m$:
 \begin{restatable}{thm}{restateeffective}
 \label{thm:proj-effective-intro}
-Let $D = \sum_{i = 0}^{n} \alpha_i D_i \in \bz \otimes_\bz \di \bp^m$, with $\alpha_i =
+Let $D = \sum_{i = 0}^{n} \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$, with $\alpha_i =
 \frac{c_i}{k_i} \in \bq_{> 0}$ and let each $D_i \in \di \bp^m$ be an integral divisor.
 
 Then the canonical ring
 \[
-	R_D \colon = \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
+	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
 \]
 
 \noindent
@@ -274,7 +275,7 @@ Additionally, the bounds given in Theorem
 tight to within a factor of two 
 for the following class of divisors. Consider
 a divisor 
-$ D = \sum_{i=0}^n\frac{p_i}{2q_i}H_i \in \bq \otimes_\bq \di \bp^m$
+$ D = \sum_{i=0}^n\frac{p_i}{2q_i}H_i \in \bq \otimes_\bz \di \bp^m$
 such that $H_i$ are hyperplanes,  
 $q_i$ are pairwise coprime integers, and $p_i$ are chosen
 so that $\deg D = \frac{1}{2 \prod_{i=0}^n}q_i$. Further,
@@ -291,7 +292,8 @@ $R_{\pi^*D}$. Finally, since restriction map
 $R_D \rightarrow R_{\pi^*D}$ induced by the restriction maps
 on cohomology $H^0(\bp^m, dD) \rightarrow H^0(\bp^1, \pi^*(dD))
 \cong H^0(\bp^1, d\pi^* D)$ are surjective, we obtain that
-the bounds for the generators and relations of $R_D$ also
+the bounds for the generators and relations of $R_D$ given in
+Theorem ~\ref{thm:proj-generators-relations} also
 agree with the degree of generation and relations 
 to within a factor of two.
  \end{rem}
@@ -315,7 +317,7 @@ projective space was also implicitly used in Theorems
 \begin{restatable}{thm}{hirzrestate}
 \label{thm:hirz-generators-relations}
 Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq
-\otimes_\bq \di \hirz_m$ 
+\otimes_\bz \di \hirz_m$ 
 where $\alpha_i = \frac{c_i}{k_i}$.
 Let $u,v,z,w$ be the coordinates for the Hirzebruch surface
 $\hirz_m$, as described at the beginning of Section
@@ -363,24 +365,25 @@ We will use $m \in \bz$ to index the dimension of a given projective
 space $\bp^m$ or the type of the Hirzebruch surface $\hirz_m$.
 Let $D$ be a (Weil) $\bq$-divisor of the form
 \begin{align*}
-	D = \sum_{i=1}^{n}\alpha_i D_i \in \di X \otimes \bq.
+	D = \sum_{i=1}^{n}\alpha_i D_i \in \bq \otimes_\bz \di X.
 \end{align*}\noindent
 where $n \in \bz$ indexes the number of irreducible divisors in 
 the above expansion of $D$, $\alpha_i \in \bq$, and $D_i \in \di X$ is an integral
 codimension 1 closed subscheme of $X$. When it is convenient to do
 so, we shall sometimes start the indexing at $0$, so that $i$ runs
-from $0$ to $n$. Define the degree of $D$ by $\deg D \colon =
-\sum_{i=1}^{n}\alpha_i \cdot \deg D_i$. For such a divisor $D$ with $\alpha_i =
+from $0$ to $n$. For such a divisor $D$ with $\alpha_i =
 \frac{c_i}{k_i}$ let $\ell_i = \lcm_{j\ne i}(k_j)$
-and let $\ell_{i,j} = \lcm_{h\ne i,j}(k_h).$ The floor of a $\bq$-divisor $D$ is a divisor $\lfloor D
-\rfloor \in \di X$ is defined to be $\lfloor D \rfloor \colon = \sum_{i = 1}^{n}
-\lfloor \alpha_i \rfloor P_i$. Let $
-	R_D \colon = \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)$
+and let $\ell_{i,j} = \lcm_{h\ne i,j}(k_h).$ In the case $X = \bp^m$, define the degree of $D$ by $\deg D :=
+\sum_{i=1}^{n}\alpha_i \cdot \deg D_i$. The floor of a $\bq$-divisor $D$ is a divisor $\lfloor D
+\rfloor \in \di X$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
+\lfloor \alpha_i \rfloor D_i$. Let $
+	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)$
 denote the canonical ring associated to the $\bq$-divisor $D$. If $R$
 is a graded ring, we denote the $d$th graded component of $R$ by $R_d$. If $r$ is a rational number, we let
-$\fr(r) \colon = r - \lfloor r
+$\fr(r) := r - \lfloor r
 \rfloor$ denote the fractional part of $r$. Throughout, we
-shall work over a fixed base field $\bk$.
+shall work over a fixed base field $\bk$. If $D \in \bq \otimes_\bz
+\di X$ is an arbitrary divisor, we denote $h^0(X, D) := \dim_\bk H^0(X,D)$.
 
 
 \section{Canonical Rings of Projective Space}
@@ -461,31 +464,31 @@ form a basis of degree $\deg \lfloor d  D \rfloor$ rational functions.
 \label{ssec:proj-one-point}
 
 In this subsection, we restrict attention to the case of effective
-fractional divisors $D \in \bq \otimes \di \bp^m$. We give an explicit presentation of the canonical ring when $D$ is an effective
+fractional divisors $D \in \bq \otimes_\bz \di \bp^m$. We give an explicit presentation of the canonical ring when $D$ is an effective
 divisor.
 
 \begin{convention}
 Let $\bp^m \cong \proj \bk[x_0, \ldots, x_m]$. Let
 $\vec{v} = (v_0, \ldots, v_m) \in \bz^{m + 1}$.  Then write
 \[
-	x^{\vec{v}} \colon = \prod_{i = 0}^{m} x_i^{v_i}.
+	x^{\vec{v}} := \prod_{i = 0}^{m} x_i^{v_i}.
 \]
 \end{convention}
 
 \begin{defn}
 \label{defn:vec-sum}
-For $\vec{v} \in \bz^n$, denote $\deg \vec{v} \colon = \sum_{i = 0}
+For $\vec{v} \in \bz^n$, denote $\deg \vec{v} := \sum_{i = 0}
 ^n v_i$.
 For a given sequence of numbers $c_0, \ldots, c_r$, (which
 we will later take to be the best lower approximations
 for a certain divisor) let 
 \begin{align*}
-	\mss_i \colon = \left \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
+	\mss_i := \left \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
 \deg \vec v = c_i \right\}.	
 \end{align*}
 
 \noindent
-.\end{defn}
+\end{defn}
 
 Next, we define an ordering on these vectors, which will be used to give a presentation for $R_D$. Although it is not
 stated explicitly later, in the case that $D = \alpha_0 D_0$ is supported on a single hypersurface, the relations in
@@ -511,8 +514,8 @@ The statement and proofs are natural generalizations of
 \begin{thm}
 \label{thm:proj-one-point}
 Let $\bp^m \cong \proj \bk [x_0, \ldots, x_m].$ Let $D' \in \bq
-\otimes \di \bp^m$ and $D = D' + \alpha H$, with $\alpha =
-\frac{p}{q} \in \bq_{>0}$ and $H \colon = V(x_k)$ a hyperplane of $\bp^m$.
+\otimes_\bz \di \bp^m$ and $D = D' + \alpha H$, with $\alpha =
+\frac{p}{q} \in \bq_{>0}$ and $H := V(x_k)$ a hyperplane of $\bp^m$.
 Let
 \[
 	0 = \frac{c_0}{d_0} <
@@ -523,12 +526,12 @@ Let
 be the best lower approximations of $\alpha$. Then, the
 canonical ring
 \[
-	R_D \colon = \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
+	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
 \]
 
 \noindent
 has a minimal presentation over $R_{D'}$ consisting of the $\sum_{i = 0}^{r}
-{{m + c_i - 1} \choose {c_i}}$ generators $F_i^{\vec{v}} \colon = \frac{u^{d_i}
+{{m + c_i - 1} \choose {c_i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
 x^{\vec{v}}}{x_k^{c_i}}$ where $0 \leq i \leq r$, $\vec{v} \in \bz_{\geq 0}^{m + 1}$
 with $\deg \vec v = c_i$. Furthermore, it has
 relations generated by the following two classes of elements.
@@ -645,7 +648,7 @@ Next, we show that the relations given in the statement of the theorem generate 
 In particular, if $j \geq i + 2$ then $F_i^{\vec{v}} F_j^{\vec{w}}$
 has a decomposition of the form ~\eqref{eqn:one-point-canonical-form} of 
 products of generators in adjacent degrees where $h$
-depends on $i$ and $ j$, so we notate $h_{i, j} \colon = h \in \{1, \ldots, r\}$. We 
+depends on $i$ and $ j$, so we notate $h_{i, j} := h \in \{1, \ldots, r\}$. We 
 also have that $i \leq h_{i, j} < j$ since $(d_i + d_j, c_i + c_j)$ is in the
 $\bz_{\geq 0}$-span of $(d_{h_{i, j}}, c_{h_{i, j}})$ and
 $(d_{h_{i, j} + 1}, c_{h_{i, j} + 1})$. Furthermore,
@@ -728,9 +731,9 @@ relations.
 We proceed by induction on $n$.
 If $n = 0$, i.e.~ $D = 0$, then we are done.
 Now, we inductively add hypersurfaces.
-Let $D' = \sum_{i = 0}^{n} \alpha_i D_i \in \bq \otimes_\bq\di \bp^m$, 
+Let $D' = \sum_{i = 0}^{n} \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$, 
 and assume the theorem holds for $D'$. It suffices to show
-the theorem holds for $D \in \di \bq \otimes_\bq \bp^m$, where $D = D' + \alpha C$ for some
+the theorem holds for $D \in \di \bq \otimes_\bz \bp^m$, where $D = D' + \alpha C$ for some
 degree $\pdeg$ hypersurface $C$.
 If $C$ were a hyperplane, we would then be done, by Theorem ~\ref{thm:proj-one-point}.
 
@@ -763,9 +766,9 @@ Note that the proof of Theorem ~\ref{thm:proj-effective-intro} not only gives bo
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
 
 
-We now offer bounds on generators and relations of $R_D$ for a general $\bq$-divisor $D \in \bq \otimes_\bq \di \bp^m$.
+We now offer bounds on generators and relations of $R_D$ for a general $\bq$-divisor $D \in \bq \otimes_\bz \di \bp^m$.
 
-Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes \di \bp^m$ and let $f_i$ be
+Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ and let $f_i$ be
 homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$
 $\deg(f_i) = a_i$ for all $i$. 
 
@@ -792,11 +795,11 @@ has generators in degree $2$ and $3$ which can be written as $u^2
 \frac{x_1}{x_0}, u^3 \frac{x_1}{x_0}.$ In fact, for all degrees
 less than $5$, the elements of $R_D$ can all be expressed as
 rational functions in $x_0, x_1$. However, in degree $6$, there is
-$u^6 \frac{x_1^2 x_2}{x_0^3}$. Since this
+$u^6 \cdot \frac{x_1^2 x_2}{x_0^3}$. Since this
 involves $x_2$, it must be a generator.
 
 This example generalizes slightly to any divisor of the form $D =
-\frac{1}{k}H_0 - \frac{1}{k+1}H_1 \in \di \bp^2 \otimes \bq,$ with
+\frac{1}{k}H_0 - \frac{1}{k+1}H_1 \in \bq \otimes_\bz \di \bp^2,$ with
 $k \in \bn$, showing that there will always exist a generator in
 degree $k(k + 1)$.
 
@@ -804,7 +807,7 @@ This example further generalizes to the following situation:
 Suppose 
 \[
 	D = \sum_{i=0}^{n} \frac{\num_i}{\den_i}D_i \in \di \bp^m
-\otimes \bq,
+\otimes_\bz \bq,
 \]
 where $\deg D_i = \bida_i$ and $\deg D = \frac{1}{\lcm
 _{0 \leq i \leq n}(\den_i \cdot \bida_i)}$. Then, if $D_i = V(f_i)$
@@ -890,7 +893,7 @@ the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$.}
 Let $n \in \bz,$ let $\alpha_0, \ldots, \alpha_n \in \bq$, and let
 $a_i, b_i \in \bz$ with $0 \leq i \leq n.$ Define
 \begin{align*}
-	\Sigma \colon = \left \{(d, c_0, \ldots, c_n) \in \bz^{n + 2} \colon c_i \geq -
+	\Sigma := \left \{(d, c_0, \ldots, c_n) \in \bz^{n + 2} \colon c_i \geq -
 	d \alpha_i, 0 \leq i \leq n \text{ and } \sum_{i = 0}^{n} a_i =
 	\sum_{i	= 0}^{n}b_i = 0 \right \}.
 \end{align*}
@@ -912,21 +915,21 @@ written in a canonical form
 \end{equation}
 
 \noindent
-with $\zeta_1, \ldots, \zeta_t \in \bz_{\geq 0}$ $0 \leq s_i < 1$, and $\lambda = \sum_{i = 0}^{r} s_i e_i$ 
+with $\zeta_1, \ldots, \zeta_t \in \bz_{\geq 0}$, $0 \leq s_i < 1$, and $\lambda = \sum_{i = 0}^{r} s_i e_i$ 
 so that the
 first coordinate of $\lambda$ is less than $\sum_{i=0}^{t}\pdeg_i$.
 \end{prop}
 
 \begin{proof}
 By assumption, $\sigma \in \Sigma$ can be written as $\sigma = \sum_
-{i = 0}^{t} r_i e_i$ with $r_i \in \bq$. Let $\fr(r) \colon = r - \lfloor r
+{i = 0}^{t} r_i e_i$ with $r_i \in \bq$. Let $\fr(r) := r - \lfloor r
 \rfloor$ denote the fractional part of $r$. Let $\lambda = \sum_{i = 0}
 ^{t} \fr(r_i)$. Whence, we can write $\sigma = \lambda + \sum_{i = 0}
 ^{t} \lfloor r_i \rfloor e_i.$ Consequently, $\sigma$ lies in the
 $\bz_{\geq 0}$ span of $\lambda, e_0, \ldots, e_t$, which all have
-first coordinate less than $\sum_{i=0}^{t} r_i$. Ergo, $\Sigma$ is
+first coordinate less than $\sum_{i=0}^{t} \pdeg_i$. Ergo, $\Sigma$ is
 generated by elements whose first coordinate is less than
-$\sum_{i = 0}^{t} r_i$.
+$\sum_{i = 0}^{t} \pdeg_i$.
 \end{proof}
 
 By Proposition ~\ref{prop:cone-generation}, in order to bound
@@ -935,7 +938,7 @@ the degrees of extremal rays of an associated cone. We now carry out
 this strategy.
 
 \begin{lem} \label{lem:proj-generators}
-Let $D = \sum_{i=0}^{n} \alpha_i D_i \in \bq \otimes \di \bp^m,$ where
+Let $D = \sum_{i=0}^{n} \alpha_i D_i \in \bq \otimes_\bz \di \bp^m,$ where
 $\deg D_i = \bida_i$, $\alpha_i = \frac{c_i}{k_i}\in \bq$, and
 $\ell_i = \lcm_{j \neq i} (k_j)$. Then, $R_D$ is generated in degrees at most $\sum_{i=0}^n \ell_i \bida_i.$
 
@@ -979,7 +982,7 @@ by
 \label{eqn:factor-through-semigroup-ring}
 \begin{tikzcd}[baseline=(current  bounding  box.center)]
 \bk[w_1,\ldots, w_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
-w_i \ar r & u^{d_i}z_0^{c_{i0}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_0^{c_{i0}} \cdots f_n^{c_{in}}.
+w_i \ar[mapsto]{r} & u^{d_i}z_0^{c_{i0}} \cdots z_n^{c_{in}} \ar[mapsto]{r} & u^{d_i}f_0^{c_{i0}} \cdots f_n^{c_{in}}.
 \end{tikzcd}
 \end{equation}
 
@@ -988,7 +991,7 @@ generators for $\ker \phi$, which is the same as the degree of relations
 of $R_D$, is bounded by the maximum of the degree of generators for
 $\ker \chi$ and for $\ker \psi$.
 In Lemma ~\ref{lem:bound-ker-chi}, we bound the degree of generation of
-$\ker \chi $ and we bound the degree of generation of $\ker \psi$ in Lemma ~\ref{lem:proj-relations-psi}
+$\ker \chi $, and we bound the degree of generation of $\ker \psi$ in Lemma ~\ref{lem:proj-relations-psi}
 
 \begin{lem}
 \label{lem:composite-map}
@@ -1037,11 +1040,11 @@ is generated in degrees at most $2(\sum_{i=0}^{t}d_i-1)$.
 Since $e_0, \ldots, e_t$ are extremal rays, by Proposition
 ~\ref{prop:cone-generation}, every element $\sigma \in \Sigma$ can be written
 in a canonical form $\lambda + \sum_{i=0}^{t} \zeta_i e_i$. Now, let
-$\lambda_0 \colon =
+$\lambda_0 :=
 0,\lambda_1, \ldots, \lambda_r$ be all elements of $\Sigma$ which
 can be
-written in the form $\lambda_j = \sum_{i=0}^{t}\zeta_i e_i$ with $0
-\leq \zeta_i < 1.$ Then, for any $1 \leq j \leq k \leq r,$ we can write $\lambda_j + \lambda_k$ in
+written in the form $\lambda_j = \sum_{i=0}^{t}s_i e_i$ with $0
+\leq s_i < 1.$ Then, for any $1 \leq j \leq k \leq r,$ we can write $\lambda_j + \lambda_k$ in
 the above canonical form, yielding a relation in degree at most $\deg \lambda_j
 + \deg \lambda_k\leq 2 \cdot \left( \sum_{i=0}^{t}d_i -1 \right).$
 Furthermore, these relations generate all relations, as one can apply a
@@ -1051,7 +1054,7 @@ $\sigma = \lambda + \sum_{i=0}^{t}\zeta_i e_i$ as in Equation
 \end{proof}
 \begin{lem}
 \label{lem:proj-relations-psi}
-Let $D = \sum_{i=0}^{n} \alpha_i D_i \in \bq \otimes \di \bp^m,$ where
+Let $D = \sum_{i=0}^{n} \alpha_i D_i \in \bq \otimes_\bz \di \bp^m,$ where
 $\deg D_i = \bida_i$, $\alpha_i = \frac{c_i}{k_i}\in \bq$, and
 $\ell_i = \lcm_{j \neq i} (k_j)$. Define $\Sigma$ as in Equation
 ~\eqref{eqn:Sigma-defn} and $\psi$ as ~\eqref{eqn:factor-through-semigroup-ring}. Then, $\ker \psi$ is generated in degrees at most
@@ -1149,7 +1152,8 @@ The aim of this section is to prove Theorem
 generators and relations of the canonical ring of a $\bq$-divisor
 on any Hirzebruch surface.
 
-One way to describe the Hirzebruch surface $\hirz_m$ is as a quotient
+One way to describe the Hirzebruch surface $\hirz_m$ is as a
+quotient,
 \[
 \hirz_m \cong (\ba^2 \setminus \{0\}) \times (\ba^2 \setminus \{0\})/\mathbb G_m \times \mathbb G_m
 \]
@@ -1175,7 +1179,7 @@ for which both of its bi-degrees are positive. We now justify this
 restriction. If either of the bi-degrees of $D$ are negative,
 then the canonical ring is concentrated in degree 0. If one of the
 bi-degrees is 0, say the first one is 0, then $R_D$ is isomorphic
-to $R_{D'}$, where $D' \in \bq \otimes_\bq \di \bp^1$, 
+to $R_{D'}$, where $D' \in \bq \otimes_\bz \di \bp^1$, 
 where $D'$ can be written as a sum of divisors whose degrees
 are multiples of the second bi-degree of $D$. Since the case of
 $\bp^1$ has already been analyzed in \cite{dorney:canonical}, we
@@ -1221,7 +1225,7 @@ and
 \label{lem:hirz-generators}
 For $D = \sum_{i=1}^{n} \frac{c_i}{k_i}D_i \in \di \bq \otimes_\bz \hirz_m$, with $\deg D_i = (\bida_i, \bidb_i), \ell_i = \lcm_{j\neq i} (k_j), \ell_{i,j} = \lcm_{h \neq i,j} (k_h).$ Then, the canonical ring $R_D$ is generated in degrees at most
 \begin{equation}\label{eqn:def-sigma}
-	\rho \colon = \sum_{i \in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{\substack
+	\rho := \sum_{i \in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{\substack
 	{i \in \Tp(D) \\ j\in \Tm(D)}} (\bida_i \bidb_j - \bida_j \bidb_i)
 	\ell	_{i,j}.
 \end{equation}
@@ -1259,14 +1263,14 @@ which
 has extremal rays given by
  
 \[
-	\epsilon_i \colon = \left(1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i}
+	\epsilon_i := \left(1, -\alpha_1, \ldots, -\alpha_{i-1}, \frac{\sum_{j \ne i}
 	\alpha_j (\bida_j + \bidb_j)}{\bida_i + \bidb_i}, -\alpha_{i + 1},
 	\ldots, -\alpha_n \right).
 \]
 for $1 \leq i \leq n$.
 
 Let $\Sigma_1 \otimes_\bz \bq$ be the $\bq_{\ge 0}$ span of $\epsilon_1, \ldots \epsilon_n$.
-We can intersect $\Sigma_1 \otimes_\bz \bq$ with the hyperplane $H \colon =
+We can intersect $\Sigma_1 \otimes_\bz \bq$ with the hyperplane $H :=
 V(\sum_{i=1}^n \bida_i x_i)$  to get the subspace $\Sigma \otimes_\bz \bq = H \cap (\Sigma_1
 \otimes_\bz \bq)$.  Then, the extremal rays of $\Sigma$ are precisely the extremal 
 rays of $\Sigma \otimes_\bz \bq$.
@@ -1289,7 +1293,7 @@ For $i \in \Te(D)$, define $e_i \in \bk[\Sigma]$ in degree
 \]
 by 
 \[
-	e_i \colon = d_i \epsilon_i.
+	e_i := d_i \epsilon_i.
 \]
 
 \noindent
@@ -1299,7 +1303,7 @@ For $i \in \Tp(D)$ and $j \in \Tm(D)$, with $i < j$, define $e_{i,j}\in \bk[\Sig
 \]
 by
 \begin{align*}
-e_{i,j} \colon = &\frac{a_j\sum_{k\ne i,j} d_{i,j}\alpha_k b_k - b_j\sum_{k \ne i,j} d_{i,j} \alpha_k a_k}{a_ib_j - b_i a_j} \epsilon_i \\
+e_{i,j} := &\frac{a_j\sum_{k\ne i,j} d_{i,j}\alpha_k b_k - b_j\sum_{k \ne i,j} d_{i,j} \alpha_k a_k}{a_ib_j - b_i a_j} \epsilon_i \\
 &+ \frac{a_i \sum_{k\ne i,j} d_{i,j} \alpha_k b_k - b_i\sum_{k\ne i,j} d_{i,j} \alpha_ka_k}{a_jb_i - b_j a_i} \epsilon_j.
 \end{align*}
 
@@ -1332,7 +1336,7 @@ by
 \[
 \begin{tikzcd}
 	\bk[w_1,\ldots, w_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
-	w_i \ar r & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar r & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
+	w_i \ar[mapsto]{r} & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar[mapsto]{r} & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
 \end{tikzcd}
 \]
 
@@ -1342,9 +1346,9 @@ Finally, we calculate the degree of generation of $\psi$:
 
 \begin{lem}
 \label{lem:hirz-bound-ker-psi}
-$\ker \psi$ is generated in degrees less than
+Let $\rho$ be as in Equation ~\eqref{eqn:def-sigma}. Then, $\ker \psi$ is generated in degrees less than
 \[
-	\tau \colon = \rho
+	\tau := \rho
 	+ \max \left(\max_{i\in \Te}(\ell_i \gcd(a_i, b_i)), \max_{\substack{
 	i \in	\Tp \\ j\in \Tm}} (\ell_{i,j} (\bida_i \bidb_j - \bida_j \bidb_i))
 	\right).
@@ -1384,19 +1388,21 @@ monomials appearing in the relation $u^d(z_i - \beta_i)\prod_{j=1}^n z_j^{c_j}$,
 that we can simultaneously factor out of all monomials.
 
 
-Consider a relation $u^d(z_i - \beta_i)\prod_{j=1}^n z_j^{c_j}$ and let it correspond to the lattice point $\sigma\colon = (d, c_1, \ldots, c_{i-1}, c_{i}+1, c_{i+1}, \ldots, c_n) \in \Sigma$.
+Consider a relation $u^d(z_i - \beta_i)\prod_{j=1}^n z_j^{c_j}$ and
+let it correspond to the lattice point $\sigma := (d, c_1, \ldots,
+c_{i-1}, c_{i}+1, c_{i+1}, \ldots, c_n) \in \Sigma$.
 Then we can write $\sigma$ as a sum of $s_j e_j$'s for $j\in
 \Te$ and $s_{j,k}e_{j,k}$ for $j\in \Tp, k\in \Tm$.  
-For convenience, define $d_j \colon = \deg e_j$ (when it exists) and let the $j^{th}$
-component of $e_j$ be $-\alpha_j d_j + \kappa_j$ for some $\kappa_j \in \bq$. Also, let $d_{j,k} \colon = \deg e_{j,k}$ (when it exists) and let the $j^{th}$ component of $e_{j,k}$ be $-\alpha_j d_{j,k} + \kappa_{j,k}'$ and the $k^{th}$
+For convenience, define $d_j := \deg e_j$ (when it exists) and let the $j^{th}$
+component of $e_j$ be $-\alpha_j d_j + \kappa_j$ for some $\kappa_j \in \bq$. Also, let $d_{j,k} := \deg e_{j,k}$ (when it exists) and let the $j^{th}$ component of $e_{j,k}$ be $-\alpha_j d_{j,k} + \kappa_{j,k}'$ and the $k^{th}$
 component be $-\alpha_k d_{j,k} + \kappa_{j,k}''$ for $\kappa_{j,k}', \kappa_{j,k}'' \in \bq$.
 
 Since $u^d (z_i - \beta_i)\prod_{j=1}^n z_j^{c_j}$ is a relation, each monomial of it must be an element of $\Sigma$. This implies that $s_i\kappa_i\ge 1$, $\sum_{j\in \Tm} s_{i,j}\kappa_{i,j}' \ge 1$, and $\sum_{j\in \Tp} s_{i,j}\kappa_{j,i}'' \ge 1$ if $i\in \Te$, $i\in \Tp$, and $i\in \Tm$ respectively.
 
-If $i\in \Te$ define $r_i \colon = \frac{1}{\kappa_i}$.  If $i\in \Tp$ choose $r_{i,j}\in \bq_{\ge 0}$ for all $j\in \Tm$ such that $\sum_{j\in \Tm} r_{i,j}\kappa_{i,j}' = 1$; similarly, if $i\in \Tm$ choose $r_{j,i}\in \bq_{\ge 0}$ for all $j\in \Tp$ such that $\sum_{j\in \Tm} r_{j,i}\kappa_{j,i}'' = 1$.  For $j\ne i$, define $r_j \colon = 0.$ For all pairs $(j,k)$ so that $j \neq i$ and $k \neq i$ define $r_{j,k} \colon = 0$.
+If $i\in \Te$ define $r_i := \frac{1}{\kappa_i}$.  If $i\in \Tp$ choose $r_{i,j}\in \bq_{\ge 0}$ for all $j\in \Tm$ such that $\sum_{j\in \Tm} r_{i,j}\kappa_{i,j}' = 1$; similarly, if $i\in \Tm$ choose $r_{j,i}\in \bq_{\ge 0}$ for all $j\in \Tp$ such that $\sum_{j\in \Tm} r_{j,i}\kappa_{j,i}'' = 1$.  For $j\ne i$, define $r_j := 0.$ For all pairs $(j,k)$ so that $j \neq i$ and $k \neq i$ define $r_{j,k} := 0$.
 Define $E$ by
 \begin{equation}\label{eqn:hirz-E-translation}
-	E \colon = \sum_{j\in \Te} (s_j - \lfloor s_j - r_j \rfloor) e_j + \sum_{\substack{j \in 
+	E := \sum_{j\in \Te} (s_j - \lfloor s_j - r_j \rfloor) e_j + \sum_{\substack{j \in 
 	\Tp \\ k \in \Tm}} (s_{j,k} - \lfloor s_{j,k} - r_{j,k} \rfloor) e_{j,k}.
 \end{equation}
 
@@ -1416,7 +1422,7 @@ bound given in Equation ~\eqref{eqn:e-bound}, the $\rho$ term corresponds to the
 
 Define
 \[
-	\lambda \colon = \sigma - E = \sum_{j\in \Te} (\lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} ( \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}\in \Sigma.
+	\lambda := \sigma - E = \sum_{j\in \Te} (\lfloor s_j - r_j\rfloor) e_j + \sum_{\substack{j\in \Tp \\ k\in \Tm}} ( \lfloor s_{j,k} - r_{j,k}\rfloor)e_{j,k}\in \Sigma.
 \]
 
 Let $M_i$ be the set of monomials terms of $\beta_i = \beta_i(z_1, \ldots z_4)$.  Let $\mu = \prod_{j=1}^4
@@ -1432,7 +1438,7 @@ Define
 From the definitions, $E_\mu$ lies in $\Sigma$ 
 and has the same degree as $E$.
 
-Finally, by construction, $E - \sum_{\mu \in M_i} E_\mu \in \ker \psi$ and
+By construction, $E - \sum_{\mu \in M_i} E_\mu \in \ker \psi$ and
 divides $u^d(z_i - \beta_i) \prod_{j = 1}^n z_j^{c_j}$. 
 Furthermore, we have already bounded $\deg(E)$ in Equation ~\eqref{eqn:e-bound}.
 Finally, recall $\ker \psi$ is generated by relations of the form $u^d(z_i - \beta_i) \prod_{j = 1}^n z_j^{c_j}$ as
