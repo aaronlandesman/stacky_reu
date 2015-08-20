@@ -215,7 +215,9 @@ rings of Hilbert and Siegel modular forms.
 
 In Section \ref{sec:proj} we prove the following two results bounding
 the degree of generators and relations of
-stacky canonical rings on $\bp^m$:
+stacky canonical rings on $\bp^m$. The first applies
+to effective $\bq$-divisors and the second applies to arbitrary
+$\bq$-divisors.
 \begin{restatable}{thm}{restateeffective}
 \label{thm:proj-effective-intro}
 Let $D = \sum_{i = 0}^{n} \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$, with $\alpha_i =
@@ -234,11 +236,15 @@ relations generated in degrees at most $2 \max_{0 \leq i \leq n}{k_i}$.
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
 Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$
-as in Theorem ~\ref{thm:proj-effective-intro}. Write $\ell_i := \lcm
-_{j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m \cong \proj
-\bk[x_0, \ldots, x_m]$. Now suppose that $f_0, \ldots, f_n$ contain
-$m$ independent linear polynomials in $x_0, \ldots, x_m$ (with possibly
-zero coefficients $\alpha_j$).
+with $\alpha_i = \frac{c_i}{k_i}\in \bq.$ Let $\bp^m \cong
+\proj \bk[x_0,\ldots, x_m]$ with
+$f_0, \ldots, f_n \in \bk[x_0, \ldots, x_m]$ such that
+for $1 \leq i \leq n$ we have $D_i = V(f_i)$ and $\deg(f_i) = a_i.$
+Further, after reordering the terms of $D$, and possibly adding in
+$D_i$ with coefficient $\alpha_i = 0$, assume that $f_0,\ldots, f_m$ are independent linear
+polynomials in $x_0, \ldots, x_m$. 
+Define 
+\[\ell_i = \lcm_{j\ne i}(k_j).\] 
 
 Then $R_D$ is generated in degrees at most 
 \[
@@ -293,7 +299,7 @@ weighted action, as is done in the
 beginning of Section \ref{sec:hirz}.
 Note that Hirzebruch surfaces are regular, normal,
 and locally factorial, being $\bp^1$-bundles over
-$\bp^1$. Therefore,, the natural map from Cartier
+$\bp^1$. Therefore, the natural map from Cartier
 divisors to Weil divisors is an isomorphism.
 In other words, all Cartier divisors arise as the zero locus
 of a section of some line bundle. We implicitly use this in the
@@ -702,7 +708,7 @@ canonical ring of a general $\bq$-divisor supported on two
 hyperplanes cannot be bounded so tightly. The two-point
 $\bp^1$ result leverages the fact that $\bp^1$ has precisely two
 independent coordinates, so that two distinct integral subschemes
-cannot repreesnt equations of only $m$ of the $m+1$ coordinates.
+cannot represent equations of only $m$ of the $m+1$ coordinates.
 \end{rem}
 
 Theorem ~\ref{thm:proj-one-point} gives an inductive procedure to
