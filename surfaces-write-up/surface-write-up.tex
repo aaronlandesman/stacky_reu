@@ -1015,20 +1015,13 @@ is at most the maximum of the minimal degree of generation of $\ker \chi$ and
 the minimal degree of generation of $\ker \psi$.
 \end{lem}
 \begin{proof}
-First, we show there is an exact sequence
+The proof follows by examining the exact sequence
 \[
 \begin{tikzcd}
 0 \ar {r} & \ker \chi \ar{r}{\rho} & \ker \phi \ar {r}{\tau} & \ker \psi \ar r & 0.
 \end{tikzcd}
 \]
-To see this, note that $\rho$ is injective and $\tau$ is surjective\ because
-$\phi = \chi \circ \psi$. Additionally, $\tau \circ \rho = 0$ by definition of
-the kernel of $\chi$. Finally, if $a \in\ker \tau$, then by definition $\chi(a)
-= 0,$ so $a \in \im \rho$.
-
-This shows that lifts of generators of $\ker \psi$ together with images of
-generators of $\ker \chi$ generate all of $\ker \phi,$ as desired. 
-\end{proof}\todo{Peter: Maybe we can get rid of most of this proof, and replace it with: ``The proof follows by examining the exact sequence $0 \to \ker\chi \to \ker \phi \to \ker \psi \to 0$.''  I don't think it is necessary to prove why this is an exact sequence, as it is taught in a first commutative algebra course.}
+\end{proof}
 
 \begin{lem}
 \label{lem:bound-ker-chi}
@@ -1049,7 +1042,7 @@ the above canonical form, yielding a (possibly trivial) relation in degree at mo
 + \deg \lambda_k\leq 2 \cdot \left( \sum_{i=0}^{t}d_i -1 \right).$
 Furthermore, these relations generate all relations, as one can apply a
 sequence of these relations to put any $\sigma \in \Sigma$ into canonical form
-$\sigma = \lambda + \sum_{i=0}^{t}\zeta_i e_i$ from proposition Proposition
+$\sigma = \lambda + \sum_{i=0}^{t}\zeta_i e_i$ from Proposition
 ~\ref{prop:cone-generation}.
 %as in Equation
 %~\eqref{eqn:sigma-canonical-form}.
@@ -1507,15 +1500,15 @@ products of schemes.
 
 \section{Acknowledgments}
 \label{sec:ack}
-We are grateful to David Zureick-Brown for suggesting this problem 
-and for providing invaluable guidance. We also thank Ken Ono and the
+We are grateful to David Zureick-Brown for offering great advice on
+this project, for many useful suggestions on this paper, and for
+many valuable conversations. We would like to thank Ken Ono and the
 Emory University Number Theory REU for arranging our project and
-providing a great environment for mathematical learning and
-collaboration.
-Finally, we gratefully acknowledge the financial support given by
-NSF Grant Award Number 1250467 via the Emory University Number
-Theory REU. We deeply appreciate all of the support that has made
-our work possible.\todo{Peter: Add acknowledgements to a few more peopled - Robin's dad; was there anyone else?}
+for the great support that we have received. We also thank Peter
+Landesman and Shou-Wu Zhang for offering helpful comments and
+insights on this paper. Finally, we would like to acknowledge the
+support of the National Science Foundation (grant number DMS-1250467
+).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
