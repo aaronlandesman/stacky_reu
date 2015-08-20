@@ -28,20 +28,12 @@
 \def\listtodoname{List of Todos}
 \def\listoftodos{\@starttoc{tdo}\listtodoname}
 
-%\addtolength{\oddsidemargin}{-.5 in}
-	%\addtolength{\evensidemargin}{-.4 in}
-	%\addtolength{\textwidth}{1 in}
-%
-	%\addtolength{\topmargin}{0 in}
-	%\addtolength{\textheight}{0 in}
-
 \RequirePackage{color}
 \definecolor{myred}{rgb}{0.75,0,0}
 \definecolor{mygreen}{rgb}{0,0.5,0}
 \definecolor{myblue}{rgb}{0,0,0.65}
 
-%\usepackage{hyperref}
-  %\hypersetup{colorlinks=true,citecolor=blue}
+
 
 \usepackage{tikz}
 \usepackage{tikz-cd}
@@ -126,8 +118,6 @@
 \DeclareMathOperator{\den}{q}
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\Pic}{Pic}
-%\captionsetup[table]{belowskip = 4pt}
-
 \makeatletter
 \newcommand{\customlabel}[2]{%
    \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
@@ -1014,13 +1004,17 @@ Assuming $\chi$ is surjective, the minimal degree of generation of $\ker \phi$
 is at most the maximum of the minimal degree of generation of $\ker \chi$ and
 the minimal degree of generation of $\ker \psi$.
 \end{lem}
+
 \begin{proof}
-The proof follows by examining the exact sequence
+First, note that surjectivity of $\chi$ implies we have an exact sequence
 \[
 \begin{tikzcd}
 0 \ar {r} & \ker \chi \ar{r}{\rho} & \ker \phi \ar {r}{\tau} & \ker \psi \ar r & 0.
 \end{tikzcd}
 \]
+
+This shows that lifts of generators of $\ker \psi$ together with images of
+generators of $\ker \chi$ generate all of $\ker \phi,$ as desired. 
 \end{proof}
 
 \begin{lem}
@@ -1031,7 +1025,7 @@ is generated in degrees at most $2(\sum_{i=0}^{t}d_i-1)$.
 \end{lem}
 \begin{proof}
 Since $e_0, \ldots, e_t$ are extremal rays, Proposition
-~\ref{prop:cone-generation} tells us that every element $\sigma \in \Sigma$ can be written
+~\ref{prop:cone-generation} implies every element $\sigma \in \Sigma$ can be written
 in a canonical form $\lambda + \sum_{i=0}^{t} \zeta_i e_i$ where all $\zeta_i \in \mathbb{Z}_{\ge 0}$.  Let
 $\lambda_0 :=
 0,\lambda_1, \ldots, \lambda_r$ be all elements of $\Sigma$ which
@@ -1044,8 +1038,6 @@ Furthermore, these relations generate all relations, as one can apply a
 sequence of these relations to put any $\sigma \in \Sigma$ into canonical form
 $\sigma = \lambda + \sum_{i=0}^{t}\zeta_i e_i$ from Proposition
 ~\ref{prop:cone-generation}.
-%as in Equation
-%~\eqref{eqn:sigma-canonical-form}.
 \end{proof}
 \begin{lem}
 \label{lem:proj-relations-psi}
@@ -1170,7 +1162,7 @@ for class groups.
 
 Furthermore, similarly to the case of projective space, 
 we will restrict to the case that $D$ is a divisor
-for which both of its bi-degrees are positive \todo{Do we need to specify what we mean by the bi-degrees of a divisor, or will that be apparent to a reader?}. We now justify this
+for which both of its bi-degrees are positive. We now justify this
 restriction. If either of the bi-degrees of $D$ are negative,
 then the canonical ring is concentrated in degree 0. If one of the
 bi-degrees is 0, say the first one is 0, then $R_D$ is isomorphic
@@ -1502,11 +1494,11 @@ products of schemes.
 \label{sec:ack}
 We are grateful to David Zureick-Brown for offering great advice on
 this project, for many useful suggestions on this paper, and for
-many valuable conversations. We would like to thank Ken Ono and the
-Emory University Number Theory REU for arranging our project and
-for the great support that we have received. We also thank Peter
+many valuable conversations. We thank Peter
 Landesman and Shou-Wu Zhang for offering helpful comments and
-insights on this paper. Finally, we would like to acknowledge the
+suggestions for this paper. We also thank Ken Ono and the
+Emory University Number Theory REU for arranging our project and
+for the great support that we have received. Finally, we would like to acknowledge the
 support of the National Science Foundation (grant number DMS-1250467
 ).
 
