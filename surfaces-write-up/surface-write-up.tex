@@ -235,16 +235,17 @@ relations generated in degrees at most $2 \max_{0 \leq i \leq n}{k_i}$.
 
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
-Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$
+Let $D = \sum_{i = 0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$
 with $\alpha_i = \frac{c_i}{k_i}\in \bq$. Write $\ell_i := \lcm
 _{j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m \cong \proj
-\bk[x_0, \ldots, x_m]$. Now suppose that $f_0, \ldots, f_n$ contain
-$m$ independent linear polynomials in $x_0, \ldots, x_m$ \rm(with possibly
-zero coefficients $\alpha_j$\rm).
+\bk[x_0, \ldots, x_m]$ and let each $D_i = V(f_i)$ with $f_i \in \bk[x_0, \ldots, 
+x_m]$. Now suppose that $\{f_0, \ldots, f_n\}$ contains $m + 1$ independent 
+linear polynomials in $x_0, \ldots, x_m$ \rm(with corresponding 
+$\alpha_j$ possibly zero\rm).
 
 Then $R_D$ is generated in degrees at most 
 \[
-	\sum_{i=0}^n \ell_i a_i
+	\sum_{i = 0}^n \ell_i a_i
 \]
 
 \noindent
@@ -305,19 +306,16 @@ projective space was also implicitly used in Theorems
 
 \begin{restatable}{thm}{hirzrestate}
 \label{thm:hirz-generators-relations}
-Let $D = \sum_{i=1}^n \alpha_i D_i \in \bq
-\otimes_\bz \di \hirz_m$ 
-where $\alpha_i = \frac{c_i}{k_i}$.
-Let $u,v,z,w$ be the coordinates for the Hirzebruch surface
+Let $D = \sum_{i = 1}^n \alpha_i D_i \in \bq
+\otimes_\bz \di \hirz_m$ where $\alpha_i = \frac{c_i}{k_i}$.
+Write $\ell_i := \lcm_{j \ne i}(k_j)$.
+Let $u, v, z, w$ be the coordinates for the Hirzebruch surface
 $\hirz_m$, as described at the beginning of Section
-~\ref{sec:hirz}. For $1 \leq i \leq n$, let $D_i =
-V(f_i)$ where $f_i \in \sco(a_i, b_i)$; further, after reordering
-the $D_i$ and possibly adding $D_i$ with corresponding $\alpha_i = 0$, suppose $f_1$ and $f_2$ are
-independent linear
-polynomials in $u$ and $v$ and $f_3$ and $f_4$ are independent
-linear polynomials in $w$ and $x$.
-Define
-\[\ell_{i,j} = \lcm_{h\ne i,j}(k_h).\] 
+~\ref{sec:hirz}. Let each $D_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$.
+Now suppose that $\{f_0, \ldots, f_n\}$ contains two independent 
+linear polynomials in $u, v$ and two independent linear polynomials in
+$w, x$ \rm(with corresponding $\alpha_j$ possibly zero\rm).
+
 Then $R_D$ is generated in degrees at most
 \[
 	\rho = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i +
