@@ -28,20 +28,12 @@
 \def\listtodoname{List of Todos}
 \def\listoftodos{\@starttoc{tdo}\listtodoname}
 
-%\addtolength{\oddsidemargin}{-.5 in}
-	%\addtolength{\evensidemargin}{-.4 in}
-	%\addtolength{\textwidth}{1 in}
-%
-	%\addtolength{\topmargin}{0 in}
-	%\addtolength{\textheight}{0 in}
-
 \RequirePackage{color}
 \definecolor{myred}{rgb}{0.75,0,0}
 \definecolor{mygreen}{rgb}{0,0.5,0}
 \definecolor{myblue}{rgb}{0,0,0.65}
 
-%\usepackage{hyperref}
-  %\hypersetup{colorlinks=true,citecolor=blue}
+
 
 \usepackage{tikz}
 \usepackage{tikz-cd}
@@ -126,8 +118,6 @@
 \DeclareMathOperator{\den}{q}
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\Pic}{Pic}
-%\captionsetup[table]{belowskip = 4pt}
-
 \makeatletter
 \newcommand{\customlabel}[2]{%
    \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
@@ -1045,8 +1035,6 @@ Furthermore, these relations generate all relations, as one can apply a
 sequence of these relations to put any $\sigma \in \Sigma$ into canonical form
 $\sigma = \lambda + \sum_{i=0}^{t}\zeta_i e_i$ from Proposition
 ~\ref{prop:cone-generation}.
-%as in Equation
-%~\eqref{eqn:sigma-canonical-form}.
 \end{proof}
 \begin{lem}
 \label{lem:proj-relations-psi}
