@@ -1,0 +1,364 @@
+\documentclass[landscape, a0, largefonts]{sciposter}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{color}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ytableau}
+\usepackage{verbatim}
+\usepackage[vcentermath]{youngtab}
+\newlabel{fig2:a}{{I(a)}{1}}
+\newlabel{fig2:b}{{I(b)}{1}}
+\newlabel{fig:i}{{II(c)}{1}}
+\newlabel{fig:ii}{{II(d)}{1}}
+\newlabel{fig:iii}{{II(e)}{1}}
+\newlabel{fig3:c}{{III(f)}{1}}
+\newlabel{fig3:d}{{III(g)}{1}}
+\newlabel{fig4:i}{{IV(h)}{1}}
+\newlabel{fig4:ii}{{IV(i)}{1}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\row}{\mathfrak{row}}
+\newcommand{\oh}{\operatorname{outerhook}}
+\newcommand{\col}{\mathfrak{col}}
+\newcommand{\lis}{\mathfrak{lis}}
+\newcommand{\lds}{\mathfrak{lds}}
+\newcommand{\sss}{\scriptstyle} %% for tableaux
+\newcommand{\swap}{\operatorname{swap}}
+\newcommand{\jdt}{\operatorname{jdt}}
+\newcommand{\std}{\operatorname{std}}
+%\usepackage{fancybullets}
+%\usepackage{other packages you may want to use}
+
+
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage{euler}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{caption}
+
+\usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
+\def\listtodoname{List of Todos}
+\def\listoftodos{\@starttoc{tdo}\listtodoname}
+
+\RequirePackage{color}
+\definecolor{myred}{rgb}{0.75,0,0}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{myblue}{rgb}{0,0,0.65}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+%%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%%%%%%%%%%%%%%%%
+
+
+\theoremstyle{plain}
+  \newtheorem{thm}{Theorem}
+  \newtheorem{prop}[thm]{Proposition}
+  \newtheorem{lem}[thm]{Lemma}
+  \newtheorem{cor}[thm]{Corollary}
+	\newtheorem{question}[thm]{Question}
+	
+\theoremstyle{definition}
+  \newtheorem{defn}[thm]{Definition}
+  \newtheorem{example}[thm]{Example}
+	
+\theoremstyle{remark}
+	\newtheorem{rem}[thm]{Remark}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\ssec{\subsection}
+\newcommand\sssec{\subsubsection}
+\newcommand\BH{{\mathbb H}}
+\newcommand\BN{{\mathbb N}}
+\newcommand\BC{{\mathbb C}}
+\newcommand\BR{{\mathbb R}}
+\newcommand\BQ{{\mathbb Q}}
+\newcommand\BP{{\mathbb P}}
+\newcommand\BZ{{\mathbb Z}}
+\newcommand\Bk{{\Bbbk}}
+
+\newcommand\sco{{\mathscr O}}
+
+\newcommand\im{\text{im }}
+\newcommand\proj{\text{Proj }}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\sym}{Sym}
+
+%%%%%%%%%%%%%%%%%%%%% cring custom commands %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator\di{Div}
+\newcommand\sx{\mathscr X}
+\newcommand \subhalf[1]{\frac{{#1} - 1}{2{#1}}}
+\newcommand{\halfcan}{L}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\initial}{in_\prec}
+\DeclareMathOperator{\Eff}{Eff}
+\DeclareMathOperator{\sat}{sat}
+\DeclareMathOperator{\newspan}{span}
+\captionsetup[table]{belowskip = 4pt}
+
+
+%\definecolor{BoxCol}{cmyk}{0.9,0.9,0.9}
+% uncomment for grey background to \section boxes 
+% for use with default option boxedsections
+
+\definecolor{mainCol}{rgb}{1,1,1} %background
+\definecolor{BoxCol}{rgb}{.1,.1,.3} 
+\definecolor{TextCol}{rgb}{0.2,0.5,0.5}
+\definecolor{SectionCol}{rgb}{1,1,1} %section header
+\definecolor{ShadeCol}{rgb}{.9,.95,.9}
+\definecolor{lightpurple}{rgb}{.1,.1,.3} %title box shade
+\definecolor{navy}{rgb}{0.2,0.3,0.5} 	
+\definecolor{white}{rgb}{1,1,1}
+\def\NN{{\mathbb{N}}}
+\def\RR{{\mathbb{R}}}
+\newcommand{\Z}{\mathbb{Z}} 
+%\definecolor{BoxCol}{rgb}{0.9,0.9,1}
+% uncomment for light blue background to \section boxes 
+% for use with default option boxedsections
+ 
+%\definecolor{SectionCol}{rgb}{0,0,0.5}
+% uncomment for dark blue \section text 
+
+
+\title{\vspace{.5cm} \textcolor{white} {Spin Canonical Rings of Log Stacky Curves}}
+
+% Note: only give author names, not institute
+\author{\textcolor{white}{Aaron Landesman, Peter Ruhm, and Robin Zhang}}
+
+%\email[Aaron Landesman]{aaronlandesman@college.harvard.edu}
+
+% insert correct institute name
+\institute{\vspace{-.25cm} \textcolor{white}{Harvard University, Stanford University, Stanford University}}
+
+%\date is unused by the current \maketitle
+
+%\leftlogo[0.9]{nsf_logo.png}  % defines logo to left of title (with scale factor)
+%\rightlogo[1.0]{umnlogo.png} % same but on right
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+%*** facultative: where the poster was presented (appears as a left footer):
+  %\conference{LSU Discover Research Day, 2014, Baton Rouge, LA}
+
+
+%*** print the poster header defined above: title, authors, affiliations:
+ \fbox{\colorbox{lightpurple}{\maketitle}}
+\\
+\\
+  \begin{multicols}{3}
+	  \begin{tcolorbox}
+	  \section*{Abstract}
+
+ 	Consider modular forms arising from a finite-area quotient of the
+	upper-half plane by a Fuchsian group. By the classical results of
+	Kodaira--Spencer, this ring of modular forms may be viewed as the
+	log spin canonical ring of a stacky curve. In this paper, we
+	tightly bound the degrees of minimal generators and relations of
+	log spin canonical rings. As a consequence, we obtain a tight bound
+	on the degrees of minimal generators and relations for rings of
+	modular forms of arbitrary integral weight.
+\end{tcolorbox}
+
+  \section*{\textsc{Notation}}
+  \begin{align*}
+	  \Bbbk & & \text{Perfect Field} \\
+	  \sx & & \text{Stacky Curve} \\
+	  X & & \text{Coarse Space} \\
+	  g & & \text{Genus} \\
+	  \Delta & & \text{Log Divisor} \\
+	  \delta & & \text{Degree of Log Divisor} \\
+	  P_1, \ldots, P_r \in \text{Spec } X & & \text{Stacky Points} \\
+	  e_1, \ldots, e_r \in \BZ_{\geq 2}  & & \text{Stacky Orders} \\
+	  (g; e_1,\ldots, e_r; \delta) & & \text{Signature} \\
+	\lfloor \sum_{i=1}^n \alpha_i P_i \rfloor := \sum_{i=1} \lfloor \alpha_i\rfloor P_i & & \text{Floor of a Stacky Divisor} \\
+	K_X & & \text{Canonical Divisor of Coarse Space} \\
+	K_\sx := K_X + \sum_{i=1}^n \frac{e_i-1}{e_i} P_i & & \text{Canonical Divisor of Stacky Curve} \\
+	(\sx, \Delta, L), 2L \sim K_\sx + \Delta & & \text{Log Spin Curve} \\
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor) & & \text{Log Spin Canonical Ring}
+  \end{align*}
+
+  \section*{\textsc{Introduction}}
+
+  
+Let $X$ be a smooth proper geometrically-connected algebraic curve of genus $g$ over a field $\Bk$.
+It is well known that the canonical sheaf $\Omega _X,$ with
+associated canonical divisor $K_X$, determines the {\bf canonical
+map } $\pi: X \rightarrow \BP_\Bk^{g - 1}$. Then, the {\bf canonical
+ring} is defined to be
+\begin{align*}
+	R(X, K_X) := \bigoplus_{d \geq 0} H^0(X, dK_X),
+\end{align*}
+
+\noindent
+with multiplication structure corresponding to tensor product of
+sections. In the case that $g \geq 2$, $\Omega_X$ is ample and
+therefore $X \cong \proj R$. When $g \geq 2$, Petri's theorem 
+shows that, in most cases, $R(X, K_X)$
+is generated in degree 1 with relations in degree 2 (see
+Saint-Donat \cite[p. 157]{saint-donat:proj} and Arbarello--Cornalba--Griffiths--Harris
+\cite[Section 3.3]{acgh:algebraic-curves}). This has the pleasant 
+geometric consequence that canonically embedded curves of genus $\geq 4$ which are not hyperelliptic curves, trigonal curves, or plane quintics are scheme-theoretically cut out by degree 2 equations.
+
+Our main theorem is to bound the degrees of generators and
+relations of a log spin canonical ring. In 
+~\cite[Theorem 1.4]{vzb:stacky}, Voight and Zureick-Brown tightly
+bounde the degree of generation and
+relations of a log spin canonical ring.
+
+
+
+  \section*{\textsc{Main Result}}
+
+
+\begin{thm}
+\label{thm:main}
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
+field $\Bk$, so that $\sx$ has signature $\sigma = (g; e_1, \ldots,
+e_r; \delta)$.
+
+Then the log spin canonical ring is generated as a $\Bk$-algebra by 
+elements of degree at most $e := \max(5, e_1, \ldots, e_r)$ with
+relations generated in degrees at most $2e$,
+so long as $\sigma$ does not lie in a finite list of exceptional
+cases, as given in Table ~\ref{table:g-1-exceptional} for
+signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional} for
+signatures with $g = 0$.
+\end{thm}
+{\bf Proof idea:} First, check this holds when $\Delta \in \di X$,
+either by hand in $g = 0, 1$ or by 
+\cite[$\mathsection$ 6]{milnor:fractional-weight} when $g \geq 2$.
+Then, inductively add in fractional points, showing that if
+it holds for a given divisor $\Delta$ it holds for
+$\Delta + \frac{e-1}{2e}P$.
+
+
+\begin{table}
+\captionsetup{type=figure}
+\begin{center}
+\begin{tabular}
+	{| c || c | c | c |}
+	\hline
+	Signature $\sigma$ & Generator Degrees & Degrees of Relations & $e$ \\
+	\hline
+	\hline
+
+	$(0; 3, 3, 3; 0)$ & $\{3\}$ & $\emptyset$ & $5$ \\	\hline
+
+	$(0; 3, 3, 5; 0)$ & $\{3, 10, 15\}$ & $\{30\}$ & $5$ \\	\hline
+	
+	$(0; 3, 3, 7; 0)$ & $\{3, 7, 12\}$ & $\{24\}$ & $7$ \\	\hline
+	
+	$(0; 3, 3, 9; 0)$ & $\{3, 7, 9\}$ & $\{21\}$ & $9$ \\	\hline
+	
+	$(0; 3, 5, 5; 0)$ & $\{3, 5, 10\}$ & $\{20\}$ & $5$ \\	\hline
+	
+	$(0; 3, 5, 7; 0)$ & $\{3, 5, 7\}$ & $\{17\}$ & $7$ \\	\hline
+	
+	$(0; 5, 5, 5; 0)$ & $\{3, 5, 5\}$ & $\{15\}$ & $5$ \\	\hline
+	
+	$(0; 3, 3, 3, 3; 0)$ & $\{3, 3, 4\}$ & $\{12\}$ & $5$ \\	\hline
+\end{tabular}
+\end{center}
+\caption{Genus 0 Exceptional Cases}
+\label{table:g-0-exceptional}
+\end{table}
+
+
+
+\begin{table}	
+\captionsetup{type=figure}
+\begin{center}
+\begin{tabular}
+{| c || c | c | c |}
+	\hline
+	$\halfcan'$ & Generator Degrees & Degrees of Minimal Relations & $e$ \\
+	\hline
+	\hline
+	$P - Q$ & $\{2\}$ & $\emptyset$ & $1$\\	\hline
+
+	$P - Q + \frac{1}{3} P_1$ & $\{2, 3, 7\}$ & $\{14\}$ & $5$ \\	\hline
+
+	$P - Q + \frac{2}{5} P_1$ & $\{2, 3, 5\}$ & $\{12\}$ & $5$\\	\hline
+	
+	$\frac{1}{3} P_1$ & $\{1, 6, 9\}$ & $\{18\}$ & $5$ \\	\hline
+
+	$\frac{2}{5} P_1$ & $\{1, 5, 8\}$ & $\{16\}$ & $5$ \\	\hline
+	
+	$\frac{3}{7} P_1$ & $\{1, 5, 7\}$ & $\{15\}$ & $7$ \\	\hline
+\end{tabular}
+
+\end{center}
+\caption{Genus 1 Exceptional Cases}
+\label{table:g-1-exceptional}
+\end{table}
+
+
+\section*{Applications to Modular Forms}
+
+\begin{cor}
+\label{cor:main-mod-forms}
+Let $\Gamma$ be a Fuchsian, i.e., $\Gamma \backslash \BH$ has finite area, group and $\sx$ the stacky curve
+associated to $\Gamma \backslash \BH$ with signature $\sigma
+= (g; e_1, \ldots, e_r; \delta)$. 
+
+Except in an explicit finite list of cases, the
+ring of modular forms $M(\Gamma)$ is generated as a $k$-algebra
+by elements of degree at most $\max(5, e_1, \ldots, e_r)$ with
+relations generated in degree at most $2 \cdot \max(5, e_1, \ldots, 
+e_r)$.
+\end{cor}
+
+\begin{example}
+\label{eg:congruence-bounds}
+Suppose $\Gamma \subset SL_2(\BZ)$ is any congruence subgroup.
+Then $\Gamma$ is generated in weight at most $6$ with relations in weight at most $12$. Further, if  $\Gamma$ has some nonzero odd weight modular form, $M(\Gamma)$ is 
+generated in degree at most $5$ with relations in degree at most $10$. 
+If additionally, the genus of the stacky curve associated to $\Gamma \backslash \BH^*$ is 0 or 1, then $M(\Gamma)$ is generated in weight at most $4$ with
+relations in weight at most $8$.\end{example}
+
+
+\section*{Acknowledgments}
+We are grateful to David Zureick-Brown for introducing us to the
+study of stacky canonical rings, for providing invaluable guidance,
+and for his mentorship. We also thank Ken Ono for arranging our project. We thank Brian Conrad, John Voight, and Shou-Wu
+Zhang, and Jorge Neves
+for helpful comments. Finally, we
+acknowledge the support of the National Science Foundation (grant
+number DMS-1250467).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\todo{Remove some of these references}
+\nocite{*}
+\bibliography{bibliography}{}
+\bibliographystyle{plain} 
+
+
+\end{multicols}
+\end{document}
+
