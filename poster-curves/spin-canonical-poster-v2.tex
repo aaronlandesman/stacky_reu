@@ -1,0 +1,388 @@
+\documentclass[a0,landscape, draft]{a0poster}
+\usepackage{etex}
+
+
+\usepackage{tikz,pgfplots,calc}
+\usepackage{graphicx,lipsum}
+
+\definecolor{emoryBlue}{RGB}{1, 33, 105}
+
+
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage{euler}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{caption}
+
+\usepackage{booktabs}
+\usepackage[font=Large,labelfont=bf]{caption}
+\usepackage{wrapfig}
+
+
+\RequirePackage{color}
+\definecolor{myred}{rgb}{0.75,0,0}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{myblue}{rgb}{0,0,0.65}
+
+
+
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newcommand\BH{{\mathbb H}}
+\newcommand\BN{{\mathbb N}}
+\newcommand\BC{{\mathbb C}}
+\newcommand\BR{{\mathbb R}}
+\newcommand\BQ{{\mathbb Q}}
+\newcommand\BP{{\mathbb P}}
+\newcommand\BZ{{\mathbb Z}}
+\newcommand\Bk{{\Bbbk}}
+
+\newcommand\sco{{\mathscr O}}
+
+\newcommand\im{\text{im }}
+\newcommand\proj{\text{Proj }}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\sym}{Sym}
+
+%%%%%%%%%%%%%%%%%%%%% cring custom commands %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator\di{Div}
+\newcommand\sx{\mathscr X}
+\newcommand \subhalf[1]{\frac{{#1} - 1}{2{#1}}}
+\newcommand{\halfcan}{L}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\initial}{in_\prec}
+\DeclareMathOperator{\Eff}{Eff}
+\DeclareMathOperator{\sat}{sat}
+\DeclareMathOperator{\newspan}{span}
+\captionsetup[table]{belowskip = 4pt}
+
+
+%\definecolor{BoxCol}{cmyk}{0.9,0.9,0.9}
+% uncomment for grey background to \section boxes 
+% for use with default option boxedsections
+
+\definecolor{mainCol}{rgb}{1,1,1} %background
+\definecolor{BoxCol}{rgb}{.1,.1,.3} 
+\definecolor{TextCol}{rgb}{0.2,0.5,0.5}
+\definecolor{SectionCol}{rgb}{1,1,1} %section header
+\definecolor{ShadeCol}{rgb}{.9,.95,.9}
+\definecolor{lightpurple}{rgb}{.1,.1,.3} %title box shade
+\definecolor{navy}{rgb}{0.2,0.3,0.5} 	
+\definecolor{white}{rgb}{1,1,1}
+
+%Formatting for Poster Sections
+\newcommand{\psection}[1] 
+{
+	\begin{center}
+		\begin{tikzpicture}
+			\draw [emoryBlue,line width=0.1cm] (-14,-1)--(-14,1)--(14,1)--(14,-1)--cycle;
+			\draw[emoryBlue, line width=0.1cm] (-14,0)--(-17,0);
+			\draw[emoryBlue,line width=0.1cm] (14,0)--(17,0);
+			\draw (0,0)node[anchor=center,rotate=0]{\bfseries  \fontsize{43}{0}\selectfont {}{#1}};
+		\end{tikzpicture}
+	\end{center}
+	\vspace{0.001\textheight}
+}
+
+%Formatting for Less Important Sections
+\newcommand{\smpsection}[1]
+{
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[emoryBlue,line width=0.1cm] (-5,-1)--(5,-1);
+			\draw (0,0)node[anchor=center,rotate=0]{\bfseries  \fontsize{30}{0}\selectfont {}{#1}};
+		\end{tikzpicture}
+	\end{center}
+	\vskip .1cm
+}
+
+\usepackage{multicol} 
+\columnsep = 100pt 
+\columnseprule = 3pt 
+
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{empheq}
+
+%Style Files
+
+
+\usepackage{amsthm}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{lemma}{Lemma}
+
+
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+
+\newtheorem*{remark}{Remark}
+\newtheorem*{definition}{Definition}
+\newtheorem*{fact}{Fact}
+\newtheorem*{note}{Note}
+\newtheorem*{idea}{Proof Idea}
+
+
+\begin{document}
+%%%%%%%%%%%%%%
+%Poster Title%
+%%%%%%%%%%%%%%
+	\begin{center}
+		\begin{minipage}[b]{\linewidth}
+	\begin{center}
+			%Title
+			\veryHuge \color{emoryBlue} \textbf{Spin Canonical Rings of Log Stacky Curves} \color{black}\\ 
+			%Author
+			\Large Aaron Landesman, Peter Ruhm, and Robin Zhang \hskip 1cm - \hskip 1cm Harvard University, Stanford University, and Stanford University \\
+		\end{center}
+		\end{minipage}
+	\end{center}
+	\vspace{1cm} 
+%%%%%%%%%%%%%%%%%%%%%
+%End of Poster Title%
+%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicols}{3} 
+	%%%%%%%%%%%%%%%%%
+	%Poster Abstract%
+	%%%%%%%%%%%%%%%%%
+	\framebox[1.05\width]{\parbox[c]{.95\columnwidth}{
+		\begin{center}
+			\begin{tikzpicture}
+				\draw[emoryBlue,line width=0.1cm] (-3,-.8)--(3,-.8);
+				\draw (0,0)node[anchor=center,rotate=0]{\bfseries  \fontsize{40}{0}\selectfont {}{Abstract}};
+			\end{tikzpicture}
+		\end{center}
+	\Large
+
+ 	Consider modular forms arising from a finite-area quotient of the
+	upper-half plane by a Fuchsian group. By the classical results of
+	Kodaira--Spencer, this ring of modular forms may be viewed as the
+	log spin canonical ring of a stacky curve. In this paper, we
+	tightly bound the degrees of minimal generators and relations of
+	log spin canonical rings. As a consequence, we obtain a tight bound
+	on the degrees of minimal generators and relations for rings of
+	modular forms of arbitrary integral weight.
+	\vskip .5cm
+	}}
+	%%%%%%%%%%%%%%%%%%%%%%%%
+	%End of Poster Abstract%
+	%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Large
+\smpsection{Notation}
+  \begin{align*}
+	  \Bbbk & & \text{Perfect Field} \\
+	  \sx & & \text{Stacky Curve} \\
+	  X & & \text{Coarse Space} \\
+	  g & & \text{Genus} \\
+	  \Delta & & \text{Log Divisor} \\
+	  \delta & & \text{Degree of Log Divisor} \\
+	  P_1, \ldots, P_r \in \text{Spec } X & & \text{Stacky Points} \\
+	  e_1, \ldots, e_r \in \BZ_{\geq 2}  & & \text{Stacky Orders} \\
+	  (g; e_1,\ldots, e_r; \delta) & & \text{Signature} \\
+	\lfloor \sum_{i=1}^n \alpha_i P_i \rfloor := \sum_{i=1} \lfloor \alpha_i\rfloor P_i & & \text{Floor of a Stacky Divisor} \\
+	K_X & & \text{Canonical Divisor of Coarse Space} \\
+	K_\sx := K_X + \sum_{i=1}^n \frac{e_i-1}{e_i} P_i & & \text{Canonical Divisor of Stacky Curve} \\
+	(\sx, \Delta, L), 2L \sim K_\sx + \Delta & & \text{Log Spin Curve} \\
+	R(\sx, \Delta, \halfcan) := \bigoplus_{k \geq 0} H^0(X, \lfloor k \halfcan \rfloor) & & \text{Log Spin Canonical Ring}
+  \end{align*}
+
+
+
+\psection{Introduction}
+ 
+Let $X$ be a smooth proper geometrically-connected algebraic curve of genus $g$ over a field $\Bk$.
+It is well known that the canonical sheaf $\Omega _X,$ with
+associated canonical divisor $K_X$, determines the {\bf canonical
+map } $\pi: X \rightarrow \BP_\Bk^{g - 1}$. Then, the {\bf canonical
+ring} is defined to be
+\begin{align*}
+	R(X, K_X) := \bigoplus_{d \geq 0} H^0(X, dK_X),
+\end{align*}
+
+\noindent
+with multiplication structure corresponding to tensor product of
+sections. In the case that $g \geq 2$, $\Omega_X$ is ample and
+therefore $X \cong \proj R$. When $g \geq 2$, Petri's theorem 
+shows that, in most cases, $R(X, K_X)$
+is generated in degree 1 with relations in degree 2 (see
+Saint-Donat \cite[p. 157]{saint-donat:proj}. This has the pleasant 
+geometric consequence that canonically embedded curves of genus $\geq 4$ which are not hyperelliptic curves, trigonal curves, or plane quintics are scheme-theoretically cut out by degree 2 equations.
+
+%%%%%%%%
+		%End of First Column
+	%%%%%%%%
+
+
+	\columnbreak
+
+	\psection{Main Result}
+
+Our main theorem is to bound the degrees of generators and
+relations of a log spin canonical ring. In 
+~\cite[Theorem 1.4]{vzb:stacky}, Voight and Zureick-Brown tightly
+bound the degree of generation and
+relations of a log canonical ring.
+
+
+
+
+\begin{theorem}
+\label{theorem:main}
+Let $(\sx, \Delta, \halfcan)$ be a log spin curve over a perfect
+field $\Bk$, so that $\sx$ has signature $\sigma = (g; e_1, \ldots,
+e_r; \delta)$.
+
+Then the log spin canonical ring is generated as a $\Bk$-algebra by 
+elements of degree at most $e := \max(5, e_1, \ldots, e_r)$ with
+relations generated in degrees at most $2e$,
+so long as $\sigma$ does not lie in a finite list of exceptional
+cases, as given in Table ~\ref{table:g-1-exceptional} for
+signatures with $g = 1$ and Table ~\ref{table:g-0-exceptional} for
+signatures with $g = 0$.
+\end{theorem}
+{\bf Proof idea:} First, check this holds when $\Delta \in \di X$,
+either by hand in $g = 0, 1$ or by 
+\cite[$\mathsection$ 6]{milnor:fractional-weight} when $g \geq 2$.
+Then, inductively add in fractional points, showing that if
+it holds for a given divisor $\Delta$ it holds for
+$\Delta + \frac{e-1}{e}P$.
+
+
+\begin{minipage}{38cm}
+\centering
+%\begin{wraptable}{l}{12cm}
+
+\begin{tabular}
+	{| c || c | c | c |}
+	\hline
+	Signature $\sigma$ & Generator Degrees & Degrees of Relations & $e$ \\
+	\hline
+	\hline
+
+	$(0; 3, 3, 3; 0)$ & $\{3\}$ & $\emptyset$ & $5$ \\	\hline
+
+	$(0; 3, 3, 5; 0)$ & $\{3, 10, 15\}$ & $\{30\}$ & $5$ \\	\hline
+	
+	$(0; 3, 3, 7; 0)$ & $\{3, 7, 12\}$ & $\{24\}$ & $7$ \\	\hline
+	
+	$(0; 3, 3, 9; 0)$ & $\{3, 7, 9\}$ & $\{21\}$ & $9$ \\	\hline
+	
+	$(0; 3, 5, 5; 0)$ & $\{3, 5, 10\}$ & $\{20\}$ & $5$ \\	\hline
+	
+	$(0; 3, 5, 7; 0)$ & $\{3, 5, 7\}$ & $\{17\}$ & $7$ \\	\hline
+	
+	$(0; 5, 5, 5; 0)$ & $\{3, 5, 5\}$ & $\{15\}$ & $5$ \\	\hline
+	
+	$(0; 3, 3, 3, 3; 0)$ & $\{3, 3, 4\}$ & $\{12\}$ & $5$ \\	\hline
+\end{tabular}
+
+
+\label{table:g-0-exceptional}
+\captionof{table}{Genus 0 Exceptional Cases}
+%\end{wraptable}
+\end{minipage}
+
+
+\begin{minipage}{38cm}
+\centering
+
+
+%\begin{wraptable}{l}{12cm}
+
+
+\begin{center}
+\begin{tabular}
+{| c || c | c | c |}
+	\hline
+	$\halfcan'$ & Generator Degrees & Degrees of Minimal Relations & $e$ \\
+	\hline
+	\hline
+	$P - Q$ & $\{2\}$ & $\emptyset$ & $1$\\	\hline
+
+	$P - Q + \frac{1}{3} P_1$ & $\{2, 3, 7\}$ & $\{14\}$ & $5$ \\	\hline
+
+	$P - Q + \frac{2}{5} P_1$ & $\{2, 3, 5\}$ & $\{12\}$ & $5$\\	\hline
+	
+	$\frac{1}{3} P_1$ & $\{1, 6, 9\}$ & $\{18\}$ & $5$ \\	\hline
+
+	$\frac{2}{5} P_1$ & $\{1, 5, 8\}$ & $\{16\}$ & $5$ \\	\hline
+	
+	$\frac{3}{7} P_1$ & $\{1, 5, 7\}$ & $\{15\}$ & $7$ \\	\hline
+\end{tabular}
+
+\end{center}
+
+\label{table:g-1-exceptional}
+
+\captionof{table}{Genus 1 Exceptional Cases}
+%\end{wraptable}
+\end{minipage}
+
+
+
+
+\psection{Application to Modular Forms}
+	
+\begin{corollary}
+\label{corollary:main-mod-forms}
+Let $\Gamma$ be a Fuchsian, i.e., $\Gamma \backslash \BH$ has finite area, group and $\sx$ the stacky curve
+associated to $\Gamma \backslash \BH$ with signature $\sigma
+= (g; e_1, \ldots, e_r; \delta)$. 
+
+Except in an explicit finite list of cases, the
+ring of modular forms $M(\Gamma)$ is generated as a $k$-algebra
+by elements of degree at most $\max(5, e_1, \ldots, e_r)$ with
+relations generated in degree at most $2 \cdot \max(5, e_1, \ldots, 
+e_r)$.
+\end{corollary}
+
+
+
+\columnbreak
+
+\begin{example}
+\label{eg:congruence-bounds}
+Suppose $\Gamma \subset SL_2(\BZ)$ is any congruence subgroup.
+Then $\Gamma$ is generated in weight at most $6$ with relations in weight at most $12$. Further, if  $\Gamma$ has some nonzero odd weight modular form, $M(\Gamma)$ is 
+generated in degree at most $5$ with relations in degree at most $10$. 
+If additionally, the genus of the stacky curve associated to $\Gamma \backslash \BH^*$ is 0 or 1, then $M(\Gamma)$ is generated in weight at most $4$ with
+relations in weight at most $8$.\end{example}
+
+
+
+
+%%%Bibliography
+\nocite{*}
+\bibliography{bibliography}{}
+\bibliographystyle{plain} 
+
+%%%Acknowledgements 
+
+\psection{Acknowledgements}
+We are grateful to David Zureick-Brown for introducing us to the
+study of stacky canonical rings, for providing invaluable guidance,
+and for his mentorship. We also thank Ken Ono for arranging our project. We thank Brian Conrad, John Voight, and Shou-Wu
+Zhang, and Jorge Neves
+for helpful comments. Finally, we
+acknowledge the support of the National Science Foundation (grant
+number DMS-1250467).
+\end{multicols}
+\end{document}
