@@ -1,0 +1,36 @@
+# binaries
+*.dvi
+*.pdf
+
+# TeX junk
+*.log
+
+# LaTeX junk
+*.aux
+*.toc
+*.ps
+
+# BibTeX junk
+*.bbl
+*.blg
+
+# hyperref junk
+*.out
+
+# beamer junk
+*.nav
+*.snm
+
+# AUCTeX and preview-latex junk
+*.fmt
+*.prv
+_region_.*
+auto
+prv_*
+
+# SyncTeX junk
+*.synctex.gz
+
+# OS junk
+.DS_Store
+Thumbs.db
