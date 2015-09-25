@@ -222,8 +222,7 @@ with multiplication corresponding to tensor product of
 sections. In the case that $g \geq 2$, $\Omega_X$ is ample and
 therefore $X \cong \proj R$. When $g \geq 2$, Petri's theorem 
 shows that, in most cases, $R(X, K_X)$
-is generated in degree 1 with relations in degree 2 (see
-Saint-Donat \cite[p. 157]{saint-donat:proj}. This has the pleasant 
+is generated in degree 1 with relations in degree 2 \cite[p. 157]{saint-donat:proj}. This has the pleasant 
 geometric consequence that canonically embedded curves of genus $\geq 4$ which are not hyperelliptic curves, trigonal curves, or plane quintics are scheme-theoretically cut out by degree 2 equations.
 
 %%%%%%%%
@@ -312,7 +311,7 @@ $\Delta + \frac{e-1}{e}P$.
 \begin{tabular}
 {| c || c | c | c |}
 	\hline
-	$\halfcan'$ & Generator Degrees & Degrees of Minimal Relations & $e$ \\
+	$\halfcan$ & Generator Degrees & Degrees of Minimal Relations & $e$ \\
 	\hline
 	\hline
 	$P - Q$ & $\{2\}$ & $\emptyset$ & $1$\\	\hline
@@ -343,12 +342,13 @@ $\Delta + \frac{e-1}{e}P$.
 	
 \begin{corollary}
 \label{corollary:main-mod-forms}
-Let $\Gamma$ be a Fuchsian group, i.e., $\Gamma \backslash \BH$ has finite area,and let $\sx$ be a stacky curve
+Let $\Gamma$ be a Fuchsian group, i.e., $\Gamma \backslash \BH$ has finite
+area, and let $\sx$ be a stacky curve
 associated to $\Gamma \backslash \BH$ with signature $\sigma
 = (g; e_1, \ldots, e_r; \delta)$. 
 
 Except in an explicit finite list of cases, the
-ring of modular forms $M(\Gamma)$ is generated as a $k$-algebra
+ring of modular forms $M(\Gamma)$ is generated as a $\Bbbk$-algebra
 by elements of degree at most $\max(5, e_1, \ldots, e_r)$ with
 relations generated in degree at most $2 \cdot \max(5, e_1, \ldots, 
 e_r)$.
@@ -366,26 +366,29 @@ generated in degree at most $5$ with relations in degree at most $10$.
 If additionally, the genus of the stacky curve associated to $\Gamma \backslash \BH^*$ is 0 or 1, then $M(\Gamma)$ is generated in weight at most $4$ with
 relations in weight at most $8$.\end{example}
 
+\begin{example}  
+	\hspace{1mm}
+	\begin{center}
+    $D = K + \Delta = \frac{1}{2}P + \frac{2}{3}Q -\infty$
+  \end{center}
+
+
 \begin{center}
-\begin{tabular}{ |c| c| c|}
+\begin{tabular}{ |c| c| c| c|c|}
 \hline
-Weight $k$  & $\dim M_{k}(SL_2(\BZ))$  \\ 
+$d$ & $\lfloor dD \rfloor$ & $\deg \lfloor dD \rfloor$ &  $\dim H^0(X,\lfloor dD \rfloor)$  & $M_{2d}(SL_2(\BZ))$  \\ 
 \hline
-0& 1 \\ 
-2& 0 \\  
-4& 1 \\
-6& 1 \\
-8& 1 \\
-10& 1 \\
-12& 2 \\
+0& 0& 0&  1& 1 \\ 
+1&$-\infty$&-1& 0&  0 \\  
+2&$P + Q -2\infty$&0& 1&  $E_4$  \\
+3&$P + 2Q -3\infty$&0& 1&  $E_6$  \\
+4&$2P + 2Q -4\infty$&0& 1&  $E_4^2$  \\
+5&$2P + 3Q -5\infty$&0& 1&  $E_4E_6$  \\
+6&$3P + 4Q -6\infty$&1& 2& $E_4^3, E_6^2$   \\
 \hline
 \end{tabular}
 \end{center}
-
-\[
-	M(SL_2(\BZ)) \cong \BC[E_4,E_6]
-\]
-
+\end{example}
 
 
 %%%Bibliography
