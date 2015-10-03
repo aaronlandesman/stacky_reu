@@ -198,7 +198,7 @@ with stabilizer orders $e_1, \ldots, e_r \in \BZ_{\geq 2}$, we define
 \]
 Then, a {\bf log spin curve} is a triple $(\sx, \Delta, \halfcan)$
 where $\Delta \in \di X$ is a log divisor and $L \in \di \sx$ is a {\bf log spin canonical divisor}, meaning $2\halfcan \sim K_X +
-\Delta + \sum_{i = 1}^{r} \subhalf{e_i} P_i$. The central object of
+\Delta + \sum_{i = 1}^{r} \frac{e_i-1}{e_i} P_i$. The central object of
 study in this paper is the {\bf log spin canonical ring} of $(\sx,
 \Delta, \halfcan),$ defined as
 \begin{align*}
@@ -1893,9 +1893,9 @@ By Lemma ~\ref{lem:generation-5},
 \end{align*}
 is surjective because $\deg f \geq 11$ implies that
 $$\deg a_i =\deg f - \deg x_i -2 \geq 4.$$
-In particular, there exist $\alpha, \beta \in R_\halfcan$ so that
-$$\phi(a_i) = \phi(s_1) \cdot \alpha + \phi(s_1) \cdot \beta.$$ 
-Choosing $g_i,h_i\in \Bk[x_1, \ldots, x_n]_{\deg(a_i)-2}$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha, \phi(h_i) = \beta$, we have 
+In particular, there exist $\alpha_i, \beta_i \in R_\halfcan$ so that
+$$\phi(a_i) = \phi(s_1) \cdot \alpha_i + \phi(s_2) \cdot \beta_i.$$ 
+Choosing $g_i,h_i\in \Bk[x_1, \ldots, x_n]_{\deg(a_i)-2}$ for $1 \leq i \leq n$ so that $\phi(g_i) = \alpha_i, \phi(h_i) = \beta_i$, we have 
 $$a_i \equiv s_1 g_i + s_2 h_i \bmod I_{\halfcan, \deg a_i},$$ as claimed.
 
 Finally, we may then take $g = \sum_{i}^{}g_i x_i, \: h = \sum_{i}^{}h_i x_i,$ so that 
@@ -1909,13 +1909,13 @@ Finally, we may then take $g = \sum_{i}^{}g_i x_i, \: h = \sum_{i}^{}h_i x_i,$ s
 \label{prop:relation-10}
 Let $(X, \Delta, \halfcan)$ be a log spin curve of signature $(g; -; \delta)$
  with $g \geq 2$ and $\Delta > 0.$ Then $I_\halfcan$ is generated in
-degree at most degree at most $10$.
+degree at most $10$.
 \end{prop}
 \begin{proof}
 Suppose $f \in I_\halfcan$ with $\deg f \geq 11$. To complete the proof,
-it suffices to show $f \in I_{\halfcan,k}'$. By Lemma
+it suffices to show $f \in J_{\halfcan,k}$. By Lemma
 ~\ref{lem:reducing-degree}, this is the same as checking $s_1 g + s_2 h \in
-I_{\halfcan, k}'$ where $\phi(s_ 1), \phi(s_2) \in H^0(X, 2L)$ are two sections
+J_{\halfcan, k}$ where $\phi(s_ 1), \phi(s_2) \in H^0(X, 2L)$ are two sections
 so that $\newspan(\phi(s_ 1), \phi(s_2)) = V \subseteq H^0(K)$ is
 basepoint-free. Consider the map
 
