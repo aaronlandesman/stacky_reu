@@ -210,18 +210,6 @@ A brief overview of stacky curves, log divisors, and log spin
 canonical rings is given in Subsection
 ~\ref{ssec:stacky-background}.
 
-\todo{Remark or paragraph on Gorenstein-ness}
-``Orbifold canonical curves are projectively Gorenstein''
-from an old result of Kei-ichi Watanabe. The spin case
-follows from projective Cohen-Macaulay which follows from
-projectively normal as seen when taking the complete
-space of sections.
-\todo{Robin: This is probably better fit in the introduction
-than background. Per the reviewer, this is the primary
-interest in taking the orbifold canonical class to be in
-the form that we have. However, it seems strange in the current
-place that I plopped it in.}
-
 Our main theorem is to bound the degrees of generators and
 relations of a log spin canonical ring. Let $\sx$ be a stacky curve
 with signature $\sigma := (g; e_1, \ldots, e_r; \delta)$. The
@@ -450,25 +438,26 @@ graded component of $R$.
 \end{defn}
 
 \begin{rem}
-	The log canonical ring, defined to be the direct sum of the even graded pieces of the log spin canonical ring,
-	is Gorenstein. It is Cohen Macaulay from \cite[Example 2.5(a)]{watanabe:some-remarks-concerning-demazure's-construction-of-normal-graded-rings}
-	and then Gorenstein by \cite[Corollary 2.9]{watanabe:some-remarks-concerning-demazure's-construction-of-normal-graded-rings}.
-	In particular, this tells us a log spin canonical curve, the projectivization of a log spin canonical ring,
-	is projectively Gorenstein.
+\label{rem:gorenstein}
+	The log canonical ring, defined to be the direct sum of the even
+	graded pieces of the log spin canonical ring, is Gorenstein. It is
+	Cohen Macaulay from \cite[Example 2.5(a)]
+	{watanabe:demazure-normal-graded} and then Gorenstein by
+	\cite[Corollary 2.9]{watanabe:demazure-normal-graded}. In
+	particular, this tells us a log spin canonical curve, the
+	projectivization of a log spin canonical ring, is projectively
+	Gorenstein.
 \end{rem}
 
 \begin{rem}
 Although Definition ~\ref{defn:h0-stacky} may seem fairly ad hoc, it is naturally motivated in the context of stacks. See Voight and Zureick-Brown \cite[Lemma 5.4.7]{vzb:stacky} for a proof that Definition ~\ref{defn:h0-stacky} is equivalent to the stack-theoretic description.
 \end{rem}
 
-
 \begin{defn}
 \label{defn:order-sup}
 Let $D \in \di \sx.$ If $z \neq 0$ is a rational section of $\sco(D)$ denote the order of
 zero of $z$ at $P$ by $\ord_P^D(z)$.
 \end{defn}
-
-
 
 \begin{defn}
 \label{defn:log-spin-canonical-ring}
