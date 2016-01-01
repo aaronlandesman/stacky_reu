@@ -144,11 +144,33 @@ for $L$ a fractional divisor, so this would not pose an issue.
 	\item Use Hilbert polynomial in Example $\_\_\_$
 	\item Replace ``best lower approximation'' with Hirzebruch--Jung
 		fractions
-	\item (Not to-do yet) Change notation from $\frac{e_i - 1}{2 e_i}$
-		to $\frac{e'_i}{2 e'_i + 1}$ where $e'_i = \frac{e_i - 1}{2}$ and
-		we range over all $e'_i$ instead of odd $e_i$.
 \end{enumerate}
 
+
+\section{Other suggestions}
+The referee also made the following suggestions.
+
+\begin{enumerate}
+	\item Change notation from $\frac{e_i - 1}{2 e_i}$
+		to $\frac{s_i}{2 s_i + 1}$ where $s_i = \frac{e_i - 1}{2}$ and
+		we range over all integers $s_i$ instead of odd integers $e_i$.
+\end{enumerate}
+
+We decided not to implement the above suggestions for the following
+reasons, respectively.
+
+\begin{enumerate}
+	\item Firstly, we maintained the $e_i$ notation for consistency
+	with the notation established in Voight--Zureick-Brown. These
+	$e_i$ correspond to the stabilizer orders in the log spin
+	canonical ring case considered there. Furthermore, we often
+	list degrees of generation and relations enumerated by signatures
+	of the form $(g; e_1, \ldots, e_n; \delta)$ with bounds given in
+	the	form $\min(5, e_1, \ldots, e_n)$ which are more natural to
+	consider than enumeration by signatures $(g; s_1, \ldots, s_n;
+	\delta)$ with bounds given in the form $\min(5, 2s_1 + 1, \ldots,
+	2s_n + 1)$.
+\end{enumerate}
 
 
 \end{document}
