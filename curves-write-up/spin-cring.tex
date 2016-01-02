@@ -958,35 +958,51 @@ Observe that Definition \ref{defn:graded-p-lex} remains the same if we replace $
 \noindent One can easily verify graded $P$-lex is a monomial ordering in the sense defined in Cox--Little--O'Shea \cite[Chapter 2, $\mathsection$ 2, Definition 1]{cls:ideals-varieties-algorithms}.
 
 We are almost ready to state Lemma ~\ref{lem:sat-1}, which will yield an inductive procedure for determining the generators and relations of $R_D$, where $D \in \di \BP^1$ is an effective $
-\BQ$-divisor. Whereas O'Dorney considers arbitrary $\BQ$-divisors in $Div(\mathbb{P}^1)$ \cite[Theorem 8]{dorney:canonical}, we restrict attention to effective divisors and in Lemma ~\ref{lem:sat-1} we are able to obtain much tighter bounds.  Moreover, Lemma ~\ref{lem:sat-1} also extends to curves of genus $g > 0$. Before stating Lemma ~\ref{lem:sat-1}, we recall some notation from O'Dorney \cite{dorney:canonical}.
+\BQ$-divisor. Whereas O'Dorney considers arbitrary $\BQ$-divisors in
+$Div(\mathbb{P}^1)$ \cite[Theorem 8]{dorney:canonical}, we restrict
+attention to effective divisors and in Lemma ~\ref{lem:sat-1} we are
+able to obtain much tighter bounds.  Moreover, Lemma ~\ref{lem:sat-1}
+also extends to curves of genus $g > 0$. 
+%Before stating Lemma
+%~\ref{lem:sat-1}, we recall some theory from continued fractions.
 
-\begin{defn}
-\label{defn:lower-approximation}
-If $\alpha \in \BR$, then a rational number $\frac{c}{k} \leq \alpha
-$ (written in reduced form with $c \in \BZ, k \in \BN$) is a
-\textbf{best lower approximation} to $\alpha$ if there does not
-exist $\frac{c'}{k'}\in \mathbf{Q}$ such that $0 < k'< k$ and
-$\frac{c}{k} \le \frac{c'}{k'} \le \alpha$. 
-\end{defn}
+%\begin{defn}
+%\label{defn:lower-approximation}
+%If $\alpha \in \BR$, then a rational number $\frac{c}{k} \leq \alpha
+%$ (written in reduced form with $c \in \BZ, k \in \BN$) is a
+%\textbf{best lower approximation} to $\alpha$ if there does not
+%exist $\frac{c'}{k'}\in \mathbf{Q}$ such that $0 < k'< k$ and
+%$\frac{c}{k} \le \frac{c'}{k'} \le \alpha$. 
+%\end{defn}
 
-\begin{rem}
-\label{rem:lower-approximation}
-Note that all integers less than or equal to $\lfloor \alpha \rfloor$
-are best lower approximations to $\alpha$. Also, if $\alpha \ge 0$,
-then the non-negative best lower approximations of
-$\alpha$ form a finite sequence
-\[
-	0 = \frac{c_0}{k_0} < \frac{c_1}{k_1} < \ldots < \frac{c_r}{k_r} = \alpha.
-\]
+%\begin{rem}
+%\label{rem:lower-approximation}
+%Note that all integers less than or equal to $\lfloor \alpha \rfloor$
+%are best lower approximations to $\alpha$. Also, if $\alpha \ge 0$,
+%then the non-negative best lower approximations of
+%$\alpha$ form a finite sequence
+%\[
+%	0 = \frac{c_0}{k_0} < \frac{c_1}{k_1} < \ldots < \frac{c_r}{k_r} = \%alpha.
+%\]
+%
+% proves 
+%\begin{defn}\label{defn:cont-fract}
+%Let $[a_1, \ldots, a_n]$ be the (Hirzebruch-Jung) continued fraction
+%on $a_1, \ldots, a_n$ (given by $1 + \frac{1}{a_1+\frac{1}{... + \frac{1}{a_n}}}$).
+%\end{defn}
+%\begin{prop}\label{prop:primitives}
+%The primitives 
+%\end{prop}
 
-\noindent
-Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the positive best lower approximations of $\alpha = \frac{14}{5}$.
-\end{rem}
+%\noindent
+%Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the posi%tive best lower approximations of $\alpha = \frac{14}{5}$.
+%\end{rem}
 
 \begin{figure}
 \includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
 \caption{This figure shows each non-negative best lower approximation of $\frac{14}{5}.$ Each ``$\bullet$'' denotes a best lower approximation and each ``$\circ$'' denotes a lattice point below $5y=14x$ which is not a best lower approximation.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}\label{fig:s14/5-lattice}
 \end{figure}
+\todo{Is this figure (figure 1)  still useful anywhere?}
 
 We next prove the first of three lemmas used to inductively add points.
 
@@ -994,25 +1010,25 @@ We next prove the first of three lemmas used to inductively add points.
 \label{lem:sat-1}
 Let $X$ be a genus $g$ curve and $\halfcan' \in \BQ \otimes \di X$
 satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $k\halfcan'$ for all $k \in \BN$, meaning we can choose generators $u, x_1, \ldots, x_m$ of $R_{\halfcan'}$ in degree at most $\tau$ for some $\tau\in \BN$, with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
-for some $\alpha, \beta \in \BN$ such that
+for some $\alpha, \beta \in \BN$ such that $\frac{\alpha}{\beta}$ is reduced and
 \begin{align}
 \label{eqn:deg1-sat-ind}
 	h^0(X, \lfloor k \halfcan \rfloor) &= h^0(X, \lfloor k \halfcan'
 	\rfloor) + \left\lfloor k \frac{\alpha} {\beta} \right \rfloor &&\text{ for all } k \in \mathbb{
 	N}.
 \end{align}
-Let
-\[
-	0 < \frac{c_1}{k_1} < \ldots < \frac{c_n}{k_n} = \frac{\alpha}{\beta}
-\]
-be the positive best lower approximations of $\frac{\alpha}{\beta}$
-{\rm(}similar to Remark ~\ref{rem:lower-approximation}{\rm)}.
+%Let
+%\[
+%	0 < \frac{c_1}{k_1} < \ldots < \frac{c_n}{k_n} = \frac{\alpha}{\beta}
+%\]
+%be the positive best lower approximations of $\frac{\alpha}{\beta}$
+%{\rm(}similar to Remark ~\ref{rem:lower-approximation}{\rm)}.
 Then,
 
 \begin{enumerate}
 \item[(a)] $R_{\halfcan}$ is generated over $R_{\halfcan'}$ by 
-	elements $y_1, \ldots, y_n$ such that $\deg(y_i) = k_i$ and $-\ord_P
-	^{L'}(y_i) = c_i$.
+	elements $y_1, \ldots, y_n$ where $\deg(y_i) = k_i<\beta$, $-\ord_P
+	^{L'}(y_i) = c_i$ for some $k_i$'s and $c_i$'s such that $c_i<c_{i+1}\le \alpha$ and $k_i\le k_{i+1}\le \beta$ for all $i$.
 
 \item[(b)] Choose an ordering $\prec$ on $\Bk[u, x_1, \ldots, x_m]$ such that
 	\[
@@ -1049,11 +1065,11 @@ Then,
 \end{enumerate}
 \end{lem}
 
-\sssec*{Idea of proof:}
-The proof will be fairly involved. To show part (a), we first
-define a set of generators of $R_\halfcan$ over $R_{\halfcan'}$
-with one generator corresponding to each positive best lower
-approximation of $\frac{\alpha}{\beta}$. We then use Riemann--Roch
+\sssec*{Idea of proof:}\todo{Update subsection}
+The proof will be fairly involved. To show part (a), we first apply 
+literature on continued fractions to 
+define a set of generators of $R_\halfcan$ over $R_{\halfcan'}$. 
+We then use Riemann--Roch
 to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$ and
 show that the set of elements we produce forms a basis.
 
@@ -1077,50 +1093,54 @@ Equation ~\ref{eqn:deg1-sat-ind}, for any $k
 \noindent
 Thus, there exist rational sections $t_i$ of $\sco(\lfloor k \halfcan \rfloor)$ with $\ord_P^{L'}(t_i) = i$
 for any $i \in \{0, \ldots, \lfloor k \frac{\alpha}{
-\beta} \rfloor \}$. We will the use positive best lower approximations to
-construct the generators $y_1, \ldots, y_n$ as described in the lemma's statement.
+\beta} \rfloor \}$.
+This reduces the problem at hand to finding the primitives of the cone in $\mathbb{Z}\times \mathbb{Z}$ bounded by $y=0$ and $y=\frac{\alpha}{\beta}x$.  
 
-Let 
-\[
-	0 < \frac{c_1}{k_1} < \ldots < \frac{c_n}{k_n} = \frac{\alpha}{
-	\beta}
-\]
+Literature on Cohn's geometric interpretation of hirzabruch jung fractions offers us an explicit formula for these primitives (Proposition 4.3 \todo{cite and add to bibtex}); one observes they all lie in degrees at most $\beta$ (since points in degree $\gamma=\beta+\omega$ can by written as a sum of points in degree $\beta$ with those in degree $\omega$).  Note that if two primitives had the same $y$ coordinate, then they would differ by a multiple of $(1,0)$ and thus could not both be generators; thus all the $c_i$'s (their $y$ coordinates) are distinct, and we can thus order them with $c_i<c_{i+1}$ for all $i$.  Furthermore, note that in any degree $k$ greater than 1, there can be at most one new primitive, since we can construct points with $y$ coordinates between 0 and $\lfloor k\frac{\alpha}{\beta}\rfloor$ as a sum of elements in degree 1 and degree $k-1$, and these new primitives have pole order greater than all primitives of smaller $x$-coordinate.  Therefore, the ordering of primitives with $c_i<c_{i+1}$ for all $i$ also ensures that the $x$-values $k_i$'s are also in weakly increasing order.  Finally, let $y_1, \ldots, y_n$ be elements of $R_Lx$ with pole orders given by $c_1,\ldots, c_n$ and degrees given by the $x$ coordinates of the corresponding primitives.
+%We will the use positive best lower approximations to
+%construct the generators $y_1, \ldots, y_n$ as described in the lemma's statement.
+%
+%Let 
+%\[
+%	0 < \frac{c_1}{k_1} < \ldots < \frac{c_n}{k_n} = \frac{\alpha}{
+%	\beta}
+%\]
+%
+%\noindent
+%be the positive best lower approximations of $\frac{\alpha}{\beta}$. 
+%5Choose a positive best lower approximation $\frac{c_i}{k_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = k_i$ and $\deg(z_j)<k_i$ for all $j\in \{1, \ldots r\}$. Observe that $\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)}< \frac{\alpha}{\beta}$, for each $j$.  Hence, for each $j$, 
+%\[
+%	\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)} < \frac{c_i}{k_i},
+%\]
+%so the mediant inequality tells us
+%\[
+%	\frac{\sum_{j=1}^n -\ord^{\halfcan'}_P(z_j)}{\sum_{j=1}^n z_j } < \frac{c_i}{k_i}.
+%\]
+%Multiplying through by $k_i$ gives
+%\[
+%	-\ord^{\halfcan'}_P \left(\prod_{j=1}^n z_j \right) = \sum_{j=1}^n -\%ord^{\halfcan'}_P(z_j) < c_i .
+%\]
 
-\noindent
-be the positive best lower approximations of $\frac{\alpha}{\beta}$. 
-Choose a positive best lower approximation $\frac{c_i}{k_i}$.  Choose $z_1, \ldots, z_r \in R_\halfcan$ so that $\sum_{j=1}^r \deg(z_j) = k_i$ and $\deg(z_j)<k_i$ for all $j\in \{1, \ldots r\}$. Observe that $\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)}< \frac{\alpha}{\beta}$, for each $j$.  Hence, for each $j$, 
-\[
-	\frac{-\ord_P^{\halfcan'}(z_j)}{\deg(z_j)} < \frac{c_i}{k_i},
-\]
-so the mediant inequality tells us
-\[
-	\frac{\sum_{j=1}^n -\ord^{\halfcan'}_P(z_j)}{\sum_{j=1}^n z_j } < \frac{c_i}{k_i}.
-\]
-Multiplying through by $k_i$ gives
-\[
-	-\ord^{\halfcan'}_P \left(\prod_{j=1}^n z_j \right) = \sum_{j=1}^n -\ord^{\halfcan'}_P(z_j) < c_i .
-\]
+%\noindent
+%Thus, the elements of $(R_{\halfcan})_{k_i}$ with pole order $c_i$ at $P$ are not generated by 
+%lower degrees. 
+%Choose some $y_i \in(R_{
+%\halfcan})_{k_i}$ with $-\ord_{P}^{L'}(y_i)=c_i$.
+%
+%Suppose $c,k \in \BN$ so that $k \le \beta$,  $\frac{c}{k} < \frac{\alpha}{
+%\beta},$ and $\frac{c}{k}$ is not a best lower approximation of $\frac{\alpha}{\beta}$. Choose a
+%best lower approximation $\frac{c_i}{k_i}$ with $c_i$ maximal such that $k_i< k$.  This implies $\frac{c_i}{k_i}\ge \frac{c}{k},$ so
+%\[
+%	\frac{c-c_i}{k-k_i}\le \frac{\alpha}{\beta}
+%\]
+%
+%\noindent
+%which implies
+%\begin{equation}\label{eqn:c-from-lower-terms}
+%	c_i +\left\lfloor (k-k_i) \frac{\alpha}{\beta} \right\rfloor \ge c.
+%\end{equation}
 
-\noindent
-Thus, the elements of $(R_{\halfcan})_{k_i}$ with pole order $c_i$ at $P$ are not generated by 
-lower degrees. 
-Choose some $y_i \in(R_{
-\halfcan})_{k_i}$ with $-\ord_{P}^{L'}(y_i)=c_i$.
-
-Suppose $c,k \in \BN$ so that $k \le \beta$,  $\frac{c}{k} < \frac{\alpha}{
-\beta},$ and $\frac{c}{k}$ is not a best lower approximation of $\frac{\alpha}{\beta}$. Choose a
-best lower approximation $\frac{c_i}{k_i}$ with $c_i$ maximal such that $k_i< k$.  This implies $\frac{c_i}{k_i}\ge \frac{c}{k},$ so
-\[
-	\frac{c-c_i}{k-k_i}\le \frac{\alpha}{\beta}
-\]
-
-\noindent
-which implies
-\begin{equation}\label{eqn:c-from-lower-terms}
-	c_i +\left\lfloor (k-k_i) \frac{\alpha}{\beta} \right\rfloor \ge c.
-\end{equation}
-
-Using Equation ~\ref{eqn:c-from-lower-terms}, we recursively define a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$. Define 
+We now recursively define a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$. Define 
 \[
 	S_0 = \{u^l : l \in \BN_{\ge 0}\}
 \]
@@ -1157,7 +1177,7 @@ It only remains to check condition (3) of Lemma ~\ref{lem:relations_from_generat
 \[
 	\Bk[u, x_1, \ldots, x_m] \cup V \cup \left(\bigcup_{i=1}^n y_i \cdot \Bk[u, y_1, \ldots, y_n]\right). 
 \]
-Notice that $S$ generates the ideal $(y_1, \ldots, y_n)$ considered as an ideal of the subring $\Bk[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$. Let $\halfcan$ be maximal such that $a_l\ne 0$.
+Notice that $S$ generates the ideal $(y_1, \ldots, y_n)$ considered as an ideal of the subring $\Bk[u, y_1, \ldots, y_n]$.  If $f\in S$, then $f=u^b \prod_{j=1}^n {y_j}^{a_j}$. Let $l$ be maximal such that $a_l\ne 0$.
 Fix $i \in \{1, \ldots, n\}$. If $y_i \cdot f \notin S$, define
 \[
 b_j = \begin{cases}
@@ -1167,12 +1187,12 @@ b_j = \begin{cases}
 \]
 
 \noindent
-Then, there is some $h \in \BN$ such that $i \le h \le \max(i, l)$ satisfying $\prod_{j = 1}^h y_j^{b_j}\not\in S$, 
-and for all $r<h$ we have $\prod_{j=1}^r {y_j}^{b_j}\in S$.  
+Then, there is some $h \in \BN$ such that $i \le h \le \max(i, l)$ satisfying $\prod_{j = 1}^h y_j^{b_j}\not\in S\cup S_0$, 
+and for all $r<h$ we have $\prod_{j=1}^r {y_j}^{b_j}\in S \cup S_0$. \todo{Check whether all these $S$ need to be changed to $S\cup S_0$ like here.}   
 Choose some tuple $(\gamma_1, \ldots, \gamma_n)$ which is minimal, in the sense that we cannot decrease any $\gamma_j$ 
 and have the following still satisfied: each $\gamma_j\le b_j$ 
-and $\prod_{j=1}^h {y_j}^{\gamma_j}\not\in S.$ Our recursive definition of 
-$S$ and the fact that $\prod_{j=1}^r {y_j}^{b_j}\in S$ implies that for each $1\le r< h$, we have $\prod_{j=1}^r {y_j}^{\gamma_j}\in S$.
+and $\prod_{j=1}^h {y_j}^{\gamma_j}\not\in S\cup S_0.$ Our recursive definition of 
+$S$ and the fact that $\prod_{j=1}^r {y_j}^{b_j}\in S\cup S_0$ implies that for each $1\le r< h$, we have $\prod_{j=1}^r {y_j}^{\gamma_j}\in S\cup S_0$.
 
 We now check that $\prod_{j=1}^h y_j^{\gamma_j}\in U_{h}$, by checking conditions \ref{custom:sat-1-*}, \ref{custom:sat-1-**}, and \ref{custom:sat-1-***}.  
 Notice that if $r\le n$, $\omega_1, \ldots \omega_r\in \mathbb{Z}_{\ge 0}$, and $\prod_{j=1}^r y_j^{\omega_j}\in S$, then our definition of $S$ implies $y_r\prod_{j=1}^r y_j^{\omega_j}\in S$ if and only if $c_r$ is maximal among $c_1, \ldots c_n$ not greater than than $c_r + \sum_{j=1}^r c_j \omega_j$.
@@ -1182,7 +1202,7 @@ Next, suppose we choose $\omega_1, \ldots, \omega_h$ such that $\omega_j\le \gam
 Since for each $r<h$, we have $\prod_{j=1}^r y_{j}^{\gamma_j}\in S$ meaning that $\sum_{j=1}^r \gamma_j c_j < c_{r+1}$, condition \ref{custom:sat-1-***} holds for $\prod_{j=1}^h y_j^{\gamma_j}$.  
 Thus $\prod_{j=1}^h y_j^{\gamma_j}\in U_{h}$.
 
-Since the ideal in $\Bk[u, y_1, \ldots, y_n]$ generated by is $S$ is $(y_1, \ldots, y_n) \cdot \Bk[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ generates every monomial in $\bigcup_{i=1}^n y_i \cdot \Bk[u, y_1, \ldots, y_n]-S$, we have shown that all monomials of $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
+Since the ideal in $\Bk[u, y_1, \ldots, y_n]$ generated by is $S$ is $(y_1, \ldots, y_n) \cdot \Bk[u, y_1, \ldots, y_n]$ and $\bigcup_{i=1}^{n-1} U_i$ contains every monomial in $\bigcup_{i=1}^n y_i \cdot \Bk[u, y_1, \ldots, y_n]-S$, we have shown that all monomials of $\Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n]$ are contained in
 \begin{align*}
 				& \Bk[u, x_1, \ldots, x_m] \cup \langle V \rangle \cup S \cup \left\langle \bigcup_{i=1}^{n-1} U_i \right\rangle \\
 	\subseteq \; 	& S \cup \langle T\rangle \cup \initial(I') \Bk[u, x_1, \ldots, x_m, y_1, \ldots, y_n] \; \cup \; \Bk[u, x_1, \ldots, x_m].
