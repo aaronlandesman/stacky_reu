@@ -325,7 +325,6 @@ bound of $12 \cdot \max(3, e_1, \ldots, e_r)$ can be reduced to $2\cdot \max(3,e
 ~\cite[Theorem 9.3.1]{vzb:stacky} and ~\cite[Theorem 8.7.1]{vzb:stacky} for a more precise statement of these bounds in the cases that $g = 0$ and $g > 0$ respectively. Note that we multiply all bounds given in Voight and Zureick-Brown \cite{vzb:stacky} by a factor of two. Our grading convention for log spin canonical rings uses weight $k$ for the degree whereas Voight and Zureick-Brown $d = 2k$ for degree.
 \end{rem}
 
-
 The remainder of the paper will be primarily devoted to proving
 Theorem ~\ref{thm:main}. The idea of the
 proof will be to induct first on the number of stacky points and then on the stabilizer order of those points.  To this end, we first review important background in
@@ -436,8 +435,19 @@ If $D \in \di \sx$ is a Weil divisor, then we define
 \end{align*}
 If $R$ is a graded ring, then we let $(R)_k$ refer to the $k^\text{th}$
 graded component of $R$.
-
 \end{defn}
+
+\begin{rem}
+\label{rem:gorenstein}
+	The log canonical ring, defined to be the direct sum of the even
+	graded pieces of the log spin canonical ring, is Gorenstein. It is
+	Cohen--Macaulay from \cite[Example 2.5(a)]
+	{watanabe:demazure-normal-graded} and then Gorenstein by
+	\cite[Corollary 2.9]{watanabe:demazure-normal-graded}. In
+	particular, this tells us that a log spin canonical curve, the
+	projectivization of a log spin canonical ring, is projectively
+	Gorenstein.
+\end{rem}
 
 \begin{rem}
 Although Definition ~\ref{defn:h0-stacky} may seem fairly ad hoc, it is naturally motivated in the context of stacks. See Voight and Zureick-Brown \cite[Lemma 5.4.7]{vzb:stacky} for a proof that Definition ~\ref{defn:h0-stacky} is equivalent to the stack-theoretic description.
@@ -448,7 +458,6 @@ Although Definition ~\ref{defn:h0-stacky} may seem fairly ad hoc, it is naturall
 Let $D \in \di \sx.$ If $z \neq 0$ is a rational section of $\sco(D)$ denote the order of
 zero of $z$ at $P$ by $\ord_P^D(z)$.
 \end{defn}
-
 
 \begin{defn}
 \label{defn:log-spin-canonical-ring}
@@ -626,6 +635,8 @@ ideal of $I$.
 \section{Examples}
 \label{sec:examples}
 
+\todo{Use Hilbert polynomial in an example}
+
 In this section, we work out several examples of computing presentations for spin canonical rings. In addition to providing intuition for the lemmas of Section ~\ref{sec:induction}, these examples also serve as useful base cases for our inductive proof of Theorem ~\ref{thm:main}.
 
 \begin{example}
@@ -633,7 +644,6 @@ In this section, we work out several examples of computing presentations for spi
 Let $(\sx',0, \halfcan')$ be a log spin curve of genus $g = 1,$ with $\halfcan' = 0$.
 Counting dimensions, we see $h^0(\sx, k\halfcan')=1$ for all $k \in \mathbb{Z}_{\ge 0}$ so it is immediately clear that $R_{\halfcan'} \cong \Bk[x]$ with $x$ a generator in degree 1.
 \end{example}
-
 
 \begin{example}
 \label{eg:adding-point}
@@ -998,11 +1008,11 @@ also extends to curves of genus $g > 0$.
 %Figure \ref{fig:s14/5-lattice} gives a pictorial representation of the posi%tive best lower approximations of $\alpha = \frac{14}{5}$.
 %\end{rem}
 
-\begin{figure}
-\includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
-\caption{This figure shows each non-negative best lower approximation of $\frac{14}{5}.$ Each ``$\bullet$'' denotes a best lower approximation and each ``$\circ$'' denotes a lattice point below $5y=14x$ which is not a best lower approximation.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}\label{fig:s14/5-lattice}
+%\begin{figure}
+%\includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
+%\caption{This figure shows each non-negative best lower approximation of $\frac{14}{5}.$ Each ``$\bullet$'' denotes a best lower approximation and each ``$\circ$'' denotes a lattice point below $5y=14x$ which is not a best lower approximation.  Note that the non-negative best lower approximations generate the monoid of lattice points in the first quadrant satisfying  $5y \le 14x$, with the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$ .}\label{fig:s14/5-lattice}
 \end{figure}
-\todo{Is this figure (figure 1)  still useful anywhere?}
+%\todo{Is this figure (figure 1)  still useful anywhere?}
 
 We next prove the first of three lemmas used to inductively add points.
 

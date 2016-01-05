@@ -122,12 +122,56 @@
 \begin{document}
 
 \maketitle
-
+\section{Changes Made}
 Here are the changes we have made in response to the referee's suggestions.
 
 \begin{enumerate}
-	\item 
+	\item We added a remark on Gorensteinness of the log canonical ring following
+	the definition of a log spin canonical ring in the background section.
+	We noticed in comment 1 that the referee made a comment saying
+	``Cohen-Macaulay and
+projectively Gorenstein follows as usual (of course, provided there are
+no log canonical points).'' We were a bit confused about the parenthetical, but interpreted
+it to mean that the canonical ring may not be Gorenstein if it is of the form
+\begin{align*}
+	\oplus_n H^0(X, P + n L)
+\end{align*}
+for $L$ some fractional divisor and $P$ a point. Of course, in our paper, all canonical rings are of the form
+\begin{align*}
+	\oplus_n H^0(X, n L)
+\end{align*}
+for $L$ a fractional divisor, so this would not pose an issue.
+	\item Use Hilbert polynomial in Example $\_\_\_$
+	\item Replace ``best lower approximation'' with Hirzebruch--Jung
+		fractions
 \end{enumerate}
+
+
+\section{Other suggestions}
+The referee also made the following suggestions.
+
+\begin{enumerate}
+	\item Change notation from $\frac{e_i - 1}{2 e_i}$
+		to $\frac{s_i}{2 s_i + 1}$ where $s_i = \frac{e_i - 1}{2}$ and
+		we range over all integers $s_i$ instead of odd integers $e_i$.
+\end{enumerate}
+
+We decided not to implement the above suggestions for the following
+reasons, respectively.
+
+\begin{enumerate}
+	\item Firstly, we maintained the $e_i$ notation for consistency
+	with the notation established in Voight--Zureick-Brown. These
+	$e_i$ correspond to the stabilizer orders in the log spin
+	canonical ring case considered there. Furthermore, we often
+	list degrees of generation and relations enumerated by signatures
+	of the form $(g; e_1, \ldots, e_n; \delta)$ with bounds given in
+	the	form $\min(5, e_1, \ldots, e_n)$ which are more natural to
+	consider than enumeration by signatures $(g; s_1, \ldots, s_n;
+	\delta)$ with bounds given in the form $\min(5, 2s_1 + 1, \ldots,
+	2s_n + 1)$.
+\end{enumerate}
+
 
 \end{document}
 
