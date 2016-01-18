@@ -1083,8 +1083,10 @@ Then,
 \end{enumerate}
 \end{lem}
 
-\sssec*{Idea of proof:}\todo{Update subsection}
-The proof will be fairly involved. To show part (a), we 
+\sssec*{Idea of proof:}
+The proof will be fairly involved. To show part (a), we use Riemann-Roch to reduce the
+problem to one of finding primitives of cones; we then apply previous work on continued fractions to deduce these primitives.  We conclude this part of the problem, showing by dimension count, that these primitives induce all the generators of $R_L$ over $R_L$'.
+
 first define a set of generators of $R_\halfcan$ over $R_{\halfcan'}$. 
 We then use Riemann--Roch
 to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$ and
@@ -1124,17 +1126,14 @@ had the same $y$ coordinate, then they would differ by a multiple of $(1,0)$
 and thus could not both be generators. So, all the $c_i$'s (the $y$-coordinates
 of the primitives) are distinct, and we may assume $c_i<c_{i+1}$ for
 all $i$.  Furthermore, note that in any degree $k$ greater than 1, there can be
-at most one new primitive,
-\todo{Aaron: What does ``new'' primitive mean? Does it mean the same thing as ``at most one primitive''
-without the word new?}
+at most one primitive,
 since we can construct points with $y$ coordinates
 between 0 and $\lfloor k\frac{\alpha}{\beta}\rfloor$ as a sum of elements in
 degree 1 and degree $k-1$, and these new primitives have pole order greater
 than all primitives of smaller $x$-coordinate.  Therefore, the ordering of
 primitives with $c_i<c_{i+1}$ for all $i$ also ensures that the $x$-values
 $k_i$ are in weakly increasing order.  Finally, let $y_1, \ldots, y_n$
-be elements of $R_Lx$
-\todo{Aaron: What is $R_Lx$? Should this just be $R_L$?}
+be elements of $R_L$
 with pole orders given by $c_1,\ldots, c_n$ and degrees
 given by the $x$ coordinates of the corresponding primitives.
 %We will the use positive best lower approximations to
@@ -1228,7 +1227,7 @@ b_j = \begin{cases}
 
 \noindent
 Then, there is some $h \in \BN$ such that $i \le h \le \max(i, l)$ satisfying $\prod_{j = 1}^h y_j^{b_j}\not\in S\cup S_0$, 
-and for all $r<h$ we have $\prod_{j=1}^r {y_j}^{b_j}\in S \cup S_0$. \todo{Check whether all these $S$ need to be changed to $S\cup S_0$ like here.}   
+and for all $r<h$ we have $\prod_{j=1}^r {y_j}^{b_j}\in S \cup S_0$.  
 Choose some tuple $(\gamma_1, \ldots, \gamma_n)$ which is minimal, in the sense that we cannot decrease any $\gamma_j$ 
 and have the following still satisfied: each $\gamma_j\le b_j$ 
 and $\prod_{j=1}^h {y_j}^{\gamma_j}\not\in S\cup S_0.$ Our recursive definition of 
@@ -1238,7 +1237,13 @@ We now check that $\prod_{j=1}^h y_j^{\gamma_j}\in U_{h}$, by checking condition
 Notice that if $r\le n$, $\omega_1, \ldots \omega_r\in \mathbb{Z}_{\ge 0}$, and $\prod_{j=1}^r y_j^{\omega_j}\in S$, then our definition of $S$ implies $y_r\prod_{j=1}^r y_j^{\omega_j}\in S$ if and only if $c_r$ is maximal among $c_1, \ldots c_n$ not greater than than $c_r + \sum_{j=1}^r c_j \omega_j$.
 Therefore, since $\prod_{j=1}^{h-1} y_j^{b_j}\in S$ but $\prod_{j=1}^h y_j^{b_j}\not\in S$, $c_h$ must not be maximal (among $c_1, \ldots, c_n$) such that $c_h \le \sum_{j=1}^h b_jc_j$, which means $c_{h+1}\le \sum_{j=1}^h b_jc_j$.  Therefore $\sum_{j=1}^h {y_j}^{\gamma_j}$ satisfies \ref{custom:sat-1-*}.  
 
-Next, suppose we choose $\omega_1, \ldots, \omega_h$ such that $\omega_j\le \gamma_j$ for all $j$ and $\omega_l \le \gamma_l$ for some $l$.  Then, for all $r< h$ we have $\prod_{j=1}^r {y_j}^{\gamma_j}\in S$, implying that for all $r< h$ we also have $\prod_{j=1}^r {y_j}^{\omega_j}\in S$.  Furthermore, since $(\gamma_1, \ldots, \gamma_h)$ was chosen to be minimal to satisfy the previous condition and that $\prod_{j=1}^h {y_j}^{\gamma_j}\not\in S$, we have $\prod_{j=1}^h {y_j}^{\omega_j}\in S$.  Therefore, $c_h$ is minimal among $c_1, \ldots c_n$ that is not greater than $\sum_{j=1}^h c_j \omega_j$, so in particular $\sum_{j=1}^h c_j\omega_j < c_{h+1}$; therefore, $\prod_{j=1}^h {y_j}^{\gamma_j}$ satisfies condition \ref{custom:sat-1-**}.  
+Next, suppose we choose $\omega_1, \ldots, \omega_h$ such that
+$\omega_j\le \gamma_j$ for all $j$ and $\omega_l \le \gamma_l$ for
+some $l$.  Then, for all $r< h$ we have $\prod_{j=1}^r
+{y_j}^{\gamma_j}\in S$, implying that for all $r< h$ we also have
+$\prod_{j=1}^r {y_j}^{\omega_j}\in S$.  Furthermore, since $(\gamma_1,
+\ldots, \gamma_h)$ was chosen to be minimal to satisfy the previous
+condition and that $\prod_{j=1}^h {y_j}^{\gamma_j}\not\in S\cup S_0$, we have $\prod_{j=1}^h {y_j}^{\omega_j}\in S$.  Therefore, $c_h$ is minimal among $c_1, \ldots c_n$ that is not greater than $\sum_{j=1}^h c_j \omega_j$, so in particular $\sum_{j=1}^h c_j\omega_j < c_{h+1}$; therefore, $\prod_{j=1}^h {y_j}^{\gamma_j}$ satisfies condition \ref{custom:sat-1-**}.  
 Since for each $r<h$, we have $\prod_{j=1}^r y_{j}^{\gamma_j}\in S$ meaning that $\sum_{j=1}^r \gamma_j c_j < c_{r+1}$, condition \ref{custom:sat-1-***} holds for $\prod_{j=1}^h y_j^{\gamma_j}$.  
 Thus $\prod_{j=1}^h y_j^{\gamma_j}\in U_{h}$.
 
