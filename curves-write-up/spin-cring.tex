@@ -340,8 +340,7 @@ research.
 \section{Background}
 \label{sec:background}
 Here we collect various definitions and notation that will be
-used throughout the paper. Many of the conventions come from existing
-literature. For basic references on the statements and definitions
+used throughout the paper. For basic references on the statements and definitions
 used below, see Hartshorne \cite[Chapter IV]{hartshorne:ag},
 Saint-Donat \cite{saint-donat:proj}, Arbarello--Cornalba--Griffiths--Harris 
 \cite[Section III.2]
@@ -484,7 +483,21 @@ that $\halfcan \in \di \sx$:
 if some $e_i$ were even,
 then $\frac{e_i - 1}{2e_i}$ would be in reduced form implying $\halfcan \notin \di \sx$.
 \end{rem}
-	
+
+\begin{rem}
+	Except in degenerate cases,
+	such as when the signature is $(0;3,3,3;0)$
+	as covered in the first line of Table ~\ref{table:g-0-exceptional},
+	we have the following important restriction on the generators
+	of $R_L$. For each $e_i$ in the signature of $\sx$, there
+	will be at least one generator
+	with degree $0 \bmod e_i$ and at least one generator
+	with degree $-2 \bmod e_i$.
+	Although this is an important restriction on the genertors,
+	we will not use this in the remainder of the paper.
+\end{rem}
+
+
 \begin{rem}
 \label{rem:delta-not-1}
 Suppose $(\sx, \Delta, \halfcan)$ is a log spin curve. Note that $\deg \Delta$
@@ -635,8 +648,6 @@ ideal of $I$.
 \section{Examples}
 \label{sec:examples}
 
-\todo{Use Hilbert polynomial in an example}
-
 In this section, we work out several examples of computing presentations for spin canonical rings. In addition to providing intuition for the lemmas of Section ~\ref{sec:induction}, these examples also serve as useful base cases for our inductive proof of Theorem ~\ref{thm:main}.
 
 \begin{example}
@@ -644,6 +655,23 @@ In this section, we work out several examples of computing presentations for spi
 Let $(\sx',0, \halfcan')$ be a log spin curve of genus $g = 1,$ with $\halfcan' = 0$.
 Counting dimensions, we see $h^0(\sx, k\halfcan')=1$ for all $k \in \mathbb{Z}_{\ge 0}$ so it is immediately clear that $R_{\halfcan'} \cong \Bk[x]$ with $x$ a generator in degree 1.
 \end{example}
+
+\begin{rem}
+	\label{remark:hilbert-series}
+	In the following examples, in order to find the Hilbert series of
+	a stacky curve, we will cite
+	\cite[Theorem 4.2.1]{zhou:orbifold-riemann-roch-and-hilbert-series}.
+	Note that
+	\cite[Theorem 3.1]{buckleyRZ:ice-cream-orbifold-and-riemann-roch}
+	restates \cite[Theorem 4.2.1]{zhou:orbifold-riemann-roch-and-hilbert-series}
+	with the restriction that the dimension of the orbifold (which is the same
+	as a stacky curve in dimension 1, by \cite[Proposition 6.1.5]{vzb:stacky},)	
+	is strictly more than 1.
+	This restriction is made because in birational geometry orbifolds
+	usually refer to a normal variety ramified only in codimension at least 2,
+	while the stacky points we are dealing with appear in codimension 1.
+\end{rem}
+
 
 \begin{example}
 \label{eg:adding-point}
@@ -702,7 +730,12 @@ we obtain a surjection
 \end{align}
 
 To complete the example, it suffices to show there are no
-additional relations. First, note that $a_1 x_1 y_{1, 3} + a_2 x_2
+additional relations. 
+One method would be to use \cite[Theorem 4.2.1]{zhou:orbifold-riemann-roch-and-hilbert-series}
+to write down the Hilbert series and then check this agrees with the
+Hilbert series of the ring we constructed above.
+Here is an alternative method:
+First, note that $a_1 x_1 y_{1, 3} + a_2 x_2
 y_{1, 3} + f(x_1, x_2)$ is irreducible because there are no
 relations among $x_1, x_2$ and $y_{1, 3}$ in lower degrees. Hence,
 $\Bk[x_1, x_2, y_{1, 3}] / (a_1 x_1 y_{1, 3} + a_2 x_2 y_{1, 3} +
@@ -719,10 +752,26 @@ Let $(\sx', 0, \halfcan')$ be a log spin curve with signature $\sigma =
 \frac{3}{7} P_2 + \frac{3}{7} P_3,$ where $P_1, P_2,$ and $P_3$ are
 distinct points. In this example, we will exhibit a minimal
 presentation for $R' = R(\sx', 0, \halfcan')$ and show that $R'$ is
-generated as a $Bk$-algebra in degrees up to $e := \max(5, 3, 7, 7) = 7$
+generated as a $\Bk$-algebra in degrees up to $e := \max(5, 3, 7, 7) = 7$
 with relations generated in degrees up to $2e = 14$.
 Notice that $\deg \lfloor k K_{\sx'} \rfloor= -k + \lfloor \frac{k}{3}
 \rfloor + 2 \lfloor \frac{3k}{7} \rfloor$.
+
+First, by \cite[Theorem 4.2.1]{zhou:orbifold-riemann-roch-and-hilbert-series},
+the Hilbert series of this log spin curve is
+\begin{align*}
+	P_{(\sx', 0, \halfcan')}(k) &= \frac{1-2k + k^2 -2k^3 + k^4}{(1-k)^2} + \frac{k^3}{(1 - k)(1 - k^3)} + 2 \frac{k^3 + k^5 + k^7}{(1-k)(1-k^7)}.
+\end{align*}
+For $k = 0, 1, 2, \ldots$ we have
+\[
+	P_{(\sx', 0, \halfcan')}(k) = 1, 0, 0, 1, 0, 1, 1, 2, 1, 1, 2, 1, 3, 2, 3, \ldots
+\]
+
+\noindent
+so $R'$ must have some generators $x_{3, 1}, x_{5, 1}, x_{7, 1},
+x_{7, 2}$ with $x_{i, j} \in H^0(\sx', i \halfcan')$.
+
+
 
 By the Generalized Max Noether Theorem for genus 0 curves (see Voight
 and Zureick-Brown \cite[Lemma 3.1.1]{vzb:stacky}),
@@ -740,63 +789,35 @@ the saturation of $\halfcan'$ is $5$ (see Definition ~\ref{defn:sat}).
 Then the map in ~\eqref{eqn:noether-377} is surjective when $k \geq
 21 + s = 26$ (i.e.~ $R'$ is generated up to degree 25).
 
-For $k = 0, 1, 2, \ldots$ we have
-\[
-	\dim_\Bk H^0 (\sx', k \halfcan') = 1, 0, 0, 1, 0, 1, 1, 2, 1, 1, 2, 1, 3, 2, 3, \ldots
-\]
-
-\noindent
-so $R'$ must have some generators $x_{3, 1}, x_{5, 1}, x_{7, 1},
-x_{7, 2}$ with $x_{i, j} \in H^0(\sx', i \halfcan')$.
-
 To show that these generate all of $R'$, we need to show that all
 $H^0 (\sx', k \halfcan')$ are generated by lower degrees for $k = 6$
-and $7 < k \leq 25$. Note that we can again use Max Noether's theorem
-(taking saturation into account) to see that
-
-\begin{align*}
-	&H^0 (\sx', 3 \halfcan') \otimes H^0 (\sx',
-	(k - 3) \halfcan') \rightarrow H^0 (\sx',
-	k \halfcan') \text{ if } k \geq 12 \text{ and } 3 \nmid k \\
-	&H^0 (\sx', 7 \halfcan') \otimes H^0 (\sx',
-	(k - 7) \halfcan') \rightarrow H^0 (\sx',
-	k \halfcan') \text{ if } k \geq 6, k \not\equiv 0, 5
-	\bmod 7
-\end{align*}
-
-\noindent
-are surjective. This reduces the problem to checking generation
-in the degrees of the exceptions $k \in \{8, 12, 21\}$.
-Checking these remaining cases via pole degree considerations shows
-that these degrees are also generated in lower degrees. Thus, $R'$
+and $7 < k \leq 25$. This can be seen by
+checking these remaining cases via pole degree considerations
+or using the generalized Max Noether's theorem. Thus, $R'$
 is generated in degrees $\{3, 5, 7, 7\}$.
 
 By relabelling the variables if necessary, we can assume that $x_{7
 , 1}$ corresponds to the generator with maximal pole order at $P_2$ 
 and $x_{7, 2}$ correspond to the generator with maximal pole order 
 at $P_3$.
-
-We can directly see that the relations are given in degrees $10$
-and $14$. In particular, we have relations
+We then have two relations
 \begin{align*}
 	&a_1 x_{5, 1}^2 + a_2 x_{7, 2} x_{3, 1} + a_3 x_{7, 1} x_{3, 1} = 
 	0 &\text{ in degree $10$} \\
 	&b_1 x_{7, 2}^2 + b_2 x_{7, 2} x_{7, 1} + b_3 x_{7, 1}^2
-	+ b_4 x_{5, 1} x_{3, 1}^3 = 0  &\text{ in degree $14$}
+	+ b_4 x_{5, 1} x_{3, 1}^3 = 0  &\text{ in degree $14$.}
 \end{align*}
 
 \noindent
-and note that $a_1$ and $b_1$ are both nonzero. If $a_1 = 0$, then we
-have that
+Note that $a_1$ and $b_1$ are both nonzero. For example, if $a_1 = 0$,
+we would have
 \[
-	a_2 x_{7, 2} x_{3, 1} = -a_3 x_{7, 1} x_{3, 1}
+	a_2 x_{7, 2} x_{3, 1} = -a_3 x_{7, 1} x_{3, 1}.
 \]
 
 \noindent
-However, $x_{7, 2} x_{3, 1}$ has pole orders $(3, 3, 4)$ and
-$x_{7, 1} x_{3, 1}$ has pole orders $(3, 4, 3)$ so their
-coefficients must be zero for this equality to hold. We have a
-similar pole order consideration in forcing $b_1$ to be nonzero.
+implying that $a_2 = a_3 = 0$, which would mean there is no relation at all.
+A similar pole order consideration in forcing $b_1$ to be nonzero.
 
 Let $I$ be the ideal generated by these relations in
 $\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]$. Under grevlex with
@@ -807,24 +828,8 @@ ideal of $I$ is
 \]
 
 \noindent
-since $a_1$ and $b_1$ are nonzero.
-
-To demonstrate that these two relations generate all 
-relations, we show that $\dim_\Bk (R')_k = \dim_\Bk
-(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \initial(I))_k$ for 
-all degrees $k \geq 0$. In particular, 
-
-\begin{align*}
-	\dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I\right)_k &=
-	\dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}]	/ \initial(I)\right)_k \\
-	&= \dim_\Bk \left(\Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle
-	x_{7, 2}^2, x_{5, 1}^2 \rangle \right)_k
-\end{align*}
-\noindent
-for all $k \geq 0$. But the fact $\dim_\Bk (R')_k = \dim_\Bk \left(\Bk[x_{7, 2},
-x_{7, 1}, x_{5, 1}, x_{3, 1}] / \langle x_{7, 2}^2, x_{5, 1}^2
-\rangle\right)_k$ can be checked by looking at the $\Bk$-basis at each degree
-$k$.
+since $a_1$ and $b_1$ are nonzero. Since this ring has Hilbert series
+equal to $P_{(\sx', 0, \halfcan')}(k)$, we have found all the relations.
 
 Therefore, the canonical ring $R'$ has presentation $R' =
 \Bk[x_{7, 2}, x_{7, 1}, x_{5, 1}, x_{3, 1}] / I$ with
@@ -842,7 +847,9 @@ $$R_{\halfcan'} \cong \Bk[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta
 Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_1$ but not at $P_2$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_2$ but not at $P_1$. Let $y_4 \in H^0(\sx,4\halfcan')$ be an element with a pole of order 1 at both $P_1$ and $P_2$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q \sim P - Q$, $3P - 3Q + P_1$, and $3P - 3Q + P_1 + P_2$ are 0, 1, and 2 dimensional respectively.
 
 Then, there exist constants $\alpha, \beta, \gamma \in \Bk$ so that 
-$R_{\halfcan'} \cong \Bk[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first use Riemann--Roch to compute the dimensions of $(R_{\halfcan'})_n$ over $\Bk$, then verify that these generators and relations produce the correct number of independent functions via an analysis of zero and pole order. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
+$R_{\halfcan'} \cong \Bk[u, x, y_3, y_4]/(xy_3- \alpha uy_4, y_4^2 - \beta x^2 u - \gamma y^2u).$ The proof of this is fairly algorithmic: We may first 
+write down the Hilbert series of $(R_{\halfcan'})_n$ over $\Bk$ using \cite[Theorem 4.2.1]{zhou:orbifold-riemann-roch-and-hilbert-series},
+ then verify that these generators and relations produce the correct number of independent functions via an analysis of zero and pole order. The details are omitted as it is analogous to Example ~\ref{eg:base-0-377}.
 \end{example}
 
 \begin{example}
@@ -860,7 +867,8 @@ so that
 
 $$R_\halfcan \cong \Bk[x_2 , y_3, y_5]/(y_3^4 - \alpha x_2 y_5^2).$$
 
-In order to show this is an isomorphism, one can use Riemann--Roch and pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring $R$ so that for all $j \in \BZ,$ the $j$th graded component $(R)_j$ satisfies $\dim_\Bk (R)_j = \dim_\Bk R_\halfcan.$ Hence, $R \cong R_\halfcan$. The verification is analogous to Example ~\ref{eg:base-0-377} and is omitted.
+In order to show this is an isomorphism, one can write down the Hilbert series using \cite[Theorem 4.2.1]{zhou:orbifold-riemann-roch-and-hilbert-series}
+ and then use pole order considerations at $P_1$ to check the above relation exists. One can then check that the generators and relation determine a ring with the desired Hilbert series. The verification is analogous to Example ~\ref{eg:base-0-377} and is omitted.
 \end{example}
 
 \begin{rem}
@@ -970,8 +978,8 @@ Observe that Definition \ref{defn:graded-p-lex} remains the same if we replace $
 We are almost ready to state Lemma ~\ref{lem:sat-1}, which will yield an inductive procedure for determining the generators and relations of $R_D$, where $D \in \di \BP^1$ is an effective $
 \BQ$-divisor. Whereas O'Dorney considers arbitrary $\BQ$-divisors in
 $Div(\mathbb{P}^1)$ \cite[Theorem 8]{dorney:canonical}, we restrict
-attention to effective divisors and in Lemma ~\ref{lem:sat-1} we are
-able to obtain much tighter bounds.  Moreover, Lemma ~\ref{lem:sat-1}
+attention to effective divisors and in Lemma ~\ref{lem:sat-1} we
+obtain much tighter bounds.  Moreover, Lemma ~\ref{lem:sat-1}
 also extends to curves of genus $g > 0$. 
 %Before stating Lemma
 %~\ref{lem:sat-1}, we recall some theory from continued fractions.
@@ -1076,9 +1084,8 @@ Then,
 \end{lem}
 
 \sssec*{Idea of proof:}\todo{Update subsection}
-The proof will be fairly involved. To show part (a), we first apply 
-literature on continued fractions to 
-define a set of generators of $R_\halfcan$ over $R_{\halfcan'}$. 
+The proof will be fairly involved. To show part (a), we 
+first define a set of generators of $R_\halfcan$ over $R_{\halfcan'}$. 
 We then use Riemann--Roch
 to count the dimension of $R_\halfcan$ over $R_{\halfcan'}$ and
 show that the set of elements we produce forms a basis.
@@ -1104,9 +1111,32 @@ Equation ~\ref{eqn:deg1-sat-ind}, for any $k
 Thus, there exist rational sections $t_i$ of $\sco(\lfloor k \halfcan \rfloor)$ with $\ord_P^{L'}(t_i) = i$
 for any $i \in \{0, \ldots, \lfloor k \frac{\alpha}{
 \beta} \rfloor \}$.
-This reduces the problem at hand to finding the primitives of the cone in $\mathbb{Z}\times \mathbb{Z}$ bounded by $y=0$ and $y=\frac{\alpha}{\beta}x$.  
+This reduces the problem at hand to finding the primitives of the cone in $\mathbb{Z}\times \mathbb{Z}$ with $x$ and $y$ coordinates,
+bounded by the lines $y=0$ and $y=\frac{\alpha}{\beta}x$.
 
-Literature on Cohn's geometric interpretation of hirzabruch jung fractions offers us an explicit formula for these primitives (Proposition 4.3 \todo{cite and add to bibtex}); one observes they all lie in degrees at most $\beta$ (since points in degree $\gamma=\beta+\omega$ can by written as a sum of points in degree $\beta$ with those in degree $\omega$).  Note that if two primitives had the same $y$ coordinate, then they would differ by a multiple of $(1,0)$ and thus could not both be generators; thus all the $c_i$'s (their $y$ coordinates) are distinct, and we can thus order them with $c_i<c_{i+1}$ for all $i$.  Furthermore, note that in any degree $k$ greater than 1, there can be at most one new primitive, since we can construct points with $y$ coordinates between 0 and $\lfloor k\frac{\alpha}{\beta}\rfloor$ as a sum of elements in degree 1 and degree $k-1$, and these new primitives have pole order greater than all primitives of smaller $x$-coordinate.  Therefore, the ordering of primitives with $c_i<c_{i+1}$ for all $i$ also ensures that the $x$-values $k_i$'s are also in weakly increasing order.  Finally, let $y_1, \ldots, y_n$ be elements of $R_Lx$ with pole orders given by $c_1,\ldots, c_n$ and degrees given by the $x$ coordinates of the corresponding primitives.
+Cohn's geometric interpretation of Hirzebruch--Jung fractions, as described in 
+\cite{popescuP:the-geometry-of-continued-fractions-and-the-topology-of-surface-singularities} 
+yields an explicit formula for these primitives, as given in \cite[Proposition 4.3]{popescuP:the-geometry-of-continued-fractions-and-the-topology-of-surface-singularities}.
+All primitives lie in degrees at most $\beta$
+(since points in degree $\gamma=\beta+\omega$ can be written as a sum of points
+in degree $\beta$ with those in degree $\omega$).  Note that if two primitives
+had the same $y$ coordinate, then they would differ by a multiple of $(1,0)$
+and thus could not both be generators. So, all the $c_i$'s (the $y$-coordinates
+of the primitives) are distinct, and we may assume $c_i<c_{i+1}$ for
+all $i$.  Furthermore, note that in any degree $k$ greater than 1, there can be
+at most one new primitive,
+\todo{Aaron: What does ``new'' primitive mean? Does it mean the same thing as ``at most one primitive''
+without the word new?}
+since we can construct points with $y$ coordinates
+between 0 and $\lfloor k\frac{\alpha}{\beta}\rfloor$ as a sum of elements in
+degree 1 and degree $k-1$, and these new primitives have pole order greater
+than all primitives of smaller $x$-coordinate.  Therefore, the ordering of
+primitives with $c_i<c_{i+1}$ for all $i$ also ensures that the $x$-values
+$k_i$ are in weakly increasing order.  Finally, let $y_1, \ldots, y_n$
+be elements of $R_Lx$
+\todo{Aaron: What is $R_Lx$? Should this just be $R_L$?}
+with pole orders given by $c_1,\ldots, c_n$ and degrees
+given by the $x$ coordinates of the corresponding primitives.
 %We will the use positive best lower approximations to
 %construct the generators $y_1, \ldots, y_n$ as described in the lemma's statement.
 %
@@ -1154,7 +1184,7 @@ We now recursively define a $\Bk$-basis for $R_\halfcan$ over $R_{\halfcan'}$. D
 \[
 	S_0 = \{u^l : l \in \BN_{\ge 0}\}
 \]
-and for each $i \in \BN$, suppose $c_j$ is the maximal element among of $c_1, \ldots c_n$ such that $c_j \le i.$ Note that such a $c_j$ exists because $1=c_1\le i.$ Define
+and for each $i \in \BN$, suppose $c_j$ is the maximal element of $c_1, \ldots, c_n$ such that $c_j \le i.$ Note that such a $c_j$ exists because $1=c_1\le i.$ Define
 \[
 	S_i = y_j \cdot S_{i-j}.
 \]
@@ -2710,7 +2740,10 @@ collaboration. We thank Brian Conrad, John Voight, and Shou-Wu
 Zhang for helpful comments on this paper and thank Jorge Neves
 for pointing out the bounds given by Miles Reid's work on the
 maximal degrees of minimal generators and relations of spin
-canonical rings in high genera. The first author would also like to
+canonical rings in high genera.
+We thank Miles Reid for clarifying how to
+find the Hilbert series of stacky curves.
+The first author would also like to
 mention Joseph Harris and Evan O'Dorney for several enlightening
 conversations related to Petri's Theorem. Finally, we gratefully
 acknowledge the support of the National Science Foundation (grant
@@ -2721,6 +2754,6 @@ has made our work possible.
 
 \nocite{*}
 \bibliography{bibliography}{}
-\bibliographystyle{plain}
+\bibliographystyle{alpha}
 
 \end{document}
