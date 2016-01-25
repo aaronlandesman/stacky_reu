@@ -815,7 +815,7 @@ We then have two relations
 Note that $a_1$ and $b_1$ are both nonzero. For example, if $a_1 = 0$,
 we would have
 \[
-	a_2 x_{7, 2} x_{3, 1} = -a_3 x_{7, 1} x_{3, 1}.
+	a_2 x_{7, 2} x_{3, 1} = -a_3 x_{7, 1} x_{3, 1}
 \]
 
 \noindent
@@ -845,7 +845,7 @@ degree $2e = 14$, as desired.
 \begin{example}
 \label{eg:base-1-33}
 Let $(\sx',0 , \halfcan')$ be a log spin curve of genus $1$ with $\halfcan' = P - Q + \frac{1}{3}P_1 + \frac{1}{3}P_2$. In this example, we show that
-$$R_{\halfcan'} \cong \Bk[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u)$$.
+$$R_{\halfcan'} \cong \Bk[u, x_3, y_3, y_4]/(x_3 y_3- \alpha uy_4, y_4^2 - \beta x_3^2 u - \gamma y_3^2u).$$
 
 Let $u \in H^0(\sx,2\halfcan')$ be any nonzero element, let $x_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_1$ but not at $P_2$ and $y_3 \in H^0(\sx,3\halfcan')$ be an element with a pole at $P_2$ but not at $P_1$. Let $y_4 \in H^0(\sx,4\halfcan')$ be an element with a pole of order 1 at both $P_1$ and $P_2$. Note that $x_3$ and $y_3$ exist because the linear systems $3P - 3Q \sim P - Q$, $3P - 3Q + P_1$, and $3P - 3Q + P_1 + P_2$ are 0, 1, and 2 dimensional respectively.
 
@@ -878,7 +878,7 @@ In order to show this is an isomorphism, one can write down the Hilbert series u
 \label{rem:base-0-377}
 Examples ~\ref{eg:base-0-377}, \ref{eg:base-1-33}, and
 \ref{eg:exception-1-5} are used as inductive base cases in the
-genus 0, genus 1, and genus 1 sections respectively (see Tables
+genus 0 and genus 1 sections (see Tables
 ~\ref{table:g-0-base-cases} and ~\ref{table:g-1-base}).
 
 We will come back to Examples ~\ref{eg:base-0-377} and
@@ -988,8 +988,8 @@ We next prove the first of three lemmas used to inductively add points.
 
 \begin{lem}
 \label{lem:sat-1}
-Let $X$ be a genus $g$ curve and $\halfcan' \in \BQ \otimes \di X$
-satisfying $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $k\halfcan'$ for all $k \in \BN$, meaning we can choose generators $u, x_1, \ldots, x_m$ of $R_{\halfcan'}$ in degree at most $\tau$ for some $\tau\in \BN$, with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
+Let $X$ be a genus $g$ curve and let $\halfcan' \in \BQ \otimes \di X$
+satisfy $h^0(X, \lfloor{\halfcan'}\rfloor)\ge 1$. Suppose $P$ is not a base-point of $k\halfcan'$ for all $k \in \BN$, meaning we can choose generators $u, x_1, \ldots, x_m$ of $R_{\halfcan'}$ in degree at most $\tau$ for some $\tau\in \BN$, with $\deg u = 1$, $\ord_P^{\halfcan'}(x_i)=0$ for all $1 \leq i \leq m$, and $\ord_P^{\halfcan'}(u) = 0$.  Suppose $\halfcan = \halfcan' + \frac{\alpha}{\beta} P$
 for some $\alpha, \beta \in \BN$ such that $\frac{\alpha}{\beta}$ is reduced and
 \begin{align}
 \label{eqn:deg1-sat-ind}
