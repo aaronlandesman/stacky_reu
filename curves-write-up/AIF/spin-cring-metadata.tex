@@ -1,0 +1,155 @@
+%        File: changes-summary.tex
+%     Created: Sat Oct 17 11:00 AM 2015 E
+% Last Change: Sat Oct 17 11:00 AM 2015 E
+%
+%%%%%%%%%%%%%%%%%%%%%
+%   AMS packages    %
+%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10 pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage{subfiles}
+\usepackage{mathpazo}
+\usepackage{euler}
+\usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
+
+\addtolength{\oddsidemargin}{-.5 in}
+\addtolength{\evensidemargin}{-.4 in}
+\addtolength{\textwidth}{1 in}
+\addtolength{\topmargin}{0 in}
+\addtolength{\textheight}{0 in}
+
+\RequirePackage{color}
+\definecolor{myred}{rgb}{0.75,0,0}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{myblue}{rgb}{0,0,0.65}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue}
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture} 
+\newtheorem{warning}[theorem]{Warning}
+\newtheorem{fact}[theorem]{Fact}
+\theoremstyle{remark}
+\newtheorem{notation}[theorem]{Notation}
+\numberwithin{equation}{section}
+  
+\newcommand\nc{\newcommand}
+\nc\on{\operatorname}
+\nc\renc{\renewcommand}
+\newcommand\se{\section}
+\newcommand\ssec{\subsection}
+\newcommand\sssec{\subsubsection}
+\newcommand\bn{{\mathbb N}}
+\newcommand\bc{{\mathbb C}}
+\newcommand\br{{\mathbb R}}
+\newcommand\bq{{\mathbb Q}}
+\newcommand\bp{{\mathbb P}}
+\newcommand\CF{{\mathcal F}}
+\newcommand\bz{{\mathbb Z}}
+\newcommand\ba{{\mathbb A}}
+\newcommand\fa{{\mathfrak a}}
+\newcommand\fp{{\mathfrak p}}
+\newcommand\fq{{\mathfrak q}}
+\newcommand\fm{{\mathfrak m}}
+\newcommand\so{{\mathscr O}}
+\newcommand\sg{{\mathscr G}}
+
+\newcommand\scm{{\mathscr M}}
+\newcommand\scn{{\mathscr N}}
+\newcommand\scf{{\mathscr F}}
+\newcommand\scg{{\mathscr G}}
+\newcommand\sco{{\mathscr O}}
+\newcommand\sch{{\mathscr H}}
+\newcommand\scl{{\mathscr L}}
+\newcommand\sci{{\mathscr I}}
+
+\newcommand \ra{\rightarrow}
+\newcommand{\id}{\mathrm{id}}
+\newcommand\im{\text{im }}
+\newcommand\coker{\text{coker}}
+\newcommand \spec{\text{Spec }}
+\newcommand \proj{\text{Proj }}
+\newcommand \rspec{\textit{Spec }}
+\newcommand \rproj{\textit{Proj }}
+\newcommand \mg{{\mathscr M_g}}
+
+\DeclareMathOperator\ord{ord}
+
+\newcommand \trdeg{\text{tr. deg }}
+\newcommand \codim{\text{codim}}
+\newcommand \rk{\text{rk }}
+\newcommand \di{\text{div }}
+\newcommand \depth{\text{depth }}
+\DeclareMathOperator\pic{Pic}
+\DeclareMathOperator\lcm{lcm}
+\DeclareMathOperator\rank{rank}
+\DeclareMathOperator\vol{Vol}
+\DeclareMathOperator\supp{Supp}
+
+
+\def\listtodoname{List of Todos}
+\def\listoftodos{\@starttoc{tdo}\listtodoname}
+
+\title{Metadata for ``Spin canonical rings of log stacky curves''}
+\author{Aaron Landesman, Peter Ruhm, and Robin Zhang}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	\item Title (English): Spin canonical rings of log stacky curves \\
+		Titre (Fran\c{c}ais): Anneaux log-canoniques de spin des
+		courbes de champs alg\'{e}briques
+	\item Abstract (English): Consider modular forms arising from a
+		finite-area quotient of the upper-half plane by a Fuchsian group.
+		By the classical results of Kodaira--Spencer, this ring of
+		modular forms may be viewed as the log spin canonical ring of a
+		stacky curve. In this paper, we tightly bound the degrees of
+		minimal generators and relations of log spin canonical rings.
+		As a 	consequence, we obtain a tight bound on the degrees of
+		minimal generators and relations for rings of modular forms of
+		arbitrary integral weight. \\
+		Abstrait (Fran\c{c}ais): Consid\'{e}rez formes modulaires
+		d\'{e}coulant d'une quotient d'aire-finie du demi-plan
+		sup\'{e}rieur par un groupe fuchsien. Par les r\'{e}sultats
+		classiques de Kodaira--Spencer, cet anneau de formes modulaires
+		peut \^{e}tre consid\'{e}r\'{e} comme l'anneau log-canonique de
+		spin d'un courbe de champs alg\'{e}briques. Dans cet article, nous
+		lions \'{e}troitement les degr\'{e}s de g\'{e}n\'{e}rateurs
+		minimaux et les relations minimes de l'anneau log-canonique de spin
+		d'un courbe de champs alg\'{e}briques. Par conséquent, on obtient
+		un virage serr\'{e} li\'{e} sur les degr\'{e}s de
+		g\'{e}n\'{e}rateurs minimaux et relations minimes pour les anneaux
+		de formes modulaires de poids arbitraires int\'{e}grantes.
+  \end{enumerate}
+
+\end{document}
+
+
