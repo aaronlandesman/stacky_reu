@@ -208,8 +208,17 @@ a subcategory of $m$-dimensional algebraic spaces.
 In particular, this would allow us to translate rings of Hilbert modular forms
 and Siegel modular forms whose coarse space is a projective space or a
 Hirzebruch surface to canonical rings on the corresponding algebraic surfaces.
-Thereby, our techniques would give a bound on generators and relations for such
-rings of Hilbert and Siegel modular forms.
+Thereby, if our results could be extended to all rational surfaces,
+they would give a bound on generators and relations for such
+rings of Hilbert and Siegel modular forms parameterized by rational
+Hilbert and Siegel modular surfaces.
+This would be interesting because such modular surfaces tend to be
+immensely complicated: ``Already for $g = 2$, the boundary of this fundamental domain is complicated; Gottschling found that it possesses $28$ boundary pieces'' \cite[p.\ 7]{geer:siegel-modular}.
+Since these varieties are so complicated, it is difficult
+to give explicit examples in which we can completely work out the canonical
+ring of a modular surface.
+Although we did not obtain a bound on the degree of generators and relations
+for general rational surfaces, its enough work to get a result for the class of rational varieties we consider.
 
 \ssec{Main Results and Outline}
 
@@ -221,7 +230,7 @@ $\bq$-divisors.
 \begin{restatable}{thm}{restateeffective}
 \label{thm:proj-effective-intro}
 Let $D = \sum_{i = 0}^{n} \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$, with $\alpha_i =
-\frac{c_i}{k_i} \in \bq_{> 0}$ and each $D_i \in \di \bp^m$ an integral divisor.
+\frac{c_i}{k_i} \in \bq_{> 0}$ in reduced form and each $D_i \in \di \bp^m$ an integral divisor.
 
 Then the canonical ring
 \[
@@ -236,7 +245,7 @@ relations generated in degrees at most $2 \max_{0 \leq i \leq n}{k_i}$.
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
 Let $D = \sum_{i = 0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$
-with $\alpha_i = \frac{c_i}{k_i}\in \bq$. Write $\ell_i := \lcm
+with $\alpha_i = \frac{c_i}{k_i}\in \bq$ in reduced form. Write $\ell_i := \lcm
 _{j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m \cong \proj
 \bk[x_0, \ldots, x_m]$ and let each $D_i = V(f_i)$ with $f_i \in \bk[x_0, \ldots, 
 x_m]$. Now suppose that $\{f_0, \ldots, f_n\}$ contains $m + 1$ independent 
@@ -268,7 +277,7 @@ a divisor
 $ D = \sum_{i=0}^n\frac{p_i}{2q_i}H_i \in \bq \otimes_\bz \di \bp^m$
 such that $H_i$ are hyperplanes,  
 $q_i$ are pairwise coprime integers, and $p_i$ are chosen
-so that $\deg D = \frac{1}{2 \prod_{i=0}^n}q_i$. Further,
+so that $\deg D = \frac{1}{2 \prod_{i=0}^n q_i}$. Further,
 choose a linear subspace $\pi: \bp^1 \rightarrow \bp^m$  generically so that
 $\pi^* D = \sum_{i=0}^n \frac{p_i}{2q_i}P_i$, 
 where $P_i$ are distinct points in $\bp^1$. To choose such a map
@@ -307,7 +316,7 @@ projective space was also implicitly used in Theorems
 \begin{restatable}{thm}{hirzrestate}
 \label{thm:hirz-generators-relations}
 Let $D = \sum_{i = 1}^n \alpha_i D_i \in \bq
-\otimes_\bz \di \hirz_m$ where $\alpha_i = \frac{c_i}{k_i} \in \bq$.
+\otimes_\bz \di \hirz_m$ where $\alpha_i = \frac{c_i}{k_i} \in \bq$ is written in reduced form.
 Write $\ell_{i,j} := \lcm_{h\ne i,j}(k_h)$.
 Let $u, v, z, w$ be the coordinates for the Hirzebruch surface
 $\hirz_m$, as described at the beginning of Section
@@ -368,8 +377,13 @@ and let $\ell_{i,j} = \lcm_{h\ne i,j}(k_h).$ In the case $X = \bp^m$, define the
 denote the canonical ring associated to the $\bq$-divisor $D$. If $R$
 is a graded ring, we denote the $d$th graded component of $R$ by $R_d$. If $r$ is a rational number, we let
 $\fr(r) := r - \lfloor r
-\rfloor$ denote the fractional part of $r$. Throughout, we
-shall work over a fixed base field $\bk$. If $D \in \bq \otimes_\bz
+\rfloor$ denote the fractional part of $r$. 
+Throughout, we work over a fixed algebraically closed field $\bk$.
+Since generator and relation degrees are preserved under base change to the algebraic closure, assuming that $\bk$ is algebraically closed is no restriction
+on generality and the results hold equally well over an arbitrary field.
+
+
+If $D \in \bq \otimes_\bz
 \di X$ is an arbitrary divisor, we denote $h^0(X, D) := \dim_\bk H^0(X,D)$.
 
 
@@ -1518,7 +1532,7 @@ support of the National Science Foundation (grant number DMS-1250467).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \nocite{*}
-\bibliography{bibliography-stacky-surface}{}
-\bibliographystyle{plain}
+\bibliography{bibliography-stacky-surface}
+\bibliographystyle{alpha}
 
 \end{document}

@@ -1,0 +1,157 @@
+%        File: changes-summary.tex
+%     Created: Sat Oct 17 11:00 AM 2015 E
+% Last Change: Sat Oct 17 11:00 AM 2015 E
+%
+%%%%%%%%%%%%%%%%%%%%%
+%   AMS packages    %
+%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10 pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage{subfiles}
+\usepackage{mathpazo}
+\usepackage{euler}
+\usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
+
+\addtolength{\oddsidemargin}{-.5 in}
+\addtolength{\evensidemargin}{-.4 in}
+\addtolength{\textwidth}{1 in}
+\addtolength{\topmargin}{0 in}
+\addtolength{\textheight}{0 in}
+
+\RequirePackage{color}
+\definecolor{myred}{rgb}{0.75,0,0}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{myblue}{rgb}{0,0,0.65}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue}
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture} 
+\newtheorem{warning}[theorem]{Warning}
+\newtheorem{fact}[theorem]{Fact}
+\theoremstyle{remark}
+\newtheorem{notation}[theorem]{Notation}
+\numberwithin{equation}{section}
+  
+\newcommand\nc{\newcommand}
+\nc\on{\operatorname}
+\nc\renc{\renewcommand}
+\newcommand\se{\section}
+\newcommand\ssec{\subsection}
+\newcommand\sssec{\subsubsection}
+\newcommand\bn{{\mathbb N}}
+\newcommand\bc{{\mathbb C}}
+\newcommand\br{{\mathbb R}}
+\newcommand\bq{{\mathbb Q}}
+\newcommand\bp{{\mathbb P}}
+\newcommand\CF{{\mathcal F}}
+\newcommand\bz{{\mathbb Z}}
+\newcommand\ba{{\mathbb A}}
+\newcommand\fa{{\mathfrak a}}
+\newcommand\fp{{\mathfrak p}}
+\newcommand\fq{{\mathfrak q}}
+\newcommand\fm{{\mathfrak m}}
+\newcommand\so{{\mathscr O}}
+\newcommand\sg{{\mathscr G}}
+
+\newcommand\scm{{\mathscr M}}
+\newcommand\scn{{\mathscr N}}
+\newcommand\scf{{\mathscr F}}
+\newcommand\scg{{\mathscr G}}
+\newcommand\sco{{\mathscr O}}
+\newcommand\sch{{\mathscr H}}
+\newcommand\scl{{\mathscr L}}
+\newcommand\sci{{\mathscr I}}
+
+\newcommand \ra{\rightarrow}
+\newcommand{\id}{\mathrm{id}}
+\newcommand\im{\text{im }}
+\newcommand\coker{\text{coker}}
+\newcommand \spec{\text{Spec }}
+\newcommand \proj{\text{Proj }}
+\newcommand \rspec{\textit{Spec }}
+\newcommand \rproj{\textit{Proj }}
+\newcommand \mg{{\mathscr M_g}}
+
+\DeclareMathOperator\ord{ord}
+
+\newcommand \trdeg{\text{tr. deg }}
+\newcommand \codim{\text{codim}}
+\newcommand \rk{\text{rk }}
+\newcommand \di{\text{div }}
+\newcommand \depth{\text{depth }}
+\DeclareMathOperator\pic{Pic}
+\DeclareMathOperator\lcm{lcm}
+\DeclareMathOperator\rank{rank}
+\DeclareMathOperator\vol{Vol}
+\DeclareMathOperator\supp{Supp}
+
+
+\def\listtodoname{List of Todos}
+\def\listoftodos{\@starttoc{tdo}\listtodoname}
+
+\title{Summary of Changes in response to Referee's Report}
+\author{Aaron Landesman, Peter Ruhm, and Robin Zhang}
+
+\begin{document}
+
+\maketitle
+\section{Changes Made}
+Here are the changes we have made in response to the referee's suggestions.
+\todo{make sure the theorem number here reflect the new numberings}
+\begin{enumerate}
+	\item \todo{Ask David how the new version sounds} We explained
+		in more detail how our potential application
+		for Hilbert modular forms and the difficulty in producing
+		an explicit example.
+	\item \todo{do this} For example, why give in Section 1.1 the main results in a form
+The presentation can be improved quite a lot.
+that the reader can only understand if he/she first reads later sections. 
+\todo{Reorganize the intro so as to introduce notations and conventions first,
+since the referee wants this}
+	\item In all our main theorems, we now say that $c_i/k_i$ is in reduced form. 
+	\item In Thm 1.2,  k is a field. Throughout our paper, the results hold for arbitrary fields, but we may assume the field is algebraically closed because the generator and relation degrees are preserved by base change to the algebraic closure. We have now included and clarified this in the ``Notations and Conventions'' subsection at the end of the Introduction.
+	\item In the previous version we submitted, Page 2, line -9, $deg(D)$ should have been $\frac{1}{2 \prod_{i=0}^n q_i}$. This is now fixed.
+		\todo{Say where}
+	\item \todo{Make Thm. 1.4 readable by including necessary notations
+		before it}
+	\item Section 2 starts with definitions that should have come earlier. (Was Section
+1.1 added in a later stage ?) Page 5, line 7, reference to things that come later.
+\item In Thm 2.5 the best lower approximations are not explained. These come later
+(page 9 and 10).
+\item 
+	\todo{I remember seeing something wrong with the bibliography, but can't find it now. Do you know what the referee is talking about?} The bibliography should be updated and misprints corrected.
+
+\end{enumerate}
+
+
+
+\end{document}
+
+
