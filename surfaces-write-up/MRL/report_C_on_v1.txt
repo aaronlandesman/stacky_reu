@@ -1,0 +1,28 @@
+
+For a Q-divisor (Weil divisor) D on a rational surface X one can consider the
+graded ring  R(X,D) with graded piece the space of sections of O([dD]) on X.
+The paper in question gives sharp bounds on the generators and relations 
+of such rings. The paper follows a paper of o'Dorney where the case of X=P^1
+is considered. The authors express the hope that this may help to describe
+generators and relations for rings of modular forms on certain moduli spaces.
+That might be the case, but is not adstructed by examples. The paper has
+a rather combinatorial nature. It seems correct. It could be a useful paper
+and deserves publication.
+
+The presentation can be improved quite a lot. 
+For example, why give in Section 1.1 the main results in a form
+that the reader can only understand if he/she first reads later sections. 
+In Thm 1.1, say that c_i/k_i is reduced. In Thm 1.2 what is k ? Any conditions
+on this field? Page 2, line -9, deg(D)= ?
+But Thm. 1.4 is unreadable at this stage.
+
+Section 2 starts with definitions that should have come earlier. (Was Section
+1.1 added in a later stage ?) Page 5, line 7, reference to things that come later.
+In Thm 2.5 the best lower approximations are not explained. These come later
+(page 9 and 10). 
+
+As to the terminology, one may ask whether the name 'canonical ring' (on page 1)
+is a well-chosen name. 
+
+Conclusion: the paper should be rewritten completely.
+The bibliography should be updated and misprints corrected.

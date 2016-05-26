@@ -480,9 +480,7 @@ $\vec{v} = (v_0, \ldots, v_m) \in \bz^{m + 1}$.  Then write
 \label{defn:vec-sum}
 For $\vec{v} \in \bz^n$, denote $\deg \vec{v} := \sum_{i = 0}
 ^n v_i$.
-For a given sequence of numbers $c_0, \ldots, c_r$, (which
-we will later take to be the best lower approximations
-for a certain divisor) let 
+For a given sequence of numbers $c_0, \ldots, c_r$, let 
 \begin{align*}
 	\mss_i := \left \{\vec{v} \in \bz_{\geq 0}^{m + 1} \; : \;
 \deg \vec v = c_i \right\}.	
@@ -491,10 +489,8 @@ for a certain divisor) let
 \noindent
 \end{defn}
 
-Next, we define an ordering on these vectors, which will be used to give a presentation for $R_D$. Although it is not
-stated explicitly later, in the case that $D = \alpha_0 D_0$ is supported on a single hypersurface, the relations in
-Theorem ~\ref{thm:proj-one-point} form a reduced Gr\"{o}bner basis with 
-respect to this ordering.
+Next, we define an ordering on these vectors, which will be used to
+give a presentation for $R_D$.
 
 \begin{defn}
 \label{defn:vec-order}
@@ -524,8 +520,8 @@ Let
 \]
 
 \noindent
-be the best lower approximations of $\alpha$. Then, the
-canonical ring
+be the convergents of the Hirzebruch-Jung continued fraction of
+$\alpha$. Then, the canonical ring
 \[
 	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
 \]
@@ -570,8 +566,9 @@ vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
 \sssec*{Idea of Proof:}
 The proof follows in four steps. First, we demonstrate that
 the $F_{i}^{\vec{v}}$'s form a set of minimal generators of $R_D$
-over $R_{D'}$ using their construction in terms of best lower
-approximations to $\alpha$. Then, since the $F_{i}^{\vec{v}}$ generate
+over $R_{D'}$ using their construction in terms of convergents of the
+Hirzebruch-Jung continued fraction of$\alpha$. Then, since the
+$F_{i}^{\vec{v}}$ generate
 all of $R_D$ over $R_{D'}$, and the leading terms of
 $G_{i,j}^{\vec v, \vec w}$ lies in $R_{D'}$, we obtain the
 relations $G_{i, j}^{\vec{v}, \vec{w}}$. We derive the relations
@@ -610,8 +607,8 @@ $\frac{\deg \vec{y}}{s}, \frac{\deg \vec{z}}{t}$ which both
 do not exceed $\alpha$. One of $\frac{\deg \vec{y}}{s},
 \frac{\deg \vec{z}}{t}$ must be at least $\frac{c_i}{d_i}$
 and $s$ and $t$ are both less than $d_i$, which contradicts the assumption that
-$\frac{c_i}{d_i}$ is a best lower approximation of $\alpha$
-(see Definition ~\ref{defn:lower-approximation}). Therefore, none of the $F_i^{\vec v}$ are redundant.
+$\frac{c_i}{d_i}$ is a convergent of the Hirzebruch-Jung continued
+fraction of $\alpha$. Therefore, none of the $F_i^{\vec v}$ are redundant.
 
 Next we show that $F^{\vec v}_i$ generate all of $R_D$. In the case $m = 1$, O'Dorney \cite[Theorem 6]
 {dorney:canonical} demonstrates that each lattice point $(\beta, \gamma) \in
@@ -704,6 +701,14 @@ $G_{i, j}^{\vec{v}, \vec{w}}$ and of form $L_{i, j}^{\vec{v},
 \vec{w}}$ generate all the relations among the $F_{i}^{\vec{v},
 \vec{w}}$.
 \end{proof}
+
+\begin{rem}
+\label{rem:proj-grobner}
+	In the case that $D = \alpha_0 D_0$ is supported on a single
+	hypersurface, the relations in Theorem ~\ref{thm:proj-one-point}
+	form a reduced Gr\"{o}bner basis with respect to the ordering
+	given in Definition~\ref{defn:vec-order}.
+\end{rem}
 
 \begin{rem}
 \label{rem:proj-two-points}
@@ -854,40 +859,6 @@ degree of relations in the proof of Theorem ~\ref{thm:proj-generators-relations}
 general and will also be used in Section ~\ref{sec:hirz} to bound the 
 degree of generators and relations on Hirzebruch surfaces.
 
-\begin{defn}
-\label{defn:lower-approximation}
-If $\alpha \in \bq$, then a rational number $\frac{c}{k} \leq \alpha$
-(written in reduced form with $c \in \bz, k \in \bn$) is a
-\textbf{best lower approximation} to $\alpha$ if there does not
-exist $\frac{c'}{k'}\in \mathbf{Q}$ such that $0 < k'< k$ and
-$\frac{c}{k} \le \frac{c'}{k'} \le \alpha$. 
-\end{defn}
-
-\begin{rem}
-\label{rem:lower-approximation}
-Note that all integers less than or equal to $\lfloor \alpha \rfloor$
-are best lower approximations to $\alpha$. Also, if $\alpha \ge 0$,
-then the non-negative best lower approximations of
-$\alpha$ form a finite sequence
-\[
-	0 = \frac{c_0}{k_0} < \frac{c_1}{k_1} < \ldots < \frac{c_r}{k_r} = \alpha.
-\]
-
-\noindent
-Figure ~\ref{fig:s14/5-lattice} gives a pictorial representation of the best lower approximations of $\alpha = \frac{14}{5}$.
-\end{rem}
-
-\begin{figure}
-\includegraphics{pics/spin-lower-approximations-pic-pics.pdf}
-\caption{This figure shows each non-negative best lower
-approximation of $\frac{14}{5}.$ Each ``$\bullet$'' denotes a best
-lower approximation and each ``$\circ$'' denotes a lattice point
-below $5y=14x$ which is not a best lower approximation.  Note that
-the non-negative best lower approximations generate the monoid of
-lattice points in the first quadrant satisfying  $5y \le 14x$, with
-the operation $(a_1, b_1)(a_2, b_2)\mapsto (a_1 + a_2, b_1 + b_2)$.}
-\label{fig:s14/5-lattice}
-\end{figure}
 
 \begin{prop}
 \label{prop:cone-generation}
