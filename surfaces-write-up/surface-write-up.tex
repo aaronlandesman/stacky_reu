@@ -320,8 +320,10 @@ Let $D = \sum_{i = 1}^n \alpha_i D_i \in \bq
 Write $\ell_{i,j} := \lcm_{h\ne i,j}(k_h)$.
 Let $u, v, z, w$ be the coordinates for the Hirzebruch surface
 $\hirz_m$, as described at the beginning of Section
-~\ref{sec:hirz} and define $\Te, \Tp$, and $\Tm$ as in Definition ~\ref{defn:t-defn}. Let each $D_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$.
-Now suppose that $\{f_1, \ldots, f_n\}$ contains two independent 
+~\ref{sec:hirz} and 
+define $\Te, \Tp$, and $\Tm$ as in Definition ~\ref{defn:t-defn}. Let each $D_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$.
+Now suppose that $\{f_1, \ldots, f_n\}$
+contains two independent 
 linear polynomials in $u, v$ and two independent linear polynomials in
 $w, x$ {\rm(}with corresponding $\alpha_j$ possibly zero{\rm)}.
 
@@ -335,16 +337,7 @@ Then $R_D$ is generated in degrees at most
 \noindent
 with relations generated in degrees at most 
 \[
-	\max(2 \rho, \tau)
-\]
-
-\noindent
-where
-\[
-	\tau = \rho
-	+ \max \left( \max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
-	\max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
-	(\bida_i \bidb_j - \bida_j \bidb_i) \bigr) \right).
+	2\rho
 \]
 \end{restatable}
 
@@ -1435,7 +1428,7 @@ of our bound in Equation ~\eqref{eqn:e-bound}, we see $\ker \psi$ is generated i
 	+ \max \left(\max_{i\in \Te} \bigl(\ell_i \gcd(a_i, b_i) \bigr),
 	\; \max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
 	(\bida_i \bidb_j - \bida_j
-	\bidb_i) \bigr) \right).
+	\bidb_i) \bigr) \right)\le 2\rho.
 \]
 \end{proof}
 
