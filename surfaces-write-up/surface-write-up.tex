@@ -22,6 +22,7 @@
 \usepackage{caption}
 \usepackage{thmtools}
 \usepackage{thm-restate}
+\usepackage{enumitem}
 
 \usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
 \def\listtodoname{List of Todos}
@@ -413,25 +414,24 @@ where $n \in \bz$, $\alpha_i \in \bq$, and $\deg D_i = \bida_i$.
 Choose $f_i$ so that $D_i = V(f_i)$.
 We shall further assume for this subsection that (possibly after
 reordering) $f_0,\ldots, f_{m}$ are $m$ independent linear forms
-on $\bp^m$.  This may necessitate the inclusion of ``Ghost Divisors'' $D_i$ with coefficients $\alpha_i = 0$. 
+on $\bp^m$.  This may necessitate the inclusion of ``ghost divisors'' $D_i$ with coefficients $\alpha_i = 0$. 
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
 The functions $u^d \cdot \prod_{i=0}^n f_i^{c_i} \in (R_D)_d$ satisfying
+both of the following conditions
 
-\begin{align}
-\label{align:pm-span}
-\sum_{i=0}^{n} c_i \cdot \bida_i = 0 && \text{ and } &&c_i \geq
--\lfloor d\alpha_i \rfloor	
-\end{align}
+\begin{enumerate}
+	\item $\sum_{i=0}^{n} c_i \cdot \bida_i = 0$
+	\item $c_i \geq - \lfloor d \alpha_i \rfloor$
+\end{enumerate}
 
 \noindent
-span $H^0(\bp^m, dD)$ over $\bk$. Furthermore, functions 
-of the form $u^d \cdot \prod_{i=0}^n f_i^{c_i}$ satisfying Equation ~\eqref{align:pm-span} and
-\begin{align}
-\label{align:pm-basis}
-c_i = -\lfloor d\alpha_i \rfloor && \text{ for } && i > m
-\end{align}
+span $H^0(\bp^m, dD)$ over $\bk$. Furthermore, such functions 
+that also satisfy
+\begin{enumerate}[resume]
+	\item $c_i = -\lfloor d\alpha_i \rfloor \text{ for } i > m$
+\end{enumerate}
 
 \noindent
 form a basis for $H^0(\bp^m, dD)$ over $\bk$.
@@ -439,16 +439,16 @@ form a basis for $H^0(\bp^m, dD)$ over $\bk$.
 
 \begin{proof}
 By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
-~\eqref{align:pm-span} lie in $H^0(\mathbb{P}^m,dD)$.
+(1) and (2) lie in $H^0(\mathbb{P}^m,dD)$.
 To complete the proof, it
-suffices to check functions satisfying conditions ~\eqref{align:pm-basis} form
+suffices to check functions satisfying conditions (1-3) form
 a basis of $H^0(\bp^m,dD)$. Note that there are $\binom{m+ \deg \lfloor dD \rfloor }{m}$
-functions satisfying condition ~\eqref{align:pm-basis}. However we know
+functions satisfying conditions (1-3). However we know
 $h^0(\bp^m,dD) = \binom{m+ \deg \lfloor dD \rfloor }{m},$ so it suffices to show
-that those functions satisfying condition ~\eqref{align:pm-basis} are
+that those functions satisfying conditions (1-3) are
 independent. This follows from the assumption that $f_0,\ldots f_m$ form a
 basis of linear forms, and so all monomials in $f_0,\ldots, f_m$
-of degree $\deg \lfloor d \deg D \rfloor $
+of degree $\deg \lfloor d (\deg D) \rfloor $
 form a basis of degree $\deg \lfloor d  D \rfloor$ rational functions.
 \end{proof}
 
