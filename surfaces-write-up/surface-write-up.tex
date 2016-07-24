@@ -192,7 +192,7 @@ Moreover, $\bq$-divisors on surfaces also naturally
 appear when considering the canonical ring of surfaces of Kodaira dimension 1.
 A surface has Kodaira dimension 1 if and only if it is an elliptic surface \cite[p. 244]{
 barthHPV:compactComplexSurfaces}, and
-the canonical rings of elliptic surfaces most naturally described in the setting of
+the canonical rings of elliptic surfaces are most naturally described in the setting of
 $\bq$-divisors \cite[Chapter V, Theorem 12.1]{barthHPV:compactComplexSurfaces}. 
 
 We expect the work in this paper will help calculate a presentation of certain rings of
@@ -219,10 +219,12 @@ Since these varieties are so complicated, it is difficult
 to give explicit examples in which we can completely work out the canonical
 ring of a modular surface.
 Although we did not obtain a bound on the degree of generators and relations
-for general rational surfaces, its enough work to get a result for the class of rational varieties we consider.
+for general rational surfaces, the restricted class of rational varieties we consider still required significant work.
 
-We will use $m \in \bz$ to index the dimension of a given projective
-space $\bp^m$ or the type of the Hirzebruch surface $\hirz_m$.
+\subsection{Notation}
+We now define some notation used throughout the paper.
+Use $m \in \bz$ to index the dimension of a given projective
+space $\bp^m$ and the type of the Hirzebruch surface $\hirz_m$.
 Let $D$ be a (Weil) $\bq$-divisor of the form
 \begin{align*}
 	D = \sum_{i=1}^{n}\alpha_i D_i \in \bq \otimes_\bz \di X.
@@ -234,9 +236,11 @@ so, we shall sometimes start the indexing at $0$, so that $i$ runs
 from $0$ to $n$. In the case $X = \bp^m$, define the degree of $D$ by $\deg D :=
 \sum_{i=1}^{n}\alpha_i \cdot \deg D_i$. The floor of a $\bq$-divisor $D$ is a divisor $\lfloor D
 \rfloor \in \di X$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
-\lfloor \alpha_i \rfloor D_i$. Let $
-	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)$
-denote the canonical ring associated to the $\bq$-divisor $D$. If $R$
+\lfloor \alpha_i \rfloor D_i$. Let 
+$R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)$
+denote the canonical ring associated to the $\bq$-divisor $D$. 
+So, $R_D$ is notation for $R(X,D)$ when $X$ is understood from context.
+If $R$
 is a graded ring, we denote the $d$th graded component of $R$ by $R_d$. If $r$ is a rational number, we let
 $\fr(r) := r - \lfloor r
 \rfloor$ denote the fractional part of $r$. 
@@ -259,12 +263,7 @@ $\bq$-divisors.
 Let $D = \sum_{i = 0}^{n} \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$, with $\alpha_i =
 \frac{c_i}{k_i} \in \bq_{> 0}$ in reduced form and each $D_i \in \di \bp^m$ an integral divisor.
 
-Then the canonical ring
-\[
-	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
-\]
-
-\noindent
+Then the canonical ring $R_D$
 is generated in degrees at most $\max_{0 \leq i \leq n}{k_i}$ with
 relations generated in degrees at most $2 \max_{0 \leq i \leq n}{k_i}$.
 \end{restatable}
@@ -282,17 +281,13 @@ Remark ~\ref{rem:exact-effective-bounds}.
 Let $D = \sum_{i = 0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$
 with $\alpha_i = \frac{c_i}{k_i}\in \bq$ in reduced form. Write $\ell_i := \lcm
 _{j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m \cong \proj
-\bk[x_0, \ldots, x_m]$ and let each $D_i = V(f_i)$ with $f_i \in \bk[x_0, \ldots, 
+\bk[x_0, \ldots, x_m]$ and define $D_i := V(f_i)$, for some $f_i \in \bk[x_0, \ldots, 
 x_m]$. Now suppose that $\{f_0, \ldots, f_n\}$ contains $m + 1$ independent 
-linear polynomials in $x_0, \ldots, x_m$ {\rm(}with corresponding 
-$\alpha_j$ possibly zero{\rm)}.
+linear polynomials in $x_0, \ldots, x_m$ {\rm(}where we allow for 
+$\alpha_j = 0$ in the expansion of $D${\rm)}.
 
 Then $R_D$ is generated in degrees at most 
-\[
-	\sum_{i = 0}^n \ell_i a_i
-\]
-
-\noindent
+$\sum_{i = 0}^n \ell_i a_i$
 with relations generated in degrees at most
 \[
 	\max \left(2 \sum_{i=0}^n \ell_i a_i, \frac{\max_{0\le i \le n}
@@ -311,13 +306,11 @@ Remark~\ref{rem:exact-noneff-bounds}.
 
 In Section \ref{sec:hirz}, we shift our attention to Hirzebruch surfaces. Recall that for each $m \geq 0$ we can define the
 Hirzebruch surface $F_m := \proj(\sym^\bullet \sco_{\bp^1} \oplus
-\sco_{\bp^1}(m)),$ or as a quotient of an open subscheme of
-$\ba^4$ by a 
-weighted action, as is done in the
-beginning of Section \ref{sec:hirz}.
-Note that Hirzebruch surfaces are regular, normal,
-and locally factorial, being $\bp^1$-bundles over
-$\bp^1$. Therefore, the natural map from Cartier
+\sco_{\bp^1}(m))$ as a projective bundle over $\bp^1$.
+Let $u,v$ the projective coordinates on the base $\bp^1$ and let $z,w$ be the projective coordinates
+on the fiber, as defined more precisely at the beginning of
+\ref{sec:hirz}.
+Since Hirzebruch surfaces are smooth, the natural map from Cartier
 divisors to Weil divisors is an isomorphism.
 In other words, all Cartier divisors arise as the zero locus
 of a section of some line bundle. We implicitly use this in the
@@ -329,26 +322,23 @@ projective space was also implicitly used in Theorems
 \label{thm:hirz-generators-relations}
 Let $D = \sum_{i = 1}^n \alpha_i D_i \in \bq
 \otimes_\bz \di \hirz_m$ where $\alpha_i = \frac{c_i}{k_i} \in \bq$ is written in reduced form.  
-Let each $D_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$.
+Let each $D_i = V(f_i)$, where $f_i \in \sco(a_i, b_i)$.
 Let $u, v, z, w$ be the coordinates for the Hirzebruch surface
-$\hirz_m$, as described at the beginning of Section
-~\ref{sec:hirz} and suppose that $\{f_1, \ldots, f_n\}$
+$\hirz_m$, and suppose that $\{f_1, \ldots, f_n\}$
 contains two independent 
 linear polynomials in $u, v$ and two independent linear polynomials in
-$w, x$ {\rm(}with corresponding $\alpha_j$ possibly zero{\rm)}.
+$w, x$ {\rm(}where we allow for $\alpha_j = 0$ in the expansion of $D${\rm)}.
 
 Then $R_D$ is generated in degrees at most
 \[
-	\rho = \lcm_{1\le i\le n}(k_i)\sum_{1\le i\le j\le n} \bida_i \bidb_i
+	\lcm_{1\le i\le n}(k_i)\cdot \left(\sum_{1\le i\le j\le n} \bida_i \bidb_i\right) 
 \]
-
 \noindent
 with relations generated in degrees at most 
 \[
-	2\rho
+	2 \cdot \lcm_{1\le i\le n}(k_i) \cdot \left( \sum_{1\le i\le j\le n} \bida_i \bidb_i\right) 
 \]
 \end{thm}
-
 \begin{rem}
 Theorem~\ref{thm:hirz-generators-relations} is restated with a more precise
 bound in Theorem~\ref{thm:hirz-generators-relations-full}.
@@ -966,10 +956,9 @@ the minimal degree of generation of $\ker \psi$.
 First, note that surjectivity of $\chi$ implies we have an exact sequence
 \[
 \begin{tikzcd}
-0 \ar {r} & \ker \chi \ar{r}{\rho} & \ker \phi \ar {r}{\tau} & \ker \psi \ar r & 0.
+0 \ar {r} & \ker \chi \ar{r} & \ker \phi \ar {r} & \ker \psi \ar r & 0.
 \end{tikzcd}
 \]
-
 This shows that lifts of generators of $\ker \psi$ together with images of
 generators of $\ker \chi$ generate all of $\ker \phi,$ as desired. 
 \end{proof}
@@ -1459,7 +1448,7 @@ $\hirz_m$, as described at the beginning of Section
 contains two independent 
 linear polynomials in $u, v$ and two independent linear polynomials in
 $w, x$ {\rm(}with corresponding $\alpha_j$ possibly zero{\rm)}.
-Define $\Te, \Tp$, and $\Tm$ as in Definition ~\ref{defn:t-defn}. Let each $D_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$.
+Recall $\Te, \Tp$, and $\Tm$ as given in Definition ~\ref{defn:t-defn} and let each $D_i = V(f_i)$ where $f_i \in \sco(a_i, b_i)$.
 
 Then $R_D$ is generated in degrees at most
 \[
@@ -1469,14 +1458,11 @@ Then $R_D$ is generated in degrees at most
 \]
 
 \noindent
-with relations generated in degrees at most 
-\[
-	2\rho
-\]
+with relations generated in degrees at most $2 \rho$.
 \end{thm}
-\begin{rem}
-This implies theorem \ref{thm:hirz-generators-relations}.
-\end{rem}
+%\begin{rem}
+%This implies theorem \ref{thm:hirz-generators-relations}.
+%\end{rem}
 \begin{proof}
 The generation degree bound is as stated in Lemma \ref{lem:hirz-generators}.
 By Proposition \ref{lem:composite-map}, the degree of generation of
