@@ -229,7 +229,7 @@ for general rational surfaces, the restricted class of rational varieties we con
 
 \subsection{Notation}
 We now define some notation used throughout the paper.
-Use $m \in \bz$ to index the dimension of a given projective
+We use $m \in \bz$ to index the dimension of a given projective
 space $\bp^m$ and the type of the Hirzebruch surface $\hirz_m$.
 Let $D$ be a (Weil) $\bq$-divisor of the form
 \begin{align*}
@@ -245,7 +245,7 @@ from $0$ to $n$. In the case $X = \bp^m$, define the degree of $D$ by $\deg D :=
 \lfloor \alpha_i \rfloor D_i$. Let 
 $R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)$
 denote the generalized canonical ring associated to the $\bq$-divisor $D$. 
-So, $R_D$ is notation for $R(X,D)$ when $X$ is understood from context.
+We use $R_D$ as notation for $R(X,D)$ when $X$ is understood from context.
 If $R$
 is a graded ring, we denote the $d$th graded component of $R$ by $R_d$. If $r$ is a rational number, we let
 $\fr(r) := r - \lfloor r
@@ -811,12 +811,16 @@ expressible as functions in $m$ of the $m+1$ variables on $\bp^m$.
 
 \begin{example}
 \label{eg:radical}
-Consider $\frac{-1}{5}V(x_0^2 + x_1^2 + x_2^2) + \frac{1}{7}V(x_0^2 + x_1^2 +
+Consider $D :=\frac{-1}{5}V(x_0^2 + x_1^2 + x_2^2) + \frac{1}{7}V(x_0^2 + x_1^2 +
 x_3^2) + \frac{1}{17}V(x_0^2 + x_2^2 + x_3^2) - \frac{1}{596}V(x_1^2 + x_2^2 +
-x_3^2)$. In degree $355216 = 5 \cdot 7 \cdot 17 \cdot 596$, this has dimension
+x_3^2)$. In degree $355216 = 5 \cdot 7 \cdot 17 \cdot 596$, $R_D$ has dimension
 $6$.
-However, all lower degrees only have
-dimension at most 1. Therefore, we cannot hope to bound the degree
+However, for all $d \leq 355216,$ $h^0(\bp^3, dD) \leq 1$
+and 
+$h^0(\bp^3, dD)  = 1$ precisely when $\lfloor d D \rfloor = 0$ 
+(so in this case, $H^0(\bp^3, d D)$ corresponds to the constant functions).
+Therefore $R_D$ has a generator in degree $355216$.
+Hence, we cannot hope to bound the degree
 of generation of $R_D$ as a linear combination of $\ell_i$,
 in analogy to \cite[Theorem 8]{dorney:canonical}
 unless we require that $D$ includes ghost divisors. That is, unless
@@ -1137,7 +1141,7 @@ rational functions in $z, w, u, v$.
 Furthermore we define the bi-degree of a monomial $u^a v^{b} z^c w^d$
 on $\hirz_n$ to be
 $(a + b + mc, c + d)$. Rational sections of $\hirz_m$ can be written as
-rational functions with numerators and denominators with the same bi-degrees. To see this, 
+rational functions with numerators and denominators of the same bi-degrees. To see this, 
 observe
 $\Pic(\hirz_m) \cong \bz \times \bz$, where the class of a line bundle
 in $\Pic(\hirz_m)$
