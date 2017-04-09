@@ -1,0 +1,7 @@
+
+one should ask the authors to go once
+more carefully over the text. For example, in Example 2.10 line 3 the sentence
+seems incomplete ("approach ?"). Furthermore, on page 1 the statement that
+a surface has Kodaira dimension 1 if and only if it is elliptic is not
+very precise. The bibliography should be corrected and updated
+(LRZ16 has appeared, [VDG07] was published in 2008, like [Bru08]).
