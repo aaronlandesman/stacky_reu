@@ -42,7 +42,7 @@
 %%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%%%%%%%%%%%%%%%%
 
 \theoremstyle{plain}
-  \newtheorem{thm}{Theorem}[section]
+  \newtheorem{thm}{Theorem}[subsection]
   \newtheorem{prop}[thm]{Proposition}
   \newtheorem{lem}[thm]{Lemma}
   \newtheorem{cor}[thm]{Corollary}
@@ -63,7 +63,7 @@
   \newtheorem*{note*}{Notation}
   \newtheorem{case}{Case}
 	
-\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -99,7 +99,7 @@
 \newcommand\bida{a}
 \newcommand\bidb{b}
 \newcommand\pdeg{\delta}
-\newcommand\hirz{\mathbb{F}}
+\newcommand\hirz{F}
 \newcommand\mss{\mathscr{S}}
 
 \DeclareMathOperator{\fr}{frac}
@@ -127,7 +127,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Generalized canonical rings of $\bq$-divisors on minimal rational surfaces}
+\title[Section Rings of $\bq$-divisors]{Section Rings of $\bq$-divisors on minimal rational surfaces}
 
 \author{Aaron Landesman}
 \address[Aaron Landesman]{Department of Mathematics, Stanford University}
@@ -147,13 +147,9 @@
 
 \begin{document}
 \begin{abstract}
- 	We give bounds on the degree of generation and relations of
-	generalized 
-	canonical rings of arbitrary $\bq$-divisors on projective spaces of 
-	all dimensions and Hirzebruch surfaces. We also give exact bounds 
-	on the degree of generators and relations of the generalized
-	canonical ring of 
-	any effective $\bq$-divisor on projective space.
+ 	We bound the degrees of generators and relations of
+	section rings associated to arbitrary $\bq$-divisors on projective spaces of 
+	all dimensions and Hirzebruch surfaces.
 \end{abstract}
 
 \maketitle
@@ -162,20 +158,21 @@
 \section{Introduction}
 \label{sec:intro}
 For any Weil $\bq$-divisor $D$ on a rational surface $X$, the graded
-\textbf{generalized canonical ring} is $R(X, D) := \bigoplus_{d \geq 0} u^d
-H^0(X, \lfloor dD \rfloor)$, where $u$ is a dummy variable to keep
+\textbf{section ring} is $R(X, D) := \bigoplus_{d \geq 0}
+H^0(X, \lfloor dD \rfloor)$.
+%, where $u$ is a dummy variable to keep
 track of degree.
-We study the generators and relations of generalized canonical
+We study the generators and relations of section 
 rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$.
 When $D$ is a general $\bq$-divisor on $\bp^m$ or
 $\hirz_m$, we give bounds on the generators and relations of
-$R(X, D)$. In particular, we give a minimal presentation of the
-generalized canonical ring when $X = \bp^m$ and $D$ is any effective
+$R(X, D)$. In particular, we give a presentation of the
+section ring when $X = \bp^m$ and $D$ is any effective
 $\bq$-divisor.  
 
 In part, this work is motivated by a recent paper by
 O'Dorney \cite{dorney:canonical}, which gives similar descriptions
-of generalized canonical rings for general $\bq$-divisors on $\bp^1$. This
+of section rings for general $\bq$-divisors on $\bp^1$. This
 study also has connections to the papers by Voight--Zureick-Brown 
 \cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring},
 which provide tight bounds on the degree of generators and relations
@@ -184,7 +181,7 @@ stacky curves.
 
 Another closely related topic is the Hassett-Keel program \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form 
 \begin{align*}
-	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0} u^d H^0 \left(
+	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0} H^0 \left(
 	\overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} +
 	\alpha\delta \rfloor  \right) 
 \end{align*}
@@ -196,36 +193,6 @@ In characteristic 0, every surface of Kodaira dimension 1 is an elliptic surface
 barthHPV:compactComplexSurfaces}, and
 the canonical rings of elliptic surfaces are most naturally described in the setting of
 $\bq$-divisors \cite[Chapter V, Theorem 12.1]{barthHPV:compactComplexSurfaces}. 
-
-\subsection{Modular Forms}
-\label{subsection:modular-forms}
-The work in this paper was motivated by 
-potential applications to
-calculating a presentation of certain rings of
-Hilbert 
-modular forms and Siegel modular forms. 
-Recall that Hilbert and Siegel 
-modular forms are two generalizations of modular forms to higher dimensions,
-as described in \cite{geer:siegel-modular} and \cite{bruinier:hilbert-modular}.
-Voight and Zureick-Brown show that 
-one can translate the analytic category of 1-dimensional complex orbifolds to
-the algebraic category of stacky curves \cite[Proposition 6.1.5]{vzb:stacky}. 
-If one could generalize this result to yield an equivalence of
-categories between an appropriate subcategory of $m$-dimensional orbifolds and
-a subcategory of $m$-dimensional algebraic spaces,
-this would allow us to translate rings of Hilbert modular forms
-and Siegel modular forms whose coarse space is a projective space or a
-Hirzebruch surface to canonical rings on the corresponding algebraic surfaces.
-Thereby, if our results could be extended to all rational surfaces,
-they would give a bound on generators and relations for such
-rings of Hilbert and Siegel modular forms parameterized by rational
-Hilbert and Siegel modular surfaces.
-This would be interesting because such modular surfaces tend to be
-immensely complicated: ``Already for $g = 2$, the boundary of this fundamental domain is complicated; Gottschling found that it possesses $28$ boundary pieces'' \cite[p.\ 7]{geer:siegel-modular}.
-Since our results only apply to minimal rational surfaces, and because the rings of Hilbert and Siegel modular forms are so complex, we were unable
-to use our work to compute the canonical ring of an explicit modular surface.
-Although we did not obtain a bound on the degree of generators and relations
-for general rational surfaces, the restricted class of rational varieties we consider still required significant work.
 
 \subsection{Notation}
 We now define some notation used throughout the paper.
@@ -243,15 +210,20 @@ from $0$ to $n$. In the case $X = \bp^m$, define the degree of $D$ by $\deg D :=
 \sum_{i=1}^{n}\alpha_i \cdot \deg D_i$. The floor of a $\bq$-divisor $D$ is a divisor $\lfloor D
 \rfloor \in \di X$ is defined to be $\lfloor D \rfloor := \sum_{i = 1}^{n}
 \lfloor \alpha_i \rfloor D_i$. Let 
-$R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)$
-denote the generalized canonical ring associated to the $\bq$-divisor $D$. 
+$R_D := \bigoplus_{d \geq 0} H^0(\bp^m, \lfloor dD \rfloor)$
+denote the section ring associated to the $\bq$-divisor $D$. 
+We often alternatively write
+$R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)$, where $u$ is a dummy
+variable to keep track of the degree.
 We use $R_D$ as notation for $R(X,D)$ when $X$ is understood from context.
 If $R$
 is a graded ring, we denote the $d$th graded component of $R$ by $R_d$. If $r$ is a rational number, we let
 $\fr(r) := r - \lfloor r
 \rfloor$ denote the fractional part of $r$. 
 Throughout, we work over a fixed algebraically closed field $\bk$.
-Since generator and relation degrees are preserved under base change to the algebraic closure, assuming that $\bk$ is algebraically closed is no restriction
+Since generator and relation degrees are preserved under base change to the algebraic closure, 
+as cohomology commutes with flat base change,
+assuming that $\bk$ is algebraically closed is no restriction
 on generality and the results hold equally well over an arbitrary field.
 If $D \in \bq \otimes_\bz
 \di X$ is an arbitrary divisor, we denote $h^0(X, D) := \dim_\bk H^0(X,D)$.
@@ -261,7 +233,7 @@ If $D \in \bq \otimes_\bz
 
 In Section \ref{sec:proj} we prove the following two results bounding
 the degree of generators and relations of
-generalized canonical rings on $\bp^m$. The first applies
+section rings on $\bp^m$. The first applies
 to effective $\bq$-divisors and the second applies to arbitrary
 $\bq$-divisors.
 \begin{restatable}{thm}{restateeffective}
@@ -269,18 +241,10 @@ $\bq$-divisors.
 Let $D = \sum_{i = 0}^{n} \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$, with $\alpha_i =
 \frac{c_i}{k_i} \in \bq_{> 0}$ in reduced form and each $D_i \in \di \bp^m$ an integral divisor.
 
-Then the generalized canonical ring $R_D$
+Then the section ring $R_D$
 is generated in degrees at most $\max_{0 \leq i \leq n}{k_i}$ with
 relations generated in degrees at most $2 \max_{0 \leq i \leq n}{k_i}$.
 \end{restatable}
-
-\begin{rem}
-\label{rem:proj-tight-bounds-eff}
-Note that the bounds
-given in Theorem ~\ref{thm:proj-effective-intro}
-are tight and are typically attained, as explained in
-Remark ~\ref{rem:exact-effective-bounds}.
-\end{rem}
 
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
@@ -303,26 +267,30 @@ with relations generated in degrees at most
 
 \begin{rem}
 \label{rem:proj-tight-bounds}
-Note that the bounds given in Theorem 
+The bounds
+given in Theorem ~\ref{thm:proj-effective-intro}
+are tight and are typically attained, as explained in
+Remark ~\ref{rem:exact-effective-bounds}.
+Simlarly, the bounds given in Theorem 
 ~\ref{thm:proj-generators-relations} are asymptotically
 tight to within a factor of two 
 for a class of divisors described in
 Remark~\ref{rem:exact-noneff-bounds}.
 \end{rem}
 
-In Section \ref{sec:hirz}, we shift our attention to Hirzebruch surfaces. Recall that for each $m \geq 0$ we can define the
-Hirzebruch surface $F_m := \proj(\sym^\bullet \sco_{\bp^1} \oplus
-\sco_{\bp^1}(m))$ as a projective bundle over $\bp^1$.
+In Section \ref{sec:hirz}, we shift our attention to Hirzebruch surfaces. Recall that for each $m \geq 0$ we define the
+Hirzebruch surface $F_m := \proj \sym (\sco_{\bp^1} \oplus
+\sco_{\bp^1}(m))$, viewed as a projective bundle over $\bp^1$.
 Let $u,v$ the projective coordinates on the base $\bp^1$ and let $z,w$ be the projective coordinates
 on the fiber, as defined more precisely at the beginning of
 \ref{sec:hirz}.
-Since Hirzebruch surfaces are smooth, the natural map from Cartier
-divisors to Weil divisors is an isomorphism.
-In other words, all Cartier divisors arise as the zero locus
-of a section of some line bundle. We implicitly use this in the
-statement of the following theorem. The analogous fact for
-projective space was also implicitly used in Theorems
-~\ref{thm:proj-effective-intro} and ~\ref{thm:proj-generators-relations}.
+%Since Hirzebruch surfaces are smooth, the natural map from Cartier
+%divisors to Weil divisors is an isomorphism.
+%In other words, all Cartier divisors arise as the zero locus
+%of a section of some line bundle. We implicitly use this in the
+%statement of the following theorem. The analogous fact for
+%projective space was also implicitly used in Theorems
+%~\ref{thm:proj-effective-intro} and ~\ref{thm:proj-generators-relations}.
 
 \begin{thm}
 \label{thm:hirz-generators-relations}
@@ -355,8 +323,44 @@ By the classification of minimal rational surfaces
 as either $\bp^2$ or a Hirzebruch surface \cite{eisenbud-harris:minimal},
 Theorems \ref{thm:proj-generators-relations} and
 \ref{thm:hirz-generators-relations} provide bounds on generators
-and relations for the generalized canonical ring of any $\bq$-divisor on any
+and relations for the section ring of any $\bq$-divisor on any
 minimal rational surface. Section \ref{sec:conc} discusses further questions.
+
+\subsection{Modular Forms}
+\label{subsection:modular-forms}
+The work in this paper was motivated by 
+potential applications to
+calculating a presentation of certain rings of
+Hilbert 
+modular forms and Siegel modular forms. 
+Recall that Hilbert and Siegel 
+modular forms are two generalizations of modular forms to higher dimensions,
+as described in \cite{geer:siegel-modular} and \cite{bruinier:hilbert-modular}.
+%Voight and Zureick-Brown show that 
+%one can translate the analytic category of 1-dimensional complex orbifolds to
+%the algebraic category of stacky curves \cite[Proposition 6.1.5]{vzb:stacky}. 
+%If one could generalize this result to yield an equivalence of
+%categories between an appropriate subcategory of $m$-dimensional orbifolds and
+%a subcategory of $m$-dimensional algebraic spaces,
+%this would allow us to translate 
+%rings of Hilbert modular forms
+%and Siegel modular forms whose coarse space is a projective space or a
+%Hirzebruch surface to canonical rings on the corresponding algebraic surfaces.
+If the bounds given in 
+Theorem~\ref{thm:proj-generators-relations} and Theorem~\ref{thm:hirz-generators-relations}
+could be extended to all rational surfaces, instead of just minimal ones,
+they would give a bound on generators and relations for 
+rings of Hilbert and Siegel modular forms parameterized by rational
+Hilbert and Siegel modular surfaces.
+See Theorem~\ref{sec:conc} for a potential approach for generalizing our results to arbitrary rational surfaces.
+This would be interesting because such modular surfaces tend to be
+immensely complicated. 
+%``Already for $g = 2$, the boundary of this fundamental domain is complicated; Gottschling found that it possesses $28$ boundary pieces'' \cite[p.\ 7]{geer:siegel-modular}.
+
+Since our results only apply to minimal rational surfaces, and because the rings of Hilbert and Siegel modular forms are so complex, we were unable
+to use our work to compute the canonical ring of an explicit modular surface.
+Although we did not obtain a bound on the degree of generators and relations
+for general rational surfaces, the restricted class of rational varieties we consider still required significant work.
 
 
 \section{Canonical Rings of Projective Space}
@@ -366,24 +370,22 @@ projective space over $\bk$. In this section, we bound the degrees
 of generators and relations for divisors
 on $\bp^m$, for all $m \geq 1$ in Theorem
 ~\ref{thm:proj-effective-intro}.
-Note that if $\deg D < 0$ the
-generalized canonical ring is concentrated in degree 0, and if
-$\deg D = 0$, then the generalized canonical ring has a single
+If $\deg D < 0$, the
+section ring is concentrated in degree 0, and if
+$\deg D = 0$, then the section ring has a single
 generator. Therefore, for the remainder of this section,
 we shall assume $\deg D > 0$.
 The $\bp^1$ case restricts to the results of
 \cite{dorney:canonical}. We also give an explicit description of the
-generators of the generalized canonical ring $R_D$ when $D$ is an effective divisor in Theorem ~\ref{thm:proj-generators-relations}
-
+generators of the section ring $R_D$ when $D$ is an effective divisor in Theorem ~\ref{thm:proj-generators-relations}.
 
 For the remainder of this section, we shall fix $m \geq 1$ and
 choose an
-isomorphism $\bp^m \cong \proj V$ for some vector space $V$ with
-basis $x_0,\ldots, x_m$.
+isomorphism $\bp^m \cong \proj \bk[x_0, \ldots, x_m]$.
 
 \ssec{Preliminaries on Projective Space}
 Before bounding the degree of generation and relations of
-generalized canonical rings on projective space, we first
+section rings on projective space, we first
 describe a particular choice of basis for $R_D$ as a $\bk$ vector
 space.
 
@@ -398,7 +400,9 @@ on $\bp^m$.  This may necessitate the inclusion of ``ghost divisors'' $D_i$ with
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
-The functions $u^d \cdot \prod_{i=0}^n f_i^{c_i} \in (R_D)_d$ satisfying
+The functions $u^d \cdot \prod_{i=0}^n f_i^{c_i} \in (R_D)_d$ \rm{(}recall $u$ is a dummy variable keeping
+track of the degree\rm{)}
+satisfying
 both of the following conditions
 
 \begin{enumerate}
@@ -407,10 +411,11 @@ both of the following conditions
 \end{enumerate}
 
 \noindent
+for $c_0, \ldots, c_n \in \bz$
 span $H^0(\bp^m, dD)$ over $\bk$. Furthermore, such functions 
 that also satisfy
 \begin{enumerate}[resume]
-	\item $c_i = -\lfloor d\alpha_i \rfloor \text{ for } i > m$
+	\item $c_i = -\lfloor d\alpha_i \rfloor \text{ for all } i > m$
 \end{enumerate}
 
 \noindent
@@ -419,24 +424,33 @@ form a basis for $H^0(\bp^m, dD)$ over $\bk$.
 
 \begin{proof}
 By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
-(1) and (2) lie in $H^0(\mathbb{P}^m,dD)$.
+(1) and (2) lie in $H^0(\mathbb{P}^m,dD)$, and are also necessary to lie in
+$H^0(\mathbb{P}^m,dD)$.
 To complete the proof, it
-suffices to check functions satisfying conditions (1-3) form
-a basis of $H^0(\bp^m,dD)$. Note that there are $\binom{m+ \deg \lfloor dD \rfloor }{m}$
-functions satisfying conditions (1-3). However we know
+suffices to check functions satisfying conditions (1)-(3) form
+a basis of $H^0(\bp^m,dD)$. There are $\binom{m+ \deg \lfloor dD \rfloor }{m}$
+functions satisfying conditions (1)-(3). However we know
 $h^0(\bp^m,dD) = \binom{m+ \deg \lfloor dD \rfloor }{m},$ so it suffices to show
-that those functions satisfying conditions (1-3) are
-independent. This follows from the assumption that $f_0,\ldots f_m$ form a
-basis of linear forms, and so all monomials in $f_0,\ldots, f_m$
-of degree $\deg \lfloor d (\deg D) \rfloor $
-form a basis of degree $\deg \lfloor d  D \rfloor$ rational functions.
+that those monomials satisfying conditions (1)-(3) are
+independent. 
+To see why these are independent, observe that monomials satisfying (1)-(3) are all of the form
+$f_0^{c_0} \cdots f_m^{c_m} \cdot g$ for the fixed monomial
+$g = f_{m+1}^{-\lfloor d\alpha_{m+1} \rfloor} \cdots f_n^{-\lfloor d\alpha_{m+1} \rfloor}$.
+For any fixed $N \in \bz$, the set 
+\begin{align*}
+ \left\{ f_0^{c_0} \cdots f_m^{c_m} : (c_0, \ldots, c_m) \in \bz^{m+1}, \sum_{i=0}^m c_i = N \right\}	
+\end{align*}
+forms an independent set over $\bk$.
+Therefore, multiplying the monomials in the above set with the $g$ also forms an independent set, and these are precisely the monomials satisfying (1)-(3) 
+with $N = -\deg g$.
 \end{proof}
+
 
 \ssec{Effective Divisors on Projective Space}
 \label{ssec:proj-one-point}
 
 In this subsection, we restrict attention to the case of effective
-fractional divisors $D \in \bq \otimes_\bz \di \bp^m$. We give an explicit presentation of the generalized canonical ring when $D$ is an effective
+fractional divisors $D \in \bq \otimes_\bz \di \bp^m$. We give an explicit presentation of the section ring when $D$ is an effective
 divisor.
 
 \begin{convention}
@@ -468,7 +482,8 @@ give a presentation for $R_D$.
 Let $\vec{v}, \vec{w} \in \bz^{m+1}$. Let $i \in \{0,\ldots, m\}$
 be the biggest index such that $v_i$ is nonzero
 and $j \in \{0,\ldots, m\}$ be the smallest index such that $w_j$ is
-nonzero. Define a relation on $\bz^{m+1}$ by $\vec{v} \prec \vec{w}$ if $i \leq j$.
+nonzero. Define a partial ordering
+on $\bz^{m+1}$ by $\vec{v} \prec \vec{w}$ if $i \leq j$.
 \end{defn}
 
 We are now ready to give an inductive method for computing
@@ -483,7 +498,8 @@ The statement and proofs are natural generalizations of
 \label{thm:proj-one-point}
 Let $\bp^m \cong \proj \bk [x_0, \ldots, x_m].$ Let $D' \in \bq
 \otimes_\bz \di \bp^m$ and $D = D' + \alpha H$, with $\alpha =
-\frac{p}{q} \in \bq_{>0}$ and $H := V(x_k)$ a hyperplane of $\bp^m$.
+\frac{p}{q} \in \bq_{>0}$, $H := V(x_k)$ a hyperplane of $\bp^m$,
+and $H \notin \supp(D').$
 Let
 \[
 	0 = \frac{c_0}{d_0} <
@@ -492,14 +508,14 @@ Let
 
 \noindent
 be the convergents of the Hirzebruch-Jung continued fraction of
-$\alpha$. Then, the generalized canonical ring
+$\alpha$. Then, the section ring
 \[
 	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
 \]
 
 \noindent
-has a minimal presentation over $R_{D'}$ consisting of the $\sum_{i = 0}^{r}
-{{m + c_i - 1} \choose {c_i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
+has a presentation over $R_{D'}$ consisting of the $\sum_{i = 0}^{r}
+{{m + c_i} \choose {c_i}}$ generators $F_i^{\vec{v}} := \frac{u^{d_i}
 x^{\vec{v}}}{x_k^{c_i}}$ where $0 \leq i \leq r$, $\vec{v} \in \bz_{\geq 0}^{m + 1}$
 with $\deg \vec v = c_i$. Furthermore, it has
 relations generated by the following two classes of elements.
@@ -529,20 +545,24 @@ $j = i$ or $j = i + 1$ and each $\vec{v} \in \mss_i, \vec{w} \in
 \end{enumerate}
 
 \noindent
+\todo{should we rule out other stupid relations, like those given when w< v?}
 where $\vec{y}$ and $\vec{z}$ are the unique
 vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
 + \vec{z} = \vec{v} + \vec{w}$ and $\vec{y} \prec \vec{z}$.
 \end{thm}
 
 \sssec*{Idea of Proof:}
-The proof follows in four steps. First, we demonstrate that
-the $F_{i}^{\vec{v}}$'s form a set of minimal generators of $R_D$
-over $R_{D'}$ using their construction in terms of convergents of the
-Hirzebruch-Jung continued fraction of $\alpha$. Then, since the
+The proof follows in three steps. 
+%First, we demonstrate that
+%the $F_{i}^{\vec{v}}$'s form a set of minimal generators of $R_D$
+%over $R_{D'}$ using their construction in terms of convergents of the
+%Hirzebruch-Jung continued fraction of $\alpha$. 
+First, since the
 $F_{i}^{\vec{v}}$ generate
 all of $R_D$ over $R_{D'}$, and the leading terms of
 $G_{i,j}^{\vec v, \vec w}$ lies in $R_{D'}$, we obtain the
-relations $G_{i, j}^{\vec{v}, \vec{w}}$. We derive the relations
+relations $G_{i, j}^{\vec{v}, \vec{w}}$. 
+Then, we derive the relations
 $L_{i, j}^{\vec{v}, \vec{w}}$ by considering when products of
 generators in neighboring degrees are equal. Finally, we demonstrate
 that $G_{i, j}^{\vec{v}, \vec{w}}$'s and $L_{i, j}^{\vec{v}, \vec{w}}$'s
@@ -551,36 +571,46 @@ elements of
 $R_D$ to a canonical form.
 
 \begin{proof}
-For simplicity, we give a proof for when $D' = 0$, but the general
-can be analogously proved by replacing the orders of zeros and poles
-by the order of zeros and poles relative to $D'$. That is,
-one can work with rational sections of $\mathscr O_{\bp^m}(D')$
-instead of rational sections of $\mathscr O_{\bp^m}$,
-and the following proof goes through otherwise unchanged.
+As a first step, we reduce to the case $D' = 0$.
+Using that $D$ is effective, we can write
+$R_D = R_{D'} + R_{\alpha H}$ (where the sum is nearly a direct sum, except 
+the $(R_{D'})_d \cap (R_{\alpha H})_d$ is the one dimensional subspace generated by $u^d$).
+Then, to give a presentation of $R_D$ over $R_D'$,
+it suffices to give a presentation of $R_{\alpha H}$:
+generators of $R_{\alpha H}$ map to generators of $R_D$ over $R_{D'}$ under the inclusion $\iota: R_{\alpha H} \rightarrow R_D$
+and relations map to a full set of relations for $R_D$ over $R_{D'}$.
+%is equivalent to giving a presentation
+%For simplicity, we give a proof for when $D' = 0$, but the general case
+%can be analogously proved by replacing the orders of zeros and poles
+%by the order of zeros and poles relative to $D'$. That is,
+%one can work with rational sections of $\mathscr O_{\bp^m}(D')$
+%instead of rational sections of $\mathscr O_{\bp^m}$,
+%and the following proof goes through otherwise unchanged.
 
-We will first check that $F^{\vec v}_i$ determine a system of minimal
-generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} \colon \deg \vec{v} =
-\left\lfloor
-\frac{p}{q} \right\rfloor \right\}$ are minimal generators in
-degree $1$. Now let $i > 1$. Suppose $F_i^{\vec{v}}$ were not
-minimal for some $\vec{v} \in \mss_i$. Then $F_i^{\vec{v}} =
-F_{s}^{\vec{y}} F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and
-$\vec{y}, \vec{z} \in \bz_{ \geq 0}^{m + 1}$. In particular, we see
-that 
-\begin{align*}
-	&d_i = s + t \\
-	&c_i = \deg \vec{v} = \deg \vec{y} + \deg \vec{z}
-\end{align*}
-
-\noindent
-so $\frac{c_i}{d_i}$ is the mediant of the rational numbers
-$\frac{\deg \vec{y}}{s}, \frac{\deg \vec{z}}{t}$ which both
-do not exceed $\alpha$. One of $\frac{\deg \vec{y}}{s},
-\frac{\deg \vec{z}}{t}$ must be at least $\frac{c_i}{d_i}$
-and $s$ and $t$ are both less than $d_i$, which contradicts the assumption that
-$\frac{c_i}{d_i}$ is a convergent of the Hirzebruch-Jung continued
-fraction of $\alpha$. Therefore, none of the $F_i^{\vec v}$ are redundant.
-
+Hence, for the remainder of the proof, we assume $D' = 0$.
+%We will first check that $F^{\vec v}_i$ determine a system of minimal
+%generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} \colon \deg \vec{v} =
+%\left\lfloor
+%\frac{p}{q} \right\rfloor \right\}$ are minimal generators in
+%degree $1$. Now let $i > 1$. Suppose $F_i^{\vec{v}}$ were not
+%minimal for some $\vec{v} \in \mss_i$. Then $F_i^{\vec{v}} =
+%F_{s}^{\vec{y}} F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and
+%$\vec{y}, \vec{z} \in \bz_{ \geq 0}^{m + 1}$. In particular, we see
+%that 
+%\begin{align*}
+%	&d_i = s + t \\
+%	&c_i = \deg \vec{v} = \deg \vec{y} + \deg \vec{z}
+%\end{align*}
+%
+%\noindent
+%so $\frac{c_i}{d_i}$ is the mediant of the rational numbers
+%$\frac{\deg \vec{y}}{s}, \frac{\deg \vec{z}}{t}$ which both
+%do not exceed $\alpha$. One of $\frac{\deg \vec{y}}{s},
+%\frac{\deg \vec{z}}{t}$ must be at least $\frac{c_i}{d_i}$
+%and $s$ and $t$ are both less than $d_i$, which contradicts the assumption that
+%$\frac{c_i}{d_i}$ is a convergent of the Hirzebruch-Jung continued
+%fraction of $\alpha$. Therefore, none of the $F_i^{\vec v}$ are redundant.
+%
 Next we show that $F^{\vec v}_i$ generate all of $R_D$. In the case $m = 1$, O'Dorney \cite[Theorem 6]
 {dorney:canonical} demonstrates that each lattice point $(\beta, \gamma) \in
 \bz_{\geq 0}^2$ with $\gamma \leq \beta \alpha$ lies in the $\bz_{\geq 0}$ span
@@ -611,7 +641,7 @@ consisting of products of generators $F_h^{\vec{y}_{(\lambda)}}$
 and $F_{h + 1}^{\vec{z}_{(\eta)}}$ which are in the form
 prescribed in the theorem statement. Since we wrote an arbitrary monomial
 $\frac{u^{\beta} x^{\vec{v}}}{x_k^\gamma} \in R_D$ as a product of generators,
-this shows that $F_i^{\vec v}$ minimally generate $R_D$.
+this shows that $F_i^{\vec v}$ generate $R_D$.
 
 Next, we show that the relations given in the statement of the theorem generate all relations. 
 In particular, if $j \geq i + 2$ then $F_i^{\vec{v}} F_j^{\vec{w}}$
@@ -683,12 +713,12 @@ $G_{i, j}^{\vec{v}, \vec{w}}$ and of form $L_{i, j}^{\vec{v},
 
 \begin{rem}
 \label{rem:proj-two-points}
-Note that we cannot extend this result to the case when
+We cannot extend this result to the case when
 $D$ is supported at two hypersurfaces with arbitrary rational (non-effective)
 coefficients in the same manner that O'Dorney does for the
 $\bp^1$ case \cite[Section 4]{dorney:canonical}. As will be shown
 in Example ~\ref{eg:hyperplane}, the degrees of generation of the
-generalized canonical ring of a general $\bq$-divisor supported on two
+section ring of a general $\bq$-divisor supported on two
 hyperplanes cannot be bounded so tightly. The two-point
 $\bp^1$ result leverages the fact that $\bp^1$ has precisely two
 independent coordinates, so that two distinct integral subschemes
@@ -698,13 +728,11 @@ cannot represent equations of only $m$ of the $m+1$ coordinates.
 Theorem ~\ref{thm:proj-one-point} gives an inductive procedure to
 compute presentations of effective divisors which are supported on
 hyperplanes. However, for $m \geq 2$, there are hypersurfaces which
-are not unions of hyperplanes. We now address this general case, giving an inductive presentation of generalized canonical rings of effective divisors, and a tight bound on the degrees of their generators and
+are not unions of hyperplanes. We now address this general case, giving an inductive presentation of section rings of effective divisors, and a tight bound on the degrees of their generators and
 relations.
 
-\restateeffective*
-
-
-\begin{proof}
+%\restateeffective*
+\begin{proof}[Proof of Theorem~\ref{thm:proj-effective-intro}]
 We proceed by induction on $n$.
 If $n = 0$, i.e.~ $D = 0$, then we are done.
 Now, we inductively add hypersurfaces.
@@ -721,10 +749,9 @@ If $C$ is of degree $\pdeg$, consider the Veronese embedding
 $\nu_\pdeg^m \colon \bp^m \rightarrow \bp^{\binom{m+\pdeg}{\pdeg}-1}$
 so that the image of $C$ is the intersection of 
 a hyperplane in $\bp^{\binom{{m + \pdeg}}{\pdeg} - 1}$ with $\nu_\pdeg^m(\bp^m)$.
-Now, note that the ring $R_{\alpha C}$ is isomorphic to the
-$\pdeg$ Veronese subring of $R_{\alpha V(x_0)} = \bigoplus_{d \geq 0} u^d H^0(\bp^m, d \alpha V(x_0))$ and so
-the generalized canonical ring $R_H$ of the hyperplane $H \subset \bp^{\binom{m+\pdeg}{\pdeg}-1}$
-restricted to $\nu_\pdeg^m(C)$ is isomorphic to $R_C$.
+Now, the ring $R_{\alpha C}$ is isomorphic to the
+$\pdeg$ Veronese subring of 
+\[R_{\alpha V(x_0)} = \bigoplus_{d \geq 0} u^d H^0(\bp^m, d \alpha V(x_0)).\]
 Therefore, we can bound the degree of generators and relations of
 $R_D$ over $R_{D'}$ by the degree of generators and
 relations for $R_C \cong R_H.$
@@ -735,18 +762,121 @@ a hyperplane $H$, completing the proof by Theorem
 
 \begin{rem}
 \label{rem:exact-effective-bounds}
-Note that the proof of Theorem ~\ref{thm:proj-effective-intro} not only gives bounds on the degrees of the generators and relations, but actually gives an explicit method for computing the presentation. In particular, these bounds are tight. The generator bound is always achieved and the bound on the relations is achieved if $m \geq 2$.
+The proof of Theorem ~\ref{thm:proj-effective-intro} not only gives bounds on the degrees of the generators and relations, but actually gives an explicit method for computing the presentation. 
+Also, a minimal generating set of $R_D$ over $R_{D'}$ in 
+Theorem~\ref{thm:proj-one-point}
+can be given as a subset of the generating set given in 
+Theorem~\ref{thm:proj-one-point}. Further,
+one can verify a minimal generating
+set necessarily contains generators in each of the degrees $d_0, \ldots, d_r$
+using the definition of 
+Hirzebruch-Jung continued fractions.
+In particular,
+the bounds of
+Theorem ~\ref{thm:proj-effective-intro}
+are tight. The generator bound is always achieved and the bound on the relations is achieved if $m \geq 2$.
 \end{rem}
 
+Before giving bounds for arbitrary divisors on projective space in Subsection~\ref{ssec:arbitrary-projective},
+we give a detailed example of the generators and relations for a
+section ring associated to an effective divisor on projective space.
+\begin{example}
+	\label{example:}
+	In this example, we work out generators and relations 
+	for the section ring $R(\bp^2, D)$ with
+	\begin{align*}
+		D := \frac{1}{6}V(x^2 + y^2 + z^2) + \frac{2}{5}V(x).
+	\end{align*}
+	We loosely follow the
+	algorithm
+	described in the course of the 
+	proof of Theorem~\ref{thm:proj-effective-intro} and use notation from the statement of Theorem~\ref{thm:proj-effective-intro}.
+
+	For ease of notation, let $h := x^2 + y^2 + z^2$
+	and let $D' := \frac{1}{6}V(h)$.
+	We first compute generators and relations for $R_{D'}$,
+	then compute generators and relations for $R_D$ over $R_{D'}$,
+	and finally put them together to obtain generators and relations
+	for $R_D$.
+	
+	To start, we compute generators and relations for $R_{D'}$.
+	Indeed, applying \ref{thm:proj-one-point} and scaling
+	the degrees by 2, we see that $\frac{1}{6}$ has convergents
+	given by
+	\begin{align*}
+		0 = \frac{0}{1} < \frac{1}{6},
+	\end{align*}
+	and so the generators are given by 
+	\begin{align}
+	\begin{aligned}
+	\label{equation:d'-generators}
+		F_0^{'(0,0,0)} &= u^1 \\
+		F_1^{'(2,0,0)} &= \frac{u^6 x^2}{h}, \\
+		F_1^{'(1,1,0)} &= \frac{u^6 xy}{h}, \\ 
+		F_1^{'(1,0,1)} &= \frac{u^6 xz}{h}, \\
+		F_1^{'(0,2,0)} &= \frac{u^6 y^2}{h}, \\
+		F_1^{'(0,1,1)} &= \frac{u^6 yz}{h},  \\
+		F_1^{'(0,0,2)} &= \frac{u^6 z^2}{h}.
+	\end{aligned}
+	\end{align}
+Further, the relations in $R_{D'}$ are given by 	
+\begin{align}	
+			\begin{aligned}
+	\label{equation:d'-relations}
+		L_{1,1}^{'(1,1,0), (1,0,1)} &= \frac{u^6 xy}{h}\frac{u^6 xz}{h} - \frac{u^6x^2}{h}\frac{u^6yz}{h},\\
+		L_{1,1}^{'(1,0,1), (0,1,1)} &= \frac{u^6 xz}{h}\frac{u^6 yz}{h} - \frac{u^6xy}{h}\frac{u^6z^2}{h},\\
+		L_{1,1}^{'(1,0,1), (0,2,0)} &= \frac{u^6 xz}{h}\frac{u^6 y^2}{h} - \frac{u^6xy}{h}\frac{u^6yz}{h}, \\
+		L_{1,1}^{'(1,1,0), (1,1,0)} &= \frac{u^6 xy}{h}\frac{u^6 xy}{h} - \frac{u^6x^2}{h}\frac{u^6y^2}{h}, \\
+		L_{1,1}^{'(1,0,1), (1,0,1)} &= \frac{u^6 xz}{h}\frac{u^6 xz}{h} - \frac{u^6x^2}{h}\frac{u^6z^2}{h}, \\
+		L_{1,1}^{'(0,1,1), (0,1,1)} &= \frac{u^6 yz}{h}\frac{u^6 yz}{h} - \frac{u^6y^2}{h}\frac{u^6z^2}{h}.
+\end{aligned}
+\end{align}
+
+	Next, we describe generators and relations for $R_D$ over $R_{D'}$.
+	Indeed, in this case, $\frac{2}{5}$ has convergents given by
+	\begin{align*}
+		0 = \frac{0}{1} < \frac{1}{3} < \frac{2}{5}.
+	\end{align*}
+	Therefore, the generators of $R_D$ over $R_{D'}$ are given by
+	\begin{align}
+		\begin{aligned}
+		\label{equation:d-generators}
+		F_0^{(0,0,0)} &= u^1, \\
+		F_1^{(0,1,0)} &= \frac{u^3y}{x}, &F_1^{(0,0,1)} &= \frac{u^3z}{x}, \\
+		F_2^{(0,2,0)} &= \frac{u^5y^2}{x^2}, &F_2^{(0,1,1)} &= \frac{u^5yz}{x^2}, &F_2^{(0,0,2)} &= \frac{u^5z^2}{x^2}.
+	\end{aligned}
+	\end{align}
+Note that the generator $F_3^{(1,0,0)} = \frac{u^3x}{x}$ could be included, but it is redundant as it is equal to $(u^1)^3$.
+	Similarly, the generators $\frac{u^5x^2}{x^2}, \frac{u^5xy}{x^2}, \frac{u^5xz}{x^2}$ are redundant.
+	Furthermore, we have relations given by
+	\begin{align}
+		\begin{aligned}
+		\label{equation:d-relations}
+		G_{0,2}^{(0,0,0),(0,2,0)} &= u \cdot \frac{u^5 y^2}{x^2} - \left( \frac{u^3y}{x} \right)^2 \\
+		G_{0,2}^{(0,0,0),(0,1,1)} &= u \cdot \frac{u^5 yz}{x^2} -  \frac{u^3y}{x} \frac{u^3z}{x} \\
+		G_{0,2}^{(0,0,0),(0,0,2)} &= u \cdot \frac{u^5 z^2}{x^2} - \left( \frac{u^3z}{x} \right)^2 \\
+		L_{1,2}^{(0,0,1), (0,2,0)} &= \frac{u^3z}{x}\cdot \frac{u^5y^2}{x^2} - \frac{u^3y}{x}\frac{u^5yz}{x^2} \\
+		L_{1,2}^{(0,0,1), (0,1,1)} &= \frac{u^3z}{x}\cdot \frac{u^5yz}{x^2} - \frac{u^3y}{x}\frac{u^5z^2}{x^2} \\
+		L_{2,2}^{(0,1,1),(0,1,1)} &= \frac{u^5yz}{x^2}\cdot \frac{u^5 yz}{x^2} - \frac{u^5y^2}{x^2}\frac{u^5z^2}{x^2}.
+\end{aligned}
+\end{align}
+
+	Then, combining the above, generators for the ring $R_D$ are given by	
+	\eqref{equation:d'-generators} together with
+	Generators and \eqref{equation:d-generators}
+	and relations are given
+	\eqref{equation:d'-relations} together with \eqref{equation:d-relations}.
+\end{example}
 
 
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
+\label{ssec:arbitrary-projective}
 
 
 We now offer bounds on generators and relations of $R_D$ for a general $\bq$-divisor $D \in \bq \otimes_\bz \di \bp^m$.
 
 Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ and let $f_i$ be
-homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$
+homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$ and
 $\deg(f_i) = a_i$ for all $i$. 
 
 For the remainder of this section, we shall make the additional assumption that 
@@ -830,10 +960,14 @@ $D_0,\ldots D_m$ are taken to be linearly independent hyperplanes.
 Having justified the necessity of adding ghost divisors, we proceed to bound the
 number of generators and relations of arbitrary $\bq$-divisors in 
 projective space. We bound the generators in Lemma ~\ref{lem:proj-generators}, and we use Lemmas ~\ref{lem:composite-map}, ~\ref{lem:bound-ker-chi}, and ~\ref{lem:proj-relations-psi} to bound the 
-degree of relations in the proof of Theorem ~\ref{thm:proj-generators-relations}. Note that Proposition ~\ref{prop:cone-generation}, Lemma ~\ref{lem:composite-map}, and Lemma ~\ref{lem:bound-ker-chi} are quite 
+degree of relations in the proof of Theorem ~\ref{thm:proj-generators-relations}. Proposition ~\ref{prop:cone-generation}, Lemma ~\ref{lem:composite-map}, and Lemma ~\ref{lem:bound-ker-chi} are quite 
 general and will also be used in Section ~\ref{sec:hirz} to bound the 
 degree of generators and relations on Hirzebruch surfaces.
 
+Recall that for a semigroup $\Sigma \subset \bz^m$ we say $e_0, \ldots, e_n \in \Sigma$ are a set of {\bf extremal rays}
+for $\Sigma$ if 
+$\Sigma$ is contained in the $\bq_{\geq 0}$ span of
+$e_0, \ldots, e_n$.
 
 \begin{prop}
 \label{prop:cone-generation}
@@ -847,9 +981,7 @@ $a_i, b_i \in \bz$ with $0 \leq i \leq n.$ Define
 
 \noindent
 Suppose $e_0, \ldots, e_t \in \Sigma$ with $e_i = (\pdeg_i, c_0^i,
-\ldots, c_n^i)$ are a set of {\bf extremal rays} of $\Sigma$,
-i.e.~ $\Sigma$ is contained in the $\bq_{\geq 0}$ span of
-$e_0, \ldots, e_n$.
+\ldots, c_n^i)$ are a set of extremal rays of $\Sigma$.
 
 Then, as a semigroup, $\Sigma$ is generated by
 elements whose first coordinate is less than $\sum_{i = 0}^{t}
@@ -888,7 +1020,6 @@ this strategy.
 Let $D = \sum_{i=0}^{n} \alpha_i D_i \in \bq \otimes_\bz \di \bp^m,$ where
 $\deg D_i = \bida_i$, $\alpha_i = \frac{c_i}{k_i}\in \bq$, and
 $\ell_i = \lcm_{j \neq i} (k_j)$. Then, $R_D$ is generated in degrees at most $\sum_{i=0}^n \ell_i \bida_i.$
-
 \end{lem}
 \begin{proof}
 Let 
@@ -908,8 +1039,8 @@ for each $i\in \{0, \ldots n\}$.
 Therefore, applying Proposition ~\ref{prop:cone-generation}, we see $R_D$ is generated in degrees less than
 \[
 	\sum_{i=0}^n \ell_i \bida_i.
-\]
-\end{proof}
+\qedhere
+\]\end{proof}
 
 Let $w_1, \ldots w_r$ be the generators in degrees at most $\sum_{i=0}^n \ell_i
 \bida_i$ (given by Lemma ~\ref{lem:proj-generators}), and let 
@@ -942,7 +1073,7 @@ $\ker \chi $, and we bound the degree of generation of $\ker \psi$ in Lemma ~\re
 
 \begin{lem}
 \label{lem:composite-map}
-Let $X$ be an arbitrary scheme and let $D = \sum_{i=0}^{n}\alpha_i D_i\in \bq \otimes_\bz \di X$ where $D_i = V(f_i)$. Suppose we have a
+Let $X$ be a $\bk$ variety and let $D = \sum_{i=0}^{n}\alpha_i D_i\in \bq \otimes_\bz \di X$ where $D_i = V(f_i)$. Suppose we have a
 surjection $\phi\colon \bk[w_1,\ldots, w_r] \rightarrow R_D$ given by $w_i
 \mapsto p_i(f_0, \ldots, f_n),$ where $p_i$ is a monomial in $f_0,\ldots, f_n$.
 Let $\bida_0, \ldots, \bida_n, \bidb_0, \ldots, \bidb_n \in \bz_{\geq 0}.$
@@ -963,7 +1094,7 @@ the minimal degree of generation of $\ker \psi$.
 \end{lem}
 
 \begin{proof}
-First, note that surjectivity of $\chi$ implies we have an exact sequence
+First, surjectivity of $\chi$ implies we have an exact sequence
 \[
 \begin{tikzcd}
 0 \ar {r} & \ker \chi \ar{r} & \ker \phi \ar {r} & \ker \psi \ar r & 0.
@@ -1068,12 +1199,12 @@ $\ker \psi$ is generated in degrees less than
 \end{proof}
 
 By combining the above results, we get our main theorem bounding
-the generator and relation degrees of the generalized canonical ring of any
+the generator and relation degrees of the section ring of any
 $\bq$-divisor on projective space.
 
-\restateproj*
+%\restateproj*
 
-\begin{proof}
+\begin{proof}[Proof of Theorem~\ref{thm:proj-generators-relations}]
 The bound on degree of generation is precisely the content of Lemma 
 ~\ref{lem:proj-generators}. It only remains to bound the degree of 
 relations.
@@ -1087,6 +1218,7 @@ is generated in degrees less than
 \[
 	\max \left(2 \sum_{i=0}^n \ell_i a_i, \frac{\max_{0\le i \le n}
 	(\bida_i)}{\deg(D)} + \sum_{i=0}^n \ell_i a_i \right).
+	\qedhere
 \]
 \end{proof}
 
@@ -1105,8 +1237,8 @@ choose a linear subspace $\pi: \bp^1 \rightarrow \bp^m$  generically so that
 $\pi^* D = \sum_{i=0}^n \frac{p_i}{2q_i}P_i$, 
 where $P_i$ are distinct points in $\bp^1$. To choose such a map
 $\pi$, we may need to assume that the base field is infinite.
-Note that by the Remark immediately following Theorem 8 in 
-\cite{dorney:canonical},
+By
+\cite[Remark, p. 9]{dorney:canonical},
 the given bounds on the generators and relations of
 $R_{\pi^*D}$ are within
 a factor of two of the degree of generation and relations of
@@ -1122,9 +1254,10 @@ to within a factor of two.
 
 \section{Canonical Rings of Hirzebruch surfaces}
 \label{sec:hirz}
+\subsection{}
 The aim of this section is to prove Theorem
 ~\ref{thm:hirz-generators-relations}, bounding the degree of
-generators and relations of the generalized canonical ring of a $\bq$-divisor
+generators and relations of the section ring of a $\bq$-divisor
 on any Hirzebruch surface.
 
 One way to describe the Hirzebruch surface $\hirz_m$ is as a
@@ -1152,7 +1285,7 @@ Furthermore, similarly to the case of projective space,
 we will restrict to the case that $D$ is a divisor
 for which both of its bi-degrees are positive. We now justify this
 restriction. If either of the bi-degrees of $D$ are negative,
-then the generalized canonical ring is concentrated in degree 0. If one of the
+then the section ring is concentrated in degree 0. If one of the
 bi-degrees is 0, say the first one is 0, then $R_D$ is isomorphic
 to $R_{D'}$, where $D' \in \bq \otimes_\bz \di \bp^1$, 
 where $D'$ can be written as a sum of divisors whose degrees
@@ -1167,7 +1300,7 @@ distinct divisors with bi-degrees $(1,0)$
 In order to achieve the above condition on the bi-degrees of
 $D_1, \ldots D_4$, it may be necessary to add in ``ghost divisors'' (i.e.
 divisors with of the desired form with a coefficient $0$).
-Also, note that, $f_1$ and $f_2$ are independent linear
+Also, $f_1$ and $f_2$ are independent linear
 polynomials in $u$ and $v$ and $f_3$ and $f_4$ are independent
 linear polynomials in $z$ and $w$.
 Analogously to Proposition ~\ref{prop:pm-span-and-basis} for the case
@@ -1199,7 +1332,7 @@ and
 
 \begin{lem}
 \label{lem:hirz-generators}
-For $D = \sum_{i=1}^{n} \frac{c_i}{k_i}D_i \in \di \bq \otimes_\bz \hirz_m$, with $\deg D_i = (\bida_i, \bidb_i), \ell_i = \lcm_{j\neq i} (k_j), \ell_{i,j} = \lcm_{h \neq i,j} (k_h).$ Then, the generalized canonical ring $R_D$ is generated in degrees at most
+For $D = \sum_{i=1}^{n} \frac{c_i}{k_i}D_i \in \di \bq \otimes_\bz \hirz_m$, with $\deg D_i = (\bida_i, \bidb_i), \ell_i = \lcm_{j\neq i} (k_j), \ell_{i,j} = \lcm_{h \neq i,j} (k_h).$ Then, the section ring $R_D$ is generated in degrees at most
 \begin{equation}\label{eqn:def-sigma}
 	\rho := \sum_{i \in \Te(D)} \gcd(\bida_i, \bidb_i) \ell_i + \sum_{\substack
 	{i \in \Tp(D) \\ j\in \Tm(D)}} (\bida_i \bidb_j - \bida_j \bidb_i)
@@ -1257,7 +1390,7 @@ $\overline{e_i e_j}$.
 The extremal rays are given by multiples of those $\epsilon_i$'s
 which are contained in $H$ together with intersection points $e_{i, j}$ which
 can be expressed as $H \cap \overline{e_i e_j},$ where $i \neq j$ and $e_i,
-e_j \notin H$. Note that $e_{i,j}$ is only defined in the case
+e_j \notin H$. In this case, $e_{i,j}$ is only defined when
 $\# \{H \cap \overline{e_i, e_j}\} = 1$.
 
 
@@ -1294,8 +1427,8 @@ degrees less than the sum of the degrees of the $e_i$ and $e_{i,j}$, which is
 \[
 	\rho = \sum_{i\in \Te(D)} \gcd(\bida_i, \bidb_i)\ell_i + \sum_{\substack{
 	i \in \Tp(D) \\	j \in \Tm(D)}} (\bida_i \bidb_j- \bida_j \bidb_i)\ell_{i,j}.
-\]
-\end{proof}
+\qedhere
+\]\end{proof}
 
 Let $w_1, \ldots, w_r$ be the generators of $R_D$ in degrees less than $\rho$
 (as given by Lemma ~\ref{lem:hirz-generators}), and let $\phi$ be the
@@ -1354,10 +1487,10 @@ generate all relations, since they allow us to reduce any monomial $u^d\prod_{j 
 we bound the degree of generation of the ideal $(\beta_i - z_i) \cap
 \ker(\psi)$ for each $i$.
 
-\textbf{For the remainder of this proof:} we fix $i \in \{1, \ldots,
+For the remainder of this proof: we fix $i \in \{1, \ldots,
 n\}$ and fix a relation of the form $u^d (z_i - \beta_i) \prod_{j =
 1}^n z_j^{c_j}$ as we seek to bound the degree of generation of the
-ideal $(\beta_i - z_i) \cap \ker(\psi)$. Note that there are no
+ideal $(\beta_i - z_i) \cap \ker(\psi)$. There are no
 relations for $i\in \{1, 2, 3, 4\}$ as then $\beta_i - z_i = 0 \in
 \bk[\Sigma]$. Thus we restrict attention to $i \ge 5$. Our goal is
 to show that if $u^d(z_i - \beta_i)\prod_{j=1}^n z_j^{c_j}$ has
@@ -1386,8 +1519,7 @@ Define $E$ by
 	\Tp \\ k \in \Tm}} (s_{j,k} - \lfloor s_{j,k} - r_{j,k} \rfloor) e_{j,k}.
 \end{equation}
 
-
-Note that
+Then,
 \begin{align}
 \label{eqn:e-bound}
 	\deg(E) \le \rho + \begin{cases}
@@ -1440,6 +1572,7 @@ of our bound in Equation ~\eqref{eqn:e-bound}, we see $\ker \psi$ is generated i
 	\; \max_{\substack{i \in \Tp \\ j \in \Tm}} \bigl(\ell_{i, j}
 	(\bida_i \bidb_j - \bida_j
 	\bidb_i) \bigr) \right)\le 2\rho.
+	\qedhere
 \]
 \end{proof}
 
@@ -1486,10 +1619,11 @@ follows from Lemma ~\ref{lem:hirz-bound-ker-psi}.
 
 \section{Further Questions}
 \label{sec:conc}
+\subsection{}
 Recall that every minimal rational surface is either isomorphic to
 $\bp^2$ or $\hirz_m$ for some $m \geq 0, m \neq 1$ \cite{eisenbud-harris:minimal}. By Theorems
 ~\ref{thm:proj-generators-relations} and ~\ref{thm:hirz-generators-relations}, we have given bounds for the generators and relations
-of arbitrary generalized canonical rings on any minimal rational surface. A
+of arbitrary section rings on any minimal rational surface. A
 natural extension of our results is the following.
 \begin{question}
 \label{qn:general-minimal-surface}
@@ -1501,16 +1635,16 @@ Every rational surface can be obtained from a minimal rational surface by a
 sequence of blow-ups \cite{eisenbud-harris:minimal}. Therefore, to answer
 Question \ref{qn:general-minimal-surface} affirmatively, it suffices
 to bound the degree of generators and relations of the 
-generalized canonical ring of a divisor on a blow-up of a given surface
-in terms of the generalized canonical
+section ring of a divisor on a blow-up of a given surface
+in terms of the section 
 rings of some associated divisors that given surface.
 
 Another direction to generalize the work in this paper
-would be to try to express generalized canonical rings of $\bq$-divisors on
+would be to try to express section rings of $\bq$-divisors on
 $X \times Y$ in terms of those on $X$ and $Y$. In this paper,
-we bounded the degrees of presentations on generalized canonical rings on $\bp^1 \times \bp^1 \cong \hirz_0$.
+we bounded the degrees of presentations on section rings on $\bp^1 \times \bp^1 \cong \hirz_0$.
 Perhaps similar techniques can be used to bound
-degrees of presentations on generalized canonical rings on $(\bp^1)^k$ or
+degrees of presentations on section rings on $(\bp^1)^k$ or
 more generally on $(\bp^1)^{i_1} \times \cdots (\bp^k)^{i_k}.$
 One might further try to generalize this to bounding degrees of presentations on bundles over $\bp^m$ or on more general
 products of schemes.
