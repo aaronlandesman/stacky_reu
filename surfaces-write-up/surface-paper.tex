@@ -149,7 +149,10 @@
 \begin{abstract}
  	We bound the degrees of generators and relations of
 	section rings associated to arbitrary $\bq$-divisors on projective spaces of 
-	all dimensions and Hirzebruch surfaces.
+	all dimensions and Hirzebruch surfaces. For section rings of
+	effective $\bq$-divisors on projective spaces, we find 
+	the best possible bound on
+	the degrees of generators and relations.
 \end{abstract}
 
 \maketitle
@@ -249,10 +252,11 @@ relations generated in degrees at most $2 \max_{0 \leq i \leq n}{k_i}$.
 \begin{restatable}{thm}{restateproj}
 \label{thm:proj-generators-relations}
 Let $D = \sum_{i = 0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$
-with $\alpha_i = \frac{c_i}{k_i}\in \bq$ in reduced form. Write $\ell_i := \lcm
-_{j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m \cong \proj
-\bk[x_0, \ldots, x_m]$ and define $D_i := V(f_i)$, for some $f_i \in \bk[x_0, \ldots, 
-x_m]$. Now suppose that $\{f_0, \ldots, f_n\}$ contains $m + 1$ independent 
+with $\alpha_i = \frac{c_i}{k_i}\in \bq$ in reduced form. Write
+$\ell_i := \lcm_{0\le j \le n, j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m
+\cong \proj \bk[x_0, \ldots, x_m]$ and let
+$f_i \in \bk[x_0, \ldots, x_m]$ such that $D_i = V(f_i)$. Now
+suppose that $\{f_0, \ldots, f_n\}$ contains $m + 1$ independent 
 linear polynomials in $x_0, \ldots, x_m$ {\rm(}where we allow for 
 $\alpha_j = 0$ in the expansion of $D${\rm)}.
 
@@ -260,7 +264,7 @@ Then $R_D$ is generated in degrees at most
 $\sum_{i = 0}^n \ell_i a_i$
 with relations generated in degrees at most
 \[
-	\max \left(2 \sum_{i=0}^n \ell_i a_i, \frac{\max_{0\le i \le n}
+	\max \left(2 \sum_{i=0}^n \ell_i a_i, \frac{\max_{0 \le i \le n}
 	(	\bida_i)}{\deg(D)} + \sum_{i=0}^n \ell_i a_i \right).
 \]
 \end{restatable}
@@ -358,12 +362,12 @@ immensely complicated.
 %``Already for $g = 2$, the boundary of this fundamental domain is complicated; Gottschling found that it possesses $28$ boundary pieces'' \cite[p.\ 7]{geer:siegel-modular}.
 
 Since our results only apply to minimal rational surfaces, and because the rings of Hilbert and Siegel modular forms are so complex, we were unable
-to use our work to compute the canonical ring of an explicit modular surface.
+to use our work to compute the section ring of an explicit modular surface.
 Although we did not obtain a bound on the degree of generators and relations
 for general rational surfaces, the restricted class of rational varieties we consider still required significant work.
 
 
-\section{Canonical Rings of Projective Space}
+\section{Section Rings of Projective Space}
 \label{sec:proj}
 Let $\bk$ be a field and let $\bp^m$ denote $m$-dimensional
 projective space over $\bk$. In this section, we bound the degrees
@@ -693,6 +697,7 @@ indices that differ by at most $1$ to produce the canonical form
 	(F_{i + 1}^{\vec{w}_{(1)}})^{g_{\vec{w}_{(1)}}} \cdots
 	(F_{i + 1}^{\vec{w}_{(\kappa_2)}})^{g_{\vec{w}_{(\kappa_2)}}}
 \end{align*}
+%% TODO: replace \kappa_1 and \kappa_2 with two letters or use prod notation
 
 \noindent
 where $\vec{v}_{(1)} \prec \vec{v}_{(2)} \prec \ldots \prec
@@ -863,8 +868,8 @@ Note that the generator $F_3^{(1,0,0)} = \frac{u^3x}{x}$ could be included, but 
 
 	Then, combining the above, generators for the ring $R_D$ are given by	
 	\eqref{equation:d'-generators} together with
-	Generators and \eqref{equation:d-generators}
-	and relations are given
+	\eqref{equation:d-generators}
+	and relations are given by
 	\eqref{equation:d'-relations} together with \eqref{equation:d-relations}.
 \end{example}
 
@@ -1058,7 +1063,7 @@ semigroup ring
 by
 \begin{equation}
 \label{eqn:factor-through-semigroup-ring}
-\begin{tikzcd}[baseline=(current  bounding  box.center)]
+\begin{tikzcd}[baseline=(current  bounding  box.center), row sep = tiny]
 \bk[w_1,\ldots, w_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
 w_i \ar[mapsto]{r} & u^{d_i}z_0^{c_{i0}} \cdots z_n^{c_{in}} \ar[mapsto]{r} & u^{d_i}f_0^{c_{i0}} \cdots f_n^{c_{in}}.
 \end{tikzcd}
@@ -1083,7 +1088,7 @@ Then, define
 \end{align*}
 In this case, we can factor $\phi$ as a composition of $\chi$ and $\psi$ defined by
 \[
-\begin{tikzcd}
+\begin{tikzcd}[row sep = tiny]
 \bk[w_1,\ldots, w_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
 w_i \arrow[mapsto]{r} & u^{d_i}z_0^{c_{i0}} \cdots z_n^{c_{in}} \arrow[mapsto]{r} & u^{d_i}f_0^{c_{i0}} \cdots f_n^{c_{in}}.
 \end{tikzcd}
@@ -1136,7 +1141,7 @@ $\ell_i = \lcm_{j \neq i} (k_j)$. Define $\Sigma$ as in Equation
 generated in degrees at most
 \begin{align}
 \label{eqn:proj-relation-degree}
-	\frac{\max_{0\le i \le n}(\bida_i)}{\deg(D)} +  \sum_{i=0}^n \ell_i a_i.
+	\frac{\max_{0 \le i \le n}(\bida_i)}{\deg(D)} +  \sum_{i=0}^n \ell_i a_i.
 \end{align}
 
 \end{lem}
@@ -1216,7 +1221,7 @@ degrees up to $\frac{\max_{0 \leq i \leq n} \bida_i}{\deg(D)} + \sum_{i=0}^n \el
 Consequently, Lemma ~\ref{lem:composite-map} implies that $\ker \phi$
 is generated in degrees less than
 \[
-	\max \left(2 \sum_{i=0}^n \ell_i a_i, \frac{\max_{0\le i \le n}
+	\max \left(2 \sum_{i=0}^n \ell_i a_i, \frac{\max_{0 \le i \le n}
 	(\bida_i)}{\deg(D)} + \sum_{i=0}^n \ell_i a_i \right).
 	\qedhere
 \]
@@ -1252,7 +1257,7 @@ agree with the degree of generation and relations
 to within a factor of two.
 \end{rem}
 
-\section{Canonical Rings of Hirzebruch surfaces}
+\section{Section Rings of Hirzebruch surfaces}
 \label{sec:hirz}
 \subsection{}
 The aim of this section is to prove Theorem
@@ -1443,7 +1448,7 @@ semigroup ring
 \noindent
 by
 \[
-\begin{tikzcd}
+\begin{tikzcd}[row sep = tiny]
 	\bk[w_1,\ldots, w_r] \ar {r}{\chi} & \bk[\Sigma] \ar {r}{\psi} & R_D \\
 	w_i \ar[mapsto]{r} & u^{d_i}z_1^{c_{i1}} \cdots z_n^{c_{in}} \ar[mapsto]{r} & u^{d_i}f_1^{c_{i1}} \cdots f_n^{c_{in}}.
 \end{tikzcd}
@@ -1577,7 +1582,7 @@ of our bound in Equation ~\eqref{eqn:e-bound}, we see $\ker \psi$ is generated i
 \end{proof}
 
 By combining the above results, we get our main theorem bounding
-the generator and relation degrees of the canonical ring of
+the generator and relation degrees of the section ring of
 $\bq$-divisors on Hirzebruch surfaces.
 
 \begin{thm}
