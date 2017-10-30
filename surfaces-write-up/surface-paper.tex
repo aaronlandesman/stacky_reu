@@ -640,29 +640,30 @@ Hence, for the remainder of the proof, we assume $D' = 0$.
 %$\frac{c_i}{d_i}$ is a convergent of the Hirzebruch-Jung continued
 %fraction of $\alpha$. Therefore, none of the $F_i^{\vec v}$ are redundant.
 %
+
 Next we show that $F^{\vec v}_i$ generate all of $R_D$. In the case $m = 1$, O'Dorney \cite[Theorem 6]
 {dorney:canonical} demonstrates that each lattice point $(\beta, \gamma) \in
 \bz_{\geq 0}^2$ with $\gamma \leq \beta \alpha$ lies in the $\bz_{\geq 0}$ span
 of $(d_h, c_h)$ and $(d_{h + 1}, c_{h + 1})$ for
-some $h \in \{0, \ldots, r\}$. A similar strategy works in the case $m > 1$. Let $(\beta, \gamma) = \kappa_1
-(d_h, c_h) + \kappa_2 (d_{h + 1}, c_{h + 1})$ for $\kappa_1, \kappa_2 \in
+some $h \in \{0, \ldots, r\}$. A similar strategy works in the case $m > 1$. Let $(\beta, \gamma) = \lambda
+(d_h, c_h) + \kappa (d_{h + 1}, c_{h + 1})$ for $\lambda, \kappa \in
 \bz_{\geq 0}$. Any element $\frac{u^{\beta}
 x^{\vec{v}}} {x_k^{ \gamma}} \in R_D$ is expressible as
 \begin{align*}
 	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}} = \left(\frac{u^{d_h}}
-	{x_k^{c_h}}\right)^{\kappa_1} \left(\frac{u^{d_{h + 1}}}
-	{x_k^{c_{h + 1}}}\right)^{\kappa_2} x^{\vec{v}}.
+	{x_k^{c_h}}\right)^{\lambda} \left(\frac{u^{d_{h + 1}}}
+	{x_k^{c_{h + 1}}}\right)^{\kappa} x^{\vec{v}}.
 \end{align*}
 
 \noindent
-We can then write $\vec{v}  = \sum_{\lambda=1}^{\kappa_1}\vec{w}_{(\lambda)} +
-\sum_{\eta=1}^{\kappa_2} \vec z_{(\eta)}$ with $w_{(\lambda)} \in \mss_h$ and
-$z_{(\eta)} \in \mss_{h+1}$ to give a decomposition
+We can then write $\vec{v}  = \sum_{\tau=1}^{\lambda}\vec{w}_{(\tau)} +
+\sum_{\eta=1}^{\kappa} \vec z_{(\eta)}$ with $\vec w_{(\tau)} \in \mss_h$ and
+$\vec z_{(\eta)} \in \mss_{h+1}$ to give a decomposition
 \begin{align}
 \label{eqn:one-point-canonical-form}
-	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}}	= \prod_{\lambda = 1}
-	^{\kappa_1} \frac{u^{d_h} x^{\vec{w}_{(\lambda)}}} {x_k^{c_h}}
-	\prod_{\eta = 1}^{\kappa_2} \frac{u^{d_{h + 1}} x^{\vec{z}_{(\eta)}}}
+	\frac{u^{\beta} x^{\vec{v}}} {x_k^{\gamma}}	= \prod_{\tau = 1}
+	^{\lambda} \frac{u^{d_h} x^{\vec{w}_{(\tau)}}} {x_k^{c_h}}
+	\prod_{\eta = 1}^{\kappa} \frac{u^{d_{h + 1}} x^{\vec{z}_{(\eta)}}}
 	{x_k^{c_{h + 1}}}
 \end{align}
 \noindent
@@ -670,7 +671,7 @@ consisting of products of generators $F_h^{\vec{y}_{(\lambda)}}$
 and $F_{h + 1}^{\vec{z}_{(\eta)}}$ which are in the form
 prescribed in the theorem statement. Since we wrote an arbitrary monomial
 $\frac{u^{\beta} x^{\vec{v}}}{x_k^\gamma} \in R_D$ as a product of generators,
-this shows that $F_i^{\vec v}$ generate $R_D$.
+this shows that the $F_i^{\vec v}$ generate $R_D$.
 
 Next, we show that the relations given in the statement of the theorem generate all relations. 
 In particular, if $j \geq i + 2$ then $F_i^{\vec{v}} F_j^{\vec{w}}$
@@ -717,20 +718,21 @@ Now, we may apply the relations $L_{i, j}^{\vec{v}, \vec{w}}$
 to any monomial in the $F_i^{\vec{v}}$'s involving
 indices that differ by at most $1$ to produce the canonical form
 \begin{align*}
-	(F_i^{\vec{v}_{(1)}})^{g_{\vec{v}_{(1)}}} \cdots
-	(F_i^{\vec{v}_{(\kappa_1)}})^{g_{\vec{v}_{(\kappa_1)}}}
-	(F_{i + 1}^{\vec{w}_{(1)}})^{g_{\vec{w}_{(1)}}} \cdots
-	(F_{i + 1}^{\vec{w}_{(\kappa_2)}})^{g_{\vec{w}_{(\kappa_2)}}}
+	\prod_{\tau=1}^\lambda (F_i^{\vec{v}_{(\tau)}})^{g_{\vec{v}_{(\tau)}}}
+	\prod_{\eta=1}^\kappa (F_{i+1}^{\vec{v}_{(\eta)}})^{g_{\vec{v}_{(\eta)}}}
+	%=	(F_i^{\vec{v}_{(1)}})^{g_{\vec{v}_{(1)}}} \cdots
+	%(F_i^{\vec{v}_{(\lambda)}})^{g_{\vec{v}_{(\lambda)}}}
+	%(F_{i + 1}^{\vec{w}_{(1)}})^{g_{\vec{w}_{(1)}}} \cdots
+	%(F_{i + 1}^{\vec{w}_{(\kappa)}})^{g_{\vec{w}_{(\kappa)}}}
 \end{align*}
-%% TODO: replace \kappa_1 and \kappa_2 with two letters or use prod notation
 
 \noindent
 where $\vec{v}_{(1)} \prec \vec{v}_{(2)} \prec \ldots \prec
-\vec{v}_{(\kappa_1)} \prec \vec{w}_{(1)} \prec \ldots \prec
-\vec{w}_{(\kappa_2)}$. Consequently, the relations of form
-$G_{i, j}^{\vec{v}, \vec{w}}$ and of form $L_{i, j}^{\vec{v},
-\vec{w}}$ generate all the relations among the $F_{i}^{\vec{v},
-\vec{w}}$.
+\vec{v}_{(\lambda)} \prec \vec{w}_{(1)} \prec \ldots \prec
+\vec{w}_{(\kappa)}$. Consequently, the relations of form
+$G_{i, j}^{\vec{v}, \vec{w}}$ and the relations of form
+$L_{i, j}^{\vec{v}, \vec{w}}$ generate all the relations among the
+$F_{i}^{\vec{v}, \vec{w}}$.
 \end{proof}
 
 \begin{rem}
@@ -739,20 +741,6 @@ $G_{i, j}^{\vec{v}, \vec{w}}$ and of form $L_{i, j}^{\vec{v},
 	hypersurface, the relations in Theorem ~\ref{thm:proj-one-point}
 	form a reduced Gr\"{o}bner basis with respect to the ordering
 	given in Definition~\ref{defn:vec-order}.
-\end{rem}
-
-\begin{rem}
-\label{rem:proj-two-points}
-We cannot extend this result to the case when
-$D$ is supported at two hypersurfaces with arbitrary rational (non-effective)
-coefficients in the same manner that O'Dorney does for the
-$\bp^1$ case \cite[Section 4]{dorney:canonical}. As will be shown
-in Example ~\ref{eg:hyperplane}, the degrees of generation of the
-section ring of a general $\bq$-divisor supported on two
-hyperplanes cannot be bounded so tightly. The two-point
-$\bp^1$ result leverages the fact that $\bp^1$ has precisely two
-independent coordinates, so that two distinct integral subschemes
-cannot represent equations of only $m$ of the $m+1$ coordinates.
 \end{rem}
 
 Theorem ~\ref{thm:proj-one-point} gives an inductive procedure to
@@ -963,6 +951,20 @@ divisors.'' That is, we may add divisors of the form $0 \cdot H_i$ to
 $D$, and reorder so that if $D = \sum_{i=0}^{n}\alpha_i V(f_i)$,
 then $f_0, \ldots, f_m$ are independent linear functions in
 $x_0,\ldots, x_m$.
+
+\begin{rem}
+\label{rem:proj-two-points}
+We cannot extend Theorem~\ref{thm:proj-one-point} to the case when
+$D$ is supported at two hypersurfaces with arbitrary rational (non-effective)
+coefficients in the same manner that O'Dorney does for the
+$\bp^1$ case \cite[Section 4]{dorney:canonical}. As shown
+in Example ~\ref{eg:hyperplane}, the degrees of generation of the
+section ring of a general $\bq$-divisor supported on two
+hyperplanes cannot be bounded so tightly. The two-point
+$\bp^1$ result leverages the fact that $\bp^1$ has precisely two
+independent coordinates, so that two distinct integral subschemes
+cannot represent equations of only $m$ of the $m+1$ coordinates.
+\end{rem}
 
 In Example ~\ref{eg:radical}, we show that it is still, in general,
 necessary to add ghost divisors, even when the irreducible components

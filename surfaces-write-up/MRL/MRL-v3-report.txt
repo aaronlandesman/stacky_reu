@@ -138,10 +138,10 @@ says because of what I think is a double subscript in a superscript?
 Aaron: I agree the notation is terrible, but I'm also not sure how to make this more streamlined - do you have any thoughts?
 Robin: how about replacing \kappa_1 & \kappa_2 with two other letters (e.g. \kappa and \iota or something else) or use product notation
 instead of "(F^v_1)^g_v_1 ... (F^v_\kappa_1)^g_v_\kappa_1 ..."?
+Robin: I have reindexed (kappa_1 -> lambda, kappa_2 -> kappa, lambda -> tau) and used the product notation as well.
 
 (30) Remark 2.6: To take D = α 0 D 0 we need your ghost divisors, right? And D 0 = 0?
 
-(31) Remark 2.7: Save it for Remark 2.9, when I can make sense of it.
 
 (34) (2.2): (Ugh, numbering!) Wait, why is this additional? It reads the same as before
 Proposition 2.1. Seems like you should have this whole discussion about ghost divisors
