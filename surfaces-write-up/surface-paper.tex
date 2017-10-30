@@ -163,26 +163,40 @@
 For any Weil $\bq$-divisor $D$ on a rational surface $X$, the graded
 \textbf{section ring} is $R(X, D) := \bigoplus_{d \geq 0}
 H^0(X, \lfloor dD \rfloor)$.
-%, where $u$ is a dummy variable to keep
-track of degree.
-We study the generators and relations of section 
-rings for projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$.
-When $D$ is a general $\bq$-divisor on $\bp^m$ or
-$\hirz_m$, we give bounds on the generators and relations of
-$R(X, D)$. In particular, we give a presentation of the
-section ring when $X = \bp^m$ and $D$ is any effective
-$\bq$-divisor.  
+%, where $u$ is a dummy variable to keep track of degree.
+In the case that $D = K_X$, the canonical divisor, the graded section ring is referred to as
+``the canonical ring'' and is a classical object of study.
+For example, if $C$ is a curve of genus $g \geq 4$, Petri's theorem
+relates the geometry of the curve $C$ to the canonical ring:
+$R(C, K_C)$ is generated in degree 1 with relations in degree 2 
+unless $C$ is hyperelliptic, trigonal, or a plane quintic
+(see
+\cite[p. 157]{saint-donat:proj} and \cite[Section 3.3]{acgh:algebraic-curves}).
+In this way, explicit descriptions of generators and relations of section rings yield
+geometric information about the underlying variety.
 
-In part, this work is motivated by a recent paper by
-O'Dorney \cite{dorney:canonical}, which gives similar descriptions
-of section rings for general $\bq$-divisors on $\bp^1$. This
-study also has connections to the papers by Voight--Zureick-Brown 
+One natural way to generalize of the classical result of Petri mentioned above
+is to examine the section rings of stacky curves (i.e., smooth proper
+geometrically connected 1-dimensional Deligne-Mumford
+stacks over a field with a dense open subscheme).
+Indeed,
+these were studied by Voight--Zureick-Brown 
 \cite{vzb:stacky} and Landesman--Ruhm--Zhang \cite{lrz:spin-cring},
 which provide tight bounds on the degree of generators and relations
 of log canonical rings and log spin canonical rings on arbitrary
 stacky curves.
+All rings of modular forms associated to Fuchsian groups can be realized as canonical rings of
+such curves, and so the above work also yields insight into such rings
+of modular forms.
+Further, 
+O'Dorney \cite{dorney:canonical} gives similar descriptions
+of section rings for arbitrary $\bq$-divisors on $\bp^1$
+(as opposed to just log canonical $\bq$-divisors and log spin canonical $\bq$-divisors).
 
-Another closely related topic is the Hassett-Keel program \cite{hassett:classical-and-minimal-models}, which aims to describe log canonical models of the form 
+In addition to section rings of curves, section rings of certain higher dimensional
+stacks have also been studied.
+For example, the Hassett-Keel program \cite{hassett:classical-and-minimal-models}
+studies log canonical rings on ${\mathscr M}_g$ of the form 
 \begin{align*}
 	\overline {\mathscr M}_g(\alpha) := \bigoplus_{d \geq 0} H^0 \left(
 	\overline {\mathscr M}_g, \lfloor d K_{\overline{\mathscr M}_g} +
@@ -190,12 +204,23 @@ Another closely related topic is the Hassett-Keel program \cite{hassett:classica
 \end{align*}
 in terms of certain moduli spaces, where $\overline {\mathscr M_g}$ is the
 moduli space of stable genus $g$ curves.
-Moreover, $\bq$-divisors on surfaces also naturally
+
+Moreover, $\bq$-divisors on surfaces not only appear in the context of stacks,
+but also naturally
 appear when considering the canonical ring of surfaces of Kodaira dimension 1.
 In characteristic 0, every surface of Kodaira dimension 1 is an elliptic surface \cite[p. 244]{
 barthHPV:compactComplexSurfaces}, and
 the canonical rings of elliptic surfaces are most naturally described in the setting of
 $\bq$-divisors \cite[Chapter V, Theorem 12.1]{barthHPV:compactComplexSurfaces}. 
+
+In this paper, we continue the study of section rings of
+surfaces and higher dimensional varieties, examining section rings of
+projective spaces $\bp^m$ and Hirzebruch surfaces $\hirz_m$.
+When $D$ is a general $\bq$-divisor on $\bp^m$ or
+$\hirz_m$, we give bounds on the generators and relations of
+$R(X, D)$. In particular, we give a presentation of the
+section ring when $X = \bp^m$ and $D$ is any effective
+$\bq$-divisor.  
 
 \subsection{Notation}
 We now define some notation used throughout the paper.
@@ -275,7 +300,7 @@ The bounds
 given in Theorem ~\ref{thm:proj-effective-intro}
 are tight and are typically attained, as explained in
 Remark ~\ref{rem:exact-effective-bounds}.
-Simlarly, the bounds given in Theorem 
+Similarly, the bounds given in Theorem 
 ~\ref{thm:proj-generators-relations} are asymptotically
 tight to within a factor of two 
 for a class of divisors described in

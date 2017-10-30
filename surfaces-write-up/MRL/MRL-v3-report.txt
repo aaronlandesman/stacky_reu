@@ -25,19 +25,13 @@ monomials and the like.
 Aaron: I have changed this to section ring - this is an important change, so make sure I didn't miss any instances
 Robin: changed it in a few other places, e.g. section titles (no pun intended)
 
-(6) Page 1, paragraph 1: Your first paragraph basically repeats your abstract, which
-doesn’t really welcome people into your paper like it should. There are many styles
-of introduction, but the most successful ones are those that start as nontechnically as
-possible, relating work to something common that mathematicians would recognize,
-and then specializing to the main result. Though difficult to write, I strongly encour-
-age you to consider this kind of narrative rather than just adding more precision to
-the abstract.
-
 (7) Page 1, paragraphs 2–3: “gives similar descriptions”, “has connections to”, and “an-
 other closely related topic” are too vague, especially given that you are close to more
 precise immediately afterwards. I think what you mean to do in these opening para-
 graphs is to discuss the pursuit of explicit homogeneous coordinate rings for varieties,
 mentioning recent results, and then pointing to your own. This would be more useful.
+
+Aaron: I rewrote this, perhaps take a look at it?
 
 (10) Section 1.2: Well, m ∈ Z ≥0 , right? Wait, is m = 0 allowed for P m ? When extending
 scalars, it is usual to write e.g. V ⊗ F K not K ⊗ F V even though the scalars are
