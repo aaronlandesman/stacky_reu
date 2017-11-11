@@ -63,7 +63,7 @@
   \newtheorem*{note*}{Notation}
   \newtheorem{case}{Case}
 	
-\numberwithin{equation}{subsection}
+\numberwithin{equation}{section}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -411,68 +411,6 @@ generators of the section ring $R_D$ when $D$ is an effective divisor in Theorem
 For the remainder of this section, we shall fix $m \geq 1$ and
 choose an
 isomorphism $\bp^m \cong \proj \bk[x_0, \ldots, x_m]$.
-
-\ssec{Preliminaries on Projective Space}
-Before bounding the degree of generation and relations of
-section rings on projective space, we first
-describe a particular choice of basis for $R_D$ as a $\bk$ vector
-space.
-
-Write \begin{align*}
-	D = \sum_{i=0}^{n}\alpha_i D_i.
-\end{align*}
-where $n \in \bz$, $\alpha_i \in \bq$, and $\deg D_i = \bida_i$. 
-Choose $f_i$ so that $D_i = V(f_i)$.
-We shall further assume for this subsection that (possibly after
-reordering) $f_0,\ldots, f_{m}$ are $m$ independent linear forms
-on $\bp^m$.  This may necessitate the inclusion of ``ghost divisors'' $D_i$ with coefficients $\alpha_i = 0$. 
-
-\begin{prop}
-\label{prop:pm-span-and-basis}
-The functions $u^d \cdot \prod_{i=0}^n f_i^{c_i} \in (R_D)_d$ \rm{(}recall $u$ is a dummy variable keeping
-track of the degree\rm{)}
-satisfying
-both of the following conditions
-
-\begin{enumerate}
-	\item $\sum_{i=0}^{n} c_i \cdot \bida_i = 0$
-	\item $c_i \geq - \lfloor d \alpha_i \rfloor$
-\end{enumerate}
-
-\noindent
-for $c_0, \ldots, c_n \in \bz$
-span $H^0(\bp^m, dD)$ over $\bk$. Furthermore, such functions 
-that also satisfy
-\begin{enumerate}[resume]
-	\item $c_i = -\lfloor d\alpha_i \rfloor \text{ for all } i > m$
-\end{enumerate}
-
-\noindent
-form a basis for $H^0(\bp^m, dD)$ over $\bk$.
-\end{prop}
-
-\begin{proof}
-By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
-(1) and (2) lie in $H^0(\mathbb{P}^m,dD)$, and are also necessary to lie in
-$H^0(\mathbb{P}^m,dD)$.
-To complete the proof, it
-suffices to check functions satisfying conditions (1)-(3) form
-a basis of $H^0(\bp^m,dD)$. There are $\binom{m+ \deg \lfloor dD \rfloor }{m}$
-functions satisfying conditions (1)-(3). However we know
-$h^0(\bp^m,dD) = \binom{m+ \deg \lfloor dD \rfloor }{m},$ so it suffices to show
-that those monomials satisfying conditions (1)-(3) are
-independent. 
-To see why these are independent, observe that monomials satisfying (1)-(3) are all of the form
-$f_0^{c_0} \cdots f_m^{c_m} \cdot g$ for the fixed monomial
-$g = f_{m+1}^{-\lfloor d\alpha_{m+1} \rfloor} \cdots f_n^{-\lfloor d\alpha_{m+1} \rfloor}$.
-For any fixed $N \in \bz$, the set 
-\begin{align*}
- \left\{ f_0^{c_0} \cdots f_m^{c_m} : (c_0, \ldots, c_m) \in \bz^{m+1}, \sum_{i=0}^m c_i = N \right\}	
-\end{align*}
-forms an independent set over $\bk$.
-Therefore, multiplying the monomials in the above set with the $g$ also forms an independent set, and these are precisely the monomials satisfying (1)-(3) 
-with $N = -\deg g$.
-\end{proof}
 
 
 \ssec{Effective Divisors on Projective Space}
@@ -889,26 +827,36 @@ Note that the generator $F_3^{(1,0,0)} = \frac{u^3x}{x}$ could be included, but 
 
 \ssec{Bounds for Arbitrary Divisors on Projective Space}
 \label{ssec:arbitrary-projective}
-
-
 We now offer bounds on generators and relations of $R_D$ for a general $\bq$-divisor $D \in \bq \otimes_\bz \di \bp^m$.
-
-Let $D = \sum_{i=0}^n \alpha_i D_i \in \bq \otimes_\bz \di \bp^m$ and let $f_i$ be
-homogeneous polynomials in $x_0, \ldots, x_m$ such that $D_i = V(f_i)$ and
-$\deg(f_i) = a_i$ for all $i$. 
-
+Write \begin{align*}
+	D = \sum_{i=0}^{n}\alpha_i D_i \in \bq \otimes_\bz \di \bp^m
+\end{align*}
 For the remainder of this section, we shall make the additional assumption that 
 \begin{align} \label{eqn:pm-basis-assumption} f_0, \ldots, f_{m}
 	\text{ are independent linear forms.} \end{align}
+This may necessitate the inclusion of ``ghost divisors'' $D_i$ with coefficients $\alpha_i = 0$. 
 
-The first aim of this section is to prove Theorem
+The main aim of this section is to prove Theorem
 ~\ref{thm:proj-generators-relations} bounding the number of generators and
-relations of $R_D$. Before doing so, we justify the importance of assumption
+relations of $R_D$. 
+Having justified the necessity of adding ghost divisors, we proceed to bound the
+number of generators and relations of arbitrary $\bq$-divisors in 
+projective space. 
+In \autoref{prop:pm-span-and-basis}, we record a general proposition describing
+a basis for $H^0(\bp^m, dD)$.
+We bound the generators in Lemma ~\ref{lem:proj-generators}, and we use Lemmas ~\ref{lem:composite-map}, ~\ref{lem:bound-ker-chi}, and ~\ref{lem:proj-relations-psi} to bound the 
+degree of relations in the proof of Theorem ~\ref{thm:proj-generators-relations}. Proposition ~\ref{prop:cone-generation}, Lemma ~\ref{lem:composite-map}, and Lemma ~\ref{lem:bound-ker-chi} are quite 
+general and will also be used in Section ~\ref{sec:hirz} to bound the 
+degree of generators and relations on Hirzebruch surfaces.
+However, before moving on to the proof of ~\ref{thm:proj-generators-relations}, we justify the importance of assumption
 ~\eqref{eqn:pm-basis-assumption} with several illustrative examples.
+%riga
+\sssec*{The importance of ghost divisors}
+\label{sssec:ghost-divisors}
 
 \begin{example}
 \label{eg:hyperplane}
-In this example,we show that the naive generalization of
+In this example, we show that the naive generalization of
 ~\cite[Theorem 8]{dorney:canonical} of generation in degree at most
 $\sum_{i=0}^{n}\ell_i$ cannot possibly hold. The reason for this is
 that the divisors may be
@@ -989,12 +937,66 @@ unless we require that $D$ includes ghost divisors. That is, unless
 $D_0,\ldots D_m$ are taken to be linearly independent hyperplanes.
 \end{example}
 
-Having justified the necessity of adding ghost divisors, we proceed to bound the
-number of generators and relations of arbitrary $\bq$-divisors in 
-projective space. We bound the generators in Lemma ~\ref{lem:proj-generators}, and we use Lemmas ~\ref{lem:composite-map}, ~\ref{lem:bound-ker-chi}, and ~\ref{lem:proj-relations-psi} to bound the 
-degree of relations in the proof of Theorem ~\ref{thm:proj-generators-relations}. Proposition ~\ref{prop:cone-generation}, Lemma ~\ref{lem:composite-map}, and Lemma ~\ref{lem:bound-ker-chi} are quite 
-general and will also be used in Section ~\ref{sec:hirz} to bound the 
-degree of generators and relations on Hirzebruch surfaces.
+\sssec*{A basis for sections on projective space}
+\label{sssec:basis-projective}
+
+In order to prepare ourselves to prove \autoref{thm:proj-generators-relations},
+we will need the following simple description of
+a basis for $H^0(\bp^m, dD)$.
+
+\begin{prop}
+\label{prop:pm-span-and-basis}
+Assuming \autoref{eqn:pm-basis-assumption},
+the functions $u^d \cdot \prod_{i=0}^n f_i^{c_i} \in (R_D)_d$ \rm{(}recall $u$ is a dummy variable keeping
+track of the degree\rm{)}
+satisfying
+both of the following conditions
+
+\begin{enumerate}
+	\item $\sum_{i=0}^{n} c_i \cdot \bida_i = 0$
+	\item $c_i \geq - \lfloor d \alpha_i \rfloor$
+\end{enumerate}
+
+\noindent
+for $c_0, \ldots, c_n \in \bz$
+span $H^0(\bp^m, dD)$ over $\bk$. Furthermore, such functions 
+that also satisfy
+\begin{enumerate}[resume]
+	\item $c_i = -\lfloor d\alpha_i \rfloor \text{ for all } i > m$
+\end{enumerate}
+
+\noindent
+form a basis for $H^0(\bp^m, dD)$ over $\bk$.
+\end{prop}
+
+\begin{proof}
+By definition of $H^0(\bp^m,dD)$, functions satisfying conditions 
+(1) and (2) lie in $H^0(\mathbb{P}^m,dD)$, and are also necessary to lie in
+$H^0(\mathbb{P}^m,dD)$.
+To complete the proof, it
+suffices to check functions satisfying conditions (1)-(3) form
+a basis of $H^0(\bp^m,dD)$. There are $\binom{m+ \deg \lfloor dD \rfloor }{m}$
+functions satisfying conditions (1)-(3). However we know
+$h^0(\bp^m,dD) = \binom{m+ \deg \lfloor dD \rfloor }{m},$ so it suffices to show
+that those monomials satisfying conditions (1)-(3) are
+independent. 
+To see why these are independent, observe that monomials satisfying (1)-(3) are all of the form
+$f_0^{c_0} \cdots f_m^{c_m} \cdot g$ for the fixed monomial
+$g = f_{m+1}^{-\lfloor d\alpha_{m+1} \rfloor} \cdots f_n^{-\lfloor d\alpha_{m+1} \rfloor}$.
+For any fixed $N \in \bz$, the set 
+\begin{align*}
+ \left\{ f_0^{c_0} \cdots f_m^{c_m} : (c_0, \ldots, c_m) \in \bz^{m+1}, \sum_{i=0}^m c_i = N \right\}	
+\end{align*}
+forms an independent set over $\bk$.
+Therefore, multiplying the monomials in the above set with the $g$ also forms an independent set, and these are precisely the monomials satisfying (1)-(3) 
+with $N = -\deg g$.
+\end{proof}
+
+\sssec*{Bounding the generators}
+\label{sssec:bounding-generators}
+
+We now develop the tools to bound the degrees of generators for $R_D$ with $D$ a divisor on $\bp^m$.
+
 
 Recall that for a semigroup $\Sigma \subset \bz^m$ we say $e_0, \ldots, e_n \in \Sigma$ are a set of {\bf extremal rays}
 for $\Sigma$ if 
@@ -1096,6 +1098,10 @@ w_i \ar[mapsto]{r} & u^{d_i}z_0^{c_{i0}} \cdots z_n^{c_{in}} \ar[mapsto]{r} & u^
 \end{tikzcd}
 \end{equation}
 
+\sssec*{Bounding the relations}
+\label{sssec:relations-projective}
+
+We now move on to bounding the relations of a section ring $R_D$ for $D$ a divisor on $\bp^m$.
 In Lemma ~\ref{lem:composite-map} we show that the degree of the
 generators for $\ker \phi$, which is the same as the degree of relations
 of $R_D$, is bounded by the maximum of the degree of generators for
@@ -1230,6 +1236,8 @@ $\ker \psi$ is generated in degrees less than
 \]
 \end{proof}
 
+\sssec*{Proving Theorem ~\ref{thm:proj-generators-relations}}
+\label{sssec:proving-theorem-proj}
 By combining the above results, we get our main theorem bounding
 the generator and relation degrees of the section ring of any
 $\bq$-divisor on projective space.
