@@ -141,6 +141,11 @@ instead of "(F^v_1)^g_v_1 ... (F^v_\kappa_1)^g_v_\kappa_1 ..."?
 Robin: I have reindexed (kappa_1 -> lambda, kappa_2 -> kappa, lambda -> tau) and used the product notation as well.
 
 (30) Remark 2.6: To take D = α 0 D 0 we need your ghost divisors, right? And D 0 = 0?
+Aaron: We do not need ghost divisors in this case because we are dealing with effective divisors.
+We have reorganized section 2 so that there is only 2.1 which deals with effective divisors and
+which makes no mention of ghost divisors.
+and 2.2 which deals with arbitrary divisors and does involve ghost divisors.
+This remark is now in 2.1 so there will be no confusion regarding ghost divisors
 
 
 (34) (2.2): (Ugh, numbering!) Wait, why is this additional? It reads the same as before
