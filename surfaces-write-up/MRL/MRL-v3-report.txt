@@ -6,24 +6,7 @@ latter repeating Theorem 1.2.1).
 
 Aaron: I did this, though we now have subsection 3.1 and 4.1 to keep the numbering consistent
 
-(2) You give parts of several (counter)examples, but no complete nontrivial example of
-one of the rings you describe is given. Please give at least one.
-
-Response - We have now added in a detailed example at the end of subsection 2.2
-Aaron: Robin and Peter, could you take a look at this new example and catch any typos/errors?
-Robin: fixed a few typos
-
-
-
 Section 1
-(5) Page 1, line 1, “generalized canonical ring”: This is poor terminology: there’s nothing
-canonical about it. They are homogeneous coordinate rings associated to divisors,
-maybe. You don’t need a dummy variable in the definition of R(X, D) as a graded
-ring, although you may like to include it later for clarity when writing out explicit
-monomials and the like.
-
-Aaron: I have changed this to section ring - this is an important change, so make sure I didn't miss any instances
-Robin: changed it in a few other places, e.g. section titles (no pun intended)
 
 (7) Page 1, paragraphs 2–3: “gives similar descriptions”, “has connections to”, and “an-
 other closely related topic” are too vague, especially given that you are close to more
@@ -141,24 +124,9 @@ instead of "(F^v_1)^g_v_1 ... (F^v_\kappa_1)^g_v_\kappa_1 ..."?
 Robin: I have reindexed (kappa_1 -> lambda, kappa_2 -> kappa, lambda -> tau) and used the product notation as well.
 
 (30) Remark 2.6: To take D = α 0 D 0 we need your ghost divisors, right? And D 0 = 0?
+
 Aaron: We do not need ghost divisors in this case because we are dealing with effective divisors.
 We have reorganized section 2 so that there is only 2.1 which deals with effective divisors and
 which makes no mention of ghost divisors.
 and 2.2 which deals with arbitrary divisors and does involve ghost divisors.
 This remark is now in 2.1 so there will be no confusion regarding ghost divisors
-
-
-(34) (2.2): (Ugh, numbering!) Wait, why is this additional? It reads the same as before
-Proposition 2.1. Seems like you should have this whole discussion about ghost divisors
-much earlier in the section.
-
-(38) Page 15, middle diagram: why the large space between the domain/codomain and the
-definition of the map? (Squeeze down on the corresponding xymatrix, or whatever
-package you’re using.) Same on top of page 11.
-
-Aaron: Is he complaining about the sequences with three things that are k[w_i] \rightarrow k[\Sigma] \rightarrow R_D?
-If so, the reason it is doing this is to match the \mapsto spacing on the line underneath it, which seems quite reasonable to me.
-Am I correctly interpreting this comment?
-Robin: He's complaining about the vertical space between the sequence with "\rightarrow"s and the sequence of "\mapsto" below.
-I think it's because we're using tikzcd, so the vertical space is quite large. I tried to fix this using [row sep = tiny]
-in the instances he mentions (two on old pg 10, one in old pg 15).
