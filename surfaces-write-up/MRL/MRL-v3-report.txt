@@ -55,9 +55,6 @@ Section 2
 be given here, where the paper “really starts”, rather than partly in the introduction
 and partly here.
 
-(23) Proposition 2.1: romanize your conditions (1)–(3), they should not be italicized.
-
-Aaron: Aren't they romanized here? Compare to conditions (1) and (2) in 2.2.4.
 
 (24) Proof of Proposition 2.1: You mean (1)–(3), not (1-3). I could not follow the last
 sentence, why does the assumption that f 0 , . . . , f m are a basis of linear forms have to
@@ -86,6 +83,10 @@ way to tell which kind of relation arises in (1)? Is it determined by the condit
 parentheses? If so, you should say “there is a relation of the form” and use a case
 environment. What are G ~v i,j , w ~ and L ~v i,j , w ~ ? Are these the definition of the corresponding
 relations, which are zero in R D belonging to the ideal?
+
+Robin: addressed all of these points except the formatting of $F_i^\vec{v}$, which should
+probably be changed to ${}_{\vec{v}} F_i$ (left subscript) instead, and when each
+$G$ relation arises.
 
 (27) Proof of Theorem 2.5, paragraph 1, “the general can”: missing “case”. I’m not sure
 if you’re allowed to prove a special case and then argue that the general case holds
