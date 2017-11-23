@@ -67,11 +67,20 @@ generality that D i = V (x i ) for i = 0, . . . , m, allowing α i = 0. In other
 didn’t name your coordinates x 0 , . . . , x m to begin with, why couldn’t I just take the
 f i satisfying your hypothesis instead as coordinates?
 
+
 (18) Theorem 1.5: Same comments about coordinates and linear polynomials. Actually,
 I feel like pointing out that your hypothesis is equivalent to asking that {f 1 , . . . , f n }
 generate the homogeneous coordinate ring associated to O(1)—could you parlay this
 into a more conceptual grounding for this hypothesis? Maybe that’s too hypothetical,
 in which case, just “normalize” your divisors by asking that f 1 = u, . . . , f 4 = w.
+
+response to (14) and (18):
+We explained in both the projective space case and hirzebruch case that this assumption was nonessential
+In the projective space case, we gave a corollary right after the theorem in the introduction stating the bound for an arbitrary divisor D.
+You are correct that we could have easily changed coordinates and reordered the $f_i$ so that the first $m+1$ $f_i$ were $x_0, \ldots, x_m$, but
+it seems we may as well state it with arbitrary independent polynomials, so as not to require such a change of basis.
+
+
 (19) Theorem 1.5: Give a name to the bound on the degrees, so you don’t have to repeat
 it in the relations, and then it’s clear that you’re just multiplying by 2. (It would be
 great to do the same for the other theorems.)

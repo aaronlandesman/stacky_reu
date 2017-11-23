@@ -287,9 +287,10 @@ Let $D = \sum_{i = 0}^n \alpha_i D_i \in \di \bp^m \otimes_\bz \bq$
 with $\alpha_i = \frac{c_i}{k_i}\in \bq$ in reduced form. Write
 $\ell_i := \lcm_{0\le j \le n, j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m
 \cong \proj \bk[x_0, \ldots, x_m]$ and let
-$f_i \in \bk[x_0, \ldots, x_m]$ such that $D_i = V(f_i)$. Now
-suppose that $\{f_0, \ldots, f_n\}$ contains $m + 1$ independent 
-linear polynomials in $x_0, \ldots, x_m$ {\rm(}where we allow for 
+$f_i \in \bk[x_0, \ldots, x_m]$ such that $D_i = V(f_i)$. 
+Suppose that $\{f_0, \ldots, f_n\}$ contains as a subset forming a basis
+for $H^0(\bp^m, \sco_{\bp^m}(1))$, i.e., $m+1$ independent polynomials with corresponding $a_i = 1$,
+{\rm(}where we allow for 
 $\alpha_j = 0$ in the expansion of $D${\rm)}.
 
 Then $R_D$ is generated in degrees at most 
@@ -314,6 +315,27 @@ for a class of divisors described in
 Remark~\ref{rem:exact-noneff-bounds}.
 \end{rem}
 
+Note that the assumption given in Theorem~\ref{thm:proj-generators-relations}
+that $\left\{ f_0, \ldots, f_n \right\}$ contains a basis for $H^0(\bp^m, \sco_{\bp^m}(1))$ is not a serious assumption:
+If $D$ is an arbitrary divisor, then $D + 0 \cdot V(x_0) + \cdots + 0 \cdot V(x_m)$ is a divisor satisfying this assumption. Plugging this divisor into the statement
+of Theorem~\ref{thm:proj-generators-relations}, we obtain the following bounds for an arbitrary divisor:
+\begin{cor}
+	\label{cor:proj-generators-relations}
+	Let $D = \sum_{i = 0}^n \alpha_i D_i \in \di \bp^m \otimes_\bz \bq$ be a divisor of positive degree
+with $\alpha_i = \frac{c_i}{k_i}\in \bq$ in reduced form. Write
+$\ell := \lcm_{0 \leq j \leq n}(k_j)$, $\ell_i := \lcm_{0\le j \le n, j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m
+\cong \proj \bk[x_0, \ldots, x_m]$ and let
+$f_i \in \bk[x_0, \ldots, x_m]$ such that $D_i = V(f_i)$. 
+
+Then $R_D$ is generated in degrees at most 
+$\ell(m+1) + \sum_{i = 0}^n \ell_i a_i$
+with relations generated in degrees at most
+\[
+	\max \left(2 \left(\ell(m+1)+\sum_{i=0}^n \ell_i a_i \right), \frac{\max_{0 \le i \le n}
+	(	\bida_i)}{\deg(D)} + \ell(m+1) + \sum_{i=0}^n \ell_i a_i \right).
+\]
+\end{cor}
+
 In Section \ref{sec:hirz}, we shift our attention to Hirzebruch surfaces. Recall that for each $m \geq 0$ we define the
 Hirzebruch surface $F_m := \proj \sym (\sco_{\bp^1} \oplus
 \sco_{\bp^1}(m))$, viewed as a projective bundle over $\bp^1$.
@@ -334,8 +356,9 @@ Let $D = \sum_{i = 1}^n \alpha_i D_i \in \di \hirz_m \otimes_\bz \bq$ where $\al
 Let each $D_i = V(f_i)$, where $f_i \in \sco(a_i, b_i)$.
 Let $u, v, z, w$ be the coordinates for the Hirzebruch surface
 $\hirz_m$, and suppose that $\{f_1, \ldots, f_n\}$
-contains two independent 
-linear polynomials in $u, v$ and two independent linear polynomials in
+contains 
+bases for $\sco_{F_m}(1,0)$ and $\sco_{F_m}(0,1)$,
+i.e., two independent linear polynomials in $u, v$ and two independent linear polynomials in
 $w, x$ {\rm(}where we allow for $\alpha_j = 0$ in the expansion of $D${\rm)}.
 
 Then $R_D$ is generated in degrees at most
@@ -352,6 +375,14 @@ with relations generated in degrees at most
 Theorem~\ref{thm:hirz-generators-relations} is restated with a more precise
 bound in Theorem~\ref{thm:hirz-generators-relations-full}.
 \end{rem}
+\begin{rem}
+	As in Theorem~\ref{thm:proj-generators-relations}, the condition that $D$ contain independent polynomials
+	in $u,v$ and $w,z$ is easily removed by replacing $D$ with $D' :=D +0 \cdot u + 0 \cdot v + 0 \cdot w + 0 \cdot z$,
+	and computing the resulting bound for $D'$.
+	One can either take the simpler bound (but slightly weaker) bound from Theorem~\ref{thm:hirz-generators-relations}
+	or the more precise bound given in Theorem~\ref{thm:hirz-generators-relations-full}.
+\end{rem}
+
 
 \noindent
 By the classification of minimal rational surfaces
@@ -849,7 +880,7 @@ relations of $R_D$.
 Having justified the necessity of adding ghost divisors, we proceed to bound the
 number of generators and relations of arbitrary $\bq$-divisors in 
 projective space. 
-In \autoref{prop:pm-span-and-basis}, we record a general proposition describing
+In PRoposition~\ref{prop:pm-span-and-basis}, we record a general proposition describing
 a basis for $H^0(\bp^m, dD)$.
 We bound the generators in Lemma ~\ref{lem:proj-generators}, and we use Lemmas ~\ref{lem:composite-map}, ~\ref{lem:bound-ker-chi}, and ~\ref{lem:proj-relations-psi} to bound the 
 degree of relations in the proof of Theorem ~\ref{thm:proj-generators-relations}. Proposition ~\ref{prop:cone-generation}, Lemma ~\ref{lem:composite-map}, and Lemma ~\ref{lem:bound-ker-chi} are quite 
@@ -946,13 +977,13 @@ $D_0,\ldots D_m$ are taken to be linearly independent hyperplanes.
 \sssec*{A basis for sections on projective space}
 \label{sssec:basis-projective}
 
-In order to prepare ourselves to prove \autoref{thm:proj-generators-relations},
+In order to prepare ourselves to prove Theorem~\ref{thm:proj-generators-relations},
 we will need the following simple description of
 a basis for $H^0(\bp^m, dD)$.
 
 \begin{prop}
 \label{prop:pm-span-and-basis}
-Assuming \autoref{eqn:pm-basis-assumption},
+Assuming Equation~\ref{eqn:pm-basis-assumption},
 the functions $u^d \cdot \prod_{i=0}^n f_i^{c_i} \in (R_D)_d$ \rm{(}recall $u$ is a dummy variable keeping
 track of the degree\rm{)}
 satisfying
