@@ -44,13 +44,13 @@ extension (divisors may become a power of a divisor). Did you mean characteristi
 zero? You made this restriction when considering Kodaira dimension 1 surfaces.
 
 Response to the second part on base change - 
-We believe that purely inseparable extensions pose
+We added a remark explaining why purely inseparable extensions pose
 no addition issue. The point is that cohomology commutes with flat base change, and extensions of fields
 are always flat, so the dimensions of the graded pieces of the ring will be preserved. Therefore generators
 and relations are preserved under arbitrary base field extension. Of course,
-canonical divisors of root stacks may not behave well with respect to base change as is noted in Voight--Zureick-Brown's book,
+canonical divisors of root stacks may not behave well with respect to base change as is noted in Voight--Zureick-Brown's forthcoming book,
 which is why this may cause problems if one wanted to consider some ring associated to something related to the canonical divisor.
-But, for the purposes of this article, we fix a divisor on a curve over some base field, and the structure of that particular section
+But, for the purposes of this article, we fix a divisor on a scheme over some base field, and the structure of that particular section
 ring is unchanged upon base change to the algebraic closure.
 Robin: should we include this as a remark?
 

@@ -227,11 +227,25 @@ section ring when $D$ is any effective
 $\bq$-divisor on $\bp^m$.  
 
 \subsection{Notation}
+\todo{move this notation subsection to its own section, after the introduction}
 Throughout, we work over a fixed algebraically closed field $\bk$.
-Since generator and relation degrees are preserved under base change to the algebraic closure, 
-as cohomology commutes with flat base change,
-assuming that $\bk$ is algebraically closed is no restriction
-on generality and the results hold equally well over an arbitrary field.
+%Since generator and relation degrees are preserved under base change to the algebraic closure, 
+%as cohomology commutes with flat base change,
+%assuming that $\bk$ is algebraically closed is no restriction
+%on generality and the results hold equally well over an arbitrary field.
+\begin{rem}
+	Because cohomology commutes with flat base change, in particular with field extensions,
+the dimensions of the graded pieces of the section ring will be preserved under base change from $\bk$ to $\overline \bk$. Therefore generators
+and relations are preserved under arbitrary base field extension, and hence their minimal degrees are preserve.
+Because of this, there is not harm in assuming $\bk =\overline \bk$. The bounds we give below hold equally well
+over arbitrary fields, but for simplicity we state and prove them over algebraically closed fields.
+
+We note that canonical divisors of root stacks may not behave well with respect to base change of purely inseparable extensions,
+so base change along purely inseparable extensions may cause problems if one considers 
+some section ring associated to the canonical divisor.
+But, for the purposes of this article, we fix a divisor on a scheme over some base field, and the structure of that particular section
+ring is unchanged upon base change to the algebraic closure.
+\end{rem}
 
 We now define some notation used throughout the paper.
 We use $m \in \bz_{\geq 0}$ to index the dimension of a given projective
