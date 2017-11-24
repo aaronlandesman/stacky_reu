@@ -1,0 +1,182 @@
+%        File: changes-summary.tex
+%     Created: Sat Oct 17 11:00 AM 2015 E
+% Last Change: Sat Oct 17 11:00 AM 2015 E
+%
+%%%%%%%%%%%%%%%%%%%%%
+%   AMS packages    %
+%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10 pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage{subfiles}
+\usepackage{mathpazo}
+\usepackage{euler}
+\usepackage[colorinlistoftodos, textsize=tiny]{todonotes}
+
+\addtolength{\oddsidemargin}{-.5 in}
+\addtolength{\evensidemargin}{-.4 in}
+\addtolength{\textwidth}{1 in}
+\addtolength{\topmargin}{0 in}
+\addtolength{\textheight}{0 in}
+
+\RequirePackage{color}
+\definecolor{myred}{rgb}{0.75,0,0}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{myblue}{rgb}{0,0,0.65}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue}
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture} 
+\newtheorem{warning}[theorem]{Warning}
+\newtheorem{fact}[theorem]{Fact}
+\theoremstyle{remark}
+\newtheorem{notation}[theorem]{Notation}
+\numberwithin{equation}{section}
+  
+\newcommand\nc{\newcommand}
+\nc\on{\operatorname}
+\nc\renc{\renewcommand}
+\newcommand\se{\section}
+\newcommand\ssec{\subsection}
+\newcommand\sssec{\subsubsection}
+\newcommand\bn{{\mathbb N}}
+\newcommand\bc{{\mathbb C}}
+\newcommand\br{{\mathbb R}}
+\newcommand\bq{{\mathbb Q}}
+\newcommand\bp{{\mathbb P}}
+\newcommand\CF{{\mathcal F}}
+\newcommand\bz{{\mathbb Z}}
+\newcommand\ba{{\mathbb A}}
+\newcommand\fa{{\mathfrak a}}
+\newcommand\fp{{\mathfrak p}}
+\newcommand\fq{{\mathfrak q}}
+\newcommand\fm{{\mathfrak m}}
+\newcommand\so{{\mathscr O}}
+\newcommand\sg{{\mathscr G}}
+
+\newcommand\scm{{\mathscr M}}
+\newcommand\scn{{\mathscr N}}
+\newcommand\scf{{\mathscr F}}
+\newcommand\scg{{\mathscr G}}
+\newcommand\sco{{\mathscr O}}
+\newcommand\sch{{\mathscr H}}
+\newcommand\scl{{\mathscr L}}
+\newcommand\sci{{\mathscr I}}
+
+\newcommand \ra{\rightarrow}
+\newcommand{\id}{\mathrm{id}}
+\newcommand\im{\text{im }}
+\newcommand\coker{\text{coker}}
+\newcommand \spec{\text{Spec }}
+\newcommand \proj{\text{Proj }}
+\newcommand \rspec{\textit{Spec }}
+\newcommand \rproj{\textit{Proj }}
+\newcommand \mg{{\mathscr M_g}}
+
+\DeclareMathOperator\ord{ord}
+
+\newcommand \trdeg{\text{tr. deg }}
+\newcommand \codim{\text{codim}}
+\newcommand \rk{\text{rk }}
+\newcommand \di{\text{div }}
+\newcommand \depth{\text{depth }}
+\DeclareMathOperator\pic{Pic}
+\DeclareMathOperator\lcm{lcm}
+\DeclareMathOperator\rank{rank}
+\DeclareMathOperator\vol{Vol}
+\DeclareMathOperator\supp{Supp}
+
+\usepackage{xr}
+\externaldocument{../surface-paper}
+
+
+\def\listtodoname{List of Todos}
+\def\listoftodos{\@starttoc{tdo}\listtodoname}
+
+\title{Summary of Changes in response to Referee's Report}
+\author{Aaron Landesman, Peter Ruhm, and Robin Zhang}
+
+\begin{document}
+
+\maketitle
+\section{Changes Made}
+Here are some responses to the referee's suggestions.
+Item's below are numbered to match the referee report.
+We applied nearly all changes suggested by the referee, though most need no
+comment. Here, we make some brief comments on how we applied certain suggested
+changes.
+\begin{enumerate}
+	\item[(2)] 
+We have now added in a detailed example 
+\autoref{example:effective-example}
+explaining how to apply our method of proof to actually work out
+the generators and relations for a section ring
+associated to an effective divisor on $\bp^m$.
+\item[(10)]
+Response to the concern about base change along inseparable extensions:
+We added Remark \autoref{rem:algebraically-closed}
+explaining why purely inseparable extensions pose
+no addition issue. The point is that cohomology commutes with flat base change, and extensions of fields
+are always flat, so the dimensions of the graded pieces of the ring will be preserved. Therefore generators
+and relations are preserved under arbitrary base field extension. Of course,
+canonical divisors of root stacks may not behave well with respect to base change (as we learned from a version of Voight--Zureick-Brown's forthcoming book available on Voight's website)
+which is why inseparable extensions
+may cause problems for canonical rings.
+But, for the purposes of this article, we fix a divisor on a scheme over some base field, and the structure of that particular section
+ring is unchanged upon base change to the algebraic closure.
+
+\item[(14) and (18)]
+We explained in both the projective space case and Hirzebruch case that this assumption was nonessential, adding
+\autoref{cor:proj-generators-relations} for the projective case
+and \autoref{rem:hirz-generators-relations-hypothesis} for the Hirzebruch case.
+You are correct that we could have easily changed coordinates and reordered the $f_i$ so that the first $m+1$ $f_i$ were $x_0, \ldots, x_m$, but
+it seems we may as well state it with arbitrary independent polynomials, so as not to require such a change of basis.
+\item[(22)]
+	We moved the notation to its own section after the introduction,
+	as most of the notation was not necessary to state
+	our main theorems.
+\item[(24)]
+	You're right that the proof of \autoref{prop:pm-span-and-basis}
+		was poorly phrased, and we have tried to clarify this now.
+The point is that we are only varying $f_0, \ldots, f_m,$ so
+the resulting monomials in the $f_i$ will be independent because products of the $f_i$ are. See the updated proof in the paper for the details.
+\item[(25)]
+It is not an ordering, only a partial ordering (which we have now stated).
+\item[(27)]
+Good point, we should have done a reduction instead of claiming it was analogous.
+\item[(28)]
+Wouldn't there be something like $\binom{m + c_1- 1}{c_1}$ elements? For example, if
+we take $\alpha = 1$, and $H = V(x_0)$ we will have generators $x_1/x_0, \ldots, x_m/x_0$.
+In any case, we decided to remove the paragraph this comment
+was referring to and the claim about minimality
+of the presentation from the theorem.
+\end{enumerate}
+\end{document}
+
+
