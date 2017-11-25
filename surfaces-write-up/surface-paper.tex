@@ -246,7 +246,7 @@ $\bq$-divisors.
 Let $D = \sum_{i = 0}^{n} \alpha_i D_i \in \di \bp^m \otimes_\bz \bq$, with $\alpha_i =
 \frac{c_i}{k_i} \in \bq_{> 0}$ in reduced form and each $D_i \in \di \bp^m$ an integral divisor.
 
-Then the section ring $R_D$
+Then the section ring $R(\bp^m, D)$
 is generated in degrees at most $\max_{0 \leq i \leq n}{k_i}$ with
 relations generated in degrees at most $2 \max_{0 \leq i \leq n}{k_i}$.
 \end{restatable}
@@ -258,12 +258,11 @@ with $\alpha_i = \frac{c_i}{k_i}\in \bq$ in reduced form. Write
 $\ell_i := \lcm_{0\le j \le n, j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m
 \cong \proj \bk[x_0, \ldots, x_m]$ and let
 $f_i \in \bk[x_0, \ldots, x_m]$ such that $D_i = V(f_i)$. 
-Suppose that $\{f_0, \ldots, f_n\}$ contains as a subset forming a basis
-for $H^0(\bp^m, \sco_{\bp^m}(1))$, i.e., $m+1$ independent polynomials with corresponding $a_i = 1$,
-{\rm(}where we allow for 
-$\alpha_j = 0$ in the expansion of $D${\rm)}.
+Suppose that $\{f_0, \ldots, f_n\}$ contains a basis
+for $H^0(\bp^m, \sco_{\bp^m}(1))$, {\rm(}i.e. $m+1$ independent polynomials with
+corresponding $a_i = 1${\rm)}.
 
-Then $R_D$ is generated in degrees at most 
+Then $R(\bp^m, D)$ is generated in degrees at most 
 $\omega := \sum_{i = 0}^n \ell_i a_i$
 with relations generated in degrees at most
 \[
@@ -290,15 +289,15 @@ that $\left\{ f_0, \ldots, f_n \right\}$ contains a basis for $H^0(\bp^m, \sco_{
 If $D$ is an arbitrary divisor, then $D + 0 \cdot V(x_0) + \cdots + 0 \cdot V(x_m)$ is a divisor satisfying this assumption. Plugging this divisor into the statement
 of Theorem~\ref{thm:proj-generators-relations}, we obtain the following bounds for an arbitrary divisor:
 \begin{cor}
-	\label{cor:proj-generators-relations}
-	Let $D = \sum_{i = 0}^n \alpha_i D_i \in \di \bp^m \otimes_\bz \bq$ 
+\label{cor:proj-generators-relations}
+Let $D = \sum_{i = 0}^n \alpha_i D_i \in \di \bp^m \otimes_\bz \bq$ 
 with $\alpha_i = \frac{c_i}{k_i}\in \bq$ in reduced form. Write
 $\ell := \lcm_{0 \leq j \leq n}(k_j)$, $\ell_i := \lcm_{0\le j \le n, j \ne i}(k_j)$ and $a_i := \deg D_i$. Let $\bp^m
 \cong \proj \bk[x_0, \ldots, x_m]$ and let
 $f_i \in \bk[x_0, \ldots, x_m]$ such that $D_i = V(f_i)$. 
 
-Then $R_D$ is generated in degrees at most 
-$\omega' := \ell(m+1) + \sum_{i = 0}^n \ell_i a_i$
+Then $R(\bp^m, D)$ is generated in degrees at most 
+$\omega' := (m+1)\ell + \sum_{i = 0}^n \ell_i a_i$
 with relations generated in degrees at most
 \[
 	\max \left(2 \omega', \frac{\max_{0 \le i \le n}
@@ -326,12 +325,11 @@ Let $D = \sum_{i = 1}^n \alpha_i D_i \in \di \hirz_m \otimes_\bz \bq$ where $\al
 Let each $D_i = V(f_i)$, where $f_i \in \sco(a_i, b_i)$.
 Let $u, v, z, w$ be the coordinates for the Hirzebruch surface
 $\hirz_m$, and suppose that $\{f_1, \ldots, f_n\}$
-contains 
-bases for $\sco_{F_m}(1,0)$ and $\sco_{F_m}(0,1)$,
-i.e., two independent linear polynomials in $u, v$ and two independent linear polynomials in
-$w, x$ {\rm(}where we allow for $\alpha_j = 0$ in the expansion of $D${\rm)}.
+contains bases for $\sco_{F_m}(1,0)$ and $\sco_{F_m}(0,1)$
+{\rm(}i.e., two independent linear polynomials in $u, v$ and two independent linear polynomials in
+$w, z$ {\rm)}.
 
-Then $R_D$ is generated in degrees at most
+Then $R(\hirz_m, D)$ is generated in degrees at most
 \[
 	\rho' := \lcm_{1\le i\le n}(k_i)\cdot \left(\sum_{1\le i\le j\le n} \bida_i \bidb_i\right) 
 \]
@@ -342,17 +340,22 @@ $2 \rho'$.
 %	2 \cdot \lcm_{1\le i\le n}(k_i) \cdot \left( \sum_{1\le i\le j\le n} \bida_i \bidb_i\right) 
 %\]
 \end{thm}
+
 \begin{rem}
-Theorem~\ref{thm:hirz-generators-relations} is restated with a more precise
-bound in Theorem~\ref{thm:hirz-generators-relations-full}.
+Theorem~\ref{thm:hirz-generators-relations} is restated with a more
+precise bound in Theorem~\ref{thm:hirz-generators-relations-full}.
 \end{rem}
+
 \begin{rem}
 	\label{rem:hirz-generators-relations-hypothesis}
-	As in Theorem~\ref{thm:proj-generators-relations}, the condition that $D$ contain independent polynomials
-	in $u,v$ and $w,z$ is easily removed by replacing $D$ with $D' :=D +0 \cdot u + 0 \cdot v + 0 \cdot w + 0 \cdot z$,
-	and computing the resulting bound for $D'$.
-	One can either take the simpler bound (but slightly weaker) bound from Theorem~\ref{thm:hirz-generators-relations}
-	or the more precise bound given in Theorem~\ref{thm:hirz-generators-relations-full}.
+	As in Theorem~\ref{thm:proj-generators-relations}, the condition
+	of Theorem~\ref{thm:hirz-generators-relations} that $D$ contain
+	independent polynomials in $u, v$ and $w, z$ is
+	easily removed by replacing $D$ with $D' :=D +0 \cdot u + 0 \cdot
+	v + 0 \cdot w + 0 \cdot z$,	and computing the resulting bound for
+	$D'$ using either the simpler (but slightly weaker) bound
+	from Theorem~\ref{thm:hirz-generators-relations} or the more
+	precise bound given in Theorem~\ref{thm:hirz-generators-relations-full}.
 \end{rem}
 
 
@@ -408,33 +411,34 @@ for general rational surfaces, the restricted class of rational varieties we con
 %assuming that $\bk$ is algebraically closed is no restriction
 %on generality and the results hold equally well over an arbitrary field.
 
-In this section, we now collect various notation, used throughout the paper.
-Throughout, for ease of notation,
-we work over a fixed algebraically closed field $\bk$.
-Our results hold equally well over arbitrary fields, as we now explain.
+In this section, we now collect various notation used throughout the paper.
+Throughout,
+we work over a fixed algebraically closed field $\bk$ for ease of notation,
+but our results hold equally well over arbitrary fields.
 
 \begin{rem}
-	\label{rem:algebraically-closed}
-	Because cohomology commutes with flat base change, in particular with field extensions,
-the dimensions of the graded pieces of the section ring will be preserved under base change from $\bk$ to $\overline \bk$. Therefore generators
-and relations are preserved under arbitrary base field extension, and hence their minimal degrees are preserve.
-Because of this, there is not harm in assuming $\bk =\overline \bk$. The bounds we give below hold equally well
-over arbitrary fields, but for simplicity we state and prove them over algebraically closed fields.
+\label{rem:algebraically-closed}
+Because cohomology commutes with flat base change (in particular
+with field extensions) the dimensions of the graded pieces of the
+section ring will be preserved under base change from $\bk$ to
+$\overline \bk$. Therefore generators and relations are preserved
+under arbitrary base field extension, and so their minimal
+degrees are preserved. Consequently, there is no harm in
+assuming $\bk = \overline \bk$ for our proofs. The bounds we give
+hold equally well over arbitrary fields.
 
-We note that if $L/\bk$ is an inseparable extension,
-and $X$ is a scheme over $\bk$ than the base change of the canonical divisor
-$(K_X)_L$ may be different then the canonical divisor of the base change
-$K_{X_L}$.
+Note that if $L/\bk$ is an inseparable extension
+and $X$ is a scheme over $\bk$, then the base change of the
+canonical divisor $(K_X)_L$ may be different than the canonical
+divisor of the base change $K_{X_L}$.
 Therefore, the canonical ring may not be preserved under base change
-along inseparable extensions.
-But, for the purposes of this article, we fix a divisor on a scheme over some base field, and the structure of that particular section
-ring is unchanged upon base change to the algebraic closure.
+along inseparable extensions. Nonetheless, the results we give are
+not affected because given a divisor on a scheme over some base field,
+the structure of that particular section ring is unchanged upon
+base change to the algebraic closure.
 \end{rem}
 
-We next define some notation used throughout the paper.
-We use $m \in \bz_{\geq 0}$ to index the dimension of a given projective
-space $\bp^m$ and the type of the Hirzebruch surface $\hirz_m$.
-Let $D$ be a (Weil) $\bq$-divisor of the form
+Let $D$ be a (Weil) $\bq$-divisor on a rational surface $X$ of the form
 \begin{align*}
 	D = \sum_{i=1}^{n}\alpha_i D_i \in \di X \otimes_\bz \bq.
 \end{align*}\noindent
@@ -445,37 +449,43 @@ so, we shall sometimes start the indexing at $0$, so that $i$ runs
 from $0$ to $n$. In the case $X = \bp^m$, define the degree of $D$ by $\deg D :=
 \sum_{i=1}^{n}\alpha_i \cdot \deg D_i$. The floor of a $\bq$-divisor $D$ is the divisor
 $\lfloor D \rfloor := \sum_{i = 1}^{n}
-\lfloor \alpha_i \rfloor D_i$. Let 
-$R_D := \bigoplus_{d \geq 0} H^0(X, \lfloor dD \rfloor)$
+\lfloor \alpha_i \rfloor D_i$.
+
+Let $R(X, D) := \bigoplus_{d \geq 0} H^0(X, \lfloor dD \rfloor)$
 denote the section ring associated to the $\bq$-divisor $D$. 
 We often alternatively write
-$R_D := \bigoplus_{d \geq 0} u^d H^0(X, \lfloor dD \rfloor)$, where $u$ is a dummy
+$R(X, D) := \bigoplus_{d \geq 0} u^d H^0(X, \lfloor dD \rfloor)$, where $u$ is a dummy
 variable to keep track of the degree.
-We use $R_D$ as notation for $R(X,D)$ when $X$ is understood from context.
-If $R$
-is a graded ring, we denote the $d$th graded component of $R$ by $R_d$. If $r$ is a rational number, we let
-$\fr(r) := r - \lfloor r
-\rfloor$ denote the fractional part of $r$. 
-If $D \in \di X \otimes_\bz \bq$
-is an arbitrary divisor, we denote $h^0(X, D) := \dim_\bk H^0(X,D)$.
+When $X$ is understood from context, we use $R_D$ as notation for $R(X, D)$.
+
+We use $m \in \bz_{\geq 0}$ to index the dimension of a given
+projective space $\bp^m$ and the type of the Hirzebruch surface
+$\hirz_m$. If $S$ is a graded ring, we denote the $d$th graded
+component of $S$ by $S_d$. If $r$ is a rational number, we let
+$\fr(r) := r - \lfloor r \rfloor$ denote the fractional part of $r$. 
+If $D \in \di X \otimes_\bz \bq$ is an arbitrary divisor, we denote
+$h^0(X, D) := \dim_\bk H^0(X,D)$.
 
 
 
 \section{Section Rings of Projective Space}
 \label{sec:proj}
 Let $\bk$ be a field and let $\bp^m$ denote $m$-dimensional
-projective space over $\bk$. In this section, we bound the degrees
-of generators and relations for divisors
-on $\bp^m$, for all $m \geq 1$ in Theorem
-~\ref{thm:proj-effective-intro}.
+projective space over $\bk$. In this section, we prove
+Theorem~\ref{thm:proj-generators-relations}, which bounds the degrees
+of generators and relations of the section ring of any $\bq$-divisor
+on $X = \bp^m$ for all $m \geq 1$. We also prove
+Theorem ~\ref{thm:proj-effective-intro} to give an explicit
+description of the generators of the section ring $R_D$ when $D$ is
+an effective divisor.
+
 If $\deg D < 0$, the
 section ring is concentrated in degree 0, and if
 $\deg D = 0$, then the section ring has a single
 generator. Therefore, for the remainder of this section,
 we shall assume $\deg D > 0$.
-The $\bp^1$ case restricts to the results of
-\cite{dorney:canonical}. We also give an explicit description of the
-generators of the section ring $R_D$ when $D$ is an effective divisor in Theorem ~\ref{thm:proj-generators-relations}.
+Note that the $\bp^1$ case, in particular, restricts to the results
+of \cite{dorney:canonical}.
 
 For the remainder of this section, we shall fix $m \geq 1$ and
 choose an
@@ -543,7 +553,8 @@ Let
 
 \noindent
 be the convergents of the Hirzebruch-Jung continued fraction of
-$\alpha$ (q.v. \cite[Section 2]{voight:cf} and \cite[Section 3]{hirzebruch:cf}). Then, the section ring
+$\alpha$ {\rm(}q.v. \cite[Section 2]{voight:cf} and
+\cite[Section 3]{hirzebruch:cf}{\rm)}. Then, the section ring
 \[
 	R_D := \bigoplus_{d \geq 0} u^d H^0(\bp^m, \lfloor dD \rfloor)
 \]
@@ -615,6 +626,7 @@ Then, to give a presentation of $R_D$ over $R_D'$,
 it suffices to give a presentation of $R_{\alpha H}$:
 generators of $R_{\alpha H}$ map to generators of $R_D$ over $R_{D'}$ under the inclusion $\iota: R_{\alpha H} \rightarrow R_D$
 and relations map to a full set of relations for $R_D$ over $R_{D'}$.
+Hence, for the remainder of the proof, we can assume $D' = 0$.
 %is equivalent to giving a presentation
 %For simplicity, we give a proof for when $D' = 0$, but the general case
 %can be analogously proved by replacing the orders of zeros and poles
@@ -623,7 +635,6 @@ and relations map to a full set of relations for $R_D$ over $R_{D'}$.
 %instead of rational sections of $\mathscr O_{\bp^m}$,
 %and the following proof goes through otherwise unchanged.
 
-Hence, for the remainder of the proof, we assume $D' = 0$.
 %We will first check that $F^{\vec v}_i$ determine a system of minimal
 %generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} \colon \deg \vec{v} =
 %\left\lfloor
@@ -906,12 +917,11 @@ For the remainder of this section, we shall make the additional assumption that
 This may necessitate the inclusion of ``ghost divisors'' $D_i$ with coefficients $\alpha_i = 0$. 
 
 The main aim of this section is to prove Theorem
-~\ref{thm:proj-generators-relations} bounding the number of generators and
-relations of $R_D$. 
+~\ref{thm:proj-generators-relations}.
 Having justified the necessity of adding ghost divisors, we proceed to bound the
 number of generators and relations of arbitrary $\bq$-divisors in 
 projective space. 
-In PRoposition~\ref{prop:pm-span-and-basis}, we record a general proposition describing
+In Proposition~\ref{prop:pm-span-and-basis}, we record a general proposition describing
 a basis for $H^0(\bp^m, dD)$.
 We bound the generators in Lemma ~\ref{lem:proj-generators}, and we use Lemmas ~\ref{lem:composite-map}, ~\ref{lem:bound-ker-chi}, and ~\ref{lem:proj-relations-psi} to bound the 
 degree of relations in the proof of Theorem ~\ref{thm:proj-generators-relations}. Proposition ~\ref{prop:cone-generation}, Lemma ~\ref{lem:composite-map}, and Lemma ~\ref{lem:bound-ker-chi} are quite 
@@ -1066,7 +1076,8 @@ with $N = -\deg g$.
 \sssec*{Bounding the generators}
 \label{sssec:bounding-generators}
 
-We now develop the tools to bound the degrees of generators for $R_D$ with $D$ a divisor on $\bp^m$.
+We now develop the tools to bound the degrees of generators for $R_D$
+for $D$ an arbitrary divisor on $\bp^m$.
 
 
 Recall that for a semigroup $\Sigma \subset \bz^m$ we say $e_0, \ldots, e_n \in \Sigma$ are a set of {\bf extremal rays}
@@ -1172,7 +1183,7 @@ w_i \ar[mapsto]{r} & u^{d_i}z_0^{c_{i0}} \cdots z_n^{c_{in}} \ar[mapsto]{r} & u^
 \sssec*{Bounding the relations}
 \label{sssec:relations-projective}
 
-We now move on to bounding the relations of a section ring $R_D$ for $D$ a divisor on $\bp^m$.
+We now move on to bounding the degree of relations of a section ring $R_D$ for $D$ a divisor on $\bp^m$.
 In Lemma ~\ref{lem:composite-map} we show that the degree of the
 generators for $\ker \phi$, which is the same as the degree of relations
 of $R_D$, is bounded by the maximum of the degree of generators for
@@ -1363,13 +1374,14 @@ agree with the degree of generation and relations
 to within a factor of two.
 \end{rem}
 
-\section{Section Rings of Hirzebruch surfaces}
+\section{Section Rings of Hirzebruch Surfaces}
 \label{sec:hirz}
 \invisiblesubsection
+Let $\hirz_m$ denote the $m$-th Hirzebruch surface.
 The aim of this section is to prove Theorem
-~\ref{thm:hirz-generators-relations}, bounding the degree of
-generators and relations of the section ring of a $\bq$-divisor
-on any Hirzebruch surface.
+~\ref{thm:hirz-generators-relations}, which bounds the degree of
+generators and relations of the section ring of any $\bq$-divisor
+on $X = \hirz_m$, for all $m \geq 0$.
 
 One way to describe the Hirzebruch surface $\hirz_m$ is as a
 quotient,
@@ -1392,8 +1404,7 @@ in $\Pic(\hirz_m)$
 is determined by its bi-degree, as follows from the excision exact sequence
 for class groups.
 
-Furthermore, similarly to the case of projective space, 
-we will restrict to the case that $D$ is a divisor
+Furthermore, we will restrict to the case that $D$ is a divisor
 for which both of its bi-degrees are positive. We now justify this
 restriction. If either of the bi-degrees of $D$ are negative,
 then the section ring is concentrated in degree 0. If one of the

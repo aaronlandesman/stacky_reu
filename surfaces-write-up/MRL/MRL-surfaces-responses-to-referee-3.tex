@@ -126,56 +126,77 @@
 
 \maketitle
 \section{Changes Made}
-Here are some responses to the referee's suggestions.
-Item's below are numbered to match the referee report.
-We applied nearly all changes suggested by the referee, though most need no
-comment. Here, we make some brief comments on how we applied certain suggested
+The authors would like to express their gratitude for
+the numerous helpful suggestions given by the referee.
+We applied nearly all such suggestions and give here
+some brief comments on how we applied certain suggested
 changes.
 \begin{enumerate}
 	\item[(2)] 
-We have now added in a detailed example 
-\autoref{example:effective-example}
-explaining how to apply our method of proof to actually work out
-the generators and relations for a section ring
-associated to an effective divisor on $\bp^m$.
-\item[(10)]
-Response to the concern about base change along inseparable extensions:
-We added Remark \autoref{rem:algebraically-closed}
-explaining why purely inseparable extensions pose
-no addition issue. The point is that cohomology commutes with flat base change, and extensions of fields
-are always flat, so the dimensions of the graded pieces of the ring will be preserved. Therefore generators
-and relations are preserved under arbitrary base field extension. Of course,
-canonical divisors of root stacks may not behave well with respect to base change (as we learned from a version of Voight--Zureick-Brown's forthcoming book available on Voight's website)
-which is why inseparable extensions
-may cause problems for canonical rings.
-But, for the purposes of this article, we fix a divisor on a scheme over some base field, and the structure of that particular section
-ring is unchanged upon base change to the algebraic closure.
+		We have added in a detailed example 
+		(Example~\autoref{example:effective-example})
+		explaining how to apply our method of proof to actually work out
+		the generators and relations for a section ring
+		associated to an effective divisor on $\bp^m$.
 
-\item[(14) and (18)]
-We explained in both the projective space case and Hirzebruch case that this assumption was nonessential, adding
-\autoref{cor:proj-generators-relations} for the projective case
-and \autoref{rem:hirz-generators-relations-hypothesis} for the Hirzebruch case.
-You are correct that we could have easily changed coordinates and reordered the $f_i$ so that the first $m+1$ $f_i$ were $x_0, \ldots, x_m$, but
-it seems we may as well state it with arbitrary independent polynomials, so as not to require such a change of basis.
-\item[(22)]
-	We moved the notation to its own section after the introduction,
-	as most of the notation was not necessary to state
-	our main theorems.
-\item[(24)]
-	You're right that the proof of \autoref{prop:pm-span-and-basis}
-		was poorly phrased, and we have tried to clarify this now.
-The point is that we are only varying $f_0, \ldots, f_m,$ so
-the resulting monomials in the $f_i$ will be independent because products of the $f_i$ are. See the updated proof in the paper for the details.
-\item[(25)]
-It is not an ordering, only a partial ordering (which we have now stated).
-\item[(27)]
-Good point, we should have done a reduction instead of claiming it was analogous.
-\item[(28)]
-Wouldn't there be something like $\binom{m + c_1- 1}{c_1}$ elements? For example, if
-we take $\alpha = 1$, and $H = V(x_0)$ we will have generators $x_1/x_0, \ldots, x_m/x_0$.
-In any case, we decided to remove the paragraph this comment
-was referring to and the claim about minimality
-of the presentation from the theorem.
+	\item[(10)]
+		Response to the concern about base change along inseparable
+		extensions:
+		We added Remark~\autoref{rem:algebraically-closed}
+		explaining why purely inseparable extensions pose
+		no additional issue. The point is that cohomology commutes with
+		flat base change, and extensions of fields
+		are always flat, so the dimensions of the graded pieces of the
+		ring will be preserved. Therefore generators
+		and relations are preserved under arbitrary base field
+		extension. Of course, canonical divisors of root stacks may not
+		behave well with respect to base change (as we learned from a
+		version of Voight--Zureick-Brown's forthcoming book available
+		on Voight's website)
+		which is why inseparable extensions
+		may cause problems for canonical rings.
+		But, for the purposes of this article, we fix a divisor on a
+		scheme over some base field, and the structure of that particular section
+		ring is unchanged upon base change to the algebraic closure.
+
+	\item[(14) \& (18)]
+		We explained in both the projective space case and Hirzebruch case
+		that this assumption was nonessential, adding
+		Corollary~\autoref{cor:proj-generators-relations} for the projective case
+		and Remark~\autoref{rem:hirz-generators-relations-hypothesis} for the
+		Hirzebruch case. You are correct that we could have easily changed
+		coordinates and reordered the $f_i$ so that the first $m+1$
+		many $f_i$'s were $x_0, \ldots, x_m$, but
+		we may as well state it with arbitrary independent polynomials so
+		as not to require such a change of basis.
+		
+	\item[(22)]
+		We moved the notation to its own section after the introduction,
+		as most of the notation was not necessary to state
+		our main theorems.
+	
+	\item[(24)]
+		Indeed, the proof of \autoref{prop:pm-span-and-basis}	was poorly
+		phrased, and we have tried to clarify this now.
+		The point is that we are only varying $f_0, \ldots, f_m,$ so
+		the resulting monomials in the $f_i$ will be independent because
+		products of the $f_i$ are. See the updated proof in the paper for the details.
+	
+	\item[(25)]
+		It is not an ordering, only a partial ordering (which we have now stated).
+		
+	\item[(27)]
+		Good point, we should have done a reduction instead of claiming it was analogous.
+		This is now included at the beginning of the proof of the theorem
+		(now numbered \autoref{thm:proj-one-point}).
+		
+	\item[(28)]
+		Wouldn't there be something like $\binom{m + c_1- 1}{c_1}$ many
+		elements? For example, if	we take $\alpha = 1$, and $H = V(x_0)$
+		we will have generators $x_1/x_0, \ldots, x_m/x_0$.
+		In any case, we decided to remove the paragraph mentioned by
+		this comment as well as the claim about minimality of the
+		presentation given in the theorem.
 \end{enumerate}
 \end{document}
 
