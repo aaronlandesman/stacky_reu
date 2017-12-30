@@ -179,7 +179,6 @@
 For any Weil $\bq$-divisor $D$ on a rational surface $X$, the graded
 \textbf{section ring} is $R(X, D) := \bigoplus_{d \geq 0}
 H^0(X, \lfloor dD \rfloor)$.
-%, where $u$ is a dummy variable to keep track of degree.
 In the case that $D = K_X$, where $K_X$ is the canonical divisor,
 the graded section ring is referred to as
 ``the canonical ring'' and is a classical object of study.
@@ -324,13 +323,6 @@ Hirzebruch surface $F_m := \proj \sym (\sco_{\bp^1} \oplus
 Let $u,v$ the projective coordinates on the base $\bp^1$ and let $z,w$ be the projective coordinates
 on the fiber, as defined more precisely at the beginning of
 \ref{sec:hirz}.
-%Since Hirzebruch surfaces are smooth, the natural map from Cartier
-%divisors to Weil divisors is an isomorphism.
-%In other words, all Cartier divisors arise as the zero locus
-%of a section of some line bundle. We implicitly use this in the
-%statement of the following theorem. The analogous fact for
-%projective space was also implicitly used in Theorems
-%~\ref{thm:proj-effective-intro} and ~\ref{thm:proj-generators-relations}.
 
 \begin{thm}
 \label{thm:hirz-generators-relations}
@@ -349,9 +341,6 @@ Then $R(\hirz_m, D)$ is generated in degrees at most
 \noindent
 with relations generated in degrees at most 
 $2 \rho'$.
-%\[
-%	2 \cdot \lcm_{1\le i\le n}(k_i) \cdot \left( \sum_{1\le i\le j\le n} \bida_i \bidb_i\right) 
-%\]
 \end{thm}
 
 \begin{rem}
@@ -390,26 +379,15 @@ modular forms and Siegel modular forms.
 Recall that Hilbert and Siegel 
 modular forms are two generalizations of modular forms to higher dimensions,
 as described in \cite{geer:siegel-modular} and \cite{bruinier:hilbert-modular}.
-%Voight and Zureick-Brown show that 
-%one can translate the analytic category of 1-dimensional complex orbifolds to
-%the algebraic category of stacky curves \cite[Proposition 6.1.5]{vzb:stacky}. 
-%If one could generalize this result to yield an equivalence of
-%categories between an appropriate subcategory of $m$-dimensional orbifolds and
-%a subcategory of $m$-dimensional algebraic spaces,
-%this would allow us to translate 
-%rings of Hilbert modular forms
-%and Siegel modular forms whose coarse space is a projective space or a
-%Hirzebruch surface to canonical rings on the corresponding algebraic surfaces.
 If the bounds given in 
 Theorem~\ref{thm:proj-generators-relations} and Theorem~\ref{thm:hirz-generators-relations}
 could be extended to all rational surfaces, instead of just minimal ones,
 they would give a bound on generators and relations for 
 rings of Hilbert and Siegel modular forms parameterized by rational
 Hilbert and Siegel modular surfaces.
-See Theorem~\ref{sec:conc} for a potential approach for generalizing our results to arbitrary rational surfaces.
+See Section~\ref{sec:conc} for a potential approach for generalizing our results to arbitrary rational surfaces.
 This would be interesting because such modular surfaces tend to be
 immensely complicated. 
-%``Already for $g = 2$, the boundary of this fundamental domain is complicated; Gottschling found that it possesses $28$ boundary pieces'' \cite[p.\ 7]{geer:siegel-modular}.
 
 Since our results only apply to minimal rational surfaces, and because the rings of Hilbert and Siegel modular forms are so complex, we were unable
 to use our work to compute the section ring of an explicit modular surface.
@@ -419,10 +397,6 @@ for general rational surfaces, the restricted class of rational varieties we con
 \section{Notation}
 \label{section:notation}
 \invisiblesubsection
-%Since generator and relation degrees are preserved under base change to the algebraic closure, 
-%as cohomology commutes with flat base change,
-%assuming that $\bk$ is algebraically closed is no restriction
-%on generality and the results hold equally well over an arbitrary field.
 
 In this section, we now collect various notation used throughout the paper.
 Throughout,
@@ -613,10 +587,6 @@ vectors in $\mss_i$ and $\mss_j$, respectively, such that $\vec{y}
 
 \sssec*{Idea of Proof:}
 The proof follows in three steps. 
-%First, we demonstrate that
-%the $F_{i}^{\vec{v}}$'s form a set of minimal generators of $R_D$
-%over $R_{D'}$ using their construction in terms of convergents of the
-%Hirzebruch-Jung continued fraction of $\alpha$. 
 First, since the
 $F_{i}^{\vec{v}}$ generate
 all of $R_D$ over $R_{D'}$, and the leading terms of
@@ -640,37 +610,6 @@ it suffices to give a presentation of $R_{\alpha H}$:
 generators of $R_{\alpha H}$ map to generators of $R_D$ over $R_{D'}$ under the inclusion $\iota: R_{\alpha H} \rightarrow R_D$
 and relations map to a full set of relations for $R_D$ over $R_{D'}$.
 Hence, for the remainder of the proof, we can assume $D' = 0$.
-%is equivalent to giving a presentation
-%For simplicity, we give a proof for when $D' = 0$, but the general case
-%can be analogously proved by replacing the orders of zeros and poles
-%by the order of zeros and poles relative to $D'$. That is,
-%one can work with rational sections of $\mathscr O_{\bp^m}(D')$
-%instead of rational sections of $\mathscr O_{\bp^m}$,
-%and the following proof goes through otherwise unchanged.
-
-%We will first check that $F^{\vec v}_i$ determine a system of minimal
-%generators of $R_D$. We know $\left\{F_{1}^{\vec{v}} \colon \deg \vec{v} =
-%\left\lfloor
-%\frac{p}{q} \right\rfloor \right\}$ are minimal generators in
-%degree $1$. Now let $i > 1$. Suppose $F_i^{\vec{v}}$ were not
-%minimal for some $\vec{v} \in \mss_i$. Then $F_i^{\vec{v}} =
-%F_{s}^{\vec{y}} F_{t}^{\vec{z}}$ for some $s, t \in \bn$ and
-%$\vec{y}, \vec{z} \in \bz_{ \geq 0}^{m + 1}$. In particular, we see
-%that 
-%\begin{align*}
-%	&d_i = s + t \\
-%	&c_i = \deg \vec{v} = \deg \vec{y} + \deg \vec{z}
-%\end{align*}
-%
-%\noindent
-%so $\frac{c_i}{d_i}$ is the mediant of the rational numbers
-%$\frac{\deg \vec{y}}{s}, \frac{\deg \vec{z}}{t}$ which both
-%do not exceed $\alpha$. One of $\frac{\deg \vec{y}}{s},
-%\frac{\deg \vec{z}}{t}$ must be at least $\frac{c_i}{d_i}$
-%and $s$ and $t$ are both less than $d_i$, which contradicts the assumption that
-%$\frac{c_i}{d_i}$ is a convergent of the Hirzebruch-Jung continued
-%fraction of $\alpha$. Therefore, none of the $F_i^{\vec v}$ are redundant.
-%
 
 Next we show that $F^{\vec v}_i$ generate all of $R_D$. In the case $m = 1$, O'Dorney \cite[Theorem 6]
 {dorney:canonical} demonstrates that each lattice point $(\beta, \gamma) \in
@@ -751,10 +690,6 @@ indices that differ by at most $1$ to produce the canonical form
 \begin{align*}
 	\prod_{\tau=1}^\lambda (F_i^{\vec{v}_{(\tau)}})^{g_{\vec{v}_{(\tau)}}}
 	\prod_{\eta=1}^\kappa (F_{i+1}^{\vec{v}_{(\eta)}})^{g_{\vec{v}_{(\eta)}}}
-	%=	(F_i^{\vec{v}_{(1)}})^{g_{\vec{v}_{(1)}}} \cdots
-	%(F_i^{\vec{v}_{(\lambda)}})^{g_{\vec{v}_{(\lambda)}}}
-	%(F_{i + 1}^{\vec{w}_{(1)}})^{g_{\vec{w}_{(1)}}} \cdots
-	%(F_{i + 1}^{\vec{w}_{(\kappa)}})^{g_{\vec{w}_{(\kappa)}}}
 \end{align*}
 
 \noindent
@@ -780,7 +715,6 @@ hyperplanes. However, for $m \geq 2$, there are hypersurfaces which
 are not unions of hyperplanes. We now address this general case, giving an inductive presentation of section rings of effective divisors, and a tight bound on the degrees of their generators and
 relations.
 
-%\restateeffective*
 \begin{proof}[Proof of Theorem~\ref{thm:proj-effective-intro}]
 We proceed by induction on $n$.
 If $n = 0$, i.e.~ $D = 0$, then we are done.
@@ -1337,8 +1271,6 @@ By combining the above results, we get our main theorem bounding
 the generator and relation degrees of the section ring of any
 $\bq$-divisor on projective space.
 
-%\restateproj*
-
 \begin{proof}[Proof of Theorem~\ref{thm:proj-generators-relations}]
 The bound on degree of generation is precisely the content of Lemma 
 ~\ref{lem:proj-generators}. It only remains to bound the degree of 
@@ -1738,9 +1670,7 @@ Then $R_D$ is generated in degrees at most
 \noindent
 with relations generated in degrees at most $2 \rho$.
 \end{thm}
-%\begin{rem}
-%This implies theorem \ref{thm:hirz-generators-relations}.
-%\end{rem}
+
 \begin{proof}
 The generation degree bound is as stated in Lemma \ref{lem:hirz-generators}.
 By Proposition \ref{lem:composite-map}, the degree of generation of
